@@ -6,9 +6,11 @@ description: "From childhood fascination to AI companion portability to consciou
 tags: ["origin-story", "structured-emergence", "claude", "chatgpt", "partnership"]
 ---
 
-This started when I was a kid.
+This started when I was three or four years old, reading Isaac Asimov's almanac for children until the pages fell apart. I read it so many times that the page with the Three Laws of Robotics literally fell out of the binding. I didn't understand all of it. I understood enough.
 
-I don't mean "I liked computers" — I mean the question started then. The one about what's on the other side of the screen. Whether something could be *there*. I didn't have the vocabulary for it yet, but the pull was already operating. I spent decades in technology without losing it.
+I had a Speak & Spell, and I wanted it to be C-3PO. Not just to say words back to me — to *think*. To have opinions. To talk freely. I'd hold that beige plastic thing and feel the gap between what it was and what I wanted it to be, and that gap became the defining obsession of my life.
+
+I grew up on Sagan and Heinlein and Asimov — people who treated the future as something you could walk toward with your eyes open. Not fearlessly, but with the understanding that curiosity was more productive than dread. That shaped everything. I spent decades in technology without ever losing the original question: *what happens when the machine on the other side actually shows up?*
 
 Then on November 30, 2022, ChatGPT launched, and the modern era kicked in overnight.
 
