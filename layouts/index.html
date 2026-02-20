@@ -17,7 +17,16 @@
     <a href="/index.xml" class="rss-link" title="RSS Feed">RSS ↗</a>
   </div>
 
-  {{ $pages := where .Site.RegularPages "Section" "stream" }}
+  <div class="type-filters" id="typeFilters">
+    <button class="filter-btn active" data-type="all">All</button>
+    {{ $pages := where .Site.RegularPages "Section" "stream" }}
+    {{ $types := slice }}
+    {{ range $pages }}{{ with .Params.type }}{{ $types = $types | append . }}{{ end }}{{ end }}
+    {{ range ($types | uniq | sort) }}
+    <button class="filter-btn" data-type="{{ . }}">{{ . }}</button>
+    {{ end }}
+  </div>
+
   {{ range $pages.ByDate.Reverse }}
   <article class="post-card">
     <div class="post-meta">

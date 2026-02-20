@@ -42,5 +42,23 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  <script>
+    // Type filter
+    document.addEventListener('DOMContentLoaded', function() {
+      const filters = document.getElementById('typeFilters');
+      if (!filters) return;
+      filters.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('filter-btn')) return;
+        const type = e.target.dataset.type;
+        filters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        document.querySelectorAll('.stream-container .post-card').forEach(card => {
+          if (type === 'all') { card.style.display = ''; return; }
+          const cardType = card.querySelector('.post-type');
+          card.style.display = (cardType && cardType.textContent.trim() === type) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
