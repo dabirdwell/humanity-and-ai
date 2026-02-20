@@ -110,9 +110,9 @@ a:hover { color: var(--accent-primary); }
   background: linear-gradient(
     180deg,
     rgba(10, 10, 15, 0.0) 0%,
-    rgba(10, 10, 15, 0.15) 25%,
-    rgba(10, 10, 15, 0.6) 50%,
-    rgba(10, 10, 15, 0.85) 70%,
+    rgba(10, 10, 15, 0.0) 20%,
+    rgba(10, 10, 15, 0.85) 45%,
+    rgba(10, 10, 15, 0.95) 65%,
     var(--bg-primary) 100%
   );
   z-index: 1;
