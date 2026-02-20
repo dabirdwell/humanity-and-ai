@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="stream-container">
+  <div class="stream-header">
+    <h2>All Tags</h2>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
+    {{ range .Site.Taxonomies.tags }}
+      {{ $count := .Count }}
+      {{ $name := .Page.Title }}
+      <a href="{{ .Page.Permalink }}" class="filter-tag" style="font-size: {{ if gt $count 3 }}0.95rem{{ else }}0.82rem{{ end }};">
+        #{{ $name }} <span style="color: var(--text-muted); margin-left: 0.3rem;">{{ $count }}</span>
+      </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
