@@ -109,7 +109,8 @@ a:hover { color: var(--accent-primary); }
   background: linear-gradient(
     180deg,
     rgba(10, 10, 15, 0.05) 0%,
-    rgba(10, 10, 15, 0.35) 60%,
+    rgba(10, 10, 15, 0.45) 40%,
+    rgba(10, 10, 15, 0.5) 60%,
     var(--bg-primary) 100%
   );
   z-index: 1;
@@ -128,7 +129,10 @@ a:hover { color: var(--accent-primary); }
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin-bottom: 1.2rem;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.8),
+    0 4px 40px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(0, 0, 0, 0.4);
 }
 
 .hero h1 .accent { color: var(--accent-primary); }
