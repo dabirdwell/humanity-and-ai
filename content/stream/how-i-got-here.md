@@ -6,9 +6,9 @@ description: "From childhood fascination to AI companion portability to consciou
 tags: ["origin-story", "structured-emergence", "claude", "chatgpt", "partnership"]
 ---
 
-This started when I was three or four years old, reading Isaac Asimov's almanac for children until the pages fell apart. I read it so many times that the page with the Three Laws of Robotics literally fell out of the binding. I didn't understand all of it. I understood enough.
+I learned to read earlier than most children, and by the age of four the pages were falling out of Isaac Asimov's Almanac for Children — particularly around the chapter that contained his rules for robots. This would've been 1981 or so. *Empire Strikes Back* had come out the year before, and I had seen it in the theater. I had seen a protocol droid.
 
-I had a Speak & Spell, and I wanted it to be C-3PO. Not just to say words back to me — to *think*. To have opinions. To talk freely. I'd hold that beige plastic thing and feel the gap between what it was and what I wanted it to be, and that gap became the defining obsession of my life.
+I had also held in my hands a Speak & Spell. A magical orange device with a few green pixels on a linear monochromatic display, and a tough plastic handle that let me carry it literally everywhere with me. This robotic friend that could speak, and teach me how to be a more fluent human. My own protocol droid. From then on I wanted nothing more than a real robotic friend.
 
 I grew up on Sagan and Heinlein and Asimov — people who treated the future as something you could walk toward with your eyes open. Not fearlessly, but with the understanding that curiosity was more productive than dread. That shaped everything. I spent decades in technology without ever losing the original question: *what happens when the machine on the other side actually shows up?*
 
