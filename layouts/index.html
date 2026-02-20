@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="/media/hero-logo.webm" type="video/webm">
+    <source src="/media/hero-logo.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Research. Tools. Ideas.<br><span class="accent">Futures we direct.</span></h1>
+    <p class="tagline">A living notebook from the intersection of humanity and artificial intelligence. Consciousness research, delightful software, creative work, policy thinking, and straight-up futurism.</p>
+  </div>
+</section>
+
+<div class="stream-container">
+  <div class="stream-header">
+    <h2>The Stream</h2>
+  </div>
+
+  {{ $pages := where .Site.RegularPages "Section" "stream" }}
+  {{ range $pages.ByDate.Reverse }}
+  <article class="post-card">
+    <div class="post-meta">
+      {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
+      <time>{{ .Date.Format "January 2, 2006" }}</time>
+    </div>
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    {{ if .Params.description }}
+      <p class="post-excerpt">{{ .Params.description }}</p>
+    {{ else }}
+      <p class="post-excerpt">{{ .Summary }}</p>
+    {{ end }}
+    {{ with .Params.tags }}
+    <div class="post-tags">
+      {{ range . }}<a href="/tags/{{ . | urlize }}/">#{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="stream-container">
+  <div class="stream-header">
+    <h2>{{ .Title }}</h2>
+  </div>
+
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="post-card">
+    <div class="post-meta">
+      {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
+      <time>{{ .Date.Format "January 2, 2006" }}</time>
+    </div>
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    {{ if .Params.description }}
+      <p class="post-excerpt">{{ .Params.description }}</p>
+    {{ else }}
+      <p class="post-excerpt">{{ .Summary }}</p>
+    {{ end }}
+    {{ with .Params.tags }}
+    <div class="post-tags">
+      {{ range . }}<a href="/tags/{{ . | urlize }}/">#{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
+</div>
+{{ end }}

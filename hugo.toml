@@ -1,0 +1,43 @@
+baseURL = 'https://humanityandai.com/'
+languageCode = 'en-us'
+title = 'Humanity and AI'
+summaryLength = 40
+
+[params]
+  tagline = "Futures We Direct"
+  description = "Research, tools, ideas, and creative work from the intersection of humanity and artificial intelligence."
+  author = "David Alan Birdwell"
+  ogImage = "/images/og-default.png"
+
+[params.nav]
+  [[params.nav.links]]
+    name = "Stream"
+    url = "/"
+  [[params.nav.links]]
+    name = "Research"
+    url = "https://structuredemergence.com"
+    external = true
+  [[params.nav.links]]
+    name = "About"
+    url = "/about/"
+  [[params.nav.links]]
+    name = "Tags"
+    url = "/tags/"
+
+[taxonomies]
+  tag = "tags"
+  type = "types"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'monokai'
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[mediaTypes]
+  [mediaTypes."application/rss+xml"]
+    suffixes = ["xml"]

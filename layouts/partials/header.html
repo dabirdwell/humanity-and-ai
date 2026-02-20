@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">Humanity <span>&</span> AI</a>
+    <nav class="site-nav">
+      {{ range .Site.Params.nav.links }}
+        <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>
