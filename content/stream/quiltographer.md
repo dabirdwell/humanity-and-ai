@@ -6,7 +6,7 @@ description: "A pattern design tool built for the way quilters actually think �
 tags: ["quiltographer", "software", "design", "tools"]
 ---
 
-My friend Brandon is a master quilter. Watching him work, I realized that quilting software was built by software people, not quilt people. The tools force quilters to think in grids and coordinates when they're actually thinking in relationships — how this fabric plays against that one, how a color shifts meaning when its neighbor changes.
+My friend Amanda is a master quilter. Talking to her about her work, I realized that quilting software was built by software people, not quilt people. The tools force quilters to think in grids and coordinates when they're actually thinking in relationships — how this fabric plays against that one, how a color shifts meaning when its neighbor changes.
 
 **Quiltographer** is a pattern design tool that starts from how quilters actually think. It understands fabric as material with drape and grain. It knows that a quarter-inch seam allowance isn't optional. It treats color the way quilters treat color — not as hex codes but as relationships that shift under different lighting.
 
