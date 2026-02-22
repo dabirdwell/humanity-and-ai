@@ -101,6 +101,11 @@ a:hover { color: var(--accent-primary); }
   object-position: center center;
   opacity: 0.8;
   z-index: 0;
+  transition: opacity 2s ease;
+}
+
+.hero-video.dimmed {
+  opacity: 0.25;
 }
 
 .hero-overlay {
