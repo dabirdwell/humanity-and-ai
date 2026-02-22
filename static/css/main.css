@@ -83,7 +83,10 @@ a:hover { color: var(--accent-primary); }
 
 /* ---- HERO ---- */
 .hero {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   min-height: 70vh;
   display: flex;
   align-items: flex-end;
@@ -91,6 +94,15 @@ a:hover { color: var(--accent-primary); }
   text-align: center;
   overflow: hidden;
   padding: 2rem 2rem 3rem;
+  z-index: 0;
+}
+
+/* Content scrolls over the fixed hero */
+.page-content {
+  position: relative;
+  z-index: 10;
+  margin-top: 70vh;
+  background: var(--bg-primary);
 }
 
 .hero-video {
