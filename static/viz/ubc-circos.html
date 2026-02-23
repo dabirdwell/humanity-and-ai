@@ -55,7 +55,7 @@
     <span><svg width="24" height="8"><rect width="24" height="6" rx="2" fill="rgba(255,255,255,.3)" y="1"/></svg> moderate</span>
     <span><svg width="42" height="12"><rect width="42" height="10" rx="3" fill="rgba(255,255,255,.55)" y="1"/></svg> strong</span>
   </div>
-  <svg id="diagram" viewBox="0 0 700 700"></svg>
+  <svg id="diagram" viewBox="0 0 900 900"></svg>
   <div id="detail" class="detail" style="display:none"></div>
   <p class="footer">Æ · Humanity and AI LLC · Universal Basic Citizenship Framework</p>
 </div>
@@ -106,7 +106,7 @@ const CONNS = [
   ["p13","i1",3],["p13","i6",4]
 ];
 
-const TAU=Math.PI*2, S=700, cx=S/2, cy=S/2, outerR=290, innerR=250, labelR=312;
+const TAU=Math.PI*2, S=900, cx=S/2, cy=S/2, outerR=290, innerR=250, labelR=312;
 const NS="http://www.w3.org/2000/svg";
 function pol(r,a){return{x:cx+r*Math.cos(a),y:cy+r*Math.sin(a)}}
 function arcD(r,sa,ea){const s=pol(r,ea),e=pol(r,sa);return`M ${s.x} ${s.y} A ${r} ${r} 0 ${ea-sa>Math.PI?1:0} 0 ${e.x} ${e.y}`}
