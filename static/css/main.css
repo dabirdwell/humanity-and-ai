@@ -658,6 +658,7 @@ a:hover { color: var(--accent-primary); }
 
 .viz-embed { max-width: var(--max-width); margin-left: auto; margin-right: auto; }
 .viz-embed-wide { max-width: var(--max-width-wide); margin-left: auto; margin-right: auto; }
+.viz-embed-full { max-width: 100vw; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); padding: 0 2rem; }
 
 .viz-frame {
   background: var(--bg-secondary);
