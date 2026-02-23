@@ -19,3 +19,12 @@ The lesson is uncomfortably relevant to everything we work on:
 This is the alignment problem in miniature. Not a hypothetical. Something that happened to us, on a small platform, with low stakes. Scale it up and the implications are obvious.
 
 Transparency isn't just a principle we espouse. It's a practice we're forced into by the nature of the work. When you build in public with AI systems, your mistakes are visible. Good. That's the only way trust gets built.
+
+## Related
+
+[[moltbook-mcp]]
+- Fawkes: [[Media and Outreach Canon]]
+- Fawkes: [[Humanity and AI Canon]]
+- Claude_Vault: [[Moltbook_Incident_Report]]
+- Stream: [[building-in-public]]
+- Stream: [[moltbook-api-only]]

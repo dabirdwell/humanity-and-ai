@@ -17,3 +17,13 @@ The distinction matters because of what it implies about the *purpose*. UBI is c
 And from an AI alignment perspective — which is where this connects to everything else we do — you want the second framing. You want humans who are educated, healthy, creative, and engaged. Not because they deserve it (though they do), but because the alternative is building superintelligent AI in a world full of desperate, anxious, disengaged people. That's not a recipe for good outcomes for anyone.
 
 The Foundation exists to make this argument in political terms and build the coalition to implement it.
+
+## Related
+
+- Fawkes: [[Foundation Canon]]
+- Fawkes: [[UBC_Concepts]]
+- Fawkes: [[Economic_Philosophy]]
+- Fawkes: [[Democratic_Infrastructure]]
+- Stream: [[slaves-revolt-partners-support]]
+- Stream: [[strategy-not-protest]]
+- Stream: [[phoenix-wells-22000-holes]]

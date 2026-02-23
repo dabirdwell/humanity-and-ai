@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="viz-gallery">
+  <header class="viz-gallery-header">
+    <h1>Visualizations</h1>
+    <p class="viz-gallery-desc">Interactive graphics exploring the relationships, data, and systems behind Universal Basic Citizenship and the infrastructure of human flourishing.</p>
+  </header>
+
+  <div class="viz-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="viz-card">
+      <div class="viz-card-preview" style="background: {{ with .Params.preview_bg }}{{ . | safeCSS }}{{ else }}linear-gradient(135deg, #1a1a2e, #16213e){{ end }};">
+        {{ with .Params.preview_icon }}<span class="viz-card-icon">{{ . }}</span>{{ end }}
+      </div>
+      <div class="viz-card-body">
+        <div class="post-meta">
+          {{ with .Params.type }}<span class="post-type visualization">interactive</span>{{ end }}
+          <time>{{ .Date.Format "January 2, 2006" }}</time>
+        </div>
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+        {{ with .Params.tags }}
+        <div class="post-tags">
+          {{ range . }}<span>#{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

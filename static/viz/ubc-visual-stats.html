@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Numbers: Why Universal Basic Citizenship</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0a0a0f; color:#e0e0e0; font-family:'Inter',system-ui,sans-serif; }
+.section { max-width:900px; margin:0 auto; padding:60px 24px; border-bottom:1px solid rgba(255,255,255,.06); }
+.section:last-child { border-bottom:none; }
+h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; color:#f0f0f0; }
+.subtitle { font-size:13px; color:#888; margin-bottom:32px; letter-spacing:.5px; }
+.source { font-size:10px; color:#555; margin-top:16px; letter-spacing:.3px; }
+.ceo-viz { text-align:center; }
+.ratio-display { font-size:64px; font-weight:200; color:#e74c3c; margin:20px 0 4px; letter-spacing:-2px; transition:all .3s; }
+.ratio-label { font-size:13px; color:#aaa; margin-bottom:24px; }
+.slider-wrap { max-width:500px; margin:0 auto 24px; }
+.slider-wrap input[type=range] { width:100%; -webkit-appearance:none; background:transparent; }
+.slider-wrap input[type=range]::-webkit-slider-track { height:4px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:2px; }
+.slider-wrap input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:#fff; margin-top:-8px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4); }
+.slider-labels { display:flex; justify-content:space-between; font-size:10px; color:#666; margin-top:6px; }
+.worker-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:2px; max-width:600px; margin:0 auto; min-height:40px; }
+.worker-icon { width:8px; height:8px; border-radius:50%; transition:all .4s; }
+.bubble-chart { width:100%; max-width:800px; margin:0 auto; }
+.bubble-chart svg { display:block; margin:0 auto; }
+.icon-section { text-align:center; }
+.stat-row { margin-bottom:32px; }
+.stat-label { font-size:14px; color:#ccc; margin-bottom:8px; }
+.stat-value { font-size:32px; font-weight:200; margin-bottom:12px; }
+.icon-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:3px; max-width:500px; margin:0 auto; }
+.person-icon { width:12px; height:20px; position:relative; }
+.person-icon .head { width:6px; height:6px; border-radius:50%; position:absolute; top:0; left:3px; }
+.person-icon .body { width:10px; height:12px; border-radius:3px 3px 1px 1px; position:absolute; bottom:0; left:1px; }
+.cost-compare { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
+.cost-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px 28px; text-align:center; min-width:200px; flex:1; max-width:300px; }
+.cost-card .amount { font-size:36px; font-weight:200; margin:8px 0; }
+.cost-card .label { font-size:12px; color:#888; letter-spacing:.5px; }
+.cost-card.prison .amount { color:#e74c3c; }
+.cost-card.education .amount { color:#27ae60; }
+.cost-card.ubc .amount { color:#2980b9; }
+.bar-compare { margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto; }
+.bar-row { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.bar-label { width:120px; font-size:12px; color:#aaa; text-align:right; flex-shrink:0; }
+.bar { height:28px; border-radius:4px; transition:width 1s ease; display:flex; align-items:center; padding-left:10px; font-size:11px; color:#fff; font-weight:500; }
+footer { text-align:center; font-size:10px; color:#444; padding:30px 24px; letter-spacing:.5px; }
+</style>
+</head>
+<body>
+<div class="section ceo-viz">
+  <h2>CEO-to-Worker Pay</h2>
+  <p class="subtitle">Drag the slider to see how the ratio has changed since 1965</p>
+  <div class="ratio-display" id="ratioNum">21:1</div>
+  <div class="ratio-label" id="ratioYear">1965</div>
+  <div class="slider-wrap">
+    <input type="range" id="yearSlider" min="0" max="7" value="0" step="1">
+    <div class="slider-labels"><span>1965</span><span>1978</span><span>1989</span><span>1995</span><span>2000</span><span>2010</span><span>2020</span><span>2023</span></div>
+  </div>
+  <div class="worker-grid" id="workerGrid"></div>
+  <p class="source">Source: Economic Policy Institute, CEO Compensation Survey 2024</p>
+</div>
+
+<div class="section">
+  <h2>Healthcare: Spending More, Getting Less</h2>
+  <p class="subtitle">The US spends far more per capita than peer nations — with worse outcomes</p>
+  <div class="bubble-chart" id="healthBubbles"></div>
+  <p class="source">Source: OECD Health Statistics 2024, World Bank</p>
+</div>
+
+<div class="section icon-section">
+  <h2>Who Falls Through the Cracks</h2>
+  <p class="subtitle">Each icon represents real people in the current system</p>
+  <div class="stat-row">
+    <div class="stat-label">Americans without health insurance</div>
+    <div class="stat-value" style="color:#e74c3c">27.6 million</div>
+    <div class="icon-grid" id="uninsuredGrid"></div>
+    <p class="source" style="margin-top:8px">Each icon = ~276,000 people · Source: Census Bureau 2024</p>
+  </div>
+  <div class="stat-row" style="margin-top:40px">
+    <div class="stat-label">Children in food-insecure households</div>
+    <div class="stat-value" style="color:#f39c12">13.2 million</div>
+    <div class="icon-grid" id="foodGrid"></div>
+    <p class="source" style="margin-top:8px">Each icon = ~132,000 children · Source: USDA Food Security Report 2024</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>What We Choose to Fund</h2>
+  <p class="subtitle">Annual cost per person — incarceration vs. alternatives</p>
+  <div class="cost-compare">
+    <div class="cost-card prison">
+      <div class="label">INCARCERATION</div>
+      <div class="amount">$41,000</div>
+      <div class="label">per prisoner / year</div>
+    </div>
+    <div class="cost-card education">
+      <div class="label">PUBLIC EDUCATION</div>
+      <div class="amount">$16,080</div>
+      <div class="label">per student / year</div>
+    </div>
+    <div class="cost-card ubc">
+      <div class="label">UBI AT $1,000/mo</div>
+      <div class="amount">$12,000</div>
+      <div class="label">per person / year</div>
+    </div>
+  </div>
+  <div class="bar-compare">
+    <div class="bar-row"><div class="bar-label">Incarceration</div><div class="bar" id="barPrison" style="width:0;background:#e74c3c;">$41,000</div></div>
+    <div class="bar-row"><div class="bar-label">Education</div><div class="bar" id="barEdu" style="width:0;background:#27ae60;">$16,080</div></div>
+    <div class="bar-row"><div class="bar-label">UBI ($1k/mo)</div><div class="bar" id="barUBI" style="width:0;background:#2980b9;">$12,000</div></div>
+  </div>
+  <p class="source">Sources: Vera Institute of Justice 2024; NCES 2024; UBI calculation at $1,000/month</p>
+</div>
+
+<footer>Æ · Humanity and AI LLC · Universal Basic Citizenship Framework</footer>
+
+<script>
+const ceoData = [
+  {year:1965,ratio:21},{year:1978,ratio:35},{year:1989,ratio:71},{year:1995,ratio:123},
+  {year:2000,ratio:366},{year:2010,ratio:243},{year:2020,ratio:351},{year:2023,ratio:290}
+];
+const slider = document.getElementById('yearSlider');
+const ratioNum = document.getElementById('ratioNum');
+const ratioYear = document.getElementById('ratioYear');
+const workerGrid = document.getElementById('workerGrid');
+function updateCEO(idx) {
+  const d = ceoData[idx];
+  ratioNum.textContent = d.ratio + ':1';
+  ratioYear.textContent = d.year;
+  ratioNum.style.fontSize = Math.min(64, 32 + d.ratio/8) + 'px';
+  ratioNum.style.color = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
+  const count = Math.min(d.ratio, 400);
+  let html = '<div class="worker-icon" style="background:#fbbf24;width:12px;height:12px;box-shadow:0 0 8px rgba(251,191,36,.5)"></div>';
+  for (let i = 0; i < count; i++) html += '<div class="worker-icon" style="background:rgba(255,255,255,.15)"></div>';
+  workerGrid.innerHTML = html;
+}
+slider.addEventListener('input', e => updateCEO(+e.target.value));
+updateCEO(0);
+
+const healthData = [
+  {country:'US',spend:12555,life:77.5,pop:331,color:'#e74c3c'},
+  {country:'UK',spend:5138,life:80.7,pop:67,color:'#2980b9'},
+  {country:'Germany',spend:7383,life:80.6,pop:83,color:'#27ae60'},
+  {country:'Canada',spend:5905,life:81.7,pop:38,color:'#9b59b6'},
+  {country:'Japan',spend:4691,life:84.8,pop:125,color:'#f39c12'},
+  {country:'Australia',spend:5627,life:83.3,pop:26,color:'#1abc9c'},
+  {country:'France',spend:5468,life:82.5,pop:67,color:'#e67e22'},
+  {country:'S. Korea',spend:3914,life:83.7,pop:52,color:'#3498db'}
+];
+const bw=800,bh=460,bm={top:40,right:40,bottom:50,left:70};
+const bsvg=d3.select('#healthBubbles').append('svg').attr('viewBox',`0 0 ${bw} ${bh}`);
+const xScale=d3.scaleLinear().domain([3000,13500]).range([bm.left,bw-bm.right]);
+const yScale=d3.scaleLinear().domain([76,86]).range([bh-bm.bottom,bm.top]);
+const rScale=d3.scaleSqrt().domain([20,340]).range([12,50]);
+bsvg.append('g').attr('transform',`translate(0,${bh-bm.bottom})`)
+  .call(d3.axisBottom(xScale).ticks(5).tickFormat(d=>'$'+d.toLocaleString()))
+  .selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
+bsvg.append('g').attr('transform',`translate(${bm.left},0)`)
+  .call(d3.axisLeft(yScale).ticks(5).tickFormat(d=>d+' yr'))
+  .selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
+bsvg.append('text').attr('x',bw/2).attr('y',bh-6).attr('text-anchor','middle')
+  .attr('fill','#777').attr('font-size',11).text('Per Capita Health Spending (USD)');
+bsvg.append('text').attr('transform','rotate(-90)').attr('x',-bh/2).attr('y',16)
+  .attr('text-anchor','middle').attr('fill','#777').attr('font-size',11).text('Life Expectancy');
+const bubbles=bsvg.selectAll('.bubble').data(healthData).join('g').attr('class','bubble')
+  .attr('transform',d=>`translate(${xScale(d.spend)},${yScale(d.life)})`);
+bubbles.append('circle').attr('r',d=>rScale(d.pop)).attr('fill',d=>d.color).attr('opacity',.6)
+  .attr('stroke',d=>d.color).attr('stroke-width',1.5);
+bubbles.append('text').attr('text-anchor','middle').attr('dy','.35em')
+  .attr('fill','#fff').attr('font-size',10).attr('font-weight',500).text(d=>d.country);
+bsvg.append('text').attr('x',xScale(12555)+8).attr('y',yScale(77.5)-rScale(331)-8)
+  .attr('fill','#e74c3c').attr('font-size',10).attr('font-weight',600).text('Spends most, lives least');
+
+function buildIcons(containerId, total, highlightColor) {
+  const container = document.getElementById(containerId);
+  let html = '';
+  for (let i = 0; i < total; i++)
+    html += `<div class="person-icon"><div class="head" style="background:${highlightColor}"></div><div class="body" style="background:${highlightColor};opacity:.7"></div></div>`;
+  container.innerHTML = html;
+}
+buildIcons('uninsuredGrid', 100, '#e74c3c');
+buildIcons('foodGrid', 100, '#f39c12');
+
+setTimeout(() => {
+  document.getElementById('barPrison').style.width = '100%';
+  document.getElementById('barEdu').style.width = '39.2%';
+  document.getElementById('barUBI').style.width = '29.3%';
+}, 300);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.style.opacity = 1; });
+}, {threshold:.2});
+document.querySelectorAll('.section').forEach(s => { s.style.opacity=0; s.style.transition='opacity .8s ease'; observer.observe(s); });
+</script>
+</body>
+</html>

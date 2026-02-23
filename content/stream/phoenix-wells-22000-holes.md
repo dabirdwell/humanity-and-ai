@@ -15,3 +15,12 @@ But each one is also a borehole that already reaches deep into the earth. The dr
 Oklahoma is 50th in education. The fossil fuel economy is ending whether we like it or not. The question isn't whether to transition — it's whether Oklahoma leads or gets left behind.
 
 The wells are already there. The future is waiting underground.
+
+## Related
+
+- Fawkes: [[Phoenix Wells]]
+- Fawkes: [[Products and Services Canon]]
+- Fawkes: [[Foundation Canon]]
+- Fawkes: [[Infrastructure_as_Consciousness]]
+- Stream: [[oklahoma-leapfrog]]
+- Stream: [[ubc-not-ubi]]

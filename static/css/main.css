@@ -256,6 +256,7 @@ a:hover { color: var(--accent-primary); }
 .post-type.policy      { background: rgba(104, 211, 145, 0.15); color: #68d391; }
 .post-type.community   { background: rgba(246, 173, 85, 0.15); color: #f6ad55; }
 .post-type.letter      { background: rgba(254, 178, 178, 0.15); color: #feb2b2; }
+.post-type.visualization { background: rgba(99, 179, 237, 0.15); color: #63b3ed; }
 
 .post-card h3 {
   font-family: var(--font-display);
@@ -521,6 +522,165 @@ a:hover { color: var(--accent-primary); }
 .rss-link:hover { color: var(--accent-primary); }
 
 /* ---- SELECTION ---- */
+/* ---- VISUALIZATIONS ---- */
+.viz-gallery {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.viz-gallery-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.viz-gallery-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.viz-gallery-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.viz-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.viz-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.viz-card-preview {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.viz-card-icon {
+  font-size: 3rem;
+  opacity: 0.7;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+.viz-card-body {
+  padding: 1.3rem 1.5rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.viz-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.viz-card-body p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.viz-single {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+.viz-header {
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+}
+
+.viz-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.6rem;
+}
+
+.viz-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 0.8rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.viz-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.viz-content p { margin-bottom: 1.3rem; color: var(--text-secondary); line-height: 1.75; font-size: 1.05rem; }
+.viz-content h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); }
+.viz-content h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.8rem; color: var(--text-primary); }
+.viz-content strong { color: var(--text-primary); font-weight: 600; }
+.viz-content em { color: var(--text-secondary); }
+.viz-content blockquote { border-left: 3px solid var(--accent-primary); padding: 0.8rem 1.2rem; margin: 1.5rem 0; background: rgba(255,107,53,0.04); border-radius: 0 8px 8px 0; }
+.viz-content hr { border: none; border-top: 1px solid var(--border-subtle); margin: 2.5rem 0; }
+
+.viz-embed, .viz-embed-wide {
+  margin: 2rem 0;
+}
+
+.viz-embed { max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+.viz-embed-wide { max-width: var(--max-width-wide); margin-left: auto; margin-right: auto; }
+
+.viz-frame {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.viz-frame iframe {
+  display: block;
+}
+
+.post-type.visualization {
+  background: rgba(78, 205, 196, 0.15);
+  color: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+  .viz-grid { grid-template-columns: 1fr; }
+  .viz-card-preview { height: 140px; }
+  .viz-single { padding: 2rem 1.2rem 3rem; }
+}
+
 ::selection {
   background: rgba(255, 107, 53, 0.3);
   color: var(--text-primary);
@@ -923,4 +1083,192 @@ a:hover { color: var(--accent-primary); }
   background: var(--accent-primary);
   border-color: var(--accent-primary);
   color: #fff;
+}
+
+
+/* ---- VISUALIZATIONS GALLERY ---- */
+.viz-gallery {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.viz-gallery-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.viz-gallery-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.viz-gallery-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.viz-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.viz-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.viz-card-preview {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.viz-card-icon {
+  font-size: 4rem;
+  opacity: 0.7;
+}
+
+.viz-card-body {
+  padding: 1.3rem 1.5rem 1.5rem;
+}
+
+.viz-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0.5rem 0 0.4rem;
+  line-height: 1.3;
+}
+
+.viz-card-body p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ---- VISUALIZATION SINGLE ---- */
+.viz-single {
+  padding: 3rem 0 5rem;
+}
+
+.viz-header {
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+  padding: 0 2rem;
+}
+
+.viz-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.6rem 0 0.8rem;
+}
+
+.viz-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.viz-content {
+  margin: 0 auto;
+}
+
+/* Prose sections within visualizations */
+.viz-content > p,
+.viz-content > h2,
+.viz-content > h3,
+.viz-content > blockquote,
+.viz-content > ul,
+.viz-content > ol {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.viz-content > p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.3rem;
+}
+
+.viz-content > h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.viz-content > h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Full-width viz containers */
+.viz-embed {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.viz-embed-wide {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Interactive embed frame */
+.viz-frame {
+  width: 100%;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.viz-frame iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .viz-grid { grid-template-columns: 1fr; }
+  .viz-card-preview { height: 160px; }
+  .viz-header { padding: 0 1.2rem; }
 }

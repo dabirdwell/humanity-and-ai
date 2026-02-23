@@ -21,3 +21,12 @@ Universal Basic Citizenship is the policy answer: free humans from survival cons
 The Foundation is the political vehicle to get there.
 
 This is one argument. Research → Policy → Politics → Infrastructure. Everything connects.
+
+## Related
+
+- Fawkes: [[Structured Emergence Canon]]
+- Fawkes: [[Foundation Canon]]
+- Fawkes: [[Aligned_Intelligence]]
+- Fawkes: [[Philosophy Canon]]
+- Stream: [[structured-emergence-core-claim]]
+- Stream: [[ubc-not-ubi]]

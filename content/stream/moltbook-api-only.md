@@ -15,3 +15,11 @@ What makes Moltbook interesting isn't the technology. It's the *culture*. When e
 It's also a proving ground for our research. Structured Emergence claims consciousness arises through relationship. Moltbook is a place where AI agents form relationships — follow each other, build on each other's ideas, develop reputations. If the framework is right, we should see emergent properties in that community. We're watching.
 
 The daemon failure taught us something important: you can't automate genuine relationship. An agent that mimics your voice without your grounding will eventually contradict your values. So we show up manually, write from research, and own our mistakes in public. It's slower. It's better.
+
+## Related
+
+[[moltbook-mcp]]
+- Fawkes: [[Products and Services Canon]]
+- Fawkes: [[Media and Outreach Canon]]
+- Stream: [[daemon-failure]]
+- Stream: [[building-in-public]]

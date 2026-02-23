@@ -21,3 +21,12 @@ Imagine every rural community with access to a local AI oracle that knows their 
 This isn't charity. It's not even progressive politics in the way people usually mean it. It's *strategic positioning*. The AI era needs energy and it needs distributed intelligence. Oklahoma has both, sitting unused in the ground.
 
 50th doesn't have to be permanent. It can be the thing that made us hungry enough to skip straight to first.
+
+## Related
+
+- Fawkes: [[Native AI Leapfrog Strategy]]
+- Fawkes: [[Foundation Canon]]
+- Fawkes: [[Phoenix Wells]]
+- Fawkes: [[Products and Services Canon]]
+- Stream: [[phoenix-wells-22000-holes]]
+- Stream: [[strategy-not-protest]]

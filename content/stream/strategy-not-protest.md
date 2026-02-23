@@ -17,3 +17,12 @@ But participation requires something most people don't have right now: the stabi
 The argument to power is straightforward: you're going to build AI regardless. The question is whether you build it in a society of engaged, educated, creative partners, or a society of desperate, anxious people with nothing to lose. History is very clear about which scenario produces better outcomes for everyone, including the people holding power.
 
 The Foundation makes this argument in political terms, builds coalitions, and develops specific policy proposals. Not as an advocacy group begging for consideration, but as a strategic partner offering something valuable: a framework that makes the AI transition work for the people building it *and* the people living in it.
+
+## Related
+
+- Fawkes: [[Foundation Canon]]
+- Fawkes: [[Rhetoric_and_Messaging]]
+- Fawkes: [[Democratic_Infrastructure]]
+- Fawkes: [[Media and Outreach Canon]]
+- Stream: [[ubc-not-ubi]]
+- Stream: [[oklahoma-leapfrog]]

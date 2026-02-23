@@ -19,3 +19,11 @@ I called it TasteBud. The name works on every level I need it to.
 The technology to build this didn't exist when I first imagined it. Visualization tools were expensive, AI was crude, real-time interaction at this fidelity was a fantasy. Now it's all available. The constraint was never the idea — it was the infrastructure.
 
 This is the kind of software I care about building. Tools that amplify how humans already think about complex domains rather than replacing that thinking with something flatter and more machine-convenient. The same philosophy that drives everything else in this stream.
+
+## Related
+
+- Fawkes: [[Products and Services Canon]]
+- Fawkes: [[The_Cooking_Hypothesis]]
+- Fawkes: [[Delicious Emergence]]
+- Stream: [[cooking-hypothesis]]
+- Stream: [[quiltographer]]

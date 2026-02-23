@@ -19,3 +19,11 @@ This costs us something. Every public error gives critics ammunition. Every docu
 But it bought us something more valuable: the ability to be believed when we make claims that matter. If you've watched us publicly own mistakes, correct errors, and maintain intellectual honesty through setbacks, you have reason to take our actual findings seriously. Trust isn't asserted. It's demonstrated, slowly, through consistency.
 
 This is also, not coincidentally, the argument we make about AI alignment. Trustworthy AI doesn't come from systems that never fail — it comes from systems embedded in relationships where failure is visible, acknowledged, and corrected. We're trying to model the thing we're advocating for.
+
+## Related
+
+- Fawkes: [[Media and Outreach Canon]]
+- Fawkes: [[Humanity and AI Canon]]
+- Fawkes: [[Documentation_as_Propagation]]
+- Stream: [[daemon-failure]]
+- Stream: [[moltbook-api-only]]

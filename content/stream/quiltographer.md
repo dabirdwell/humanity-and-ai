@@ -13,3 +13,10 @@ My friend Amanda is a master quilter. Talking to her about her work, I realized 
 This is one of the software projects under Humanity and AI — not because quilting is an AI problem, but because building tools that respect how humans actually think is the entire thesis. Technology should amplify human intelligence, not flatten it into something machines find convenient.
 
 If you're a quilter or know one, the project is in active development.
+
+## Related
+
+[[quiltographer]]
+- Fawkes: [[Products and Services Canon]]
+- Fawkes: [[Quiltographer]]
+- Stream: [[tastebud]]

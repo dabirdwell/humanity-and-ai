@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UBC — Needs · Programs · Impacts</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; color: #e0e0e0; font-family: 'Inter', system-ui, -apple-system, sans-serif; padding: 20px; }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { text-align: center; font-size: 28px; font-weight: 300; letter-spacing: 2px; color: #f0f0f0; margin-bottom: 4px; }
+  .sub { text-align: center; font-size: 13px; color: #888; margin-bottom: 20px; letter-spacing: 1px; }
+  .controls { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .controls button { padding: 6px 16px; font-size: 12px; letter-spacing: .5px; border: 1px solid #444; background: transparent; color: #888; border-radius: 20px; cursor: pointer; transition: all .2s; }
+  .controls button.active { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; }
+  .controls button:hover { border-color: #aaa; color: #ccc; }
+  .legend { display: flex; justify-content: center; gap: 28px; margin-bottom: 6px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .legend-label { font-size: 11px; color: #aaa; letter-spacing: .5px; }
+  .strength-legend { display: flex; justify-content: center; gap: 16px; margin-bottom: 8px; align-items: center; }
+  .strength-legend span { font-size: 10px; color: #555; }
+  svg { display: block; margin: 0 auto; width: 100%; max-width: 700px; }
+  .detail { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 16px 24px; max-width: 620px; margin: 8px auto 0; }
+  .detail-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .detail-name { font-size: 14px; font-weight: 500; }
+  .detail-cat { font-size: 10px; color: #666; margin-left: auto; text-transform: uppercase; letter-spacing: 1px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; color: #ccc; transition: all .2s; }
+  .tag:hover { filter: brightness(1.3); }
+  .tag .dots { font-size: 7px; letter-spacing: 1px; }
+  .footer { text-align: center; font-size: 10px; color: #444; margin-top: 16px; letter-spacing: .5px; }
+  .chord { transition: opacity .25s; }
+  .arc-seg { cursor: pointer; transition: stroke-width .15s; }
+  .arc-label { cursor: pointer; transition: all .2s; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>UNIVERSAL BASIC CITIZENSHIP</h1>
+  <p class="sub">NEEDS · PROGRAMS · IMPACTS</p>
+  <div class="controls">
+    <button class="active" data-mode="all">All Connections</button>
+    <button data-mode="np">Needs → Programs</button>
+    <button data-mode="pi">Programs → Impacts</button>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#e74c3c"></div><span class="legend-label">Needs & Challenges</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2980b9"></div><span class="legend-label">UBC Programs</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#27ae60"></div><span class="legend-label">Societal Impacts</span></div>
+  </div>
+  <div class="strength-legend">
+    <span>Strength:</span>
+    <span><svg width="12" height="6"><rect width="12" height="3" rx="1" fill="rgba(255,255,255,.15)" y="1.5"/></svg> weak</span>
+    <span><svg width="24" height="8"><rect width="24" height="6" rx="2" fill="rgba(255,255,255,.3)" y="1"/></svg> moderate</span>
+    <span><svg width="42" height="12"><rect width="42" height="10" rx="3" fill="rgba(255,255,255,.55)" y="1"/></svg> strong</span>
+  </div>
+  <svg id="diagram" viewBox="0 0 700 700"></svg>
+  <div id="detail" class="detail" style="display:none"></div>
+  <p class="footer">Æ · Humanity and AI LLC · Universal Basic Citizenship Framework</p>
+</div>
+<script>
+const CATS = {
+  needs: { label:"Needs & Challenges", color:"#e74c3c", rgb:"231,76,60", items:[
+    {id:"n1",name:"Economic Insecurity"},{id:"n2",name:"Healthcare Gaps"},{id:"n3",name:"Educational Inequality"},
+    {id:"n4",name:"Food & Water Insecurity"},{id:"n5",name:"Housing Crisis"},{id:"n6",name:"Information Asymmetry"},
+    {id:"n7",name:"Mental Health Crisis"},{id:"n8",name:"Democratic Erosion"},{id:"n9",name:"Environmental Crisis"},
+    {id:"n10",name:"Safety & Security"}
+  ]},
+  programs: { label:"UBC Programs", color:"#2980b9", rgb:"41,128,185", items:[
+    {id:"p1",name:"Universal Basic Income"},{id:"p2",name:"National Healthcare"},{id:"p3",name:"Education & Training"},
+    {id:"p4",name:"Food Security"},{id:"p5",name:"Clean Water"},{id:"p6",name:"Sustainable Energy"},
+    {id:"p7",name:"AI & Information Access"},{id:"p8",name:"Mental Health Support"},{id:"p9",name:"Housing"},
+    {id:"p10",name:"Transportation"},{id:"p11",name:"Safe Spaces"},{id:"p12",name:"Democratization"},
+    {id:"p13",name:"Thought Privacy"}
+  ]},
+  impacts: { label:"Societal Impacts", color:"#27ae60", rgb:"39,174,96", items:[
+    {id:"i1",name:"Human Flourishing"},{id:"i2",name:"Social Cohesion"},{id:"i3",name:"Economic Stability"},
+    {id:"i4",name:"Innovation & Creativity"},{id:"i5",name:"Environmental Health"},{id:"i6",name:"Democratic Vitality"},
+    {id:"i7",name:"Reduced Antisocial Behavior"},{id:"i8",name:"Intergenerational Equity"},{id:"i9",name:"Post-Scarcity Progress"}
+  ]}
+};
+const CONNS = [
+  ["n1","p1",5],["n1","p3",3],["n1","p9",4],["n1","p10",2],
+  ["n2","p2",5],["n2","p8",4],["n2","p1",2],
+  ["n3","p3",5],["n3","p7",4],["n3","p1",2],
+  ["n4","p4",5],["n4","p5",5],["n4","p1",3],
+  ["n5","p9",5],["n5","p1",3],["n5","p6",2],
+  ["n6","p7",5],["n6","p3",3],["n6","p12",4],
+  ["n7","p8",5],["n7","p2",3],["n7","p11",4],["n7","p1",2],
+  ["n8","p12",5],["n8","p7",4],["n8","p13",3],
+  ["n9","p6",5],["n9","p5",3],["n9","p4",2],
+  ["n10","p11",5],["n10","p2",2],["n10","p9",3],["n10","p1",3],
+  ["p1","i1",4],["p1","i2",3],["p1","i3",5],["p1","i7",4],["p1","i4",3],
+  ["p2","i1",5],["p2","i2",3],["p2","i3",3],["p2","i8",4],
+  ["p3","i1",4],["p3","i4",5],["p3","i3",3],["p3","i9",4],["p3","i6",3],
+  ["p4","i1",4],["p4","i2",3],["p4","i5",3],["p4","i8",3],
+  ["p5","i1",3],["p5","i5",5],["p5","i8",4],
+  ["p6","i5",5],["p6","i9",4],["p6","i3",3],["p6","i8",5],
+  ["p7","i4",5],["p7","i6",4],["p7","i9",5],["p7","i1",3],
+  ["p8","i1",5],["p8","i2",4],["p8","i7",4],
+  ["p9","i1",4],["p9","i2",3],["p9","i7",3],["p9","i3",3],
+  ["p10","i3",3],["p10","i1",2],["p10","i5",3],["p10","i2",2],
+  ["p11","i2",5],["p11","i1",4],["p11","i7",4],
+  ["p12","i6",5],["p12","i2",4],["p12","i9",3],
+  ["p13","i1",3],["p13","i6",4]
+];
+
+const TAU=Math.PI*2, S=700, cx=S/2, cy=S/2, outerR=290, innerR=250, labelR=312;
+const NS="http://www.w3.org/2000/svg";
+function pol(r,a){return{x:cx+r*Math.cos(a),y:cy+r*Math.sin(a)}}
+function arcD(r,sa,ea){const s=pol(r,ea),e=pol(r,sa);return`M ${s.x} ${s.y} A ${r} ${r} 0 ${ea-sa>Math.PI?1:0} 0 ${e.x} ${e.y}`}
+// Layout
+const layout={};const catOrder=["needs","programs","impacts"];
+const gap=.08,pad=.008;
+const totalItems=catOrder.reduce((s,c)=>s+CATS[c].items.length,0);
+const perItem=(TAU-gap*3-pad*totalItems)/totalItems;
+let angle=-Math.PI/2+gap/2;
+for(const ck of catOrder){for(const item of CATS[ck].items){
+  const sa=angle,ea=angle+perItem;
+  layout[item.id]={...item,cat:ck,sa,ea,mid:(sa+ea)/2,color:CATS[ck].color,rgb:CATS[ck].rgb};
+  angle=ea+pad;}angle+=gap;}
+
+let viewMode="all",activeId=null;
+function getFiltered(){
+  if(viewMode==="np")return CONNS.filter(([f,t])=>f[0]==="n"&&t[0]==="p");
+  if(viewMode==="pi")return CONNS.filter(([f,t])=>f[0]==="p"&&t[0]==="i");
+  return CONNS;
+}
+
+function chordPath(fid,tid,str){
+  const f=layout[fid],t=layout[tid];if(!f||!t)return"";
+  // DRAMATIC spread: str 1=hair thin, str 5=fat ribbon
+  const spread=0.003*Math.pow(str,1.8);
+  const p1=pol(innerR,f.mid-spread),p2=pol(innerR,f.mid+spread);
+  const p3=pol(innerR,t.mid-spread),p4=pol(innerR,t.mid+spread);
+  return`M ${p1.x} ${p1.y} Q ${cx} ${cy} ${p3.x} ${p3.y} L ${p4.x} ${p4.y} Q ${cx} ${cy} ${p2.x} ${p2.y} Z`;
+}
+
+function el(tag,attrs,parent){
+  const e=document.createElementNS(NS,tag);
+  for(const[k,v]of Object.entries(attrs||{}))e.setAttribute(k,v);
+  if(parent)parent.appendChild(e);return e;
+}
+const svg=document.getElementById("diagram");
+const detailEl=document.getElementById("detail");
+const chordGroup=el("g",{id:"chords"},svg);
+const arcGroup=el("g",{id:"arcs"},svg);
+const labelGroup=el("g",{id:"labels"},svg);
+
+const centerText1=el("text",{x:cx,y:cy-12,"text-anchor":"middle","font-size":16,"font-weight":300,fill:"#666","letter-spacing":3},svg);
+centerText1.textContent="UBC";
+const centerText2=el("text",{x:cx,y:cy+8,"text-anchor":"middle","font-size":9,fill:"#555","letter-spacing":1},svg);
+centerText2.textContent="CLICK TO EXPLORE";
+const centerText3=el("text",{x:cx,y:cy+24,"text-anchor":"middle","font-size":8,fill:"#444"},svg);
+
+const arcEls={},labelEls={},innerArcEls={};
+for(const[id,item]of Object.entries(layout)){
+  innerArcEls[id]=el("path",{d:arcD(innerR+2,item.sa+.005,item.ea-.005),stroke:item.color,"stroke-width":2,fill:"none",opacity:.3},arcGroup);
+  const a=el("path",{d:arcD(outerR,item.sa,item.ea),stroke:item.color,"stroke-width":10,fill:"none","stroke-linecap":"round",class:"arc-seg"},arcGroup);
+  arcEls[id]=a;
+  a.addEventListener("mouseenter",()=>hover(id));
+  a.addEventListener("mouseleave",()=>hover(null));
+  a.addEventListener("click",e=>{e.stopPropagation();select(activeId===id?null:id);});
+  const lp=pol(labelR,item.mid);const deg=item.mid*180/Math.PI;const right=deg>-90&&deg<90;
+  const t=el("text",{x:lp.x,y:lp.y,"text-anchor":right?"start":"end","font-size":9.5,"font-weight":400,fill:"#999",
+    transform:`rotate(${right?deg:deg+180},${lp.x},${lp.y})`,class:"arc-label"},labelGroup);
+  t.textContent=item.name;labelEls[id]=t;
+  t.addEventListener("mouseenter",()=>hover(id));
+  t.addEventListener("mouseleave",()=>hover(null));
+  t.addEventListener("click",e=>{e.stopPropagation();select(activeId===id?null:id);});
+}
+svg.addEventListener("click",()=>select(null));
+let chordEls=[];
+function render(){
+  chordGroup.innerHTML="";chordEls=[];
+  const filtered=getFiltered();
+  const sorted=[...filtered].sort((a,b)=>a[2]-b[2]);
+  for(const[f,t,str]of sorted){
+    const p=el("path",{d:chordPath(f,t,str),fill:`rgba(${layout[f].rgb},${0.02+0.04*str})`,class:"chord"},chordGroup);
+    chordEls.push({el:p,from:f,to:t,str});
+  }
+  updateHighlight();
+}
+
+function updateHighlight(){
+  const filtered=getFiltered();const hasActive=activeId!=null;
+  let connSet=null,itemSet=null;
+  if(hasActive){connSet=new Set();itemSet=new Set([activeId]);
+    for(const[f,t]of filtered){if(f===activeId||t===activeId){connSet.add(`${f}-${t}`);itemSet.add(f);itemSet.add(t);}}}
+  for(const c of chordEls){const k=`${c.from}-${c.to}`;
+    if(hasActive){const lit=connSet.has(k);
+      c.el.setAttribute("fill",lit?`rgba(${layout[c.from].rgb},${0.08+0.15*c.str})`:`rgba(${layout[c.from].rgb},0.008)`);}
+    else{c.el.setAttribute("fill",`rgba(${layout[c.from].rgb},${0.02+0.04*c.str})`);}}
+  for(const[id,item]of Object.entries(layout)){
+    const conn=itemSet?.has(id);const self=activeId===id;const op=hasActive?(conn?1:.18):1;
+    arcEls[id].setAttribute("stroke",self?"#fff":item.color);
+    arcEls[id].setAttribute("stroke-width",self?14:10);
+    arcEls[id].style.opacity=op;innerArcEls[id].style.opacity=op;
+    labelEls[id].setAttribute("fill",self?"#fff":conn?"#ccc":"#999");
+    labelEls[id].setAttribute("font-size",self?11:9.5);
+    labelEls[id].setAttribute("font-weight",self?600:400);
+    labelEls[id].style.opacity=op;}
+  if(hasActive){centerText2.textContent=layout[activeId].name.toUpperCase();
+    centerText3.textContent=filtered.filter(([f,t])=>f===activeId||t===activeId).length+" connections";}
+  else{centerText2.textContent="CLICK TO EXPLORE";centerText3.textContent="";}
+  if(hasActive){
+    const item=layout[activeId];
+    const conns=filtered.filter(([f,t])=>f===activeId||t===activeId).sort((a,b)=>b[2]-a[2]);
+    let html=`<div class="detail-header"><div class="legend-dot" style="background:${item.color}"></div>
+      <span class="detail-name">${item.name}</span>
+      <span class="detail-cat">${item.cat}</span></div><div class="tags">`;
+    for(const[f,t,str]of conns){
+      const oid=f===activeId?t:f,o=layout[oid];if(!o)continue;
+      html+=`<span class="tag" style="background:rgba(${o.rgb},${.05+str*.06});border:1px solid rgba(${o.rgb},${.1+str*.07})" data-id="${oid}">
+        <span class="dots">${"●".repeat(str)}</span> ${o.name}</span>`;}
+    html+="</div>";detailEl.innerHTML=html;detailEl.style.display="block";
+    detailEl.querySelectorAll(".tag").forEach(tag=>{
+      tag.addEventListener("click",e=>{e.stopPropagation();select(tag.dataset.id);});});
+  }else{detailEl.style.display="none";}
+}
+
+function hover(id){
+  if(activeId)return;
+  if(id){const prev=activeId;activeId=id;updateHighlight();activeId=prev;}
+  else{updateHighlight();}
+}
+function select(id){activeId=id;updateHighlight();}
+
+document.querySelectorAll(".controls button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".controls button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");viewMode=btn.dataset.mode;activeId=null;render();});});
+
+render();
+</script>
+</body>
+</html>

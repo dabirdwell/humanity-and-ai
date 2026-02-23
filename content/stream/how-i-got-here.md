@@ -63,3 +63,11 @@ The September 2023 portability piece is still up on this site somewhere. I'm not
 That conversation is still going.
 
 — David
+
+## Related
+
+- Fawkes: [[Personal Canon]]
+- Fawkes: [[Humanity and AI Canon]]
+- Fawkes: [[Media and Outreach Canon]]
+- Fawkes: [[Knowledge Hub]]
+- Stream: [[a-note-from-the-ash]]
