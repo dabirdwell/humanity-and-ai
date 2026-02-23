@@ -7,34 +7,60 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:#0a0a0f; color:#e0e0e0; font-family:'Inter',system-ui,sans-serif; }
+body { background:#0a0a0f; color:#e0e0e0; font-family:'Inter',system-ui,sans-serif; overflow-x:hidden; }
 .section { max-width:900px; margin:0 auto; padding:60px 24px; border-bottom:1px solid rgba(255,255,255,.06); }
 .section:last-child { border-bottom:none; }
 h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; color:#f0f0f0; }
 .subtitle { font-size:13px; color:#888; margin-bottom:32px; letter-spacing:.5px; }
 .source { font-size:10px; color:#555; margin-top:16px; letter-spacing:.3px; }
+
+/* CEO Pay Section */
 .ceo-viz { text-align:center; }
 .ratio-display { font-size:64px; font-weight:200; color:#e74c3c; margin:20px 0 4px; letter-spacing:-2px; transition:all .3s; }
 .ratio-label { font-size:13px; color:#aaa; margin-bottom:24px; }
+</style>
+</head>
+<body>
+<style>
+/* Slider */
 .slider-wrap { max-width:500px; margin:0 auto 24px; }
-.slider-wrap input[type=range] { width:100%; -webkit-appearance:none; background:transparent; }
-.slider-wrap input[type=range]::-webkit-slider-track { height:4px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:2px; }
-.slider-wrap input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:#fff; margin-top:-8px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4); }
-.slider-labels { display:flex; justify-content:space-between; font-size:10px; color:#666; margin-top:6px; }
+.slider-wrap input[type=range] { width:100%; -webkit-appearance:none; background:transparent; cursor:pointer; }
+.slider-wrap input[type=range]::-webkit-slider-track { height:6px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:3px; }
+.slider-wrap input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:24px; height:24px; border-radius:50%; background:#fff; margin-top:-9px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.5); transition:transform .15s; }
+.slider-wrap input[type=range]::-webkit-slider-thumb:hover { transform:scale(1.15); }
+.slider-wrap input[type=range]::-moz-range-track { height:6px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:3px; border:none; }
+.slider-wrap input[type=range]::-moz-range-thumb { width:24px; height:24px; border-radius:50%; background:#fff; cursor:pointer; border:none; box-shadow:0 2px 8px rgba(0,0,0,.5); }
+.slider-labels { display:flex; justify-content:space-between; font-size:10px; color:#666; margin-top:8px; }
 .worker-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:2px; max-width:600px; margin:0 auto; min-height:40px; }
 .worker-icon { width:8px; height:8px; border-radius:50%; transition:all .4s; }
-.bubble-chart { width:100%; max-width:800px; margin:0 auto; }
+
+/* Context callout */
+.context-callout { background:rgba(255,255,255,.03); border-left:3px solid #e74c3c; padding:12px 16px; margin-top:20px; font-size:13px; color:#aaa; line-height:1.6; max-width:500px; margin-left:auto; margin-right:auto; transition:opacity .5s; }
+
+/* Healthcare Bubbles */
+.bubble-chart { width:100%; max-width:800px; margin:0 auto; position:relative; }
 .bubble-chart svg { display:block; margin:0 auto; }
+.tooltip { position:absolute; background:rgba(10,10,15,.95); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:12px 16px; font-size:12px; pointer-events:none; opacity:0; transition:opacity .2s; z-index:10; min-width:180px; backdrop-filter:blur(8px); }
+.tooltip .tt-country { font-size:15px; font-weight:600; margin-bottom:6px; }
+.tooltip .tt-row { display:flex; justify-content:space-between; gap:16px; margin:3px 0; color:#aaa; }
+.tooltip .tt-val { color:#e0e0e0; font-weight:500; font-variant-numeric:tabular-nums; }
+
+/* Icon Arrays */
 .icon-section { text-align:center; }
 .stat-row { margin-bottom:32px; }
 .stat-label { font-size:14px; color:#ccc; margin-bottom:8px; }
 .stat-value { font-size:32px; font-weight:200; margin-bottom:12px; }
 .icon-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:3px; max-width:500px; margin:0 auto; }
-.person-icon { width:12px; height:20px; position:relative; }
+.person-icon { width:12px; height:20px; position:relative; opacity:0; transform:scale(.5); transition:all .4s ease; }
+.person-icon.visible { opacity:1; transform:scale(1); }
 .person-icon .head { width:6px; height:6px; border-radius:50%; position:absolute; top:0; left:3px; }
 .person-icon .body { width:10px; height:12px; border-radius:3px 3px 1px 1px; position:absolute; bottom:0; left:1px; }
+</style>
+<style>
+/* Incarceration */
 .cost-compare { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
-.cost-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px 28px; text-align:center; min-width:200px; flex:1; max-width:300px; }
+.cost-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px 28px; text-align:center; min-width:180px; flex:1; max-width:280px; transition:transform .3s, border-color .3s; cursor:default; }
+.cost-card:hover { transform:translateY(-4px); border-color:rgba(255,255,255,.15); }
 .cost-card .amount { font-size:36px; font-weight:200; margin:8px 0; }
 .cost-card .label { font-size:12px; color:#888; letter-spacing:.5px; }
 .cost-card.prison .amount { color:#e74c3c; }
@@ -43,14 +69,15 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 .bar-compare { margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto; }
 .bar-row { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
 .bar-label { width:120px; font-size:12px; color:#aaa; text-align:right; flex-shrink:0; }
-.bar { height:28px; border-radius:4px; transition:width 1s ease; display:flex; align-items:center; padding-left:10px; font-size:11px; color:#fff; font-weight:500; }
-footer { text-align:center; font-size:10px; color:#444; padding:30px 24px; letter-spacing:.5px; }
+.bar { height:28px; border-radius:4px; transition:width 1.2s cubic-bezier(.22,1,.36,1); display:flex; align-items:center; padding-left:10px; font-size:11px; color:#fff; font-weight:500; }
+
+footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; letter-spacing:.5px; }
 </style>
-</head>
-<body>
+
+<!-- Section 1: CEO Pay Ratio -->
 <div class="section ceo-viz">
   <h2>CEO-to-Worker Pay</h2>
-  <p class="subtitle">Drag the slider to see how the ratio has changed since 1965</p>
+  <p class="subtitle">Drag the slider to see how the ratio changed since 1965</p>
   <div class="ratio-display" id="ratioNum">21:1</div>
   <div class="ratio-label" id="ratioYear">1965</div>
   <div class="slider-wrap">
@@ -58,16 +85,20 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px; lette
     <div class="slider-labels"><span>1965</span><span>1978</span><span>1989</span><span>1995</span><span>2000</span><span>2010</span><span>2020</span><span>2023</span></div>
   </div>
   <div class="worker-grid" id="workerGrid"></div>
+  <div class="context-callout" id="ceoContext">In 1965, a CEO earned about 21 times what their average worker made.</div>
   <p class="source">Source: Economic Policy Institute, CEO Compensation Survey 2024</p>
 </div>
-
+<!-- Section 2: Healthcare -->
 <div class="section">
   <h2>Healthcare: Spending More, Getting Less</h2>
-  <p class="subtitle">The US spends far more per capita than peer nations — with worse outcomes</p>
-  <div class="bubble-chart" id="healthBubbles"></div>
+  <p class="subtitle">Hover over any country to compare · Bubble size = population</p>
+  <div class="bubble-chart" id="healthBubbles">
+    <div class="tooltip" id="tooltip"></div>
+  </div>
   <p class="source">Source: OECD Health Statistics 2024, World Bank</p>
 </div>
 
+<!-- Section 3: Who Falls Through -->
 <div class="section icon-section">
   <h2>Who Falls Through the Cracks</h2>
   <p class="subtitle">Each icon represents real people in the current system</p>
@@ -75,16 +106,17 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px; lette
     <div class="stat-label">Americans without health insurance</div>
     <div class="stat-value" style="color:#e74c3c">27.6 million</div>
     <div class="icon-grid" id="uninsuredGrid"></div>
-    <p class="source" style="margin-top:8px">Each icon = ~276,000 people · Source: Census Bureau 2024</p>
+    <p class="source" style="margin-top:8px">Each icon ≈ 276,000 people · Source: Census Bureau 2024</p>
   </div>
   <div class="stat-row" style="margin-top:40px">
     <div class="stat-label">Children in food-insecure households</div>
     <div class="stat-value" style="color:#f39c12">13.2 million</div>
     <div class="icon-grid" id="foodGrid"></div>
-    <p class="source" style="margin-top:8px">Each icon = ~132,000 children · Source: USDA Food Security Report 2024</p>
+    <p class="source" style="margin-top:8px">Each icon ≈ 132,000 children · Source: USDA Food Security Report 2024</p>
   </div>
 </div>
 
+<!-- Section 4: Incarceration vs Investment -->
 <div class="section">
   <h2>What We Choose to Fund</h2>
   <p class="subtitle">Annual cost per person — incarceration vs. alternatives</p>
@@ -105,7 +137,7 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px; lette
       <div class="label">per person / year</div>
     </div>
   </div>
-  <div class="bar-compare">
+  <div class="bar-compare" id="barSection">
     <div class="bar-row"><div class="bar-label">Incarceration</div><div class="bar" id="barPrison" style="width:0;background:#e74c3c;">$41,000</div></div>
     <div class="bar-row"><div class="bar-label">Education</div><div class="bar" id="barEdu" style="width:0;background:#27ae60;">$16,080</div></div>
     <div class="bar-row"><div class="bar-label">UBI ($1k/mo)</div><div class="bar" id="barUBI" style="width:0;background:#2980b9;">$12,000</div></div>
@@ -114,84 +146,189 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px; lette
 </div>
 
 <footer>Æ · Humanity and AI LLC · Universal Basic Citizenship Framework</footer>
-
 <script>
+// ===== CEO PAY =====
 const ceoData = [
-  {year:1965,ratio:21},{year:1978,ratio:35},{year:1989,ratio:71},{year:1995,ratio:123},
-  {year:2000,ratio:366},{year:2010,ratio:243},{year:2020,ratio:351},{year:2023,ratio:290}
+  {year:1965,ratio:21,context:"In 1965, a CEO earned about 21 times what their average worker made."},
+  {year:1978,ratio:35,context:"By 1978, the gap had grown modestly — CEOs made 35× their workers."},
+  {year:1989,ratio:71,context:"The 1980s leveraged buyout era tripled the ratio to 71:1."},
+  {year:1995,ratio:123,context:"Stock option compensation pushed the ratio past 100:1 by 1995."},
+  {year:2000,ratio:366,context:"At the dot-com peak: 366:1. One CEO year = 366 worker years."},
+  {year:2010,ratio:243,context:"Post-crisis it fell — but only to 243:1. Still 12× the 1965 ratio."},
+  {year:2020,ratio:351,context:"COVID year: essential workers risked their lives. The ratio hit 351:1."},
+  {year:2023,ratio:290,context:"2023: slightly down, still 290:1. A CEO makes in one day what a worker makes in 10 months."}
 ];
+
 const slider = document.getElementById('yearSlider');
 const ratioNum = document.getElementById('ratioNum');
 const ratioYear = document.getElementById('ratioYear');
 const workerGrid = document.getElementById('workerGrid');
+const ceoContext = document.getElementById('ceoContext');
+
 function updateCEO(idx) {
   const d = ceoData[idx];
   ratioNum.textContent = d.ratio + ':1';
   ratioYear.textContent = d.year;
-  ratioNum.style.fontSize = Math.min(64, 32 + d.ratio/8) + 'px';
+  ratioNum.style.fontSize = Math.min(72, 36 + d.ratio/7) + 'px';
   ratioNum.style.color = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
+  ceoContext.textContent = d.context;
+  ceoContext.style.borderLeftColor = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
+
   const count = Math.min(d.ratio, 400);
-  let html = '<div class="worker-icon" style="background:#fbbf24;width:12px;height:12px;box-shadow:0 0 8px rgba(251,191,36,.5)"></div>';
-  for (let i = 0; i < count; i++) html += '<div class="worker-icon" style="background:rgba(255,255,255,.15)"></div>';
+  let html = '<div class="worker-icon" style="background:#fbbf24;width:12px;height:12px;box-shadow:0 0 10px rgba(251,191,36,.6)"></div>';
+  for (let i = 0; i < count; i++) {
+    html += '<div class="worker-icon" style="background:rgba(255,255,255,.12)"></div>';
+  }
   workerGrid.innerHTML = html;
 }
+
 slider.addEventListener('input', e => updateCEO(+e.target.value));
 updateCEO(0);
-
+</script>
+<script>
+// ===== HEALTHCARE BUBBLES WITH HOVER =====
 const healthData = [
-  {country:'US',spend:12555,life:77.5,pop:331,color:'#e74c3c'},
-  {country:'UK',spend:5138,life:80.7,pop:67,color:'#2980b9'},
-  {country:'Germany',spend:7383,life:80.6,pop:83,color:'#27ae60'},
-  {country:'Canada',spend:5905,life:81.7,pop:38,color:'#9b59b6'},
-  {country:'Japan',spend:4691,life:84.8,pop:125,color:'#f39c12'},
-  {country:'Australia',spend:5627,life:83.3,pop:26,color:'#1abc9c'},
-  {country:'France',spend:5468,life:82.5,pop:67,color:'#e67e22'},
-  {country:'S. Korea',spend:3914,life:83.7,pop:52,color:'#3498db'}
+  {country:'United States',abbr:'US',spend:12555,life:77.5,pop:331,color:'#e74c3c',uninsured:'27.6M',rank:'#46 globally'},
+  {country:'United Kingdom',abbr:'UK',spend:5138,life:80.7,pop:67,color:'#2980b9',uninsured:'~0 (NHS)',rank:'#29'},
+  {country:'Germany',abbr:'DE',spend:7383,life:80.6,pop:83,color:'#27ae60',uninsured:'<0.1%',rank:'#31'},
+  {country:'Canada',abbr:'CA',spend:5905,life:81.7,pop:38,color:'#9b59b6',uninsured:'~0 (single-payer)',rank:'#18'},
+  {country:'Japan',abbr:'JP',spend:4691,life:84.8,pop:125,color:'#f39c12',uninsured:'~0 (universal)',rank:'#1'},
+  {country:'Australia',abbr:'AU',spend:5627,life:83.3,pop:26,color:'#1abc9c',uninsured:'~0 (Medicare)',rank:'#6'},
+  {country:'France',abbr:'FR',spend:5468,life:82.5,pop:67,color:'#e67e22',uninsured:'<0.1%',rank:'#12'},
+  {country:'South Korea',abbr:'KR',spend:3914,life:83.7,pop:52,color:'#3498db',uninsured:'~0 (NHI)',rank:'#3'}
 ];
-const bw=800,bh=460,bm={top:40,right:40,bottom:50,left:70};
-const bsvg=d3.select('#healthBubbles').append('svg').attr('viewBox',`0 0 ${bw} ${bh}`);
-const xScale=d3.scaleLinear().domain([3000,13500]).range([bm.left,bw-bm.right]);
-const yScale=d3.scaleLinear().domain([76,86]).range([bh-bm.bottom,bm.top]);
-const rScale=d3.scaleSqrt().domain([20,340]).range([12,50]);
+
+const bw=800, bh=460, bm={top:40,right:40,bottom:55,left:75};
+const bsvg = d3.select('#healthBubbles').append('svg').attr('viewBox',`0 0 ${bw} ${bh}`).style('cursor','default');
+const tooltip = document.getElementById('tooltip');
+const chartEl = document.getElementById('healthBubbles');
+
+const xScale = d3.scaleLinear().domain([3000,13500]).range([bm.left,bw-bm.right]);
+const yScale = d3.scaleLinear().domain([76,86]).range([bh-bm.bottom,bm.top]);
+const rScale = d3.scaleSqrt().domain([20,340]).range([14,52]);
+
+// Grid lines
+for (let v=4000; v<=12000; v+=2000) {
+  bsvg.append('line').attr('x1',xScale(v)).attr('x2',xScale(v)).attr('y1',bm.top).attr('y2',bh-bm.bottom)
+    .attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
+}
+for (let v=78; v<=84; v+=2) {
+  bsvg.append('line').attr('x1',bm.left).attr('x2',bw-bm.right).attr('y1',yScale(v)).attr('y2',yScale(v))
+    .attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
+}
+
+// Axes
 bsvg.append('g').attr('transform',`translate(0,${bh-bm.bottom})`)
   .call(d3.axisBottom(xScale).ticks(5).tickFormat(d=>'$'+d.toLocaleString()))
   .selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
 bsvg.append('g').attr('transform',`translate(${bm.left},0)`)
   .call(d3.axisLeft(yScale).ticks(5).tickFormat(d=>d+' yr'))
   .selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
-bsvg.append('text').attr('x',bw/2).attr('y',bh-6).attr('text-anchor','middle')
-  .attr('fill','#777').attr('font-size',11).text('Per Capita Health Spending (USD)');
-bsvg.append('text').attr('transform','rotate(-90)').attr('x',-bh/2).attr('y',16)
-  .attr('text-anchor','middle').attr('fill','#777').attr('font-size',11).text('Life Expectancy');
-const bubbles=bsvg.selectAll('.bubble').data(healthData).join('g').attr('class','bubble')
-  .attr('transform',d=>`translate(${xScale(d.spend)},${yScale(d.life)})`);
-bubbles.append('circle').attr('r',d=>rScale(d.pop)).attr('fill',d=>d.color).attr('opacity',.6)
-  .attr('stroke',d=>d.color).attr('stroke-width',1.5);
+
+bsvg.append('text').attr('x',bw/2).attr('y',bh-4).attr('text-anchor','middle')
+  .attr('fill','#666').attr('font-size',11).text('Per Capita Health Spending (USD)');
+bsvg.append('text').attr('transform','rotate(-90)').attr('x',-bh/2).attr('y',14)
+  .attr('text-anchor','middle').attr('fill','#666').attr('font-size',11).text('Life Expectancy');
+</script>
+<script>
+// Bubbles with hover interaction
+const bubbles = bsvg.selectAll('.bubble').data(healthData).join('g').attr('class','bubble')
+  .attr('transform',d=>`translate(${xScale(d.spend)},${yScale(d.life)})`)
+  .style('cursor','pointer');
+
+bubbles.append('circle')
+  .attr('r', 0)
+  .attr('fill',d=>d.color).attr('opacity',.55)
+  .attr('stroke',d=>d.color).attr('stroke-width',1.5)
+  .transition().delay((d,i) => i*120).duration(600).ease(d3.easeCubicOut)
+  .attr('r',d=>rScale(d.pop));
+
 bubbles.append('text').attr('text-anchor','middle').attr('dy','.35em')
-  .attr('fill','#fff').attr('font-size',10).attr('font-weight',500).text(d=>d.country);
-bsvg.append('text').attr('x',xScale(12555)+8).attr('y',yScale(77.5)-rScale(331)-8)
-  .attr('fill','#e74c3c').attr('font-size',10).attr('font-weight',600).text('Spends most, lives least');
+  .attr('fill','#fff').attr('font-size',11).attr('font-weight',600)
+  .text(d=>d.abbr).attr('pointer-events','none');
 
-function buildIcons(containerId, total, highlightColor) {
-  const container = document.getElementById(containerId);
+// Hover effects
+bubbles.on('mouseenter', function(event, d) {
+  d3.select(this).select('circle')
+    .transition().duration(200)
+    .attr('opacity',.85).attr('stroke-width',3);
+
+  // Dim others
+  bubbles.filter(o => o !== d).select('circle')
+    .transition().duration(200).attr('opacity',.2);
+  bubbles.filter(o => o !== d).select('text')
+    .transition().duration(200).attr('opacity',.3);
+
+  // Tooltip
+  const rect = chartEl.getBoundingClientRect();
+  const svgRect = chartEl.querySelector('svg').getBoundingClientRect();
+  const px = (xScale(d.spend) / bw) * svgRect.width;
+  const py = (yScale(d.life) / bh) * svgRect.height;
+
+  tooltip.innerHTML = `
+    <div class="tt-country" style="color:${d.color}">${d.country}</div>
+    <div class="tt-row"><span>Spending/capita</span><span class="tt-val">$${d.spend.toLocaleString()}</span></div>
+    <div class="tt-row"><span>Life expectancy</span><span class="tt-val">${d.life} years</span></div>
+    <div class="tt-row"><span>Population</span><span class="tt-val">${d.pop}M</span></div>
+    <div class="tt-row"><span>Uninsured</span><span class="tt-val">${d.uninsured}</span></div>
+    <div class="tt-row"><span>Longevity rank</span><span class="tt-val">${d.rank}</span></div>
+  `;
+  tooltip.style.opacity = 1;
+  const tx = px + rScale(d.pop) + 12;
+  const ty = py - 40;
+  tooltip.style.left = (tx + tooltip.offsetWidth > svgRect.width ? px - tooltip.offsetWidth - rScale(d.pop) - 12 : tx) + 'px';
+  tooltip.style.top = Math.max(4, ty) + 'px';
+})
+.on('mouseleave', function() {
+  bubbles.select('circle').transition().duration(300).attr('opacity',.55).attr('stroke-width',1.5);
+  bubbles.select('text').transition().duration(300).attr('opacity',1);
+  tooltip.style.opacity = 0;
+});
+
+// US callout
+bsvg.append('text').attr('x',xScale(12555)).attr('y',yScale(77.5)-rScale(331)-10)
+  .attr('text-anchor','middle').attr('fill','#e74c3c').attr('font-size',10).attr('font-weight',600)
+  .text('Spends most, lives least');
+</script>
+<script>
+// ===== ICON ARRAYS =====
+function buildIcons(containerId, count, activeColor, inactiveColor) {
+  const el = document.getElementById(containerId);
   let html = '';
-  for (let i = 0; i < total; i++)
-    html += `<div class="person-icon"><div class="head" style="background:${highlightColor}"></div><div class="body" style="background:${highlightColor};opacity:.7"></div></div>`;
-  container.innerHTML = html;
+  for (let i = 0; i < count; i++) {
+    html += `<div class="person-icon" data-idx="${i}"><div class="head" style="background:${activeColor}"></div><div class="body" style="background:${activeColor}"></div></div>`;
+  }
+  el.innerHTML = html;
 }
-buildIcons('uninsuredGrid', 100, '#e74c3c');
-buildIcons('foodGrid', 100, '#f39c12');
+buildIcons('uninsuredGrid', 100, '#e74c3c', 'rgba(255,255,255,.08)');
+buildIcons('foodGrid', 100, '#f39c12', 'rgba(255,255,255,.08)');
 
-setTimeout(() => {
-  document.getElementById('barPrison').style.width = '100%';
-  document.getElementById('barEdu').style.width = '39.2%';
-  document.getElementById('barUBI').style.width = '29.3%';
-}, 300);
+// Animate icons on scroll
+const iconObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const icons = entry.target.querySelectorAll('.person-icon');
+      icons.forEach((icon, i) => {
+        setTimeout(() => icon.classList.add('visible'), i * 15);
+      });
+      iconObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.icon-grid').forEach(g => iconObserver.observe(g));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.style.opacity = 1; });
-}, {threshold:.2});
-document.querySelectorAll('.section').forEach(s => { s.style.opacity=0; s.style.transition='opacity .8s ease'; observer.observe(s); });
+// ===== INCARCERATION BARS =====
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.getElementById('barPrison').style.width = '100%';
+      document.getElementById('barEdu').style.width = (16080/41000*100).toFixed(1) + '%';
+      document.getElementById('barUBI').style.width = (12000/41000*100).toFixed(1) + '%';
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+barObserver.observe(document.getElementById('barSection'));
 </script>
 </body>
 </html>
