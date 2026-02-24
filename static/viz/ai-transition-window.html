@@ -488,6 +488,16 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.item, .here-marker').forEach(el => observer.observe(el));
 
+// Report height to parent for iframe auto-resize
+function reportHeight() {
+  if (window.parent !== window) {
+    window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+  }
+}
+window.addEventListener('load', reportHeight);
+window.addEventListener('resize', reportHeight);
+setTimeout(reportHeight, 800);
+
 // Animate closing bar when it enters view
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
