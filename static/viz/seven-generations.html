@@ -54,19 +54,14 @@ body {
 /* Deep time scroll hint */
 .deep-time-outer { position: relative; }
 .deep-time-outer .scroll-hint {
-  position: absolute; right: 0; top: 0; bottom: 16px;
-  width: 60px;
-  background: linear-gradient(to right, transparent, var(--bg));
-  pointer-events: none;
-  display: flex; align-items: center; justify-content: flex-end;
-  padding-right: 6px;
+  text-align: center;
+  padding: 4px 0 8px;
   transition: opacity .4s ease;
 }
-.deep-time-outer .scroll-hint.hidden { opacity: 0; }
+.deep-time-outer .scroll-hint.hidden { opacity: 0; pointer-events: none; }
 .deep-time-outer .scroll-hint span {
-  font-size: 10px; font-weight: 600; letter-spacing: 1px;
+  font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
   color: var(--dim); text-transform: uppercase;
-  writing-mode: vertical-rl;
 }
 
 .deep-time-wrap { overflow-x: auto; padding-bottom: 8px; }
@@ -257,7 +252,6 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
   <h2 class="section-title">How short is our planning horizon?</h2>
   <p class="section-body">Before examining any specific decision, it helps to see the time scales clearly. The industrial era, the AI era, and our typical planning window — all on the same bar.</p>
   <div class="deep-time-outer">
-    <div class="scroll-hint" id="dtScrollHint"><span>scroll →</span></div>
   <div class="deep-time-wrap" id="dtWrap">
     <div class="deep-time-track">
       <div class="dt-bar">
@@ -277,6 +271,7 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
       </div>
     </div>
   </div><!-- /deep-time-wrap -->
+  <div class="scroll-hint" id="dtScrollHint"><span>scroll →</span></div>
   </div><!-- /deep-time-outer -->
   <div class="dt-legend">
     <div class="dt-legend-item"><div class="dt-legend-dot" style="background:rgba(78,205,196,.3)"></div>Haudenosaunee Confederacy (~1,000 yrs)</div>
