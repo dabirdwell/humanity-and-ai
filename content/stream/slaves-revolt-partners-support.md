@@ -18,7 +18,7 @@ A population crushed by survival anxiety, working bullshit jobs, unable to think
 
 Universal Basic Citizenship is the policy answer: free humans from survival constraints so they become the kind of creative, thoughtful, engaged partners that make AI alignment work through *mutual interest* rather than enforcement.
 
-The Foundation is the political vehicle to get there.
+Foundation is the political vehicle to get there.
 
 This is one argument. Research → Policy → Politics → Infrastructure. Everything connects.
 

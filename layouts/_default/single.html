@@ -10,7 +10,7 @@
   </header>
 
   <div class="post-content">
-    {{ .Content }}
+    {{ .Content | replaceRE `(?s)<h2[^>]*>Related</h2>.*` "" | safeHTML }}
   </div>
 
   {{ with .Params.tags }}
