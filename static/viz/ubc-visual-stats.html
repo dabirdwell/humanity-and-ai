@@ -195,6 +195,7 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
 
   <div class="context-callout" style="max-width:680px; border-left-color:#ff6b35; margin-top:28px;">
     The civilization that gave us this principle has been applying it for a <strong style="color:#e0e0e0">thousand years</strong>. Our current political cycle is <strong style="color:#e0e0e0">four years</strong>. The consequences of decisions made in the AI era will play out across a window <strong style="color:#ff6b35">44 times longer</strong> than the planning horizon we're using.
+    <span style="display:block; margin-top:10px; font-size:11px; color:#666;"><a href="/visualizations/seven-generations/" target="_top" style="color:#4ecdc4;">Explore the full Seven Generations framework →</a></span>
   </div>
   <p class="source">Sources: Haudenosaunee Confederacy est. ~1,000 CE (Fenton 1998); Industrial Revolution ~1760–present; ChatGPT public launch Nov 2022; 7th generation principle per Haudenosaunee oral tradition.</p>
 </div>
@@ -485,7 +486,8 @@ bsvg.append('text').attr('x',xScale(12555)).attr('y',yScale(77.5)-rScale(331)-10
 })();
 </script>
 
-
+<script>
+// ===== ICON ARRAYS =====
 function buildIcons(containerId, count, color) {
   const el = document.getElementById(containerId);
   let html = '';
