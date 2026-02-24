@@ -13,78 +13,53 @@ body { background:#0a0a0f; color:#e0e0e0; font-family:'Inter',system-ui,sans-ser
 h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; color:#f0f0f0; }
 .subtitle { font-size:13px; color:#888; margin-bottom:32px; letter-spacing:.5px; }
 .source { font-size:10px; color:#555; margin-top:16px; letter-spacing:.3px; }
-
-/* CEO Pay Section */
+.section-eyebrow { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#4ecdc4; margin-bottom:10px; }
+.context-callout { background:rgba(255,255,255,.03); border-left:3px solid #e74c3c; padding:12px 16px; margin-top:20px; font-size:13px; color:#aaa; line-height:1.6; max-width:500px; margin-left:auto; margin-right:auto; transition:all .4s; }
+/* PLANNING HORIZON */
+.ph-wrap { margin-top:8px; }
+.ph-bar-container { position:relative; overflow-x:auto; padding-bottom:32px; -webkit-overflow-scrolling:touch; }
+.ph-axis { display:flex; justify-content:space-between; font-size:10px; color:#555; letter-spacing:.5px; padding:0 0 8px; min-width:520px; }
+.ph-track { display:flex; gap:3px; height:18px; border-radius:4px; overflow:hidden; min-width:520px; }
+.ph-segment { height:100%; border-radius:2px; }
+.ph-haudenosaunee { background:#4ecdc4; flex:1000; }
+.ph-industrial { background:#c8943a; flex:250; }
+.ph-ai { background:#ff6b35; flex:15; }
+.ph-sevgen { background:rgba(192,132,252,.7); flex:175; }
+.ph-marker { position:absolute; bottom:2px; right:0; display:flex; flex-direction:column; align-items:center; }
+.ph-marker-line { width:2px; height:28px; background:#ff6b35; box-shadow:0 0 8px #ff6b35; }
+.ph-marker-label { font-size:10px; font-weight:700; letter-spacing:1px; color:#ff6b35; margin-top:2px; }
+.ph-scroll-hint { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#555; text-align:center; margin:10px 0 16px; display:none; }
+.ph-legend { display:flex; flex-direction:column; gap:6px; margin-top:4px; }
+.ph-legend-item { display:flex; align-items:center; gap:8px; font-size:13px; color:#aaa; }
+.ph-swatch { display:inline-block; width:12px; height:12px; border-radius:2px; flex-shrink:0; }
+.ph-c-haudenosaunee { background:#4ecdc4; }
+.ph-c-industrial { background:#c8943a; }
+.ph-c-ai { background:#ff6b35; }
+.ph-c-sevgen { background:rgba(192,132,252,.7); }
+/* CEO PAY */
 .ceo-viz { text-align:center; }
 .ratio-display { font-size:64px; font-weight:200; color:#e74c3c; margin:20px 0 4px; letter-spacing:-2px; transition:all .3s; }
 .ratio-label { font-size:13px; color:#aaa; margin-bottom:24px; }
-
-/* ---- SLIDER: proper touch targets ---- */
 .slider-wrap { max-width:500px; margin:0 auto 24px; }
-.slider-wrap input[type=range] {
-  width:100%; -webkit-appearance:none; appearance:none;
-  background:transparent; cursor:pointer;
-  /* Tall invisible hit area so fingers land on it */
-  padding:12px 0; display:block;
-}
-/* Track */
-.slider-wrap input[type=range]::-webkit-slider-runnable-track {
-  height:8px; background:linear-gradient(90deg,#27ae60,#e74c3c);
-  border-radius:4px;
-}
-.slider-wrap input[type=range]::-moz-range-track {
-  height:8px; background:linear-gradient(90deg,#27ae60,#e74c3c);
-  border-radius:4px; border:none;
-}
-/* Thumb — 44px min for touch */
-.slider-wrap input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance:none; appearance:none;
-  width:44px; height:44px; border-radius:50%;
-  background:#fff; margin-top:-18px;
-  cursor:pointer; box-shadow:0 2px 12px rgba(0,0,0,.6);
-  transition:transform .15s, box-shadow .15s;
-}
-.slider-wrap input[type=range]::-webkit-slider-thumb:hover,
-.slider-wrap input[type=range]::-webkit-slider-thumb:active {
-  transform:scale(1.1); box-shadow:0 4px 20px rgba(0,0,0,.7);
-}
-.slider-wrap input[type=range]::-moz-range-thumb {
-  width:44px; height:44px; border-radius:50%;
-  background:#fff; cursor:pointer; border:none;
-  box-shadow:0 2px 12px rgba(0,0,0,.6);
-}
+.slider-wrap input[type=range] { width:100%; -webkit-appearance:none; appearance:none; background:transparent; cursor:pointer; padding:12px 0; display:block; }
+.slider-wrap input[type=range]::-webkit-slider-runnable-track { height:8px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:4px; }
+.slider-wrap input[type=range]::-moz-range-track { height:8px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:4px; border:none; }
+.slider-wrap input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:44px; height:44px; border-radius:50%; background:#fff; margin-top:-18px; cursor:pointer; box-shadow:0 2px 12px rgba(0,0,0,.6); }
+.slider-wrap input[type=range]::-moz-range-thumb { width:44px; height:44px; border-radius:50%; background:#fff; cursor:pointer; border:none; box-shadow:0 2px 12px rgba(0,0,0,.6); }
 .slider-labels { display:flex; justify-content:space-between; font-size:10px; color:#666; margin-top:4px; }
 .worker-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:2px; max-width:600px; margin:0 auto; min-height:40px; }
 .worker-icon { width:8px; height:8px; border-radius:50%; transition:all .4s; }
-
-/* Context callout */
-.context-callout { background:rgba(255,255,255,.03); border-left:3px solid #e74c3c; padding:12px 16px; margin-top:20px; font-size:13px; color:#aaa; line-height:1.6; max-width:500px; margin-left:auto; margin-right:auto; transition:all .4s; }
-
-/* ---- HEALTHCARE BUBBLES ---- */
+/* HEALTHCARE */
 .bubble-chart { width:100%; max-width:800px; margin:0 auto; position:relative; }
 .bubble-chart svg { display:block; margin:0 auto; width:100%; }
-
-/* Desktop floating tooltip */
-.tooltip {
-  position:absolute; background:rgba(10,10,15,.95);
-  border:1px solid rgba(255,255,255,.15); border-radius:8px;
-  padding:12px 16px; font-size:12px; pointer-events:none;
-  opacity:0; transition:opacity .2s; z-index:10;
-  min-width:180px; backdrop-filter:blur(8px);
-}
-/* Mobile info panel — shown below the chart on tap */
-.bubble-info {
-  display:none; margin-top:12px;
-  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
-  border-radius:10px; padding:14px 16px;
-}
+.tooltip { position:absolute; background:rgba(10,10,15,.95); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:12px 16px; font-size:12px; pointer-events:none; opacity:0; transition:opacity .2s; z-index:10; min-width:180px; }
+.bubble-info { display:none; margin-top:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:14px 16px; }
 .bubble-info.visible { display:block; }
 .tt-country { font-size:15px; font-weight:600; margin-bottom:8px; }
 .tt-row { display:flex; justify-content:space-between; gap:16px; margin:4px 0; color:#aaa; font-size:12px; }
-.tt-val { color:#e0e0e0; font-weight:500; font-variant-numeric:tabular-nums; }
+.tt-val { color:#e0e0e0; font-weight:500; }
 .tap-hint { font-size:11px; color:#555; text-align:center; margin-top:8px; }
-
-/* Icon Arrays */
+/* ICONS */
 .icon-section { text-align:center; }
 .stat-row { margin-bottom:32px; }
 .stat-label { font-size:14px; color:#ccc; margin-bottom:8px; }
@@ -94,11 +69,9 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 .person-icon.visible { opacity:1; transform:scale(1); }
 .person-icon .head { width:6px; height:6px; border-radius:50%; position:absolute; top:0; left:3px; }
 .person-icon .body { width:10px; height:12px; border-radius:3px 3px 1px 1px; position:absolute; bottom:0; left:1px; }
-
-/* Incarceration */
+/* BARS */
 .cost-compare { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
-.cost-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px 28px; text-align:center; min-width:160px; flex:1; max-width:280px; transition:transform .3s, border-color .3s; }
-.cost-card:hover { transform:translateY(-4px); border-color:rgba(255,255,255,.15); }
+.cost-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px 28px; text-align:center; min-width:160px; flex:1; max-width:280px; }
 .cost-card .amount { font-size:36px; font-weight:200; margin:8px 0; }
 .cost-card .label { font-size:12px; color:#888; letter-spacing:.5px; }
 .cost-card.prison .amount { color:#e74c3c; }
@@ -108,54 +81,16 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 .bar-row { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
 .bar-label { width:120px; font-size:12px; color:#aaa; text-align:right; flex-shrink:0; }
 .bar { height:28px; border-radius:4px; transition:width 1.2s cubic-bezier(.22,1,.36,1); display:flex; align-items:center; padding-left:10px; font-size:11px; color:#fff; font-weight:500; min-width:4px; }
-
-/* ---- SECTION EYEBROW ---- */
-.section-eyebrow { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#4ecdc4; margin-bottom:10px; }
-
-/* ---- PLANNING HORIZON ---- */
-.ph-wrap { margin-top:8px; }
-.ph-bar-container { position:relative; overflow-x:auto; padding-bottom:32px; -webkit-overflow-scrolling:touch; }
-.ph-axis { display:flex; justify-content:space-between; font-size:10px; color:#555; letter-spacing:.5px; padding:0 0 8px; min-width:520px; }
-.ph-track { display:flex; gap:3px; height:18px; border-radius:4px; overflow:hidden; min-width:520px; }
-.ph-segment { height:100%; border-radius:2px; transition:width 1.2s cubic-bezier(.22,1,.36,1); width:0; }
-.ph-haudenosaunee { background:#4ecdc4; flex:1000; }
-.ph-industrial     { background:#c8943a; flex:250; }
-.ph-ai             { background:#ff6b35; flex:15; }
-.ph-sevgen         { background:rgba(192,132,252,.7); flex:175; }
-
-.ph-marker { position:absolute; bottom:2px; display:flex; flex-direction:column; align-items:center; transition:left 1.2s cubic-bezier(.22,1,.36,1); }
-.ph-marker-line { width:2px; height:28px; background:#ff6b35; box-shadow:0 0 8px #ff6b35; }
-.ph-marker-label { font-size:10px; font-weight:700; letter-spacing:1px; color:#ff6b35; margin-top:2px; }
-
-.ph-scroll-hint { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#555; text-align:center; margin:10px 0 16px; }
-.ph-legend { display:flex; flex-direction:column; gap:6px; margin-top:4px; }
-.ph-legend-item { display:flex; align-items:center; gap:8px; font-size:13px; color:#aaa; }
-.ph-swatch { display:inline-block; width:12px; height:12px; border-radius:2px; flex-shrink:0; }
-.ph-c-haudenosaunee { background:#4ecdc4; }
-.ph-c-industrial    { background:#c8943a; }
-.ph-c-ai            { background:#ff6b35; }
-.ph-c-sevgen        { background:rgba(192,132,252,.7); }
-
-@media (max-width:480px) {
-  .ph-scroll-hint { display:block; }
-}
-
 footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; letter-spacing:.5px; }
-
-/* ---- MOBILE RESPONSIVE ---- */
 @media (max-width:480px) {
   .section { padding:40px 16px; }
   h2 { font-size:20px; }
   .ratio-display { font-size:48px !important; }
-  .slider-labels span:nth-child(2),
-  .slider-labels span:nth-child(4),
-  .slider-labels span:nth-child(6) { display:none; } /* thin out labels on SE */
+  .ph-scroll-hint { display:block; }
   .bar-label { width:80px; font-size:11px; }
   .bar { font-size:10px; padding-left:6px; }
   .cost-card { padding:14px 16px; min-width:130px; }
   .cost-card .amount { font-size:28px; }
-  .bubble-chart svg { height:auto; }
-  /* Swap tooltip for inline panel on touch */
   .tooltip { display:none !important; }
   .bubble-info { display:none; }
   .bubble-info.visible { display:block; }
@@ -164,27 +99,26 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
 </head>
 <body>
 
-<!-- Section 01: Planning Horizon -->
+<!-- 01: PLANNING HORIZON -->
 <div class="section" id="s-planning-horizon">
   <p class="section-eyebrow">01 — SCALE</p>
   <h2>How short is our planning horizon?</h2>
-  <p class="subtitle">Before examining any specific decision, it helps to see the time scales clearly.<br>The industrial era, the AI era, and our typical planning window — all on the same bar.</p>
-
+  <p class="subtitle">Before examining any specific decision, it helps to see the time scales clearly. The industrial era, the AI era, and our typical planning window — all on the same bar.</p>
   <div class="ph-wrap">
     <div class="ph-bar-container">
       <div class="ph-axis" id="phAxis"></div>
       <div class="ph-track">
-        <div class="ph-segment ph-haudenosaunee" id="phSeg0"></div>
-        <div class="ph-segment ph-industrial"   id="phSeg1"></div>
-        <div class="ph-segment ph-ai"            id="phSeg2"></div>
-        <div class="ph-segment ph-sevgen"        id="phSeg3"></div>
+        <div class="ph-segment ph-haudenosaunee"></div>
+        <div class="ph-segment ph-industrial"></div>
+        <div class="ph-segment ph-ai"></div>
+        <div class="ph-segment ph-sevgen"></div>
       </div>
-      <div class="ph-marker" id="phMarker">
+      <div class="ph-marker">
         <div class="ph-marker-line"></div>
         <span class="ph-marker-label">2026</span>
       </div>
     </div>
-    <div class="ph-scroll-hint">SCROLL →</div>
+    <div class="ph-scroll-hint">SCROLL &rarr;</div>
     <div class="ph-legend">
       <div class="ph-legend-item"><span class="ph-swatch ph-c-haudenosaunee"></span>Haudenosaunee Confederacy (~1,000 yrs)</div>
       <div class="ph-legend-item"><span class="ph-swatch ph-c-industrial"></span>Industrial era (~250 yrs)</div>
@@ -192,15 +126,14 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
       <div class="ph-legend-item"><span class="ph-swatch ph-c-sevgen"></span>7-generation horizon (175 yrs)</div>
     </div>
   </div>
-
   <div class="context-callout" style="max-width:680px; border-left-color:#ff6b35; margin-top:28px;">
-    The civilization that gave us this principle has been applying it for a <strong style="color:#e0e0e0">thousand years</strong>. Our current political cycle is <strong style="color:#e0e0e0">four years</strong>. The consequences of decisions made in the AI era will play out across a window <strong style="color:#ff6b35">44 times longer</strong> than the planning horizon we're using.
-    <span style="display:block; margin-top:10px; font-size:11px; color:#666;"><a href="/visualizations/seven-generations/" target="_top" style="color:#4ecdc4;">Explore the full Seven Generations framework →</a></span>
+    The civilization that gave us this principle has been applying it for a <strong style="color:#e0e0e0">thousand years</strong>. Our current political cycle is <strong style="color:#e0e0e0">four years</strong>. The consequences of decisions made in the AI era will play out across a window <strong style="color:#ff6b35">44 times longer</strong> than the planning horizon we are using.
+    <span style="display:block; margin-top:10px; font-size:11px; color:#666;"><a href="/visualizations/seven-generations/" target="_top" style="color:#4ecdc4;">Explore the full Seven Generations framework &rarr;</a></span>
   </div>
-  <p class="source">Sources: Haudenosaunee Confederacy est. ~1,000 CE (Fenton 1998); Industrial Revolution ~1760–present; ChatGPT public launch Nov 2022; 7th generation principle per Haudenosaunee oral tradition.</p>
+  <p class="source">Sources: Haudenosaunee Confederacy est. ~1,000 CE (Fenton 1998); Industrial Revolution ~1760-present; ChatGPT public launch Nov 2022; 7th generation principle per Haudenosaunee oral tradition.</p>
 </div>
 
-<!-- Section 1: CEO Pay Ratio -->
+<!-- 02: CEO PAY -->
 <div class="section ceo-viz">
   <h2>CEO-to-Worker Pay</h2>
   <p class="subtitle">Drag the slider to see how the ratio changed since 1965</p>
@@ -218,10 +151,10 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
   <p class="source">Source: Economic Policy Institute, CEO Compensation Survey 2024</p>
 </div>
 
-<!-- Section 2: Healthcare -->
+<!-- 03: HEALTHCARE -->
 <div class="section">
   <h2>Healthcare: Spending More, Getting Less</h2>
-  <p class="subtitle" id="healthSubtitle">Tap or hover any country to compare · Bubble size = population</p>
+  <p class="subtitle">Tap or hover any country to compare &middot; Bubble size = population</p>
   <div class="bubble-chart" id="healthBubbles">
     <div class="tooltip" id="tooltip"></div>
   </div>
@@ -230,7 +163,7 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
   <p class="source">Source: OECD Health Statistics 2024, World Bank</p>
 </div>
 
-<!-- Section 3: Who Falls Through -->
+<!-- 04: WHO FALLS THROUGH -->
 <div class="section icon-section">
   <h2>Who Falls Through the Cracks</h2>
   <p class="subtitle">Each icon represents real people in the current system</p>
@@ -238,20 +171,20 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
     <div class="stat-label">Americans without health insurance</div>
     <div class="stat-value" style="color:#e74c3c">27.6 million</div>
     <div class="icon-grid" id="uninsuredGrid"></div>
-    <p class="source" style="margin-top:8px">Each icon ≈ 276,000 people · Source: Census Bureau 2024</p>
+    <p class="source" style="margin-top:8px">Each icon = 276,000 people &middot; Source: Census Bureau 2024</p>
   </div>
   <div class="stat-row" style="margin-top:40px">
     <div class="stat-label">Children in food-insecure households</div>
     <div class="stat-value" style="color:#f39c12">13.2 million</div>
     <div class="icon-grid" id="foodGrid"></div>
-    <p class="source" style="margin-top:8px">Each icon ≈ 132,000 children · Source: USDA Food Security Report 2024</p>
+    <p class="source" style="margin-top:8px">Each icon = 132,000 children &middot; Source: USDA Food Security Report 2024</p>
   </div>
 </div>
 
-<!-- Section 4: Incarceration vs Investment -->
+<!-- 05: WHAT WE CHOOSE TO FUND -->
 <div class="section">
   <h2>What We Choose to Fund</h2>
-  <p class="subtitle">Annual cost per person — incarceration vs. alternatives</p>
+  <p class="subtitle">Annual cost per person</p>
   <div class="cost-compare">
     <div class="cost-card prison">
       <div class="label">INCARCERATION</div>
@@ -277,48 +210,47 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
   <p class="source">Sources: Vera Institute of Justice 2024; NCES 2024; UBI calculation at $1,000/month</p>
 </div>
 
-<footer>Æ · Humanity and AI LLC · Universal Basic Citizenship Framework</footer>
+<footer>Ae &middot; Humanity and AI LLC &middot; Universal Basic Citizenship Framework</footer>
+
 
 <script>
-// ===== CEO PAY =====
-const ceoData = [
+// CEO PAY
+var ceoData = [
   {year:1965,ratio:21,context:"In 1965, a CEO earned about 21 times what their average worker made."},
-  {year:1978,ratio:35,context:"By 1978, the gap had grown modestly — CEOs made 35× their workers."},
+  {year:1978,ratio:35,context:"By 1978, the gap had grown modestly -- CEOs made 35x their workers."},
   {year:1989,ratio:71,context:"The 1980s leveraged buyout era tripled the ratio to 71:1."},
   {year:1995,ratio:123,context:"Stock option compensation pushed the ratio past 100:1 by 1995."},
   {year:2000,ratio:366,context:"At the dot-com peak: 366:1. One CEO year = 366 worker years."},
-  {year:2010,ratio:243,context:"Post-crisis it fell — but only to 243:1. Still 12× the 1965 ratio."},
+  {year:2010,ratio:243,context:"Post-crisis it fell -- but only to 243:1. Still 12x the 1965 ratio."},
   {year:2020,ratio:351,context:"COVID year: essential workers risked their lives. The ratio hit 351:1."},
   {year:2023,ratio:290,context:"2023: slightly down, still 290:1. A CEO makes in one day what a worker makes in 10 months."}
 ];
-
-const slider = document.getElementById('yearSlider');
-const ratioNum = document.getElementById('ratioNum');
-const ratioYear = document.getElementById('ratioYear');
-const workerGrid = document.getElementById('workerGrid');
-const ceoContext = document.getElementById('ceoContext');
-
+var slider = document.getElementById('yearSlider');
+var ratioNum = document.getElementById('ratioNum');
+var ratioYear = document.getElementById('ratioYear');
+var workerGrid = document.getElementById('workerGrid');
+var ceoContext = document.getElementById('ceoContext');
 function updateCEO(idx) {
-  const d = ceoData[idx];
+  var d = ceoData[idx];
   ratioNum.textContent = d.ratio + ':1';
   ratioYear.textContent = d.year;
   ratioNum.style.fontSize = Math.min(72, 36 + d.ratio/7) + 'px';
   ratioNum.style.color = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
   ceoContext.textContent = d.context;
   ceoContext.style.borderLeftColor = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
-  const count = Math.min(d.ratio, 400);
-  let html = '<div class="worker-icon" style="background:#fbbf24;width:12px;height:12px;box-shadow:0 0 10px rgba(251,191,36,.6)"></div>';
-  for (let i = 0; i < count; i++) html += '<div class="worker-icon" style="background:rgba(255,255,255,.12)"></div>';
+  var count = Math.min(d.ratio, 400);
+  var html = '<div class="worker-icon" style="background:#fbbf24;width:12px;height:12px;box-shadow:0 0 10px rgba(251,191,36,.6)"></div>';
+  for (var i = 0; i < count; i++) html += '<div class="worker-icon" style="background:rgba(255,255,255,.12)"></div>';
   workerGrid.innerHTML = html;
 }
-
-slider.addEventListener('input', e => updateCEO(+e.target.value));
+slider.addEventListener('input', function(e) { updateCEO(+e.target.value); });
 updateCEO(0);
 </script>
 
+
 <script>
-// ===== HEALTHCARE BUBBLES =====
-const healthData = [
+// HEALTHCARE BUBBLES
+var healthData = [
   {country:'United States',abbr:'US',spend:12555,life:77.5,pop:331,color:'#e74c3c',uninsured:'27.6M',rank:'#46 globally'},
   {country:'United Kingdom',abbr:'UK',spend:5138,life:80.7,pop:67,color:'#2980b9',uninsured:'~0 (NHS)',rank:'#29'},
   {country:'Germany',abbr:'DE',spend:7383,life:80.6,pop:83,color:'#27ae60',uninsured:'<0.1%',rank:'#31'},
@@ -328,201 +260,122 @@ const healthData = [
   {country:'France',abbr:'FR',spend:5468,life:82.5,pop:67,color:'#e67e22',uninsured:'<0.1%',rank:'#12'},
   {country:'South Korea',abbr:'KR',spend:3914,life:83.7,pop:52,color:'#3498db',uninsured:'~0 (NHI)',rank:'#3'}
 ];
-
-const isTouch = window.matchMedia('(hover:none)').matches;
-const bw=800, bh=460, bm={top:40,right:40,bottom:55,left:75};
-const bsvg = d3.select('#healthBubbles').append('svg').attr('viewBox',`0 0 ${bw} ${bh}`);
-const tooltip = document.getElementById('tooltip');
-const bubbleInfo = document.getElementById('bubbleInfo');
-const tapHint = document.getElementById('tapHint');
-const chartEl = document.getElementById('healthBubbles');
-
-const xScale = d3.scaleLinear().domain([3000,13500]).range([bm.left,bw-bm.right]);
-const yScale = d3.scaleLinear().domain([76,86]).range([bh-bm.bottom,bm.top]);
-const rScale = d3.scaleSqrt().domain([20,340]).range([14,52]);
-
-// Grid
-for (let v=4000; v<=12000; v+=2000) {
-  bsvg.append('line').attr('x1',xScale(v)).attr('x2',xScale(v)).attr('y1',bm.top).attr('y2',bh-bm.bottom)
-    .attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
+var isTouch = window.matchMedia('(hover:none)').matches;
+var bw=800, bh=460, bm={top:40,right:40,bottom:55,left:75};
+var bsvg = d3.select('#healthBubbles').append('svg').attr('viewBox','0 0 ' + bw + ' ' + bh);
+var tooltip = document.getElementById('tooltip');
+var bubbleInfo = document.getElementById('bubbleInfo');
+var tapHint = document.getElementById('tapHint');
+var chartEl = document.getElementById('healthBubbles');
+var xScale = d3.scaleLinear().domain([3000,13500]).range([bm.left,bw-bm.right]);
+var yScale = d3.scaleLinear().domain([76,86]).range([bh-bm.bottom,bm.top]);
+var rScale = d3.scaleSqrt().domain([20,340]).range([14,52]);
+for (var gv=4000; gv<=12000; gv+=2000) {
+  bsvg.append('line').attr('x1',xScale(gv)).attr('x2',xScale(gv)).attr('y1',bm.top).attr('y2',bh-bm.bottom).attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
 }
-for (let v=78; v<=84; v+=2) {
-  bsvg.append('line').attr('x1',bm.left).attr('x2',bw-bm.right).attr('y1',yScale(v)).attr('y2',yScale(v))
-    .attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
+for (var gl=78; gl<=84; gl+=2) {
+  bsvg.append('line').attr('x1',bm.left).attr('x2',bw-bm.right).attr('y1',yScale(gl)).attr('y2',yScale(gl)).attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
 }
-// Axes
-bsvg.append('g').attr('transform',`translate(0,${bh-bm.bottom})`)
-  .call(d3.axisBottom(xScale).ticks(5).tickFormat(d=>'$'+d.toLocaleString()))
-  .selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
-bsvg.append('g').attr('transform',`translate(${bm.left},0)`)
-  .call(d3.axisLeft(yScale).ticks(5).tickFormat(d=>d+' yr'))
-  .selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
-bsvg.append('text').attr('x',bw/2).attr('y',bh-4).attr('text-anchor','middle')
-  .attr('fill','#666').attr('font-size',11).text('Per Capita Health Spending (USD)');
-bsvg.append('text').attr('transform','rotate(-90)').attr('x',-bh/2).attr('y',14)
-  .attr('text-anchor','middle').attr('fill','#666').attr('font-size',11).text('Life Expectancy');
-
-const bubbles = bsvg.selectAll('.bubble').data(healthData).join('g').attr('class','bubble')
-  .attr('transform',d=>`translate(${xScale(d.spend)},${yScale(d.life)})`)
-  .style('cursor','pointer');
-
-bubbles.append('circle')
-  .attr('r',0).attr('fill',d=>d.color).attr('opacity',.55)
-  .attr('stroke',d=>d.color).attr('stroke-width',1.5)
-  .transition().delay((d,i)=>i*120).duration(600).ease(d3.easeCubicOut)
-  .attr('r',d=>rScale(d.pop));
-
-bubbles.append('text').attr('text-anchor','middle').attr('dy','.35em')
-  .attr('fill','#fff').attr('font-size',11).attr('font-weight',600)
-  .text(d=>d.abbr).attr('pointer-events','none');
-
+bsvg.append('g').attr('transform','translate(0,'+(bh-bm.bottom)+')').call(d3.axisBottom(xScale).ticks(5).tickFormat(function(d){return '$'+d.toLocaleString();})).selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
+bsvg.append('g').attr('transform','translate('+bm.left+',0)').call(d3.axisLeft(yScale).ticks(5).tickFormat(function(d){return d+' yr';})).selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
+bsvg.append('text').attr('x',bw/2).attr('y',bh-4).attr('text-anchor','middle').attr('fill','#666').attr('font-size',11).text('Per Capita Health Spending (USD)');
+bsvg.append('text').attr('transform','rotate(-90)').attr('x',-bh/2).attr('y',14).attr('text-anchor','middle').attr('fill','#666').attr('font-size',11).text('Life Expectancy');
+var bubbles = bsvg.selectAll('.bubble').data(healthData).join('g').attr('class','bubble').attr('transform',function(d){return 'translate('+xScale(d.spend)+','+yScale(d.life)+')';}).style('cursor','pointer');
+bubbles.append('circle').attr('r',0).attr('fill',function(d){return d.color;}).attr('opacity',.55).attr('stroke',function(d){return d.color;}).attr('stroke-width',1.5).transition().delay(function(d,i){return i*120;}).duration(600).ease(d3.easeCubicOut).attr('r',function(d){return rScale(d.pop);});
+bubbles.append('text').attr('text-anchor','middle').attr('dy','.35em').attr('fill','#fff').attr('font-size',11).attr('font-weight',600).text(function(d){return d.abbr;}).attr('pointer-events','none');
 function infoHTML(d) {
-  return `<div class="tt-country" style="color:${d.color}">${d.country}</div>
-    <div class="tt-row"><span>Spending/capita</span><span class="tt-val">$${d.spend.toLocaleString()}</span></div>
-    <div class="tt-row"><span>Life expectancy</span><span class="tt-val">${d.life} years</span></div>
-    <div class="tt-row"><span>Population</span><span class="tt-val">${d.pop}M</span></div>
-    <div class="tt-row"><span>Uninsured</span><span class="tt-val">${d.uninsured}</span></div>
-    <div class="tt-row"><span>Longevity rank</span><span class="tt-val">${d.rank}</span></div>`;
+  return '<div class="tt-country" style="color:'+d.color+'">'+d.country+'</div>'+
+    '<div class="tt-row"><span>Spending/capita</span><span class="tt-val">$'+d.spend.toLocaleString()+'</span></div>'+
+    '<div class="tt-row"><span>Life expectancy</span><span class="tt-val">'+d.life+' years</span></div>'+
+    '<div class="tt-row"><span>Population</span><span class="tt-val">'+d.pop+'M</span></div>'+
+    '<div class="tt-row"><span>Uninsured</span><span class="tt-val">'+d.uninsured+'</span></div>'+
+    '<div class="tt-row"><span>Longevity rank</span><span class="tt-val">'+d.rank+'</span></div>';
 }
-
 function highlightBubble(d) {
   bubbles.select('circle').transition().duration(200).attr('opacity',.2).attr('stroke-width',1.5);
   bubbles.select('text').transition().duration(200).attr('opacity',.3);
-  bubbles.filter(o=>o===d).select('circle').transition().duration(200).attr('opacity',.9).attr('stroke-width',3);
-  bubbles.filter(o=>o===d).select('text').transition().duration(200).attr('opacity',1);
+  bubbles.filter(function(o){return o===d;}).select('circle').transition().duration(200).attr('opacity',.9).attr('stroke-width',3);
+  bubbles.filter(function(o){return o===d;}).select('text').transition().duration(200).attr('opacity',1);
 }
 function clearHighlight() {
   bubbles.select('circle').transition().duration(300).attr('opacity',.55).attr('stroke-width',1.5);
   bubbles.select('text').transition().duration(300).attr('opacity',1);
 }
-
-// Desktop hover
-bubbles.on('mouseenter', function(event, d) {
+bubbles.on('mouseenter',function(event,d){
   if (isTouch) return;
   highlightBubble(d);
-  const svgRect = chartEl.querySelector('svg').getBoundingClientRect();
-  const px = (xScale(d.spend) / bw) * svgRect.width;
-  const py = (yScale(d.life) / bh) * svgRect.height;
+  var svgRect = chartEl.querySelector('svg').getBoundingClientRect();
+  var px = (xScale(d.spend)/bw)*svgRect.width;
+  var py = (yScale(d.life)/bh)*svgRect.height;
   tooltip.innerHTML = infoHTML(d);
   tooltip.style.opacity = 1;
-  const r = (rScale(d.pop) / bw) * svgRect.width;
-  const tx = px + r + 12;
-  const ty = py - 40;
-  tooltip.style.left = (tx + 200 > svgRect.width ? px - 200 - r - 12 : tx) + 'px';
-  tooltip.style.top = Math.max(4, ty) + 'px';
-})
-.on('mouseleave', function() {
+  var r = (rScale(d.pop)/bw)*svgRect.width;
+  var tx = px+r+12;
+  tooltip.style.left = (tx+200>svgRect.width ? px-200-r-12 : tx)+'px';
+  tooltip.style.top = Math.max(4,py-40)+'px';
+}).on('mouseleave',function(){
   if (isTouch) return;
   clearHighlight();
   tooltip.style.opacity = 0;
 });
-
-// Touch / click — show inline panel
-let activeBubble = null;
-bubbles.on('click', function(event, d) {
+var activeBubble = null;
+bubbles.on('click',function(event,d){
   event.stopPropagation();
-  if (activeBubble === d) {
-    // Deselect
-    activeBubble = null;
-    clearHighlight();
-    bubbleInfo.classList.remove('visible');
-    tapHint.style.display = 'none';
-    return;
-  }
-  activeBubble = d;
-  highlightBubble(d);
-  bubbleInfo.innerHTML = infoHTML(d);
-  bubbleInfo.classList.add('visible');
-  tapHint.style.display = 'block';
+  if (activeBubble===d) { activeBubble=null; clearHighlight(); bubbleInfo.classList.remove('visible'); tapHint.style.display='none'; return; }
+  activeBubble=d; highlightBubble(d); bubbleInfo.innerHTML=infoHTML(d); bubbleInfo.classList.add('visible'); tapHint.style.display='block';
 });
-bsvg.on('click', () => {
-  activeBubble = null;
-  clearHighlight();
-  bubbleInfo.classList.remove('visible');
-  tapHint.style.display = 'none';
-  tooltip.style.opacity = 0;
-});
-
-// US callout
-bsvg.append('text').attr('x',xScale(12555)).attr('y',yScale(77.5)-rScale(331)-10)
-  .attr('text-anchor','middle').attr('fill','#e74c3c').attr('font-size',10).attr('font-weight',600)
-  .text('Spends most, lives least');
+bsvg.on('click',function(){ activeBubble=null; clearHighlight(); bubbleInfo.classList.remove('visible'); tapHint.style.display='none'; tooltip.style.opacity=0; });
+bsvg.append('text').attr('x',xScale(12555)).attr('y',yScale(77.5)-rScale(331)-10).attr('text-anchor','middle').attr('fill','#e74c3c').attr('font-size',10).attr('font-weight',600).text('Spends most, lives least');
 </script>
 
-<script>
-// ===== PLANNING HORIZON =====
-(function() {
-  // Build axis labels
-  const axisYears = [900, 1100, 1300, 1500, 1650, 1776, 2026];
-  const axis = document.getElementById('phAxis');
-  axisYears.forEach(y => {
-    const s = document.createElement('span');
-    s.textContent = y === 2026 ? '' : y + ' CE';
-    axis.appendChild(s);
-  });
-
-  // Animate bar in on scroll
-  const phObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      // Segments animate via flex (already set in CSS flex values)
-      // Just trigger the track animation by forcing reflow
-      document.querySelectorAll('.ph-segment').forEach(s => {
-        s.style.opacity = '1';
-      });
-      // Position the "2026" marker at far right of track
-      const track = document.querySelector('.ph-track');
-      const container = document.querySelector('.ph-bar-container');
-      setTimeout(() => {
-        const trackW = track.offsetWidth;
-        const marker = document.getElementById('phMarker');
-        marker.style.left = (container.offsetLeft + trackW - 1) + 'px';
-        marker.style.opacity = '1';
-      }, 400);
-      phObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.3 });
-  phObserver.observe(document.getElementById('s-planning-horizon'));
-})();
-</script>
 
 <script>
-// ===== ICON ARRAYS =====
+// PLANNING HORIZON AXIS
+var axisYears = [900, 1100, 1300, 1500, 1650, 1776];
+var axis = document.getElementById('phAxis');
+axisYears.forEach(function(y) {
+  var s = document.createElement('span');
+  s.textContent = y + ' CE';
+  axis.appendChild(s);
+});
+
+// ICON ARRAYS
 function buildIcons(containerId, count, color) {
-  const el = document.getElementById(containerId);
-  let html = '';
-  for (let i = 0; i < count; i++)
-    html += `<div class="person-icon"><div class="head" style="background:${color}"></div><div class="body" style="background:${color}"></div></div>`;
+  var el = document.getElementById(containerId);
+  var html = '';
+  for (var i = 0; i < count; i++) {
+    html += '<div class="person-icon"><div class="head" style="background:' + color + '"></div><div class="body" style="background:' + color + '"></div></div>';
+  }
   el.innerHTML = html;
 }
 buildIcons('uninsuredGrid', 100, '#e74c3c');
 buildIcons('foodGrid', 100, '#f39c12');
 
-const iconObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const icons = entry.target.querySelectorAll('.person-icon');
-      icons.forEach((icon, i) => setTimeout(() => icon.classList.add('visible'), i * 15));
-      iconObserver.unobserve(entry.target);
-    }
+var iconObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (!entry.isIntersecting) return;
+    var icons = entry.target.querySelectorAll('.person-icon');
+    icons.forEach(function(icon, i) {
+      setTimeout(function() { icon.classList.add('visible'); }, i * 15);
+    });
+    iconObserver.unobserve(entry.target);
   });
 }, { threshold: 0.2 });
-document.querySelectorAll('.icon-grid').forEach(g => iconObserver.observe(g));
+document.querySelectorAll('.icon-grid').forEach(function(g) { iconObserver.observe(g); });
 
-// ===== BARS =====
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      document.getElementById('barPrison').style.width = '100%';
-      document.getElementById('barEdu').style.width = (16080/41000*100).toFixed(1) + '%';
-      document.getElementById('barUBI').style.width = (12000/41000*100).toFixed(1) + '%';
-      barObserver.unobserve(entry.target);
-    }
+// BARS
+var barObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (!entry.isIntersecting) return;
+    document.getElementById('barPrison').style.width = '100%';
+    document.getElementById('barEdu').style.width = (16080/41000*100).toFixed(1) + '%';
+    document.getElementById('barUBI').style.width = (12000/41000*100).toFixed(1) + '%';
+    barObserver.unobserve(entry.target);
   });
 }, { threshold: 0.3 });
 barObserver.observe(document.getElementById('barSection'));
 
-// Self-size iframe
+// SELF-SIZE IFRAME
 window.addEventListener('load', function() {
   setTimeout(function() {
     if (window.frameElement) window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
