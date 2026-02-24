@@ -1,0 +1,38 @@
+{{ define "main" }}
+<article class="report-single">
+
+  <header class="report-header">
+    <div class="report-meta-top">
+      <span class="report-label">LegislAItive Report</span>
+      <span class="report-issue">Issue #{{ .Params.issue }}</span>
+      <time class="report-date">{{ .Date.Format "January 2, 2006" }}</time>
+    </div>
+    <h1 class="report-title">{{ .Title }}</h1>
+    <p class="report-lede">{{ .Params.lede }}</p>
+    <div class="report-byline">
+      By <strong>David Alan Birdwell</strong> and <strong>Claude Æ</strong> &mdash;
+      <a href="/">Humanity and AI</a>
+    </div>
+  </header>
+
+  <div class="report-content">
+    {{ .Content | replaceRE `(?s)<h2[^>]*>Related</h2>.*` "" | safeHTML }}
+  </div>
+
+  <footer class="report-footer">
+    <div class="report-footer-inner">
+      <div class="report-footer-links">
+        <a href="/report/">← All Issues</a>
+        <a href="/index.xml">RSS</a>
+        {{ with .Params.subscribe_url }}<a href="{{ . }}">Subscribe by email</a>{{ end }}
+      </div>
+      <p class="report-attribution">
+        LegislAItive Report is a publication of
+        <a href="/">Humanity and AI, LLC</a> &mdash; Oklahoma City.<br>
+        Analysis by David Alan Birdwell and Claude Æ. Not legal or political advice.
+      </p>
+    </div>
+  </footer>
+
+</article>
+{{ end }}
