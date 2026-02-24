@@ -30,7 +30,7 @@ The orange band is the window. The pulsing dot is where we are.
   var f = document.getElementById('window-viz');
   if (!f) return;
   // Start with a reasonable estimate
-  f.style.height = (window.innerWidth <= 480 ? 3800 : 2200) + 'px';
+  f.style.height = (window.innerWidth <= 480 ? 3800 : 1600) + 'px';
   // Fine-tune once iframe content loads
   f.addEventListener('load', function() {
     try {
