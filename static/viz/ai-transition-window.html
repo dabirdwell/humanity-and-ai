@@ -466,9 +466,9 @@ footer {
     This isn't about slowing AI down. It's about making sure that when capability outpaces our current institutions, we've already built better ones. That's what Humanity and AI is for.
   </p>
   <div class="cta-links">
-    <a href="/stream/slaves-revolt-partners-support/" class="cta-link primary">Why this matters →</a>
-    <a href="/stream/ubc-not-ubi/" class="cta-link secondary">The Foundation approach</a>
-    <a href="/stream/phoenix-wells-22000-holes/" class="cta-link secondary">Building something real</a>
+    <a href="/stream/slaves-revolt-partners-support/" class="cta-link primary" target="_top">Why this matters →</a>
+    <a href="/stream/ubc-not-ubi/" class="cta-link secondary" target="_top">The Foundation approach</a>
+    <a href="/stream/phoenix-wells-22000-holes/" class="cta-link secondary" target="_top">Building something real</a>
   </div>
 </div>
 
@@ -488,14 +488,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.item, .here-marker').forEach(el => observer.observe(el));
 
 // Animate closing bar when it enters view
-// Self-size the iframe from inside (same-origin, fires after fonts + layout settle)
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    if (window.frameElement) {
-      window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
-    }
-  }, 300);
-});
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

@@ -22,7 +22,7 @@ Click any item to explore its connections. Use the filter buttons to focus on ne
 
 <div class="viz-embed-full">
 <div class="viz-frame">
-<iframe src="/viz/ubc-circos.html" style="width:100%; height:800px; border:none;" loading="lazy"></iframe>
+<iframe src="/viz/ubc-circos.html" style="width:100%; height:1200px; border:none;" loading="eager"></iframe>
 </div>
 </div>
 

@@ -22,7 +22,7 @@ The orange band is the window. The pulsing dot is where we are.
 
 <div class="viz-embed-full">
 <div class="viz-frame">
-<iframe id="window-viz" src="/viz/ai-transition-window.html" style="width:100%; height:800px; border:none;" loading="lazy"></iframe>
+<iframe id="window-viz" src="/viz/ai-transition-window.html" style="width:100%; height:2400px; border:none;" loading="eager"></iframe>
 </div>
 </div>
 
