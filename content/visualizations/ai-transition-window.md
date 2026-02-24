@@ -22,24 +22,9 @@ The orange band is the window. The pulsing dot is where we are.
 
 <div class="viz-embed-full">
 <div class="viz-frame">
-<iframe id="window-viz" src="/viz/ai-transition-window.html" style="width:100%; height:2200px; border:none;" loading="lazy"></iframe>
+<iframe id="window-viz" src="/viz/ai-transition-window.html" style="width:100%; height:800px; border:none;" loading="lazy"></iframe>
 </div>
 </div>
-<script>
-(function() {
-  var f = document.getElementById('window-viz');
-  if (!f) return;
-  // Start with a reasonable estimate
-  f.style.height = (window.innerWidth <= 480 ? 3800 : 1600) + 'px';
-  // Fine-tune once iframe content loads
-  f.addEventListener('load', function() {
-    try {
-      var h = f.contentDocument.documentElement.scrollHeight;
-      if (h > 800) f.style.height = (h + 40) + 'px';
-    } catch(e) {} // cross-origin guard
-  });
-})();
-</script>
 
 ## What the Window Actually Means
 

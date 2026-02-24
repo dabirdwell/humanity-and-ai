@@ -488,6 +488,14 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.item, .here-marker').forEach(el => observer.observe(el));
 
 // Animate closing bar when it enters view
+// Self-size the iframe from inside (same-origin, fires after fonts + layout settle)
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    if (window.frameElement) {
+      window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
+    }
+  }, 300);
+});
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
