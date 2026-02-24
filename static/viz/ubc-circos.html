@@ -245,6 +245,13 @@ document.querySelectorAll(".controls button").forEach(btn=>{
     btn.classList.add("active");viewMode=btn.dataset.mode;activeId=null;render();});});
 
 render();
+
+// Self-size iframe
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    if (window.frameElement) window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
+  }, 300);
+});
 </script>
 </body>
 </html>

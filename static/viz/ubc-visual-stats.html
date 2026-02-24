@@ -417,6 +417,13 @@ const barObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 barObserver.observe(document.getElementById('barSection'));
+
+// Self-size iframe
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    if (window.frameElement) window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
+  }, 300);
+});
 </script>
 </body>
 </html>

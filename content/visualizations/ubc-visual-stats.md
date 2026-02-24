@@ -16,7 +16,7 @@ Scroll through. Interact with the charts. Then decide whether the current system
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
-<iframe src="/viz/ubc-visual-stats.html" style="width:100%; height:2000px; border:none;" loading="lazy" allow="scripts"></iframe>
+<iframe src="/viz/ubc-visual-stats.html" style="width:100%; height:800px; border:none;" loading="lazy" allow="scripts"></iframe>
 </div>
 </div>
 
