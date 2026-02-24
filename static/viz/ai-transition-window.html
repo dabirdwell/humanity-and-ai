@@ -290,7 +290,11 @@ footer {
 
 /* Mobile */
 @media (max-width: 480px) {
-  .hero { min-height: unset; padding: 48px 24px 36px; }
+  .hero {
+    min-height: unset;
+    padding: 48px 24px 36px;
+    justify-content: flex-start;
+  }
   .timeline-section::before { left: 36px; }
   .item-dot-col { width: 36px; }
   .era-label, .closing-bar { margin-left: 60px; }
@@ -299,6 +303,8 @@ footer {
   .item-card { padding: 14px 16px; }
   .item-headline { font-size: 1rem; }
   .item-body { font-size: 13px; }
+  /* Disable scroll animations inside iframe on mobile — just show everything */
+  .item, .here-marker { opacity: 1 !important; transform: none !important; }
 }
 </style>
 </head>
