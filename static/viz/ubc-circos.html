@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UBC — Needs · Programs · Impacts</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { background: #0a0a0f; color: #e0e0e0; font-family: 'Inter', system-ui, -apple-system, sans-serif; padding: 12px 20px; }
   .wrap { max-width: 900px; margin: 0 auto; }
   h1 { text-align: center; font-size: 24px; font-weight: 300; letter-spacing: 2px; color: #f0f0f0; margin-bottom: 2px; }
   .sub { text-align: center; font-size: 13px; color: #888; margin-bottom: 12px; letter-spacing: 1px; }
-  .controls { display: flex; justify-content: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
-  .controls button { padding: 6px 16px; font-size: 12px; letter-spacing: .5px; border: 1px solid #444; background: transparent; color: #888; border-radius: 20px; cursor: pointer; transition: all .2s; }
+  .controls { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .controls button { padding: 10px 18px; min-height: 44px; font-size: 12px; letter-spacing: .5px; border: 1px solid #444; background: transparent; color: #888; border-radius: 22px; cursor: pointer; transition: all .2s; }
   .controls button.active { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; }
   .controls button:hover { border-color: #aaa; color: #ccc; }
   .legend { display: flex; justify-content: center; gap: 28px; margin-bottom: 2px; flex-wrap: wrap; }
@@ -33,6 +33,18 @@
   .chord { transition: opacity .25s; }
   .arc-seg { cursor: pointer; transition: stroke-width .15s; }
   .arc-label { cursor: pointer; transition: all .2s; }
+  /* Mobile: scale up SVG internals via CSS overrides on the rendered elements */
+  @media (max-width: 500px) {
+    body { padding: 8px 12px; }
+    h1 { font-size: 18px; letter-spacing: 1px; }
+    .strength-legend { display: none; }
+    /* These target the SVG elements directly — font-size is set inline by JS
+       but CSS specificity wins on font-size for text elements */
+    .arc-label { font-size: 18px !important; }
+    .arc-seg { stroke-width: 22px !important; }
+    .detail { padding: 10px 14px; }
+    .tag { padding: 6px 12px; font-size: 12px; min-height: 36px; }
+  }
 </style>
 </head>
 <body>

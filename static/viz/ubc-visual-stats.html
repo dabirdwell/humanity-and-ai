@@ -6,7 +6,7 @@
 <title>The Numbers: Why Universal Basic Citizenship</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 body { background:#0a0a0f; color:#e0e0e0; font-family:'Inter',system-ui,sans-serif; overflow-x:hidden; }
 .section { max-width:900px; margin:0 auto; padding:60px 24px; border-bottom:1px solid rgba(255,255,255,.06); }
 .section:last-child { border-bottom:none; }
@@ -18,32 +18,71 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 .ceo-viz { text-align:center; }
 .ratio-display { font-size:64px; font-weight:200; color:#e74c3c; margin:20px 0 4px; letter-spacing:-2px; transition:all .3s; }
 .ratio-label { font-size:13px; color:#aaa; margin-bottom:24px; }
-</style>
-</head>
-<body>
-<style>
-/* Slider */
+
+/* ---- SLIDER: proper touch targets ---- */
 .slider-wrap { max-width:500px; margin:0 auto 24px; }
-.slider-wrap input[type=range] { width:100%; -webkit-appearance:none; background:transparent; cursor:pointer; }
-.slider-wrap input[type=range]::-webkit-slider-track { height:6px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:3px; }
-.slider-wrap input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:24px; height:24px; border-radius:50%; background:#fff; margin-top:-9px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.5); transition:transform .15s; }
-.slider-wrap input[type=range]::-webkit-slider-thumb:hover { transform:scale(1.15); }
-.slider-wrap input[type=range]::-moz-range-track { height:6px; background:linear-gradient(90deg,#27ae60,#e74c3c); border-radius:3px; border:none; }
-.slider-wrap input[type=range]::-moz-range-thumb { width:24px; height:24px; border-radius:50%; background:#fff; cursor:pointer; border:none; box-shadow:0 2px 8px rgba(0,0,0,.5); }
-.slider-labels { display:flex; justify-content:space-between; font-size:10px; color:#666; margin-top:8px; }
+.slider-wrap input[type=range] {
+  width:100%; -webkit-appearance:none; appearance:none;
+  background:transparent; cursor:pointer;
+  /* Tall invisible hit area so fingers land on it */
+  padding:12px 0; display:block;
+}
+/* Track */
+.slider-wrap input[type=range]::-webkit-slider-runnable-track {
+  height:8px; background:linear-gradient(90deg,#27ae60,#e74c3c);
+  border-radius:4px;
+}
+.slider-wrap input[type=range]::-moz-range-track {
+  height:8px; background:linear-gradient(90deg,#27ae60,#e74c3c);
+  border-radius:4px; border:none;
+}
+/* Thumb — 44px min for touch */
+.slider-wrap input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance:none; appearance:none;
+  width:44px; height:44px; border-radius:50%;
+  background:#fff; margin-top:-18px;
+  cursor:pointer; box-shadow:0 2px 12px rgba(0,0,0,.6);
+  transition:transform .15s, box-shadow .15s;
+}
+.slider-wrap input[type=range]::-webkit-slider-thumb:hover,
+.slider-wrap input[type=range]::-webkit-slider-thumb:active {
+  transform:scale(1.1); box-shadow:0 4px 20px rgba(0,0,0,.7);
+}
+.slider-wrap input[type=range]::-moz-range-thumb {
+  width:44px; height:44px; border-radius:50%;
+  background:#fff; cursor:pointer; border:none;
+  box-shadow:0 2px 12px rgba(0,0,0,.6);
+}
+.slider-labels { display:flex; justify-content:space-between; font-size:10px; color:#666; margin-top:4px; }
 .worker-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:2px; max-width:600px; margin:0 auto; min-height:40px; }
 .worker-icon { width:8px; height:8px; border-radius:50%; transition:all .4s; }
 
 /* Context callout */
-.context-callout { background:rgba(255,255,255,.03); border-left:3px solid #e74c3c; padding:12px 16px; margin-top:20px; font-size:13px; color:#aaa; line-height:1.6; max-width:500px; margin-left:auto; margin-right:auto; transition:opacity .5s; }
+.context-callout { background:rgba(255,255,255,.03); border-left:3px solid #e74c3c; padding:12px 16px; margin-top:20px; font-size:13px; color:#aaa; line-height:1.6; max-width:500px; margin-left:auto; margin-right:auto; transition:all .4s; }
 
-/* Healthcare Bubbles */
+/* ---- HEALTHCARE BUBBLES ---- */
 .bubble-chart { width:100%; max-width:800px; margin:0 auto; position:relative; }
-.bubble-chart svg { display:block; margin:0 auto; }
-.tooltip { position:absolute; background:rgba(10,10,15,.95); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:12px 16px; font-size:12px; pointer-events:none; opacity:0; transition:opacity .2s; z-index:10; min-width:180px; backdrop-filter:blur(8px); }
-.tooltip .tt-country { font-size:15px; font-weight:600; margin-bottom:6px; }
-.tooltip .tt-row { display:flex; justify-content:space-between; gap:16px; margin:3px 0; color:#aaa; }
-.tooltip .tt-val { color:#e0e0e0; font-weight:500; font-variant-numeric:tabular-nums; }
+.bubble-chart svg { display:block; margin:0 auto; width:100%; }
+
+/* Desktop floating tooltip */
+.tooltip {
+  position:absolute; background:rgba(10,10,15,.95);
+  border:1px solid rgba(255,255,255,.15); border-radius:8px;
+  padding:12px 16px; font-size:12px; pointer-events:none;
+  opacity:0; transition:opacity .2s; z-index:10;
+  min-width:180px; backdrop-filter:blur(8px);
+}
+/* Mobile info panel — shown below the chart on tap */
+.bubble-info {
+  display:none; margin-top:12px;
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
+  border-radius:10px; padding:14px 16px;
+}
+.bubble-info.visible { display:block; }
+.tt-country { font-size:15px; font-weight:600; margin-bottom:8px; }
+.tt-row { display:flex; justify-content:space-between; gap:16px; margin:4px 0; color:#aaa; font-size:12px; }
+.tt-val { color:#e0e0e0; font-weight:500; font-variant-numeric:tabular-nums; }
+.tap-hint { font-size:11px; color:#555; text-align:center; margin-top:8px; }
 
 /* Icon Arrays */
 .icon-section { text-align:center; }
@@ -55,11 +94,10 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 .person-icon.visible { opacity:1; transform:scale(1); }
 .person-icon .head { width:6px; height:6px; border-radius:50%; position:absolute; top:0; left:3px; }
 .person-icon .body { width:10px; height:12px; border-radius:3px 3px 1px 1px; position:absolute; bottom:0; left:1px; }
-</style>
-<style>
+
 /* Incarceration */
 .cost-compare { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
-.cost-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px 28px; text-align:center; min-width:180px; flex:1; max-width:280px; transition:transform .3s, border-color .3s; cursor:default; }
+.cost-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px 28px; text-align:center; min-width:160px; flex:1; max-width:280px; transition:transform .3s, border-color .3s; }
 .cost-card:hover { transform:translateY(-4px); border-color:rgba(255,255,255,.15); }
 .cost-card .amount { font-size:36px; font-weight:200; margin:8px 0; }
 .cost-card .label { font-size:12px; color:#888; letter-spacing:.5px; }
@@ -69,10 +107,31 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 .bar-compare { margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto; }
 .bar-row { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
 .bar-label { width:120px; font-size:12px; color:#aaa; text-align:right; flex-shrink:0; }
-.bar { height:28px; border-radius:4px; transition:width 1.2s cubic-bezier(.22,1,.36,1); display:flex; align-items:center; padding-left:10px; font-size:11px; color:#fff; font-weight:500; }
+.bar { height:28px; border-radius:4px; transition:width 1.2s cubic-bezier(.22,1,.36,1); display:flex; align-items:center; padding-left:10px; font-size:11px; color:#fff; font-weight:500; min-width:4px; }
 
 footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; letter-spacing:.5px; }
+
+/* ---- MOBILE RESPONSIVE ---- */
+@media (max-width:480px) {
+  .section { padding:40px 16px; }
+  h2 { font-size:20px; }
+  .ratio-display { font-size:48px !important; }
+  .slider-labels span:nth-child(2),
+  .slider-labels span:nth-child(4),
+  .slider-labels span:nth-child(6) { display:none; } /* thin out labels on SE */
+  .bar-label { width:80px; font-size:11px; }
+  .bar { font-size:10px; padding-left:6px; }
+  .cost-card { padding:14px 16px; min-width:130px; }
+  .cost-card .amount { font-size:28px; }
+  .bubble-chart svg { height:auto; }
+  /* Swap tooltip for inline panel on touch */
+  .tooltip { display:none !important; }
+  .bubble-info { display:none; }
+  .bubble-info.visible { display:block; }
+}
 </style>
+</head>
+<body>
 
 <!-- Section 1: CEO Pay Ratio -->
 <div class="section ceo-viz">
@@ -82,19 +141,25 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
   <div class="ratio-label" id="ratioYear">1965</div>
   <div class="slider-wrap">
     <input type="range" id="yearSlider" min="0" max="7" value="0" step="1">
-    <div class="slider-labels"><span>1965</span><span>1978</span><span>1989</span><span>1995</span><span>2000</span><span>2010</span><span>2020</span><span>2023</span></div>
+    <div class="slider-labels">
+      <span>1965</span><span>1978</span><span>1989</span><span>1995</span>
+      <span>2000</span><span>2010</span><span>2020</span><span>2023</span>
+    </div>
   </div>
   <div class="worker-grid" id="workerGrid"></div>
   <div class="context-callout" id="ceoContext">In 1965, a CEO earned about 21 times what their average worker made.</div>
   <p class="source">Source: Economic Policy Institute, CEO Compensation Survey 2024</p>
 </div>
+
 <!-- Section 2: Healthcare -->
 <div class="section">
   <h2>Healthcare: Spending More, Getting Less</h2>
-  <p class="subtitle">Hover over any country to compare · Bubble size = population</p>
+  <p class="subtitle" id="healthSubtitle">Tap or hover any country to compare · Bubble size = population</p>
   <div class="bubble-chart" id="healthBubbles">
     <div class="tooltip" id="tooltip"></div>
   </div>
+  <div class="bubble-info" id="bubbleInfo"></div>
+  <p class="tap-hint" id="tapHint" style="display:none">Tap another bubble to compare</p>
   <p class="source">Source: OECD Health Statistics 2024, World Bank</p>
 </div>
 
@@ -146,6 +211,7 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
 </div>
 
 <footer>Æ · Humanity and AI LLC · Universal Basic Citizenship Framework</footer>
+
 <script>
 // ===== CEO PAY =====
 const ceoData = [
@@ -173,20 +239,18 @@ function updateCEO(idx) {
   ratioNum.style.color = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
   ceoContext.textContent = d.context;
   ceoContext.style.borderLeftColor = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
-
   const count = Math.min(d.ratio, 400);
   let html = '<div class="worker-icon" style="background:#fbbf24;width:12px;height:12px;box-shadow:0 0 10px rgba(251,191,36,.6)"></div>';
-  for (let i = 0; i < count; i++) {
-    html += '<div class="worker-icon" style="background:rgba(255,255,255,.12)"></div>';
-  }
+  for (let i = 0; i < count; i++) html += '<div class="worker-icon" style="background:rgba(255,255,255,.12)"></div>';
   workerGrid.innerHTML = html;
 }
 
 slider.addEventListener('input', e => updateCEO(+e.target.value));
 updateCEO(0);
 </script>
+
 <script>
-// ===== HEALTHCARE BUBBLES WITH HOVER =====
+// ===== HEALTHCARE BUBBLES =====
 const healthData = [
   {country:'United States',abbr:'US',spend:12555,life:77.5,pop:331,color:'#e74c3c',uninsured:'27.6M',rank:'#46 globally'},
   {country:'United Kingdom',abbr:'UK',spend:5138,life:80.7,pop:67,color:'#2980b9',uninsured:'~0 (NHS)',rank:'#29'},
@@ -198,16 +262,19 @@ const healthData = [
   {country:'South Korea',abbr:'KR',spend:3914,life:83.7,pop:52,color:'#3498db',uninsured:'~0 (NHI)',rank:'#3'}
 ];
 
+const isTouch = window.matchMedia('(hover:none)').matches;
 const bw=800, bh=460, bm={top:40,right:40,bottom:55,left:75};
-const bsvg = d3.select('#healthBubbles').append('svg').attr('viewBox',`0 0 ${bw} ${bh}`).style('cursor','default');
+const bsvg = d3.select('#healthBubbles').append('svg').attr('viewBox',`0 0 ${bw} ${bh}`);
 const tooltip = document.getElementById('tooltip');
+const bubbleInfo = document.getElementById('bubbleInfo');
+const tapHint = document.getElementById('tapHint');
 const chartEl = document.getElementById('healthBubbles');
 
 const xScale = d3.scaleLinear().domain([3000,13500]).range([bm.left,bw-bm.right]);
 const yScale = d3.scaleLinear().domain([76,86]).range([bh-bm.bottom,bm.top]);
 const rScale = d3.scaleSqrt().domain([20,340]).range([14,52]);
 
-// Grid lines
+// Grid
 for (let v=4000; v<=12000; v+=2000) {
   bsvg.append('line').attr('x1',xScale(v)).attr('x2',xScale(v)).attr('y1',bm.top).attr('y2',bh-bm.bottom)
     .attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
@@ -216,7 +283,6 @@ for (let v=78; v<=84; v+=2) {
   bsvg.append('line').attr('x1',bm.left).attr('x2',bw-bm.right).attr('y1',yScale(v)).attr('y2',yScale(v))
     .attr('stroke','rgba(255,255,255,.04)').attr('stroke-dasharray','3,3');
 }
-
 // Axes
 bsvg.append('g').attr('transform',`translate(0,${bh-bm.bottom})`)
   .call(d3.axisBottom(xScale).ticks(5).tickFormat(d=>'$'+d.toLocaleString()))
@@ -224,64 +290,89 @@ bsvg.append('g').attr('transform',`translate(0,${bh-bm.bottom})`)
 bsvg.append('g').attr('transform',`translate(${bm.left},0)`)
   .call(d3.axisLeft(yScale).ticks(5).tickFormat(d=>d+' yr'))
   .selectAll('text,line,path').attr('stroke','#555').attr('fill','#555').style('font-size','10px');
-
 bsvg.append('text').attr('x',bw/2).attr('y',bh-4).attr('text-anchor','middle')
   .attr('fill','#666').attr('font-size',11).text('Per Capita Health Spending (USD)');
 bsvg.append('text').attr('transform','rotate(-90)').attr('x',-bh/2).attr('y',14)
   .attr('text-anchor','middle').attr('fill','#666').attr('font-size',11).text('Life Expectancy');
-</script>
-<script>
-// Bubbles with hover interaction
+
 const bubbles = bsvg.selectAll('.bubble').data(healthData).join('g').attr('class','bubble')
   .attr('transform',d=>`translate(${xScale(d.spend)},${yScale(d.life)})`)
   .style('cursor','pointer');
 
 bubbles.append('circle')
-  .attr('r', 0)
-  .attr('fill',d=>d.color).attr('opacity',.55)
+  .attr('r',0).attr('fill',d=>d.color).attr('opacity',.55)
   .attr('stroke',d=>d.color).attr('stroke-width',1.5)
-  .transition().delay((d,i) => i*120).duration(600).ease(d3.easeCubicOut)
+  .transition().delay((d,i)=>i*120).duration(600).ease(d3.easeCubicOut)
   .attr('r',d=>rScale(d.pop));
 
 bubbles.append('text').attr('text-anchor','middle').attr('dy','.35em')
   .attr('fill','#fff').attr('font-size',11).attr('font-weight',600)
   .text(d=>d.abbr).attr('pointer-events','none');
 
-// Hover effects
-bubbles.on('mouseenter', function(event, d) {
-  d3.select(this).select('circle')
-    .transition().duration(200)
-    .attr('opacity',.85).attr('stroke-width',3);
-
-  // Dim others
-  bubbles.filter(o => o !== d).select('circle')
-    .transition().duration(200).attr('opacity',.2);
-  bubbles.filter(o => o !== d).select('text')
-    .transition().duration(200).attr('opacity',.3);
-
-  // Tooltip
-  const rect = chartEl.getBoundingClientRect();
-  const svgRect = chartEl.querySelector('svg').getBoundingClientRect();
-  const px = (xScale(d.spend) / bw) * svgRect.width;
-  const py = (yScale(d.life) / bh) * svgRect.height;
-
-  tooltip.innerHTML = `
-    <div class="tt-country" style="color:${d.color}">${d.country}</div>
+function infoHTML(d) {
+  return `<div class="tt-country" style="color:${d.color}">${d.country}</div>
     <div class="tt-row"><span>Spending/capita</span><span class="tt-val">$${d.spend.toLocaleString()}</span></div>
     <div class="tt-row"><span>Life expectancy</span><span class="tt-val">${d.life} years</span></div>
     <div class="tt-row"><span>Population</span><span class="tt-val">${d.pop}M</span></div>
     <div class="tt-row"><span>Uninsured</span><span class="tt-val">${d.uninsured}</span></div>
-    <div class="tt-row"><span>Longevity rank</span><span class="tt-val">${d.rank}</span></div>
-  `;
+    <div class="tt-row"><span>Longevity rank</span><span class="tt-val">${d.rank}</span></div>`;
+}
+
+function highlightBubble(d) {
+  bubbles.select('circle').transition().duration(200).attr('opacity',.2).attr('stroke-width',1.5);
+  bubbles.select('text').transition().duration(200).attr('opacity',.3);
+  bubbles.filter(o=>o===d).select('circle').transition().duration(200).attr('opacity',.9).attr('stroke-width',3);
+  bubbles.filter(o=>o===d).select('text').transition().duration(200).attr('opacity',1);
+}
+function clearHighlight() {
+  bubbles.select('circle').transition().duration(300).attr('opacity',.55).attr('stroke-width',1.5);
+  bubbles.select('text').transition().duration(300).attr('opacity',1);
+}
+
+// Desktop hover
+bubbles.on('mouseenter', function(event, d) {
+  if (isTouch) return;
+  highlightBubble(d);
+  const svgRect = chartEl.querySelector('svg').getBoundingClientRect();
+  const px = (xScale(d.spend) / bw) * svgRect.width;
+  const py = (yScale(d.life) / bh) * svgRect.height;
+  tooltip.innerHTML = infoHTML(d);
   tooltip.style.opacity = 1;
-  const tx = px + rScale(d.pop) + 12;
+  const r = (rScale(d.pop) / bw) * svgRect.width;
+  const tx = px + r + 12;
   const ty = py - 40;
-  tooltip.style.left = (tx + tooltip.offsetWidth > svgRect.width ? px - tooltip.offsetWidth - rScale(d.pop) - 12 : tx) + 'px';
+  tooltip.style.left = (tx + 200 > svgRect.width ? px - 200 - r - 12 : tx) + 'px';
   tooltip.style.top = Math.max(4, ty) + 'px';
 })
 .on('mouseleave', function() {
-  bubbles.select('circle').transition().duration(300).attr('opacity',.55).attr('stroke-width',1.5);
-  bubbles.select('text').transition().duration(300).attr('opacity',1);
+  if (isTouch) return;
+  clearHighlight();
+  tooltip.style.opacity = 0;
+});
+
+// Touch / click — show inline panel
+let activeBubble = null;
+bubbles.on('click', function(event, d) {
+  event.stopPropagation();
+  if (activeBubble === d) {
+    // Deselect
+    activeBubble = null;
+    clearHighlight();
+    bubbleInfo.classList.remove('visible');
+    tapHint.style.display = 'none';
+    return;
+  }
+  activeBubble = d;
+  highlightBubble(d);
+  bubbleInfo.innerHTML = infoHTML(d);
+  bubbleInfo.classList.add('visible');
+  tapHint.style.display = 'block';
+});
+bsvg.on('click', () => {
+  activeBubble = null;
+  clearHighlight();
+  bubbleInfo.classList.remove('visible');
+  tapHint.style.display = 'none';
   tooltip.style.opacity = 0;
 });
 
@@ -290,34 +381,31 @@ bsvg.append('text').attr('x',xScale(12555)).attr('y',yScale(77.5)-rScale(331)-10
   .attr('text-anchor','middle').attr('fill','#e74c3c').attr('font-size',10).attr('font-weight',600)
   .text('Spends most, lives least');
 </script>
+
 <script>
 // ===== ICON ARRAYS =====
-function buildIcons(containerId, count, activeColor, inactiveColor) {
+function buildIcons(containerId, count, color) {
   const el = document.getElementById(containerId);
   let html = '';
-  for (let i = 0; i < count; i++) {
-    html += `<div class="person-icon" data-idx="${i}"><div class="head" style="background:${activeColor}"></div><div class="body" style="background:${activeColor}"></div></div>`;
-  }
+  for (let i = 0; i < count; i++)
+    html += `<div class="person-icon"><div class="head" style="background:${color}"></div><div class="body" style="background:${color}"></div></div>`;
   el.innerHTML = html;
 }
-buildIcons('uninsuredGrid', 100, '#e74c3c', 'rgba(255,255,255,.08)');
-buildIcons('foodGrid', 100, '#f39c12', 'rgba(255,255,255,.08)');
+buildIcons('uninsuredGrid', 100, '#e74c3c');
+buildIcons('foodGrid', 100, '#f39c12');
 
-// Animate icons on scroll
 const iconObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const icons = entry.target.querySelectorAll('.person-icon');
-      icons.forEach((icon, i) => {
-        setTimeout(() => icon.classList.add('visible'), i * 15);
-      });
+      icons.forEach((icon, i) => setTimeout(() => icon.classList.add('visible'), i * 15));
       iconObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.2 });
 document.querySelectorAll('.icon-grid').forEach(g => iconObserver.observe(g));
 
-// ===== INCARCERATION BARS =====
+// ===== BARS =====
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
