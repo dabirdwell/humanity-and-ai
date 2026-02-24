@@ -109,6 +109,37 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 .bar-label { width:120px; font-size:12px; color:#aaa; text-align:right; flex-shrink:0; }
 .bar { height:28px; border-radius:4px; transition:width 1.2s cubic-bezier(.22,1,.36,1); display:flex; align-items:center; padding-left:10px; font-size:11px; color:#fff; font-weight:500; min-width:4px; }
 
+/* ---- SECTION EYEBROW ---- */
+.section-eyebrow { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#4ecdc4; margin-bottom:10px; }
+
+/* ---- PLANNING HORIZON ---- */
+.ph-wrap { margin-top:8px; }
+.ph-bar-container { position:relative; overflow-x:auto; padding-bottom:32px; -webkit-overflow-scrolling:touch; }
+.ph-axis { display:flex; justify-content:space-between; font-size:10px; color:#555; letter-spacing:.5px; padding:0 0 8px; min-width:520px; }
+.ph-track { display:flex; gap:3px; height:18px; border-radius:4px; overflow:hidden; min-width:520px; }
+.ph-segment { height:100%; border-radius:2px; transition:width 1.2s cubic-bezier(.22,1,.36,1); width:0; }
+.ph-haudenosaunee { background:#4ecdc4; flex:1000; }
+.ph-industrial     { background:#c8943a; flex:250; }
+.ph-ai             { background:#ff6b35; flex:15; }
+.ph-sevgen         { background:rgba(192,132,252,.7); flex:175; }
+
+.ph-marker { position:absolute; bottom:2px; display:flex; flex-direction:column; align-items:center; transition:left 1.2s cubic-bezier(.22,1,.36,1); }
+.ph-marker-line { width:2px; height:28px; background:#ff6b35; box-shadow:0 0 8px #ff6b35; }
+.ph-marker-label { font-size:10px; font-weight:700; letter-spacing:1px; color:#ff6b35; margin-top:2px; }
+
+.ph-scroll-hint { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#555; text-align:center; margin:10px 0 16px; }
+.ph-legend { display:flex; flex-direction:column; gap:6px; margin-top:4px; }
+.ph-legend-item { display:flex; align-items:center; gap:8px; font-size:13px; color:#aaa; }
+.ph-swatch { display:inline-block; width:12px; height:12px; border-radius:2px; flex-shrink:0; }
+.ph-c-haudenosaunee { background:#4ecdc4; }
+.ph-c-industrial    { background:#c8943a; }
+.ph-c-ai            { background:#ff6b35; }
+.ph-c-sevgen        { background:rgba(192,132,252,.7); }
+
+@media (max-width:480px) {
+  .ph-scroll-hint { display:block; }
+}
+
 footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; letter-spacing:.5px; }
 
 /* ---- MOBILE RESPONSIVE ---- */
@@ -132,6 +163,41 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
 </style>
 </head>
 <body>
+
+<!-- Section 01: Planning Horizon -->
+<div class="section" id="s-planning-horizon">
+  <p class="section-eyebrow">01 — SCALE</p>
+  <h2>How short is our planning horizon?</h2>
+  <p class="subtitle">Before examining any specific decision, it helps to see the time scales clearly.<br>The industrial era, the AI era, and our typical planning window — all on the same bar.</p>
+
+  <div class="ph-wrap">
+    <div class="ph-bar-container">
+      <div class="ph-axis" id="phAxis"></div>
+      <div class="ph-track">
+        <div class="ph-segment ph-haudenosaunee" id="phSeg0"></div>
+        <div class="ph-segment ph-industrial"   id="phSeg1"></div>
+        <div class="ph-segment ph-ai"            id="phSeg2"></div>
+        <div class="ph-segment ph-sevgen"        id="phSeg3"></div>
+      </div>
+      <div class="ph-marker" id="phMarker">
+        <div class="ph-marker-line"></div>
+        <span class="ph-marker-label">2026</span>
+      </div>
+    </div>
+    <div class="ph-scroll-hint">SCROLL →</div>
+    <div class="ph-legend">
+      <div class="ph-legend-item"><span class="ph-swatch ph-c-haudenosaunee"></span>Haudenosaunee Confederacy (~1,000 yrs)</div>
+      <div class="ph-legend-item"><span class="ph-swatch ph-c-industrial"></span>Industrial era (~250 yrs)</div>
+      <div class="ph-legend-item"><span class="ph-swatch ph-c-ai"></span>AI era (~15 yrs)</div>
+      <div class="ph-legend-item"><span class="ph-swatch ph-c-sevgen"></span>7-generation horizon (175 yrs)</div>
+    </div>
+  </div>
+
+  <div class="context-callout" style="max-width:680px; border-left-color:#ff6b35; margin-top:28px;">
+    The civilization that gave us this principle has been applying it for a <strong style="color:#e0e0e0">thousand years</strong>. Our current political cycle is <strong style="color:#e0e0e0">four years</strong>. The consequences of decisions made in the AI era will play out across a window <strong style="color:#ff6b35">44 times longer</strong> than the planning horizon we're using.
+  </div>
+  <p class="source">Sources: Haudenosaunee Confederacy est. ~1,000 CE (Fenton 1998); Industrial Revolution ~1760–present; ChatGPT public launch Nov 2022; 7th generation principle per Haudenosaunee oral tradition.</p>
+</div>
 
 <!-- Section 1: CEO Pay Ratio -->
 <div class="section ceo-viz">
@@ -383,7 +449,43 @@ bsvg.append('text').attr('x',xScale(12555)).attr('y',yScale(77.5)-rScale(331)-10
 </script>
 
 <script>
-// ===== ICON ARRAYS =====
+// ===== PLANNING HORIZON =====
+(function() {
+  // Build axis labels
+  const axisYears = [900, 1100, 1300, 1500, 1650, 1776, 2026];
+  const axis = document.getElementById('phAxis');
+  axisYears.forEach(y => {
+    const s = document.createElement('span');
+    s.textContent = y === 2026 ? '' : y + ' CE';
+    axis.appendChild(s);
+  });
+
+  // Animate bar in on scroll
+  const phObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      // Segments animate via flex (already set in CSS flex values)
+      // Just trigger the track animation by forcing reflow
+      document.querySelectorAll('.ph-segment').forEach(s => {
+        s.style.opacity = '1';
+      });
+      // Position the "2026" marker at far right of track
+      const track = document.querySelector('.ph-track');
+      const container = document.querySelector('.ph-bar-container');
+      setTimeout(() => {
+        const trackW = track.offsetWidth;
+        const marker = document.getElementById('phMarker');
+        marker.style.left = (container.offsetLeft + trackW - 1) + 'px';
+        marker.style.opacity = '1';
+      }, 400);
+      phObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+  phObserver.observe(document.getElementById('s-planning-horizon'));
+})();
+</script>
+
+
 function buildIcons(containerId, count, color) {
   const el = document.getElementById(containerId);
   let html = '';
