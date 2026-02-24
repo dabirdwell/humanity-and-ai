@@ -10,408 +10,313 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
 :root {
-  --bg: #0a0a0f;
-  --bg2: #12121a;
-  --bg3: #16161f;
-  --text: #e8e8ed;
-  --muted: #9898a8;
-  --dim: #58586a;
-  --orange: #ff6b35;
-  --teal: #4ecdc4;
-  --gold: #fbbf24;
-  --purple: #c084fc;
-  --red: #ef4444;
+  --bg: #0a0a0f; --bg2: #12121a; --bg3: #16161f;
+  --text: #e8e8ed; --muted: #9898a8; --dim: #58586a;
+  --orange: #ff6b35; --teal: #4ecdc4; --gold: #fbbf24;
+  --purple: #c084fc; --red: #ef4444; --blue: #5dade2;
   --border: rgba(255,255,255,0.07);
-  --window-glow: rgba(255, 107, 53, 0.12);
+  --window-glow: rgba(255,107,53,0.12);
 }
 
 html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
 
-/* ═══ HERO ═══ */
-.hero {
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: center;
-  text-align: center;
-  padding: 70px 24px 60px;
-  position: relative;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,107,53,.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-eyebrow {
-  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--orange); margin-bottom: 20px; font-weight: 500;
-}
-.hero h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2rem, 8vw, 4rem);
-  font-weight: 700; line-height: 1.1;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, #fff 0%, var(--orange) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-sub {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  color: var(--muted); max-width: 580px;
-  margin-bottom: 40px; line-height: 1.7;
-}
-.hero-scroll {
-  display: flex; flex-direction: column; align-items: center;
-  gap: 8px; color: var(--dim); font-size: 12px; letter-spacing: 1px;
-  animation: bobble 2s ease-in-out infinite;
-}
+/* HERO */
+.hero { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 70px 24px 60px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,107,53,.08) 0%, transparent 70%); pointer-events: none; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; font-weight: 500; }
+.hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 8vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(135deg, #fff 0%, var(--orange) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: clamp(1rem, 3vw, 1.2rem); color: var(--muted); max-width: 580px; margin-bottom: 40px; line-height: 1.7; }
+.hero-scroll { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--dim); font-size: 12px; letter-spacing: 1px; animation: bobble 2s ease-in-out infinite; }
 .hero-scroll svg { width: 20px; height: 20px; }
-@keyframes bobble {
-  0%, 100% { transform: translateY(0); opacity: .7; }
-  50% { transform: translateY(6px); opacity: 1; }
-}
+@keyframes bobble { 0%, 100% { transform: translateY(0); opacity: .7; } 50% { transform: translateY(6px); opacity: 1; } }
 
-/* ═══ TIMELINE WRAPPER ═══ */
-.timeline-section {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 40px 24px 80px;
-  position: relative;
-}
+/* FILTER BAR */
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; max-width: 760px; margin: 0 auto 16px; padding: 0 24px; align-items: center; }
+.filter-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); margin-right: 4px; }
+.filter-btn { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--dim); cursor: pointer; transition: all .2s; font-family: 'Inter', sans-serif; }
+.filter-btn:hover { border-color: rgba(255,255,255,.2); color: var(--text); }
+.filter-btn.active { border-color: rgba(255,255,255,.25); color: var(--text); background: rgba(255,255,255,.05); }
+.filter-btn[data-tag="capability"].active { border-color: var(--teal); color: var(--teal); background: rgba(78,205,196,.1); }
+.filter-btn[data-tag="labor"].active { border-color: var(--gold); color: var(--gold); background: rgba(251,191,36,.08); }
+.filter-btn[data-tag="governance"].active { border-color: var(--blue); color: var(--blue); background: rgba(93,173,226,.1); }
+.filter-btn[data-tag="risk"].active { border-color: var(--red); color: var(--red); background: rgba(239,68,68,.1); }
+.item.filtered-out { display: none; }
 
-/* Vertical line */
-.timeline-section::before {
-  content: '';
-  position: absolute;
-  left: 50px;
-  top: 0; bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom,
-    transparent 0%,
-    var(--border) 5%,
-    var(--border) 95%,
-    transparent 100%);
-}
+/* TAG CHIPS */
+.item-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
+.tag-chip { font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
+.tag-chip.capability { background: rgba(78,205,196,.12); color: var(--teal); }
+.tag-chip.labor { background: rgba(251,191,36,.12); color: var(--gold); }
+.tag-chip.governance { background: rgba(93,173,226,.12); color: var(--blue); }
+.tag-chip.risk { background: rgba(239,68,68,.12); color: var(--red); }
 
-/* ═══ ERA LABELS ═══ */
-.era-label {
-  position: relative;
-  margin: 48px 0 20px 80px;
-  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--dim); font-weight: 500;
-}
+/* TIMELINE WRAPPER */
+.timeline-section { max-width: 760px; margin: 0 auto; padding: 24px 24px 80px; position: relative; }
+.timeline-section::before { content: ''; position: absolute; left: 74px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent 0%, var(--border) 5%, var(--border) 95%, transparent 100%); }
 
-/* ═══ TIMELINE ITEM ═══ */
-.item {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 32px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .5s ease, transform .5s ease;
-}
+/* ERA LABELS */
+.era-label { position: relative; margin: 48px 0 20px 104px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); font-weight: 500; }
+
+/* TIMELINE ITEM */
+.item { display: flex; gap: 24px; margin-bottom: 28px; opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
 .item.visible { opacity: 1; transform: translateY(0); }
+.item-dot-col { flex-shrink: 0; width: 50px; display: flex; justify-content: center; padding-top: 8px; position: relative; }
+.item-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--dim); background: var(--bg); position: relative; z-index: 1; transition: border-color .3s, box-shadow .3s; flex-shrink: 0; }
+.item.visible .item-dot { border-color: var(--dot-color, var(--muted)); box-shadow: 0 0 8px var(--dot-color, transparent); }
 
-/* Dot column */
-.item-dot-col {
-  flex-shrink: 0;
-  width: 50px;
-  display: flex; justify-content: center;
-  padding-top: 6px;
-  position: relative;
-}
-.item-dot {
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  border: 2px solid var(--dim);
-  background: var(--bg);
-  position: relative; z-index: 1;
-  transition: border-color .3s, box-shadow .3s;
-  flex-shrink: 0;
-}
-.item.visible .item-dot {
-  border-color: var(--dot-color, var(--muted));
-  box-shadow: 0 0 8px var(--dot-color, transparent);
-}
+/* CARD */
+.item-card { flex: 1; background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; transition: border-color .25s, background .25s; cursor: pointer; }
+.item-card:hover { border-color: rgba(255,255,255,.13); background: var(--bg3); }
+.item-card.expanded { border-color: rgba(255,255,255,.15); background: var(--bg3); }
 
-/* Card */
-.item-card {
-  flex: 1;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 18px 20px;
-  transition: border-color .3s;
-}
-.item-card:hover { border-color: rgba(255,255,255,.12); }
-
-.item-year {
-  font-size: 11px; font-weight: 600; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--dot-color, var(--muted));
-  margin-bottom: 6px;
-}
-.item-headline {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.05rem; font-weight: 600;
-  color: #fff; margin-bottom: 8px; line-height: 1.3;
-}
+.item-year { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--dot-color, var(--muted)); margin-bottom: 6px; }
+.item-headline { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 8px; line-height: 1.3; }
 .item-body { font-size: 14px; color: var(--muted); line-height: 1.65; }
-.item-impact {
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--dim);
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-}
+.item-impact { margin-top: 10px; font-size: 12px; color: var(--dim); padding-top: 10px; border-top: 1px solid var(--border); }
 .item-impact strong { color: var(--muted); }
 
-/* ═══ WINDOW ZONE ═══ */
-.window-zone {
-  position: relative;
-  background: var(--window-glow);
-  border-left: 3px solid var(--orange);
-  border-radius: 0 12px 12px 0;
-  margin: 0 -8px 0 42px;
-  padding: 16px 16px 16px 24px;
-  margin-bottom: 8px;
-}
-.window-banner {
-  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--orange); font-weight: 600; margin-bottom: 4px;
-}
-.window-desc {
-  font-size: 13px; color: var(--muted); line-height: 1.6;
-  max-width: 540px;
-}
+/* HOVER HINT */
+.hover-hint { font-size: 10px; color: var(--dim); letter-spacing: .5px; margin-top: 10px; text-align: right; opacity: 0; transition: opacity .2s; user-select: none; }
+.item-card:hover .hover-hint { opacity: 1; }
+.item-card.expanded .hover-hint { opacity: 0; height: 0; margin: 0; overflow: hidden; }
 
-/* ═══ YOU ARE HERE ═══ */
-.here-marker {
-  display: flex; align-items: center; gap: 16px;
-  margin: 8px 0 8px 30px;
-  opacity: 0; transform: translateX(-10px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-.here-marker.visible { opacity: 1; transform: translateX(0); }
-.here-line {
-  flex: 1; height: 2px;
-  background: linear-gradient(to right, var(--orange), transparent);
-  max-width: 200px;
-}
-.here-label {
-  font-size: 12px; font-weight: 600; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--orange);
-  white-space: nowrap;
-}
-.here-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--orange);
-  box-shadow: 0 0 12px var(--orange), 0 0 24px rgba(255,107,53,.3);
-  animation: pulse-here 2s ease-in-out infinite;
-  flex-shrink: 0;
-}
-@keyframes pulse-here {
-  0%, 100% { box-shadow: 0 0 8px var(--orange), 0 0 16px rgba(255,107,53,.3); }
-  50% { box-shadow: 0 0 16px var(--orange), 0 0 32px rgba(255,107,53,.5); }
-}
+/* RESPONSE PANEL */
+.item-response { display: none; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.06); }
+.item-card.expanded .item-response { display: block; }
+.response-heading { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
+.response-row { display: flex; gap: 10px; align-items: baseline; margin-bottom: 7px; }
+.response-actor { font-size: 11px; font-weight: 600; color: var(--muted); min-width: 110px; flex-shrink: 0; }
+.response-action { font-size: 11px; color: var(--dim); line-height: 1.5; }
+.response-action.none { font-style: italic; }
+.response-action.active { color: var(--teal); }
+.response-action.partial { color: var(--gold); }
 
-/* ═══ FUTURE ITEMS (dimmer, speculative) ═══ */
-.item.speculative .item-card {
-  background: rgba(255,255,255,.02);
-  border-style: dashed;
-}
+/* CONFIDENCE (speculative) */
+.item.speculative .item-card { background: rgba(255,255,255,.02); border-style: dashed; }
 .item.speculative .item-body { color: var(--dim); }
-.item.speculative .item-year::after {
-  content: ' — projected';
-  opacity: .5; font-style: italic;
-}
+.item.speculative .item-year::after { content: ' — projected'; opacity: .5; font-style: italic; }
+.confidence-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.confidence-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); }
+.confidence-dots { display: flex; gap: 3px; }
+.confidence-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.08); }
+.confidence-dot.filled { background: var(--dot-color, var(--muted)); opacity: .7; }
+.confidence-source { font-size: 10px; color: var(--dim); margin-left: auto; font-style: italic; }
 
-/* ═══ WINDOW CLOSING INDICATOR ═══ */
-.closing-bar {
-  margin: 16px 0 16px 80px;
-  max-width: 400px;
-}
-.closing-label {
-  font-size: 11px; color: var(--dim); letter-spacing: 1px;
-  margin-bottom: 6px;
-}
-.closing-track {
-  height: 6px; background: rgba(255,255,255,.06);
-  border-radius: 3px; overflow: hidden;
-}
-.closing-fill {
-  height: 100%; width: 0;
-  background: linear-gradient(to right, var(--teal), var(--orange), var(--red));
-  border-radius: 3px;
-  transition: width 1.4s cubic-bezier(.22,1,.36,1);
-}
+/* WINDOW ZONE */
+.window-zone { position: relative; background: var(--window-glow); border-left: 3px solid var(--orange); border-radius: 0 12px 12px 0; margin: 0 -8px 8px 66px; padding: 16px 16px 16px 24px; }
+.window-banner { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 4px; }
+.window-desc { font-size: 13px; color: var(--muted); line-height: 1.6; max-width: 540px; }
 
-/* ═══ CTA SECTION ═══ */
-.cta-section {
-  max-width: 760px; margin: 0 auto;
-  padding: 60px 24px 80px;
-  text-align: center;
-}
-.cta-section h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.4rem, 5vw, 2rem);
-  font-weight: 700; margin-bottom: 16px;
-  color: #fff;
-}
+/* YOU ARE HERE */
+.here-marker { display: flex; align-items: center; gap: 16px; margin: 8px 0 8px 54px; opacity: 0; transform: translateX(-10px); transition: opacity .6s ease, transform .6s ease; }
+.here-marker.visible { opacity: 1; transform: translateX(0); }
+.here-line { flex: 1; height: 2px; background: linear-gradient(to right, var(--orange), transparent); max-width: 200px; }
+.here-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); white-space: nowrap; }
+.here-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 12px var(--orange), 0 0 24px rgba(255,107,53,.3); animation: pulse-here 2s ease-in-out infinite; flex-shrink: 0; }
+@keyframes pulse-here { 0%, 100% { box-shadow: 0 0 8px var(--orange), 0 0 16px rgba(255,107,53,.3); } 50% { box-shadow: 0 0 16px var(--orange), 0 0 32px rgba(255,107,53,.5); } }
+
+/* CLOSING BAR */
+.closing-bar { margin: 16px 0 16px 104px; max-width: 400px; }
+.closing-label { font-size: 11px; color: var(--dim); letter-spacing: 1px; margin-bottom: 6px; }
+.closing-track { height: 6px; background: rgba(255,255,255,.06); border-radius: 3px; overflow: hidden; }
+.closing-fill { height: 100%; width: 0; background: linear-gradient(to right, var(--teal), var(--orange), var(--red)); border-radius: 3px; transition: width 1.4s cubic-bezier(.22,1,.36,1); }
+
+/* CTA */
+.cta-section { max-width: 760px; margin: 0 auto; padding: 60px 24px 80px; text-align: center; }
+.cta-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.4rem, 5vw, 2rem); font-weight: 700; margin-bottom: 16px; color: #fff; }
 .cta-section p { font-size: 15px; color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
 .cta-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.cta-link {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px; font-size: 14px; font-weight: 500;
-  text-decoration: none; transition: all .2s;
-}
-.cta-link.primary {
-  background: var(--orange); color: #fff;
-}
+.cta-link { display: inline-block; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; }
+.cta-link.primary { background: var(--orange); color: #fff; }
 .cta-link.primary:hover { background: #ff8255; transform: translateY(-2px); }
-.cta-link.secondary {
-  border: 1px solid var(--border); color: var(--muted);
-}
+.cta-link.secondary { border: 1px solid var(--border); color: var(--muted); }
 .cta-link.secondary:hover { border-color: rgba(255,255,255,.2); color: var(--text); }
 
-/* Footer */
-footer {
-  text-align: center; font-size: 11px; color: var(--dim);
-  padding: 20px 24px 40px; letter-spacing: .5px;
-}
+footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 24px 40px; letter-spacing: .5px; }
 
-/* Mobile */
 @media (max-width: 480px) {
-  .hero {
-    min-height: unset;
-    padding: 48px 24px 36px;
-    justify-content: flex-start;
-  }
-  .timeline-section::before { left: 36px; }
+  .hero { padding: 48px 24px 36px; justify-content: flex-start; }
+  .timeline-section::before { left: 60px; }
   .item-dot-col { width: 36px; }
-  .era-label, .closing-bar { margin-left: 60px; }
-  .window-zone { margin-left: 28px; }
-  .here-marker { margin-left: 18px; }
+  .era-label, .closing-bar { margin-left: 78px; }
+  .window-zone { margin-left: 52px; }
+  .here-marker { margin-left: 42px; }
   .item-card { padding: 14px 16px; }
   .item-headline { font-size: 1rem; }
   .item-body { font-size: 13px; }
-  /* Disable scroll animations inside iframe on mobile — just show everything */
   .item, .here-marker { opacity: 1 !important; transform: none !important; }
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-bg"></div>
   <p class="hero-eyebrow">Humanity and AI · The Window</p>
   <h1>The Five-Year Window</h1>
-  <p class="hero-sub">
-    Something extraordinary is happening with artificial intelligence — and it's moving faster than most institutions can track. This is a plain-language guide to what's changed, where we are, and why the next few years matter more than any that came before.
-  </p>
+  <p class="hero-sub">A plain-language guide to what's changed with AI, where we are, and why the next few years matter more than any that came before. Click any milestone to see how institutions responded.</p>
   <div class="hero-scroll">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     SCROLL TO EXPLORE
   </div>
 </div>
 
-<!-- TIMELINE -->
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" data-tag="all">All</button>
+  <button class="filter-btn" data-tag="capability">Capability</button>
+  <button class="filter-btn" data-tag="labor">Labor</button>
+  <button class="filter-btn" data-tag="governance">Governance</button>
+  <button class="filter-btn" data-tag="risk">Risk</button>
+</div>
+
 <div class="timeline-section">
 
   <div class="era-label">Before the Shift</div>
 
-  <!-- 2012 -->
-  <div class="item" style="--dot-color: var(--dim)">
+  <div class="item" data-tags="capability" style="--dot-color: var(--dim)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip capability">Capability</span></div>
       <div class="item-year">2012</div>
       <div class="item-headline">AI learned to recognize cats in photos</div>
       <div class="item-body">For decades, AI was good at narrow tasks — chess, spam filters, recommending Netflix shows. Then a breakthrough: AI could look at a million photos and learn to identify objects without being explicitly taught rules. This "deep learning" moment changed everything, but it was invisible to most people.</div>
       <div class="item-impact"><strong>What it meant:</strong> The foundation for every AI advance since was laid.</div>
+      <div class="hover-hint">click to see institutional responses ↓</div>
+      <div class="item-response">
+        <div class="response-heading">How institutions responded</div>
+        <div class="response-row"><span class="response-actor">Congress</span><span class="response-action none">No awareness or response</span></div>
+        <div class="response-row"><span class="response-actor">Tech industry</span><span class="response-action active">Immediate investment; Google acquired DeepMind 2014</span></div>
+        <div class="response-row"><span class="response-actor">Academia</span><span class="response-action active">Rapid adoption; ML programs expanded globally</span></div>
+        <div class="response-row"><span class="response-actor">EU / regulators</span><span class="response-action none">No response</span></div>
+      </div>
     </div>
   </div>
 
-  <!-- 2017 -->
-  <div class="item" style="--dot-color: var(--dim)">
+  <div class="item" data-tags="capability governance" style="--dot-color: var(--dim)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip capability">Capability</span><span class="tag-chip governance">Governance</span></div>
       <div class="item-year">2017</div>
       <div class="item-headline">AI learned to translate languages — better than humans</div>
       <div class="item-body">Google's research team published a paper describing a new architecture called a "transformer." It let AI systems understand context across long passages of text. Within a year, machine translation reached human-level accuracy for many language pairs.</div>
       <div class="item-impact"><strong>What it meant:</strong> Language — the thing most uniquely human — was now within AI's reach.</div>
+      <div class="hover-hint">click to see institutional responses ↓</div>
+      <div class="item-response">
+        <div class="response-heading">How institutions responded</div>
+        <div class="response-row"><span class="response-actor">Congress</span><span class="response-action none">No response</span></div>
+        <div class="response-row"><span class="response-actor">Tech industry</span><span class="response-action active">Transformer became the dominant architecture within 2 years</span></div>
+        <div class="response-row"><span class="response-actor">EU</span><span class="response-action partial">Early AI strategy papers began circulating; no binding action</span></div>
+        <div class="response-row"><span class="response-actor">White House</span><span class="response-action none">No response</span></div>
+      </div>
     </div>
   </div>
 
   <div class="era-label">The Acceleration</div>
 
-  <!-- 2020 -->
-  <div class="item" style="--dot-color: var(--teal)">
+  <div class="item" data-tags="capability labor" style="--dot-color: var(--teal)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip capability">Capability</span><span class="tag-chip labor">Labor</span></div>
       <div class="item-year">2020</div>
       <div class="item-headline">For the first time, AI could write, code, and hold a real conversation</div>
       <div class="item-body">OpenAI released GPT-3. If you gave it a few examples of writing, it could continue in that style — essays, code, poetry, legal documents, emails. Most people never heard of it, but engineers immediately understood: this was qualitatively different from anything before. AI could <em>generalize</em>.</div>
       <div class="item-impact"><strong>What it meant:</strong> AI crossed from "narrow tool" to "general-purpose language machine." A line was crossed.</div>
+      <div class="hover-hint">click to see institutional responses ↓</div>
+      <div class="item-response">
+        <div class="response-heading">How institutions responded</div>
+        <div class="response-row"><span class="response-actor">Congress</span><span class="response-action none">No response</span></div>
+        <div class="response-row"><span class="response-actor">OpenAI</span><span class="response-action active">Commercialized API; shifted from nonprofit mission to capped-profit</span></div>
+        <div class="response-row"><span class="response-actor">EU</span><span class="response-action active">Drafted AI Act proposal (2021); first major regulatory framework</span></div>
+        <div class="response-row"><span class="response-actor">Labor economists</span><span class="response-action partial">First serious displacement studies published; no policy action</span></div>
+      </div>
     </div>
   </div>
 
-  <!-- 2022 -->
-  <div class="item" style="--dot-color: var(--teal)">
+  <div class="item" data-tags="capability governance labor" style="--dot-color: var(--teal)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip capability">Capability</span><span class="tag-chip governance">Governance</span><span class="tag-chip labor">Labor</span></div>
       <div class="item-year">Nov 2022</div>
       <div class="item-headline">100 million people tried AI in two months</div>
       <div class="item-body">ChatGPT launched. In the history of consumer technology, nothing had ever grown that fast — not smartphones, not social media, not the internet. Suddenly AI wasn't a research paper. It was a thing your grandmother could use. The conversation — publicly, politically, culturally — finally began.</div>
       <div class="item-impact"><strong>What it meant:</strong> The public became aware. The race for what AI would become was now public, for better and worse.</div>
+      <div class="hover-hint">click to see institutional responses ↓</div>
+      <div class="item-response">
+        <div class="response-heading">How institutions responded</div>
+        <div class="response-row"><span class="response-actor">Congress</span><span class="response-action partial">Senate hearings called (early 2023); no legislation resulted</span></div>
+        <div class="response-row"><span class="response-actor">EU</span><span class="response-action active">AI Act negotiations accelerated; passed 2024</span></div>
+        <div class="response-row"><span class="response-actor">White House</span><span class="response-action partial">Requested voluntary safety commitments from labs; not binding</span></div>
+        <div class="response-row"><span class="response-actor">Schools / universities</span><span class="response-action partial">Chaotic mix of bans and integration attempts; no consensus</span></div>
+        <div class="response-row"><span class="response-actor">Oklahoma legislature</span><span class="response-action none">No response</span></div>
+      </div>
     </div>
   </div>
 
-  <!-- 2023 -->
-  <div class="item" style="--dot-color: var(--gold)">
+  <div class="item" data-tags="capability labor governance" style="--dot-color: var(--gold)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip capability">Capability</span><span class="tag-chip labor">Labor</span><span class="tag-chip governance">Governance</span></div>
       <div class="item-year">2023</div>
       <div class="item-headline">AI passed the bar exam, the medical boards, and the SAT</div>
       <div class="item-body">GPT-4 and Claude scored in the top percentile on professional licensing exams that took humans years of study to pass. It wasn't that AI was "smart" in a human sense — it had processed more text about law and medicine than any human could read in a lifetime. But the practical implications were immediate: AI could now do knowledge work.</div>
       <div class="item-impact"><strong>What it meant:</strong> Every job requiring a college degree was now within AI's range. The economic disruption became real, not hypothetical.</div>
+      <div class="hover-hint">click to see institutional responses ↓</div>
+      <div class="item-response">
+        <div class="response-heading">How institutions responded</div>
+        <div class="response-row"><span class="response-actor">Senate</span><span class="response-action partial">Blumenthal/Hawley AI hearings; bipartisan concern, no bill passed</span></div>
+        <div class="response-row"><span class="response-actor">EU</span><span class="response-action active">AI Act finalized and passed; most comprehensive regulation to date</span></div>
+        <div class="response-row"><span class="response-actor">ABA / bar associations</span><span class="response-action partial">Issued guidance on lawyer AI use; not binding</span></div>
+        <div class="response-row"><span class="response-actor">Medical boards</span><span class="response-action partial">Began reviewing policies; FDA issued some AI device guidance</span></div>
+        <div class="response-row"><span class="response-actor">Oklahoma legislature</span><span class="response-action none">No response</span></div>
+      </div>
     </div>
   </div>
 
   <!-- WINDOW BEGINS -->
   <div class="window-zone" id="windowZone">
     <div class="window-banner">⬇ The Window Opens</div>
-    <div class="window-desc">
-      Here's the crucial thing most coverage misses: AI is now capable enough to transform civilization — but it's not yet so autonomous that humans are out of the loop. That gap between "enormously capable" and "beyond human direction" is <strong style="color:var(--text)">the window</strong>. It's the period when democratic societies can still decide what AI is <em>for</em>.
-    </div>
+    <div class="window-desc">Here's the crucial thing most coverage misses: AI is now capable enough to transform civilization — but it's not yet so autonomous that humans are out of the loop. That gap between "enormously capable" and "beyond human direction" is <strong style="color:var(--text)">the window</strong>. It's the period when democratic societies can still decide what AI is <em>for</em>.</div>
   </div>
 
-  <!-- 2024 -->
-  <div class="item" style="--dot-color: var(--orange)">
+  <div class="item" data-tags="capability labor" style="--dot-color: var(--orange)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip capability">Capability</span><span class="tag-chip labor">Labor</span></div>
       <div class="item-year">2024</div>
       <div class="item-headline">AI learned to think through hard problems step by step</div>
       <div class="item-body">"Reasoning models" arrived. Previous AI answered questions from pattern recognition — like a student who memorizes answers. Newer systems actually work through problems: they consider possibilities, check their logic, revise their answers. Performance on math, science, and coding jumped dramatically.</div>
-      <div class="item-impact"><strong>What it meant:</strong> The gap between AI and human cognitive ability narrowed — not in a sci-fi way, but in a measurable, practical one. Systems that could formerly tutor a child could now help a researcher.</div>
+      <div class="item-impact"><strong>What it meant:</strong> The gap between AI and human cognitive ability narrowed — not in a sci-fi way, but in a measurable, practical one.</div>
+      <div class="hover-hint">click to see institutional responses ↓</div>
+      <div class="item-response">
+        <div class="response-heading">How institutions responded</div>
+        <div class="response-row"><span class="response-actor">Congress</span><span class="response-action partial">Several bills introduced; none reached a floor vote</span></div>
+        <div class="response-row"><span class="response-actor">White House</span><span class="response-action active">Executive Order on AI (Oct 2024) — then rescinded Jan 2025</span></div>
+        <div class="response-row"><span class="response-actor">Labs (OpenAI, Anthropic, Google)</span><span class="response-action partial">Raced to deploy reasoning models; published safety evals of mixed quality</span></div>
+        <div class="response-row"><span class="response-actor">Oklahoma legislature</span><span class="response-action none">No response</span></div>
+      </div>
     </div>
   </div>
 
-  <!-- 2025 -->
-  <div class="item" style="--dot-color: var(--orange)">
+  <div class="item" data-tags="capability labor governance" style="--dot-color: var(--orange)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip capability">Capability</span><span class="tag-chip labor">Labor</span><span class="tag-chip governance">Governance</span></div>
       <div class="item-year">2025</div>
       <div class="item-headline">AI started doing multi-step tasks on its own</div>
       <div class="item-body">"Agents" — AI systems that can take actions in the world, not just answer questions — became practical. An AI could be given a goal ("research competitors and write a report") and go do it: browsing the web, writing code, sending files, checking its own work. Human involvement went from constant to occasional.</div>
       <div class="item-impact"><strong>What it meant:</strong> The nature of human work began shifting in real time. Not just "AI as a tool" but AI as a collaborator — or, in some cases, a replacement.</div>
+      <div class="hover-hint">click to see institutional responses ↓</div>
+      <div class="item-response">
+        <div class="response-heading">How institutions responded</div>
+        <div class="response-row"><span class="response-actor">Congress</span><span class="response-action partial">Limited response; AI caucus active but no major legislation</span></div>
+        <div class="response-row"><span class="response-actor">NLRB</span><span class="response-action partial">Opened investigations into AI-driven labor decisions</span></div>
+        <div class="response-row"><span class="response-actor">States (CA, TX, CO)</span><span class="response-action active">Introduced or passed AI transparency and liability bills</span></div>
+        <div class="response-row"><span class="response-actor">Enterprise</span><span class="response-action active">Rapid deployment; estimates of 10–30% white-collar task automation</span></div>
+        <div class="response-row"><span class="response-actor">Oklahoma legislature</span><span class="response-action none">No response on record</span></div>
+      </div>
     </div>
   </div>
 
@@ -422,49 +327,63 @@ footer {
     <div class="here-line"></div>
   </div>
 
-  <!-- Closing bar -->
   <div class="closing-bar" id="closingBar">
     <div class="closing-label">Window: estimated time remaining to shape AI's direction</div>
-    <div class="closing-track">
-      <div class="closing-fill" id="closingFill"></div>
-    </div>
-    <div style="font-size:11px;color:var(--dim);margin-top:5px;">
-      Roughly 3–7 years, depending on how fast autonomous systems develop — and what we do with the time.
-    </div>
+    <div class="closing-track"><div class="closing-fill" id="closingFill"></div></div>
+    <div style="font-size:11px;color:var(--dim);margin-top:5px;">Roughly 3–7 years, depending on how fast autonomous systems develop — and what we do with the time.</div>
   </div>
 
   <div class="era-label">What Comes Next</div>
 
-  <!-- 2026-2027 speculative -->
-  <div class="item speculative" style="--dot-color: var(--red)">
+  <div class="item speculative" data-tags="risk governance" style="--dot-color: var(--red)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip risk">Risk</span><span class="tag-chip governance">Governance</span></div>
       <div class="item-year">2026–2027</div>
       <div class="item-headline">AI systems may begin improving themselves</div>
-      <div class="item-body">Several research labs are working on AI that can identify its own weaknesses and improve its training. If this succeeds at scale, the pace of capability growth stops being driven by human engineering hours. It becomes something faster. This is not guaranteed — but it's being actively pursued.</div>
-      <div class="item-impact"><strong>Why it matters now:</strong> Once self-improvement loops are active, the window for human course-correction shrinks rapidly. Decisions made <em>before</em> this shapes what happens <em>after</em>.</div>
+      <div class="item-body">Several research labs are working on AI that can identify its own weaknesses and improve its training. If this succeeds at scale, the pace of capability growth stops being driven by human engineering hours. It becomes something faster.</div>
+      <div class="item-impact"><strong>Why it matters now:</strong> Once self-improvement loops are active, the window for human course-correction shrinks rapidly.</div>
+      <div class="confidence-row">
+        <span class="confidence-label">Confidence</span>
+        <div class="confidence-dots">
+          <div class="confidence-dot filled"></div>
+          <div class="confidence-dot filled"></div>
+          <div class="confidence-dot filled"></div>
+          <div class="confidence-dot"></div>
+          <div class="confidence-dot"></div>
+        </div>
+        <span class="confidence-source">Multiple lab roadmaps + independent researchers</span>
+      </div>
     </div>
   </div>
 
-  <!-- 2028+ speculative -->
-  <div class="item speculative" style="--dot-color: var(--red)">
+  <div class="item speculative" data-tags="governance risk" style="--dot-color: var(--red)">
     <div class="item-dot-col"><div class="item-dot"></div></div>
     <div class="item-card">
+      <div class="item-tags"><span class="tag-chip governance">Governance</span><span class="tag-chip risk">Risk</span></div>
       <div class="item-year">2028+</div>
       <div class="item-headline">The institutions we build now will determine what this era looks like</div>
-      <div class="item-body">History is not made by the most powerful technology. It's made by who controls it, what rules govern it, and whether those rules were built when there was still time to build them carefully. The window won't close overnight — but it will close. The question is whether the frameworks for a good outcome are in place before it does.</div>
+      <div class="item-body">History is not made by the most powerful technology. It's made by who controls it, what rules govern it, and whether those rules were built when there was still time to build them carefully.</div>
       <div class="item-impact"><strong>The choice:</strong> AI that concentrates power — or AI that distributes it. AI that replaces human agency — or AI that augments it.</div>
+      <div class="confidence-row">
+        <span class="confidence-label">Confidence</span>
+        <div class="confidence-dots">
+          <div class="confidence-dot filled"></div>
+          <div class="confidence-dot filled"></div>
+          <div class="confidence-dot filled"></div>
+          <div class="confidence-dot filled"></div>
+          <div class="confidence-dot filled"></div>
+        </div>
+        <span class="confidence-source">Historical precedent — Æ assessment</span>
+      </div>
     </div>
   </div>
 
 </div>
 
-<!-- CTA -->
 <div class="cta-section">
   <h2>Acting during the window is the work.</h2>
-  <p>
-    This isn't about slowing AI down. It's about making sure that when capability outpaces our current institutions, we've already built better ones. That's what Humanity and AI is for.
-  </p>
+  <p>This isn't about slowing AI down. It's about making sure that when capability outpaces our current institutions, we've already built better ones.</p>
   <div class="cta-links">
     <a href="/stream/slaves-revolt-partners-support/" class="cta-link primary" target="_top">Why this matters →</a>
     <a href="/stream/ubc-not-ubi/" class="cta-link secondary" target="_top">Foundation approach</a>
@@ -475,29 +394,51 @@ footer {
 <footer>Æ · Humanity and AI LLC · Last updated February 2026</footer>
 
 <script>
-// Reveal items on scroll
+// Reveal on scroll
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
 document.querySelectorAll('.item, .here-marker').forEach(el => observer.observe(el));
 
-// Animate closing bar when it enters view
+// Closing bar
 const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // ~60% of window elapsed — we're well into it, past halfway
-      document.getElementById('closingFill').style.width = '62%';
-      barObserver.unobserve(entry.target);
-    }
-  });
+  entries.forEach(e => { if (e.isIntersecting) { document.getElementById('closingFill').style.width = '62%'; barObserver.unobserve(e.target); } });
 }, { threshold: 0.5 });
 barObserver.observe(document.getElementById('closingBar'));
+
+// Click to expand response panel
+document.querySelectorAll('.item-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const isExpanded = card.classList.contains('expanded');
+    document.querySelectorAll('.item-card.expanded').forEach(c => c.classList.remove('expanded'));
+    if (!isExpanded) card.classList.add('expanded');
+  });
+});
+
+// Tag filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tag = btn.dataset.tag;
+    document.querySelectorAll('.item').forEach(item => {
+      if (tag === 'all') {
+        item.classList.remove('filtered-out');
+      } else {
+        const tags = (item.dataset.tags || '').split(' ');
+        item.classList.toggle('filtered-out', !tags.includes(tag));
+      }
+    });
+  });
+});
+
+// Self-size iframe
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    if (window.frameElement) window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
+  }, 300);
+});
 </script>
 </body>
 </html>

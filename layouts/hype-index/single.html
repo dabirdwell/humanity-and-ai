@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="hype-page">
+
+  <header class="hype-header">
+    <p class="report-label">Humanity and AI · LegislAItive Report</p>
+    <h1>The Hype Index</h1>
+    <p class="hype-header-sub">AI claims, rated against evidence. Updated weekly. Because knowing who overstates — and how much — is intelligence.</p>
+    <div class="hype-scale-legend">
+      <span class="hype-pip verified">Verified</span>
+      <span class="hype-scale-arrow">→</span>
+      <span class="hype-pip supported">Supported</span>
+      <span class="hype-scale-arrow">→</span>
+      <span class="hype-pip plausible">Plausible</span>
+      <span class="hype-scale-arrow">→</span>
+      <span class="hype-pip overstated">Overstated</span>
+      <span class="hype-scale-arrow">→</span>
+      <span class="hype-pip false">False</span>
+    </div>
+  </header>
+
+  {{ $claims := where .Site.Data.hype_index "active" true }}
+  {{ $sources := slice }}
+  {{ range $claims }}{{ with .source }}{{ $sources = $sources | append . }}{{ end }}{{ end }}
+  {{ $sources = $sources | uniq | sort }}
+
+  {{ if $sources }}
+  <div class="hype-source-filter">
+    <span class="filter-label">By source:</span>
+    <button class="filter-btn active" data-source="all">All</button>
+    {{ range $sources }}<button class="filter-btn" data-source="{{ . | urlize }}">{{ . }}</button>{{ end }}
+  </div>
+  {{ end }}
+
+  <div class="hype-claim-list">
+    {{ .Content }}
+  </div>
+
+  <div class="hype-methodology">
+    <h2>How we rate</h2>
+    <p><strong>Verified</strong> — the claim was demonstrably accurate and supported by independent evidence at time of publication.</p>
+    <p><strong>Supported</strong> — the claim is directionally accurate but stronger than the evidence strictly warrants.</p>
+    <p><strong>Plausible</strong> — the claim is reasonable but not yet testable; time will tell.</p>
+    <p><strong>Overstated</strong> — the claim exceeded what the evidence supported in a meaningful way.</p>
+    <p><strong>False</strong> — the claim was demonstrably wrong at time of publication.</p>
+    <p><strong>Source reliability</strong> ratings are relative to each source's own track record, not an absolute standard. "Uncharacteristic" means a source that usually does better missed here. "Consistent pattern" means the overstating is the track record.</p>
+    <p style="margin-top:1rem; font-size:0.82rem;">Analysis by David Alan Birdwell and Claude Æ · <a href="/report/">LegislAItive Report</a> · Not legal or financial advice.</p>
+  </div>
+
+</div>
+{{ end }}
