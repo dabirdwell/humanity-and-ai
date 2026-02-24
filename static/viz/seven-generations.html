@@ -73,6 +73,29 @@ body {
 .scale-callout strong { color: var(--text); }
 
 /* ═══ COMPARISON TABLE ═══ */
+.compare-wrap { position: relative; }
+.compare-scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 60px;
+  background: linear-gradient(to right, transparent, var(--bg));
+  pointer-events: none;
+  border-radius: 0 14px 14px 0;
+  display: flex; align-items: flex-start; justify-content: flex-end;
+  padding: 20px 8px 0 0;
+  transition: opacity .4s ease;
+}
+.compare-scroll-hint.hidden { opacity: 0; }
+.compare-scroll-hint-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 1px;
+  color: var(--dim); text-transform: uppercase;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+.compare-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+}
 .compare-grid {
   display: grid;
   grid-template-columns: 120px 1fr 1fr 1fr;
@@ -133,10 +156,20 @@ body {
 .cg-outcome.mixed { color: var(--gold); background: rgba(251,191,36,.1); }
 .cg-outcome.unknown { color: var(--dim); background: rgba(255,255,255,.05); border: 1px dashed rgba(255,255,255,.1); }
 .cg-text { font-size: 12px; color: var(--muted); line-height: 1.55; }
-/* Highlight Phoenix column */
+/* Row/column highlight on hover */
+.compare-grid.row-hover .cg-data[data-row]:not([data-row=""]),
+.compare-grid.row-hover .cg-row-label[data-row] {
+  transition: background .15s ease;
+}
+.compare-grid .cg-data.row-lit { background: rgba(255,255,255,.04) !important; }
+.compare-grid .cg-data.col-lit { background: rgba(78,205,196,.05) !important; }
+.compare-grid .cg-data.row-lit.col-lit { background: rgba(78,205,196,.09) !important; }
+.cg-row-label.row-lit { background: rgba(255,255,255,.05) !important; }
+.cg-col-head.col-lit { background: rgba(78,205,196,.08) !important; }
+
+
 .cg-phoenix { background: rgba(74,222,128,.03) !important; }
 
-/* ═══ THE TEST ═══ */
 .test-grid { display: flex; flex-direction: column; gap: 20px; }
 .test-criterion {
   background: var(--bg2); border: 1px solid var(--border);
@@ -242,7 +275,12 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
   <h2 class="section-title">Three decisions, same framework</h2>
   <p class="section-body">The same generational lens applied to a decision already in the past, one being made now, and one being built deliberately with this framework in mind. Read down any column, or read across any row.</p>
 
-  <div class="compare-grid">
+  <div class="compare-wrap">
+    <div class="compare-scroll-hint" id="scrollHint">
+      <span class="compare-scroll-hint-label">scroll →</span>
+    </div>
+    <div class="compare-scroll" id="compareScroll">
+  <div class="compare-grid" id="compareGrid">
     <!-- HEADER ROW -->
     <div class="cg-col-head" style="background:var(--bg3)"></div>
     <div class="cg-col-head">
@@ -335,7 +373,9 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
       <span class="cg-outcome good">Self-sustaining</span>
       <p class="cg-text">Communities still generating clean energy from infrastructure their ancestors built. A civilization that compounds rather than depletes. The original vision of the principle.</p>
     </div>
-  </div>
+  </div><!-- /compare-grid -->
+    </div><!-- /compare-scroll -->
+  </div><!-- /compare-wrap -->
 </div>
 
 <!-- SECTION 3: THE TEST -->
@@ -412,11 +452,66 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
 <footer>Æ · Humanity and AI LLC · Seven Generations Framework · 2026</footer>
 
 <script>
+// Scroll reveal
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }});
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
+// Scroll hint — hide once user has scrolled the table
+const scrollEl = document.getElementById('compareScroll');
+const scrollHint = document.getElementById('scrollHint');
+if (scrollEl && scrollHint) {
+  // Only show hint if table overflows
+  function checkOverflow() {
+    if (scrollEl.scrollWidth <= scrollEl.clientWidth) scrollHint.classList.add('hidden');
+  }
+  checkOverflow();
+  window.addEventListener('resize', checkOverflow);
+  scrollEl.addEventListener('scroll', function() {
+    if (scrollEl.scrollLeft > 30) scrollHint.classList.add('hidden');
+  }, { passive: true });
+}
+
+// Row/column highlight
+const grid = document.getElementById('compareGrid');
+if (grid) {
+  // Build index of cells
+  const allCells = grid.querySelectorAll('.cg-data');
+  const rowLabels = grid.querySelectorAll('.cg-row-label');
+  const colHeads = grid.querySelectorAll('.cg-col-head');
+  // Grid is 4 cols (label + 3 data), so col index 0=oil,1=ai,2=phoenix
+  // Assign data-row and data-col at runtime based on DOM position
+  const rows = [[], [], [], [], []]; // 5 data rows
+  allCells.forEach((cell, i) => {
+    const rowIdx = Math.floor(i / 3);
+    const colIdx = i % 3;
+    cell.dataset.rowIdx = rowIdx;
+    cell.dataset.colIdx = colIdx;
+  });
+
+  function clearLights() {
+    grid.querySelectorAll('.row-lit, .col-lit').forEach(el => el.classList.remove('row-lit', 'col-lit'));
+  }
+
+  allCells.forEach(cell => {
+    cell.addEventListener('mouseenter', function() {
+      clearLights();
+      const r = this.dataset.rowIdx;
+      const c = this.dataset.colIdx;
+      // Light row
+      allCells.forEach(el => { if (el.dataset.rowIdx === r) el.classList.add('row-lit'); });
+      if (rowLabels[r]) rowLabels[r].classList.add('row-lit');
+      // Light col (skip label col = index 0 in colHeads)
+      allCells.forEach(el => { if (el.dataset.colIdx === c) el.classList.add('col-lit'); });
+      const headIdx = parseInt(c) + 1; // offset for label column
+      if (colHeads[headIdx]) colHeads[headIdx].classList.add('col-lit');
+    });
+    cell.addEventListener('mouseleave', clearLights);
+  });
+}
+
+// Test criteria bars
 const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
