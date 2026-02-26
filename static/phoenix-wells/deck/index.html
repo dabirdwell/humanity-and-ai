@@ -671,6 +671,8 @@
   let elapsed = 0;
   let playing = false;
   let currentSceneIdx = -1;
+  let pendingTimers = [];
+  let scenePauseOffset = 0;
   let lastTick = 0;
   let rafId = null;
 
@@ -717,6 +719,10 @@
   function activateScene(idx) {
     if (idx === currentSceneIdx) return;
 
+    // Clear any pending animation timers
+    pendingTimers.forEach(id => clearTimeout(id));
+    pendingTimers = [];
+
     // Deactivate previous
     if (currentSceneIdx >= 0) {
       const prev = document.getElementById(sceneDefs[currentSceneIdx].id);
@@ -737,23 +743,25 @@
     const animatables = el.querySelectorAll('[data-delay]');
     animatables.forEach(a => {
       const delay = parseInt(a.getAttribute('data-delay'));
-      setTimeout(() => {
+      const tid = setTimeout(() => {
         if (currentSceneIdx === idx) a.classList.add('show');
       }, delay + 300);
+      pendingTimers.push(tid);
     });
 
     // Animate moat bars for scene 4
     if (idx === 3) {
-      setTimeout(() => {
+      const t1 = setTimeout(() => {
         if (currentSceneIdx === 3) {
           document.getElementById('bar-trad').style.height = '180px';
         }
       }, 1500);
-      setTimeout(() => {
+      const t2 = setTimeout(() => {
         if (currentSceneIdx === 3) {
           document.getElementById('bar-pw').style.height = '49px';
         }
       }, 2100);
+      pendingTimers.push(t1, t2);
     }
 
     // Update dots
@@ -790,6 +798,43 @@
     playing = true;
     lastTick = 0;
     playBtn.textContent = '⏸';
+
+    // Resume pending animations for current scene
+    if (currentSceneIdx >= 0) {
+      const sceneStart = getSceneStartTime(currentSceneIdx);
+      const sceneElapsed = elapsed - sceneStart;
+      const el = document.getElementById(sceneDefs[currentSceneIdx].id);
+      const idx = currentSceneIdx;
+      el.querySelectorAll('[data-delay]').forEach(a => {
+        if (a.classList.contains('show')) return;
+        const delay = parseInt(a.getAttribute('data-delay')) + 300;
+        const remaining = delay - sceneElapsed;
+        if (remaining <= 0) {
+          a.classList.add('show');
+        } else {
+          const tid = setTimeout(() => {
+            if (currentSceneIdx === idx) a.classList.add('show');
+          }, remaining);
+          pendingTimers.push(tid);
+        }
+      });
+      // Resume moat bars for scene 4
+      if (idx === 3) {
+        const tradBar = document.getElementById('bar-trad');
+        const pwBar = document.getElementById('bar-pw');
+        if (tradBar.style.height !== '180px') {
+          const r1 = 1500 - sceneElapsed;
+          if (r1 <= 0) { tradBar.style.height = '180px'; }
+          else { const t = setTimeout(() => { if (currentSceneIdx === 3) tradBar.style.height = '180px'; }, r1); pendingTimers.push(t); }
+        }
+        if (pwBar.style.height !== '49px') {
+          const r2 = 2100 - sceneElapsed;
+          if (r2 <= 0) { pwBar.style.height = '49px'; }
+          else { const t = setTimeout(() => { if (currentSceneIdx === 3) pwBar.style.height = '49px'; }, r2); pendingTimers.push(t); }
+        }
+      }
+    }
+
     rafId = requestAnimationFrame(tick);
   }
 
@@ -797,6 +842,9 @@
     playing = false;
     playBtn.textContent = '▶';
     if (rafId) cancelAnimationFrame(rafId);
+    // Kill pending animation timers
+    pendingTimers.forEach(id => clearTimeout(id));
+    pendingTimers = [];
   }
 
   function togglePlay() {
