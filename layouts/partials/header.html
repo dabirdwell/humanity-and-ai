@@ -6,5 +6,9 @@
         <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
       {{ end }}
     </nav>
+    <button class="theme-toggle" aria-label="Toggle light/dark theme" onclick="toggleTheme()">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
   </div>
 </header>

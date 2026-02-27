@@ -35,6 +35,16 @@
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
 
   {{ block "head" . }}{{ end }}
+
+  <!-- Theme: prevent flash of wrong theme -->
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
 <body>
   {{ partial "header.html" . }}
@@ -43,6 +53,20 @@
   </main>
   {{ partial "footer.html" . }}
   <script>
+    // Theme toggle
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme');
+      var next = current === 'light' ? '' : 'light';
+      if (next) {
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.removeAttribute('data-theme');
+        localStorage.removeItem('theme');
+      }
+    }
+
     // Type filter
     document.addEventListener('DOMContentLoaded', function() {
       const filters = document.getElementById('typeFilters');

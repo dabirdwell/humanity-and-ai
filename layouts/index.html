@@ -54,7 +54,7 @@
   </div>
 
   {{ range $pages.ByDate.Reverse }}
-  <article class="post-card">
+  <article class="post-card" {{ with .Params.type }}data-type="{{ . | urlize }}"{{ end }}>
     <div class="post-meta">
       {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
       <time>{{ .Date.Format "January 2, 2006" }}</time>
