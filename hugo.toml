@@ -14,6 +14,9 @@ summaryLength = 40
     name = "Stream"
     url = "/"
   [[params.nav.links]]
+    name = "UBC"
+    url = "/ubc/"
+  [[params.nav.links]]
     name = "Research"
     url = "https://structuredemergence.com"
     external = true
