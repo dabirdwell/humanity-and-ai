@@ -35,8 +35,3 @@ Education in UBC isn't one thing. It's a stack:
 
 How do we transition from the system we have to the system we need without leaving a generation in the gap? What do indigenous knowledge systems, homeschool communities, and non-Western educational traditions offer that this framework hasn't incorporated? What's the role of play, art, and embodied experience in an age of screens?
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Brain_Mastery_Primer]]

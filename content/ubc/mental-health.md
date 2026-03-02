@@ -31,8 +31,3 @@ AI can extend the reach of mental health services — chatbots for triage, thera
 
 Therapists, addiction counselors, people in recovery, public health researchers, and especially people who've tried to access mental health care and been failed by the system — your experience is the data we need. What's broken? What works? What would you build if you could start from scratch?
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Brain_Mastery_Primer]]

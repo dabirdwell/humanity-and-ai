@@ -31,8 +31,3 @@ Access without literacy is just exposure. UBC's education components (see Compon
 
 This isn't about government-controlled information. It's not a truth ministry. It's about ensuring the infrastructure of information — the pipes, not the content — serves the public interest. Just as we regulate water quality without controlling what people drink, we can ensure information infrastructure quality without controlling what people think.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Democratic_Infrastructure]]

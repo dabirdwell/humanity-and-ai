@@ -27,8 +27,3 @@ Water contamination doesn't happen randomly. It follows fault lines of race, cla
 
 Engineers, public health experts, environmental justice advocates, and people living with contaminated water right now all have pieces of this puzzle that we don't. What does universal clean water infrastructure actually cost? What are the governance models that prevent capture by the industries causing contamination? What's working somewhere that should be working everywhere?
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Phoenix Wells Investor Slide Deck Framework]]

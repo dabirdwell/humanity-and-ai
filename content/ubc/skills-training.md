@@ -29,8 +29,3 @@ The old model: learn a trade, practice it for 40 years, retire. The emerging mod
 
 UBC supports this through universal access to training (Component 10), economic security that allows career transitions (Component 13), and an education philosophy that treats learning as lifelong (Component 2). This component specifically addresses the curriculum question: what should training systems teach when the ground is shifting?
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Brain_Mastery_Primer]]

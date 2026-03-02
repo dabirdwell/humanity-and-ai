@@ -27,8 +27,3 @@ This also means workplaces where people can raise concerns without retaliation. 
 
 How do you build and fund these spaces in communities where the social fabric has already been shredded? Where trust in institutions is gone? Where "community" itself feels like nostalgia? We have starting ideas, not answers. That's why this is here.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Democratic_Infrastructure]]

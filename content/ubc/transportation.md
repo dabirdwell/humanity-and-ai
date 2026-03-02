@@ -27,8 +27,3 @@ Universal transportation means solving the rural problem, not just adding more s
 
 Transportation and energy are inseparable. Electric vehicle fleets need charging infrastructure powered by sustainable energy. This connects directly to Component 7 (Sustainable Energy) and to Phoenix Wells — where geothermal energy could power the charging networks that power the vehicles that connect communities.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Phoenix Wells Investor Slide Deck Framework]]

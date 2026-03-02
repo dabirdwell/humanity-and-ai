@@ -27,8 +27,3 @@ The UBC commitment is that these tools are publicly available. Not premium featu
 
 This component directly addresses the "but what will people do?" question that haunts every AI conversation. The answer: whatever they develop the capacity to do, continuously, with support. Not everyone will become a programmer. Not everyone should. But everyone should have the opportunity to develop their capabilities throughout life, and the economic security (see Component 13) to pursue learning without risking survival.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Brain_Mastery_Primer]]

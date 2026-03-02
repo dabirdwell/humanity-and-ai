@@ -33,9 +33,3 @@ The technology is ready. Solar, wind, geothermal, and storage have crossed econo
 
 Energy policy intersects with everything: environmental science, labor economics, community development, tribal sovereignty, industrial engineering. We need perspectives from people who work in energy, people who live near energy infrastructure, people who study energy transitions, and people who've been harmed by the current system.
 
-## Related
-
-- [[UBC Framework]]
-- [[Phoenix Wells Investor Slide Deck Framework]]
-- [[Foundation Canon]]
-- [[Economic_Philosophy]]

@@ -29,8 +29,3 @@ Community land trusts. Public housing that's actually maintained and destigmatiz
 
 Housing intersects with everything: land use policy, construction labor, environmental sustainability, community design, disability access, cultural preferences. What does "affordable" actually mean in different contexts? What are the models that preserve community while providing stability? What do people who've experienced housing insecurity know that policymakers don't?
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Economic_Philosophy]]

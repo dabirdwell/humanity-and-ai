@@ -35,9 +35,3 @@ UBI in the UBC framework is unconditional. No work requirements, no drug tests, 
 
 Trust people. Fund them. Let them surprise you.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Position_Money_and_Transition]]
-- [[Economic_Philosophy]]

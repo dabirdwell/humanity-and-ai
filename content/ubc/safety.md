@@ -35,8 +35,3 @@ It means safety *from* the systems that are supposed to provide safety, when tho
 
 We have a framework here, not a policy manual. What does community-based safety actually look like in rural Oklahoma versus urban Detroit versus tribal nations? What models are already working that we should be learning from? What are we getting wrong?
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Democratic_Infrastructure]]

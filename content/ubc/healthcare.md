@@ -33,7 +33,3 @@ The risk is that AI-driven healthcare becomes another two-tier system — precis
 
 When the AI transition disrupts employment patterns, millions of people will lose their health coverage simultaneously. This isn't hypothetical — it's a predictable consequence of the current system's architecture. Building national healthcare before the disruption hits isn't idealism. It's infrastructure planning.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]

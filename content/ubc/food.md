@@ -27,8 +27,3 @@ If AI-driven agriculture concentrates further into corporate monocultures, it ma
 
 We're not prescribing what people eat. We're not imagining government-issued meal plans. We're saying that in a society wealthy enough to feed everyone, the choice not to is a policy failure. The mechanism — whether it's expanded SNAP without stigma, universal school meals, public market infrastructure, or something we haven't thought of yet — is what this conversation is for.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Economic_Philosophy]]

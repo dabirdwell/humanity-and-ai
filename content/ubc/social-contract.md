@@ -31,9 +31,3 @@ Here's the part most policy frameworks miss: the social contract isn't just abou
 
 These aren't future questions. They're current ones, being answered by default — in favor of whoever builds the systems — because we haven't built the governance to answer them deliberately.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Democratic_Infrastructure]]
-- [[Voting_Implementation_Guide]]

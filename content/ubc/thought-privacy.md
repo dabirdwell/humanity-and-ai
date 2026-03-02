@@ -35,9 +35,3 @@ UBC's publicly owned AI (Component 8) and broader digital rights framework provi
 
 This is the youngest component in the framework and the one most likely to need radical revision as the technology develops. We need ethicists, neuroscientists, disability advocates, legal scholars, and technologists thinking about this now — before the technology is deployed and the precedents are set by whatever company gets there first.
 
-## Related
-
-- [[UBC Framework]]
-- [[Foundation Canon]]
-- [[Structured Emergence]]
-- [[Democratic_Infrastructure]]
