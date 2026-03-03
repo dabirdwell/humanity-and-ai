@@ -4,7 +4,12 @@ description: "Physical and emotional security isn't a privilege. It's the founda
 number: "01"
 weight: 1
 status: "seed"
-tags: ["ubc", "safety", "foundation", "policy"]
+tags: ["foundation", "safety", "foundation", "policy"]
+hero_stat: "24 people per minute are victims of intimate partner violence in the US — over 12 million per year."
+hero_stat_bridge: "Community-based prevention costs a fraction of the criminal justice response. Safety isn't just policing — it's infrastructure."
+hero_stat_source: "CDC National Intimate Partner and Sexual Violence Survey, 2024"
+aliases:
+  - "/ubc/safety/"
 ---
 
 You can't learn if you're afraid. You can't create if you're surviving. You can't participate in democracy if your daily reality is organized around avoiding harm. Safety — real safety, not the performative kind that justifies surveillance — is the bedrock of every other component in this framework.

@@ -4,7 +4,12 @@ description: "Universal access to safe, clean water. The most basic test of whet
 number: "06"
 weight: 6
 status: "seed"
-tags: ["ubc", "water", "infrastructure", "foundation", "policy"]
+tags: ["foundation", "water", "infrastructure", "foundation", "policy"]
+hero_stat: "Up to 9 million American homes get their drinking water through lead pipes. 24 million more service lines are 'unknown material.'"
+hero_stat_bridge: "Clean water isn't a developing-world problem. It's an American infrastructure problem hidden by pipes we haven't bothered to identify."
+hero_stat_source: "EPA Drinking Water Infrastructure Needs Survey, 2024; NRDC analysis, 2025"
+aliases:
+  - "/ubc/clean-water/"
 ---
 
 Flint, Michigan happened in 2014. Jackson, Mississippi in 2022. As of this writing, there are thousands of communities across America with unsafe drinking water. Lead pipes. Agricultural runoff. PFAS contamination. Industrial legacy pollutants. The richest country on earth can't reliably deliver clean water to its citizens.

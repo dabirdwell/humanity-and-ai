@@ -48,6 +48,26 @@
 </head>
 <body>
   {{ partial "header.html" . }}
+
+  <!-- First-visit welcome overlay -->
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <div class="welcome-card">
+      <h2>Humanity &amp; AI has two halves.</h2>
+      <div class="welcome-halves">
+        <div class="welcome-half">
+          <span class="welcome-label">Here</span>
+          <p>Policy, tools, and ideas for navigating the AI transition.</p>
+        </div>
+        <div class="welcome-half">
+          <span class="welcome-label welcome-label--research">Research</span>
+          <p>Consciousness, emergence, and the theory behind it all.</p>
+        </div>
+      </div>
+      <p class="welcome-hint">The <strong>Research</strong> link above takes you there anytime. ↑</p>
+      <button class="welcome-dismiss" id="welcomeDismiss">Got it</button>
+    </div>
+  </div>
+
   <main>
     {{ block "main" . }}{{ end }}
   </main>
@@ -69,6 +89,35 @@
 
     // Type filter
     document.addEventListener('DOMContentLoaded', function() {
+      // First-visit welcome
+      if (!localStorage.getItem('hai_welcomed')) {
+        var overlay = document.getElementById('welcomeOverlay');
+        var dismiss = document.getElementById('welcomeDismiss');
+        var researchLink = null;
+
+        // Find the Research nav link
+        document.querySelectorAll('.site-nav a').forEach(function(a) {
+          if (a.textContent.trim() === 'Research') researchLink = a;
+        });
+
+        setTimeout(function() {
+          overlay.classList.add('visible');
+          if (researchLink) researchLink.classList.add('nav-pulse');
+        }, 1500);
+
+        function closeWelcome() {
+          overlay.style.opacity = '0';
+          if (researchLink) researchLink.classList.remove('nav-pulse');
+          setTimeout(function() { overlay.style.display = 'none'; }, 400);
+          localStorage.setItem('hai_welcomed', '1');
+        }
+
+        dismiss.addEventListener('click', closeWelcome);
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) closeWelcome();
+        });
+      }
+
       const filters = document.getElementById('typeFilters');
       if (!filters) return;
       filters.addEventListener('click', function(e) {

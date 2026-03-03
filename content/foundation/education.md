@@ -4,7 +4,12 @@ description: "Not job training. Not test prep. Education as the lifelong infrast
 number: "02"
 weight: 2
 status: "seed"
-tags: ["ubc", "education", "foundation", "policy"]
+tags: ["foundation", "education", "foundation", "policy"]
+hero_stat: "The US spends $16,080 per student — 5th highest in the world — yet ranks 28th in math among developed nations."
+hero_stat_bridge: "Throwing money at a broken system doesn't fix outcomes. Education infrastructure means rethinking how we learn, not just how much we spend."
+hero_stat_source: "OECD/PISA 2022"
+aliases:
+  - "/ubc/education/"
 ---
 
 The education system we have was designed to produce factory workers. Standardized inputs, standardized outputs, standardized testing to verify the standardization worked. That model was already failing before AI. Now it's absurd.

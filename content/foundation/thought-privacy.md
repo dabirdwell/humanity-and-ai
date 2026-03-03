@@ -4,7 +4,12 @@ description: "The right to an inner life. Because the technology to read minds i
 number: "16"
 weight: 16
 status: "seed"
-tags: ["ubc", "privacy", "digital-rights", "ai", "foundation", "policy"]
+tags: ["foundation", "privacy", "digital-rights", "ai", "foundation", "policy"]
+hero_stat: "29 of 30 consumer neurotechnology companies have unrestricted access to your brain data. Only 4 states have neural privacy laws. Zero federal laws exist."
+hero_stat_bridge: "When corporations can read and sell your neural data with no meaningful limits, thought privacy isn't paranoia — it's the last frontier of human rights."
+hero_stat_source: "Neurorights Foundation, 2024; Arnold & Porter legal analysis, 2025"
+aliases:
+  - "/ubc/thought-privacy/"
 ---
 
 This component sounds like science fiction until you look at the research.

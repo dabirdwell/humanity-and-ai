@@ -1,11 +1,19 @@
 {{ define "main" }}
 <article class="ubc-single">
   <header class="ubc-single-header">
-    <a href="/ubc/" class="ubc-back">← Universal Basic Citizenship</a>
+    <a href="/foundation/" class="ubc-back">← Foundation</a>
     <span class="ubc-component-number">Component {{ .Params.number }} of 16</span>
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}<p class="ubc-single-desc">{{ . }}</p>{{ end }}
   </header>
+
+  {{ if .Params.hero_stat }}
+  <div class="ubc-hero-stat">
+    <div class="ubc-hero-stat-number">{{ .Params.hero_stat }}</div>
+    {{ with .Params.hero_stat_bridge }}<p class="ubc-hero-stat-bridge">{{ . }}</p>{{ end }}
+    {{ with .Params.hero_stat_source }}<p class="ubc-hero-stat-source">Source: {{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
 
   <div class="ubc-single-content">
     {{ .Content }}
@@ -19,7 +27,7 @@
       <div class="ubc-contribute-form-wrap">
         <h3>💬 Share a Quick Thought</h3>
         <form action="https://formspree.io/f/xkovallr" method="POST">
-          <input type="hidden" name="_subject" value="UBC Feedback: {{ .Title }}">
+          <input type="hidden" name="_subject" value="Foundation Feedback: {{ .Title }}">
           <input type="hidden" name="component" value="{{ .Title }}">
           <div class="ubc-form-group">
             <label for="name">Name (optional)</label>
@@ -65,7 +73,7 @@
   </nav>
 
   <div style="margin-top: 2rem; text-align: center;">
-    <a href="/ubc/" style="color: var(--text-muted); font-size: 0.85rem;">← All 16 components</a>
+    <a href="/foundation/" style="color: var(--text-muted); font-size: 0.85rem;">← All 16 components</a>
   </div>
 </article>
 {{ end }}

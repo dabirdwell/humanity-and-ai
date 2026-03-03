@@ -4,7 +4,12 @@ description: "The energy transition isn't optional. The question is whether it h
 number: "07"
 weight: 7
 status: "seed"
-tags: ["ubc", "energy", "sustainability", "phoenix-wells", "foundation", "policy"]
+tags: ["foundation", "energy", "sustainability", "phoenix-wells", "foundation", "policy"]
+hero_stat: "Low-income households spend 3x more of their income on energy than everyone else. One in seven American families lives in energy poverty."
+hero_stat_bridge: "Energy poverty isn't about choosing paper or plastic. It's about choosing between heating your home and feeding your kids."
+hero_stat_source: "DOE Low-Income Energy Affordability Data Tool; RMI, 2023"
+aliases:
+  - "/ubc/sustainable-energy/"
 ---
 
 The fossil fuel era built the modern world and is now destabilizing it. That's not a political statement — it's thermodynamics. The transition to sustainable energy is happening regardless of policy preferences. The only variable is whether it happens in a way that leaves communities behind or brings them forward.

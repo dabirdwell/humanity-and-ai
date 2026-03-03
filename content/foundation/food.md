@@ -4,7 +4,12 @@ description: "Access to nutritious, sustainable food for all citizens. Not chari
 number: "05"
 weight: 5
 status: "seed"
-tags: ["ubc", "food", "sustainability", "foundation", "policy"]
+tags: ["foundation", "food", "sustainability", "foundation", "policy"]
+hero_stat: "18.3 million US households were food insecure in 2024 — the highest rate in nearly a decade. And the government just killed the report that tracks it."
+hero_stat_bridge: "The wealthiest nation on earth has 47 million people who aren't sure where their next meal is coming from. Food security is citizenship infrastructure."
+hero_stat_source: "USDA Economic Research Service, 2024 (final report — series terminated)"
+aliases:
+  - "/ubc/food/"
 ---
 
 Forty million Americans experience food insecurity. Not in some failed state — in the wealthiest nation in human history. Meanwhile, we throw away 30-40% of our food supply. This isn't a production problem. It's a distribution problem dressed up as inevitability.

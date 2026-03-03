@@ -4,7 +4,12 @@ description: "Single-payer comprehensive coverage. Because tying healthcare to e
 number: "15"
 weight: 15
 status: "seed"
-tags: ["ubc", "healthcare", "foundation", "policy"]
+tags: ["foundation", "healthcare", "foundation", "policy"]
+hero_stat: "66.5% of US bankruptcies are linked to medical expenses. No other wealthy nation bankrupts its citizens for getting sick."
+hero_stat_bridge: "Healthcare as a right isn't radical — it's what every peer nation already does. The question isn't whether we can afford it. It's whether we can afford not to."
+hero_stat_source: "American Journal of Public Health (Himmelstein et al.); Kaiser Family Foundation"
+aliases:
+  - "/ubc/healthcare/"
 ---
 
 America spends more per capita on healthcare than any other developed nation and gets worse outcomes. Life expectancy has been declining. Medical debt is the leading cause of bankruptcy. Tens of millions are uninsured or underinsured. The system is an embarrassment by any objective measure, and its central design flaw is tying health coverage to employment.

@@ -4,7 +4,12 @@ description: "Environments where people can express, connect, and heal without f
 number: "03"
 weight: 3
 status: "seed"
-tags: ["ubc", "safe-spaces", "community", "foundation", "policy"]
+tags: ["foundation", "safe-spaces", "community", "foundation", "policy"]
+hero_stat: "LGBTQ+ youth are 120% more likely to experience homelessness — and make up 40% of all homeless youth despite being only 7% of the youth population."
+hero_stat_bridge: "Safe spaces aren't an abstract concept — they're the difference between a roof and the street. When identity becomes grounds for exile, society has a structural failure."
+hero_stat_source: "Chapin Hall at University of Chicago, Voices of Youth Count"
+aliases:
+  - "/ubc/safe-spaces/"
 ---
 
 The phrase "safe spaces" has been politically weaponized into a punchline. That's a failure of communication, not concept. What we're talking about is straightforward: physical and social environments where people can express themselves, seek support, and engage in community without fear of discrimination or harm.

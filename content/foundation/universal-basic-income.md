@@ -4,7 +4,12 @@ description: "Yes, UBC includes UBI. Money is one tool among sixteen — necessa
 number: "13"
 weight: 13
 status: "seed"
-tags: ["ubc", "ubi", "economics", "foundation", "policy"]
+tags: ["foundation", "ubi", "economics", "foundation", "policy"]
+hero_stat: "The US poverty gap is $288 billion — the cost to lift every American above the poverty line. We spend $481 billion on welfare programs and poverty hasn't moved in 50 years."
+hero_stat_bridge: "We already spend more than enough to end poverty. The problem isn't the budget — it's the architecture."
+hero_stat_source: "Census Bureau poverty statistics, 2024; Federal Safety Net analysis"
+aliases:
+  - "/ubc/universal-basic-income/"
 ---
 
 UBI is the component people expect when they hear "Universal Basic." And yes, it's here. Financial support for all citizens, regardless of employment status, sufficient to cover basic needs. No means testing. No work requirements. No bureaucratic humiliation.

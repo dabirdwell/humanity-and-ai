@@ -4,7 +4,12 @@ description: "Safe, affordable housing as infrastructure. Not a market commodity
 number: "14"
 weight: 14
 status: "seed"
-tags: ["ubc", "housing", "infrastructure", "foundation", "policy"]
+tags: ["foundation", "housing", "infrastructure", "foundation", "policy"]
+hero_stat: "In no state, metro area, or county can a minimum wage worker afford a modest two-bedroom apartment."
+hero_stat_bridge: "Housing is the platform everything else stands on. When half the workforce can't afford where they live, every other system breaks."
+hero_stat_source: "NLIHC Out of Reach, 2025"
+aliases:
+  - "/ubc/housing/"
 ---
 
 Housing in America has become an extraction machine. In most cities, rent or mortgage consumes 30-50% of household income. Housing "investment" has been reframed as the primary wealth-building vehicle for the middle class, which means housing prices must perpetually rise, which means housing must perpetually become less affordable. The incentive structure is mathematically hostile to the people who need housing most.

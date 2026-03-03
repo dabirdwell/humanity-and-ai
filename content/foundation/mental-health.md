@@ -4,7 +4,12 @@ description: "Comprehensive care for the mind, not just the body. Because the tr
 number: "09"
 weight: 9
 status: "seed"
-tags: ["ubc", "mental-health", "healthcare", "foundation", "policy"]
+tags: ["foundation", "mental-health", "healthcare", "foundation", "policy"]
+hero_stat: "122 million Americans live in areas with a shortage of mental health professionals. Only 26% of mental health care needs are being met."
+hero_stat_bridge: "You can't bootstrap your way out of a mental health crisis when there's literally no one to call."
+hero_stat_source: "HRSA Health Professional Shortage Areas, 2024; KFF analysis, 2024"
+aliases:
+  - "/ubc/mental-health/"
 ---
 
 America is in a mental health crisis that predates AI and will be dramatically worsened by it. Depression, anxiety, substance abuse, and suicide rates have been climbing for decades. The treatment infrastructure is catastrophically inadequate — long wait times, high costs, geographic deserts, and a system that treats mental health as a luxury rather than a medical necessity.

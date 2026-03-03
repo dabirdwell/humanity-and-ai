@@ -4,7 +4,12 @@ description: "Free, lifelong access to learning at every level. Not retraining p
 number: "10"
 weight: 10
 status: "seed"
-tags: ["ubc", "education", "training", "foundation", "policy"]
+tags: ["foundation", "education", "training", "foundation", "policy"]
+hero_stat: "$1.78 trillion. That's how much Americans owe in student loans. 43 million borrowers. Average debt: $39,000."
+hero_stat_bridge: "When education creates a generation of debtors, it's not accessible — it's extractive."
+hero_stat_source: "Federal Reserve; Federal Student Aid, Q4 2025"
+aliases:
+  - "/ubc/accessible-education/"
 ---
 
 Component 2 addresses the philosophy of education. This component addresses the machinery: free access to education and training at all levels, with fully individualized experiences, available throughout life.

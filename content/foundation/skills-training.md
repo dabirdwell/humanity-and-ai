@@ -4,7 +4,12 @@ description: "Adapting how we prepare people not just for the next job, but for 
 number: "12"
 weight: 12
 status: "seed"
-tags: ["ubc", "skills", "education", "workforce", "foundation", "policy"]
+tags: ["foundation", "skills", "education", "workforce", "foundation", "policy"]
+hero_stat: "400-800 million jobs globally could be displaced by automation by 2030. The US spends less than half what it did in the 1990s on job transition programs."
+hero_stat_bridge: "When the robots are coming but the retraining isn't, skills infrastructure isn't education — it's economic survival."
+hero_stat_source: "McKinsey Global Institute; World Economic Forum Future of Jobs, 2025"
+aliases:
+  - "/ubc/skills-training/"
 ---
 
 Components 2 and 10 cover the philosophy and access of education. This component addresses the hardest question: what do we actually prepare people *for* when AI can do an increasing share of cognitive and physical labor?

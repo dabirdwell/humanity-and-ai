@@ -4,7 +4,12 @@ description: "Reliable information and AI tools for everyone — not just those 
 number: "08"
 weight: 8
 status: "seed"
-tags: ["ubc", "information", "ai", "digital-rights", "foundation", "policy"]
+tags: ["foundation", "information", "ai", "digital-rights", "foundation", "policy"]
+hero_stat: "24-26 million Americans lack broadband access. The maps that guide billions in funding overcount access by 33%."
+hero_stat_bridge: "In 2026, internet access is oxygen for economic participation. Information access isn't a luxury — it's the prerequisite for every other right."
+hero_stat_source: "FCC Broadband Progress Report, 2024; BroadbandNow audit, 2025"
+aliases:
+  - "/ubc/information-access/"
 ---
 
 We are living through the most severe information crisis in modern history. Not because information is scarce — because it's overwhelming, manipulated, and monetized. The average person encounters more persuasion technology before breakfast than previous generations faced in a year. Algorithms optimize for engagement, not truth. Deepfakes are becoming indistinguishable from reality. And the tools to navigate this landscape are being locked behind paywalls.

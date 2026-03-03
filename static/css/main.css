@@ -1973,6 +1973,54 @@ a:hover { color: var(--accent-primary); }
   .ubc-contribute-options { grid-template-columns: 1fr; }
 }
 
+/* Hero Stat Block */
+.ubc-hero-stat {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(78, 205, 196, 0.04));
+  border: 1px solid rgba(255, 107, 53, 0.15);
+  border-radius: 12px;
+  position: relative;
+}
+
+.ubc-hero-stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--accent-primary);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.ubc-hero-stat-bridge {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto 0.8rem;
+}
+
+.ubc-hero-stat-source {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Hero stat on landing page cards */
+.ubc-card-stat {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  line-height: 1.35;
+  margin: 0.5rem 0 0.4rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 /* Single Component Page */
 .ubc-single {
   max-width: var(--max-width);
@@ -2164,3 +2212,121 @@ a:hover { color: var(--accent-primary); }
 .ubc-nav-link.next { text-align: right; margin-left: auto; }
 .ubc-nav-label { display: block; font-size: 0.8rem; color: var(--text-muted); }
 .ubc-nav-title { font-size: 0.95rem; color: var(--accent-secondary); }
+
+
+/* ========================================
+   First-Visit Welcome Overlay
+   ======================================== */
+
+.welcome-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.welcome-overlay.visible {
+  display: flex;
+  opacity: 1;
+}
+
+.welcome-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-hover);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.welcome-overlay.visible .welcome-card {
+  transform: translateY(0);
+}
+
+.welcome-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.welcome-halves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  .welcome-halves { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+.welcome-half p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.welcome-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.welcome-label--research {
+  color: var(--accent-primary);
+}
+
+.welcome-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.welcome-hint strong {
+  color: var(--accent-primary);
+}
+
+.welcome-dismiss {
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  background: var(--accent-secondary);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.welcome-dismiss:hover { opacity: 0.85; }
+
+/* Research nav link pulse */
+@keyframes navPulse {
+  0%, 100% { color: var(--accent-secondary); }
+  50% { color: var(--accent-primary); text-shadow: 0 0 8px rgba(255, 107, 53, 0.4); }
+}
+
+.site-nav a.nav-pulse {
+  animation: navPulse 1.2s ease-in-out infinite;
+}

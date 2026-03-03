@@ -4,7 +4,12 @@ description: "The deal between citizens and society was written for a world that
 number: "04"
 weight: 4
 status: "seed"
-tags: ["ubc", "social-contract", "governance", "foundation", "policy"]
+tags: ["foundation", "social-contract", "governance", "foundation", "policy"]
+hero_stat: "Only 17% of Americans trust the federal government to do the right thing. In 1964, it was 77%."
+hero_stat_bridge: "When five out of six Americans don't trust their government, the social contract isn't a contract anymore — it's a memory."
+hero_stat_source: "Pew Research Center, Public Trust in Government 1958-2025"
+aliases:
+  - "/ubc/social-contract/"
 ---
 
 The social contract most Western democracies operate under was negotiated in the aftermath of World War II. Work hard, play by the rules, and society provides a pathway to stability: steady employment, home ownership, retirement security, upward mobility for your children. That contract has been in breach for decades. AI is about to void it entirely.

@@ -4,7 +4,12 @@ description: "Mobility as infrastructure, not luxury. Including the self-driving
 number: "11"
 weight: 11
 status: "seed"
-tags: ["ubc", "transportation", "infrastructure", "foundation", "policy"]
+tags: ["foundation", "transportation", "infrastructure", "foundation", "policy"]
+hero_stat: "45% of Americans have no access to public transit at all. 16 million adults of driving age live in households without a car."
+hero_stat_bridge: "When half the country has no transit option and millions can't afford cars, transportation isn't convenience — it's the prerequisite for every other opportunity."
+hero_stat_source: "NRDC, 2025; CDC National Center for Health Statistics, 2024"
+aliases:
+  - "/ubc/transportation/"
 ---
 
 In most of America, if you can't drive, you can't participate. You can't get to work, to school, to the doctor, to the grocery store. Car ownership is a de facto requirement for citizenship, and it's one of the most regressive costs in the economy — car payments, insurance, fuel, maintenance falling heaviest on those who can least afford it.

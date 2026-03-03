@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="ubc-landing">
   <header class="ubc-hero">
-    <p class="ubc-eyebrow">Universal Basic Citizenship</p>
+    <p class="ubc-eyebrow">Foundation</p>
     <h1>What Does Membership in a Society Actually Mean?</h1>
-    <p class="ubc-hero-desc">UBC is not a policy proposal handed down from above. It's a framework — scaffolding for a conversation about what citizens owe each other in the age of AI. These 16 components are a starting position. The public builds from here.</p>
+    <p class="ubc-hero-desc">Foundation is not a policy proposal handed down from above. It's a framework — scaffolding for a conversation about what citizens owe each other in the age of AI. These 16 components are a starting position. The public builds from here.</p>
   </header>
 
   <div class="ubc-intro">
@@ -20,6 +20,7 @@
     <a href="{{ .Permalink }}" class="ubc-card">
       <span class="ubc-card-number">{{ .Params.number }}</span>
       <h3>{{ .Title }}</h3>
+      {{ with .Params.hero_stat }}<span class="ubc-card-stat">{{ . }}</span>{{ end }}
       {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
       {{ with .Params.status }}<span class="ubc-card-status {{ . }}">{{ . }}</span>{{ end }}
     </a>
