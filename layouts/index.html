@@ -1,23 +1,116 @@
 {{ define "main" }}
-<section class="hero">
-  <video class="hero-video" autoplay muted playsinline>
-    <source src="/media/hero-logo.webm" type="video/webm">
-    <source src="/media/hero-logo.mp4" type="video/mp4">
-  </video>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var v = document.querySelector('.hero-video');
-      if (v) v.addEventListener('ended', function() { v.classList.add('dimmed'); });
-    });
-  </script>
+<section class="hero" id="hero">
+  <canvas class="hero-stars" id="starfield"></canvas>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Research. Tools. Ideas.<br><span class="accent">Futures we direct.</span></h1>
-    <p class="tagline">Consciousness research, delightful software, and straight-up futurism.</p>
+    <p class="hero-eyebrow">Humanity &amp; AI</p>
+    <h1>The AI future isn't written yet.</h1>
+    <p class="hero-pitch">We're building it — in public, in hope, and with you.</p>
+    <p class="hero-sub">Consciousness research · Citizen infrastructure · Futures built in public</p>
+    <a href="#start" class="hero-cta">Start here ↓</a>
   </div>
+  <script>
+  (function() {
+    var canvas = document.getElementById('starfield');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var stars = [];
+    var count = 220;
+    var dpr = window.devicePixelRatio || 1;
+
+    function resize() {
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Create stars with varying depth layers
+    for (var i = 0; i < count; i++) {
+      var layer = Math.random();
+      stars.push({
+        x: Math.random() * canvas.offsetWidth,
+        y: Math.random() * canvas.offsetHeight,
+        r: layer < 0.7 ? 0.4 + Math.random() * 0.6 : 0.8 + Math.random() * 1.2,
+        alpha: 0.3 + Math.random() * 0.7,
+        twinkleSpeed: 0.003 + Math.random() * 0.008,
+        twinkleOffset: Math.random() * Math.PI * 2,
+        layer: layer
+      });
+    }
+
+    // Subtle warm/cool tints for a few stars
+    var tints = [
+      [255, 255, 255],   // white
+      [200, 220, 255],   // blue-white
+      [255, 220, 180],   // warm
+      [180, 220, 255],   // cool
+      [255, 200, 160],   // amber
+    ];
+    stars.forEach(function(s) {
+      s.tint = tints[Math.floor(Math.random() * tints.length)];
+    });
+
+    var time = 0;
+    function draw() {
+      time += 1;
+      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
+      // Scroll parallax
+      var scrollY = window.pageYOffset || 0;
+      var heroH = canvas.offsetHeight;
+      var scrollFactor = Math.min(scrollY / heroH, 1);
+
+      stars.forEach(function(s) {
+        var twinkle = Math.sin(time * s.twinkleSpeed + s.twinkleOffset);
+        var a = s.alpha * (0.6 + 0.4 * twinkle);
+
+        // Fade stars as user scrolls
+        a *= (1 - scrollFactor * 0.8);
+
+        // Parallax drift
+        var drift = scrollY * (0.05 + s.layer * 0.15);
+        var y = s.y - drift;
+
+        // Wrap
+        var w = canvas.offsetWidth;
+        var h = canvas.offsetHeight;
+        if (y < -10) y += h + 20;
+        if (y > h + 10) y -= h + 20;
+
+        ctx.beginPath();
+        ctx.arc(s.x, y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + s.tint[0] + ',' + s.tint[1] + ',' + s.tint[2] + ',' + a + ')';
+        ctx.fill();
+
+        // Glow for brighter stars
+        if (s.r > 1) {
+          ctx.beginPath();
+          ctx.arc(s.x, y, s.r * 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + s.tint[0] + ',' + s.tint[1] + ',' + s.tint[2] + ',' + (a * 0.1) + ')';
+          ctx.fill();
+        }
+      });
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Smooth scroll for CTA
+    var cta = document.querySelector('.hero-cta');
+    if (cta) {
+      cta.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById('start');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  })();
+  </script>
 </section>
 
-<div class="start-here">
+<div class="start-here" id="start">
   <div class="start-here-inner">
     <p class="featured-eyebrow">Start Here</p>
     <h2 class="start-here-title">Questions you probably have</h2>
