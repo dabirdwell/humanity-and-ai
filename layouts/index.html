@@ -165,6 +165,22 @@
       </a>
 
     </div>
+    <!-- Mobile scroll arrow -->
+    <div class="scroll-arrow" aria-hidden="true">›</div>
+    <script>
+    (function(){
+      var grid = document.querySelector('.start-here-grid');
+      var arrow = document.querySelector('.scroll-arrow');
+      if (!grid || !arrow) return;
+      grid.addEventListener('scroll', function handler() {
+        if (grid.scrollLeft > 20) {
+          arrow.classList.add('hidden');
+          grid.classList.add('scrolled');
+          grid.removeEventListener('scroll', handler);
+        }
+      }, {passive: true});
+    })();
+    </script>
   </div>
 </div>
 
