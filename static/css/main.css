@@ -2462,6 +2462,8 @@ a:hover { color: var(--accent-primary); }
   color: #ff8255;
 }
 
+.scroll-arrow { display: none; }
+
 @media (max-width: 768px) {
   .question-card {
     flex: 0 0 82vw;
@@ -2494,12 +2496,47 @@ a:hover { color: var(--accent-primary); }
     pointer-events: none;
     z-index: 1;
   }
-  /* Scroll hint: subtle glow on first card, brighter on the peeking second card */
+  /* Scroll arrow indicator — right edge of carousel */
+  .scroll-arrow {
+    display: flex;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(78, 205, 196, 0.15);
+    border: 1px solid rgba(78, 205, 196, 0.35);
+    color: rgba(78, 205, 196, 0.9);
+    font-size: 1.3rem;
+    font-weight: 600;
+    pointer-events: none;
+    animation: arrowBounce 1.8s ease-in-out 1.5s infinite, arrowGlow 2.2s ease-in-out 1.5s infinite;
+    transition: opacity 0.4s ease;
+  }
+  .scroll-arrow.hidden { opacity: 0; }
+  @keyframes arrowBounce {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(5px); }
+  }
+  @keyframes arrowGlow {
+    0%, 100% { box-shadow: 0 0 8px rgba(78, 205, 196, 0.15); }
+    50% { box-shadow: 0 0 20px rgba(78, 205, 196, 0.45), 0 0 40px rgba(78, 205, 196, 0.15); }
+  }
+  /* Scroll hint: subtle glow on first card, brighter on the peeking second card — loops until scroll */
   .start-here-grid .question-card:first-child {
-    animation: cardHintSoft 2.2s ease-in-out 1.5s 2;
+    animation: cardHintSoft 2.2s ease-in-out 1.5s 3;
   }
   .start-here-grid .question-card:nth-child(2) {
-    animation: cardHintBright 2.2s ease-in-out 1.5s 3;
+    animation: cardHintBright 2.2s ease-in-out 1.5s infinite;
+  }
+  .start-here-grid.scrolled .question-card:first-child,
+  .start-here-grid.scrolled .question-card:nth-child(2) {
+    animation: none;
   }
   @keyframes cardHintSoft {
     0%, 100% { box-shadow: none; }
