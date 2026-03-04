@@ -2387,12 +2387,12 @@ a:hover { color: var(--accent-primary); }
 
 /* Research nav link pulse */
 @keyframes navPulse {
-  0%, 100% { color: var(--accent-primary); text-shadow: 0 0 4px rgba(255, 107, 53, 0.2); }
-  50% { color: #ff8c55; text-shadow: 0 0 12px rgba(255, 107, 53, 0.6), 0 0 24px rgba(255, 107, 53, 0.25); }
+  0%, 100% { color: #ff6b35; text-shadow: 0 0 6px rgba(255, 107, 53, 0.3); }
+  50% { color: #ffaa77; text-shadow: 0 0 16px rgba(255, 107, 53, 0.7), 0 0 32px rgba(255, 107, 53, 0.3); }
 }
 
 .site-nav a.nav-pulse {
-  animation: navPulse 1.2s ease-in-out infinite;
+  animation: navPulse 1s ease-in-out infinite;
 }
 
 /* ========================================
