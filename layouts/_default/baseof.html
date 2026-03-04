@@ -31,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/main.css?v=20260303c">
+  <link rel="stylesheet" href="/css/main.css?v=20260303d">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
 
   {{ block "head" . }}{{ end }}
@@ -114,9 +114,12 @@
 
         function closeWelcome() {
           overlay.style.opacity = '0';
-          if (researchLink) researchLink.classList.remove('nav-pulse');
           setTimeout(function() { overlay.style.display = 'none'; }, 400);
           localStorage.setItem('hai_welcomed', '1');
+          // Keep nav glow visible for 5s AFTER overlay fades so user can see it
+          setTimeout(function() {
+            if (researchLink) researchLink.classList.remove('nav-pulse');
+          }, 5000);
         }
 
         dismiss.addEventListener('click', closeWelcome);
