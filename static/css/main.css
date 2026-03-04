@@ -2356,6 +2356,19 @@ a:hover { color: var(--accent-primary); }
   color: var(--accent-primary);
 }
 
+.welcome-arrow {
+  display: inline-block;
+  color: var(--accent-primary);
+  font-size: 1.1em;
+  font-weight: 700;
+  animation: arrowPointUp 1s ease-in-out infinite;
+}
+
+@keyframes arrowPointUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 .welcome-dismiss {
   display: inline-block;
   padding: 0.6rem 2rem;
@@ -2374,8 +2387,8 @@ a:hover { color: var(--accent-primary); }
 
 /* Research nav link pulse */
 @keyframes navPulse {
-  0%, 100% { color: var(--accent-secondary); }
-  50% { color: var(--accent-primary); text-shadow: 0 0 8px rgba(255, 107, 53, 0.4); }
+  0%, 100% { color: var(--accent-primary); text-shadow: 0 0 4px rgba(255, 107, 53, 0.2); }
+  50% { color: #ff8c55; text-shadow: 0 0 12px rgba(255, 107, 53, 0.6), 0 0 24px rgba(255, 107, 53, 0.25); }
 }
 
 .site-nav a.nav-pulse {
