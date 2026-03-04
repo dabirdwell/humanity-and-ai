@@ -115,13 +115,29 @@
     }
     draw();
 
-    // Smooth scroll for CTA
+    // Smooth scroll for CTA — custom easing
     var cta = document.querySelector('.hero-cta');
     if (cta) {
       cta.addEventListener('click', function(e) {
         e.preventDefault();
         var target = document.getElementById('start');
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        if (!target) return;
+        var startY = window.pageYOffset;
+        var endY = target.getBoundingClientRect().top + startY;
+        var dist = endY - startY;
+        var duration = 1200;
+        var startTime = null;
+        function ease(t) {
+          // ease-in-out quart — slow start, fast middle, slow finish
+          return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+        }
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var p = Math.min((ts - startTime) / duration, 1);
+          window.scrollTo(0, startY + dist * ease(p));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
       });
     }
   })();
