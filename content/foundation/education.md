@@ -34,7 +34,10 @@ Oklahoma ranks 50th in education spending. Last. Every year that policy holds, a
 
 Nationally, the US spends $16,080 per student — fifth highest in the world — and ranks 28th in math. The money is going somewhere. It's going into a structure designed for a different era, optimized for standardized outputs, not human development. We are paying full price for a system that was designed to make factory workers and is now producing people who are unprepared for a world that no longer has enough factories.
 
-[*A note from the author: I know what an Oklahoma classroom with 30 kids and an exhausted teacher looks like. I know what it looks like when a child who is actually brilliant falls through the cracks of a system that wasn't built for them. The tools exist now to change this. The question is whether we're willing to build a system that serves every child instead of sorting them.*]
+<!--
+AUTHOR NOTE (unpublished — replace with your words before finalizing):
+I know what an Oklahoma classroom with 30 kids and an exhausted teacher looks like. I know what it looks like when a child who is actually brilliant falls through the cracks of a system that wasn't built for them. The tools exist now to change this. The question is whether we're willing to build a system that serves every child instead of sorting them.
+-->
 
 This is what it means when education is about compliance rather than curiosity. The curriculum teaches to a test. The test measures a narrow band of what humans are capable of. And the children who don't fit that band learn, early and at great cost, that the system doesn't see them.
 

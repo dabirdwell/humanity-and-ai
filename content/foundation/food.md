@@ -36,7 +36,10 @@ The USDA tracked food insecurity in America for decades. In 2024, they published
 
 18.3 million households in the wealthiest nation in history went to bed last year not knowing if there would be food tomorrow. 47 million people. We have enough food — we throw away 30% to 40% of the food we produce. This is not a production problem. It is a choice about who eats and who doesn't, dressed up as an inevitability.
 
-[*A note from the author: Oklahoma consistently ranks among the most food-insecure states. I grew up knowing kids who came to school hungry. That wasn't their fault or their parents' failure. It was a community failing to provide what its children needed to learn. We can do better than this. We already know how.*]
+<!--
+AUTHOR NOTE (unpublished — replace with your words before finalizing):
+Oklahoma consistently ranks among the most food-insecure states. I grew up knowing kids who came to school hungry. That wasn't their fault or their parents' failure. It was a community failing to provide what its children needed to learn. We can do better than this. We already know how.
+-->
 
 When we say food access is infrastructure, we mean this: Deja can't learn. Marcus can't think clearly. Rosa can't work reliably. Not because they're not trying hard enough — because they're running on empty. The cognitive tax of food insecurity falls hardest on people who can least afford to pay it, and it cascades into every other system we've built.
 

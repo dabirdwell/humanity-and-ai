@@ -45,7 +45,10 @@ A vial of insulin costs roughly $10 to manufacture. In the United States, it can
 
 The 66.5% of American bankruptcies tied to medical expenses aren't people who made bad decisions. They are people who got sick in a country that charges admission to stay alive.
 
-[*A note from the author: Growing up in Oklahoma, with three generations of family in public service, I watched this happen to people I knew. The neighbor who quietly stopped filling prescriptions. The colleague who left a job he loved because it was the only way to keep his family's insurance. These aren't edge cases. This is ordinary American life.*]
+<!--
+AUTHOR NOTE (unpublished — replace with your words before finalizing):
+Growing up in Oklahoma, with three generations of family in public service, I watched this happen to people I knew. The neighbor who quietly stopped filling prescriptions. The colleague who left a job he loved because it was the only way to keep his family's insurance. These aren't edge cases. This is ordinary American life.
+-->
 
 This is what it looks like when healthcare is a product you purchase instead of a right you hold.
 
