@@ -18,3 +18,5 @@ We built this framework over two years — originally under the name Universal B
 We don't need you to agree with everything here. We need you to engage with it. Push back. Add context from your expertise, your community, your lived experience. The best version of this framework is one we couldn't have written alone.
 
 Foundation is both the framework and the movement. Not left, not right — forward. Not anti-technology. Pro-human. Because the AI transition is coming regardless, and the question isn't whether it happens but who it happens *for*.
+
+→ **[What this means for the next generation](/foundation/for-kids/)** — what Foundation looks like from a parent's perspective.
