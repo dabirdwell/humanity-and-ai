@@ -1,6 +1,6 @@
 ---
-title: "168 Hours"
-description: "Every week contains exactly 168 hours. This is how many of them are yours — depending on where you were born and what your state chose to pay you."
+title: "Working for Rent"
+description: "How many days of every month do you work just to pay rent — before food, before utilities, before your family? Adjust the sliders. Then see what the same job looks like in Germany."
 date: 2026-03-06T12:00:00
 type: "visualizations"
 tags: ["housing", "labor", "inequality", "interactive", "Oklahoma"]
