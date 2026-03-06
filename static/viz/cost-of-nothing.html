@@ -81,11 +81,11 @@ h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom
   <div class="eyebrow">Foundation — The Price of Inaction</div>
   <h1>The Cost of Nothing</h1>
   <p class="subtitle">We often talk about what the Foundation would cost. We rarely count what we're already paying — in medical debt, lost wages, preventable suffering — for the system we have.</p>
-  <p class="since-label">Counters running since you opened this page. Time elapsed: <span id="elapsed">0:00</span></p>
+  <p class="since-label">Counters accumulate annual totals from when you opened this page. Time elapsed: <span id="elapsed">0:00</span></p>
 
   <div class="controls">
     <button class="pause-btn" id="pauseBtn">⏸ Pause</button>
-    <span class="time-note">All rates are annual US figures, divided to per-second.</span>
+    <span class="time-note">All rates are annual US figures, accumulating to their yearly total.</span>
   </div>
 
   <!-- COUNTERS -->
@@ -102,7 +102,7 @@ h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom
     <div class="counter-card orange">
       <div class="card-eyebrow">Insulin Rationing</div>
       <div class="counter-value" id="c-insulin">0</div>
-      <div class="counter-label">diabetics who rationed insulin today due to cost</div>
+      <div class="counter-label">diabetics who rationed insulin this year due to cost</div>
       <div class="counter-rate" id="r-insulin"></div>
       <div class="counter-source">Source: ADA · ~1 in 4 insulin-dependent diabetics</div>
     </div>
@@ -118,7 +118,7 @@ h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom
     <div class="counter-card blue">
       <div class="card-eyebrow">Child Hunger</div>
       <div class="counter-value" id="c-hunger">0</div>
-      <div class="counter-label">children who will go to bed hungry tonight</div>
+      <div class="counter-label">children experiencing food insecurity this year</div>
       <div class="counter-rate" id="r-hunger"></div>
       <div class="counter-source">Source: Feeding America · ~13 million children/year</div>
     </div>
@@ -126,7 +126,7 @@ h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom
     <div class="counter-card yellow">
       <div class="card-eyebrow">Mental Health Gap</div>
       <div class="counter-value" id="c-mental">0</div>
-      <div class="counter-label">people who needed mental health care and couldn't access it today</div>
+      <div class="counter-label">people who needed mental health care and couldn't access it this year</div>
       <div class="counter-rate" id="r-mental"></div>
       <div class="counter-source">Source: SAMHSA · ~27 million unmet need/year</div>
     </div>
@@ -190,14 +190,25 @@ h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom
 </div>
 
 <script>
-// Annual rates → per second
+// Annual rates → per second (all divided by seconds per year)
+const SEC_PER_YEAR = 365.25 * 24 * 3600;
 const RATES = {
-  bankruptcy: 530000 / (365.25 * 24 * 3600),
-  insulin:    (7700000 * 0.25) / 365,          // daily: 1in4 of ~7.7M insulin-dependent
-  eviction:   3600000 / (365.25 * 24 * 3600),
-  hunger:     13000000 / 365,                   // daily figure (nightly)
-  mental:     27000000 / 365,                   // daily unmet need
-  death:      68000 / (365.25 * 24 * 3600)
+  bankruptcy: 530000      / SEC_PER_YEAR,
+  insulin:    1925000     / SEC_PER_YEAR,  // 7.7M insulin-dependent × 25%
+  eviction:   3600000     / SEC_PER_YEAR,
+  hunger:     13000000    / SEC_PER_YEAR,
+  mental:     27000000    / SEC_PER_YEAR,
+  death:      68000       / SEC_PER_YEAR
+};
+
+// Annual caps — counter stops here
+const CAPS = {
+  bankruptcy: 530000,
+  insulin:    1925000,
+  eviction:   3600000,
+  hunger:     13000000,
+  mental:     27000000,
+  death:      68000
 };
 
 let startTime = Date.now();
@@ -214,7 +225,8 @@ function elapsed() {
 function fmtLarge(n) {
   if (n >= 1e6) return (n/1e6).toFixed(2) + 'M';
   if (n >= 1e3) return Math.round(n).toLocaleString();
-  return n.toFixed(n < 10 ? 2 : 0);
+  if (n >= 1) return Math.floor(n).toString();
+  return '0';
 }
 
 function fmtElapsed(ms) {
@@ -237,12 +249,23 @@ function tick() {
 
   document.getElementById('elapsed').textContent = fmtElapsed(elapsed());
 
-  document.getElementById('c-bankruptcy').textContent = fmtLarge(RATES.bankruptcy * sec);
-  document.getElementById('c-insulin').textContent    = fmtLarge(RATES.insulin * sec);
-  document.getElementById('c-eviction').textContent  = fmtLarge(RATES.eviction * sec);
-  document.getElementById('c-hunger').textContent    = fmtLarge(RATES.hunger * sec);
-  document.getElementById('c-mental').textContent    = fmtLarge(RATES.mental * sec);
-  document.getElementById('c-death').textContent     = fmtLarge(RATES.death * sec);
+  function updateCounter(id, rateKey, rateEl) {
+    const raw = RATES[rateKey] * sec;
+    const cap = CAPS[rateKey];
+    const val = Math.min(raw, cap);
+    document.getElementById(id).textContent = fmtLarge(val);
+    if (raw >= cap) {
+      document.getElementById(id).style.opacity = '0.5';
+      if (rateEl) document.getElementById(rateEl).textContent = 'annual total reached';
+    }
+  }
+
+  updateCounter('c-bankruptcy', 'bankruptcy', 'r-bankruptcy');
+  updateCounter('c-insulin',    'insulin',    'r-insulin');
+  updateCounter('c-eviction',   'eviction',   'r-eviction');
+  updateCounter('c-hunger',     'hunger',     'r-hunger');
+  updateCounter('c-mental',     'mental',     'r-mental');
+  updateCounter('c-death',      'death',      'r-death');
 
   if (!paused) raf = requestAnimationFrame(tick);
 }

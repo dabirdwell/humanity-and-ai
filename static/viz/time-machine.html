@@ -259,11 +259,15 @@ function update() {
   const deRentDaysR = Math.round(deRentDays * 10) / 10;
 
   // Big stats
-  document.getElementById('ok-days').textContent = Math.ceil(okRentDays);
+  if (okRentDays > 30) {
+    document.getElementById('ok-days').textContent = '30+';
+    document.getElementById('ok-hours-sub').textContent = `${Math.round(rent / wage)} hours of work — more than your entire month's wages`;
+  } else {
+    document.getElementById('ok-days').textContent = Math.ceil(okRentDays);
+    const okHours = Math.round((rent / wage));
+    document.getElementById('ok-hours-sub').textContent = `${okHours} hours of work just to pay rent`;
+  }
   document.getElementById('de-days').textContent = Math.ceil(deRentDays);
-
-  const okHours = Math.round((rent / wage));
-  document.getElementById('ok-hours-sub').textContent = `${okHours} hours of work just to pay rent`;
 
   document.getElementById('ok-cal-sub').textContent = `At $${wage.toFixed(2)}/hr, $${rent}/mo rent`;
 
