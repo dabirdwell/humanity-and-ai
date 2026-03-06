@@ -12,9 +12,18 @@ Switch between five Foundation components. Tap any dimmed figure to meet the per
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
-<iframe src="/viz/the-classroom.html" style="width:100%; height:900px; border:none;" loading="eager" allow="scripts"></iframe>
+<iframe id="tc-frame" src="/viz/the-classroom.html" style="width:100%; height:760px; border:none; transition:height 0.2s ease;" loading="eager" allow="scripts"></iframe>
 </div>
 </div>
+
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.iframeHeight) {
+    var f = document.getElementById('tc-frame');
+    if (f) f.style.height = (e.data.iframeHeight + 24) + 'px';
+  }
+});
+</script>
 
 ## About This Visualization
 

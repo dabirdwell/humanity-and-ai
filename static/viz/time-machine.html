@@ -329,5 +329,13 @@ document.getElementById('rentSlider').addEventListener('input', function() {
 
 update();
 </script>
+<script>
+function _reportHeight() {
+  window.parent.postMessage({iframeHeight: document.documentElement.scrollHeight}, '*');
+}
+window.addEventListener('load', _reportHeight);
+window.addEventListener('resize', _reportHeight);
+new MutationObserver(_reportHeight).observe(document.body, {childList:true, subtree:true, attributes:true, characterData:true});
+</script>
 </body>
 </html>

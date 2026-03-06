@@ -14,9 +14,18 @@ The clock on the left is yours — an Oklahoma worker at or near minimum wage. T
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
-<iframe src="/viz/time-machine.html" style="width:100%; height:1100px; border:none;" loading="eager" allow="scripts"></iframe>
+<iframe id="tm-frame" src="/viz/time-machine.html" style="width:100%; height:900px; border:none; transition:height 0.2s ease;" loading="eager" allow="scripts"></iframe>
 </div>
 </div>
+
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.iframeHeight) {
+    var f = document.getElementById('tm-frame');
+    if (f) f.style.height = (e.data.iframeHeight + 24) + 'px';
+  }
+});
+</script>
 
 ## What the Numbers Mean
 
