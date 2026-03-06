@@ -30,6 +30,19 @@ Mass economic disruption will create housing instability at scale. When industri
 
 Community land trusts. Public housing that's actually maintained and destigmatized. Cooperative housing models. Mixed-income developments that don't segregate by economic status. Vienna's social housing system, which houses 60% of its population in publicly subsidized housing that's desirable, well-maintained, and economically sustainable. These models exist. They're proven. They're not implemented at scale because the political economy of housing speculation is powerful.
 
+## What This Looks Like
+
+> "Folks who get a $900 social security check once a month — that doesn't cover a $1,200 rent payment for a one-bedroom apartment. We really set people up to fail."
+> — Carrie Blumert, CEO, Mental Health Association Oklahoma, September 2025
+
+In Oklahoma — not California, not New York — a minimum wage worker would need to put in 93 hours a week just to afford a one-bedroom apartment. That's more than two full-time jobs, for a single room. In 2024, nearly one in four people counted as homeless in Tulsa were employed at the time of their count. They had jobs. They just couldn't afford a roof.
+
+*Rosa is not one person.* She's a home health aide — she cares for elderly people in their homes so they can stay out of nursing facilities. The work is essential. It pays $11.50 an hour. The cheapest one-bedroom near her clients rents for $900 a month. She works five days a week and lives with her sister's family, two adults and three kids in a two-bedroom apartment, because there is no other option. She's been on the affordable housing waiting list for three years. The list has 2,000 names on it.
+
+This is not a housing shortage. It is a policy failure. Wages haven't moved in 16 years in Oklahoma. Rent has risen 60% in that same period. The math was always going to produce this outcome.
+
+When we say housing is infrastructure, we mean this: Rosa cannot build a stable life, save money, maintain her health, or show up reliably for the people who depend on her if she can't first establish where she sleeps. Housing is not a reward for economic success. It is the foundation that makes economic participation possible.
+
 ## What We're Missing
 
 Housing intersects with everything: land use policy, construction labor, environmental sustainability, community design, disability access, cultural preferences. What does "affordable" actually mean in different contexts? What are the models that preserve community while providing stability? What do people who've experienced housing insecurity know that policymakers don't?

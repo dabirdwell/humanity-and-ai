@@ -26,6 +26,18 @@ This is also the first time in history we can genuinely personalize education at
 
 Oklahoma ranks 50th in education spending. That's not an accident — it's a policy choice. UBC says that choice is unacceptable, not because rankings matter, but because every child in every zip code deserves access to education that develops their full capacity.
 
+## What This Looks Like
+
+Oklahoma ranks 50th in education spending. Last. Every year that policy holds, a generation of children in this state is handed a worse deck than children in every other state. This isn't a mystery or a tragedy of geography. It is the accumulated result of specific decisions made by specific people.
+
+*Tyler is not one person.* He's seven years old and his brain processes text differently from how most reading instruction is designed to teach it. His teacher is overworked and managing 27 students with a single classroom aide. She notices Tyler is struggling, flags him for evaluation, and waits six months for the school psychologist to have capacity. By then Tyler has decided he's bad at school. That belief will follow him for years, possibly his whole life — not because of how his brain works, but because the system didn't have the tools or time to meet him where he was.
+
+Nationally, the US spends $16,080 per student — fifth highest in the world — and ranks 28th in math. The money is going somewhere. It's going into a structure designed for a different era, optimized for standardized outputs, not human development. We are paying full price for a system that was designed to make factory workers and is now producing people who are unprepared for a world that no longer has enough factories.
+
+[*A note from the author: I know what an Oklahoma classroom with 30 kids and an exhausted teacher looks like. I know what it looks like when a child who is actually brilliant falls through the cracks of a system that wasn't built for them. The tools exist now to change this. The question is whether we're willing to build a system that serves every child instead of sorting them.*]
+
+This is what it means when education is about compliance rather than curiosity. The curriculum teaches to a test. The test measures a narrow band of what humans are capable of. And the children who don't fit that band learn, early and at great cost, that the system doesn't see them.
+
 ## The Deeper Architecture
 
 Education in UBC isn't one thing. It's a stack:

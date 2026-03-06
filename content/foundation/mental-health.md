@@ -28,6 +28,19 @@ Addiction is a public health issue, not a criminal justice issue. Every dollar s
 
 This matters for the AI transition specifically because economic displacement and social disruption are known accelerators of substance abuse. The opioid crisis in deindustrialized America was a preview. Without proactive investment in addiction support, the AI transition will produce its own wave.
 
+## What This Looks Like
+
+> "A broken car, a medical emergency, a missed shift can quickly push someone towards an eviction or even homelessness."
+> — Sabine Brown, Oklahoma Policy Institute, October 2025
+
+In rural Oklahoma, the nearest psychiatrist might be two hours away. You'd need a car that runs, a day off work you can't afford to lose, and insurance that will actually cover the visit — a three-way alignment that most people in a mental health crisis cannot manage. So they don't go. They wait until it becomes a 911 call, an ER visit, a jail intake.
+
+*Marcus is not one person.* He's a 34-year-old Army veteran back in the small town he grew up in. Three tours, two deployments to active combat zones. He knows something is wrong. He's tried twice to get into the VA's mental health program — the waitlist is months long. His town doesn't have a single therapist who takes his insurance. He started drinking to sleep. His marriage is fracturing. His wife doesn't know if she's watching her husband drown or just watching him make choices. Neither does he.
+
+122 million Americans live in areas formally designated as mental health professional shortage areas. Not areas with long waits or limited options — areas with a federally certified shortage. Only 26% of mental health care needs in this country are being met. The other 74% are unaddressed: festering in homes, spilling into emergency rooms, ending in overdoses, incarceration, and quiet losses of lives that never had to go that way.
+
+The opioid crisis was a preview. When entire industries and communities collapsed in deindustrialized America, the mental health infrastructure wasn't there to absorb the shock. People found other ways to manage unbearable pain. Without investment in this infrastructure now, the AI transition will produce its own wave — and we will call it, again, a crisis of character rather than a failure of systems.
+
 ## AI-Assisted Mental Health
 
 AI can extend the reach of mental health services — chatbots for triage, therapeutic apps for ongoing support, pattern detection for early intervention. But AI cannot replace human connection in healing. The model is augmentation, not replacement: AI handles scale and access while human practitioners provide the relational depth that actually heals.

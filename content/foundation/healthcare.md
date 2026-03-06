@@ -34,6 +34,21 @@ AI is already transforming diagnostic accuracy, drug discovery, treatment person
 
 The risk is that AI-driven healthcare becomes another two-tier system — precision medicine for the wealthy, algorithmic triage for everyone else. Single-payer prevents this by design.
 
+## What This Looks Like
+
+> "One in four Americans with diabetes rations insulin to pay for other life essentials like rent, utilities, childcare, and food."
+> — American Diabetes Association, Federal Advocacy Report
+
+A vial of insulin costs roughly $10 to manufacture. In the United States, it can cost $300. The gap between those two numbers is not a market outcome — it is a policy choice, made every time legislators decline to regulate drug pricing the way every peer nation does.
+
+*James is not one person. He is a pattern.* He's 52, type 1 diabetic since childhood, working as a subcontractor with no employer benefits. When his hours got cut, he did the math: insulin or rent. He cut his doses in half. Three weeks later, his wife drove him to the emergency room in diabetic ketoacidosis. The ER visit cost $14,000. His insulin would have cost $900. That bill will follow his family for years.
+
+The 66.5% of American bankruptcies tied to medical expenses aren't people who made bad decisions. They are people who got sick in a country that charges admission to stay alive.
+
+[*A note from the author: Growing up in Oklahoma, with three generations of family in public service, I watched this happen to people I knew. The neighbor who quietly stopped filling prescriptions. The colleague who left a job he loved because it was the only way to keep his family's insurance. These aren't edge cases. This is ordinary American life.*]
+
+This is what it looks like when healthcare is a product you purchase instead of a right you hold.
+
 ## The Transition Urgency
 
 When the AI transition disrupts employment patterns, millions of people will lose their health coverage simultaneously. This isn't hypothetical — it's a predictable consequence of the current system's architecture. Building national healthcare before the disruption hits isn't idealism. It's infrastructure planning.
