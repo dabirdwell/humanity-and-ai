@@ -18,6 +18,19 @@ Non-invasive brain-computer interfaces are advancing rapidly. fMRI can already r
 
 And we have no legal framework for any of it.
 
+## What This Looks Like
+
+> "The system flags you as 'disengaged' if your attention score drops below a threshold during training videos. I got a coaching note for being distracted. I was distracted because my mom was in the hospital. The system didn't know that. It didn't ask."
+> — Amazon warehouse worker, The Guardian investigation into workplace AI monitoring, 2024
+
+It's not science fiction — it's already Tuesday. Millions of workers are monitored in real time by AI systems that track keystrokes, mouse movements, facial expressions, and in some cases, physiological stress signals. Employers in call centers, warehouses, and offices receive dashboards showing "engagement scores" and "sentiment analysis" derived from their employees' bodies and behavior.
+
+The neural layer is coming faster than most people realize. Consumer EEG headsets are sold today that track focus and mood. Insurance companies have begun exploring biometric risk pricing. A startup in 2023 patented a workplace productivity system that infers a worker's cognitive state from wearable data.
+
+Maya works in a customer service center in Tulsa. She learned her "emotional consistency score" had affected her performance review when her manager mentioned it. She doesn't know exactly what it measures, who sees it, or how long it's stored. She didn't consent to it. There was a checkbox in the onboarding paperwork she signed to keep the job.
+
+This is how rights erode — not in a single dramatic moment but through checkbox agreements, capability creep, and the quiet assumption that your inner life is data someone else gets to own.
+
 ## Why This Is a Citizenship Issue
 
 Every right in the Bill of Rights assumes a boundary between the internal and external. Freedom of speech assumes you can choose what to say — which requires the ability to think without your thoughts being monitored. Freedom of religion assumes internal belief is private. The right against self-incrimination assumes you can't be compelled to reveal your thoughts.

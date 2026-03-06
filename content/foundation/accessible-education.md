@@ -28,6 +28,17 @@ The technology exists to make this real. AI-powered individualized learning can 
 
 The UBC commitment is that these tools are publicly available. Not premium features. Not subscription tiers. Universal access to the best learning technology we can build, as citizenship infrastructure.
 
+## What This Looks Like
+
+> "I did everything right. I went to college like they said. I borrowed what they said was normal. Now I'm 34, I make $42,000 a year, and I give $480 of it back every month for a degree I needed to get the job that almost pays me enough to afford the loan."
+> — Senate HELP Committee hearing on student loan debt, February 2024
+
+Renee grew up in Muskogee. First in her family to go to college. Graduated with a degree in social work and $61,000 in debt — below the national average. She's been paying for nine years. She still owes $54,000.
+
+Her factory floor coworker, Mike, got laid off at 52 when the plant automated three lines. The state offered retraining — a six-month IT certificate program that started eight months after the layoff, by which time he'd burned through his savings. He finished. The entry-level help desk jobs in the area were gone before he could apply.
+
+This is what it looks like when education is extractive rather than accessible. When we front-load a system and call it opportunity.
+
 ## The Workforce Transition
 
 This component directly addresses the "but what will people do?" question that haunts every AI conversation. The answer: whatever they develop the capacity to do, continuously, with support. Not everyone will become a programmer. Not everyone should. But everyone should have the opportunity to develop their capabilities throughout life, and the economic security (see Component 13) to pursue learning without risking survival.

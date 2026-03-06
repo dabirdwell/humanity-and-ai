@@ -20,6 +20,19 @@ UBI alone is a check. It solves the money problem and nothing else. Without educ
 
 UBC includes UBI because financial security is a necessary foundation. But the entire point of this framework is that money is a tool, not a solution. The solution is comprehensive citizenship infrastructure in which financial security is one load-bearing element among many.
 
+## What This Looks Like
+
+> "I worked my whole life. I wasn't asking for charity. I was asking for help while I looked for another job. But the caseworker treated me like I was trying to steal something. I had to prove I wasn't lazy to a 24-year-old who'd never been laid off."
+> — Oklahoma unemployment appeals hearing, Department of Commerce workforce testimony, 2023
+
+Sandra got laid off at 57 when her employer automated the billing department. She applied for benefits. The process took six weeks — during which her car payment lapsed and her credit took a hit she's still recovering from. She was required to report job search activities weekly, to a portal that crashed regularly, in a system designed to catch fraud, not serve people.
+
+She found work nine months later at $8 an hour less than her previous job. The cliff effects of assistance phase-outs meant that as her income recovered, her benefits dropped faster than her expenses did — a design feature of means-tested programs that punishes exactly the behavior they're supposed to encourage.
+
+She made it. Many don't. And the indignity of the process — the surveillance, the suspicion baked into every form — cost something that doesn't show up in any budget: the belief that her society had her back.
+
+UBI isn't radical generosity. It's competent design. We already spend the money. We spend more than the poverty gap requires. The current architecture just routes it through humiliation first.
+
 ## The Economic Case
 
 The usual objection: "How do you pay for it?" The answer is more interesting than people expect.

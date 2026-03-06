@@ -18,6 +18,17 @@ When automation can perform most cognitive labor, the fundamental exchange — y
 
 UBC's social contract component acknowledges that we need a new deal. Not a patch on the old one. A renegotiation of what citizens owe society and what society owes citizens when the economic premises that underpinned the original agreement no longer hold.
 
+## What This Looks Like
+
+> "My dad worked at the same plant for 31 years. He believed in this country. He'd be embarrassed to say that now, and that embarrassment is its own kind of grief."
+> — Testimony submitted to the Oklahoma Governor's Task Force on Workforce Transitions, 2024
+
+Carol is 58, from Bartlesville. She did everything the contract promised: stayed in school, got a degree, worked steadily for three decades in insurance. Saved. Voted. Volunteered at her church. Her pension got restructured in a bankruptcy she didn't understand and couldn't stop. Her healthcare costs tripled in five years. Her neighborhood, where she raised her kids, now has three shuttered storefronts for every open one.
+
+She's not angry at any one thing. She's exhausted by the accumulation of small breaches — the sense that the rules were written for a world that kept moving while she tried to keep up. She stopped trusting the federal government not out of cynicism but out of evidence.
+
+When 83% of Americans say they don't trust Washington to do the right thing, that's not a polling anomaly. That's the sound of millions of Carols reaching the same conclusion at different moments, from different directions.
+
 ## What a New Contract Looks Like
 
 The old contract was transactional: contribute labor, receive security. The new contract is relational: society invests in your development and flourishing; you contribute your creativity, care, participation, and governance capacity.

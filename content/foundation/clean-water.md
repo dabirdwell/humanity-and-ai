@@ -16,6 +16,15 @@ Flint, Michigan happened in 2014. Jackson, Mississippi in 2022. As of this writi
 
 This is the simplest test of whether a society is serious about citizenship. Water is non-negotiable. Every human body requires it daily. There is no market substitute, no personal responsibility workaround, no bootstrap narrative that fixes poisoned water. Either the infrastructure works or people are harmed.
 
+## What This Looks Like
+
+> "We found out our kids had elevated blood lead levels at their annual checkup. The pediatrician said it was probably the water. We'd been drinking it for three years. Nobody told us."
+> — Parent testimony, Wisconsin Department of Natural Resources public hearing, 2023
+
+In Navajo County, Arizona, 30% of homes have no running water at all. Families haul it in. In rural Oklahoma, PFAS contamination from military and industrial sites has reached water systems serving tens of thousands, and residents weren't notified for years after detection. In older Tulsa neighborhoods, some service lines are still lead — the city doesn't know which ones because they were never mapped.
+
+You can't bootstrap your way out of poisoned water. You can't work harder. You can't save more. You fill a glass from the tap and trust that a century of infrastructure spending kept a basic promise. In thousands of communities, that promise was broken — and the people most harmed were the least likely to know it, the least likely to be believed, and the last in line for remediation.
+
 ## The Infrastructure Debt
 
 America's water infrastructure is aging out. The EPA estimates hundreds of billions in needed investment just to maintain current systems, let alone expand access or address emerging contaminants. This is a direct consequence of decades of deferred maintenance — the slow-motion version of the social contract breach this entire framework addresses.

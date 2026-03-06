@@ -16,6 +16,17 @@ Components 2 and 10 cover the philosophy and access of education. This component
 
 The honest answer is: we don't fully know yet. And any framework that claims to know is selling something. What we can say is that the skills that matter are shifting from execution to judgment, from routine to adaptive, from individual to collaborative. And our training systems haven't caught up.
 
+## What This Looks Like
+
+> "I was a paralegal for eighteen years. Document review was 60% of my job. In one year, AI replaced it. My firm offered 'transition support' — a link to an online course catalog and three months of reduced pay."
+> — Economic Policy Institute worker testimony, AI Workforce Displacement report, 2025
+
+Dennis spent 24 years as a claims adjuster in Tulsa. He was good at it — built a career reading people, understanding context, making judgment calls that software couldn't. Then his company deployed an AI system that handled 70% of standard claims without human review. Dennis was "redeployed" to handle the edge cases. Eighteen months later, there weren't enough edge cases to justify his position.
+
+He's 51. The retraining programs in his area are designed for people 20 years younger, teach software skills he could learn but wouldn't compete on, and pay $14 an hour to start. He's not lazy or resistant to change. He's caught between a system that prepared him for a world that moved and a safety net with a forty-year-old design.
+
+Dennis is not one person. He's several million people, arriving at the same place at different speeds.
+
 ## What AI Can't Replace (Yet)
 
 Complex ethical reasoning. Genuine creativity — not recombination but novel synthesis. Deep empathy and relational care. Physical tasks requiring improvisation in unstructured environments. Cultural translation. Conflict resolution. Community organizing. Mentorship. Craftsmanship where the human touch is the point.

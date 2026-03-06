@@ -16,6 +16,17 @@ We are living through the most severe information crisis in modern history. Not 
 
 UBC's information component has two faces: ensuring access to reliable information, and ensuring the benefits of AI reach everyone rather than concentrating among those who already have the most.
 
+## What This Looks Like
+
+> "My students go to McDonald's at night to do their homework. We're forty-five minutes from the nearest library with evening hours. That's not a metaphor — that's Tuesday."
+> — Oklahoma rural school principal, Senate Commerce Committee testimony, 2023
+
+Jaylen is a junior in a small town outside McAlester. He's trying to apply to college. The school counselor covers three campuses and sees him twice a year. His family's satellite internet goes out when it rains. ChatGPT, the AI that tutors students in suburban Edmond, costs $20 a month — about what his mother spends on gas to get to work each week.
+
+In Edmond, fifteen miles from Oklahoma City, a high school junior is getting personalized essay coaching, SAT prep feedback, and answers to chemistry questions at 11pm. The schools are 90 miles and one subscription tier apart.
+
+This is the information access gap made concrete: not just who has fast internet, but who has the tools that are rapidly becoming the infrastructure of knowledge itself.
+
 ## The Access Problem
 
 AI is rapidly becoming the interface through which people access knowledge, make decisions, and interact with institutions. If AI tools are subscription-only — if the best medical advice AI, the best legal reasoning AI, the best educational AI are premium products — then we've built a new class system. Digital feudalism, where the quality of your information depends on your ability to pay.

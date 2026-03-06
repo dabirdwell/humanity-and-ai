@@ -16,6 +16,17 @@ The fossil fuel era built the modern world and is now destabilizing it. That's n
 
 Oklahoma knows this tension better than most. Our economy was built on oil and gas. Our landscape is scarred by it — 22,000 abandoned wells leaking methane and contaminating groundwater. And yet the skills, infrastructure, and geological knowledge that built the fossil fuel industry are exactly what's needed to build what comes next.
 
+## What This Looks Like
+
+> "I live twenty minutes from an oil field. My electricity bill last February was $340. I had to choose between paying it and buying groceries. I bought groceries. My power got cut off."
+> — Testimony before Oklahoma Corporation Commission, February 2024
+
+Loretta lives outside Seminole. Her family has lived in oil country for three generations — her grandfather worked the fields, her uncle drove tankers. The energy economy built this region. It also left it. The wells that made millionaires in Houston left behind methane leaks, contaminated groundwater, and communities whose tax base collapsed when the boom moved on.
+
+She heats with a propane tank she refills when she can afford it. In winter she keeps the thermostat at 62. Her granddaughter has asthma — one of the respiratory conditions researchers have begun linking to proximity to orphaned well emissions. Loretta doesn't need a green energy lecture. She needs a utility bill she can pay without choosing between warmth and dinner.
+
+This is what energy poverty looks like in a state that powers the country. And it's what makes the transition an opportunity rather than just a sacrifice — if we design it that way.
+
 ## Phoenix Wells and the Transition Model
 
 This is where our Phoenix Wells project connects directly to UBC. Those 22,000 abandoned wells represent potential geothermal energy infrastructure — using the same boreholes that extracted fossil fuels to harvest the Earth's heat for electricity, heating, and cooling. The workforce that drilled those wells has the skills to convert them. The communities that depend on energy jobs get new ones. The land heals.
