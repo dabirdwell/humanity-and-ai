@@ -51,6 +51,7 @@
 <div class="wrap">
   <h1>FOUNDATION</h1>
   <p class="sub">NEEDS · PROGRAMS · IMPACTS</p>
+  <p style="text-align:center;font-size:14px;color:#888;max-width:600px;margin:0 auto 16px;line-height:1.6;">The Foundation isn't 16 separate programs — it's a system. Every unmet need connects to specific solutions, and every solution creates cascading impacts. Click any node to see its connections.</p>
   <div class="controls">
     <button class="active" data-mode="all">All Connections</button>
     <button data-mode="np">Needs → Programs</button>
@@ -62,14 +63,12 @@
     <div class="legend-item"><div class="legend-dot" style="background:#27ae60"></div><span class="legend-label">Societal Impacts</span></div>
   </div>
   <div class="strength-legend">
-    <span>Strength:</span>
-    <span><svg width="12" height="6"><rect width="12" height="3" rx="1" fill="rgba(255,255,255,.15)" y="1.5"/></svg> weak</span>
-    <span><svg width="24" height="8"><rect width="24" height="6" rx="2" fill="rgba(255,255,255,.3)" y="1"/></svg> moderate</span>
-    <span><svg width="42" height="12"><rect width="42" height="10" rx="3" fill="rgba(255,255,255,.55)" y="1"/></svg> strong</span>
+    <span>Thicker lines = stronger connection between nodes</span>
   </div>
   <svg id="diagram" viewBox="0 0 900 900"></svg>
   <div id="detail" class="detail" style="display:none"></div>
   <p class="footer">Æ · Humanity and AI LLC · Foundation Framework</p>
+  <p style="text-align:center;margin-top:10px;padding-bottom:8px;"><a href="/foundation/" target="_top" style="font-size:12px;color:#4ecdc4;text-decoration:none;letter-spacing:.5px;">Explore the full Foundation framework →</a></p>
 </div>
 <script>
 const CATS = {
@@ -245,6 +244,7 @@ document.querySelectorAll(".controls button").forEach(btn=>{
     btn.classList.add("active");viewMode=btn.dataset.mode;activeId=null;render();});});
 
 render();
+select('n1'); // pre-select Economic Insecurity so visitors immediately see the system working
 
 // Self-size iframe
 window.addEventListener('load', function() {
