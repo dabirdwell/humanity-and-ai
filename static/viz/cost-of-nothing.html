@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cost of Nothing — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#0a0a0f;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+
+.page{max-width:900px;margin:0 auto;padding:48px 24px 80px}
+
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#4ecdc4;margin-bottom:12px}
+h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom:8px;color:#f0f0f0}
+.subtitle{font-size:14px;color:#888;line-height:1.6;max-width:660px;margin-bottom:12px}
+.since-label{font-size:12px;color:#555;margin-bottom:48px;letter-spacing:.5px}
+.since-label span{color:#4ecdc4}
+
+/* COUNTER CARDS */
+.counters{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:40px}
+
+.counter-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:26px 28px;position:relative;overflow:hidden;transition:border-color .3s}
+.counter-card:hover{border-color:rgba(255,255,255,.12)}
+.counter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0}
+.counter-card.red::before{background:linear-gradient(90deg,#e74c3c,#c0392b)}
+.counter-card.orange::before{background:linear-gradient(90deg,#e67e22,#d35400)}
+.counter-card.purple::before{background:linear-gradient(90deg,#8e44ad,#6c3483)}
+.counter-card.blue::before{background:linear-gradient(90deg,#2980b9,#1a5276)}
+.counter-card.yellow::before{background:linear-gradient(90deg,#f39c12,#d68910)}
+.counter-card.teal::before{background:linear-gradient(90deg,#16a085,#1abc9c)}
+
+.card-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px}
+.counter-card.red .card-eyebrow{color:#e74c3c}
+.counter-card.orange .card-eyebrow{color:#e67e22}
+.counter-card.purple .card-eyebrow{color:#8e44ad}
+.counter-card.blue .card-eyebrow{color:#2980b9}
+.counter-card.yellow .card-eyebrow{color:#f39c12}
+.counter-card.teal .card-eyebrow{color:#1abc9c}
+
+.counter-value{font-size:clamp(32px,5vw,48px);font-weight:200;line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums;letter-spacing:-1px;transition:color .5s}
+.counter-card.red .counter-value{color:#e74c3c}
+.counter-card.orange .counter-value{color:#e67e22}
+.counter-card.purple .counter-value{color:#8e44ad}
+.counter-card.blue .counter-value{color:#2980b9}
+.counter-card.yellow .counter-value{color:#f39c12}
+.counter-card.teal .counter-value{color:#1abc9c}
+
+.counter-label{font-size:14px;color:#aaa;line-height:1.4;margin-bottom:12px}
+.counter-rate{font-size:11px;color:#555;letter-spacing:.3px}
+.counter-source{font-size:10px;color:#444;margin-top:8px}
+
+/* REFRAME SECTION */
+.reframe-wrap{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:28px 32px;margin-bottom:40px}
+.reframe-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:18px}
+.reframe-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:520px){.reframe-grid{grid-template-columns:1fr}}
+.reframe-item{padding:16px;background:rgba(255,255,255,.02);border-radius:10px;border:1px solid rgba(255,255,255,.04)}
+.reframe-instead{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:6px}
+.reframe-choice{font-size:13px;color:#e74c3c;margin-bottom:8px;line-height:1.4}
+.reframe-arrow{font-size:11px;color:#555;margin-bottom:6px}
+.reframe-could{font-size:13px;color:#4ecdc4;line-height:1.4}
+
+/* PAUSE BUTTON */
+.controls{display:flex;align-items:center;gap:16px;margin-bottom:40px}
+.pause-btn{padding:8px 20px;border:1px solid rgba(255,255,255,.15);border-radius:20px;background:transparent;color:#888;font-size:12px;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.5px}
+.pause-btn:hover{border-color:rgba(78,205,196,.4);color:#4ecdc4}
+.pause-btn.paused{border-color:rgba(78,205,196,.5);color:#4ecdc4;background:rgba(78,205,196,.06)}
+.time-note{font-size:12px;color:#555}
+
+/* FOOTER */
+.footer-callout{text-align:center;padding:32px 0 0;border-top:1px solid rgba(255,255,255,.06)}
+.footer-callout p{font-size:14px;color:#888;margin-bottom:16px;line-height:1.7;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta{display:inline-block;padding:10px 22px;border:1px solid rgba(78,205,196,.4);border-radius:24px;color:#4ecdc4;font-size:13px;letter-spacing:.5px;transition:all .2s;text-decoration:none}
+.cta:hover{background:rgba(78,205,196,.08)}
+.source-note{font-size:10px;color:#444;margin-top:32px;line-height:1.7;text-align:center}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Foundation — The Price of Inaction</div>
+  <h1>The Cost of Nothing</h1>
+  <p class="subtitle">We often talk about what the Foundation would cost. We rarely count what we're already paying — in medical debt, lost wages, preventable suffering — for the system we have.</p>
+  <p class="since-label">Counters running since you opened this page. Time elapsed: <span id="elapsed">0:00</span></p>
+
+  <div class="controls">
+    <button class="pause-btn" id="pauseBtn">⏸ Pause</button>
+    <span class="time-note">All rates are annual US figures, divided to per-second.</span>
+  </div>
+
+  <!-- COUNTERS -->
+  <div class="counters">
+
+    <div class="counter-card red">
+      <div class="card-eyebrow">Medical Bankruptcy</div>
+      <div class="counter-value" id="c-bankruptcy">0</div>
+      <div class="counter-label">Americans bankrupt from medical bills</div>
+      <div class="counter-rate" id="r-bankruptcy"></div>
+      <div class="counter-source">Source: American Journal of Public Health · ~530,000/year</div>
+    </div>
+
+    <div class="counter-card orange">
+      <div class="card-eyebrow">Insulin Rationing</div>
+      <div class="counter-value" id="c-insulin">0</div>
+      <div class="counter-label">diabetics who rationed insulin today due to cost</div>
+      <div class="counter-rate" id="r-insulin"></div>
+      <div class="counter-source">Source: ADA · ~1 in 4 insulin-dependent diabetics</div>
+    </div>
+
+    <div class="counter-card purple">
+      <div class="card-eyebrow">Housing Cost-Burden</div>
+      <div class="counter-value" id="c-eviction">0</div>
+      <div class="counter-label">eviction filings since you opened this page</div>
+      <div class="counter-rate" id="r-eviction"></div>
+      <div class="counter-source">Source: Eviction Lab · ~3.6 million filings/year</div>
+    </div>
+
+    <div class="counter-card blue">
+      <div class="card-eyebrow">Child Hunger</div>
+      <div class="counter-value" id="c-hunger">0</div>
+      <div class="counter-label">children who will go to bed hungry tonight</div>
+      <div class="counter-rate" id="r-hunger"></div>
+      <div class="counter-source">Source: Feeding America · ~13 million children/year</div>
+    </div>
+
+    <div class="counter-card yellow">
+      <div class="card-eyebrow">Mental Health Gap</div>
+      <div class="counter-value" id="c-mental">0</div>
+      <div class="counter-label">people who needed mental health care and couldn't access it today</div>
+      <div class="counter-rate" id="r-mental"></div>
+      <div class="counter-source">Source: SAMHSA · ~27 million unmet need/year</div>
+    </div>
+
+    <div class="counter-card teal">
+      <div class="card-eyebrow">Preventable Death</div>
+      <div class="counter-value" id="c-death">0</div>
+      <div class="counter-label">Americans who died from preventable, treatable conditions</div>
+      <div class="counter-rate" id="r-death"></div>
+      <div class="counter-source">Source: Commonwealth Fund · ~68,000/year vs peer nations</div>
+    </div>
+
+  </div>
+
+  <!-- REFRAME -->
+  <div class="reframe-wrap">
+    <div class="reframe-title">What we chose instead</div>
+    <div class="reframe-grid">
+      <div class="reframe-item">
+        <div class="reframe-instead">We spent</div>
+        <div class="reframe-choice">$1.3 trillion in stock buybacks (2018–2022)</div>
+        <div class="reframe-arrow">↓ instead of</div>
+        <div class="reframe-could">Universal pre-K costs ~$80 billion/year</div>
+      </div>
+      <div class="reframe-item">
+        <div class="reframe-instead">We spent</div>
+        <div class="reframe-choice">$35 billion on insulin profits annually</div>
+        <div class="reframe-arrow">↓ that same insulin costs</div>
+        <div class="reframe-could">$6/vial to manufacture. It sells for $300.</div>
+      </div>
+      <div class="reframe-item">
+        <div class="reframe-instead">We paid</div>
+        <div class="reframe-choice">$150 billion/year in preventable ER costs</div>
+        <div class="reframe-arrow">↓ from people who couldn't afford</div>
+        <div class="reframe-could">Primary care visits averaging $250</div>
+      </div>
+      <div class="reframe-item">
+        <div class="reframe-instead">We lost</div>
+        <div class="reframe-choice">$2.2 trillion/year to low literacy's economic drag</div>
+        <div class="reframe-arrow">↓ while spending</div>
+        <div class="reframe-could">~$700/student less than peer nations on education</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-callout">
+    <p>The Foundation isn't an expense. It's a correction. We're already paying for these failures — in emergency rooms, in eviction courts, in the compound interest of preventable problems. The question was never whether we could afford the Foundation. It's whether we can afford to keep not building it.</p>
+    <div class="cta-row">
+      <a href="/foundation/" class="cta">Explore the Framework →</a>
+      <a href="/foundation/healthcare/" class="cta">Healthcare Component →</a>
+    </div>
+  </div>
+
+  <div class="source-note">
+    Sources: American Journal of Public Health (medical bankruptcy) · American Diabetes Association (insulin rationing) · 
+    Eviction Lab at Princeton (eviction filings) · Feeding America (child hunger) · SAMHSA (mental health access) · 
+    Commonwealth Fund (preventable mortality) · EPI (stock buybacks) · Peterson-KFF Health System Tracker
+    <br>Rates are approximate annual US figures converted to per-second for display. Intended to convey scale, not precise real-time tracking.
+  </div>
+</div>
+
+<script>
+// Annual rates → per second
+const RATES = {
+  bankruptcy: 530000 / (365.25 * 24 * 3600),
+  insulin:    (7700000 * 0.25) / 365,          // daily: 1in4 of ~7.7M insulin-dependent
+  eviction:   3600000 / (365.25 * 24 * 3600),
+  hunger:     13000000 / 365,                   // daily figure (nightly)
+  mental:     27000000 / 365,                   // daily unmet need
+  death:      68000 / (365.25 * 24 * 3600)
+};
+
+let startTime = Date.now();
+let pausedAt = null;
+let totalPausedMs = 0;
+let paused = false;
+let raf;
+
+function elapsed() {
+  if (paused && pausedAt) return (pausedAt - startTime - totalPausedMs);
+  return (Date.now() - startTime - totalPausedMs);
+}
+
+function fmtLarge(n) {
+  if (n >= 1e6) return (n/1e6).toFixed(2) + 'M';
+  if (n >= 1e3) return Math.round(n).toLocaleString();
+  return n.toFixed(n < 10 ? 2 : 0);
+}
+
+function fmtElapsed(ms) {
+  const s = Math.floor(ms / 1000);
+  const m = Math.floor(s / 60);
+  const h = Math.floor(m / 60);
+  if (h > 0) return `${h}:${String(m%60).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+  return `${m}:${String(s%60).padStart(2,'0')}`;
+}
+
+function perSecLabel(rate) {
+  if (rate >= 1) return `~${rate.toFixed(1)} per second`;
+  if (rate >= 1/60) return `~${(rate*60).toFixed(1)} per minute`;
+  if (rate >= 1/3600) return `~${(rate*3600).toFixed(1)} per hour`;
+  return `~${(rate*86400).toFixed(1)} per day`;
+}
+
+function tick() {
+  const sec = elapsed() / 1000;
+
+  document.getElementById('elapsed').textContent = fmtElapsed(elapsed());
+
+  document.getElementById('c-bankruptcy').textContent = fmtLarge(RATES.bankruptcy * sec);
+  document.getElementById('c-insulin').textContent    = fmtLarge(RATES.insulin * sec);
+  document.getElementById('c-eviction').textContent  = fmtLarge(RATES.eviction * sec);
+  document.getElementById('c-hunger').textContent    = fmtLarge(RATES.hunger * sec);
+  document.getElementById('c-mental').textContent    = fmtLarge(RATES.mental * sec);
+  document.getElementById('c-death').textContent     = fmtLarge(RATES.death * sec);
+
+  if (!paused) raf = requestAnimationFrame(tick);
+}
+
+// Rate labels (static, set once)
+document.getElementById('r-bankruptcy').textContent = perSecLabel(RATES.bankruptcy);
+document.getElementById('r-insulin').textContent    = perSecLabel(RATES.insulin);
+document.getElementById('r-eviction').textContent   = perSecLabel(RATES.eviction);
+document.getElementById('r-hunger').textContent     = perSecLabel(RATES.hunger);
+document.getElementById('r-mental').textContent     = perSecLabel(RATES.mental);
+document.getElementById('r-death').textContent      = perSecLabel(RATES.death);
+
+// Pause
+document.getElementById('pauseBtn').addEventListener('click', function() {
+  if (paused) {
+    totalPausedMs += Date.now() - pausedAt;
+    pausedAt = null;
+    paused = false;
+    this.textContent = '⏸ Pause';
+    this.classList.remove('paused');
+    raf = requestAnimationFrame(tick);
+  } else {
+    pausedAt = Date.now();
+    paused = true;
+    this.textContent = '▶ Resume';
+    this.classList.add('paused');
+    cancelAnimationFrame(raf);
+  }
+});
+
+// Start
+raf = requestAnimationFrame(tick);
+</script>
+</body>
+</html>
