@@ -29,6 +29,21 @@ She's not angry at any one thing. She's exhausted by the accumulation of small b
 
 When 83% of Americans say they don't trust Washington to do the right thing, that's not a polling anomaly. That's the sound of millions of Carols reaching the same conclusion at different moments, from different directions.
 
+## The Numbers, Mapped
+
+The collapse in public trust isn't a recent development. It's a sixty-year arc — and it's episodic: each crisis bites off a chunk, and recovery never reaches the previous floor.
+
+<div style="position: relative; width: 100%; margin: 1.5rem 0 2rem;">
+  <iframe
+    src="/viz/trust-timeline.html"
+    style="width: 100%; height: 520px; border: none; border-radius: 8px; display: block;"
+    title="Trust in Federal Government, 1958–2025"
+    loading="lazy">
+  </iframe>
+</div>
+
+*[Explore the full analysis →](/visualizations/trust-timeline/)*
+
 ## What a New Contract Looks Like
 
 The old contract was transactional: contribute labor, receive security. The new contract is relational: society invests in your development and flourishing; you contribute your creativity, care, participation, and governance capacity.
