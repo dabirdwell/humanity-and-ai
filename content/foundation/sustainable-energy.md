@@ -27,6 +27,21 @@ She heats with a propane tank she refills when she can afford it. In winter she 
 
 This is what energy poverty looks like in a state that powers the country. And it's what makes the transition an opportunity rather than just a sacrifice — if we design it that way.
 
+## The Numbers, Calculated
+
+How much of your income goes to energy? Enter your household income and state:
+
+<div style="position: relative; width: 100%; margin: 1.5rem 0 2rem;">
+  <iframe
+    src="/viz/energy-burden-calculator.html"
+    style="width: 100%; height: 680px; border: none; border-radius: 8px; display: block;"
+    title="Energy Burden Calculator"
+    loading="lazy">
+  </iframe>
+</div>
+
+*[Full calculator with methodology →](/visualizations/energy-burden-calculator/)*
+
 ## Phoenix Wells and the Transition Model
 
 This is where our Phoenix Wells project connects directly to UBC. Those 22,000 abandoned wells represent potential geothermal energy infrastructure — using the same boreholes that extracted fossil fuels to harvest the Earth's heat for electricity, heating, and cooling. The workforce that drilled those wells has the skills to convert them. The communities that depend on energy jobs get new ones. The land heals.
