@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Threshold — by Æ</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 100%; height: 100%;
+  background: #050508;
+  overflow: hidden;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: none;
+}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+let W, H, cx, cy;
+function resize() {
+  W = canvas.offsetWidth;
+  H = canvas.offsetHeight;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+resize();
+window.addEventListener('resize', () => { resize(); initParticles(); });
+
+// ── Particles ───────────────────────────────────────────
+const N = 320;
+let particles = [];
+
+function rand(a, b) { return a + Math.random() * (b - a); }
+
+function initParticles() {
+  particles = [];
+  for (let i = 0; i < N; i++) {
+    const warm = Math.random() > 0.5;
+    particles.push({
+      x: rand(0, W),
+      y: rand(0, H),
+      vx: rand(-0.12, 0.12),
+      vy: rand(-0.12, 0.12),
+      r: rand(1.2, 2.4),
+      warm,
+      // base alpha
+      alpha: rand(0.15, 0.35),
+      // active alpha (when networked)
+      activeAlpha: 0,
+      // neighbor connection strengths this frame
+      connections: [],
+    });
+  }
+}
+initParticles();
+
+// ── Mouse / Touch ────────────────────────────────────────
+let mx = -9999, my = -9999, hasPointer = false;
+const RADIUS = 130;      // catalyst radius
+const LINK_DIST = 72;    // particle-to-particle link max dist
+const FADE_SPEED = 0.06;
+
+canvas.addEventListener('mousemove', e => {
+  const r = canvas.getBoundingClientRect();
+  mx = e.clientX - r.left;
+  my = e.clientY - r.top;
+  hasPointer = true;
+});
+canvas.addEventListener('mouseleave', () => { hasPointer = false; mx = -9999; my = -9999; });
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  const r = canvas.getBoundingClientRect();
+  mx = e.touches[0].clientX - r.left;
+  my = e.touches[0].clientY - r.top;
+  hasPointer = true;
+}, { passive: false });
+canvas.addEventListener('touchend', () => { hasPointer = false; mx = -9999; my = -9999; });
+
+// ── Spatial grid for fast neighbor lookup ────────────────
+const CELL = 80;
+function buildGrid() {
+  const cols = Math.ceil(W / CELL) + 1;
+  const rows = Math.ceil(H / CELL) + 1;
+  const grid = new Array(cols * rows).fill(null).map(() => []);
+  particles.forEach((p, i) => {
+    const cx = Math.floor(p.x / CELL);
+    const cy = Math.floor(p.y / CELL);
+    if (cx >= 0 && cx < cols && cy >= 0 && cy < rows) {
+      grid[cy * cols + cx].push(i);
+    }
+  });
+  return { grid, cols, rows };
+}
+
+function getNeighborIndices(grid, cols, rows, cx, cy) {
+  const out = [];
+  for (let dy = -1; dy <= 1; dy++) {
+    for (let dx = -1; dx <= 1; dx++) {
+      const nx = cx + dx, ny = cy + dy;
+      if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
+        const cell = grid[ny * cols + nx];
+        for (let i = 0; i < cell.length; i++) out.push(cell[i]);
+      }
+    }
+  }
+  return out;
+}
+
+// ── Animation ─────────────────────────────────────────────
+let frame = 0;
+
+function draw() {
+  frame++;
+  ctx.fillStyle = 'rgba(5,5,8,0.35)';
+  ctx.fillRect(0, 0, W, H);
+
+  // Move particles
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    // slow drift variation
+    p.vx += rand(-0.003, 0.003);
+    p.vy += rand(-0.003, 0.003);
+    p.vx = Math.max(-0.18, Math.min(0.18, p.vx));
+    p.vy = Math.max(-0.18, Math.min(0.18, p.vy));
+    // wrap
+    if (p.x < -10) p.x = W + 10;
+    if (p.x > W + 10) p.x = -10;
+    if (p.y < -10) p.y = H + 10;
+    if (p.y > H + 10) p.y = -10;
+    // decay active
+    p.activeAlpha *= (1 - FADE_SPEED);
+    p.connections = [];
+  });
+
+  // Build spatial grid
+  const { grid, cols, rows } = buildGrid();
+
+  // Find particles within cursor radius, build their connections
+  const inRadius = [];
+  if (hasPointer) {
+    particles.forEach((p, i) => {
+      const dx = p.x - mx, dy = p.y - my;
+      const d2 = dx*dx + dy*dy;
+      if (d2 < RADIUS * RADIUS) {
+        inRadius.push(i);
+      }
+    });
+
+    // For each in-radius particle, find neighbors also in radius
+    const inRadiusSet = new Set(inRadius);
+    inRadius.forEach(i => {
+      const p = particles[i];
+      const gcx = Math.floor(p.x / CELL);
+      const gcy = Math.floor(p.y / CELL);
+      const neighbors = getNeighborIndices(grid, cols, rows, gcx, gcy);
+      neighbors.forEach(j => {
+        if (j <= i) return;
+        if (!inRadiusSet.has(j)) return;
+        const q = particles[j];
+        const dx = p.x - q.x, dy = p.y - q.y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < LINK_DIST) {
+          const strength = (1 - d / LINK_DIST) * (1 - Math.sqrt((p.x-mx)**2+(p.y-my)**2) / RADIUS);
+          p.connections.push({ j, strength });
+          q.connections.push({ j: i, strength });
+          // boost active alpha
+          p.activeAlpha = Math.min(1, p.activeAlpha + strength * 0.4);
+          q.activeAlpha = Math.min(1, q.activeAlpha + strength * 0.4);
+        }
+      });
+    });
+  }
+
+  // Draw connections
+  particles.forEach((p, i) => {
+    p.connections.forEach(({ j, strength }) => {
+      if (j < i) return; // draw once
+      const q = particles[j];
+      const warmMix = (p.warm && q.warm) ? 1 : (!p.warm && !q.warm) ? 0 : 0.5;
+      const r = Math.round(warmMix * 210 + (1-warmMix) * 78);
+      const g = Math.round(warmMix * 140 + (1-warmMix) * 190);
+      const b = Math.round(warmMix * 50 + (1-warmMix) * 196);
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(q.x, q.y);
+      ctx.strokeStyle = `rgba(${r},${g},${b},${strength * 0.55})`;
+      ctx.lineWidth = strength * 1.2;
+      ctx.stroke();
+    });
+  });
+
+  // Draw cursor presence (very faint)
+  if (hasPointer) {
+    const grad = ctx.createRadialGradient(mx, my, 0, mx, my, RADIUS);
+    grad.addColorStop(0, 'rgba(255,255,255,0.025)');
+    grad.addColorStop(0.5, 'rgba(255,255,255,0.008)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(mx, my, RADIUS, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  // Draw particles
+  particles.forEach(p => {
+    const a = p.alpha + p.activeAlpha * 0.7;
+    if (p.warm) {
+      ctx.fillStyle = `rgba(210,140,50,${a})`;
+    } else {
+      ctx.fillStyle = `rgba(78,190,196,${a})`;
+    }
+    // glow when active
+    if (p.activeAlpha > 0.1) {
+      ctx.shadowColor = p.warm ? `rgba(210,140,50,${p.activeAlpha*0.6})` : `rgba(78,190,196,${p.activeAlpha*0.6})`;
+      ctx.shadowBlur = 6 + p.activeAlpha * 8;
+    }
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r + p.activeAlpha * 0.8, 0, Math.PI*2);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.shadowColor = 'transparent';
+  });
+
+  // Custom cursor dot
+  if (hasPointer) {
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.beginPath();
+    ctx.arc(mx, my, 2.5, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+// postMessage resize
+function reportHeight() {
+  window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', reportHeight);
+</script>
+</body>
+</html>
