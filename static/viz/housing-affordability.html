@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housing Affordability Explorer — NLIHC Out of Reach 2025</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#0a0a0f;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:32px 20px 24px}
+.container{max-width:640px;width:100%}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#4ecdc4;margin-bottom:10px}
+h1{font-size:22px;font-weight:300;letter-spacing:.5px;color:#f0f0f0;margin-bottom:4px}
+.subtitle{font-size:13px;color:#888;margin-bottom:28px;letter-spacing:.3px}
+/* Selector */
+.selector-wrap{margin-bottom:28px}
+.selector-wrap label{font-size:12px;color:#888;letter-spacing:.5px;margin-right:8px}
+.selector-wrap select{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;font-size:14px;padding:8px 32px 8px 12px;border-radius:8px;cursor:pointer;outline:none;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;transition:border-color .2s}
+.selector-wrap select:hover,.selector-wrap select:focus{border-color:rgba(78,205,196,.4)}
+.selector-wrap select option{background:#1a1a24;color:#e0e0e0}
+/* Gap Bar */
+.bar-section{margin-bottom:28px}
+.bar-track{height:32px;border-radius:6px;overflow:hidden;display:flex;position:relative;background:rgba(255,255,255,.02)}
+.bar-earn{background:#4ecdc4;height:100%;transition:width .3s ease;border-radius:6px 0 0 6px;min-width:2px}
+.bar-gap{background:#ff6b35;height:100%;transition:width .3s ease;border-radius:0 6px 6px 0;min-width:2px}
+.bar-labels{display:flex;justify-content:space-between;margin-top:8px;font-size:12px}
+.bar-labels .earn-label{color:#4ecdc4}
+.bar-labels .need-label{color:#ff6b35}
+.bar-labels .earn-label span,.bar-labels .need-label span{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;font-size:14px}
+/* Stat Cards */
+.stat-cards{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.stat-card{flex:1;min-width:120px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;text-align:center;transition:border-color .3s}
+.stat-card .number{font-family:'Space Grotesk',system-ui,sans-serif;font-size:28px;font-weight:600;margin-bottom:4px;transition:color .3s}
+.stat-card .label{font-size:11px;color:#888;letter-spacing:.3px;line-height:1.4}
+/* Callout */
+.ok-callout{background:rgba(255,107,53,.06);border-left:3px solid #ff6b35;padding:14px 18px;margin-bottom:24px;font-size:13px;color:#bbb;line-height:1.7;border-radius:0 8px 8px 0;display:none}
+.ok-callout strong{color:#e0e0e0;font-weight:500}
+.ok-callout.visible{display:block}
+/* Footer */
+.source-line{font-size:10px;color:#555;letter-spacing:.3px;text-align:center;margin-top:8px}
+.source-line a{color:#4ecdc4;text-decoration:none}
+.source-line a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:480px){
+  body{padding:24px 14px 20px}
+  h1{font-size:18px}
+  .stat-card .number{font-size:22px}
+  .stat-card{padding:12px 8px;min-width:90px}
+  .stat-cards{gap:8px}
+  .bar-labels{font-size:11px}
+  .bar-labels .earn-label span,.bar-labels .need-label span{font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <p class="eyebrow">Housing Affordability</p>
+  <h1>The Gap Between Wages and Rent</h1>
+  <p class="subtitle">NLIHC Out of Reach 2025 — Select a state to explore</p>
+
+  <div class="selector-wrap">
+    <label for="stateSelect">State:</label>
+    <select id="stateSelect"></select>
+  </div>
+
+  <div class="bar-section">
+    <div class="bar-track">
+      <div class="bar-earn" id="barEarn"></div>
+      <div class="bar-gap" id="barGap"></div>
+    </div>
+    <div class="bar-labels">
+      <div class="earn-label">You earn <span id="earnLabel">$7.25</span>/hr</div>
+      <div class="need-label">You need <span id="needLabel">$20.98</span>/hr</div>
+    </div>
+  </div>
+
+  <div class="stat-cards">
+    <div class="stat-card" id="hoursCard">
+      <div class="number" id="hoursNum">116</div>
+      <div class="label">hrs/wk at min wage to afford 2BR</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" id="rentNum" style="color:#e0e0e0">$1,091</div>
+      <div class="label">monthly rent<br>2BR Fair Market</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" id="shortNum" style="color:#ff6b35">$13.73</div>
+      <div class="label">per hour short<br>of housing wage</div>
+    </div>
+  </div>
+
+  <div class="ok-callout" id="okCallout">
+    In Oklahoma, a minimum-wage worker would need to work <strong id="okHours">93</strong> hours a week —
+    more than two full-time jobs — to afford a <strong>one-bedroom</strong> apartment at fair market rent.
+  </div>
+
+  <p class="source-line">Source: NLIHC Out of Reach 2025 · <a href="https://nlihc.org/oor" target="_blank" rel="noopener">nlihc.org/oor</a></p>
+</div>
+
+<script>
+var stateData = {
+  "AL": { name:"Alabama", minWage:7.25, hw2br:20.61, hw1br:17.41 },
+  "AK": { name:"Alaska", minWage:13.00, hw2br:29.73, hw1br:22.92 },
+  "AZ": { name:"Arizona", minWage:14.70, hw2br:34.18, hw1br:28.80 },
+  "AR": { name:"Arkansas", minWage:11.00, hw2br:18.98, hw1br:15.59 },
+  "CA": { name:"California", minWage:16.50, hw2br:49.61, hw1br:40.23 },
+  "CO": { name:"Colorado", minWage:14.81, hw2br:36.79, hw1br:30.46 },
+  "CT": { name:"Connecticut", minWage:16.35, hw2br:35.42, hw1br:28.68 },
+  "DE": { name:"Delaware", minWage:15.00, hw2br:32.18, hw1br:26.39 },
+  "DC": { name:"District of Columbia", minWage:17.50, hw2br:44.50, hw1br:39.54 },
+  "FL": { name:"Florida", minWage:13.00, hw2br:37.27, hw1br:31.22 },
+  "GA": { name:"Georgia", minWage:7.25, hw2br:29.46, hw1br:26.10 },
+  "HI": { name:"Hawaii", minWage:14.00, hw2br:49.19, hw1br:37.62 },
+  "ID": { name:"Idaho", minWage:7.25, hw2br:27.83, hw1br:22.83 },
+  "IL": { name:"Illinois", minWage:15.00, hw2br:29.81, hw1br:25.80 },
+  "IN": { name:"Indiana", minWage:7.25, hw2br:22.18, hw1br:18.39 },
+  "IA": { name:"Iowa", minWage:7.25, hw2br:19.99, hw1br:16.14 },
+  "KS": { name:"Kansas", minWage:7.25, hw2br:20.87, hw1br:17.01 },
+  "KY": { name:"Kentucky", minWage:7.25, hw2br:21.47, hw1br:17.43 },
+  "LA": { name:"Louisiana", minWage:7.25, hw2br:22.88, hw1br:19.11 },
+  "ME": { name:"Maine", minWage:14.65, hw2br:28.42, hw1br:22.41 },
+  "MD": { name:"Maryland", minWage:15.00, hw2br:39.15, hw1br:33.24 },
+  "MA": { name:"Massachusetts", minWage:15.00, hw2br:45.90, hw1br:37.81 },
+  "MI": { name:"Michigan", minWage:12.48, hw2br:24.46, hw1br:19.66 },
+  "MN": { name:"Minnesota", minWage:11.13, hw2br:28.23, hw1br:22.94 },
+  "MS": { name:"Mississippi", minWage:7.25, hw2br:20.79, hw1br:17.51 },
+  "MO": { name:"Missouri", minWage:13.75, hw2br:21.61, hw1br:17.81 },
+  "MT": { name:"Montana", minWage:10.55, hw2br:28.99, hw1br:22.99 },
+  "NE": { name:"Nebraska", minWage:13.50, hw2br:21.57, hw1br:17.62 },
+  "NV": { name:"Nevada", minWage:12.00, hw2br:32.94, hw1br:27.42 },
+  "NH": { name:"New Hampshire", minWage:7.25, hw2br:35.08, hw1br:26.94 },
+  "NJ": { name:"New Jersey", minWage:15.49, hw2br:39.99, hw1br:33.49 },
+  "NM": { name:"New Mexico", minWage:12.00, hw2br:23.18, hw1br:19.17 },
+  "NY": { name:"New York", minWage:15.50, hw2br:46.03, hw1br:40.87 },
+  "NC": { name:"North Carolina", minWage:7.25, hw2br:27.14, hw1br:23.69 },
+  "ND": { name:"North Dakota", minWage:7.25, hw2br:19.47, hw1br:16.10 },
+  "OH": { name:"Ohio", minWage:10.70, hw2br:22.51, hw1br:18.02 },
+  "OK": { name:"Oklahoma", minWage:7.25, hw2br:20.98, hw1br:16.85 },
+  "OR": { name:"Oregon", minWage:15.05, hw2br:33.02, hw1br:27.59 },
+  "PA": { name:"Pennsylvania", minWage:7.25, hw2br:27.83, hw1br:22.98 },
+  "RI": { name:"Rhode Island", minWage:15.00, hw2br:31.71, hw1br:25.77 },
+  "SC": { name:"South Carolina", minWage:7.25, hw2br:25.91, hw1br:22.75 },
+  "SD": { name:"South Dakota", minWage:11.50, hw2br:18.96, hw1br:15.34 },
+  "TN": { name:"Tennessee", minWage:7.25, hw2br:27.01, hw1br:23.29 },
+  "TX": { name:"Texas", minWage:7.25, hw2br:29.64, hw1br:24.87 },
+  "UT": { name:"Utah", minWage:7.25, hw2br:29.29, hw1br:24.26 },
+  "VT": { name:"Vermont", minWage:14.01, hw2br:29.73, hw1br:23.43 },
+  "VA": { name:"Virginia", minWage:12.41, hw2br:33.64, hw1br:29.47 },
+  "WA": { name:"Washington", minWage:16.66, hw2br:41.11, hw1br:34.47 },
+  "WV": { name:"West Virginia", minWage:8.75, hw2br:18.94, hw1br:15.41 },
+  "WI": { name:"Wisconsin", minWage:7.25, hw2br:23.15, hw1br:18.93 },
+  "WY": { name:"Wyoming", minWage:7.25, hw2br:20.25, hw1br:16.08 }
+};
+
+var select = document.getElementById('stateSelect');
+var barEarn = document.getElementById('barEarn');
+var barGap = document.getElementById('barGap');
+var earnLabel = document.getElementById('earnLabel');
+var needLabel = document.getElementById('needLabel');
+var hoursNum = document.getElementById('hoursNum');
+var hoursCard = document.getElementById('hoursCard');
+var rentNum = document.getElementById('rentNum');
+var shortNum = document.getElementById('shortNum');
+var okCallout = document.getElementById('okCallout');
+var okHours = document.getElementById('okHours');
+
+// Populate dropdown sorted by state name
+var abbrs = Object.keys(stateData).sort(function(a,b){
+  return stateData[a].name.localeCompare(stateData[b].name);
+});
+abbrs.forEach(function(abbr){
+  var opt = document.createElement('option');
+  opt.value = abbr;
+  opt.textContent = stateData[abbr].name;
+  select.appendChild(opt);
+});
+
+function fmt(n){ return '$' + n.toFixed(2); }
+function fmtRent(n){
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function update(abbr){
+  var d = stateData[abbr];
+  var earnPct = (d.minWage / d.hw2br) * 100;
+  var gapPct = 100 - earnPct;
+
+  barEarn.style.width = earnPct + '%';
+  barGap.style.width = gapPct + '%';
+  earnLabel.textContent = fmt(d.minWage);
+  needLabel.textContent = fmt(d.hw2br);
+
+  // Hours needed for 2BR
+  var hrs = Math.round((d.hw2br / d.minWage) * 40);
+  hoursNum.textContent = hrs;
+  // Color code: red if >80, orange if 60-80, teal if <60
+  if(hrs > 80){
+    hoursNum.style.color = '#e74c3c';
+    hoursCard.style.borderColor = 'rgba(231,76,60,.3)';
+  } else if(hrs >= 60){
+    hoursNum.style.color = '#ff6b35';
+    hoursCard.style.borderColor = 'rgba(255,107,53,.2)';
+  } else {
+    hoursNum.style.color = '#4ecdc4';
+    hoursCard.style.borderColor = 'rgba(78,205,196,.2)';
+  }
+
+  // Monthly rent: housing_wage * 40hrs * 52wks / 12 * 0.30
+  // Actually: FMR = hw2br * 40 * 52 / 12 * 0.30 ... but hw2br IS the wage
+  // needed so that 30% of income = FMR. So FMR = hw2br * 40 * 52 / 12 * 0.30
+  // = hw2br * 2080 * 0.30 / 12 = hw2br * 52
+  var monthlyRent = d.hw2br * 40 * 52 / 12 * 0.30;
+  rentNum.textContent = fmtRent(monthlyRent);
+
+  // Shortage
+  var shortage = d.hw2br - d.minWage;
+  shortNum.textContent = fmt(shortage);
+
+  // Oklahoma callout
+  if(abbr === 'OK'){
+    var ok1brHrs = Math.round((d.hw1br / d.minWage) * 40);
+    okHours.textContent = ok1brHrs;
+    okCallout.classList.add('visible');
+  } else {
+    okCallout.classList.remove('visible');
+  }
+}
+
+select.addEventListener('change', function(){ update(this.value); });
+
+// Default to Oklahoma
+select.value = 'OK';
+update('OK');
+
+// Self-size iframe
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    if(window.frameElement) window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
+  }, 300);
+});
+</script>
+</body>
+</html>

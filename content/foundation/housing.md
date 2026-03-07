@@ -43,6 +43,14 @@ This is not a housing shortage. It is a policy failure. Wages haven't moved in 1
 
 When we say housing is infrastructure, we mean this: Rosa cannot build a stable life, save money, maintain her health, or show up reliably for the people who depend on her if she can't first establish where she sleeps. Housing is not a reward for economic success. It is the foundation that makes economic participation possible.
 
+## The Numbers in Your State
+
+<div class="viz-embed">
+  <iframe src="/viz/housing-affordability.html"
+          title="Housing Affordability by State — NLIHC Out of Reach 2025"
+          style="width:100%;height:420px;border:none;border-radius:12px;"></iframe>
+</div>
+
 ## What We're Missing
 
 Housing intersects with everything: land use policy, construction labor, environmental sustainability, community design, disability access, cultural preferences. What does "affordable" actually mean in different contexts? What are the models that preserve community while providing stability? What do people who've experienced housing insecurity know that policymakers don't?
