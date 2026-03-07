@@ -323,8 +323,8 @@
     </div>
   </div>
 
-  <div class="actual-bill-toggle" onclick="toggleBill()">
-    <input type="checkbox" id="use-actual" onclick="event.stopPropagation()">
+  <div class="actual-bill-toggle" onclick="toggleBill(event)">
+    <input type="checkbox" id="use-actual">
     <div>
       <div class="toggle-label"><strong>Use my actual monthly energy bill</strong></div>
       <div class="toggle-label">Check if you know your average monthly bill — more accurate than state estimates.</div>
@@ -418,7 +418,8 @@ Object.entries(stateData)
     sel.appendChild(opt);
   });
 
-function toggleBill() {
+function toggleBill(e) {
+  if (e) e.stopPropagation();
   const cb = document.getElementById('use-actual');
   cb.checked = !cb.checked;
   document.getElementById('bill-row').classList.toggle('visible', cb.checked);
@@ -479,8 +480,6 @@ function calculate() {
   const burden = (annualCost / income) * 100;
   const color = getColor(burden);
   const barLeft = getBarLeft(burden);
-  const nationalBurden = (NATIONAL_AVG_COST / income) * 100;
-  const monthlyStr = Math.round(annualCost / 12).toLocaleString();
   const dataNote = useActual && monthlyBill > 0
     ? 'Based on your actual bill'
     : `Based on ${stateInfo.name} average (EIA RECS 2020)`;

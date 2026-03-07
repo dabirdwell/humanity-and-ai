@@ -213,10 +213,20 @@ function updateMap() {
     ctx.fillStyle = colorScale(x / w);
     ctx.fillRect(x, 0, 1, 12);
   }
-  // round corners via clip
+  // rounded corners via clip — use manual arc path for Safari compat
   ctx.globalCompositeOperation = "destination-in";
   ctx.beginPath();
-  ctx.roundRect(0, 0, w, 12, 6);
+  const r = 6;
+  ctx.moveTo(r, 0);
+  ctx.lineTo(w - r, 0);
+  ctx.quadraticCurveTo(w, 0, w, r);
+  ctx.lineTo(w, 12 - r);
+  ctx.quadraticCurveTo(w, 12, w - r, 12);
+  ctx.lineTo(r, 12);
+  ctx.quadraticCurveTo(0, 12, 0, 12 - r);
+  ctx.lineTo(0, r);
+  ctx.quadraticCurveTo(0, 0, r, 0);
+  ctx.closePath();
   ctx.fill();
   ctx.globalCompositeOperation = "source-over";
 
