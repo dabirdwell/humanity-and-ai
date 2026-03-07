@@ -34,6 +34,21 @@ Oklahoma ranks 50th in education spending. Last. Every year that policy holds, a
 
 Nationally, the US spends $16,080 per student — fifth highest in the world — and ranks 28th in math. The money is going somewhere. It's going into a structure designed for a different era, optimized for standardized outputs, not human development. We are paying full price for a system that was designed to make factory workers and is now producing people who are unprepared for a world that no longer has enough factories.
 
+## The Numbers, Running
+
+The cost of that system — borrowed, deferred, compounding — is accumulating in real time:
+
+<div style="position: relative; width: 100%; margin: 1.5rem 0 2rem;">
+  <iframe
+    src="/viz/student-debt-clock.html"
+    style="width: 100%; height: 660px; border: none; border-radius: 8px; display: block;"
+    title="U.S. Student Debt Clock"
+    loading="lazy">
+  </iframe>
+</div>
+
+*[Full data and analysis →](/visualizations/student-debt-clock/)*
+
 <!--
 AUTHOR NOTE (unpublished — replace with your words before finalizing):
 I know what an Oklahoma classroom with 30 kids and an exhausted teacher looks like. I know what it looks like when a child who is actually brilliant falls through the cracks of a system that wasn't built for them. The tools exist now to change this. The question is whether we're willing to build a system that serves every child instead of sorting them.
