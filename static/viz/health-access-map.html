@@ -27,7 +27,24 @@ h1{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:500;letter-
 .legend-labels{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:#888}
 .legend-avg{position:absolute;top:-8px;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #e0e0e0}
 .legend-avg-label{position:absolute;top:-22px;transform:translateX(-50%);font-size:9px;color:#bbb;white-space:nowrap;letter-spacing:.3px}
-.ok-callout{background:rgba(255,107,53,.06);border-left:3px solid #ff6b35;padding:14px 18px;margin-bottom:16px;font-size:13px;color:#bbb;line-height:1.7;border-radius:0 8px 8px 0}
+.toggle-btn.foundation-btn { border-color: rgba(34,197,94,.35); color: #4ade80; }
+.toggle-btn.foundation-btn.active { background: #22c55e; color: #0a0a0f; border-color: #22c55e; }
+
+.foundation-map-note {
+  background: rgba(34,197,94,.07);
+  border: 1px solid rgba(34,197,94,.25);
+  border-left: 3px solid #22c55e;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #86efac;
+  line-height: 1.7;
+  display: none;
+}
+.foundation-map-note strong { color: #dcfce7; }
+.foundation-map-note a { color: #4ade80; text-decoration: none; }
+padding:14px 18px;margin-bottom:16px;font-size:13px;color:#bbb;line-height:1.7;border-radius:0 8px 8px 0}
 .ok-callout strong{color:#e0e0e0;font-weight:500}
 .ok-callout .ok-stat{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#ff6b35}
 .source-line{font-size:10px;color:#555;letter-spacing:.3px;text-align:center;margin-top:4px}
@@ -55,6 +72,7 @@ path.state:hover{opacity:.85;stroke:rgba(255,255,255,.4);stroke-width:1px}
     <button class="toggle-btn active" data-layer="mental_health">Mental Health Shortage</button>
     <button class="toggle-btn" data-layer="food_access">Food Access</button>
     <button class="toggle-btn" data-layer="uninsured">Uninsured Rate</button>
+    <button class="toggle-btn foundation-btn" data-layer="foundation_coverage">⚡ With Foundation</button>
   </div>
 
   <div class="map-wrap">
@@ -73,6 +91,12 @@ path.state:hover{opacity:.85;stroke:rgba(255,255,255,.4);stroke-width:1px}
   </div>
 
   <div class="ok-callout" id="okCallout"></div>
+  <div class="foundation-map-note" id="foundationNote">
+    <strong>This is what the map looks like with universal healthcare coverage.</strong>
+    Every state uninsured rate → 0%. The red disappears not because people got healthier,
+    but because a policy decision removed the barrier. Canada, Germany, France, Japan all
+    have maps that look like this. <a href="/foundation/healthcare/">→ Foundation Healthcare proposal</a>
+  </div>
 
   <p class="source-line" id="sourceLine"></p>
 </div>
@@ -134,6 +158,22 @@ const layers = {
       "TN":11.6,"TX":19.2,"UT":9.3,"VT":5.6,"VA":8.1,"WA":7.8,"WV":7.4,
       "WI":6.6,"WY":12.1
     }
+  },
+  foundation_coverage: {
+    label: "With Foundation Universal Coverage",
+    unit: "% uninsured under universal care",
+    source: "Foundation projection — universal healthcare",
+    sourceUrl: "/foundation/healthcare/",
+    okNote: "Under universal coverage, Oklahoma's 13.9% uninsured rate goes to zero. The map turns teal.",
+    natAvg: 0,
+    isFoundation: true,
+    data: Object.fromEntries(Object.keys({
+      "AL":1,"AK":1,"AZ":1,"AR":1,"CA":1,"CO":1,"CT":1,"DE":1,"DC":1,"FL":1,
+      "GA":1,"HI":1,"ID":1,"IL":1,"IN":1,"IA":1,"KS":1,"KY":1,"LA":1,"ME":1,
+      "MD":1,"MA":1,"MI":1,"MN":1,"MS":1,"MO":1,"MT":1,"NE":1,"NV":1,"NH":1,
+      "NJ":1,"NM":1,"NY":1,"NC":1,"ND":1,"OH":1,"OK":1,"OR":1,"PA":1,"RI":1,
+      "SC":1,"SD":1,"TN":1,"TX":1,"UT":1,"VT":1,"VA":1,"WA":1,"WV":1,"WI":1,"WY":1
+    }).map(abbr => [abbr, 0]))
   }
 };
 
@@ -191,6 +231,47 @@ function ordinal(n) {
 function updateMap() {
   const layer = layers[activeLayer];
   const data = layer.data;
+  const isFoundation = layer.isFoundation;
+
+  // Foundation layer: all teal, bypass normal scale
+  if (isFoundation) {
+    d3.selectAll("path.state").transition().duration(600)
+      .attr("fill", "#4ecdc4");
+
+    const canvas = document.getElementById("legendBar");
+    const ctx = canvas.getContext("2d");
+    const w = canvas.offsetWidth; canvas.width = w; canvas.height = 12;
+    ctx.fillStyle = "#4ecdc4"; ctx.fillRect(0, 0, w, 12);
+    // rounded corners
+    ctx.globalCompositeOperation = "destination-in";
+    ctx.beginPath();
+    const r = 6;
+    ctx.moveTo(r,0);ctx.lineTo(w-r,0);ctx.quadraticCurveTo(w,0,w,r);
+    ctx.lineTo(w,12-r);ctx.quadraticCurveTo(w,12,w-r,12);
+    ctx.lineTo(r,12);ctx.quadraticCurveTo(0,12,0,12-r);
+    ctx.lineTo(0,r);ctx.quadraticCurveTo(0,0,r,0);ctx.closePath();ctx.fill();
+    ctx.globalCompositeOperation = "source-over";
+
+    document.getElementById("legendMin").textContent = "0%";
+    document.getElementById("legendMax").textContent = "0%";
+    document.getElementById("legendAvg").style.left = "0%";
+    document.getElementById("legendAvgLabel").textContent = "Universal: 0%";
+
+    document.getElementById("okCallout").innerHTML = '';
+    document.getElementById("okCallout").style.display = 'none';
+    document.getElementById("foundationNote").style.display = 'block';
+    document.getElementById("sourceLine").innerHTML =
+      'Foundation projection · <a href="/foundation/healthcare/" style="color:#4ecdc4">Read the Healthcare proposal</a>';
+
+    document.querySelectorAll(".toggle-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.layer === activeLayer);
+    });
+    return;
+  }
+
+  document.getElementById("foundationNote").style.display = 'none';
+  document.getElementById("okCallout").style.display = '';
+
   const vals = Object.values(data);
   const mn = d3.min(vals);
   const mx = d3.max(vals);

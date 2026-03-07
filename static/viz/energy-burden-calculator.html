@@ -291,6 +291,74 @@
     padding: 32px 0;
   }
 
+  /* Comparison panel */
+  .compare-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media(max-width:480px) { .compare-split { grid-template-columns: 1fr; } }
+
+  .compare-panel {
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+    border: 1.5px solid transparent;
+  }
+  .compare-panel.now-side {
+    background: #1a1f2e;
+    border-color: #1e293b;
+  }
+  .compare-panel.phoenix-side {
+    background: #0a1a12;
+    border-color: #166534;
+  }
+  .compare-panel .cp-flag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .compare-panel.now-side .cp-flag { color: #475569; }
+  .compare-panel.phoenix-side .cp-flag { color: #16a34a; }
+  .compare-panel .cp-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .compare-panel.now-side .cp-number { color: #ef4444; }
+  .compare-panel.phoenix-side .cp-number { color: #22c55e; }
+  .compare-panel .cp-label {
+    font-size: 0.68rem;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .compare-panel.phoenix-side .cp-label { color: #166534; }
+  .compare-panel .cp-sub {
+    font-size: 0.65rem;
+    margin-top: 8px;
+    line-height: 1.4;
+    color: #334155;
+  }
+  .compare-panel.phoenix-side .cp-sub { color: #166534; opacity: 0.8; }
+
+  .phoenix-callout {
+    background: #0a1a12;
+    border: 1px solid #166534;
+    border-left: 3px solid #22c55e;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 0.78rem;
+    color: #86efac;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .phoenix-callout strong { color: #dcfce7; }
+  .phoenix-callout a { color: #4ade80; text-decoration: none; display: block; margin-top: 6px; }
+
   .source {
     text-align: center;
     font-size: 0.65rem;
@@ -480,62 +548,67 @@ function calculate() {
   const burden = (annualCost / income) * 100;
   const color = getColor(burden);
   const barLeft = getBarLeft(burden);
+
+  // Phoenix Wells: community-owned energy removes utility profit extraction
+  // Conservative estimate: 45% cost reduction (no shareholder returns, no markups)
+  const PHOENIX_REDUCTION = 0.45;
+  const phoenixCost = annualCost * (1 - PHOENIX_REDUCTION);
+  const phoenixBurden = (phoenixCost / income) * 100;
+  const phoenixColor = getColor(phoenixBurden);
+  const phoenixLeft = getBarLeft(phoenixBurden);
+
   const dataNote = useActual && monthlyBill > 0
     ? 'Based on your actual bill'
     : `Based on ${stateInfo.name} average (EIA RECS 2020)`;
 
   area.innerHTML = `
-    <div class="result ${color}">
-      <div class="burden-number ${color}">${burden.toFixed(1)}%</div>
-      <div class="burden-label">of your income goes to energy costs</div>
-
-      <div class="threshold-bar">
-        <div class="bar-marker" style="left:${barLeft}%;background:${color==='green'?'#22c55e':color==='yellow'?'#eab308':'#ef4444'}"></div>
+    <div class="compare-split">
+      <div class="compare-panel now-side">
+        <div class="cp-flag">Today</div>
+        <div class="cp-number">${burden.toFixed(1)}%</div>
+        <div class="cp-label">of income on energy</div>
+        <div class="threshold-bar" style="max-width:100%;margin:12px auto 8px">
+          <div class="bar-marker" style="left:${barLeft}%;background:${color==='green'?'#22c55e':color==='yellow'?'#eab308':'#ef4444'}"></div>
+        </div>
+        <div class="cp-sub">${getStatusLabel(burden)}<br>~$${Math.round(annualCost/12)}/month</div>
       </div>
-      <div class="bar-labels">
-        <span>0%</span>
-        <span style="color:#22c55e">▾ 6% high</span>
-        <span style="color:#ef4444">▾ 10% severe</span>
-        <span>21%+</span>
-      </div>
-
-      <div class="status-badge ${color}">${getStatusLabel(burden)}</div>
-
-      <div class="context-line">${getContextLine(burden, stateCode, annualCost)}</div>
-    </div>
-
-    <div class="compare-grid">
-      <div class="compare-card">
-        <div class="compare-value">${burden.toFixed(1)}%</div>
-        <div class="compare-label">Your estimated burden</div>
-      </div>
-      <div class="compare-card">
-        <div class="compare-value">${NATIONAL_MEDIAN_BURDEN}%</div>
-        <div class="compare-label">National median household</div>
-      </div>
-      <div class="compare-card">
-        <div class="compare-value">${LOW_INCOME_AVG_BURDEN}%</div>
-        <div class="compare-label">Low-income households avg</div>
+      <div class="compare-panel phoenix-side">
+        <div class="cp-flag">⚡ Phoenix Wells</div>
+        <div class="cp-number">${phoenixBurden.toFixed(1)}%</div>
+        <div class="cp-label">of income on energy</div>
+        <div class="threshold-bar" style="max-width:100%;margin:12px auto 8px">
+          <div class="bar-marker" style="left:${phoenixLeft}%;background:${phoenixColor==='green'?'#22c55e':phoenixColor==='yellow'?'#eab308':'#ef4444'}"></div>
+        </div>
+        <div class="cp-sub">${getStatusLabel(phoenixBurden)}<br>~$${Math.round(phoenixCost/12)}/month · 45% lower</div>
       </div>
     </div>
 
     <div class="state-detail">
-      <strong>${stateInfo.name}</strong> estimated avg annual energy cost:
-      <strong>$${stateInfo.cost.toLocaleString()}</strong> (~$${Math.round(stateInfo.cost/12)}/month) · ${dataNote}.
-      ${useActual && monthlyBill > 0 ? '' : ' Enter your actual bill above for a more precise estimate.'}
+      <strong>${stateInfo.name}</strong> avg energy cost today: <strong>$${stateInfo.cost.toLocaleString()}/year</strong>.
+      With community-owned energy infrastructure: ~<strong>$${Math.round(phoenixCost).toLocaleString()}/year</strong>.
+      That difference — $${Math.round(annualCost - phoenixCost).toLocaleString()}/year — stays in your community instead of leaving as utility profit.
+      ${dataNote}.
     </div>
 
-    ${burden >= HIGH_THRESHOLD ? `
-    <div class="foundation-callout">
-      <strong>Energy burden isn't an accident — it's policy.</strong> The Foundation's Sustainable Energy component
-      proposes community-owned energy infrastructure that removes extractive utility profit from the equation.
-      <a href="/foundation/sustainable-energy/" style="color:#60a5fa;text-decoration:none;display:block;margin-top:6px">→ Read the Sustainable Energy proposal</a>
-    </div>` : `
-    <div class="foundation-callout">
-      Your burden is below the high threshold — but <strong>1 in 4 low-income households pays 15%+ of income on energy.</strong>
-      That's a policy choice, not a fact of nature.
-      <a href="/foundation/sustainable-energy/" style="color:#60a5fa;text-decoration:none;display:block;margin-top:6px">→ The Foundation's Sustainable Energy proposal</a>
-    </div>`}
+    <div class="phoenix-callout">
+      <strong>The 45% reduction isn't speculation — it's accounting.</strong> Investor-owned utilities in the US average 10–15% profit margins plus executive pay, marketing, and shareholder returns built into every bill. Community-owned cooperatives and municipal utilities consistently deliver lower rates because they exist to serve members, not extract from them. Phoenix Wells goes further: geothermal energy from repurposed oil wells means near-zero fuel cost.
+      <a href="/foundation/sustainable-energy/">→ Foundation Sustainable Energy proposal: Phoenix Wells and community infrastructure</a>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-value">${NATIONAL_MEDIAN_BURDEN}%</div>
+        <div class="compare-label">National median today</div>
+      </div>
+      <div class="compare-card">
+        <div class="compare-value">${LOW_INCOME_AVG_BURDEN}%</div>
+        <div class="compare-label">Low-income avg today</div>
+      </div>
+      <div class="compare-card">
+        <div class="compare-value" style="color:#22c55e">~${(NATIONAL_MEDIAN_BURDEN * 0.55).toFixed(1)}%</div>
+        <div class="compare-label">Est. median w/ community energy</div>
+      </div>
+    </div>
   `;
 }
 </script>

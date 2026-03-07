@@ -6,7 +6,6 @@
 <title>U.S. Student Debt Clock</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     background: #0f1117;
@@ -14,278 +13,129 @@
     min-height: 100vh;
     padding: 24px 16px 32px;
   }
+  h1 { font-size: clamp(1rem, 2.8vw, 1.3rem); font-weight: 600; color: #f1f5f9; text-align: center; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .subtitle { font-size: 0.78rem; color: #64748b; text-align: center; margin-bottom: 24px; }
+  .wrapper { max-width: 700px; margin: 0 auto; }
 
-  h1 {
-    font-size: clamp(1rem, 2.8vw, 1.3rem);
-    font-weight: 600;
-    color: #f1f5f9;
-    text-align: center;
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
-  }
+  /* Split clock */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  @media(max-width: 520px) { .split { grid-template-columns: 1fr; } }
 
-  .subtitle {
-    font-size: 0.78rem;
-    color: #64748b;
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .wrapper {
-    max-width: 660px;
-    margin: 0 auto;
-  }
-
-  /* Main clock */
   .clock-panel {
-    background: #0d1420;
-    border: 1px solid #1e293b;
-    border-radius: 14px;
-    padding: 28px 20px 24px;
-    text-align: center;
-    margin-bottom: 16px;
-    position: relative;
-    overflow: hidden;
+    border-radius: 14px; padding: 22px 16px 18px; text-align: center;
+    position: relative; overflow: hidden;
   }
-
-  .clock-panel::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
+  .clock-panel.us {
+    background: #0d1420; border: 1px solid #1e293b;
+  }
+  .clock-panel.us::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(to right, transparent, #ef4444, transparent);
   }
-
-  .clock-label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #475569;
-    margin-bottom: 12px;
+  .clock-panel.de {
+    background: #0a1a12; border: 1px solid #166534;
   }
+  .clock-panel.de::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(to right, transparent, #22c55e, transparent);
+  }
+
+  .country-flag { font-size: 1.6rem; margin-bottom: 4px; }
+  .country-name { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; }
+  .clock-panel.us .country-name { color: #475569; }
+  .clock-panel.de .country-name { color: #16a34a; }
 
   .clock-value {
-    font-size: clamp(2rem, 7vw, 3.6rem);
-    font-weight: 800;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.02em;
-    color: #ef4444;
-    line-height: 1;
-    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-    margin-bottom: 8px;
-    transition: color 0.1s;
+    font-size: clamp(1.1rem, 4vw, 1.9rem);
+    font-weight: 800; font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
   }
+  .clock-panel.us .clock-value { color: #ef4444; }
+  .clock-panel.de .clock-value { color: #22c55e; }
 
-  .clock-cents {
-    font-size: 0.5em;
-    color: #991b1b;
-    vertical-align: super;
-  }
+  .clock-sub { font-size: 0.65rem; color: #475569; line-height: 1.4; }
+  .clock-panel.de .clock-sub { color: #166534; }
 
-  .pulse-indicator {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #ef4444;
-    margin-left: 8px;
-    animation: pulse 1s infinite;
-    vertical-align: middle;
-    margin-bottom: 2px;
-  }
+  .pulse { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; margin-left: 6px; animation: pulse 1s infinite; vertical-align: middle; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.6)} }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.7); }
-  }
-
-  .since-label {
-    font-size: 0.68rem;
-    color: #475569;
+  /* VS divider (desktop) */
+  .vs-label { display: none; }
+  @media(min-width:521px) {
+    .split { position: relative; }
   }
 
   /* Velocity row */
-  .velocity-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .velocity-card {
-    background: #1a1f2e;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-    padding: 14px 10px;
-    text-align: center;
-  }
-
-  .velocity-value {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #f87171;
-    font-variant-numeric: tabular-nums;
-    line-height: 1.1;
-    margin-bottom: 4px;
-  }
-
-  .velocity-label {
-    font-size: 0.62rem;
-    color: #475569;
-    line-height: 1.3;
-  }
+  .velocity-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .velocity-card { background: #1a1f2e; border: 1px solid #1e293b; border-radius: 10px; padding: 12px 10px; text-align: center; }
+  .velocity-value { font-size: 1.1rem; font-weight: 700; color: #f87171; font-variant-numeric: tabular-nums; margin-bottom: 3px; }
+  .velocity-label { font-size: 0.62rem; color: #475569; line-height: 1.3; }
 
   /* Stat grid */
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  @media (max-width: 440px) {
-    .stat-grid, .velocity-row { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .stat-card {
-    background: #1a1f2e;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-    padding: 14px 10px;
-    text-align: center;
-  }
-
-  .stat-value {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #94a3b8;
-    margin-bottom: 4px;
-  }
-
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  @media(max-width:440px) { .stat-grid, .velocity-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat-card { background: #1a1f2e; border: 1px solid #1e293b; border-radius: 10px; padding: 14px 10px; text-align: center; }
+  .stat-value { font-size: 1.15rem; font-weight: 700; color: #94a3b8; margin-bottom: 4px; }
   .stat-value.red { color: #f87171; }
-  .stat-label {
-    font-size: 0.62rem;
-    color: #475569;
-    line-height: 1.3;
+  .stat-label { font-size: 0.62rem; color: #475569; line-height: 1.3; }
+
+  /* Why panel */
+  .why-panel {
+    background: #0a1a12; border: 1px solid #166534;
+    border-left: 3px solid #22c55e;
+    border-radius: 8px; padding: 16px 18px; margin-bottom: 16px;
+    font-size: 0.8rem; color: #86efac; line-height: 1.7;
   }
+  .why-panel strong { color: #dcfce7; }
+  .why-panel a { color: #4ade80; text-decoration: none; display: block; margin-top: 8px; }
 
   /* Timeline */
-  .timeline {
-    background: #1a1f2e;
-    border: 1px solid #1e293b;
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 16px;
-  }
+  .timeline { background: #1a1f2e; border: 1px solid #1e293b; border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; }
+  .timeline-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #475569; margin-bottom: 14px; }
+  .timeline-year { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+  .tl-year-label { font-size: 0.68rem; color: #64748b; width: 32px; flex-shrink: 0; text-align: right; }
+  .tl-bar-outer { flex: 1; background: #1e293b; border-radius: 3px; height: 16px; }
+  .tl-bar-inner { height: 100%; border-radius: 3px; background: linear-gradient(to right, #991b1b, #ef4444); }
+  .tl-value { font-size: 0.68rem; color: #94a3b8; width: 60px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .tl-change { font-size: 0.6rem; color: #64748b; width: 42px; flex-shrink: 0; text-align: right; }
 
-  .timeline-title {
-    font-size: 0.68rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #475569;
-    margin-bottom: 14px;
-  }
+  .callout { background: #1a2235; border: 1px solid #1e3a5f; border-left: 3px solid #3b82f6; border-radius: 6px; padding: 14px 18px; font-size: 0.78rem; color: #94a3b8; line-height: 1.6; text-align: center; margin-bottom: 16px; }
+  .callout strong { color: #e2e8f0; }
+  .callout a { color: #60a5fa; text-decoration: none; display: block; margin-top: 6px; }
 
-  .timeline-bar-wrap {
-    position: relative;
-    margin-bottom: 6px;
-  }
-
-  .timeline-year {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 7px;
-  }
-
-  .tl-year-label {
-    font-size: 0.68rem;
-    color: #64748b;
-    width: 32px;
-    flex-shrink: 0;
-    text-align: right;
-  }
-
-  .tl-bar-outer {
-    flex: 1;
-    background: #1e293b;
-    border-radius: 3px;
-    height: 16px;
-    position: relative;
-    overflow: visible;
-  }
-
-  .tl-bar-inner {
-    height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(to right, #991b1b, #ef4444);
-    transition: width 0.5s;
-  }
-
-  .tl-value {
-    font-size: 0.68rem;
-    color: #94a3b8;
-    width: 60px;
-    flex-shrink: 0;
-    text-align: left;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .tl-change {
-    font-size: 0.6rem;
-    color: #64748b;
-    width: 42px;
-    flex-shrink: 0;
-    text-align: right;
-  }
-
-  /* Callout */
-  .foundation-callout {
-    background: #1a2235;
-    border: 1px solid #1e3a5f;
-    border-left: 3px solid #3b82f6;
-    border-radius: 6px;
-    padding: 14px 18px;
-    font-size: 0.78rem;
-    color: #94a3b8;
-    line-height: 1.6;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .foundation-callout strong { color: #e2e8f0; }
-  .foundation-callout a { color: #60a5fa; text-decoration: none; display: block; margin-top: 6px; }
-
-  .source {
-    text-align: center;
-    font-size: 0.65rem;
-    color: #334155;
-    line-height: 1.5;
-  }
+  .source { text-align: center; font-size: 0.65rem; color: #334155; line-height: 1.5; margin-top: 8px; }
 </style>
 </head>
 <body>
 
-<h1>U.S. Student Debt Clock<span class="pulse-indicator"></span></h1>
-<p class="subtitle">Total outstanding student loan debt, live estimate</p>
+<h1>Student Debt Clock<span class="pulse"></span></h1>
+<p class="subtitle">Two countries. Same choice. Different answers.</p>
 
 <div class="wrapper">
 
-  <div class="clock-panel">
-    <div class="clock-label">Total Outstanding Student Loan Debt</div>
-    <div class="clock-value" id="clock-total">$1,840,000,000,000</div>
-    <div class="since-label">Federal Reserve / Federal Student Aid data, Q4 2025 · growing in real time</div>
+  <div class="split">
+    <div class="clock-panel us">
+      <div class="country-flag">🇺🇸</div>
+      <div class="country-name">United States</div>
+      <div class="clock-value" id="clock-total">$1,840,000,000,000</div>
+      <div class="clock-sub">total student loan debt · growing<br>$1,905 added every second</div>
+    </div>
+    <div class="clock-panel de">
+      <div class="country-flag">🇩🇪</div>
+      <div class="country-name">Germany</div>
+      <div class="clock-value">$0</div>
+      <div class="clock-sub">no tuition · no student debt system<br>university is a public good</div>
+    </div>
   </div>
 
   <div class="velocity-row">
     <div class="velocity-card">
-      <div class="velocity-value" id="vel-second">$1,905</div>
+      <div class="velocity-value">$1,905</div>
       <div class="velocity-label">added every second</div>
     </div>
     <div class="velocity-card">
-      <div class="velocity-value">$114,000</div>
+      <div class="velocity-value">$114K</div>
       <div class="velocity-label">added every minute</div>
     </div>
     <div class="velocity-card">
@@ -297,11 +147,11 @@
   <div class="stat-grid">
     <div class="stat-card">
       <div class="stat-value red">44.6M</div>
-      <div class="stat-label">federal student loan borrowers</div>
+      <div class="stat-label">Americans with federal student debt</div>
     </div>
     <div class="stat-card">
       <div class="stat-value">$39,075</div>
-      <div class="stat-label">average federal debt per borrower</div>
+      <div class="stat-label">average balance per borrower</div>
     </div>
     <div class="stat-card">
       <div class="stat-value red">9.6%</div>
@@ -309,43 +159,39 @@
     </div>
     <div class="stat-card">
       <div class="stat-value">47%</div>
-      <div class="stat-label">of 2024 bachelor's grads left with debt</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">$29,560</div>
-      <div class="stat-label">avg debt for 2024 bachelor's grads</div>
+      <div class="stat-label">of 2024 grads left school with debt</div>
     </div>
     <div class="stat-card">
       <div class="stat-value red">16%</div>
-      <div class="stat-label">of borrowers 60+ days behind (Nov 2025)</div>
+      <div class="stat-label">of borrowers 60+ days behind</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:#22c55e">~0%</div>
+      <div class="stat-label">German graduates with tuition debt</div>
     </div>
   </div>
 
+  <div class="why-panel">
+    <strong>Germany didn't abolish tuition because it's rich.</strong> It abolished tuition in 2014 because it concluded that charging for education was socially corrosive — that a degree becoming a debt sentence was bad for the country, not just bad for students. The US spends more per student than Germany and produces worse outcomes. The gap between these two clocks is a policy choice, not an economic inevitability.
+    <a href="/foundation/education/">→ The Foundation's Education proposal: learning without a bill attached</a>
+  </div>
+
   <div class="timeline">
-    <div class="timeline-title">The Debt Accumulation — 2006 to Now</div>
+    <div class="timeline-title">U.S. Student Debt Accumulation — 2006 to Now</div>
     <div id="timeline-rows"></div>
   </div>
 
-  <div class="foundation-callout">
-    <strong>Student debt isn't a financial product problem — it's an access problem.</strong>
-    When the price of knowledge is a mortgage-sized loan, education becomes a class sorting mechanism.
-    The Foundation's Education component proposes that learning never comes with a bill attached.
-    <a href="/foundation/education/">→ Read the Education proposal</a>
-  </div>
-
   <div class="source">
-    Total debt: Federal Reserve consumer credit data, Q4 2025 ($1.84 trillion). Federal borrowers: Federal Student Aid, Q3 FY2025 (44.6 million).<br>
-    Growth rate: Education Data Initiative, YoY change 2025 Q3 ($60.086 billion/year ≈ $1,905/second).<br>
-    Delinquency: Federal Reserve Bank of New York, Q4 2025 (9.6%). Delinquency 60+ days: Urban Institute, November 2025.
+    US total: Federal Reserve consumer credit data, Q4 2025 ($1.84T). Growth: Education Data Initiative ($60.086B/year).<br>
+    Delinquency: NY Fed Q4 2025 (9.6%); Urban Institute Nov 2025 (16% 60+ days). Germany: DAAD / federal tuition abolition 2014.
   </div>
 
 </div>
 
 <script>
-// Reference: $1.84T as of Dec 31, 2025
 const REFERENCE_VALUE = 1_840_000_000_000;
 const REFERENCE_DATE = new Date('2025-12-31T00:00:00Z');
-const PER_SECOND = 60_086_000_000 / 365.25 / 24 / 3600; // ~$1,904.7/sec
+const PER_SECOND = 60_086_000_000 / 365.25 / 24 / 3600;
 
 function formatDollars(n) {
   const t = Math.floor(n / 1_000_000_000_000);
@@ -356,58 +202,34 @@ function formatDollars(n) {
   return `$${t.toLocaleString()},${String(b).padStart(3,'0')},${String(m).padStart(3,'0')},${String(k).padStart(3,'0')},${String(r).padStart(3,'0')}`;
 }
 
-function getCurrentTotal() {
-  const now = new Date();
-  const secondsElapsed = (now - REFERENCE_DATE) / 1000;
-  return REFERENCE_VALUE + PER_SECOND * secondsElapsed;
-}
-
-// Update clock
 const clockEl = document.getElementById('clock-total');
 function tick() {
-  const val = getCurrentTotal();
-  clockEl.textContent = formatDollars(val);
+  const secs = (new Date() - REFERENCE_DATE) / 1000;
+  clockEl.textContent = formatDollars(REFERENCE_VALUE + PER_SECOND * secs);
 }
 tick();
 setInterval(tick, 250);
 
-// Timeline data
 const timelineData = [
-  { year: 2006, trillions: 0.481 },
-  { year: 2008, trillions: 0.611 },
-  { year: 2010, trillions: 0.833 },
-  { year: 2012, trillions: 1.032 },
-  { year: 2014, trillions: 1.232 },
-  { year: 2016, trillions: 1.401 },
-  { year: 2018, trillions: 1.569 },
-  { year: 2020, trillions: 1.748 },
-  { year: 2022, trillions: 1.748 },
-  { year: 2023, trillions: 1.726 },
-  { year: 2025, trillions: 1.840 },
+  { year: 2006, t: 0.481 }, { year: 2008, t: 0.611 }, { year: 2010, t: 0.833 },
+  { year: 2012, t: 1.032 }, { year: 2014, t: 1.232 }, { year: 2016, t: 1.401 },
+  { year: 2018, t: 1.569 }, { year: 2020, t: 1.748 }, { year: 2022, t: 1.748 },
+  { year: 2023, t: 1.726 }, { year: 2025, t: 1.840 },
 ];
-
-const maxVal = 1.840;
 const container = document.getElementById('timeline-rows');
-
 timelineData.forEach((d, i) => {
   const prev = i > 0 ? timelineData[i-1] : null;
-  const change = prev ? ((d.trillions - prev.trillions) / prev.trillions * 100).toFixed(0) : null;
-  const pct = (d.trillions / maxVal * 100).toFixed(1);
-  const changeStr = change !== null
-    ? (parseFloat(change) >= 0 ? `+${change}%` : `${change}%`)
-    : '';
+  const change = prev ? ((d.t - prev.t) / prev.t * 100).toFixed(0) : null;
+  const pct = (d.t / 1.840 * 100).toFixed(1);
+  const changeStr = change !== null ? (parseFloat(change) >= 0 ? `+${change}%` : `${change}%`) : '';
   const changeColor = change !== null && parseFloat(change) < 0 ? '#22c55e' : '#64748b';
-
   const row = document.createElement('div');
   row.className = 'timeline-year';
   row.innerHTML = `
     <div class="tl-year-label">${d.year}</div>
-    <div class="tl-bar-outer">
-      <div class="tl-bar-inner" style="width:${pct}%"></div>
-    </div>
-    <div class="tl-value">$${d.trillions.toFixed(2)}T</div>
-    <div class="tl-change" style="color:${changeColor}">${changeStr}</div>
-  `;
+    <div class="tl-bar-outer"><div class="tl-bar-inner" style="width:${pct}%"></div></div>
+    <div class="tl-value">$${d.t.toFixed(2)}T</div>
+    <div class="tl-change" style="color:${changeColor}">${changeStr}</div>`;
   container.appendChild(row);
 });
 </script>
