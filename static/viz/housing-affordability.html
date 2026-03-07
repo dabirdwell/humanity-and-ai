@@ -304,6 +304,15 @@ function update(abbr){
 select.addEventListener('change', function(){ update(this.value); });
 select.value = 'OK';
 update('OK');
+
+// Auto-resize when embedded as iframe
+function reportHeight() {
+  window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', reportHeight);
+window.addEventListener('resize', function() { setTimeout(reportHeight, 50); });
+new MutationObserver(function() { setTimeout(reportHeight, 100); })
+  .observe(document.body, { childList: true, subtree: true, attributes: false });
 </script>
 </body>
 </html>

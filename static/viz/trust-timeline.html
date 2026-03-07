@@ -499,6 +499,13 @@ g.append('rect')
     hoverDot.style('opacity', 0);
     tooltip.style.opacity = 0;
   });
+
+// Auto-resize when embedded as iframe
+function reportHeight() {
+  window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', reportHeight);
+window.addEventListener('resize', function() { setTimeout(reportHeight, 50); });
 </script>
 </body>
 </html>

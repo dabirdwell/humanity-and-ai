@@ -46,10 +46,16 @@ When we say housing is infrastructure, we mean this: Rosa cannot build a stable 
 ## The Numbers in Your State
 
 <div class="viz-embed">
-  <iframe src="/viz/housing-affordability.html"
+  <iframe id="housing-frame" src="/viz/housing-affordability.html"
           title="Housing Affordability by State — NLIHC Out of Reach 2025"
-          style="width:100%;height:420px;border:none;border-radius:12px;"></iframe>
+          style="width:100%;height:480px;border:none;border-radius:12px;transition:height .2s ease;"></iframe>
 </div>
+<script>
+window.addEventListener('message', function(e) {
+  var f = document.getElementById('housing-frame');
+  if (f && e.data && e.data.iframeHeight) f.style.height = (e.data.iframeHeight + 24) + 'px';
+});
+</script>
 
 ## What We're Missing
 

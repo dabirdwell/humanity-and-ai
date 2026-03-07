@@ -34,13 +34,19 @@ When 83% of Americans say they don't trust Washington to do the right thing, tha
 The collapse in public trust isn't a recent development. It's a sixty-year arc — and it's episodic: each crisis bites off a chunk, and recovery never reaches the previous floor.
 
 <div style="position: relative; width: 100%; margin: 1.5rem 0 2rem;">
-  <iframe
+  <iframe id="trust-frame"
     src="/viz/trust-timeline.html"
-    style="width: 100%; height: 520px; border: none; border-radius: 8px; display: block;"
+    style="width: 100%; height: 540px; border: none; border-radius: 8px; display: block; transition: height .2s ease;"
     title="Trust in Federal Government, 1958–2025"
     loading="lazy">
   </iframe>
 </div>
+<script>
+window.addEventListener('message', function(e) {
+  var f = document.getElementById('trust-frame');
+  if (f && e.data && e.data.iframeHeight) f.style.height = (e.data.iframeHeight + 24) + 'px';
+});
+</script>
 
 *[Explore the full analysis →](/visualizations/trust-timeline/)*
 

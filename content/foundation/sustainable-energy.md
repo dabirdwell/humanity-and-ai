@@ -32,13 +32,19 @@ This is what energy poverty looks like in a state that powers the country. And i
 How much of your income goes to energy? Enter your household income and state:
 
 <div style="position: relative; width: 100%; margin: 1.5rem 0 2rem;">
-  <iframe
+  <iframe id="energy-frame"
     src="/viz/energy-burden-calculator.html"
-    style="width: 100%; height: 680px; border: none; border-radius: 8px; display: block;"
+    style="width: 100%; height: 700px; border: none; border-radius: 8px; display: block; transition: height .2s ease;"
     title="Energy Burden Calculator"
     loading="lazy">
   </iframe>
 </div>
+<script>
+window.addEventListener('message', function(e) {
+  var f = document.getElementById('energy-frame');
+  if (f && e.data && e.data.iframeHeight) f.style.height = (e.data.iframeHeight + 24) + 'px';
+});
+</script>
 
 *[Full calculator with methodology →](/visualizations/energy-burden-calculator/)*
 

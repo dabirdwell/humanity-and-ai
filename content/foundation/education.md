@@ -39,13 +39,19 @@ Nationally, the US spends $16,080 per student — fifth highest in the world —
 The cost of that system — borrowed, deferred, compounding — is accumulating in real time:
 
 <div style="position: relative; width: 100%; margin: 1.5rem 0 2rem;">
-  <iframe
+  <iframe id="debt-frame"
     src="/viz/student-debt-clock.html"
-    style="width: 100%; height: 660px; border: none; border-radius: 8px; display: block;"
+    style="width: 100%; height: 680px; border: none; border-radius: 8px; display: block; transition: height .2s ease;"
     title="U.S. Student Debt Clock"
     loading="lazy">
   </iframe>
 </div>
+<script>
+window.addEventListener('message', function(e) {
+  var f = document.getElementById('debt-frame');
+  if (f && e.data && e.data.iframeHeight) f.style.height = (e.data.iframeHeight + 24) + 'px';
+});
+</script>
 
 *[Full data and analysis →](/visualizations/student-debt-clock/)*
 

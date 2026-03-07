@@ -613,8 +613,15 @@ function calculate() {
 }
 </script>
 
-<div class="source">
-  State energy cost estimates: EIA Residential Energy Consumption Survey (RECS) 2020, all fuels combined.<br>
+// Auto-resize when embedded as iframe
+function reportHeight() {
+  window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', reportHeight);
+window.addEventListener('resize', function() { setTimeout(reportHeight, 50); });
+new MutationObserver(function() { setTimeout(reportHeight, 100); })
+  .observe(document.body, { childList: true, subtree: true, attributes: false });
+
   Burden thresholds: DOE Low-Income Energy Affordability Data (LEAD) Tool; ACEEE energy burden research.<br>
   National benchmarks: ACEEE, "How High Are Household Energy Burdens?" (2020, updated 2024).
 </div>

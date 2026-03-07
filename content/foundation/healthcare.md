@@ -55,11 +55,17 @@ This is what it looks like when healthcare is a product you purchase instead of 
 ## The Numbers, Mapped
 
 <div class="viz-embed">
-  <iframe src="/viz/health-access-map.html"
+  <iframe id="health-frame" src="/viz/health-access-map.html"
           title="Health Access by State"
-          style="width:100%;height:540px;border:none;border-radius:12px;"
+          style="width:100%;height:560px;border:none;border-radius:12px;transition:height .2s ease;"
           loading="lazy"></iframe>
 </div>
+<script>
+window.addEventListener('message', function(e) {
+  var f = document.getElementById('health-frame');
+  if (f && e.data && e.data.iframeHeight) f.style.height = (e.data.iframeHeight + 24) + 'px';
+});
+</script>
 
 ## The Transition Urgency
 
