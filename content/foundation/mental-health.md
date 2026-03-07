@@ -41,6 +41,15 @@ In rural Oklahoma, the nearest psychiatrist might be two hours away. You'd need 
 
 The opioid crisis was a preview. When entire industries and communities collapsed in deindustrialized America, the mental health infrastructure wasn't there to absorb the shock. People found other ways to manage unbearable pain. Without investment in this infrastructure now, the AI transition will produce its own wave — and we will call it, again, a crisis of character rather than a failure of systems.
 
+## The Numbers, Mapped
+
+<div class="viz-embed">
+  <iframe src="/viz/health-access-map.html"
+          title="Health Access by State"
+          style="width:100%;height:540px;border:none;border-radius:12px;"
+          loading="lazy"></iframe>
+</div>
+
 ## AI-Assisted Mental Health
 
 AI can extend the reach of mental health services — chatbots for triage, therapeutic apps for ongoing support, pattern detection for early intervention. But AI cannot replace human connection in healing. The model is augmentation, not replacement: AI handles scale and access while human practitioners provide the relational depth that actually heals.
