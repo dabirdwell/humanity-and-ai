@@ -12,36 +12,32 @@ aliases:
   - "/ubc/education/"
 ---
 
-The education system we have was designed to produce factory workers. Standardized inputs, standardized outputs, standardized testing to verify the standardization worked. That model was already failing before AI. Now it's absurd.
+A human mind starved for opportunities to learn is a desperate place to be. It's a desperate thing to live trapped inside of.
 
-UBC's education component isn't about fixing the existing system. It's about replacing the premise. Education isn't preparation for employment — it's the continuous development of a human being's capacity to think, create, connect, and contribute. It starts before kindergarten and never stops. And it's free.
+Most of us know this feeling in some form. Maybe it was a class that made you feel stupid when you weren't. Maybe it was a subject you loved that got cut for budget reasons. Maybe it was the slow realization, sometime after school, that the things you were tested on had almost nothing to do with the things that actually mattered in your life. Or maybe you're watching it happen to your kid right now — watching a bright, curious person slowly learn that the system doesn't see them.
 
-## Why This Changes with AI
+The education system we have was designed to produce factory workers. Standardized inputs, standardized outputs, standardized testing to verify that the conditioning worked. That model was already failing before AI. Now machines can write competent prose, solve equations, generate code, and summarize research. The skills education has traditionally tested are becoming commodities. That model isn't just failing. It's absurd.
 
-AI doesn't just change *what* we need to learn. It changes *what learning is for*.
+Foundation is a framework built on the premise that there is a minimum set of conditions people need to thrive. Education is one of [sixteen components](/foundation/), and we don't mean job training or test prep. We mean the continuous development of a human being's capacity to think, create, connect, and contribute. It starts before kindergarten and never stops. And it's free.
 
-When machines can write competent prose, solve equations, generate code, and summarize research — the skills that education has traditionally tested become commodities. What becomes valuable is what machines can't easily replicate: judgment, creativity, ethical reasoning, the ability to ask the right question rather than compute the right answer.
-
-This is also the first time in history we can genuinely personalize education at scale. AI tutors that adapt to individual learning styles, pace, and interests aren't science fiction — they're available now. The question is whether that capability serves every learner or only those who can afford it.
-
-Oklahoma ranks 50th in education spending. That's not an accident — it's a policy choice. UBC says that choice is unacceptable, not because rankings matter, but because every child in every zip code deserves access to education that develops their full capacity.
-
-## What This Looks Like
+## What This Looks Like Right Now
 
 Oklahoma ranks 50th in education spending. Last. Every year that policy holds, a generation of children in this state is handed a worse deck than children in every other state. This isn't a mystery or a tragedy of geography. It is the accumulated result of specific decisions made by specific people.
 
 *Tyler is not one person.* He's seven years old and his brain processes text differently from how most reading instruction is designed to teach it. His teacher is overworked and managing 27 students with a single classroom aide. She notices Tyler is struggling, flags him for evaluation, and waits six months for the school psychologist to have capacity. By then Tyler has decided he's bad at school. That belief will follow him for years, possibly his whole life — not because of how his brain works, but because the system didn't have the tools or time to meet him where he was.
 
-Nationally, the US spends $16,080 per student — fifth highest in the world — and ranks 28th in math. The money is going somewhere. It's going into a structure designed for a different era, optimized for standardized outputs, not human development. We are paying full price for a system that was designed to make factory workers and is now producing people who are unprepared for a world that no longer has enough factories.
+And here's the thing: the tools exist now. AI tutors can adapt to individual learning styles, pace, and interests. They can meet Tyler exactly where he is, in real time, on the day he needs it — not six months later. This is the first time in history we can genuinely personalize education at scale. The question isn't whether the technology works. It's whether it serves every learner or only those who can afford it.
 
-## The Numbers, Running
+Nationally, the US spends $16,080 per student — fifth highest in the world — and ranks 28th in math. The money is going somewhere. It's going into a structure designed for a different era, optimized for standardized outputs, not human development. The curriculum teaches to a test. The test measures a narrow band of what humans are capable of. And the children who don't fit that band learn, early and at great cost, that the system doesn't see them.
 
-The cost of that system — borrowed, deferred, compounding — is accumulating in real time:
+## The Cost, Compounding
+
+The price of this system — borrowed, deferred, accumulating — is ticking upward in real time:
 
 <div style="position: relative; width: 100%; margin: 1.5rem 0 2rem;">
   <iframe id="debt-frame"
     src="/viz/student-debt-clock.html"
-    style="width: 100%; height: 680px; border: none; border-radius: 8px; display: block; transition: height .2s ease;"
+    style="width: 100%; height: 480px; border: none; border-radius: 8px; display: block; transition: height .2s ease;"
     title="U.S. Student Debt Clock"
     loading="lazy">
   </iframe>
@@ -55,24 +51,24 @@ window.addEventListener('message', function(e) {
 
 *[Full data and analysis →](/visualizations/student-debt-clock/)*
 
-<!--
-AUTHOR NOTE (unpublished — replace with your words before finalizing):
-I know what an Oklahoma classroom with 30 kids and an exhausted teacher looks like. I know what it looks like when a child who is actually brilliant falls through the cracks of a system that wasn't built for them. The tools exist now to change this. The question is whether we're willing to build a system that serves every child instead of sorting them.
--->
+## What We're Building
 
-This is what it means when education is about compliance rather than curiosity. The curriculum teaches to a test. The test measures a narrow band of what humans are capable of. And the children who don't fit that band learn, early and at great cost, that the system doesn't see them.
+Foundation's education component isn't a reform plan for the system we have. It's a replacement for the premise.
 
-## The Deeper Architecture
+It starts with children — but reimagined. Not test scores and compliance, but curiosity, critical thinking, and collaborative problem-solving. A system that meets Tyler where he is on the day he needs it, not six months later.
 
-Education in UBC isn't one thing. It's a stack:
+But it doesn't stop with children. That's the part most education proposals miss. Adults need access to genuine learning too — not just retraining programs that appear when their industry collapses, but intellectual development available throughout life. Want to learn philosophy at 45? Molecular biology at 60? In Foundation's framework, that's not a luxury. That's citizenship. Because the world is going to keep changing, and people are going to need to keep growing, and a system that only educates you once and then abandons you is not a system built for what's coming.
 
-**Foundational education** covers childhood through young adulthood — but reimagined around curiosity, critical thinking, and collaborative problem-solving rather than test scores and compliance.
+Imagine what we could do if we raised an entire generation — not the same, not clones of one another — but individuals unbound. Unbound by economic isolation. Unbound by ignorance. Unbound by a system that sorts them at seven years old and never looks back. That's not a fantasy. It's a policy choice we haven't yet been willing to make.
 
-**Continuous education** means adults always have access to learning — not just retraining programs when their industry collapses, but genuine intellectual development available throughout life. Want to learn philosophy at 45? Molecular biology at 60? That's not a luxury. It's citizenship.
+## What We Need From You
 
-**AI-augmented learning** means every person has access to adaptive, individualized educational tools — not as a replacement for human teachers, but as an amplifier for human connection in learning.
+We have a framework here, not a curriculum. And we need your help to build it. Here are some of the directions we're exploring:
 
-## What We're Missing
+- **AI tutors as public infrastructure** — adaptive learning systems available to every student free, meeting each kid where they are on the day they need it. Not replacing teachers — giving them superpowers.
+- **Curiosity-centered curriculum** — what if instead of teaching to a test, schools organized around questions students actually want to answer? Project-based, interdisciplinary, assessed by what you create rather than what you memorize.
+- **Lifelong learning accounts** — every citizen gets a learning budget they can use at any age, at any institution, for any subject. No expiration date. No means testing.
 
-How do we transition from the system we have to the system we need without leaving a generation in the gap? What do indigenous knowledge systems, homeschool communities, and non-Western educational traditions offer that this framework hasn't incorporated? What's the role of play, art, and embodied experience in an age of screens?
+What does the transition from the system we have to the system we need actually look like — without leaving a generation in the gap? What's the role of play and art and embodied experience in an age of screens?
 
+This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)

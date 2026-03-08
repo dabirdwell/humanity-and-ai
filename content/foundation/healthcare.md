@@ -12,45 +12,37 @@ aliases:
   - "/ubc/healthcare/"
 ---
 
-America spends more per capita on healthcare than any other developed nation and gets worse outcomes. Life expectancy has been declining. Medical debt is the leading cause of bankruptcy. Tens of millions are uninsured or underinsured. The system is an embarrassment by any objective measure, and its central design flaw is tying health coverage to employment.
+You know what freedom feels like? It feels like being able to have that pain in your ribs looked at right away, with no lingering expense. It feels like knowing, every single day, that if something goes wrong with your body — or your child's body — you can walk into a doctor's office and get help. Not help-with-an-asterisk. Not help-if-you-can-afford-the-copay. Help.
 
-When employment was stable and long-term, employer-sponsored insurance was merely inefficient. When AI disrupts employment at scale — creating fluid, project-based, multi-employer work patterns and eliminating entire job categories — employer-sponsored insurance becomes structurally impossible. You can't tie coverage to jobs that don't exist.
+That's not what most Americans have. What most Americans have is a calculation. A quiet, constant arithmetic of risk: Is this lump worth a $3,000 deductible? Can I afford to miss work for the follow-up? If I go to the ER, will the bill follow me for years? Millions of people in this country are making medical decisions based on money, not medicine. And some of them are dying for it. That's not an accident. It's a policy choice.
 
-## Single-Payer, Full Stop
+Foundation is built on the idea that there is a minimum set of conditions people need to thrive — and that a society wealthy enough to provide them has no excuse not to. Healthcare is one of [sixteen components](/foundation/) in this framework, and it might be the one where the gap between what we have and what we could have is most obscene.
 
-UBC's healthcare component is single-payer comprehensive coverage. Not a public option alongside private insurance. Not a marketplace with subsidies. A national healthcare system that covers every citizen, funded through progressive taxation, administered efficiently, and free at the point of service.
+## What We Have
 
-Every other developed nation has some version of this. They spend less and live longer. The arguments against it in America are funded by the industries that profit from the current system, not by evidence.
+America spends more per capita on healthcare than any other developed nation and gets worse outcomes. Life expectancy has been declining. Two out of three bankruptcies in this country are tied to medical expenses — and the people filing them aren't people who made bad decisions. They're people who got sick in a country that charges admission to stay alive.
 
-## What Comprehensive Means
+The central design flaw is one most people don't think about until it hits them: we tied health coverage to employment. When employment was stable and long-term, that was merely inefficient. But we're entering a period where AI is reshaping work itself — creating fluid, project-based patterns and eliminating entire job categories. You can't tie coverage to jobs that don't exist. And when that disruption hits at scale, millions of people will lose their health coverage simultaneously. Not because they did anything wrong. Because the architecture was never built to survive what's coming.
 
-Comprehensive means physical and mental health. Dental and vision — which are inexplicably carved out of most insurance as though teeth and eyes aren't part of the body. Preventive care, which saves orders of magnitude more than it costs. Reproductive care. Long-term care. Addiction treatment (connected to Component 9). Rehabilitation. Palliative care.
+This isn't hypothetical. It's a predictable consequence of how we built the system. The question is whether we fix it before the disruption or after — and after looks a lot more expensive, and a lot more painful.
 
-It means care that's available in rural Oklahoma, not just urban medical centers. Telemedicine and AI-assisted diagnostics can extend reach, but they require infrastructure investment in connectivity and training.
+## What We're Proposing
 
-## AI in Healthcare
+Single-payer comprehensive coverage. Not a public option alongside private insurance. Not a marketplace with subsidies. A national healthcare system that covers every citizen, funded through progressive taxation, and free at the point of service.
 
-AI is already transforming diagnostic accuracy, drug discovery, treatment personalization, and administrative efficiency. These advances should benefit every patient, not just those at well-funded research hospitals. UBC's public AI infrastructure (Component 8) connects here: publicly available medical AI that any provider can use, any patient can access, reducing the knowledge gap between elite and community medicine.
+Every other developed nation has some version of this. They spend less and live longer. That's not an opinion — it's data, from every peer nation, across decades of measurement. The arguments against it in America are funded by the industries that profit from the current system. They are not funded by evidence.
 
-The risk is that AI-driven healthcare becomes another two-tier system — precision medicine for the wealthy, algorithmic triage for everyone else. Single-payer prevents this by design.
+Now, comprehensive means something specific, and it's worth spelling out. It means physical and mental health — because you can't treat one without the other. It means dental and vision, which are carved out of most insurance as though teeth and eyes aren't part of the body. It means preventive care, which saves orders of magnitude more than it costs. It means reproductive care, long-term care, addiction treatment, rehabilitation, and palliative care. The full scope of what a human body might need across a lifetime — not just the parts that are profitable to insure.
 
-## What This Looks Like
+And it means care that's available in rural Oklahoma, not just urban medical centers. Telemedicine and AI-assisted diagnostics can extend reach, but they require real investment in connectivity and training — not just an app and a prayer.
 
-> "One in four Americans with diabetes rations insulin to pay for other life essentials like rent, utilities, childcare, and food."
-> — American Diabetes Association, Federal Advocacy Report
+## What This Costs in Human Terms
 
-A vial of insulin costs roughly $10 to manufacture. In the United States, it can cost $300. The gap between those two numbers is not a market outcome — it is a policy choice, made every time legislators decline to regulate drug pricing the way every peer nation does.
+A vial of insulin costs roughly $10 to manufacture. In the United States, it can cost $300. One in four Americans with diabetes rations their insulin to pay for rent, utilities, childcare, or food. The gap between the manufacturing cost and the price tag is not a market outcome. It is a policy choice, made every time legislators decline to regulate drug pricing the way every peer nation does.
 
-*James is not one person. He is a pattern.* He's 52, type 1 diabetic since childhood, working as a subcontractor with no employer benefits. When his hours got cut, he did the math: insulin or rent. He cut his doses in half. Three weeks later, his wife drove him to the emergency room in diabetic ketoacidosis. The ER visit cost $14,000. His insulin would have cost $900. That bill will follow his family for years.
+*James is not one person. He is a pattern.* He's 52, type 1 diabetic since childhood, working as a subcontractor with no employer benefits. When his hours got cut, he did the math: insulin or rent. He cut his doses in half. Three weeks later, his wife drove him to the emergency room in diabetic ketoacidosis. The ER visit cost $14,000. His insulin would have cost $900. That bill will follow his family for years — not because James made a bad choice, but because the system gave him only bad choices to make.
 
-The 66.5% of American bankruptcies tied to medical expenses aren't people who made bad decisions. They are people who got sick in a country that charges admission to stay alive.
-
-<!--
-AUTHOR NOTE (unpublished — replace with your words before finalizing):
-Growing up in Oklahoma, with three generations of family in public service, I watched this happen to people I knew. The neighbor who quietly stopped filling prescriptions. The colleague who left a job he loved because it was the only way to keep his family's insurance. These aren't edge cases. This is ordinary American life.
--->
-
-This is what it looks like when healthcare is a product you purchase instead of a right you hold.
+This is what it looks like when healthcare is a product you purchase instead of a right you hold. And James's story repeats itself, in some form, in every community in this country. The neighbor who quietly stops filling prescriptions. The colleague who stays in a job she hates because it's the only way to keep her family's insurance. The parent who Googles symptoms at 2 AM because the copay is more than they have in their checking account. These aren't edge cases. This is ordinary American life.
 
 ## The Numbers, Mapped
 
@@ -67,7 +59,26 @@ window.addEventListener('message', function(e) {
 });
 </script>
 
-## The Transition Urgency
+## What AI Changes
 
-When the AI transition disrupts employment patterns, millions of people will lose their health coverage simultaneously. This isn't hypothetical — it's a predictable consequence of the current system's architecture. Building national healthcare before the disruption hits isn't idealism. It's infrastructure planning.
+So that's the crisis we already have — a system that bankrupts people for getting sick and ties their coverage to jobs that are disappearing. Now consider what's coming.
 
+AI is already transforming diagnostic accuracy, drug discovery, treatment personalization, and administrative efficiency. These are genuine breakthroughs. AI-assisted imaging catches cancers that human radiologists miss. Machine learning finds drug candidates in months that used to take years. The question isn't whether AI will improve medicine — it already is.
+
+The question is who benefits. If AI-driven healthcare becomes another two-tier system — precision medicine for the wealthy, algorithmic triage for everyone else — then the technology that could have leveled the playing field will have widened it instead. Single-payer prevents this by design. When everyone is in the same system, the advances reach everyone. When AI diagnostic tools are publicly available infrastructure rather than proprietary products, any provider can use them and any patient can access them.
+
+That's the connection between this component and the rest of Foundation. Healthcare doesn't exist in isolation — it connects to publicly owned AI (Component 8), to mental health support (Component 9), to the economic floor that keeps people from choosing between insulin and rent in the first place (Component 13). The framework holds together because the problems hold together. You can't solve healthcare without solving the conditions that make people sick.
+
+## What We Need From You
+
+Those who say we can't have a world where everyone wins are the same ones who want to be the only winners. National healthcare isn't radical — it's what every peer nation already does. The only thing standing between where we are and where we could be is the will to build it.
+
+We have a framework. We don't have all the answers — and that's deliberate. Here are directions we think matter — tell us what we're missing:
+
+- **Single-payer with AI diagnostics built in** — publicly available medical AI that any provider can use, any patient can access, closing the knowledge gap between elite medical centers and community clinics
+- **Transition pathway design** — how do we actually move from employer-based to single-payer without leaving people uncovered during the switch? What can we learn from countries that've done it?
+- **Rural telehealth infrastructure** — real investment in connectivity and training so that a patient in Seminole has access to the same diagnostic quality as a patient in Oklahoma City
+
+What should the transition look like? What do rural communities need that urban-centered proposals keep missing? What are we getting wrong?
+
+This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)

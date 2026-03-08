@@ -12,32 +12,30 @@ aliases:
   - "/ubc/clean-water/"
 ---
 
-Flint, Michigan happened in 2014. Jackson, Mississippi in 2022. As of this writing, there are thousands of communities across America with unsafe drinking water. Lead pipes. Agricultural runoff. PFAS contamination. Industrial legacy pollutants. The richest country on earth can't reliably deliver clean water to its citizens.
+You fill a glass from the tap and trust that a century of infrastructure spending kept a basic promise. In thousands of communities across America, that promise has been broken — and the people most harmed were the least likely to know it, the least likely to be believed, and the last in line for remediation.
 
-This is the simplest test of whether a society is serious about citizenship. Water is non-negotiable. Every human body requires it daily. There is no market substitute, no personal responsibility workaround, no bootstrap narrative that fixes poisoned water. Either the infrastructure works or people are harmed.
+Flint, Michigan happened in 2014. Jackson, Mississippi in 2022. But those are the ones that made national news. Right now, communities across the country are living with lead pipes, agricultural runoff, PFAS contamination, and industrial legacy pollutants in their water. In rural Oklahoma, PFAS contamination from military and industrial sites has reached water systems serving tens of thousands, and residents weren't notified for years after detection. In Navajo County, Arizona, 30% of homes have no running water at all. In older Tulsa neighborhoods, some service lines are still lead — the city doesn't know which ones because they were never mapped.
 
-## What This Looks Like
-
-> "We found out our kids had elevated blood lead levels at their annual checkup. The pediatrician said it was probably the water. We'd been drinking it for three years. Nobody told us."
-> — Parent testimony, Wisconsin Department of Natural Resources public hearing, 2023
-
-In Navajo County, Arizona, 30% of homes have no running water at all. Families haul it in. In rural Oklahoma, PFAS contamination from military and industrial sites has reached water systems serving tens of thousands, and residents weren't notified for years after detection. In older Tulsa neighborhoods, some service lines are still lead — the city doesn't know which ones because they were never mapped.
-
-You can't bootstrap your way out of poisoned water. You can't work harder. You can't save more. You fill a glass from the tap and trust that a century of infrastructure spending kept a basic promise. In thousands of communities, that promise was broken — and the people most harmed were the least likely to know it, the least likely to be believed, and the last in line for remediation.
+You can't bootstrap your way out of poisoned water. You can't work harder. You can't save more. Either the infrastructure works or people are harmed. This is the simplest test of whether a society is serious about citizenship, and it's one of [sixteen components](/foundation/) in Foundation's framework — because clean water is non-negotiable, and the richest country on earth should be able to deliver it.
 
 ## The Infrastructure Debt
 
 America's water infrastructure is aging out. The EPA estimates hundreds of billions in needed investment just to maintain current systems, let alone expand access or address emerging contaminants. This is a direct consequence of decades of deferred maintenance — the slow-motion version of the social contract breach this entire framework addresses.
 
-## The AI Connection
+Water contamination doesn't happen randomly. It follows fault lines of race, class, and political power. Tribal nations, rural communities, and low-income urban neighborhoods bear disproportionate burden. Any serious clean water policy has to address this directly — not as an afterthought, but as a core design constraint.
 
-Smart water systems — AI-monitored networks that detect contamination, predict infrastructure failure, and optimize treatment — are already technically feasible. The barrier isn't technology. It's investment and political will. UBC frames clean water as non-negotiable public infrastructure, funded accordingly, monitored with the best technology available, and governed transparently.
+## What AI Can Do Here
 
-## Environmental Justice
+Smart water systems — AI-monitored networks that detect contamination, predict infrastructure failure, and optimize treatment — are already technically feasible. The barrier isn't technology. It's investment and political will. Foundation frames clean water as non-negotiable public infrastructure, funded accordingly, monitored with the best technology available, and governed transparently.
 
-Water contamination doesn't happen randomly. It follows fault lines of race, class, and political power. Tribal nations, rural communities, and low-income urban neighborhoods bear disproportionate burden. Any serious clean water policy has to address this directly — not as an afterthought or a separate "equity" line item, but as a core design constraint.
+## What We Need From You
 
-## What's Needed Here
+Engineers, public health experts, environmental justice advocates, and people living with contaminated water right now all have pieces of this puzzle. Here are some directions:
 
-Engineers, public health experts, environmental justice advocates, and people living with contaminated water right now all have pieces of this puzzle that we don't. What does universal clean water infrastructure actually cost? What are the governance models that prevent capture by the industries causing contamination? What's working somewhere that should be working everywhere?
+- **AI-monitored water networks** — smart systems that detect contamination in real time, predict pipe failures before they happen, and alert communities immediately when something is wrong. The technology exists. The investment doesn't.
+- **Complete lead pipe mapping and replacement** — we have 24 million service lines of "unknown material." Step one is knowing what's in the ground. AI can accelerate the mapping; federal infrastructure funding can pay for the replacement.
+- **Community water sovereignty** — governance models that give communities direct oversight of their water systems, with transparent testing data published in real time. No more finding out three years later that your water was poisoned.
 
+What's working somewhere that should be working everywhere? What does universal clean water infrastructure actually cost?
+
+This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)

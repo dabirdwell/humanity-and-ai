@@ -12,20 +12,15 @@ aliases:
   - "/ubc/skills-training/"
 ---
 
-Components 2 and 10 cover the philosophy and access of education. This component addresses the hardest question: what do we actually prepare people *for* when AI can do an increasing share of cognitive and physical labor?
-
-The honest answer is: we don't fully know yet. And any framework that claims to know is selling something. What we can say is that the skills that matter are shifting from execution to judgment, from routine to adaptive, from individual to collaborative. And our training systems haven't caught up.
-
-## What This Looks Like
-
-> "I was a paralegal for eighteen years. Document review was 60% of my job. In one year, AI replaced it. My firm offered 'transition support' — a link to an online course catalog and three months of reduced pay."
-> — Economic Policy Institute worker testimony, AI Workforce Displacement report, 2025
-
 Dennis spent 24 years as a claims adjuster in Tulsa. He was good at it — built a career reading people, understanding context, making judgment calls that software couldn't. Then his company deployed an AI system that handled 70% of standard claims without human review. Dennis was "redeployed" to handle the edge cases. Eighteen months later, there weren't enough edge cases to justify his position.
 
 He's 51. The retraining programs in his area are designed for people 20 years younger, teach software skills he could learn but wouldn't compete on, and pay $14 an hour to start. He's not lazy or resistant to change. He's caught between a system that prepared him for a world that moved and a safety net with a forty-year-old design.
 
 Dennis is not one person. He's several million people, arriving at the same place at different speeds.
+
+Foundation is a framework built on the premise that there is a minimum set of conditions people need to thrive. Skills training is one of [sixteen components](/foundation/), and it addresses the hardest question of the AI transition: what do we actually prepare people *for* when machines can do an increasing share of cognitive and physical labor?
+
+The honest answer is: we don't fully know yet. And any framework that claims to know is selling something. What we can say is that the skills that matter are shifting from execution to judgment, from routine to adaptive, from individual to collaborative. And our training systems haven't caught up.
 
 ## What AI Can't Replace (Yet)
 
@@ -33,15 +28,22 @@ Complex ethical reasoning. Genuine creativity — not recombination but novel sy
 
 These aren't consolation prizes. They're the skills that hold society together. The tragedy of our current system is that it systematically undervalues and underfunds training in exactly these areas while over-investing in skills that AI is about to commoditize.
 
-## The Dojo Model
+## Continuous Adaptation, Not Crisis Response
 
-Our Brain Mastery project includes Dojo — a gamified training system for logical reasoning, argument construction, and fallacy detection. It exists because we believe these cognitive skills are trainable and desperately needed. A population that can't evaluate arguments, detect manipulation, or construct coherent positions is a population that can't govern itself. And self-governance is the whole point.
+The old model: learn a trade, practice it for 40 years, retire. That model is gone. The emerging reality: develop a portfolio of capabilities, adapt continuously, combine skills in novel ways, and contribute through multiple modes — some of which may not look like "employment" in the traditional sense.
 
-Skills training in the UBC framework isn't just vocational. It includes the cognitive and civic skills required for meaningful participation in a democracy navigating the most disruptive technological transition in history.
+Foundation supports this through universal access to training (Component 10), economic security that allows career transitions (Component 13), and an education philosophy that treats learning as lifelong (Component 2). This component specifically addresses the curriculum question: what should training systems teach when the ground is shifting?
 
-## Continuous Adaptation
+We also believe the cognitive and civic skills matter as much as the vocational ones. A population that can't evaluate arguments, detect manipulation, or construct coherent positions is a population that can't govern itself. And self-governance is the whole point.
 
-The old model: learn a trade, practice it for 40 years, retire. The emerging model: develop a portfolio of capabilities, adapt continuously, combine skills in novel ways, and contribute through multiple modes — some of which may not look like "employment" in the traditional sense.
+## What We Need From You
 
-UBC supports this through universal access to training (Component 10), economic security that allows career transitions (Component 13), and an education philosophy that treats learning as lifelong (Component 2). This component specifically addresses the curriculum question: what should training systems teach when the ground is shifting?
+People who've been through workforce displacement. People who've tried the retraining programs and know where they fail. Educators, employers, vocational trainers, and especially the Dennises — people with decades of skill and judgment who've been told to start over. Your experience is the data that makes this component real.
 
+This is citizen-developed work. Here are directions we think matter:
+
+- **AI-paired apprenticeships** — instead of replacing Dennis, pair experienced workers with AI tools that amplify their judgment and domain knowledge. The 24 years of context Dennis built is valuable — the system should augment it, not discard it.
+- **Portable skills credentials** — a national system where skills are verified and transferable, not locked to one employer or one certification body. Blockchain-verified, employer-agnostic, updated continuously.
+- **Civic reasoning training** — logical reasoning, argument construction, fallacy detection, and information evaluation as core workforce skills. A population that can't evaluate arguments can't govern itself, and self-governance is the whole point.
+
+People who've been through workforce displacement, people who've tried the retraining programs and know where they fail, and especially the Dennises — your experience shapes what this becomes. This is one of sixteen components. [Explore the full framework →](/foundation/)

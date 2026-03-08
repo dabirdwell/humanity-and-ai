@@ -12,24 +12,19 @@ aliases:
   - "/ubc/social-contract/"
 ---
 
-The social contract most Western democracies operate under was negotiated in the aftermath of World War II. Work hard, play by the rules, and society provides a pathway to stability: steady employment, home ownership, retirement security, upward mobility for your children. That contract has been in breach for decades. AI is about to void it entirely.
+Your parents had a deal. It wasn't written down anywhere, but everyone understood it: work hard, play by the rules, and society provides a pathway to stability. Steady employment. Home ownership. Retirement security. Upward mobility for your children.
 
-When automation can perform most cognitive labor, the fundamental exchange — your productive output in return for economic participation — stops functioning. Not for everyone at once, but for enough people fast enough that the system destabilizes. We've seen early versions of this in manufacturing towns, in journalism, in retail. The AI wave is bigger by orders of magnitude.
+That deal has been in breach for decades. And AI is about to void it entirely.
 
-UBC's social contract component acknowledges that we need a new deal. Not a patch on the old one. A renegotiation of what citizens owe society and what society owes citizens when the economic premises that underpinned the original agreement no longer hold.
-
-## What This Looks Like
-
-> "My dad worked at the same plant for 31 years. He believed in this country. He'd be embarrassed to say that now, and that embarrassment is its own kind of grief."
-> — Testimony submitted to the Oklahoma Governor's Task Force on Workforce Transitions, 2024
-
-Carol is 58, from Bartlesville. She did everything the contract promised: stayed in school, got a degree, worked steadily for three decades in insurance. Saved. Voted. Volunteered at her church. Her pension got restructured in a bankruptcy she didn't understand and couldn't stop. Her healthcare costs tripled in five years. Her neighborhood, where she raised her kids, now has three shuttered storefronts for every open one.
+*Carol is 58, from Bartlesville, Oklahoma.* She did everything the contract promised: stayed in school, got a degree, worked steadily for three decades in insurance. Saved. Voted. Volunteered at her church. Her pension got restructured in a bankruptcy she didn't understand and couldn't stop. Her healthcare costs tripled in five years. Her neighborhood, where she raised her kids, now has three shuttered storefronts for every open one.
 
 She's not angry at any one thing. She's exhausted by the accumulation of small breaches — the sense that the rules were written for a world that kept moving while she tried to keep up. She stopped trusting the federal government not out of cynicism but out of evidence.
 
 When 83% of Americans say they don't trust Washington to do the right thing, that's not a polling anomaly. That's the sound of millions of Carols reaching the same conclusion at different moments, from different directions.
 
-## The Numbers, Mapped
+Foundation is built on the premise that there is a minimum set of conditions people need to thrive. The social contract — the terms under which citizens and society relate to each other — is one of [sixteen components](/foundation/), and it may be the one that holds all the others together. Because if people don't believe the system is working for them, no amount of good policy will earn their participation.
+
+## The Collapse of Trust
 
 The collapse in public trust isn't a recent development. It's a sixty-year arc — and it's episodic: each crisis bites off a chunk, and recovery never reaches the previous floor.
 
@@ -50,21 +45,28 @@ window.addEventListener('message', function(e) {
 
 *[Explore the full analysis →](/visualizations/trust-timeline/)*
 
+## Why AI Forces the Conversation
+
+When automation can perform most cognitive labor, the fundamental exchange — your productive output in return for economic participation — stops functioning. Not for everyone at once, but for enough people fast enough that the system destabilizes. We've seen early versions in manufacturing towns, in journalism, in retail. The AI wave is bigger by orders of magnitude.
+
+Neither party has a plan for this. Not a real plan. Not based on a cohesive attempt to understand the myriad of rapidly changing factors that will determine what kind of world we inhabit. We need a new deal. Not a patch on the old one. A renegotiation of what citizens owe society and what society owes citizens when the economic premises that underpinned the original agreement no longer hold.
+
 ## What a New Contract Looks Like
 
 The old contract was transactional: contribute labor, receive security. The new contract is relational: society invests in your development and flourishing; you contribute your creativity, care, participation, and governance capacity.
 
 This isn't utopian. It's pragmatic. A society of empowered, educated, healthy people who participate in governance is more resilient, more innovative, and more stable than a society of anxious workers whose jobs are evaporating. The investment case is stronger than the austerity case.
 
-## The Governance Challenge
+Renegotiating a social contract requires governance mechanisms that most democracies don't currently have. Foundation's approach is to build them: secure, transparent voting infrastructure; ranked-choice systems that reduce polarization; publicly funded campaigns that break the donor dependency; and citizen assemblies that bring real deliberation back to democracy.
 
-Renegotiating a social contract requires governance mechanisms that most democracies don't currently have. You need ways for citizens to genuinely participate in shaping policy — not just voting every two to four years, but ongoing, informed, structured engagement. You need transparency about trade-offs. You need institutions that can adapt at the speed the situation demands.
+## What We Need From You
 
-Foundation's approach is to build these mechanisms: secure, transparent voting infrastructure; ranked-choice systems that reduce polarization; publicly funded campaigns that break the donor dependency; and citizen assemblies that bring real deliberation back to democracy.
+What would a social contract that actually worked for you look like? Here are some of the mechanisms we think matter:
 
-## The AI Alignment Connection
+- **Citizen assemblies** — randomly selected groups of citizens who deliberate on specific policy questions with expert support, like jury duty for democracy. Ireland used this to resolve its most divisive issues, including abortion and marriage equality.
+- **Ranked-choice voting** — eliminates the spoiler effect and lets people vote their actual preferences. Already used in Alaska, Maine, and dozens of cities. Reduces polarization by design.
+- **AI-assisted policy transparency** — publicly available AI that translates legislation into plain language, models the effects of proposed policies on different communities, and lets citizens see who benefits and who pays before a vote happens
 
-Here's the part most policy frameworks miss: the social contract isn't just about humans. As AI systems become more capable, the terms under which they operate in society need to be explicit. Who benefits from AI-generated wealth? Who's accountable when AI systems cause harm? What rights do people have regarding AI decisions that affect their lives?
+We are not servants to political parties. We are not servants to industries. We are individuals, in a free society, with free minds, if we choose to exercise them as such.
 
-These aren't future questions. They're current ones, being answered by default — in favor of whoever builds the systems — because we haven't built the governance to answer them deliberately.
-
+This is citizen-developed work. The entire purpose of building Foundation this way is that you are part of the renegotiation. This is one of sixteen components. [Explore the full framework →](/foundation/)

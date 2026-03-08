@@ -12,34 +12,34 @@ aliases:
   - "/ubc/accessible-education/"
 ---
 
-Component 2 addresses the philosophy of education. This component addresses the machinery: free access to education and training at all levels, with fully individualized experiences, available throughout life.
+Renee grew up in Muskogee, Oklahoma. First in her family to go to college. Graduated with a degree in social work and $61,000 in debt — below the national average. She's been paying for nine years. She still owes $54,000.
 
-The distinction matters because we currently treat education as a front-loaded investment — you get 12-16 years, and then you're on your own. Retraining exists, but it's reactive: your industry collapses, and then someone offers a six-month certificate program that may or may not lead to employment. That model is already failing. In the AI era, it's negligent.
+Her coworker Mike, at a factory floor in the same town, got laid off at 52 when the plant automated three lines. The state offered retraining — a six-month IT certificate program that started eight months after the layoff, by which time he'd burned through his savings. He finished. The entry-level help desk jobs in the area were gone before he could apply.
+
+Two people. Two versions of the same broken promise: education as a front-loaded investment that creates debt on one end and shows up too late on the other.
+
+Foundation is built on the premise that there is a minimum set of conditions people need to thrive. Accessible education is one of [sixteen components](/foundation/), and it means something specific: free access to education and training at all levels, with individualized experiences, available throughout life. Not as crisis response after your industry collapses. As infrastructure, the way roads are infrastructure — always there, always available, always yours.
 
 ## Continuous Access, Not Crisis Response
 
-UBC's accessible education component means any citizen, at any age, can access structured learning without cost barriers. Want to learn data science at 35? Welding at 50? Philosophy at 70? These aren't indulgences — they're how a society stays adaptive.
+We currently treat education as something you get 12 to 16 years of, and then you're on your own. Retraining exists, but it's reactive: your industry collapses, and then someone offers a six-month certificate program that may or may not lead to employment. In the AI era, that model isn't just failing. It's negligent.
 
-The technology exists to make this real. AI-powered individualized learning can adapt to pace, style, and background. Open educational resources provide content. The missing piece is infrastructure and political will — the decision to fund continuous education as seriously as we fund defense.
+Foundation's accessible education component means any citizen, at any age, can access structured learning without cost barriers. Want to learn data science at 35? Welding at 50? Philosophy at 70? These aren't indulgences — they're how a society stays adaptive.
+
+The technology exists to make this real. AI-powered individualized learning can adapt to pace, style, and background. Open educational resources provide content. What's missing is the decision to fund continuous education as seriously as we fund defense.
 
 ## Individualization at Scale
 
-"Fully individualized experiences" isn't a buzzword here. It's the core design principle. Every learner has a different starting point, different strengths, different goals. A one-size-fits-all curriculum wastes everyone's time. AI tutoring systems can now assess where you are, adapt to how you learn, and guide you at your pace — if they're designed to serve learners rather than extract engagement metrics.
+"Fully individualized experiences" isn't a buzzword here. Every learner has a different starting point, different strengths, different goals. A one-size-fits-all curriculum wastes everyone's time. AI tutoring systems can now assess where you are, adapt to how you learn, and guide you at your pace — if they're designed to serve learners rather than extract engagement metrics.
 
-The UBC commitment is that these tools are publicly available. Not premium features. Not subscription tiers. Universal access to the best learning technology we can build, as citizenship infrastructure.
+Foundation commits that these tools are publicly available. Not premium features. Not subscription tiers. Universal access to the best learning technology we can build, as citizenship infrastructure.
 
-## What This Looks Like
+## What We Need From You
 
-> "I did everything right. I went to college like they said. I borrowed what they said was normal. Now I'm 34, I make $42,000 a year, and I give $480 of it back every month for a degree I needed to get the job that almost pays me enough to afford the loan."
-> — Senate HELP Committee hearing on student loan debt, February 2024
+People paying off student debt. People who went through retraining programs and know where they fail. People who wanted to learn something new and couldn't find a way. Your experience shapes what this becomes. Here are directions we're building toward:
 
-Renee grew up in Muskogee. First in her family to go to college. Graduated with a degree in social work and $61,000 in debt — below the national average. She's been paying for nine years. She still owes $54,000.
+- **Free, publicly available AI tutoring** — adaptive learning systems that meet each person where they are, available at any age, for any subject. Not premium features — public infrastructure, like libraries for the 21st century.
+- **Debt jubilee with structural reform** — forgiveness without fixing the system that created the debt just reloads the trap. Pair relief with a transition to free public higher education and trade programs.
+- **Employer-agnostic skills portfolios** — a system where everything you learn is documented, portable, and verifiable. Your skills belong to you, not to the institution that credentialed them.
 
-Her factory floor coworker, Mike, got laid off at 52 when the plant automated three lines. The state offered retraining — a six-month IT certificate program that started eight months after the layoff, by which time he'd burned through his savings. He finished. The entry-level help desk jobs in the area were gone before he could apply.
-
-This is what it looks like when education is extractive rather than accessible. When we front-load a system and call it opportunity.
-
-## The Workforce Transition
-
-This component directly addresses the "but what will people do?" question that haunts every AI conversation. The answer: whatever they develop the capacity to do, continuously, with support. Not everyone will become a programmer. Not everyone should. But everyone should have the opportunity to develop their capabilities throughout life, and the economic security (see Component 13) to pursue learning without risking survival.
-
+This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
