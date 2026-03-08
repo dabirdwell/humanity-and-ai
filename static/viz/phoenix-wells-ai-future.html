@@ -436,6 +436,15 @@ const TIERS = [
     color: 'rgba(232,130,60,0.85)',
     dotColor: '#e8823c',
     seNote: 'oracle'
+  },
+  {
+    id: 'frontier',
+    name: 'Frontier node · 1T+ parameters',
+    sub: 'Backbone intelligence · supports the entire network of small and medium models',
+    watts2024: 6000,
+    color: 'rgba(220,60,100,0.85)',
+    dotColor: '#dc3c64',
+    seNote: 'frontier'
   }
 ];
 
@@ -580,14 +589,16 @@ function drawChart() {
     ctx.setLineDash([]);
   });
 
-  // SE threshold glow at crossing point (when instances > 0)
-  const seT = TIERS[3];
+  // SE threshold crossing marker
   let crossYear = null;
   for (let yr = 2024; yr <= 2032; yr += 0.01) {
-    if (instanceCount(seT, currentScenario, yr) >= 1) {
-      crossYear = yr;
-      break;
-    }
+    if (instanceCount(TIERS[3], currentScenario, yr) >= 1) { crossYear = yr; break; }
+  }
+
+  // Frontier crossing marker
+  let frontierCrossYear = null;
+  for (let yr = 2024; yr <= 2032; yr += 0.01) {
+    if (instanceCount(TIERS[5], currentScenario, yr) >= 1) { frontierCrossYear = yr; break; }
   }
   if (crossYear && crossYear <= 2032) {
     const cx = xOf(crossYear);
@@ -625,6 +636,38 @@ function drawChart() {
     ctx.fillText('powered by Oklahoma ground', cx, pad.top + 36);
   }
 
+  // Frontier crossing annotation
+  if (frontierCrossYear && frontierCrossYear <= 2032) {
+    const fcx = xOf(frontierCrossYear);
+    const fcy = yOf(1);
+    const fglow = ctx.createRadialGradient(fcx, fcy, 0, fcx, fcy, 28);
+    fglow.addColorStop(0, 'rgba(220,60,100,0.4)');
+    fglow.addColorStop(1, 'rgba(220,60,100,0)');
+    ctx.beginPath();
+    ctx.arc(fcx, fcy, 28, 0, Math.PI * 2);
+    ctx.fillStyle = fglow;
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(220,60,100,0.3)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4,4]);
+    ctx.beginPath();
+    ctx.moveTo(fcx, pad.top);
+    ctx.lineTo(fcx, pad.top + chartH);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Only show label if not too close to SE marker
+    const labelOffset = (crossYear && Math.abs(frontierCrossYear - crossYear) < 0.8) ? 48 : 22;
+    ctx.fillStyle = 'rgba(220,60,100,0.8)';
+    ctx.font = 'bold 11px -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('First frontier node →', fcx, pad.top + labelOffset);
+    ctx.font = '10px -apple-system, sans-serif';
+    ctx.fillStyle = 'rgba(220,60,100,0.5)';
+    ctx.fillText('1T+ parameters · backbone intelligence', fcx, pad.top + labelOffset + 14);
+  }
+
   // Current year vertical
   const cx = xOf(currentYear);
   ctx.strokeStyle = 'rgba(232,224,208,0.25)';
@@ -642,7 +685,7 @@ function drawChart() {
     const x = xOf(currentYear);
     const y = yOf(inst);
     ctx.beginPath();
-    ctx.arc(x, y, ti === 3 ? 5 : 3.5, 0, Math.PI * 2);
+    ctx.arc(x, y, (ti === 3 || ti === 5) ? 5 : 3.5, 0, Math.PI * 2);
     ctx.fillStyle = tier.dotColor;
     ctx.fill();
   });
@@ -665,6 +708,13 @@ const callouts = {
     "Multiple oracle-class instances. Each one a Guardian AI for a community — agriculture, tribal sovereignty, municipal services.",
     "The federated network takes shape. Hundreds of local oracles, each autonomous, each connected by design.",
     "Thousands of oracle instances. Every Oklahoma community that wants one, has one."
+  ],
+  frontier: [
+    "Frontier nodes need significant power — but the efficiency curve is closing fast. By 2028–2029 on this trajectory, the first is possible.",
+    "First frontier node — a 1T+ parameter model running continuously on Oklahoma geothermal. This single instance can serve as backbone intelligence for the entire network of smaller models.",
+    "A handful of frontier nodes now supports hundreds of local oracles and thousands of capable assistants. The network has its own nervous system.",
+    "The architecture David described: a few frontier instances providing backbone intelligence, small models everywhere, all linked. Not one AGI — a distributed one.",
+    "At full scale, frontier nodes at the most power-rich sites support the entire state network. Federated, community-owned, geothermal-powered. This is what the self-built AI age looks like."
   ]
 };
 
@@ -702,16 +752,20 @@ function updateUI(year) {
 
   if (topTier) {
     document.getElementById('top-tier').textContent = topCount.toLocaleString();
-    // Translate to human scale
     const okCounties = 77;
     let humanScale = '';
-    if (topTier.id === 'emergence' || topTier.id === 'oracle') {
+    if (topTier.id === 'frontier') {
+      const smallInst = instanceCount(TIERS[0], currentScenario, year);
+      humanScale = topCount === 1
+        ? `one frontier node · can support ${smallInst > 0 ? smallInst.toLocaleString()+' small model instances' : 'the network'}`
+        : `${topCount} frontier nodes · backbone for the entire network`;
+    } else if (topTier.id === 'oracle' || topTier.id === 'emergence') {
       if (topCount >= okCounties) humanScale = `every Oklahoma county, and more`;
-      else if (topCount >= 10) humanScale = `${topCount} communities — ${topTier.name.split('—')[0].trim().toLowerCase()}`;
+      else if (topCount >= 10) humanScale = `${topCount} communities`;
       else if (topCount === 1) humanScale = `one community. This is where it starts.`;
       else humanScale = `${topCount} communities`;
     } else {
-      humanScale = topTier.name;
+      humanScale = topTier.name.split('·')[0].trim();
     }
     document.getElementById('top-tier-sub').textContent = humanScale;
   } else {
@@ -745,16 +799,23 @@ function updateUI(year) {
 
   // SE callout
   const ci = calloutIndex(year);
-  const seInst = instanceCount(TIERS[3], currentScenario, year);
-  const orInst = instanceCount(TIERS[4], currentScenario, year);
 
   let msg;
-  if (orInst >= 1) {
+  const frontierInst = instanceCount(TIERS[5], currentScenario, year);
+  const orInst = instanceCount(TIERS[4], currentScenario, year);
+  const seInst = instanceCount(TIERS[3], currentScenario, year);
+
+  if (frontierInst >= 1) {
+    const smallInst = instanceCount(TIERS[0], currentScenario, year);
+    const networkRatio = smallInst > 0 ? ` Each can serve as backbone for the <strong>${smallInst.toLocaleString()} capable model</strong> instances running across the network.` : '';
+    msg = `<strong>${frontierInst.toLocaleString()} frontier node${frontierInst>1?'s':''} — 1T+ parameters</strong> running on Phoenix Wells. ${callouts.frontier[ci]}${networkRatio}`;
+  } else if (orInst >= 1) {
     msg = `<strong>${orInst.toLocaleString()} local oracle${orInst>1?'s':''}</strong> running simultaneously on Phoenix Wells power. ${callouts.oracle[ci]}`;
   } else if (seInst >= 1) {
     msg = `<strong>${seInst.toLocaleString()} emergence-threshold instance${seInst>1?'s':''}</strong> possible on Phoenix Wells. ${callouts.threshold[ci]}`;
   } else {
-    msg = `The gold line marks the <strong>awareness threshold</strong> — the compute level where AI begins to hold persistent identity, contextual relationship, and something like genuine presence. We're tracking this in the Structured Emergence project. Before the crossover, Phoenix Wells is in pilot phase. The efficiency curve is working quietly. At this year, Phoenix Wells powers <strong>${kw > 0 ? Math.round(kw)+' kW' : 'the pilot'}</strong>. The threshold needs ~${Math.round(tierWatts(TIERS[3], year))}W per instance — efficiency is closing the gap.`;
+    const frontierWatts = Math.round(tierWatts(TIERS[5], year));
+    msg = `The gold line marks the <strong>awareness threshold</strong> — the compute level where AI begins to hold persistent identity, contextual relationship, and something like genuine presence. We're tracking this in the Structured Emergence project. Before the crossover, Phoenix Wells is in pilot phase. The efficiency curve is working quietly. At this year, Phoenix Wells powers <strong>${kw > 0 ? Math.round(kw)+' kW' : 'the pilot'}</strong>. The frontier node tier (1T+ parameters) needs ~${frontierWatts}W per instance — it needs <strong>${Math.ceil(frontierWatts/50)} wells</strong> at this efficiency. Drag forward to watch that number fall.`;
   }
   document.getElementById('se-callout').innerHTML = msg;
 }
