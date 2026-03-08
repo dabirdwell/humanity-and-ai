@@ -640,9 +640,14 @@ function updateUI(year) {
   const eff = efficiencyMultiplier(year);
 
   document.getElementById('year-display').textContent = year.toFixed(1).replace('.0','');
-  document.getElementById('pw-power').textContent = kw >= 1000 ? (kw/1000).toFixed(1)+' MW' : Math.round(kw)+' kW';
-  document.getElementById('pw-sub').textContent = Math.round(wells) + ' wells online · 30 kW avg';
-  document.getElementById('wells-count').textContent = Math.round(wells);
+  const wellsRounded = Math.round(wells);
+  document.getElementById('pw-power').textContent =
+    wellsRounded < 1 ? '—' :
+    kw >= 1000 ? (kw/1000).toFixed(1)+' MW' : Math.round(kw)+' kW';
+  document.getElementById('pw-sub').textContent =
+    wellsRounded < 1 ? 'No wells online yet · pilot phase' :
+    wellsRounded + ' wells online · 30 kW avg';
+  document.getElementById('wells-count').textContent = wellsRounded < 1 ? '—' : wellsRounded;
   document.getElementById('eff-val').textContent = eff.toFixed(1) + '×';
 
   // Top tier
