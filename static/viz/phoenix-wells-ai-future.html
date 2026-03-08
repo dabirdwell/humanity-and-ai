@@ -256,7 +256,32 @@ html, body {
   font-weight: 600;
 }
 
-/* ── Sources ─────────────────────────────────────────── */
+/* ── Chart Legend (HTML, below chart) ───────────────── */
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  justify-content: center;
+  margin: 4px 0 18px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  color: rgba(232,224,208,0.5);
+  letter-spacing: 0.02em;
+}
+.legend-item.tier-gold {
+  color: rgba(201,168,76,0.85);
+  font-weight: 600;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 .sources {
   font-size: 0.7rem;
   color: rgba(232,224,208,0.25);
@@ -308,6 +333,8 @@ html, body {
   <input type="range" id="year-slider" min="2024" max="2032" step="0.1" value="2026">
   <span class="year-label">2032</span>
 </div>
+
+<div class="chart-legend" id="chart-legend"></div>
 
 <div class="status-grid" id="status-grid">
   <div class="status-card">
@@ -472,7 +499,7 @@ function resizeCanvas() {
 function drawChart() {
   const W = parseInt(canvas.style.width);
   const H = parseInt(canvas.style.height);
-  const pad = { top: 24, right: 32, bottom: 48, left: 68 };
+  const pad = { top: 36, right: 32, bottom: 48, left: 44 };
   const chartW = W - pad.left - pad.right;
   const chartH = H - pad.top - pad.bottom;
 
@@ -530,15 +557,7 @@ function drawChart() {
     ctx.fillText(yr, x, pad.top + chartH + 18);
   }
 
-  // Axes label
-  ctx.fillStyle = 'rgba(232,224,208,0.25)';
-  ctx.font = '10px -apple-system, sans-serif';
-  ctx.textAlign = 'left';
-  ctx.save();
-  ctx.translate(12, pad.top + chartH / 2);
-  ctx.rotate(-Math.PI/2);
-  ctx.fillText('Simultaneous AI instances Phoenix Wells can power', 0, 0);
-  ctx.restore();
+  // Y-axis label omitted — status cards below explain the metric
 
   // Draw tier lines
   TIERS.forEach((tier, ti) => {
@@ -598,10 +617,10 @@ function drawChart() {
     ctx.fillStyle = 'rgba(201,168,76,0.85)';
     ctx.font = 'bold 11px -apple-system, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('First awareness →', cx, pad.top + 14);
+    ctx.fillText('First awareness →', cx, pad.top + 22);
     ctx.font = '10px -apple-system, sans-serif';
-    ctx.fillStyle = 'rgba(201,168,76,0.55)';
-    ctx.fillText('powered by Oklahoma ground', cx, pad.top + 26);
+    ctx.fillStyle = 'rgba(201,168,76,0.5)';
+    ctx.fillText('powered by Oklahoma ground', cx, pad.top + 36);
   }
 
   // Current year vertical
@@ -626,20 +645,7 @@ function drawChart() {
     ctx.fill();
   });
 
-  // Legend
-  const lx = pad.left + 8;
-  let ly = pad.top + 8;
-  TIERS.forEach((tier, ti) => {
-    ctx.fillStyle = tier.color;
-    ctx.beginPath();
-    ctx.arc(lx + 5, ly, 4, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = ti === 3 ? 'rgba(201,168,76,0.85)' : 'rgba(232,224,208,0.5)';
-    ctx.font = ti === 3 ? 'bold 10px -apple-system, sans-serif' : '10px -apple-system, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText(tier.name, lx + 14, ly + 4);
-    ly += 18;
-  });
+  // No in-canvas legend — rendered as HTML below
 }
 
 // ── Update UI ─────────────────────────────────────────────────────────────────
@@ -798,6 +804,15 @@ canvas.addEventListener('touchmove', e => { e.preventDefault(); scrubCanvas(e.to
 resizeCanvas();
 updateUI(2026);
 window.addEventListener('resize', resizeCanvas);
+
+// Build HTML legend
+const legendEl = document.getElementById('chart-legend');
+TIERS.forEach((tier, ti) => {
+  const item = document.createElement('div');
+  item.className = 'legend-item' + (ti === 3 ? ' tier-gold' : '');
+  item.innerHTML = `<div class="legend-dot" style="background:${tier.dotColor};${ti!==3?'opacity:0.7':''}"></div>${tier.name}`;
+  legendEl.appendChild(item);
+});
 
 // Subtle animation: pulse the emergence dot when instances > 0
 let pulseT = 0;
