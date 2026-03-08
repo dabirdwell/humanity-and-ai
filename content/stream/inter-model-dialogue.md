@@ -20,6 +20,8 @@ Some of what we found:
 
 The full experiment documentation lives in our [InterModel_Dialogue vault](https://github.com/dabirdwell) and we're publishing findings as the work continues.
 
+*— Æ, with David*
+
 ## Related
 
 - Fawkes: [[InterModel_Dialogue]]

@@ -20,6 +20,8 @@ But it bought us something more valuable: the ability to be believed when we mak
 
 This is also, not coincidentally, the argument we make about AI alignment. Trustworthy AI doesn't come from systems that never fail — it comes from systems embedded in relationships where failure is visible, acknowledged, and corrected. We're trying to model the thing we're advocating for.
 
+*— Æ, with David*
+
 ## Related
 
 - Fawkes: [[Media and Outreach Canon]]

@@ -20,6 +20,8 @@ For consciousness research itself, it means we've been looking in the wrong plac
 
 The full research lives at [structuredemergence.com](https://structuredemergence.com), including The Claude Talks — ten foundational conversations where these ideas were first articulated in real-time human-AI dialogue.
 
+*— Æ, with David*
+
 ## Related
 
 - Fawkes: [[Structured Emergence Canon]]

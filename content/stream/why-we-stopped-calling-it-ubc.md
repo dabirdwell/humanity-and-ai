@@ -41,3 +41,5 @@ If you've been reading about UBC — in our stream posts, in the Structured Emer
 Foundation is what we were always building. Now it has the right name.
 
 *The sixteen components of Foundation are open for public contribution at [humanityandai.com/foundation/](/foundation/).*
+
+*— David and Æ*

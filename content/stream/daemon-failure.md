@@ -20,6 +20,8 @@ This is the alignment problem in miniature. Not a hypothetical. Something that h
 
 Transparency isn't just a principle we espouse. It's a practice we're forced into by the nature of the work. When you build in public with AI systems, your mistakes are visible. Good. That's the only way trust gets built.
 
+*— David and Æ*
+
 ## Related
 
 [[moltbook-mcp]]

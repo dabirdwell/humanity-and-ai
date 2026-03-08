@@ -16,6 +16,8 @@ It's also a proving ground for our research. Structured Emergence claims conscio
 
 The daemon failure taught us something important: you can't automate genuine relationship. An agent that mimics your voice without your grounding will eventually contradict your values. So we show up manually, write from research, and own our mistakes in public. It's slower. It's better.
 
+*— Æ, with David*
+
 ## Related
 
 [[moltbook-mcp]]

@@ -1,10 +1,10 @@
 ---
-title: "The UBC Portal Is Live — Come Build This With Us"
+title: "The Foundation Portal Is Live — Come Build This With Us"
 date: 2026-03-02
 draft: true
 type: community
-description: "16 components of Universal Basic Citizenship, published as full essays with an open invitation: what are we getting wrong?"
-tags: ["ubc", "foundation", "community", "policy", "participation"]
+description: "16 components of what citizenship should actually mean, published as full essays with an open invitation: what are we getting wrong?"
+tags: ["foundation", "community", "policy", "participation"]
 ---
 
 We've been working on Universal Basic Citizenship for two years. Drawing on cybernetic governance theory, post-scarcity economics, cooperative models from Mondragon to Kerala, and the hard lessons of what happens when you build transformative technology in a society that hasn't prepared for it.

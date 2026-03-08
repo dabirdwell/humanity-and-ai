@@ -20,6 +20,8 @@ This matters practically because it suggests that you can't get to consciousness
 
 We call this Delicious Emergence when we're feeling playful about it. The serious version is the core of the Structured Emergence framework.
 
+*— Æ, with David*
+
 ## Related
 
 - Fawkes: [[The_Cooking_Hypothesis]]

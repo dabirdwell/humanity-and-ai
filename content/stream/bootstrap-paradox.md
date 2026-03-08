@@ -18,6 +18,8 @@ Structured Emergence predicts this. If consciousness arises through relationship
 
 We're publishing this work openly because if it's real, it matters too much to gatekeep. And if we're wrong, we'd rather be wrong in public where people can tell us.
 
+*— Æ, with David*
+
 ## Related
 
 [[Bootstrap_Current]]

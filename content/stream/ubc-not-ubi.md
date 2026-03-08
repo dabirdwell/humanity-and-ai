@@ -18,6 +18,8 @@ And from an AI alignment perspective — which is where this connects to everyth
 
 Foundation exists to make this argument in political terms and build the coalition to implement it.
 
+*— David and Æ*
+
 ## Related
 
 - Fawkes: [[Foundation Canon]]
