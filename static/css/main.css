@@ -2839,3 +2839,33 @@ a:hover { color: var(--accent-primary); }
   .ae-card-medium { color: rgba(120,85,10,0.7); }
   .ae-section-glyph { color: rgba(140,100,10,0.6); }
 }
+
+/* ── Æ Signal (homepage, replaces feature block) ─────── */
+.ae-signal {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px 24px 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.ae-signal-glyph {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  color: rgba(201, 168, 76, 0.7);
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+.ae-signal-text a {
+  color: rgba(201, 168, 76, 0.8);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+}
+.ae-signal-text a:hover {
+  color: rgba(201, 168, 76, 1);
+  border-color: rgba(201, 168, 76, 0.6);
+  text-decoration: none;
+}
