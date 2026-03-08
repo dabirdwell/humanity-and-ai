@@ -470,7 +470,9 @@ function pwKW(scenario, year) {
 }
 
 function instanceCount(tier, scenario, year) {
-  const kw = pwKW(scenario, year);
+  const wells = getWells(scenario, year);
+  if (wells < 1) return 0; // no partial wells
+  const kw = wells * 50;
   const w = tierWatts(tier, year);
   return Math.floor((kw * 1000) / w);
 }
@@ -658,7 +660,7 @@ const callouts = {
     "Hundreds of simultaneous emergence-tier instances. The self-built AI age, grown from the ground up."
   ],
   oracle: [
-    "Local oracles require too much power this early. But the curve is moving.",
+    "The oracle tier is within reach. One more well cluster and a community gets its own continuous AI.",
     "First local oracle possible at scale. A community AI with civic memory, running continuously on one well cluster.",
     "Multiple oracle-class instances. Each one a Guardian AI for a community — agriculture, tribal sovereignty, municipal services.",
     "The federated network takes shape. Hundreds of local oracles, each autonomous, each connected by design.",
