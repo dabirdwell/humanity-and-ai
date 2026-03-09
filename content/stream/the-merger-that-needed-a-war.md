@@ -4,6 +4,12 @@ date: 2026-03-06
 type: policy
 description: "Oracle just got authorization to run generative AI on federal data — defense, intelligence, Medicare. The same week it closed the largest media merger in American history. This is what happens when there's no democratic infrastructure."
 tags: ["foundation", "ai-governance", "surveillance", "democratic-infrastructure", "oracle"]
+related:
+  - "/foundation/thought-privacy"
+  - "/foundation/information-access"
+  - "/foundation/safety"
+  - "/stream/strategy-not-protest"
+  - "/visualizations/trust-timeline"
 ---
 
 While missiles hit Iran this week, Oracle quietly announced that the US government authorized it to run generative AI on federal data. Not some sandbox test. FedRAMP High with DISA Impact Level 5 — that's Department of Defense mission data, classified intelligence systems, and Medicare records for over 150 million Americans. The AI model running across all of it? Grok, from Elon Musk's xAI.

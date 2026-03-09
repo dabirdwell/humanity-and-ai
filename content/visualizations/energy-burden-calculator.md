@@ -2,7 +2,7 @@
 title: "Energy Burden Calculator"
 description: "Enter your income and state to find out what share of your household budget goes to keeping the lights on."
 date: 2026-03-07
-tags: ["visualization", "energy", "calculator", "sustainable-energy", "equity"]
+tags: ["visualization", "energy", "calculator", "sustainable-energy", "equity", "phoenix-wells", "oklahoma"]
 viz_source: "EIA RECS 2020; DOE LEAD Tool; ACEEE energy burden research"
 viz_updated: "March 2026"
 aliases:

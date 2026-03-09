@@ -5,6 +5,11 @@ draft: true
 type: community
 description: "16 components of what citizenship should actually mean, published as full essays with an open invitation: what are we getting wrong?"
 tags: ["foundation", "community", "policy", "participation"]
+related:
+  - "/stream/ubc-not-ubi"
+  - "/stream/why-we-stopped-calling-it-ubc"
+  - "/foundation/social-contract"
+  - "/visualizations/ubc-circos"
 ---
 
 We've been working on Universal Basic Citizenship for two years. Drawing on cybernetic governance theory, post-scarcity economics, cooperative models from Mondragon to Kerala, and the hard lessons of what happens when you build transformative technology in a society that hasn't prepared for it.

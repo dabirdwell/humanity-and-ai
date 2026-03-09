@@ -3,7 +3,7 @@ title: "UBC Circos: How Needs, Programs, and Impacts Connect"
 description: "An interactive chord diagram mapping the relationships between human needs, Universal Basic Citizenship programs, and their societal impacts."
 date: 2026-02-23
 type: "visualizations"
-tags: ["UBC", "systems thinking", "policy design", "interactive"]
+tags: ["ubc", "systems-thinking", "policy", "interactive", "foundation"]
 preview_bg: "radial-gradient(circle at 30% 40%, rgba(231,76,60,0.2), rgba(41,128,185,0.15), rgba(39,174,96,0.1), #0a0a0f)"
 preview_icon: "🕸️"
 ---

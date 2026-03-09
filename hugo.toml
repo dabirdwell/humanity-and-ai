@@ -47,3 +47,15 @@ summaryLength = 40
 [mediaTypes]
   [mediaTypes."application/rss+xml"]
     suffixes = ["xml"]
+
+
+[related]
+  includeNewer = true
+  threshold = 40
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10

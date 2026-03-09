@@ -19,6 +19,8 @@
   </div>
   {{ end }}
 
+  {{ partial "related.html" . }}
+
   <nav class="post-nav">
     {{ with .PrevInSection }}
     <a href="{{ .Permalink }}" class="post-nav-link prev">

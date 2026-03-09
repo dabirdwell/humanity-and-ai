@@ -4,6 +4,10 @@ date: 2026-02-19
 type: futurism
 description: "The fossil fuel era left scars across Oklahoma. Phoenix Wells turns them into the nervous system of a new civilization."
 tags: ["phoenix-wells", "oklahoma", "infrastructure", "energy"]
+related:
+  - "/foundation/sustainable-energy"
+  - "/stream/oklahoma-leapfrog"
+  - "/visualizations/energy-burden-calculator"
 ---
 
 There are over 22,000 abandoned oil and gas wells across Oklahoma. Each one is a liability on someone's books — an environmental risk, a cleanup cost, a scar from an extractive era that took what it needed and moved on. If you've driven through rural Oklahoma, you've seen them. Rusting things on someone's land that nobody's doing anything about.

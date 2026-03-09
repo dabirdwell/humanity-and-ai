@@ -4,7 +4,13 @@ description: "Yes, UBC includes UBI. Money is one tool among sixteen — necessa
 number: "13"
 weight: 13
 status: "seed"
-tags: ["foundation", "ubi", "economics", "foundation", "policy"]
+tags: ["foundation", "ubi", "ubc", "economics", "policy"]
+related:
+  - "/stream/ubc-not-ubi"
+  - "/stream/why-we-stopped-calling-it-ubc"
+  - "/foundation/social-contract"
+  - "/visualizations/ubc-circos"
+  - "/visualizations/ubc-visual-stats"
 hero_stat: "The US poverty gap is $288 billion — the cost to lift every American above the poverty line. We spend $481 billion on welfare programs and poverty hasn't moved in 50 years."
 hero_stat_bridge: "We already spend more than enough to end poverty. The problem isn't the budget — it's the architecture."
 hero_stat_source: "Census Bureau poverty statistics, 2024; Federal Safety Net analysis"

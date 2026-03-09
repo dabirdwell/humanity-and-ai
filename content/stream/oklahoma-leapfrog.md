@@ -4,6 +4,12 @@ date: 2026-01-29
 type: futurism
 description: "50th in education. First in abandoned wells. What if that's not a curse but a launchpad?"
 tags: ["oklahoma", "phoenix-wells", "foundation", "leapfrog"]
+related:
+  - "/foundation/sustainable-energy"
+  - "/foundation/education"
+  - "/foundation/skills-training"
+  - "/stream/phoenix-wells-22000-holes"
+  - "/visualizations/energy-burden-calculator"
 ---
 
 We do not head north with the climate flight. We make our stand here. This is the right place. We will invent our way out of this.

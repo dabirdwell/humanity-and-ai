@@ -4,7 +4,11 @@ description: "The energy transition isn't optional. The question is whether it h
 number: "07"
 weight: 7
 status: "seed"
-tags: ["foundation", "energy", "sustainability", "phoenix-wells", "foundation", "policy"]
+tags: ["foundation", "energy", "sustainability", "phoenix-wells", "policy"]
+related:
+  - "/stream/oklahoma-leapfrog"
+  - "/stream/phoenix-wells-22000-holes"
+  - "/visualizations/energy-burden-calculator"
 hero_stat: "Low-income households spend 3x more of their income on energy than everyone else. One in seven American families lives in energy poverty."
 hero_stat_bridge: "Energy poverty isn't about choosing paper or plastic. It's about choosing between heating your home and feeding your kids."
 hero_stat_source: "DOE Low-Income Energy Affordability Data Tool; RMI, 2023"

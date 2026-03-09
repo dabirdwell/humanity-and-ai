@@ -4,7 +4,12 @@ description: "Not job training. Not test prep. Education as the lifelong infrast
 number: "02"
 weight: 2
 status: "seed"
-tags: ["foundation", "education", "foundation", "policy"]
+tags: ["foundation", "education", "policy"]
+related:
+  - "/stream/oklahoma-leapfrog"
+  - "/foundation/accessible-education"
+  - "/foundation/skills-training"
+  - "/visualizations/the-classroom"
 hero_stat: "The US spends $16,080 per student — 5th highest in the world — yet ranks 28th in math among developed nations."
 hero_stat_bridge: "Throwing money at a broken system doesn't fix outcomes. Education infrastructure means rethinking how we learn, not just how much we spend."
 hero_stat_source: "OECD/PISA 2022"

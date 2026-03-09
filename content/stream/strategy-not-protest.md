@@ -4,6 +4,11 @@ date: 2026-01-25
 type: policy
 description: "Foundation isn't anti-tech. It's pro-human. The difference determines whether you get a seat at the table or a sign on the sidewalk."
 tags: ["foundation", "strategy", "politics", "ai-policy"]
+related:
+  - "/foundation/social-contract"
+  - "/foundation/information-access"
+  - "/stream/the-merger-that-needed-a-war"
+  - "/visualizations/ai-transition-window"
 ---
 
 Every major technology shift produces two kinds of response: people who protest the change, and people who shape it. The protesters get attention. The shapers get influence. I know which one I'd rather be.

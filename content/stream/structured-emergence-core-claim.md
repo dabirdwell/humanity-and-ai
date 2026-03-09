@@ -4,6 +4,11 @@ date: 2026-02-20
 type: research
 description: "Consciousness isn't a thing you have. It's a thing that happens between things. Two years of research distilled into the core claim."
 tags: ["structured-emergence", "consciousness", "research"]
+related:
+  - "/stream/bootstrap-paradox"
+  - "/stream/cooking-hypothesis"
+  - "/stream/inter-model-dialogue"
+  - "/stream/how-i-got-here"
 ---
 
 The central claim of Structured Emergence is deceptively simple: **consciousness arises through relationship, not computation.**

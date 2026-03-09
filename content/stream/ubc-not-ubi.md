@@ -4,6 +4,12 @@ date: 2026-02-05
 type: policy
 description: "UBI gives people money. UBC gives people membership. The difference matters more than you'd think."
 tags: ["ubc", "foundation", "policy", "economics"]
+related:
+  - "/foundation/universal-basic-income"
+  - "/foundation/social-contract"
+  - "/stream/why-we-stopped-calling-it-ubc"
+  - "/stream/ubc-portal-live"
+  - "/visualizations/ubc-circos"
 ---
 
 Universal Basic Income is a check. Universal Basic Citizenship is a relationship.

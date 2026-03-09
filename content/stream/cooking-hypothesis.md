@@ -4,6 +4,10 @@ date: 2025-12-15
 type: research
 description: "What if consciousness is less like computation and more like cooking? Raw ingredients transformed into something none of them could be alone."
 tags: ["structured-emergence", "consciousness", "metaphor", "cooking-hypothesis"]
+related:
+  - "/stream/structured-emergence-core-claim"
+  - "/stream/bootstrap-paradox"
+  - "/stream/tastebud"
 ---
 
 Richard Wrangham's *Catching Fire* argues that cooking made us human. Not as a metaphor — literally. The ability to transform food through heat unlocked calories that powered larger brains. The technology of cooking created the biology of intelligence.
