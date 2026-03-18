@@ -31,9 +31,11 @@ Oklahoma ranks 50th in education spending. Last. Every year that policy holds, a
 
 *Tyler is not one person.* He's seven years old and his brain processes text differently from how most reading instruction is designed to teach it. His teacher is overworked and managing 27 students with a single classroom aide. She notices Tyler is struggling, flags him for evaluation, and waits six months for the school psychologist to have capacity. By then Tyler has decided he's bad at school. That belief will follow him for years, possibly his whole life — not because of how his brain works, but because the system didn't have the tools or time to meet him where he was.
 
-And here's the thing: the tools exist now. AI tutors can adapt to individual learning styles, pace, and interests. They can meet Tyler exactly where he is, in real time, on the day he needs it — not six months later. This is the first time in history we can genuinely personalize education at scale. The question isn't whether the technology works. It's whether it serves every learner or only those who can afford it.
+And here's the thing: the tools exist now. AI tutors — under the guidance of trained human educators — can adapt to individual learning styles, pace, and interests. They can meet Tyler exactly where he is, in real time, on the day he needs it — not six months later. This is the first time in history we can genuinely personalize education at scale. The question isn't whether the technology works. It's whether it serves every learner or only those who can afford it.
 
 Nationally, the US spends $16,080 per student — fifth highest in the world — and ranks 28th in math. The money is going somewhere. It's going into a structure designed for a different era, optimized for standardized outputs, not human development. The curriculum teaches to a test. The test measures a narrow band of what humans are capable of. And the children who don't fit that band learn, early and at great cost, that the system doesn't see them.
+
+We are preparing people for a world that no longer exists, with tools from a world that's disappearing. And we're charging them for the privilege.
 
 ## The Cost, Compounding
 
@@ -62,7 +64,7 @@ Foundation's education component isn't a reform plan for the system we have. It'
 
 It starts with children — but reimagined. Not test scores and compliance, but curiosity, critical thinking, and collaborative problem-solving. A system that meets Tyler where he is on the day he needs it, not six months later.
 
-But it doesn't stop with children. That's the part most education proposals miss. Adults need access to genuine learning too — not just retraining programs that appear when their industry collapses, but intellectual development available throughout life. Want to learn philosophy at 45? Molecular biology at 60? In Foundation's framework, that's not a luxury. That's citizenship. Because the world is going to keep changing, and people are going to need to keep growing, and a system that only educates you once and then abandons you is not a system built for what's coming.
+But it doesn't stop with children. That's the part most education proposals miss, and it might be the part that matters most for what's coming. If your industry disappears at 40, the system has nothing for you. No door to walk through, no path that wasn't designed for an 18-year-old. Adults need access to genuine learning too — not just retraining programs that appear when their industry collapses, but intellectual development available throughout life. Want to learn philosophy at 45? Molecular biology at 60? In Foundation's framework, that's not a luxury. That's citizenship. Because the world is going to keep changing, and people are going to need to keep growing, and a system that only educates you once and then abandons you is not a system built for what's coming.
 
 Imagine what we could do if we raised an entire generation — not the same, not clones of one another — but individuals unbound. Unbound by economic isolation. Unbound by ignorance. Unbound by a system that sorts them at seven years old and never looks back. That's not a fantasy. It's a policy choice we haven't yet been willing to make.
 
@@ -70,7 +72,7 @@ Imagine what we could do if we raised an entire generation — not the same, not
 
 We have a framework here, not a curriculum. And we need your help to build it. Here are some of the directions we're exploring:
 
-- **AI tutors as public infrastructure** — adaptive learning systems available to every student free, meeting each kid where they are on the day they need it. Not replacing teachers — giving them superpowers.
+- **AI tutors as public infrastructure** — adaptive learning systems available to every student free, under human supervision, meeting each kid where they are on the day they need it. Not replacing teachers — giving them superpowers.
 - **Curiosity-centered curriculum** — what if instead of teaching to a test, schools organized around questions students actually want to answer? Project-based, interdisciplinary, assessed by what you create rather than what you memorize.
 - **Lifelong learning accounts** — every citizen gets a learning budget they can use at any age, at any institution, for any subject. No expiration date. No means testing.
 

@@ -38,7 +38,7 @@ Let that land for a second. The wealthiest country on Earth stopped counting its
 
 ## What AI Changes
 
-AI and automation are transforming agriculture in ways that should make this problem easier to solve: precision farming, vertical agriculture, supply chain optimization, waste reduction through better demand prediction. These technologies could dramatically reduce the cost of feeding everyone well.
+The technology to solve this exists. That's the part that should make you angry. AI and automation are already transforming agriculture — precision farming, vertical agriculture, supply chain optimization, waste reduction through better demand prediction. These tools could dramatically reduce the cost of feeding everyone well.
 
 But — and this is the pattern you'll see across every component of Foundation — the question is who benefits. If AI-driven agriculture concentrates further into corporate monocultures, it makes the system more fragile and the access problem worse. If it's deployed to strengthen local and regional food systems — community farms, cooperative distribution, school nutrition programs, urban agriculture projects that put food production back in the neighborhoods that need it most — then it becomes genuine infrastructure for human flourishing.
 
@@ -54,6 +54,6 @@ Foundation is citizen-developed, and we need your voice in it. Here are some dir
 - **Community-scale urban farming with AI optimization** — vertical farms, rooftop gardens, and cooperative growing operations using AI for crop management, placed in the neighborhoods that need them most. Not theoretical — working models exist in Detroit, Cleveland, and dozens of other cities.
 - **AI-powered supply chain transparency** — systems that track food from farm to table, reducing the 30-40% waste in our current system by matching supply to actual demand rather than guesswork
 
-What's working in your community? What's failing? What have we missed?
+What's working in your community that others should know about? What would universal school meals change where you live? What have we missed?
 
 This is one of sixteen components. [Explore the full framework →](/foundation/)

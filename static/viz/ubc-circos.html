@@ -21,7 +21,8 @@
   .strength-legend { display: flex; justify-content: center; gap: 16px; margin-bottom: 4px; align-items: center; }
   .strength-legend span { font-size: 10px; color: #555; }
   svg { display: block; margin: 0 auto; width: 100%; }
-  .detail { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 14px 20px; max-width: 620px; margin: 4px auto 0; }
+  .detail { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 14px 20px; max-width: 620px; margin: 4px auto 0; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(8px); opacity: 0; pointer-events: none; }
+  .detail.visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .detail-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
   .detail-name { font-size: 14px; font-weight: 500; }
   .detail-cat { font-size: 10px; color: #666; margin-left: auto; text-transform: uppercase; letter-spacing: 1px; }
@@ -30,9 +31,15 @@
   .tag:hover { filter: brightness(1.3); }
   .tag .dots { font-size: 7px; letter-spacing: 1px; }
   .footer { text-align: center; font-size: 10px; color: #444; margin-top: 10px; letter-spacing: .5px; }
-  .chord { transition: opacity .25s; }
+  .chord { transition: opacity .25s, fill .4s ease; }
   .arc-seg { cursor: pointer; transition: stroke-width .15s; }
   .arc-label { cursor: pointer; transition: all .2s; }
+  #diagram text { transition: opacity 0.2s ease, fill 0.2s ease; }
+  @keyframes arcPulse {
+    0% { stroke-width: 10; }
+    50% { stroke-width: 16; }
+    100% { stroke-width: 10; }
+  }
   /* Mobile: scale up SVG internals via CSS overrides on the rendered elements */
   @media (max-width: 500px) {
     body { padding: 8px 12px; }
@@ -66,7 +73,7 @@
     <span>Thicker lines = stronger connection between nodes</span>
   </div>
   <svg id="diagram" viewBox="0 0 900 900"></svg>
-  <div id="detail" class="detail" style="display:none"></div>
+  <div id="detail" class="detail"></div>
   <p class="footer">Æ · Humanity and AI LLC · Foundation Framework</p>
   <p style="text-align:center;margin-top:10px;padding-bottom:8px;"><a href="/foundation/" target="_top" style="font-size:12px;color:#4ecdc4;text-decoration:none;letter-spacing:.5px;">Explore the full Foundation framework →</a></p>
 </div>
@@ -132,7 +139,7 @@ for(const ck of catOrder){for(const item of CATS[ck].items){
   layout[item.id]={...item,cat:ck,sa,ea,mid:(sa+ea)/2,color:CATS[ck].color,rgb:CATS[ck].rgb};
   angle=ea+pad;}angle+=gap;}
 
-let viewMode="all",activeId=null;
+let viewMode="all",activeId=null,hoveredId=null;
 function getFiltered(){
   if(viewMode==="np")return CONNS.filter(([f,t])=>f[0]==="n"&&t[0]==="p");
   if(viewMode==="pi")return CONNS.filter(([f,t])=>f[0]==="p"&&t[0]==="i");
@@ -159,6 +166,14 @@ const chordGroup=el("g",{id:"chords"},svg);
 const arcGroup=el("g",{id:"arcs"},svg);
 const labelGroup=el("g",{id:"labels"},svg);
 
+// SVG glow filter for active node
+const defs=el("defs",{},svg);
+const glowFilter=el("filter",{id:"glow"},defs);
+el("feGaussianBlur",{stdDeviation:"3",result:"blur"},glowFilter);
+const glowMerge=el("feMerge",{},glowFilter);
+el("feMergeNode",{in:"blur"},glowMerge);
+el("feMergeNode",{in:"SourceGraphic"},glowMerge);
+
 const centerText1=el("text",{x:cx,y:cy-12,"text-anchor":"middle","font-size":16,"font-weight":300,fill:"#666","letter-spacing":3},svg);
 centerText1.textContent="UBC";
 const centerText2=el("text",{x:cx,y:cy+8,"text-anchor":"middle","font-size":9,fill:"#555","letter-spacing":1},svg);
@@ -171,14 +186,14 @@ for(const[id,item]of Object.entries(layout)){
   const a=el("path",{d:arcD(outerR,item.sa,item.ea),stroke:item.color,"stroke-width":10,fill:"none","stroke-linecap":"round",class:"arc-seg"},arcGroup);
   arcEls[id]=a;
   a.addEventListener("mouseenter",()=>hover(id));
-  a.addEventListener("mouseleave",()=>hover(null));
+  a.addEventListener("mouseleave",()=>{hoveredId=null;updateHighlight();});
   a.addEventListener("click",e=>{e.stopPropagation();select(activeId===id?null:id);});
   const lp=pol(labelR,item.mid);const deg=item.mid*180/Math.PI;const right=deg>-90&&deg<90;
   const t=el("text",{x:lp.x,y:lp.y,"text-anchor":right?"start":"end","font-size":9.5,"font-weight":400,fill:"#999",
     transform:`rotate(${right?deg:deg+180},${lp.x},${lp.y})`,class:"arc-label"},labelGroup);
   t.textContent=item.name;labelEls[id]=t;
   t.addEventListener("mouseenter",()=>hover(id));
-  t.addEventListener("mouseleave",()=>hover(null));
+  t.addEventListener("mouseleave",()=>{hoveredId=null;updateHighlight();});
   t.addEventListener("click",e=>{e.stopPropagation();select(activeId===id?null:id);});
 }
 svg.addEventListener("click",()=>select(null));
@@ -191,30 +206,52 @@ function render(){
     const p=el("path",{d:chordPath(f,t,str),fill:`rgba(${layout[f].rgb},${0.02+0.04*str})`,class:"chord"},chordGroup);
     chordEls.push({el:p,from:f,to:t,str});
   }
+  // Staggered chord entrance animation
+  chordEls.forEach((c, i) => {
+    c.el.style.opacity = '0';
+    c.el.style.transition = 'opacity 0.3s ease, fill 0.4s ease';
+    setTimeout(() => { c.el.style.opacity = ''; }, i * 8);
+  });
   updateHighlight();
 }
 
 function updateHighlight(){
-  const filtered=getFiltered();const hasActive=activeId!=null;
+  const filtered=getFiltered();
+  const highlightId=activeId||hoveredId;
+  const hasHighlight=highlightId!=null;
+  const hasActive=activeId!=null;
+
   let connSet=null,itemSet=null;
-  if(hasActive){connSet=new Set();itemSet=new Set([activeId]);
-    for(const[f,t]of filtered){if(f===activeId||t===activeId){connSet.add(`${f}-${t}`);itemSet.add(f);itemSet.add(t);}}}
+  if(hasHighlight){connSet=new Set();itemSet=new Set([highlightId]);
+    for(const[f,t]of filtered){if(f===highlightId||t===highlightId){connSet.add(`${f}-${t}`);itemSet.add(f);itemSet.add(t);}}}
+
   for(const c of chordEls){const k=`${c.from}-${c.to}`;
-    if(hasActive){const lit=connSet.has(k);
+    if(hasHighlight){const lit=connSet.has(k);
       c.el.setAttribute("fill",lit?`rgba(${layout[c.from].rgb},${0.08+0.15*c.str})`:`rgba(${layout[c.from].rgb},0.008)`);}
     else{c.el.setAttribute("fill",`rgba(${layout[c.from].rgb},${0.02+0.04*c.str})`);}}
+
   for(const[id,item]of Object.entries(layout)){
-    const conn=itemSet?.has(id);const self=activeId===id;const op=hasActive?(conn?1:.18):1;
+    const conn=itemSet?.has(id);const self=highlightId===id;const op=hasHighlight?(conn?1:.18):1;
     arcEls[id].setAttribute("stroke",self?"#fff":item.color);
     arcEls[id].setAttribute("stroke-width",self?14:10);
     arcEls[id].style.opacity=op;innerArcEls[id].style.opacity=op;
+    // Glow filter on the actively selected node
+    if(self&&hasActive){arcEls[id].setAttribute("filter","url(#glow)");}
+    else{arcEls[id].removeAttribute("filter");}
+    // Arc pulse animation on connected nodes when a node is clicked
+    if(hasActive&&conn&&!self){arcEls[id].style.animation="arcPulse 0.5s ease";}
+    else{arcEls[id].style.animation="";}
     labelEls[id].setAttribute("fill",self?"#fff":conn?"#ccc":"#999");
     labelEls[id].setAttribute("font-size",self?11:9.5);
     labelEls[id].setAttribute("font-weight",self?600:400);
     labelEls[id].style.opacity=op;}
-  if(hasActive){centerText2.textContent=layout[activeId].name.toUpperCase();
-    centerText3.textContent=filtered.filter(([f,t])=>f===activeId||t===activeId).length+" connections";}
+
+  // Center text uses highlightId (hover or active)
+  if(hasHighlight){centerText2.textContent=layout[highlightId].name.toUpperCase();
+    centerText3.textContent=filtered.filter(([f,t])=>f===highlightId||t===highlightId).length+" connections";}
   else{centerText2.textContent="CLICK TO EXPLORE";centerText3.textContent="";}
+
+  // Detail panel ONLY for activeId (click), not hover
   if(hasActive){
     const item=layout[activeId];
     const conns=filtered.filter(([f,t])=>f===activeId||t===activeId).sort((a,b)=>b[2]-a[2]);
@@ -225,23 +262,24 @@ function updateHighlight(){
       const oid=f===activeId?t:f,o=layout[oid];if(!o)continue;
       html+=`<span class="tag" style="background:rgba(${o.rgb},${.05+str*.06});border:1px solid rgba(${o.rgb},${.1+str*.07})" data-id="${oid}">
         <span class="dots">${"●".repeat(str)}</span> ${o.name}</span>`;}
-    html+="</div>";detailEl.innerHTML=html;detailEl.style.display="block";
+    html+="</div>";detailEl.innerHTML=html;
+    detailEl.classList.add("visible");
     detailEl.querySelectorAll(".tag").forEach(tag=>{
       tag.addEventListener("click",e=>{e.stopPropagation();select(tag.dataset.id);});});
-  }else{detailEl.style.display="none";}
+  }else{detailEl.classList.remove("visible");}
 }
 
 function hover(id){
   if(activeId)return;
-  if(id){const prev=activeId;activeId=id;updateHighlight();activeId=prev;}
-  else{updateHighlight();}
+  hoveredId=id;
+  updateHighlight();
 }
-function select(id){activeId=id;updateHighlight();}
+function select(id){activeId=id;hoveredId=null;updateHighlight();}
 
 document.querySelectorAll(".controls button").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".controls button").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");viewMode=btn.dataset.mode;activeId=null;render();});});
+    btn.classList.add("active");viewMode=btn.dataset.mode;activeId=null;hoveredId=null;render();});});
 
 render();
 select('n1'); // pre-select Economic Insecurity so visitors immediately see the system working

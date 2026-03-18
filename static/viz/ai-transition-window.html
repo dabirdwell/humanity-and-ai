@@ -53,7 +53,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
 
 /* TIMELINE WRAPPER */
 .timeline-section { max-width: 760px; margin: 0 auto; padding: 24px 24px 80px; position: relative; }
-.timeline-section::before { content: ''; position: absolute; left: 74px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent 0%, var(--border) 5%, var(--border) 95%, transparent 100%); }
+.timeline-section::before { content: ''; position: absolute; left: 49px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent 0%, var(--border) 5%, var(--border) 95%, transparent 100%); }
 
 /* ERA LABELS */
 .era-label { position: relative; margin: 48px 0 20px 104px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); font-weight: 500; }
@@ -82,8 +82,8 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
 .item-card.expanded .hover-hint { opacity: 0; height: 0; margin: 0; overflow: hidden; }
 
 /* RESPONSE PANEL */
-.item-response { display: none; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.06); }
-.item-card.expanded .item-response { display: block; }
+.item-response { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s cubic-bezier(.22,1,.36,1), opacity 0.3s ease, margin-top 0.3s ease, padding-top 0.3s ease; margin-top: 0; padding-top: 0; border-top: none; }
+.item-card.expanded .item-response { max-height: 500px; opacity: 1; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.06); }
 .response-heading { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
 .response-row { display: flex; gap: 10px; align-items: baseline; margin-bottom: 7px; }
 .response-actor { font-size: 11px; font-weight: 600; color: var(--muted); min-width: 110px; flex-shrink: 0; }
@@ -100,7 +100,12 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
 .confidence-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); }
 .confidence-dots { display: flex; gap: 3px; }
 .confidence-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.08); }
-.confidence-dot.filled { background: var(--dot-color, var(--muted)); opacity: .7; }
+.confidence-dot.filled { background: var(--dot-color, var(--muted)); opacity: .7; animation: dotPulse 2s ease-in-out infinite; }
+.confidence-dot.filled:nth-child(2) { animation-delay: 0.2s; }
+.confidence-dot.filled:nth-child(3) { animation-delay: 0.4s; }
+.confidence-dot.filled:nth-child(4) { animation-delay: 0.6s; }
+.confidence-dot.filled:nth-child(5) { animation-delay: 0.8s; }
+@keyframes dotPulse { 0%, 100% { opacity: .7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.3); } }
 .confidence-source { font-size: 10px; color: var(--dim); margin-left: auto; font-style: italic; }
 
 /* WINDOW ZONE */
@@ -113,14 +118,17 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
 .here-marker.visible { opacity: 1; transform: translateX(0); }
 .here-line { flex: 1; height: 2px; background: linear-gradient(to right, var(--orange), transparent); max-width: 200px; }
 .here-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); white-space: nowrap; }
-.here-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 12px var(--orange), 0 0 24px rgba(255,107,53,.3); animation: pulse-here 2s ease-in-out infinite; flex-shrink: 0; }
+.here-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 12px var(--orange), 0 0 24px rgba(255,107,53,.3); animation: pulse-here 2s ease-in-out infinite; flex-shrink: 0; position: relative; }
+.here-dot::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--orange); animation: ripple 2s ease-out infinite; }
+@keyframes ripple { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.5); opacity: 0; } }
 @keyframes pulse-here { 0%, 100% { box-shadow: 0 0 8px var(--orange), 0 0 16px rgba(255,107,53,.3); } 50% { box-shadow: 0 0 16px var(--orange), 0 0 32px rgba(255,107,53,.5); } }
 
 /* CLOSING BAR */
 .closing-bar { margin: 16px 0 16px 104px; max-width: 400px; }
 .closing-label { font-size: 11px; color: var(--dim); letter-spacing: 1px; margin-bottom: 6px; }
 .closing-track { height: 6px; background: rgba(255,255,255,.06); border-radius: 3px; overflow: hidden; }
-.closing-fill { height: 100%; width: 0; background: linear-gradient(to right, var(--teal), var(--orange), var(--red)); border-radius: 3px; transition: width 1.4s cubic-bezier(.22,1,.36,1); }
+.closing-fill { height: 100%; width: 0; background: linear-gradient(to right, var(--teal), var(--orange), var(--red)); border-radius: 3px; transition: width 1.4s cubic-bezier(.22,1,.36,1); background-size: 200% 100%; animation: gradientShift 3s ease-in-out infinite; }
+@keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
 /* CTA */
 .cta-section { max-width: 760px; margin: 0 auto; padding: 60px 24px 80px; text-align: center; }
@@ -137,7 +145,7 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
 
 @media (max-width: 480px) {
   .hero { padding: 48px 24px 36px; justify-content: flex-start; }
-  .timeline-section::before { left: 60px; }
+  .timeline-section::before { left: 42px; }
   .item-dot-col { width: 36px; }
   .era-label, .closing-bar { margin-left: 78px; }
   .window-zone { margin-left: 52px; }
@@ -293,7 +301,7 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
       <div class="item-response">
         <div class="response-heading">How institutions responded</div>
         <div class="response-row"><span class="response-actor">Congress</span><span class="response-action partial">Several bills introduced; none reached a floor vote</span></div>
-        <div class="response-row"><span class="response-actor">White House</span><span class="response-action active">Executive Order on AI (Oct 2024) — then rescinded Jan 2025</span></div>
+        <div class="response-row"><span class="response-actor">White House</span><span class="response-action active">Executive Order on AI (Oct 2023) — then rescinded Jan 2025</span></div>
         <div class="response-row"><span class="response-actor">Labs (OpenAI, Anthropic, Google)</span><span class="response-action partial">Raced to deploy reasoning models; published safety evals of mixed quality</span></div>
         <div class="response-row"><span class="response-actor">Oklahoma legislature</span><span class="response-action none">No response</span></div>
       </div>
@@ -411,7 +419,19 @@ document.querySelectorAll('.item-card').forEach(card => {
   card.addEventListener('click', () => {
     const isExpanded = card.classList.contains('expanded');
     document.querySelectorAll('.item-card.expanded').forEach(c => c.classList.remove('expanded'));
-    if (!isExpanded) card.classList.add('expanded');
+    if (!isExpanded) {
+      card.classList.add('expanded');
+      const rows = card.querySelectorAll('.response-row');
+      rows.forEach((row, i) => {
+        row.style.opacity = '0';
+        row.style.transform = 'translateX(-8px)';
+        row.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        setTimeout(() => {
+          row.style.opacity = '1';
+          row.style.transform = 'translateX(0)';
+        }, 100 + i * 80);
+      });
+    }
   });
 });
 
@@ -430,8 +450,39 @@ filterBtns.forEach(btn => {
         item.classList.toggle('filtered-out', !tags.includes(tag));
       }
     });
+
+    // Hide era labels if all following items (until next era label) are filtered out
+    document.querySelectorAll('.era-label').forEach(label => {
+      let next = label.nextElementSibling;
+      let anyVisible = false;
+      while (next && !next.classList.contains('era-label') && !next.classList.contains('window-zone') && !next.classList.contains('here-marker') && !next.classList.contains('cta-section')) {
+        if (next.classList.contains('item') && !next.classList.contains('filtered-out')) anyVisible = true;
+        next = next.nextElementSibling;
+      }
+      label.style.display = anyVisible ? '' : 'none';
+    });
+
+    // Hide window zone if both adjacent items are filtered out
+    const windowZone = document.getElementById('windowZone');
+    if (windowZone) {
+      const prevItem = windowZone.previousElementSibling;
+      const nextItem = windowZone.nextElementSibling;
+      const prevVisible = prevItem && prevItem.classList.contains('item') && !prevItem.classList.contains('filtered-out');
+      const nextVisible = nextItem && nextItem.classList.contains('item') && !nextItem.classList.contains('filtered-out');
+      windowZone.style.display = (prevVisible || nextVisible) ? '' : 'none';
+    }
   });
 });
+
+// Parallax hero background
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero-bg');
+  if (hero) {
+    const scroll = window.scrollY;
+    hero.style.transform = 'translateY(' + (scroll * 0.3) + 'px)';
+    hero.style.opacity = Math.max(0, 1 - scroll / 600);
+  }
+}, { passive: true });
 
 // Self-size iframe
 window.addEventListener('load', function() {

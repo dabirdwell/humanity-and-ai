@@ -59,11 +59,13 @@ window.addEventListener('message', function(e) {
 });
 </script>
 
+People are dying because of how we organize society. Not in some dramatic, visible way that makes the news — in a quiet, arithmetic way, where a person skips a dose, delays a scan, avoids a conversation with a doctor because the math doesn't work. That's not a healthcare system. That's a tollbooth between you and staying alive.
+
 ## What AI Changes
 
-So that's the crisis we already have — a system that bankrupts people for getting sick and ties their coverage to jobs that are disappearing. Now consider what's coming.
+So that's the crisis we already have — a system that bankrupts people for getting sick and ties their coverage to jobs that are disappearing. You've heard the healthcare debate before. What you may not have heard is how AI changes the math entirely.
 
-AI is already transforming diagnostic accuracy, drug discovery, treatment personalization, and administrative efficiency. These are genuine breakthroughs. AI-assisted imaging catches cancers that human radiologists miss. Machine learning finds drug candidates in months that used to take years. The question isn't whether AI will improve medicine — it already is.
+AI is already transforming diagnostic accuracy, drug discovery, treatment personalization, and administrative efficiency. These are genuine breakthroughs. AI-assisted imaging helps radiologists catch cancers they might otherwise miss. Machine learning finds drug candidates in months that used to take years. The question isn't whether AI will improve medicine — it already is.
 
 The question is who benefits. If AI-driven healthcare becomes another two-tier system — precision medicine for the wealthy, algorithmic triage for everyone else — then the technology that could have leveled the playing field will have widened it instead. Single-payer prevents this by design. When everyone is in the same system, the advances reach everyone. When AI diagnostic tools are publicly available infrastructure rather than proprietary products, any provider can use them and any patient can access them.
 
@@ -75,7 +77,7 @@ Those who say we can't have a world where everyone wins are the same ones who wa
 
 We have a framework. We don't have all the answers — and that's deliberate. Here are directions we think matter — tell us what we're missing:
 
-- **Single-payer with AI diagnostics built in** — publicly available medical AI that any provider can use, any patient can access, closing the knowledge gap between elite medical centers and community clinics
+- **Single-payer with AI-assisted diagnostics** — publicly available medical AI that supports providers' clinical judgment, available to any clinic, closing the knowledge gap between elite medical centers and community health offices
 - **Transition pathway design** — how do we actually move from employer-based to single-payer without leaving people uncovered during the switch? What can we learn from countries that've done it?
 - **Rural telehealth infrastructure** — real investment in connectivity and training so that a patient in Seminole has access to the same diagnostic quality as a patient in Oklahoma City
 

@@ -18,14 +18,15 @@ h2 { font-size:24px; font-weight:300; letter-spacing:1px; margin-bottom:8px; col
 /* PLANNING HORIZON */
 .ph-wrap { margin-top:8px; }
 .ph-bar-container { position:relative; overflow-x:auto; padding-bottom:32px; -webkit-overflow-scrolling:touch; }
-.ph-axis { display:flex; justify-content:space-between; font-size:10px; color:#555; letter-spacing:.5px; padding:0 0 8px; min-width:520px; }
+.ph-axis { position:relative; height:18px; font-size:10px; color:#555; letter-spacing:.5px; margin-bottom:8px; min-width:520px; }
+.ph-axis span { position:absolute; transform:translateX(-50%); }
 .ph-track { display:flex; gap:3px; height:18px; border-radius:4px; overflow:hidden; min-width:520px; }
 .ph-segment { height:100%; border-radius:2px; }
 .ph-haudenosaunee { background:#4ecdc4; flex:1000; }
 .ph-industrial { background:#c8943a; flex:250; }
 .ph-ai { background:#ff6b35; flex:15; }
 .ph-sevgen { background:rgba(192,132,252,.7); flex:175; }
-.ph-marker { position:absolute; bottom:2px; right:0; display:flex; flex-direction:column; align-items:center; }
+.ph-marker { position:absolute; bottom:2px; left:87.85%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; }
 .ph-marker-line { width:2px; height:28px; background:#ff6b35; box-shadow:0 0 8px #ff6b35; }
 .ph-marker-label { font-size:10px; font-weight:700; letter-spacing:1px; color:#ff6b35; margin-top:2px; }
 .ph-scroll-hint { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#555; text-align:center; margin:10px 0 16px; display:none; }
@@ -95,6 +96,34 @@ footer { text-align:center; font-size:10px; color:#444; padding:30px 24px 20px; 
   .bubble-info { display:none; }
   .bubble-info.visible { display:block; }
 }
+/* Enhancement C: Healthcare bubbles gentle float */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+/* Enhancement D: Scroll-triggered section reveals */
+.section { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.section.revealed { opacity:1; transform:translateY(0); }
+/* Enhancement E: Ambient gradient background pulse */
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  background:radial-gradient(ellipse 60% 40% at 50% 30%, rgba(78,205,196,.03) 0%, transparent 70%);
+  pointer-events:none;
+  z-index:-1;
+  animation:ambientPulse 8s ease-in-out infinite;
+}
+@keyframes ambientPulse {
+  0%, 100% { opacity:.5; }
+  50% { opacity:1; }
+}
+/* Enhancement F: Interactive cost cards */
+.cost-card { transition:transform .3s, box-shadow .3s; }
+.cost-card:hover { transform:translateY(-4px); }
+.cost-card.prison:hover { box-shadow:0 8px 30px rgba(231,76,60,.15); }
+.cost-card.education:hover { box-shadow:0 8px 30px rgba(39,174,96,.15); }
+.cost-card.ubc:hover { box-shadow:0 8px 30px rgba(41,128,185,.15); }
 </style>
 </head>
 <body>
@@ -224,25 +253,54 @@ var ceoData = [
   {year:2000,ratio:366,context:"At the dot-com peak: 366:1. One CEO year = 366 worker years."},
   {year:2010,ratio:243,context:"Post-crisis it fell -- but only to 243:1. Still 12x the 1965 ratio."},
   {year:2020,ratio:351,context:"COVID year: essential workers risked their lives. The ratio hit 351:1."},
-  {year:2023,ratio:290,context:"2023: slightly down, still 290:1. A CEO makes in one day what a worker makes in 10 months."}
+  {year:2023,ratio:290,context:"2023: slightly down, still 290:1. A CEO makes in one day what a worker makes in a full year."}
 ];
 var slider = document.getElementById('yearSlider');
 var ratioNum = document.getElementById('ratioNum');
 var ratioYear = document.getElementById('ratioYear');
 var workerGrid = document.getElementById('workerGrid');
 var ceoContext = document.getElementById('ceoContext');
+var prevRatio = ceoData[0].ratio;
+
+// Enhancement A: Animated number counter
+function animateValue(el, start, end, duration) {
+  var range = end - start;
+  var startTime = performance.now();
+  function step(now) {
+    var elapsed = now - startTime;
+    var progress = Math.min(elapsed / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    var current = Math.round(start + range * eased);
+    el.textContent = current + ':1';
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 function updateCEO(idx) {
   var d = ceoData[idx];
-  ratioNum.textContent = d.ratio + ':1';
+  // Animate ratio number
+  animateValue(ratioNum, prevRatio, d.ratio, 400);
+  prevRatio = d.ratio;
   ratioYear.textContent = d.year;
   ratioNum.style.fontSize = Math.min(72, 36 + d.ratio/7) + 'px';
   ratioNum.style.color = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
   ceoContext.textContent = d.context;
   ceoContext.style.borderLeftColor = d.ratio > 200 ? '#e74c3c' : d.ratio > 100 ? '#f39c12' : '#27ae60';
   var count = Math.min(d.ratio, 400);
+  // Enhancement B: Worker grid ripple animation
   var html = '<div class="worker-icon" style="background:#fbbf24;width:12px;height:12px;box-shadow:0 0 10px rgba(251,191,36,.6)"></div>';
-  for (var i = 0; i < count; i++) html += '<div class="worker-icon" style="background:rgba(255,255,255,.12)"></div>';
+  for (var i = 0; i < count; i++) html += '<div class="worker-icon" style="background:rgba(255,255,255,.12);opacity:0;transition:opacity .3s ease"></div>';
   workerGrid.innerHTML = html;
+  // Staggered ripple from center outward
+  var dots = workerGrid.querySelectorAll('.worker-icon');
+  var centerIdx = Math.floor(dots.length / 2);
+  for (var j = 0; j < dots.length; j++) {
+    var dist = Math.abs(j - centerIdx);
+    (function(dot, delay) {
+      setTimeout(function() { dot.style.opacity = '1'; }, delay);
+    })(dots[j], dist * 3);
+  }
 }
 slider.addEventListener('input', function(e) { updateCEO(+e.target.value); });
 updateCEO(0);
@@ -331,12 +389,16 @@ bsvg.append('text').attr('x',xScale(12555)).attr('y',yScale(77.5)-rScale(331)-10
 
 
 <script>
-// PLANNING HORIZON AXIS
-var axisYears = [900, 1100, 1300, 1500, 1650, 1776];
+// PLANNING HORIZON AXIS — positioned labels
+var axisLabels = [
+  {year:900, pct:0}, {year:1100, pct:18.2}, {year:1300, pct:36.4},
+  {year:1500, pct:54.5}, {year:1650, pct:68.2}, {year:1776, pct:79.6}
+];
 var axis = document.getElementById('phAxis');
-axisYears.forEach(function(y) {
+axisLabels.forEach(function(item) {
   var s = document.createElement('span');
-  s.textContent = y + ' CE';
+  s.textContent = item.year + ' CE';
+  s.style.left = item.pct + '%';
   axis.appendChild(s);
 });
 
@@ -375,6 +437,23 @@ var barObserver = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.3 });
 barObserver.observe(document.getElementById('barSection'));
+
+// Enhancement C: Healthcare bubbles gentle float
+bubbles.each(function(d, i) {
+  var el = d3.select(this);
+  el.style('animation', 'gentleFloat 3s ease-in-out infinite');
+  el.style('animation-delay', (i * 0.4) + 's');
+});
+
+// Enhancement D: Scroll-triggered section reveals
+var sectionObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.section').forEach(function(s) { sectionObserver.observe(s); });
 
 // SELF-SIZE IFRAME
 window.addEventListener('load', function() {

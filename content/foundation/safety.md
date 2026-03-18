@@ -63,7 +63,7 @@ We have a framework here, not a finished policy manual. And that's deliberate. W
 We need your voice in this. The entire purpose of building Foundation this way is that it's citizen-developed. Here are some of the ideas we're working with — push back, extend them, or bring your own:
 
 - **Community violence interruption programs** — trained local mediators who intervene in conflicts before they become crimes. Cities like Richmond, CA have cut homicides by 70% with this model. What would it look like scaled to every community?
-- **AI-powered early warning systems** — pattern detection that identifies domestic violence escalation risk or environmental hazards before they become emergencies, with community oversight on how the data is used
+- **AI-assisted early warning systems** — pattern detection that helps trained responders identify domestic violence escalation risk or environmental hazards before they become emergencies, with community oversight on how the data is used
 - **Restorative justice infrastructure** — structured alternatives to incarceration for non-violent offenses that repair harm and keep communities intact, funded at even a fraction of what we currently spend on prisons
 
 What's working in your community? What's been tried and failed? What would you build?

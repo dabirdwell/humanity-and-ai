@@ -32,7 +32,7 @@ Foundation says access to valid information and beneficial AI is a citizenship r
 
 That means a publicly owned AI model, maintained to the highest standards, available to every citizen. Not as competition to private AI — as infrastructure. The way public roads don't compete with private cars. You always have a baseline. It's always yours. It doesn't sell your data or manipulate your attention.
 
-This public model serves as both a service and a check on private systems. When private AI makes a medical recommendation, a citizen can verify against the public model. When algorithmic systems make decisions about credit, employment, or justice, the public model provides a transparency baseline.
+This public model serves as both a service and a check on private systems. When private AI makes a medical recommendation, a citizen can verify against the public model. When algorithmic systems inform decisions about credit, employment, or justice, the public model provides a transparency baseline.
 
 ## What This Doesn't Mean
 

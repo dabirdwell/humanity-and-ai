@@ -12,7 +12,7 @@ What if flavor had a visual representation? Not a chart or a wheel — an intera
 
 The basic layer teaches the grammar of taste. What happens when you add acid to richness. Why a pinch of salt makes chocolate taste more like chocolate. How brightness emerges from combinations of characteristics you'd never think to pair.
 
-Then there's a layer above that: AI mentors modeled on great food thinkers. Not chatbots wearing their names — genuine teaching paths where Bourdain's sensibility or Pépin's technique guides you from simple flavor understanding to creative improvisation. Culinary education that adapts to how you actually learn.
+Then there's a layer above that: AI-assisted learning paths inspired by great food thinkers. Not chatbots wearing their names — structured teaching where Bourdain's sensibility or Pépin's technique guides you from simple flavor understanding to creative improvisation. Culinary education that adapts to how you actually learn.
 
 I called it TasteBud. The name works on every level I need it to.
 

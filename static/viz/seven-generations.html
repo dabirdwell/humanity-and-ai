@@ -46,7 +46,13 @@ body {
   font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 700; line-height: 1.1;
   margin-bottom: 20px;
   background: linear-gradient(135deg, #fff 0%, var(--teal) 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: heroGradient 6s ease-in-out infinite;
+}
+@keyframes heroGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 .hero-sub { font-size: clamp(1rem, 3vw, 1.15rem); color: var(--muted); max-width: 560px; margin: 0 auto 16px; line-height: 1.7; }
 .hero-attribution { font-size: 12px; color: var(--dim); font-style: italic; margin-bottom: 48px; }
@@ -71,12 +77,29 @@ body {
 .dt-label { position: absolute; top: -22px; font-size: 10px; letter-spacing: .5px; color: var(--dim); white-space: nowrap; transform: translateX(-50%); }
 .dt-tick { position: absolute; top: -4px; width: 1px; height: 16px; background: rgba(255,255,255,.15); transform: translateX(-50%); }
 .dt-now { position: absolute; top: -8px; width: 3px; height: 24px; background: var(--orange); border-radius: 2px; box-shadow: 0 0 8px var(--orange); transform: translateX(-50%); }
+.dt-now::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--orange);
+  transform: translate(-50%, -50%);
+  animation: dtRipple 2s ease-out infinite;
+}
+@keyframes dtRipple {
+  0% { width: 6px; height: 6px; opacity: .8; }
+  100% { width: 30px; height: 30px; opacity: 0; }
+}
 .dt-now-label { position: absolute; top: 20px; font-size: 10px; font-weight: 600; color: var(--orange); white-space: nowrap; transform: translateX(-50%); letter-spacing: .5px; }
 .dt-window { position: absolute; top: 0; height: 100%; background: rgba(255,107,53,.15); border: 1px solid rgba(255,107,53,.3); border-radius: 3px; }
 .dt-window-label { position: absolute; bottom: -20px; font-size: 10px; color: var(--orange); white-space: nowrap; left: 50%; transform: translateX(-50%); }
 /* ═══ DEEP TIME ═══ */
 .dt-legend-wrap { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; }
 .dt-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); margin-top: 8px; }
+.dt-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
 .dt-legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 .scale-callout {
   background: rgba(255,255,255,.03); border-left: 3px solid var(--teal);
@@ -181,13 +204,25 @@ body {
 .cg-col-head.col-lit { background: rgba(78,205,196,.08) !important; }
 
 
-.cg-phoenix { background: rgba(74,222,128,.03) !important; }
+/* Enhancement A: Comparison table cell hover glow */
+.cg-data { transition: background 0.2s ease, box-shadow 0.2s ease; cursor: default; }
+.cg-data:hover { box-shadow: inset 0 0 20px rgba(255,255,255,.03); }
+
+/* Enhancement D: Phoenix Wells column subtle glow */
+.cg-phoenix {
+  border-left: 2px solid rgba(74,222,128,.2) !important;
+  background: rgba(74,222,128,.03) !important;
+}
+.cg-phoenix:hover {
+  border-left-color: rgba(74,222,128,.4) !important;
+  background: rgba(74,222,128,.06) !important;
+}
 
 .test-grid { display: flex; flex-direction: column; gap: 20px; }
 .test-criterion {
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: 12px; padding: 20px;
-  opacity: 0; transform: translateY(12px);
+  opacity: 0; transform: translateY(12px) scale(0.98);
   transition: opacity .5s ease, transform .5s ease;
 }
 .test-criterion.show { opacity: 1; transform: none; }
@@ -196,7 +231,22 @@ body {
 .test-crit-question { font-size: 12px; color: var(--dim); margin-top: 2px; }
 .test-score { font-size: 11px; font-weight: 600; letter-spacing: 1px; white-space: nowrap; }
 .test-bar-track { height: 6px; background: rgba(255,255,255,.06); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
-.test-bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1.2s cubic-bezier(.22,1,.36,1); }
+.test-bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1.2s cubic-bezier(.22,1,.36,1); position: relative; overflow: hidden; }
+.test-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
 .test-entries { display: flex; flex-direction: column; gap: 8px; }
 .test-entry { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; }
 .test-entry-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
@@ -227,12 +277,15 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
   .cg-row-label { display: none; }
   .cg-data { border-right: none; }
   .cg-data::before {
-    content: attr(data-gen);
+    content: attr(data-col) ' · ' attr(data-gen);
     display: block;
     font-size: 10px; font-weight: 600; letter-spacing: 1px;
     text-transform: uppercase; color: var(--dim);
     margin-bottom: 6px;
   }
+  .cg-data[data-col="Oklahoma Oil"]::before { color: var(--gold); }
+  .cg-data[data-col="AI Race"]::before { color: var(--orange); }
+  .cg-data[data-col="Phoenix Wells"]::before { color: var(--green); }
   .cg-last .cg-data:last-child { border-bottom: none; }
 }
 </style>
@@ -317,75 +370,75 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
 
     <!-- GEN 1 -->
     <div class="cg-row-label"><div class="cg-gen-num">Gen 1</div><div class="cg-gen-years">~25 yrs</div></div>
-    <div class="cg-data" data-gen="Generation 1">
+    <div class="cg-data" data-gen="Generation 1" data-col="Oklahoma Oil">
       <span class="cg-outcome good">Benefit</span>
       <p class="cg-text">Enormous wealth. Oklahoma becomes a major economic power. Infrastructure, cities, institutions funded by oil revenue.</p>
     </div>
-    <div class="cg-data" data-gen="Generation 1">
+    <div class="cg-data" data-gen="Generation 1" data-col="AI Race">
       <span class="cg-outcome good">Productivity surge</span>
       <p class="cg-text">Medical research accelerates, creative tools democratize. Early movers capture extraordinary value. The narrative is almost entirely positive for those with access.</p>
     </div>
-    <div class="cg-data cg-phoenix" data-gen="Generation 1">
+    <div class="cg-data cg-phoenix" data-gen="Generation 1" data-col="Phoenix Wells">
       <span class="cg-outcome good">Remediation + revenue</span>
       <p class="cg-text">Orphaned wells converted to energy assets. Environmental liability eliminated. Clean energy revenue funds local infrastructure from day one.</p>
     </div>
 
     <!-- GEN 2 -->
     <div class="cg-row-label"><div class="cg-gen-num">Gen 2</div><div class="cg-gen-years">~25–50 yrs</div></div>
-    <div class="cg-data" data-gen="Generation 2">
+    <div class="cg-data" data-gen="Generation 2" data-col="Oklahoma Oil">
       <span class="cg-outcome good">Peak</span>
       <p class="cg-text">Oklahoma oil powers Allied WWII victory. State identity and political economy become inseparable from fossil fuels. Boom towns, pipelines, refineries.</p>
     </div>
-    <div class="cg-data" data-gen="Generation 2">
+    <div class="cg-data" data-gen="Generation 2" data-col="AI Race">
       <span class="cg-outcome mixed">Disruption arrives</span>
       <p class="cg-text">Labor displacement reaches scale. Institutions strain. Concentration of AI capability translates to concentration of political and economic power.</p>
     </div>
-    <div class="cg-data cg-phoenix" data-gen="Generation 2">
+    <div class="cg-data cg-phoenix" data-gen="Generation 2" data-col="Phoenix Wells">
       <span class="cg-outcome good">Infrastructure matures</span>
       <p class="cg-text">A distributed energy network, locally owned. Oklahoma's geography — which made it ideal for extraction — now makes it ideal for geothermal.</p>
     </div>
 
     <!-- GEN 3 -->
     <div class="cg-row-label"><div class="cg-gen-num">Gen 3</div><div class="cg-gen-years">~50–75 yrs</div></div>
-    <div class="cg-data" data-gen="Generation 3">
+    <div class="cg-data" data-gen="Generation 3" data-col="Oklahoma Oil">
       <span class="cg-outcome mixed">Dependence</span>
       <p class="cg-text">Oil price volatility exposes structural fragility. The 1980s bust devastates the economy. Diversification fails. Abandoned infrastructure accumulates.</p>
     </div>
-    <div class="cg-data" data-gen="Generation 3">
+    <div class="cg-data" data-gen="Generation 3" data-col="AI Race">
       <span class="cg-outcome unknown">Contingent</span>
       <p class="cg-text">Depends entirely on whether institutions built during the window (now) were designed for human flourishing or for extraction. Not yet determined.</p>
     </div>
-    <div class="cg-data cg-phoenix" data-gen="Generation 3">
+    <div class="cg-data cg-phoenix" data-gen="Generation 3" data-col="Phoenix Wells">
       <span class="cg-outcome good">Compounding benefit</span>
       <p class="cg-text">Geothermal does not deplete. The resource doesn't run out. Communities inherit functional infrastructure, not legacy liability.</p>
     </div>
 
     <!-- GEN 4 -->
     <div class="cg-row-label"><div class="cg-gen-num">Gen 4</div><div class="cg-gen-years">~75–100 yrs</div></div>
-    <div class="cg-data" data-gen="Generation 4">
+    <div class="cg-data" data-gen="Generation 4" data-col="Oklahoma Oil">
       <span class="cg-outcome bad">Legacy costs</span>
       <p class="cg-text">22,000+ orphaned wells leak methane, contaminate groundwater. Cleanup liability falls to taxpayers. The wealth that built this is long gone.</p>
     </div>
-    <div class="cg-data" data-gen="Generation 4">
+    <div class="cg-data" data-gen="Generation 4" data-col="AI Race">
       <span class="cg-outcome unknown">Unknown</span>
       <p class="cg-text">The trajectory of Gen 4 is being set by decisions made in the next 3–5 years. This is what "the window" means.</p>
     </div>
-    <div class="cg-data cg-phoenix" data-gen="Generation 4">
+    <div class="cg-data cg-phoenix" data-gen="Generation 4" data-col="Phoenix Wells">
       <span class="cg-outcome good">Inherited infrastructure</span>
       <p class="cg-text">The energy network is paid off and producing. No extraction debt. Each subsequent generation inherits the asset, not the liability.</p>
     </div>
 
     <!-- GEN 5–7 -->
     <div class="cg-row-label cg-last"><div class="cg-gen-num">Gen 5–7</div><div class="cg-gen-years">~100–175 yrs</div></div>
-    <div class="cg-data cg-last" data-gen="Generations 5–7">
+    <div class="cg-data cg-last" data-gen="Generations 5–7" data-col="Oklahoma Oil">
       <span class="cg-outcome bad">Full inheritance</span>
       <p class="cg-text">Oklahoma ranks last or near-last in education, healthcare, economic mobility. The resource is gone; the costs remain. These generations did not vote for any of this.</p>
     </div>
-    <div class="cg-data cg-last" data-gen="Generations 5–7">
+    <div class="cg-data cg-last" data-gen="Generations 5–7" data-col="AI Race">
       <span class="cg-outcome unknown">Open</span>
       <p class="cg-text">This is the generation the Haudenosaunee were thinking about. Whether they inherit abundance or collapse depends on whether we act like they exist.</p>
     </div>
-    <div class="cg-data cg-phoenix cg-last" data-gen="Generations 5–7">
+    <div class="cg-data cg-phoenix cg-last" data-gen="Generations 5–7" data-col="Phoenix Wells">
       <span class="cg-outcome good">Self-sustaining</span>
       <p class="cg-text">Communities still generating clean energy from infrastructure their ancestors built. A civilization that compounds rather than depletes. The original vision of the principle.</p>
     </div>
@@ -460,7 +513,7 @@ footer { text-align: center; font-size: 11px; color: var(--dim); padding: 20px 2
   <h2>The principle is 1,000 years old. The need for it has never been greater.</h2>
   <p>Every technology era produces this choice: extract now, or build for those who follow. The Haudenosaunee had the wisdom to encode the long view into their governance. We have the tools to do the same — and some of us are trying. What happens next depends on whether enough people decide those future generations are worth planning for.</p>
   <div class="closer-links">
-    <a href="/visualizations/ai-transition-window/" class="cta-link primary">Why the next few years matter →</a>
+    <a href="/visualizations/ai-transition-window/" class="cta-link primary" target="_top">Why the next few years matter →</a>
     <a href="/stream/phoenix-wells-22000-holes/" class="cta-link secondary">About Phoenix Wells</a>
     <a href="/stream/ubc-not-ubi/" class="cta-link secondary" target="_top">Foundation approach</a>
   </div>

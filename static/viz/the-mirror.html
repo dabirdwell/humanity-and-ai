@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mirror — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#0a0a0f;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.page{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#4ecdc4;margin-bottom:12px}
+h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom:8px;color:#f0f0f0}
+.subtitle{font-size:15px;color:#888;line-height:1.7;max-width:600px;margin-bottom:40px}
+
+/* PROGRESS */
+.progress-wrap{margin-bottom:40px}
+.progress-track{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#4ecdc4,#fbbf24);border-radius:2px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.progress-label{font-size:11px;color:#555;letter-spacing:1px;margin-top:8px}
+
+/* QUESTION CARD */
+.q-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:32px 36px;margin-bottom:28px;transition:opacity .3s,transform .3s}
+.q-number{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#555;margin-bottom:12px}
+.q-text{font-size:clamp(17px,3vw,21px);font-weight:300;color:#f0f0f0;line-height:1.5;margin-bottom:28px}
+
+/* OPTIONS */
+.options{display:flex;flex-direction:column;gap:10px}
+.opt-btn{padding:14px 20px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:transparent;color:#ccc;font-size:14px;text-align:left;cursor:pointer;transition:all .2s;font-family:inherit;line-height:1.4}
+.opt-btn:hover{border-color:rgba(78,205,196,.4);color:#f0f0f0;background:rgba(78,205,196,.04)}
+.opt-btn.selected{border-color:#4ecdc4;color:#f0f0f0;background:rgba(78,205,196,.08)}
+
+/* NAV */
+.q-nav{display:flex;justify-content:flex-end;margin-top:20px}
+.next-btn{padding:11px 28px;border:1px solid rgba(78,205,196,.5);border-radius:24px;background:transparent;color:#4ecdc4;font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.5px;opacity:.4;pointer-events:none}
+.next-btn.ready{opacity:1;pointer-events:auto}
+.next-btn.ready:hover{background:rgba(78,205,196,.1)}
+
+/* RESULTS */
+.results{display:none}
+.results.show{display:block}
+
+/* SHAREABLE CARD */
+.card-wrap{display:flex;justify-content:center;margin-bottom:32px}
+.share-card{width:560px;max-width:100%;background:#0d0d14;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:40px 36px 32px;position:relative;overflow:hidden}
+.share-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#4ecdc4,#fbbf24,#4ecdc4);opacity:.8}
+
+.card-eyebrow{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#4ecdc4;margin-bottom:6px}
+.card-title{font-size:26px;font-weight:300;color:#f0f0f0;margin-bottom:28px;line-height:1.2}
+
+.card-item{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.card-rank{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+.card-rank-1{background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3)}
+.card-rank-2{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.2)}
+.card-rank-3{background:rgba(78,205,196,.1);color:#4ecdc4;border:1px solid rgba(78,205,196,.2)}
+.card-rank-4{background:rgba(78,205,196,.08);color:#4ecdc4;border:1px solid rgba(78,205,196,.15)}
+.card-rank-5{background:rgba(78,205,196,.05);color:#4ecdc4;border:1px solid rgba(78,205,196,.1)}
+
+.card-item-body{flex:1;min-width:0}
+.card-component{font-size:15px;color:#f0f0f0;font-weight:400;margin-bottom:4px}
+.card-bar-track{height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.card-bar-fill{height:100%;border-radius:2px;transition:width 1s cubic-bezier(.4,0,.2,1)}
+.card-bar-1{background:linear-gradient(90deg,#fbbf24,#e6a856)}
+.card-bar-2{background:linear-gradient(90deg,#fbbf24,#4ecdc4)}
+.card-bar-3{background:#4ecdc4}
+.card-bar-4{background:rgba(78,205,196,.7)}
+.card-bar-5{background:rgba(78,205,196,.5)}
+
+.card-score{font-size:11px;color:#555;width:32px;text-align:right;flex-shrink:0}
+
+.card-divider{height:1px;background:rgba(255,255,255,.06);margin:24px 0 16px}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-site{font-size:11px;color:#555;letter-spacing:.5px}
+.card-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4ecdc4;opacity:.5}
+
+/* SCREENSHOT HINT */
+.screenshot-hint{text-align:center;margin-bottom:32px;font-size:13px;color:#555;letter-spacing:.3px}
+.screenshot-hint span{color:#888}
+
+/* FULL BREAKDOWN */
+.breakdown-wrap{margin:32px 0}
+.breakdown-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:20px}
+.breakdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:500px){.breakdown-grid{grid-template-columns:1fr}}
+.breakdown-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:8px}
+.breakdown-item.top-5{border-color:rgba(78,205,196,.15);background:rgba(78,205,196,.03)}
+.breakdown-num{font-size:10px;color:#555;width:18px;flex-shrink:0;letter-spacing:.5px}
+.breakdown-name{font-size:13px;color:#aaa;flex:1}
+.breakdown-item.top-5 .breakdown-name{color:#e0e0e0}
+.breakdown-dots{display:flex;gap:3px;flex-shrink:0}
+.breakdown-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.08)}
+.breakdown-dot.filled{background:#4ecdc4}
+.breakdown-dot.gold{background:#fbbf24}
+
+/* REFLECTION */
+.reflection-wrap{margin:32px 0;background:rgba(78,205,196,.03);border:1px solid rgba(78,205,196,.1);border-radius:14px;padding:28px 28px}
+.reflection-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4ecdc4;margin-bottom:16px}
+.reflection-text{font-size:14px;color:#aaa;line-height:1.7}
+.reflection-text strong{color:#f0f0f0}
+.reflection-text em{color:#4ecdc4;font-style:normal}
+
+/* FOOTER */
+.footer-callout{text-align:center;padding:32px 0 0;border-top:1px solid rgba(255,255,255,.06);margin-top:40px}
+.footer-callout p{font-size:14px;color:#888;margin-bottom:16px;line-height:1.6}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta{display:inline-block;padding:10px 22px;border:1px solid rgba(78,205,196,.4);border-radius:24px;color:#4ecdc4;font-size:13px;letter-spacing:.5px;transition:all .2s;text-decoration:none}
+.cta:hover{background:rgba(78,205,196,.08)}
+
+.restart-btn{margin-top:24px;padding:9px 22px;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:transparent;color:#666;font-size:12px;cursor:pointer;font-family:inherit;transition:all .2s}
+.restart-btn:hover{color:#aaa;border-color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Foundation — The Mirror</div>
+  <h1>What matters most to you?</h1>
+  <p class="subtitle">Five questions. Sixteen possible priorities. Your answers reveal which parts of the Foundation framework map to your life. No right answers — just honest ones.</p>
+
+  <!-- QUESTIONS -->
+  <div id="quiz-wrap">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="progress-label" id="progress-label">Question 1 of 5</div>
+    </div>
+
+    <div id="questions-container" style="position:relative;min-height:320px"></div>
+
+    <div class="q-nav">
+      <button class="next-btn" id="next-btn">Continue →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results" id="results">
+
+    <div class="card-wrap">
+      <div class="share-card" id="share-card">
+        <div class="card-eyebrow">My Foundation</div>
+        <div class="card-title">Top 5 Priorities</div>
+        <div id="card-items"></div>
+        <div class="card-divider"></div>
+        <div class="card-footer">
+          <span class="card-site">humanityandai.com/foundation</span>
+          <span class="card-tag">The Mirror</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="screenshot-hint"><span>↑ Screenshot this card to share your priorities</span></div>
+
+    <div class="reflection-wrap" id="reflection-wrap">
+      <div class="reflection-title">What this reveals</div>
+      <div class="reflection-text" id="reflection-text"></div>
+    </div>
+
+    <div class="breakdown-wrap">
+      <div class="breakdown-title">All 16 components — your ranking</div>
+      <div class="breakdown-grid" id="breakdown-grid"></div>
+    </div>
+
+    <div class="footer-callout">
+      <p>The Foundation is 16 components — not a wishlist, but a minimum. The Mirror shows you where to start reading.</p>
+      <div class="cta-row" id="cta-row"></div>
+    </div>
+
+    <div style="text-align:center;margin-top:24px">
+      <button class="restart-btn" id="restart-btn">↩ Take it again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// 16 Foundation components
+const COMPONENTS = [
+  { id: 'safety',              name: 'Safety',              num: '01', slug: 'safety' },
+  { id: 'education',           name: 'Education',           num: '02', slug: 'education' },
+  { id: 'safe-spaces',         name: 'Safe Spaces',         num: '03', slug: 'safe-spaces' },
+  { id: 'social-contract',     name: 'Social Contract',     num: '04', slug: 'social-contract' },
+  { id: 'food',                name: 'Food',                num: '05', slug: 'food' },
+  { id: 'clean-water',         name: 'Clean Water',         num: '06', slug: 'clean-water' },
+  { id: 'sustainable-energy',  name: 'Sustainable Energy',  num: '07', slug: 'sustainable-energy' },
+  { id: 'information-access',  name: 'Information Access',  num: '08', slug: 'information-access' },
+  { id: 'mental-health',       name: 'Mental Health',       num: '09', slug: 'mental-health' },
+  { id: 'accessible-education',name: 'Accessible Education',num: '10', slug: 'accessible-education' },
+  { id: 'transportation',      name: 'Transportation',      num: '11', slug: 'transportation' },
+  { id: 'skills-training',     name: 'Skills Training',     num: '12', slug: 'skills-training' },
+  { id: 'ubi',                 name: 'Universal Basic Income',num:'13',slug: 'universal-basic-income' },
+  { id: 'housing',             name: 'Housing',             num: '14', slug: 'housing' },
+  { id: 'healthcare',          name: 'Healthcare',          num: '15', slug: 'healthcare' },
+  { id: 'thought-privacy',     name: 'Thought Privacy',     num: '16', slug: 'thought-privacy' }
+];
+
+// Each option maps to component weights: { componentId: weight }
+const QUESTIONS = [
+  {
+    text: 'What feels most missing from your daily life?',
+    options: [
+      {
+        label: 'A sense of safety — physical security, stable ground under my feet',
+        weights: { 'safety': 3, 'safe-spaces': 3, 'housing': 1 }
+      },
+      {
+        label: 'Reliable access to good food, clean water, basic necessities',
+        weights: { 'food': 3, 'clean-water': 3, 'sustainable-energy': 1 }
+      },
+      {
+        label: 'Healthcare I can afford — and mental health support that actually exists',
+        weights: { 'healthcare': 3, 'mental-health': 3 }
+      },
+      {
+        label: 'Time and resources to learn, grow, build new skills',
+        weights: { 'education': 2, 'accessible-education': 2, 'skills-training': 2 }
+      },
+      {
+        label: 'Financial stability — enough to plan ahead, not just survive the month',
+        weights: { 'ubi': 3, 'social-contract': 3 }
+      }
+    ]
+  },
+  {
+    text: 'If you could change one thing about the system you live in, what would it be?',
+    options: [
+      {
+        label: 'Everyone has a safe, stable place to live',
+        weights: { 'housing': 3, 'safety': 2, 'safe-spaces': 2 }
+      },
+      {
+        label: 'No one goes bankrupt because they got sick',
+        weights: { 'healthcare': 3, 'mental-health': 2, 'social-contract': 2 }
+      },
+      {
+        label: 'Energy and infrastructure that actually work for everyone',
+        weights: { 'sustainable-energy': 3, 'transportation': 3, 'clean-water': 1 }
+      },
+      {
+        label: 'Education that\'s free, accessible, and actually prepares people for the future',
+        weights: { 'education': 3, 'accessible-education': 3, 'skills-training': 1 }
+      },
+      {
+        label: 'People can think freely, without surveillance or manufactured consensus',
+        weights: { 'thought-privacy': 3, 'information-access': 3, 'safe-spaces': 1 }
+      }
+    ]
+  },
+  {
+    text: 'What do you most want for the next generation?',
+    options: [
+      {
+        label: 'Real safety — physical, emotional, digital',
+        weights: { 'safety': 2, 'safe-spaces': 2, 'thought-privacy': 2, 'mental-health': 1 }
+      },
+      {
+        label: 'A livable planet — clean air, clean water, sustainable systems',
+        weights: { 'clean-water': 3, 'sustainable-energy': 3, 'food': 1 }
+      },
+      {
+        label: 'The freedom to learn anything, from anywhere, regardless of income',
+        weights: { 'education': 2, 'accessible-education': 2, 'information-access': 2, 'skills-training': 1 }
+      },
+      {
+        label: 'A floor no one falls below — housing, healthcare, income',
+        weights: { 'ubi': 3, 'housing': 2, 'healthcare': 2 }
+      },
+      {
+        label: 'A social contract that holds — where the system works for people, not against them',
+        weights: { 'social-contract': 3, 'transportation': 2, 'food': 1, 'safety': 1 }
+      }
+    ]
+  },
+  {
+    text: 'When you think about what\'s broken, where do you feel it most?',
+    options: [
+      {
+        label: 'In the body — health costs, food quality, exhaustion',
+        weights: { 'healthcare': 3, 'food': 3, 'mental-health': 1 }
+      },
+      {
+        label: 'In the neighborhood — safety, infrastructure, lack of good spaces',
+        weights: { 'safety': 2, 'housing': 2, 'transportation': 2, 'safe-spaces': 1 }
+      },
+      {
+        label: 'In the economy — wages, costs, the feeling that hard work isn\'t enough',
+        weights: { 'ubi': 3, 'social-contract': 2, 'skills-training': 2 }
+      },
+      {
+        label: 'In information — what\'s true, what\'s tracked, what\'s accessible',
+        weights: { 'information-access': 3, 'thought-privacy': 3, 'education': 1 }
+      },
+      {
+        label: 'In the environment — energy, water, the long-term math of sustainability',
+        weights: { 'sustainable-energy': 3, 'clean-water': 3, 'food': 1 }
+      }
+    ]
+  },
+  {
+    text: 'What would "enough" look like for you?',
+    options: [
+      {
+        label: 'A home that doesn\'t drain everything else',
+        weights: { 'housing': 3, 'sustainable-energy': 2, 'safety': 1 }
+      },
+      {
+        label: 'Health without fear of the bill',
+        weights: { 'healthcare': 3, 'mental-health': 2, 'social-contract': 1 }
+      },
+      {
+        label: 'Work that builds toward something — not just survival',
+        weights: { 'skills-training': 3, 'education': 2, 'ubi': 1 }
+      },
+      {
+        label: 'A community where people feel safe and seen',
+        weights: { 'safe-spaces': 3, 'safety': 2, 'social-contract': 1 }
+      },
+      {
+        label: 'The truth — accessible to everyone, controlled by no one',
+        weights: { 'information-access': 3, 'thought-privacy': 2, 'accessible-education': 1 }
+      }
+    ]
+  }
+];
+
+// Reflections keyed by top-1 component
+const REFLECTIONS = {
+  'safety':
+    'Your answers center on <strong>safety</strong> — the most basic layer of the Foundation. Without it, nothing else holds. You\'re not asking for luxury. You\'re asking for ground that doesn\'t shift. <em>That\'s component 01 for a reason.</em>',
+  'education':
+    'You keep coming back to <strong>learning</strong>. Not credentials — actual understanding. The Foundation treats education not as a product but as infrastructure. <em>Something everyone walks on, not something everyone pays for.</em>',
+  'safe-spaces':
+    'What surfaces in your answers is the need for <strong>spaces that feel safe</strong> — physically, emotionally, digitally. Not bubble-wrapped. Just places where people can exist without performing survival. <em>That\'s rarer than it should be.</em>',
+  'social-contract':
+    'Your answers point toward the <strong>social contract</strong> — the invisible agreement that the system should work for people, not just around them. When that breaks, everything else feels like compensation. <em>You\'re asking for the deal to be real.</em>',
+  'food':
+    'You gravitate toward <strong>food</strong> — not as a luxury, but as a right. Access to nutrition that doesn\'t require a spreadsheet or a second job. <em>The Foundation starts with what sustains the body before it addresses anything else.</em>',
+  'clean-water':
+    'Your instinct pulls toward the most fundamental resource: <strong>clean water</strong>. It\'s the kind of thing that should be invisible — so reliable you never think about it. <em>When you do think about it, something has already failed.</em>',
+  'sustainable-energy':
+    '<strong>Sustainable energy</strong> runs through your answers — the long-term infrastructure that determines whether everything else we build can last. <em>You\'re thinking in decades, not news cycles. That\'s what the Foundation needs.</em>',
+  'information-access':
+    'Your responses keep pointing to <strong>information</strong> — who has it, who controls it, who can reach it. In a world of noise, access to reliable information isn\'t a convenience. <em>It\'s a structural precondition for democracy.</em>',
+  'mental-health':
+    '<strong>Mental health</strong> surfaces clearly in your answers. Not as a luxury or an app subscription — as infrastructure. The kind of support that should exist before the crisis, not only after. <em>The Foundation treats it as component 09 of 16. Not optional. Foundational.</em>',
+  'accessible-education':
+    'Your answers highlight <strong>accessible education</strong> — learning that doesn\'t depend on zip code, income, or luck. Not just education that exists. Education that\'s <em>reachable</em>. <em>The gap isn\'t in knowledge — it\'s in access to it.</em>',
+  'transportation':
+    '<strong>Transportation</strong> threads through your answers — the ability to get to work, to healthcare, to opportunity. It sounds mundane until it\'s not there. <em>Mobility is infrastructure. When it breaks, everything else becomes harder to reach.</em>',
+  'skills-training':
+    'You\'re drawn to <strong>skills training</strong> — the bridge between where people are and where the economy is going. Not retraining as consolation prize. <em>Training as infrastructure — continuous, accessible, and built for a world that keeps changing.</em>',
+  'ubi':
+    '<strong>Universal basic income</strong> runs through your priorities. Not as utopia — as math. A floor beneath which no one falls. <em>The Foundation doesn\'t argue whether people deserve it. It argues whether a system without it can survive what\'s coming.</em>',
+  'housing':
+    'Your answers keep returning to <strong>housing</strong> — the most tangible form of stability. A place that doesn\'t consume your income, your energy, your ability to plan ahead. <em>Everything else in the Foundation sits on top of this.</em>',
+  'healthcare':
+    '<strong>Healthcare</strong> dominates your priorities. Not healthcare as an industry — healthcare as a right. The kind that doesn\'t ask for your credit score before it asks about your symptoms. <em>Component 15. The one most Americans feel first.</em>',
+  'thought-privacy':
+    'Your answers surface <strong>thought privacy</strong> — the newest, least obvious component of the Foundation. The right to an inner life that isn\'t optimized, predicted, or monetized. <em>In a world of AI, this one will define the others.</em>'
+};
+
+// State
+let currentQ = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let componentScores = {};
+
+function resetScores() {
+  componentScores = {};
+  COMPONENTS.forEach(c => { componentScores[c.id] = 0; });
+}
+resetScores();
+
+function renderQuestion(idx) {
+  const container = document.getElementById('questions-container');
+  const q = QUESTIONS[idx];
+
+  container.innerHTML = `
+    <div class="q-card">
+      <div class="q-number">Question ${idx+1} of ${QUESTIONS.length}</div>
+      <div class="q-text">${q.text}</div>
+      <div class="options" id="opts-${idx}">
+        ${q.options.map((opt, oi) => `
+          <button class="opt-btn" data-qi="${idx}" data-oi="${oi}">
+            ${opt.label}
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  // Re-apply previous answer
+  if (answers[idx] !== null) {
+    const prev = container.querySelector(`[data-oi="${answers[idx]}"]`);
+    if (prev) prev.classList.add('selected');
+    document.getElementById('next-btn').classList.add('ready');
+  } else {
+    document.getElementById('next-btn').classList.remove('ready');
+  }
+
+  // Click handlers
+  container.querySelectorAll('.opt-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      container.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      answers[parseInt(this.dataset.qi)] = parseInt(this.dataset.oi);
+      document.getElementById('next-btn').classList.add('ready');
+    });
+  });
+
+  // Progress
+  const pct = (idx / QUESTIONS.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+}
+
+function tallyScores() {
+  resetScores();
+  for (let qi = 0; qi < QUESTIONS.length; qi++) {
+    if (answers[qi] === null) continue;
+    const weights = QUESTIONS[qi].options[answers[qi]].weights;
+    for (const [compId, weight] of Object.entries(weights)) {
+      componentScores[compId] += weight;
+    }
+  }
+}
+
+function getRankedComponents() {
+  return COMPONENTS
+    .map(c => ({ ...c, score: componentScores[c.id] }))
+    .sort((a, b) => b.score - a.score || parseInt(a.num) - parseInt(b.num));
+}
+
+function showResults() {
+  tallyScores();
+  const ranked = getRankedComponents();
+  const top5 = ranked.slice(0, 5);
+  const maxScore = top5[0].score;
+
+  document.getElementById('quiz-wrap').style.display = 'none';
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('show');
+
+  // Build shareable card items
+  const cardItems = document.getElementById('card-items');
+  cardItems.innerHTML = top5.map((comp, i) => {
+    const barPct = Math.round((comp.score / maxScore) * 100);
+    return `
+      <div class="card-item">
+        <div class="card-rank card-rank-${i+1}">${i+1}</div>
+        <div class="card-item-body">
+          <div class="card-component">${comp.name}</div>
+          <div class="card-bar-track">
+            <div class="card-bar-fill card-bar-${i+1}" style="width:0%" data-target="${barPct}"></div>
+          </div>
+        </div>
+        <div class="card-score">${comp.num}/16</div>
+      </div>
+    `;
+  }).join('');
+
+  // Animate bars
+  setTimeout(() => {
+    document.querySelectorAll('.card-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.target + '%';
+    });
+  }, 200);
+
+  // Reflection
+  const topId = top5[0].id;
+  document.getElementById('reflection-text').innerHTML = REFLECTIONS[topId] || '';
+
+  // Full breakdown grid
+  const grid = document.getElementById('breakdown-grid');
+  const top5Ids = new Set(top5.map(c => c.id));
+  grid.innerHTML = ranked.map(comp => {
+    const isTop = top5Ids.has(comp.id);
+    const dots = Array.from({length: 5}, (_, i) => {
+      const filled = i < comp.score;
+      const gold = isTop && i < 2 && comp.score > 0;
+      return `<div class="breakdown-dot${filled ? (gold ? ' gold' : ' filled') : ''}"></div>`;
+    }).join('');
+    return `
+      <div class="breakdown-item${isTop ? ' top-5' : ''}">
+        <div class="breakdown-num">${comp.num}</div>
+        <div class="breakdown-name">${comp.name}</div>
+        <div class="breakdown-dots">${dots}</div>
+      </div>
+    `;
+  }).join('');
+
+  // CTA links to top component
+  const topComp = top5[0];
+  document.getElementById('cta-row').innerHTML = `
+    <a href="/foundation/${topComp.slug}/" class="cta">Read: ${topComp.name} →</a>
+    <a href="/foundation/" class="cta">All 16 Components →</a>
+  `;
+
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Next button
+document.getElementById('next-btn').addEventListener('click', () => {
+  if (answers[currentQ] === null) return;
+  currentQ++;
+  if (currentQ >= QUESTIONS.length) {
+    showResults();
+  } else {
+    renderQuestion(currentQ);
+  }
+});
+
+// Restart
+document.getElementById('restart-btn').addEventListener('click', () => {
+  currentQ = 0;
+  answers = new Array(QUESTIONS.length).fill(null);
+  resetScores();
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('quiz-wrap').style.display = 'block';
+  renderQuestion(0);
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// Init
+renderQuestion(0);
+</script>
+<script>
+function _reportHeight() {
+  window.parent.postMessage({iframeHeight: document.documentElement.scrollHeight}, '*');
+}
+window.addEventListener('load', _reportHeight);
+window.addEventListener('resize', _reportHeight);
+new MutationObserver(_reportHeight).observe(document.body, {childList:true, subtree:true, attributes:true, characterData:true});
+</script>
+</body>
+</html>
