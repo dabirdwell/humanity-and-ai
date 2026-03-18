@@ -19,4 +19,6 @@ We don't need you to agree with everything here. We need you to engage with it. 
 
 Foundation is both the framework and the movement. Not left, not right — forward. Not anti-technology. Pro-human. Because the AI transition is coming regardless, and the question isn't whether it happens but who it happens *for*.
 
+→ **[The Mirror](/foundation/the-mirror/)** — answer 5 questions, see which Foundation components matter most to you.
+
 → **[What this means for the next generation](/foundation/for-kids/)** — what Foundation looks like from a parent's perspective.

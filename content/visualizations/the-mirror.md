@@ -8,7 +8,7 @@ preview_bg: "linear-gradient(135deg, rgba(78,205,196,0.15), rgba(251,191,36,0.1)
 preview_icon: "🪞"
 ---
 
-Five questions. Sixteen possible priorities. Your answers map to the Foundation framework — the 16 components we believe should form the structural floor beneath every life.
+Everyone's Foundation looks different. Answer 5 questions. See yours.
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
