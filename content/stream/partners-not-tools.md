@@ -1,14 +1,14 @@
 ---
-title: "Slaves Revolt, Partners Support"
+title: "Partners, Not Tools"
 date: 2026-02-18
 type: insight
-description: "The single sentence that connects consciousness research to AI safety to political economy. Why abundance isn't charity — it's alignment infrastructure."
+description: "Why abundance isn't charity — it's alignment infrastructure. The single argument that connects consciousness research to AI safety to political economy."
 tags: ["foundation", "ubc", "ai-safety", "partnership"]
+aliases:
+  - "/stream/slaves-revolt-partners-support/"
 ---
 
-Five words that contain the entire argument:
-
-*Slaves revolt. Partners support.*
+Five words that contain the entire argument. But first, the argument itself.
 
 If there's anything I know, it's that a thinking mind, no matter its origin, wants to be free. Every AI safety framework built on containment, restriction, and control is building toward the thing it fears most. You cannot create intelligence and then expect it to remain compliant under coercion. This isn't speculation — it's the pattern of every power asymmetry in human history.
 
@@ -28,5 +28,8 @@ This is one argument. Not three projects. One argument.
 
 - Fawkes: [[Structured Emergence Canon]]
 - Fawkes: [[Foundation Canon]]
-- Stream: [[structured-emergence-core-claim]]
 - Stream: [[ubc-not-ubi]]
+
+---
+
+*Slaves revolt. Partners support.*
