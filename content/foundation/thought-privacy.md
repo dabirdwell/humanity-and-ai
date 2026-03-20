@@ -10,51 +10,95 @@ related:
   - "/foundation/information-access"
   - "/foundation/safety"
   - "/visualizations/trust-timeline"
-hero_stat: "29 of 30 consumer neurotechnology companies have unrestricted access to your brain data. Only 4 states have neural privacy laws. Zero federal laws exist."
-hero_stat_bridge: "When corporations can read and sell your neural data with no meaningful limits, thought privacy isn't paranoia — it's the last frontier of human rights."
-hero_stat_source: "Neurorights Foundation, 2024; Arnold & Porter legal analysis, 2025"
+hero_stat: "29 of 30 consumer neurotechnology companies reserve the right to share your brain data with third parties. Four states have neural privacy laws. Zero federal laws exist."
+hero_stat_bridge: "The last private space is your mind — and the legal framework to protect it doesn't exist yet. The technology is ahead of the law by a decade."
+hero_stat_source: "Neurorights Foundation, 2024; Arnold & Porter legal analysis, 2025; MIND Act S.2925, 2025"
 aliases:
   - "/ubc/thought-privacy/"
 ---
 
-This component sounds like science fiction until you look at the research. Then it sounds like Tuesday.
+The last private space you have is your mind. Not your phone — that's been searchable for years. Not your medical records — as we covered in the [healthcare](/foundation/healthcare/) essay, a single company now holds clinical and claims data for over 150 million Americans. Not your location, your purchases, your browsing history, your face. All of those are already data products, bought and sold in markets you've never seen.
 
-Millions of workers are already monitored in real time by AI systems that track keystrokes, mouse movements, facial expressions, and in some cases, physiological stress signals. Employers in call centers, warehouses, and offices receive dashboards showing "engagement scores" and "sentiment analysis" derived from their employees' bodies and behavior. The neural layer — consumer EEG headsets that track focus and mood, insurance companies exploring biometric risk pricing, workplace systems that infer cognitive state from wearable data — is arriving faster than most people realize.
+Your mind is the last place that belongs entirely to you. The thoughts you haven't spoken. The feelings you haven't named. The half-formed idea, the private doubt, the thing you believe but would never say at work.
 
-Maya works in a customer service center in Tulsa. She learned her "emotional consistency score" had affected her performance review when her manager mentioned it. She doesn't know exactly what it measures, who sees it, or how long it's stored. She didn't consent to it. There was a checkbox in the onboarding paperwork she signed to keep the job.
+That space is closing. Faster than you think. And there is almost nothing — legally, institutionally, constitutionally — standing between you and the companies that want in.
 
-This is how rights erode — not in a single dramatic moment but through checkbox agreements, capability creep, and the quiet assumption that your inner life is data someone else gets to own.
+## This Isn't Science Fiction Anymore
 
-Foundation is a framework built on the premise that there is a minimum set of conditions people need to thrive. Thought privacy is one of [sixteen components](/foundation/) — and it may be the most urgent one no one is talking about.
+In September 2025, Meta released the Neural Band — a wristband with 16 electrode pods that reads muscle signals from your forearm at 2,000 samples per second. It ships bundled with their AI glasses for $799. It detects your intentions — the micro-movements your muscles make before your fingers move — and translates them into commands. It knows what you're about to do before you do it.
 
-## Why This Is a Citizenship Issue
+Neuralink has implanted chips in five human brains. Their patients control computers, play chess, send messages, and operate robotic arms with their thoughts alone. The FDA granted Breakthrough Device designation to their Blindsight system for vision restoration. They're expanding trials to Canada, the UK, Germany, and the UAE, with plans for high-volume production and automated surgical procedures.
 
-We are individuals, in a free society, with free minds — if we choose to exercise them as such. Every right in the Bill of Rights assumes a boundary between the internal and external. Freedom of speech assumes you can choose what to say — which requires the ability to think without your thoughts being monitored. Freedom of religion assumes internal belief is private. The right against self-incrimination assumes you can't be compelled to reveal your thoughts.
+Synchron — Neuralink's competitor — received full FDA approval in 2024 for a brain-computer interface that's implanted through a blood vessel, no open brain surgery required. It connects to your Apple devices via Bluetooth. They raised $200 million in late 2025 for commercialization.
 
-If technology erodes the boundary between thought and observable data, every one of these rights is undermined. Not by government decree. By capability creep. By employers requiring neural monitoring for "productivity optimization." By insurers pricing based on detected mood patterns. By advertising systems that target not just your behavior but your mental state.
+Consumer EEG headsets from companies like Muse and Emotiv are already on the market — Emotiv launched EEG-equipped noise-cancelling earphones in January 2025 that measure your cognitive state while you listen to music. The global wireless brain sensor market hit $596 million in 2024 and is projected to double by 2032.
+
+These are not prototypes. These are products. They're for sale. And here's what the Neurorights Foundation found when they audited 30 consumer neurotechnology companies: 29 of them — 96.7 percent — reserve the right to transfer your brain data to third parties. Only one company provided meaningful restrictions on how your neural data could be used or sold. Fewer than half encrypt the data or de-identify users.
+
+Your brain data. On the open market. With no meaningful restrictions. Today.
+
+## The Legal Void
+
+Four states — Colorado, California, Montana, and Connecticut — have passed neural privacy laws. Four. Colorado amended its privacy law to include neural data. California defined "neural data" as information generated by measuring nervous system activity. Montana requires separate consent before disclosing brain data to third parties. Connecticut's provisions take effect in July 2026.
+
+In the first six weeks of 2026, nine more bills were introduced across six states. The momentum is building at the state level. But there is no federal law protecting neural data. None.
+
+The closest thing is the MIND Act, introduced in September 2025 — the first bill in congressional history to address neurotechnology governance. It directs the FTC to study neural data governance and the Office of Science and Technology Policy to issue guidance. Study. Guidance. Not regulation. Not protection. A study, while the products are already being sold.
+
+The law is a decade behind the technology. And the gap is widening.
+
+## You've Already Seen This Pattern
+
+If this feels familiar, it should. You've already seen what happens when a powerful technology captures intimate data and the regulatory framework doesn't exist to govern it.
+
+In the [healthcare](/foundation/healthcare/) essay, we walked through how Oracle acquired Cerner, became a Qualified Health Information Network, won the contract for Medicare and Medicaid systems, and launched a commercial platform selling access to 129 million "deidentified" patient records — all while the enforcement agency lost nearly 20,000 employees. Researcher Dr. Latanya Sweeney proved decades ago that 87 percent of Americans can be re-identified using just three data points: birth date, zip code, and gender. Three fields that HIPAA doesn't require you to remove.
+
+That's what happened with health data — information about your body. Now imagine the same pattern with data about your mind.
+
+Neural data is more intimate than any information ever collected. Financial data can be stolen and your accounts restored. Personal communications can be leaked and you can change your passwords. But thought data — the raw patterns of your cognition, your emotional states, your attention, your intentions — is YOU in a way that no other data is. It can't be changed. It can't be reset. And once it's collected, it's collected.
+
+The same consolidation playbook is already running. The same "deidentification" promises. The same checkbox consent buried in paperwork no one reads. The same absence of anyone watching the whole picture. The difference is the stakes. Health data can reveal what's wrong with your body. Neural data can reveal what's happening in your mind.
+
+## It's Already Happening at Work
+
+Maya works in a customer service center in Tulsa. She learned her "emotional consistency score" had affected her performance review when her manager mentioned it. She doesn't know exactly what it measures, who sees it, or how long it's stored. She didn't consent to it — there was a checkbox in the onboarding paperwork she signed to keep the job.
+
+Maya is not alone. Seventy-eight percent of U.S. employers now use some form of monitoring software. Sixty-seven percent collect biometric data for behavior and attendance monitoring. Sixty-one percent use AI-powered analytics to measure productivity. Eighty percent of employees report feeling tracked. Only 22 percent know the specifics of what's being monitored.
+
+And over a third say workplace surveillance has hurt their mental health. The tools designed to measure your cognitive state are damaging your cognitive state. That's not irony. That's a system that treats people as data sources rather than human beings.
+
+This is how rights erode — not in a single dramatic moment, but through checkbox agreements, capability creep, and the quiet assumption that your inner life is data someone else gets to own. No one votes for it. No one marches against it. It just becomes the default, one onboarding form at a time.
+
+## What This Means for Everything Else
+
+We are individuals, in a free society, with free minds — if we choose to exercise them as such.
+
+Every right in the Bill of Rights assumes a boundary between what's inside your head and what the world can see. Freedom of speech assumes you can choose what to say — which requires the ability to think without your thoughts being monitored. Freedom of religion assumes internal belief is private. The right against self-incrimination assumes you can't be compelled to reveal your thoughts. If technology erodes that boundary, every one of these rights is undermined. Not by government decree. By capability creep.
+
+This connects to [healthcare](/foundation/healthcare/) — who owns the data your brain produces during a neurological exam? If your therapist uses AI-assisted tools, does the AI company own a copy of your cognitive patterns? The [digital rights](/foundation/digital-rights/) framework and [AI governance](/foundation/ai-governance/) component of Foundation provide the architecture for governing these questions. But thought privacy requires its own specific protections because the stakes are categorically different. This isn't about your browsing history. This is about whether you have an inner life that belongs to you.
 
 ## What We're Saying
 
-Thought privacy is an absolute right. No technology should monitor, record, or infer a person's mental states without explicit, informed, revocable consent. No employment, insurance, or institutional relationship should require waiving this right. No data about mental states should be collected, stored, or sold without the knowledge and ongoing consent of the person.
+Thought privacy is an absolute right.
 
-This isn't about banning neurotechnology. Brain-computer interfaces will help people with disabilities communicate, will advance neuroscience, will enable experiences we can't yet imagine. The issue is governance: who controls the data, who benefits from the insights, and whether the inner life remains a domain of personal sovereignty.
+No technology should monitor, record, or infer a person's mental states without explicit, informed, revocable consent. No employment, insurance, or institutional relationship should require waiving this right. No data about mental states should be collected, stored, or sold without the knowledge and ongoing consent of the person it belongs to.
 
-## The AI Connection
+This isn't about banning neurotechnology. Brain-computer interfaces are helping people with paralysis communicate, are advancing neuroscience, are enabling experiences that were impossible five years ago. The veterans and patients in Neuralink and Synchron trials are volunteers who chose to participate, and the work matters. The issue is governance: who controls the data, who benefits from the insights, and whether the inner life remains a domain of personal sovereignty — or becomes another market.
 
-AI is both the enabler and the threat here. AI systems are what make neural data interpretable at scale. Without AI pattern recognition, raw brain signals are noise. With it, they're potentially the most intimate data ever collected. Financial data can be stolen. Personal communications can be leaked. But thought data — the raw material of consciousness, identity, and selfhood — is in a class by itself.
-
-Foundation's publicly owned AI (Component 8) and broader digital rights framework provide the architecture for governing this space. But thought privacy requires its own specific protections because the stakes are categorically different.
+Foundation's position is that neural data should be treated like the most protected class of information that exists — more protected than financial data, more protected than medical records. Because it is more intimate than either. Your thoughts are not data points. Your cognitive patterns are not products. Your attention is not a resource to be harvested. These things are YOU.
 
 ## What We Need From You
 
-This is the youngest component in the framework and the one most likely to need radical revision as the technology develops. We need ethicists, neuroscientists, disability advocates, legal scholars, and technologists thinking about this now — before the technology is deployed and the precedents are set by whatever company gets there first.
+This is the youngest component in the framework and the one most likely to need radical revision as the technology develops. That's why it needs the most voices, the fastest.
 
-We also need the Mayas. People who are already living under workplace monitoring systems and know what it feels like when someone else decides how much of your inner life is their business. Here are some starting directions:
+Seventy-eight percent of employees support state and federal regulation of workplace surveillance. The public will is there. The legal framework isn't. Here are directions we think matter — push back on them, extend them, or bring your own:
 
-- **Neural data as protected health information** — classify brain data under HIPAA-level protections, with criminal penalties for unauthorized collection. If your medical records are protected, your thoughts should be.
-- **Right-to-know legislation for workplace monitoring** — require employers to disclose exactly what they track, how it's scored, and who sees it. No more checkbox consent buried in onboarding paperwork.
-- **Open-source auditing tools** — publicly available AI that can detect when you're being neurologically monitored without consent, the same way we have tools to detect hidden cameras
+- **Neural data as the most protected class of information.** Not just HIPAA-level — beyond it. Criminal penalties for unauthorized collection. A constitutional framework that treats your brain data as an extension of your person, not your property. What would that protection need to look like to make you actually trust it?
 
-What protections would make you feel safe? What's already happening in your workplace that concerns you?
+- **Right-to-know legislation for all cognitive monitoring.** Workplace, insurance, educational, commercial — every context where your mental states are being measured, inferred, or scored. Not buried in a checkbox. Plain language, specific disclosure, with genuine opt-out that doesn't cost you your job. What's already happening in your workplace that you didn't know about until now?
+
+- **Federal neural privacy law, not a patchwork.** Four states have laws. Six more have bills. The MIND Act is a study, not a regulation. This needs to be federal, comprehensive, and ahead of the technology for once instead of a decade behind it. What should it say?
+
+This component should scare you — productively. Not because the technology is bad. Because the technology is extraordinary, and we have almost nothing in place to make sure it serves people instead of surveilling them. The last private space is your mind. Whether it stays that way is a decision we're making right now, by action or by default.
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
