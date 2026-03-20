@@ -11,9 +11,9 @@ related:
   - "/foundation/social-contract"
   - "/visualizations/ubc-circos"
   - "/visualizations/ubc-visual-stats"
-hero_stat: "The US poverty gap is $288 billion — the cost to lift every American above the poverty line. We spend $481 billion on welfare programs. Poverty hasn't moved in 50 years. 150 cities have now launched guaranteed income pilots. The evidence is in. The architecture is wrong."
+hero_stat: "The US poverty gap is $288 billion — the cost to lift every American above the poverty line. We spend $481 billion on welfare programs. Poverty hasn't moved in 50 years. 57 active basic income experiments are now running across 18 states. The evidence is in. The architecture is wrong."
 hero_stat_bridge: "We already spend more than enough to end poverty. The problem isn't the budget — it's the system. And the system was designed to manage poverty, not end it."
-hero_stat_source: "Census Bureau poverty statistics 2024; Federal Safety Net analysis; Guaranteed Income Dashboard 2025"
+hero_stat_source: "Census Bureau poverty statistics 2024; Federal Safety Net analysis; Stanford Basic Income Lab 2025; Guaranteed Income Dashboard 2025"
 aliases:
   - "/ubc/universal-basic-income/"
 ---
@@ -24,11 +24,15 @@ But notice it's Component 13 of 16. That's deliberate.
 
 UBI alone is a check. It solves the money problem and nothing else. Without [education](/foundation/education/) infrastructure, people don't develop. Without [healthcare](/foundation/healthcare/), they get sick and the money goes to medical debt. Without safe [housing](/foundation/housing/), the income gets consumed by rent extraction. Without [information access](/foundation/information-access/), they can't make informed decisions about their lives. Without [clean water](/foundation/clean-water/), they're drinking poison regardless of their bank balance. Without [safe spaces](/foundation/safe-spaces/), the check goes to the person doing the harm. Without [transportation](/foundation/transportation/), they can't reach the opportunities the money was supposed to unlock.
 
-The entire point of Foundation's [sixteen components](/foundation/) is that money is a tool, not a solution. The solution is comprehensive citizenship infrastructure in which financial security is one load-bearing element among many. Universal basic *citizenship* is not a handout; it is a civilization deciding within itself that taking care of ourselves through this transition time means taking care of everyone.
+The entire point of Foundation's [sixteen components](/foundation/) is that money is a tool, not a solution. The solution is comprehensive citizenship infrastructure in which financial security is one load-bearing element among many.
+
+Universal basic *citizenship* is not a handout; it is a civilization deciding within itself that taking care of ourselves through this transition time means taking care of everyone.
 
 This is the capstone. This is where all sixteen components meet.
 
 ## What the Current System Actually Looks Like
+
+Things are already beginning to get confusing, aren't they? We hear arguments about welfare and poverty and who deserves what, and the noise makes it hard to see the architecture underneath. The way to cut through the confusion is to ask, from first principles — what system do we actually *want*?
 
 *Sandra is not one person. She is a pattern.* She got laid off at 57 when her employer automated the billing department. She applied for benefits. The process took six weeks — during which her car payment lapsed and her credit took a hit she's still recovering from. She was required to report job search activities weekly, to a portal that crashed regularly, in a system designed to catch fraud, not serve people.
 
@@ -38,7 +42,9 @@ She made it. Many don't. And the indignity of the process — the surveillance, 
 
 Here are the numbers behind the pattern. The US poverty gap — the total dollar amount it would take to lift every American above the poverty line — is $288 billion. We currently spend $481 billion on 13 federal welfare programs, not including Medicaid. That's $192 billion *more* than the poverty gap. And the poverty rate has hovered between 10.5 and 15 percent for fifty years. Half a century. Half a trillion dollars a year. And the needle hasn't moved.
 
-That's not a funding problem. That's an architecture problem. We spend the money. We just route it through bureaucracies that consume a significant portion in administration, through means tests that create cliff effects, through surveillance systems that treat recipients as suspects. Sandra's six weeks of processing, her crashing portal, her weekly job search reports filed to prove she deserved help — that's not a bug. It's the system working exactly as designed. It was designed to manage poverty, not end it.
+That's not a funding problem. That's an architecture problem. We spend the money. We just route it through bureaucracies that consume a significant portion in administration, through means tests that create cliff effects, through surveillance systems that treat recipients as suspects. Sandra's six weeks of processing, her crashing portal, her weekly job search reports filed to prove she deserved help — that's not a bug. It's the system working exactly as designed.
+
+It was designed to manage poverty, not end it.
 
 UBI isn't radical generosity. It's competent design.
 
@@ -54,7 +60,7 @@ This is no longer theoretical. The experiments have been run. The data is availa
 
 **OpenResearch — Sam Altman's study.** The largest US study. 1,000 people received $1,000 a month for three years in Texas and Illinois. Recipients spent on housing, food, transportation, and savings. Work hours dropped by about 1.3 hours per week — used for leisure and care, not idleness. Recipients were 5 percent more likely to maintain a budget. The study found exactly what every other study has found: give people money, and they act like responsible adults. Because they are.
 
-And it's not just pilots anymore. Over 150 US cities have launched guaranteed income programs since Stockton's 2019 pilot. Nearly 30,000 participants. A collective $335 million in direct aid. The Guaranteed Income Pilot Program Act of 2025 proposes a three-year nationwide pilot at the federal level. New York City allocated $3 million for its own program in 2026. This is moving from experiment to infrastructure.
+And it's not just pilots anymore. Fifty-seven basic income experiments are currently running across 18 states and the District of Columbia. Nearly 30,000 participants. A collective $335 million in direct aid. The Guaranteed Income Pilot Program Act of 2025 proposes a three-year nationwide pilot of 20,000 individuals at the federal level. New York City allocated $3 million for its own program in 2026. This is moving from experiment to infrastructure.
 
 The evidence is consistent, cross-cultural, and replicated. People who receive unconditional income work, plan, invest, care for their families, and participate in their communities. They do not drink it away. They do not quit their jobs. They do not become dependent. They become stable enough to be free.
 
@@ -64,15 +70,15 @@ The usual objection, and the answer is more interesting than people expect.
 
 Start with the $192 billion we're already overspending relative to the poverty gap. That's money in the system right now, consumed by administrative overhead, means-testing infrastructure, fraud detection systems, and the bureaucratic machinery of conditional assistance. Redirect it.
 
-Then look at where the new wealth is being generated. AI-driven productivity gains are producing enormous value — but that value is concentrating among capital owners, not distributing to the workers whose labor the AI replaces. Goldman Sachs projects that generative AI could expose the equivalent of 300 million full-time jobs globally to automation, while boosting global GDP by 7 percent. That's wealth creation at unprecedented scale, flowing to an unprecedented few. SHRM found that 23.2 million American jobs — 15.1 percent of employment — already have more than half their tasks automated. The World Economic Forum projects 92 million jobs displaced by 2030, offset by 170 million new ones created — but the people losing the old jobs and the people getting the new ones are not the same people, and the transition between them is where lives break.
+Then look at where the new wealth is being generated. AI-driven productivity gains are producing enormous value — but that value is concentrating among capital owners, not distributing to the workers whose labor the AI replaces. Goldman Sachs projects that generative AI could expose the equivalent of 300 million full-time jobs globally to automation, while boosting global GDP by 7 percent. That's wealth creation at unprecedented scale, flowing to an unprecedented few. The World Economic Forum projects 92 million jobs displaced by 2030, offset by 170 million new ones created — but the people losing the old jobs and the people getting the new ones are not the same people, and the transition between them is where lives break.
 
 UBI is, in part, a mechanism for ensuring that AI-generated wealth benefits the society that made AI possible — through public investment in research, education, infrastructure, and the data that trained the models. Specific mechanisms include AI taxation (taxing automated productivity at rates comparable to the labor it replaces), financial transaction taxes, carbon pricing, and redirecting existing inefficient transfer programs.
 
-The economic modeling suggests it's feasible. The question has always been political will, not arithmetic. We are the wealthiest civilization in human history. The whole earth is independently wealthy, and we need to remind it of that. The question isn't whether we can afford UBI. It's whether we can afford to keep spending more than the poverty gap requires and getting nothing for it.
+The economic modeling suggests it's feasible. The question has always been political will, not arithmetic. The whole earth is independently wealthy, and we need to remind it of that. The question isn't whether we can afford UBI. It's whether we can afford to keep spending more than the poverty gap requires and getting nothing for it.
 
 ## What UBI Enables — And What It Doesn't
 
-The most underappreciated effect of UBI isn't consumption — it's agency. When people aren't one paycheck from catastrophe, they can take risks. Start businesses. Pursue [education](/foundation/education/). Care for family members. Organize communities. Say no to exploitative work. Invest in long-term thinking rather than survival-mode short-termism.
+The most underappreciated effect of UBI isn't consumption — it's *agency*. When people aren't one paycheck from catastrophe, they can take risks. Start businesses. Pursue [education](/foundation/education/). Care for family members. Organize communities. Say no to exploitative work. Invest in long-term thinking rather than survival-mode short-termism.
 
 In the context of the AI transition, this agency is critical. We need a population that can adapt, experiment, and create — that can develop new [skills](/foundation/skills-training/) and pursue [accessible education](/foundation/accessible-education/) as a lifelong practice. You don't get that from people in chronic financial panic. You get it from people who have a floor.
 
@@ -86,23 +92,23 @@ How much could we do, if we raised an entire generation free from so many of the
 
 ## The Dignity Design
 
+Stop calling yourself a consumer. You are a citizen.
+
 UBI in Foundation's framework is unconditional. No work requirements, no drug tests, no caseworker visits. Not because conditions are theoretically wrong, but because every conditional program in history has spent more on enforcement than it saved, and the surveillance and stigma undermine the very agency the income is supposed to enable.
 
 Sandra's weekly job search reports, filed to a crashing portal, reviewed by a system looking for fraud — that's not accountability. That's humiliation with a government seal. And it costs more to administer than it prevents. The administrative overhead of means-tested programs routinely runs 15 to 30 percent of program costs. UBI's overhead is negligible — you send a check. The money goes to people instead of to the machinery of suspicion.
-
-Stop calling yourself a consumer. You are a citizen.
 
 Trust people. Fund them. Let them surprise you.
 
 ## What We Need From You
 
-Those who say people will stop working if you give them money have not read the data. Stockton: employment up 12 percent. Finland: more working days, less medication. Kenya: more entrepreneurship, not less. Every study, same result. The objection is not empirical. It is moral — a belief that people don't deserve security unless they earn it, in an economy that is actively automating the earning.
+Those who say people will stop working if you give them money have not read the data. Stockton: employment up 12 percent. Finland: more working days, less medication. Kenya: more entrepreneurship, not less. Fifty-seven active pilots across 18 states and DC, all pointing the same direction. The objection is not empirical. It is moral — a belief that people don't deserve security unless they earn it, in an economy that is actively automating the earning.
 
 This is the only form of sustainable capitalism in a fully automated world. We need economists, social workers, people who've navigated the welfare system, small business owners, automation-displaced workers, and anyone with a perspective on what happens when the financial floor exists versus when it doesn't. Here are the concrete directions:
 
 - **AI productivity dividend** — as AI-driven automation generates wealth, a percentage flows directly to citizens as UBI. The machines work, the people benefit. Specific mechanism: tax automated productivity at rates comparable to the labor it replaces. Goldman Sachs says AI could boost global GDP by 7 percent. Who gets that 7 percent? Right now, shareholders. Foundation says citizens. What's the right rate? What are the implementation challenges?
 
-- **Guaranteed minimum with no cliff effects** — income support that phases out gradually as earnings increase, never creating the trap where earning more means losing more. Sandra's benefits shouldn't drop faster than her income rises. Over 150 cities have tested this. The design patterns exist. What would a statewide implementation look like? What did the pilots get wrong that a permanent program needs to fix?
+- **Guaranteed minimum with no cliff effects** — income support that phases out gradually as earnings increase, never creating the trap where earning more means losing more. Sandra's benefits shouldn't drop faster than her income rises. Fifty-seven active pilots have tested versions of this. The design patterns exist. What would a statewide implementation look like? What did the pilots get wrong that a permanent program needs to fix?
 
 - **UBI as the financial foundation for all sixteen components** — this is the capstone, not the whole building. UBI provides the economic floor. [Education](/foundation/education/) develops the mind. [Healthcare](/foundation/healthcare/) maintains the body. [Housing](/foundation/housing/) provides shelter. [Clean water](/foundation/clean-water/) and [food](/foundation/food/) sustain life. [Transportation](/foundation/transportation/) connects opportunity. [Safe spaces](/foundation/safe-spaces/) protect dignity. [Information access](/foundation/information-access/) enables informed participation. [Skills training](/foundation/skills-training/) keeps people adaptive. [Thought privacy](/foundation/thought-privacy/) preserves autonomy. The [social contract](/foundation/social-contract/) holds it all together. What's missing? What haven't we thought of?
 
