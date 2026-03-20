@@ -25,5 +25,4 @@ This is the kind of software I care about building. Tools that amplify how human
 - Fawkes: [[Products and Services Canon]]
 - Fawkes: [[The_Cooking_Hypothesis]]
 - Fawkes: [[Delicious Emergence]]
-- Stream: [[cooking-hypothesis]]
 - Stream: [[quiltographer]]
