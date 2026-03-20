@@ -10,6 +10,7 @@ hero_stat_bridge: "When education creates a generation of debtors, it's not acce
 hero_stat_source: "Federal Reserve; Federal Student Aid, Q4 2025"
 aliases:
   - "/ubc/accessible-education/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/10"
 ---
 
 Renee grew up in Muskogee, Oklahoma. First in her family to go to college. Graduated with a degree in social work and $61,000 in debt — below the national average. She's been paying for nine years. She still owes $54,000.

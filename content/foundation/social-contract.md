@@ -10,6 +10,7 @@ hero_stat_bridge: "When five out of six Americans don't trust their government, 
 hero_stat_source: "Pew Research Center, Public Trust in Government 1958-2025; Gallup Confidence in Institutions, 2025"
 aliases:
   - "/ubc/social-contract/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/4"
 ---
 
 Your parents had a deal. It wasn't written down anywhere, but everyone understood it: work hard, play by the rules, and society provides a pathway to stability. Steady employment. Home ownership. Retirement security. A better life for your children than the one you had.

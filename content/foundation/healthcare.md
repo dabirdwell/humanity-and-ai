@@ -10,6 +10,7 @@ hero_stat_bridge: "Healthcare as a right isn't radical — it's what every peer 
 hero_stat_source: "American Journal of Public Health (Himmelstein et al.); Kaiser Family Foundation"
 aliases:
   - "/ubc/healthcare/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/15"
 ---
 
 You know the feeling. That knot in your stomach when you find a lump, or your kid spikes a fever at midnight, and before you even think about the medical question, your brain runs the numbers. *Can we afford this?*
