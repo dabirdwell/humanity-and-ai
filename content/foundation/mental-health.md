@@ -10,7 +10,6 @@ hero_stat_bridge: "You can't bootstrap your way out of a mental health crisis wh
 hero_stat_source: "HRSA Health Professional Shortage Areas, 2025; NAMI/Wang et al.; SAMHSA NSDUH 2023"
 aliases:
   - "/ubc/mental-health/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/9"
 ---
 
 You know the call you're supposed to make. The one where you finally say, out loud, to another human being, *I think something is wrong.* You've been thinking about it for months — maybe years. You rehearse it in your head. You look up therapists. You check your insurance. And then the math starts.

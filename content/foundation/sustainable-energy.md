@@ -14,7 +14,6 @@ hero_stat_bridge: "Energy poverty isn't about choosing paper or plastic. It's ab
 hero_stat_source: "DOE Low-Income Energy Affordability Data Tool; RMI 2024; EIA Oklahoma State Profile; ACEEE Energy Burden Research 2024"
 aliases:
   - "/ubc/sustainable-energy/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/7"
 ---
 
 Loretta lives outside Seminole, Oklahoma. Her family has lived in oil country for three generations — her grandfather worked the fields, her uncle drove tankers. The energy economy built this region. It also left it. The wells that made millionaires in Houston left behind methane leaks, contaminated groundwater, and communities whose tax base collapsed when the boom moved on.

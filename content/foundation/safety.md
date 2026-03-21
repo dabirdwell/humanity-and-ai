@@ -10,7 +10,6 @@ hero_stat_bridge: "Safety built on cages doesn't produce safety. It produces a p
 hero_stat_source: "Prison Policy Initiative, 2025; CDC NISVS; Cure Violence Global meta-analysis; Oklahoma DOC"
 aliases:
   - "/ubc/safety/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/1"
 ---
 
 Think about what the word "safety" means to you. Not the dictionary version — the version that lives in your body. The one that decides, before your conscious mind gets involved, whether you can relax. Whether you can think clearly. Whether you can sleep.

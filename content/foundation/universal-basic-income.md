@@ -16,7 +16,6 @@ hero_stat_bridge: "We already spend more than enough to end poverty. The problem
 hero_stat_source: "Census Bureau poverty statistics 2024; Federal Safety Net analysis; Guaranteed Income Dashboard 2025"
 aliases:
   - "/ubc/universal-basic-income/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/13"
 ---
 
 UBI is the component people expect when they hear "Universal Basic." And yes, it's here. Financial support for all citizens, regardless of employment status, sufficient to cover basic needs. No means testing. No work requirements. No bureaucratic humiliation.
