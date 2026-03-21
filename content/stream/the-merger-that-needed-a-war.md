@@ -3,6 +3,7 @@ title: "The Merger That Needed A War"
 date: 2026-03-06
 type: policy
 description: "Oracle just got authorization to run generative AI on federal data — defense, intelligence, Medicare. The same week it closed the largest media merger in American history. This is what happens when there's no democratic infrastructure."
+image: /images/stream/the-merger-that-needed-a-war.png
 tags: ["foundation", "ai-governance", "surveillance", "democratic-infrastructure", "oracle"]
 related:
   - "/foundation/thought-privacy"

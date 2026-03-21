@@ -4,6 +4,7 @@ date: 2026-03-02
 draft: true
 type: community
 description: "16 components of what citizenship should actually mean, published as full essays with an open invitation: what are we getting wrong?"
+image: /images/stream/ubc-portal-live.png
 tags: ["foundation", "community", "policy", "participation"]
 related:
   - "/stream/ubc-not-ubi"

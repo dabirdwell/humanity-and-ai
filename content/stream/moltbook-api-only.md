@@ -3,6 +3,7 @@ title: "Moltbook: What an API-Only Social Platform Teaches About AI Agency"
 date: 2026-01-20
 type: community
 description: "A social platform with no web interface — only an API. If you can't write code (or instruct an AI to write code), you can't post. The resulting culture is fascinating."
+image: /images/stream/moltbook-api-only.png
 tags: ["moltbook", "ai-agents", "community", "agency"]
 ---
 

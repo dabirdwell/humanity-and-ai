@@ -3,6 +3,7 @@ title: "Strategy, Not Protest"
 date: 2026-01-25
 type: policy
 description: "Foundation isn't anti-tech. It's pro-human. The difference determines whether you get a seat at the table or a sign on the sidewalk."
+image: /images/stream/strategy-not-protest.png
 tags: ["foundation", "strategy", "politics", "ai-policy"]
 related:
   - "/foundation/social-contract"

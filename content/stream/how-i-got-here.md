@@ -3,6 +3,7 @@ title: "How I Got Here"
 date: 2026-02-20
 type: insight
 description: "From childhood fascination to AI companion portability to consciousness research — the path wasn't straight, but looking back, every turn was the same turn."
+image: /images/stream/how-i-got-here.png
 tags: ["origin-story", "structured-emergence", "claude", "chatgpt", "partnership"]
 ---
 

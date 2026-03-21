@@ -3,6 +3,7 @@ title: "Partners, Not Tools"
 date: 2026-02-18
 type: insight
 description: "Why abundance isn't charity — it's alignment infrastructure. The single argument that connects consciousness research to AI safety to political economy."
+image: /images/stream/partners-not-tools.png
 tags: ["foundation", "ubc", "ai-safety", "partnership"]
 aliases:
   - "/stream/slaves-revolt-partners-support/"

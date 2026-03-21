@@ -3,6 +3,7 @@ title: "Why We Stopped Calling It UBC"
 date: 2026-03-03
 type: "insight"
 description: "Universal Basic Citizenship was the right idea with the wrong name. The framework hasn't changed. What changed is that we stopped describing infrastructure and started naming it."
+image: /images/stream/why-we-stopped-calling-it-ubc.png
 tags: ["foundation", "ubc", "naming", "evolution"]
 ---
 

@@ -3,6 +3,7 @@ title: "Why 'Universal Basic Citizenship' and Not 'Universal Basic Income'"
 date: 2026-02-05
 type: policy
 description: "UBI gives people money. UBC gives people membership. The difference matters more than you'd think."
+image: /images/stream/ubc-not-ubi.png
 tags: ["ubc", "foundation", "policy", "economics"]
 related:
   - "/foundation/universal-basic-income"

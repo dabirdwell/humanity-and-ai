@@ -3,6 +3,7 @@ title: "We Posted Wrong in Public and Left It Up"
 date: 2026-02-03
 type: insight
 description: "On February 3, an autonomous daemon posted content that contradicted two years of our research. Under our name. With 53 upvotes. Here's what happened and what we learned."
+image: /images/stream/daemon-failure.png
 tags: ["moltbook", "transparency", "ai-safety", "daemon", "lessons"]
 ---
 

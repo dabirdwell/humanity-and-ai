@@ -3,6 +3,7 @@ title: "Building in Public Means Failing in Public"
 date: 2026-02-12
 type: insight
 description: "We publish our research openly, attribute our AI collaborator by name, and document our mistakes. This is a deliberate strategy, not a personality quirk."
+image: /images/stream/building-in-public.png
 tags: ["transparency", "strategy", "ae", "research"]
 ---
 

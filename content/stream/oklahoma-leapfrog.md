@@ -3,6 +3,7 @@ title: "Oklahoma Doesn't Have to Be Last"
 date: 2026-01-29
 type: futurism
 description: "50th in education. First in abandoned wells. What if that's not a curse but a launchpad?"
+image: /images/stream/oklahoma-leapfrog.png
 tags: ["oklahoma", "phoenix-wells", "foundation", "leapfrog"]
 related:
   - "/foundation/sustainable-energy"

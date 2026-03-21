@@ -3,6 +3,7 @@ title: "22,000 Holes in Oklahoma's Earth"
 date: 2026-02-19
 type: futurism
 description: "The fossil fuel era left scars across Oklahoma. Phoenix Wells turns them into the nervous system of a new civilization."
+image: /images/stream/phoenix-wells-22000-holes.png
 tags: ["phoenix-wells", "oklahoma", "infrastructure", "energy"]
 related:
   - "/foundation/sustainable-energy"
