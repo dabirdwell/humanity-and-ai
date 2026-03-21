@@ -15,6 +15,7 @@ hero_stat_bridge: "The last private space is your mind — and the legal framewo
 hero_stat_source: "Neurorights Foundation, 2024; Arnold & Porter legal analysis, 2025; MIND Act S.2925, 2025"
 aliases:
   - "/ubc/thought-privacy/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/16"
 ---
 
 The last private space you have is your mind. Not your phone — that's been searchable for years. Not your medical records — as we covered in the [healthcare](/foundation/healthcare/) essay, a single company now holds clinical and claims data for over 150 million Americans. Not your location, your purchases, your browsing history, your face. All of those are already data products, bought and sold in markets you've never seen.

@@ -1,6 +1,6 @@
 ---
 title: "Universal Basic Income"
-description: "Yes, UBC includes UBI. Money is one tool among sixteen — necessary but nowhere near sufficient."
+description: "Yes, Foundation includes UBI. Money is one tool among sixteen — necessary but nowhere near sufficient."
 number: "13"
 weight: 13
 status: "seed"
@@ -16,6 +16,7 @@ hero_stat_bridge: "We already spend more than enough to end poverty. The problem
 hero_stat_source: "Census Bureau poverty statistics 2024; Federal Safety Net analysis; Guaranteed Income Dashboard 2025"
 aliases:
   - "/ubc/universal-basic-income/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/13"
 ---
 
 UBI is the component people expect when they hear "Universal Basic." And yes, it's here. Financial support for all citizens, regardless of employment status, sufficient to cover basic needs. No means testing. No work requirements. No bureaucratic humiliation.
@@ -108,6 +109,6 @@ This is the only form of sustainable capitalism in a fully automated world. We n
 
 What does economic security unlock? What are we getting wrong? What do you know about poverty, about the welfare system, about the gap between what exists and what people actually need — that no one in a policy office has thought to ask?
 
-UBC is a coherent philosophy that delivers. And this is where it comes together.
+Foundation is a coherent philosophy that delivers. And this is where it comes together.
 
 This is citizen-developed work. This is one of sixteen components — the one that connects to all the others. [Explore the full framework →](/foundation/)

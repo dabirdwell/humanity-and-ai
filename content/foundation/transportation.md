@@ -10,6 +10,7 @@ hero_stat_bridge: "When half the country has no transit option and millions can'
 hero_stat_source: "APTA 2025; NRDC 2025; AAA Your Driving Costs 2025; ASCE Infrastructure Report Card"
 aliases:
   - "/ubc/transportation/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/11"
 ---
 
 Harold is 71, lives outside Ardmore, Oklahoma, and has end-stage kidney disease. He gets dialysis three times a week. The medical transport service is contracted, chronically understaffed, and frequently late or absent. When he misses a session, he spends the next two days in a level of physical distress his grandchildren try not to look at directly.

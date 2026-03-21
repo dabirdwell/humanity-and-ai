@@ -10,6 +10,7 @@ hero_stat_bridge: "Half the economy is significantly exposed to AI transformatio
 hero_stat_source: "Karpathy AI Job Exposure Analysis, 2024; McKinsey Global Institute; World Economic Forum Future of Jobs, 2025; DOL"
 aliases:
   - "/ubc/skills-training/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/12"
 ---
 
 Dennis spent 24 years as a claims adjuster in Tulsa. He was good at it — built a career reading people, understanding context, making judgment calls that software couldn't. Then his company deployed an AI system that handled 70 percent of standard claims without human review. Dennis was "redeployed" to handle edge cases. Eighteen months later, there weren't enough edge cases to justify his position.

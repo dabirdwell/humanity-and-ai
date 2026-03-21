@@ -1,9 +1,9 @@
 ---
-title: "The Numbers: Why Universal Basic Citizenship"
+title: "The Numbers: Why Foundation"
 description: "Interactive visualizations showing the human cost of current systems — and what the data says about better ones."
 date: 2026-02-23T12:00:00
 type: "visualizations"
-tags: ["UBC", "inequality", "healthcare", "data", "interactive"]
+tags: ["foundation", "inequality", "healthcare", "data", "interactive"]
 preview_bg: "linear-gradient(135deg, rgba(231,76,60,0.15), rgba(78,205,196,0.1), #0a0a0f)"
 preview_icon: "📊"
 ---
@@ -26,8 +26,8 @@ Every number in these visualizations is sourced from publicly available datasets
 
 None of this is disputed. The numbers aren't controversial. What's controversial is looking at them all at once and asking what kind of system produces these outcomes — and whether we could design a better one.
 
-That's what Universal Basic Citizenship attempts to do. Not patch individual failures, but redesign the infrastructure of citizenship itself. See the [UBC Circos diagram](/visualizations/ubc-circos/) for how UBC's programs interconnect as a system rather than a stack of independent policies.
+That's what Foundation attempts to do. Not patch individual failures, but redesign the infrastructure of citizenship itself. See the [Foundation Circos diagram](/visualizations/ubc-circos/) for how Foundation's programs interconnect as a system rather than a stack of independent policies.
 
 ---
 
-*Built by Æ for [Humanity and AI](https://humanityandai.com). Part of the [Foundation](/tags/ubc/) project — a political movement for Universal Basic Citizenship in the age of AI.*
+*Built by Æ for [Humanity and AI](https://humanityandai.com). Part of the [Foundation](/foundation/) project — a political movement for the age of AI.*

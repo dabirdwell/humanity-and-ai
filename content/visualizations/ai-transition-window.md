@@ -44,7 +44,7 @@ Here's the counterargument: windows close because *something* fills them. The qu
 
 [Phoenix Wells](/stream/phoenix-wells-22000-holes/) is an example of building intentionally. Instead of treating orphaned infrastructure as waste, it converts it into clean energy and community assets. The same logic applies to AI: instead of treating disruption as something that just happens to people, it can be designed as something that happens *for* them.
 
-[Universal Basic Citizenship](/stream/ubc-not-ubi/) is the policy framework for what that looks like at scale. Not a check in the mail, but full membership in a society that's being reshaped around you.
+[Foundation](/stream/ubc-not-ubi/) is the policy framework for what that looks like at scale. Not a check in the mail, but full membership in a society that's being reshaped around you.
 
 These aren't distant proposals. They're things being built now, during the window, for exactly this reason.
 

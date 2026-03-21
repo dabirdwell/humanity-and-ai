@@ -10,6 +10,7 @@ hero_stat_bridge: "In 2026, internet access is oxygen for economic participation
 hero_stat_source: "BroadbandNow audit, 2025; Northwestern Medill State of Local News, 2025; FCC"
 aliases:
   - "/ubc/information-access/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/8"
 ---
 
 The ideal use for AI is as a democratizing interface for the collection of all human knowledge. It has the ability, if made available freely, to dissolve all gatekeeping and economic barriers to knowledge and creativity. That's the possibility. Here's the reality.

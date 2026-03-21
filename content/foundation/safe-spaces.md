@@ -10,6 +10,7 @@ hero_stat_bridge: "Safe spaces aren't an abstract concept — they're the differ
 hero_stat_source: "NNEDV Census; Chapin Hall/University of Chicago; NCOA; CDC NISVS"
 aliases:
   - "/ubc/safe-spaces/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/3"
 ---
 
 Think about where you'd go if everything fell apart tonight. Not the hospital kind of falling apart — the kind where someone you live with became someone you're afraid of. Or the kind where your family told you to leave because of who you are. Or the kind where you're 78 and the person who drives you to the pharmacy is also the person taking your money, and you don't know who to call because the person you'd call is the problem.

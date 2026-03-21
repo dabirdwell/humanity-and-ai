@@ -10,6 +10,7 @@ hero_stat_bridge: "The wealthiest nation on earth has 47 million people who aren
 hero_stat_source: "USDA Economic Research Service, 2024 (final report — series terminated)"
 aliases:
   - "/ubc/food/"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/5"
 ---
 
 The government stopped counting hungry people. That doesn't mean hungry people stopped existing.

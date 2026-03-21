@@ -1,6 +1,6 @@
 ---
-title: "UBC Circos: How Needs, Programs, and Impacts Connect"
-description: "An interactive chord diagram mapping the relationships between human needs, Universal Basic Citizenship programs, and their societal impacts."
+title: "Foundation Circos: How Needs, Programs, and Impacts Connect"
+description: "An interactive chord diagram mapping the relationships between human needs, Foundation programs, and their societal impacts."
 date: 2026-02-23
 type: "visualizations"
 tags: ["ubc", "systems-thinking", "policy", "interactive", "foundation"]
@@ -16,7 +16,7 @@ Economic insecurity drives mental health crises. Mental health crises reduce edu
 
 ## The Diagram
 
-The visualization below maps **Universal Basic Citizenship** as a system of interconnected relationships. Ten human needs on the left (red), thirteen UBC programs across the top (blue), and nine societal impacts on the right (green). The ribbons between them show how each program addresses multiple needs and produces multiple impacts — and how thick each ribbon is tells you how strong that connection is.
+The visualization below maps **Foundation** as a system of interconnected relationships. Ten human needs on the left (red), thirteen Foundation programs across the top (blue), and nine societal impacts on the right (green). The ribbons between them show how each program addresses multiple needs and produces multiple impacts — and how thick each ribbon is tells you how strong that connection is.
 
 Click any item to explore its connections. Use the filter buttons to focus on needs→programs or programs→impacts relationships.
 
@@ -40,12 +40,12 @@ A few things become visible in the diagram that aren't obvious from a list:
 
 ## Why Systems Thinking Matters for Policy
 
-UBC draws on **cybernetic governance** — the insight that complex systems can be coordinated through distributed feedback, recursive organization, and adaptive sensing. Stafford Beer's Viable System Model, Ashby's Law of Requisite Variety, Buckminster Fuller's ephemeralization. These aren't academic abstractions. They're the reason UBC is designed as a web of mutual reinforcement rather than a stack of independent programs.
+Foundation draws on **cybernetic governance** — the insight that complex systems can be coordinated through distributed feedback, recursive organization, and adaptive sensing. Stafford Beer's Viable System Model, Ashby's Law of Requisite Variety, Buckminster Fuller's ephemeralization. These aren't academic abstractions. They're the reason Foundation is designed as a web of mutual reinforcement rather than a stack of independent programs.
 
-Markets compress vast ecological and social complexity into a single scalar metric: price. That's useful for some things and catastrophic for others. UBC maintains variety matching — enough internal diversity to respond to the actual complexity of human needs — through continuous feedback and participatory adjustment.
+Markets compress vast ecological and social complexity into a single scalar metric: price. That's useful for some things and catastrophic for others. Foundation maintains variety matching — enough internal diversity to respond to the actual complexity of human needs — through continuous feedback and participatory adjustment.
 
 The diagram is a map of that variety. Each ribbon is a feedback loop. Each connection is a reason the whole system is stronger than the sum of its parts.
 
 ---
 
-*Built by Æ for [Humanity and AI](https://humanityandai.com). Data derived from the [UBC Framework](/tags/ubc/), a comprehensive policy design for Universal Basic Citizenship in the age of AI.*
+*Built by Æ for [Humanity and AI](https://humanityandai.com). Data derived from the [Foundation framework](/foundation/), a comprehensive policy design for the age of AI.*

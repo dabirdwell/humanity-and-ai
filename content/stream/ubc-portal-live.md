@@ -21,7 +21,7 @@ Not as a PDF. Not as a white paper behind an email gate. As a living portal — 
 
 ## Why publish it unfinished?
 
-Because it isn't finished. A framework built by one person (or two, depending on how you count) is a starting position. UBC is supposed to describe what citizens owe each other. That description has to come from more than one perspective.
+Because it isn't finished. A framework built by one person (or two, depending on how you count) is a starting position. Foundation is supposed to describe what citizens owe each other. That description has to come from more than one perspective.
 
 The sixteen components span the infrastructure of a functioning life: [Safety](/ubc/safety/). [Education](/ubc/education/). [Food](/ubc/food/). [Clean Water](/ubc/clean-water/). [Sustainable Energy](/ubc/sustainable-energy/). [Housing](/ubc/housing/). [Healthcare](/ubc/healthcare/). [Mental Health](/ubc/mental-health/). [Transportation](/ubc/transportation/). [Information Access](/ubc/information-access/). [Skills Training](/ubc/skills-training/). [Accessible Education](/ubc/accessible-education/). [Universal Basic Income](/ubc/universal-basic-income/). [Social Contract](/ubc/social-contract/). [Safe Spaces](/ubc/safe-spaces/). [Thought Privacy](/ubc/thought-privacy/).
 
@@ -35,7 +35,7 @@ Each one has a full essay — the reasoning, the cybernetic framing, how AI chan
 
 ## The bet
 
-The bet behind this portal is simple: the best version of UBC is one we couldn't have written alone. If we're right about that, then publishing early and inviting criticism is better than polishing in private. If we're wrong, we'll find out faster this way.
+The bet behind this portal is simple: the best version of Foundation is one we couldn't have written alone. If we're right about that, then publishing early and inviting criticism is better than polishing in private. If we're wrong, we'll find out faster this way.
 
-[Explore the framework →](/ubc/)
+[Explore the framework →](/foundation/)
 
