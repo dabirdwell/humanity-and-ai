@@ -3115,3 +3115,315 @@ a:hover { color: var(--accent-primary); }
   .products-grid { grid-template-columns: 1fr; }
   .product-single { padding: 2rem 1.25rem 3rem; }
 }
+
+/* ---- ABOUT LANDING PAGE ---- */
+.about-landing {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+}
+
+.about-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-warm);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.about-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-warm));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-hero-desc {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.about-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2.5rem 0 1rem;
+}
+
+.about-content h2:first-child {
+  margin-top: 0;
+}
+
+.about-content p {
+  margin-bottom: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.about-content strong {
+  color: var(--text-primary);
+}
+
+.about-content hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 3rem 0;
+}
+
+/* Full Stack Visual */
+.about-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 2rem 0;
+}
+
+.stack-layer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.stack-layer:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card);
+}
+
+.stack-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-width: 70px;
+  font-weight: 600;
+}
+
+.stack-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.stack-desc a {
+  font-weight: 500;
+}
+
+.layer-mind .stack-label { color: var(--accent-tertiary); }
+.layer-mastery .stack-label { color: var(--accent-secondary); }
+.layer-civic .stack-label { color: var(--accent-primary); }
+.layer-data .stack-label { color: var(--accent-warm); }
+.layer-energy .stack-label { color: #ef4444; }
+.layer-ground .stack-label { color: #a0845c; }
+
+/* Brain Mastery Pipeline */
+.about-pipeline {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.pipeline-step {
+  flex: 1;
+  min-width: 150px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.pipeline-step:hover {
+  border-color: var(--border-hover);
+}
+
+.pipeline-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pipeline-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  display: block;
+}
+
+.pipeline-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pipeline-step p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.pipeline-status {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.pipeline-status.live {
+  background: rgba(78, 205, 196, 0.15);
+  color: var(--accent-secondary);
+}
+
+.pipeline-status.beta {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--accent-warm);
+}
+
+.pipeline-status.coming-soon {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+}
+
+.pipeline-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Ae Section */
+.ae-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+
+.ae-section p {
+  color: var(--text-secondary);
+}
+
+/* Timeline */
+.about-timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+}
+
+.about-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-subtle);
+}
+
+.timeline-entry {
+  position: relative;
+  padding: 0 0 2rem 1.5rem;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  border: 2px solid var(--bg-primary);
+}
+
+.timeline-entry.accent::before {
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px rgba(255, 107, 53, 0.4);
+}
+
+.timeline-entry.future::before {
+  background: var(--accent-secondary);
+  box-shadow: 0 0 8px rgba(78, 205, 196, 0.4);
+}
+
+.timeline-entry:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-warm);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* About page responsive */
+@media (max-width: 768px) {
+  .about-pipeline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pipeline-arrow {
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+
+  .pipeline-step {
+    min-width: unset;
+  }
+
+  .stack-layer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .stack-label {
+    min-width: unset;
+  }
+}
