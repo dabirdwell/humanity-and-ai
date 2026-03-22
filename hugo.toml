@@ -27,6 +27,9 @@ summaryLength = 40
     name = "Visualizations"
     url = "/visualizations/"
   [[params.nav.links]]
+    name = "Show"
+    url = "/show/"
+  [[params.nav.links]]
     name = "Inference"
     url = "/inference/"
   [[params.nav.links]]

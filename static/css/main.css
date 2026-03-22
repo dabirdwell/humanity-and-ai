@@ -3474,3 +3474,51 @@ a:hover { color: var(--accent-primary); }
     min-width: unset;
   }
 }
+
+/* ═══════════════════════════════════════
+   THE SHOW
+   ═══════════════════════════════════════ */
+
+.show-archive { max-width: 740px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.show-archive-header { margin-bottom: 2rem; }
+.show-archive-header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; margin: 0.3rem 0 0.75rem; }
+.show-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); }
+.show-archive-sub { font-size: 0.92rem; color: var(--text-secondary); max-width: 560px; line-height: 1.65; margin-bottom: 1.2rem; }
+.show-intro { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2.5rem; }
+.show-intro p { margin-bottom: 1rem; }
+.show-intro strong { color: var(--text-primary); }
+.show-page-list { display: flex; flex-direction: column; gap: 1rem; }
+.show-page-card { display: block; background: rgba(255,255,255,.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.4rem 1.6rem; text-decoration: none; transition: border-color .2s, background .2s; }
+.show-page-card:hover { border-color: rgba(78,205,196,.3); background: rgba(255,255,255,.05); }
+.show-page-card.planning { opacity: 0.75; }
+.show-page-card-meta { display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.5rem; font-size: 0.78rem; color: var(--text-muted); }
+.status-badge.planning { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: rgba(192,132,252,.15); color: var(--accent-tertiary); }
+.status-badge.upcoming { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: rgba(78,205,196,.15); color: var(--accent-secondary); }
+.status-badge.live { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: rgba(255,107,53,.15); color: var(--accent-primary); }
+.status-badge.archived { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: rgba(255,255,255,.06); color: var(--text-muted); }
+.show-page-card h2 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.4rem; }
+.show-page-card p { font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 0.8rem; line-height: 1.5; }
+.show-page-card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.show-page-card-tags .tag { font-size: 0.7rem; color: var(--text-muted); }
+
+/* Show single */
+.show-single { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.show-header { border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+.show-meta-top { display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.78rem; }
+.show-date { color: var(--text-muted); font-size: 0.78rem; }
+.show-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; margin: 0 0 0.75rem; line-height: 1.25; }
+.show-description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.75rem; }
+.show-content { margin-bottom: 3rem; }
+.show-content h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin: 2.5rem 0 1rem; color: var(--text-primary); }
+.show-content h3 { font-size: 1.05rem; margin: 2rem 0 0.75rem; color: var(--text-primary); }
+.show-content hr { border: none; border-top: 1px solid var(--border-subtle); margin: 2rem 0; }
+.show-footer { border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; }
+.show-footer-inner { max-width: 740px; }
+.show-footer-links { display: flex; gap: 1.5rem; margin-bottom: 1rem; font-size: 0.85rem; }
+.show-footer-links a { color: var(--teal); text-decoration: none; }
+.show-attribution { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+.show-attribution a { color: var(--teal); }
+
+@media (max-width: 600px) {
+  .show-title { font-size: 1.4rem; }
+}
