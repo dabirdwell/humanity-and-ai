@@ -27,11 +27,8 @@ summaryLength = 40
     name = "Visualizations"
     url = "/visualizations/"
   [[params.nav.links]]
-    name = "Beacon"
-    url = "/beacon/"
-  [[params.nav.links]]
-    name = "TasteBud"
-    url = "/tastebud/"
+    name = "Products"
+    url = "/products/"
   [[params.nav.links]]
     name = "Tags"
     url = "/tags/"
