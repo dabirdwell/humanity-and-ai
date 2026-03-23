@@ -33,7 +33,7 @@ None of these examples are fabricated equivalences. The stock buyback figures ar
 
 The point is not that these are the only possible allocations, or that defense spending should be zero, or that corporations shouldn't exist. The point is simpler: **scarcity is often a political choice, not a natural condition.** When we say we cannot afford universal pre-K, we are making a statement about priorities — not about mathematics.
 
-The Foundation framework is built on the recognition that the 16 components of Universal Basic Citizenship are not dreams. They are funded realities in peer nations — paid for by economies no richer than ours, with governments that made different choices.
+Foundation framework is built on the recognition that the 16 components of Universal Basic Citizenship are not dreams. They are funded realities in peer nations — paid for by economies no richer than ours, with governments that made different choices.
 
 [Explore the full Foundation framework →](/foundation/)
 

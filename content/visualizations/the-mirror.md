@@ -35,7 +35,7 @@ No data is collected. Everything runs locally in your browser.
 
 ## Why This Exists
 
-The Foundation framework has 16 components. That's a lot to take in at once. The Mirror gives people a starting point — a personal entry into the framework based on what already matters to them. It's not a personality test. It's a compass.
+Foundation framework has 16 components. That's a lot to take in at once. The Mirror gives people a starting point — a personal entry into the framework based on what already matters to them. It's not a personality test. It's a compass.
 
 [Explore the full Foundation framework →](/foundation/)
 

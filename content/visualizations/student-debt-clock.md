@@ -35,7 +35,7 @@ The research consistently shows student debt doesn't stay in a financial box. Bo
 
 ## The access argument
 
-The Foundation's position is simple: when the price of knowledge is a 30-year debt obligation, access to education isn't universal — it's rationed by willingness to mortgage a future. That's not education as infrastructure. That's education as a toll road.
+Foundation's position is simple: when the price of knowledge is a 30-year debt obligation, access to education isn't universal — it's rationed by willingness to mortgage a future. That's not education as infrastructure. That's education as a toll road.
 
 Countries that treat education as a public good have different numbers. The debt clock above doesn't exist in Germany, where university is free. The question isn't whether universal education is possible. It's whether we consider it worth building.
 
