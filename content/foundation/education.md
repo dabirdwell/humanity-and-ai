@@ -73,7 +73,7 @@ The question isn't whether work will change — it already is, faster than any c
 
 ## What This Does to a Person
 
-Here's what connects the kid who stops raising his hand and the adult who can't keep up with an economy that moved without her.
+Here's what connects Tyler deciding at seven that he's bad at school, the teenager who stops raising her hand, and the adult who can't keep up with an economy that moved without her.
 
 When you go through a system that doesn't see you — that measures you against a standard your brain wasn't built for, or that prepares you for a career that evaporates — it doesn't just waste your time. It teaches you something about yourself that isn't true. It teaches you that you can't learn. That you're not smart enough. That the problem is *you*.
 

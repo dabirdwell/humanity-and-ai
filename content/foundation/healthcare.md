@@ -58,7 +58,7 @@ People are dying because of how we organize society. Not in some dramatic, visib
 
 ## What's Happening Right Now
 
-So that's the crisis we already have — a system that bankrupts people for getting sick and ties their coverage to jobs that are disappearing. You've heard some version of that story before. What you probably haven't heard is what's happening to your medical data while we're busy arguing about insurance premiums.
+So that's the crisis we already have — a system that bankrupts people for getting sick and ties their coverage to jobs that are disappearing. You've heard some version of that before, and you may already agree it's broken. But here's the part that changes the urgency: while we've been arguing about insurance premiums, something has been happening to your medical data. And almost nobody is talking about it.
 
 In 2022, Oracle — one of the largest technology companies in the world — bought Cerner, the company that manages clinical records for more than 14,000 medical facilities, for $28.3 billion. That purchase gave Oracle access to patient records across hospitals, clinics, the VA, and the Department of Defense. The VA deployment alone has been catastrophic — an inspector general documented a veteran's death linked to scheduling errors in the system, 58% of clinical staff reported increased patient safety risk, and costs ballooned from $10 billion to $37 billion.
 
@@ -86,7 +86,7 @@ You can't build the scaffolding for hope when your nervous system is stuck in su
 
 The healthcare crisis isn't just a healthcare problem. It's a weight that presses down on everything else — education, safety, mental health, the ability to participate in your own life. You can't address any of those while the thing that's draining people's capacity goes untreated. Healthcare isn't just one component of the framework. It's the foundation underneath the foundation.
 
-## What We're Proposing
+## What We're Building
 
 Single-payer comprehensive coverage. Not a public option alongside private insurance. Not a marketplace with subsidies. A national healthcare system that covers every citizen, funded through progressive taxation, and free at the point of service.
 

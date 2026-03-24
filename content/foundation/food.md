@@ -13,11 +13,15 @@ aliases:
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/5"
 ---
 
-The government stopped counting hungry people. That doesn't mean hungry people stopped existing.
+You know the math. Maybe not personally — but you've seen it. The parent in the checkout line quietly putting something back. The coworker who skips lunch and says she's not hungry. The kid at your child's school who eats fast and focused, like he's not sure when the next one is coming.
 
-In 2024, the USDA published what turned out to be its final food insecurity report: 18.3 million households — 47 million Americans — didn't know for certain where their next meal was coming from. The highest rate in nearly a decade. Then the program was terminated. The data collection that told us how many people in this country are going hungry was cancelled. Not because the problem was solved. Because someone decided we should stop measuring it.
+Hunger in America doesn't look like the pictures. It looks like arithmetic. This much in the account, this many days until payday, this many mouths. You learn which calories are cheapest. You learn that shame has a taste — it tastes like the off-brand box you buy so your kids don't go to school empty, and the fresh fruit you put back so the numbers work.
 
-That's the system-level version of this story. Here's what it looks like where people actually live.
+Forty-seven million Americans run some version of that calculation. And the government just stopped counting them.
+
+In 2024, the USDA published what turned out to be its final food insecurity report: 18.3 million households didn't know for certain where their next meal was coming from. The highest rate in nearly a decade. Then the program was terminated. Not because the problem was solved. Because someone decided we should stop measuring it.
+
+Here's what it looks like where people actually live.
 
 *Deja is not one person. She is a pattern.* She's in fourth grade, and the lunch line moves fast. If your account has money in it, you get a regular tray. If the account is empty, you get a cheese sandwich in a different-colored bag. Everyone can see which bag you're carrying. Deja's mother works two jobs and the account runs out some weeks. Deja has started skipping lunch on the days she doesn't know which bag she'll get. Her teacher noticed she's struggling to focus in the afternoon. She flagged it as a possible learning issue. It's not a learning issue. It's hunger.
 
@@ -37,9 +41,9 @@ This point is worth saying twice, because everything else we're building depends
 
 ## And Then They Stopped Counting
 
-So that's the crisis we already have — 47 million people food insecure in a country that throws away a third of what it produces. You've heard some version of that story before. What you probably haven't heard is what happened to the system that was supposed to track it.
+So that's the crisis we already have — 47 million people food insecure in a country that throws away a third of what it produces. But the number itself is only half the problem. What happened to the system that was supposed to track it — that's the part that should frighten you.
 
-The USDA Economic Research Service collected food insecurity data for decades. It was the only comprehensive national measurement of hunger in America. It told us where the problem was getting worse, which populations were most affected, and whether the programs designed to address it were working. In 2024, after publishing the worst numbers in nearly a decade, the series was terminated.
+The USDA Economic Research Service collected food insecurity data for decades. It was the only comprehensive national measurement of hunger in America — the only way we knew where the problem was getting worse, which populations were hit hardest, whether anything we were doing about it was working. In 2024, after publishing the worst numbers in nearly a decade, the series was terminated.
 
 Let that land for a second. The wealthiest country on Earth stopped counting its hungry people.
 
@@ -57,15 +61,15 @@ You can't build the scaffolding for hope when your nervous system is stuck in su
 
 And we're asking millions of people to overcome that with willpower alone. To go to work, to raise their children, to plan for the future — while their bodies are telling them the future is irrelevant because right now there isn't enough. Some will. Most won't. And we'll blame them for being stuck. That's not a moral failure on their part. It's an infrastructure failure on ours.
 
-## What AI Changes
+## What We're Building
 
-The technology to address this already exists. That's the part that should make you angry.
+Foundation starts from a premise: food access is infrastructure, not charity. The same way we treat roads and water and electricity. And the technology to build it already exists — that's the part that should make you angry.
 
 AI and automation are transforming agriculture — precision farming, vertical agriculture, supply chain optimization, waste reduction through better demand prediction. These tools can dramatically reduce the cost of feeding everyone well. The 30 to 40 percent of food we currently waste — much of it because supply and demand never matched up — is a solvable problem with the tools we already have.
 
 But here's the pattern you'll see across every component of Foundation: the question is who benefits. If AI-driven agriculture concentrates further into corporate monocultures — bigger operations, fewer farms, more control in fewer hands — it makes the system more fragile and the access problem worse. If it's deployed to strengthen local and regional food systems — community farms using AI-assisted crop management, cooperative distribution networks that match surplus to need, school nutrition programs that source from local growers instead of industrial supply chains — then it becomes genuine infrastructure for human flourishing. AI helps us grow smarter and waste less, but people decide where the food goes and who it serves.
 
-The technology is not the constraint. The will is. And the first act of will is deciding that food access is infrastructure, not charity — that it belongs in the same category as roads and electricity and clean water, provided universally because a functioning society requires it.
+The technology is not the constraint. The will is. And when Foundation removes the floor of desperation — when people have income, shelter, healthcare — the conditions that force families into bad food choices begin to dissolve too. Food security doesn't exist in isolation. It compounds with every other component. That's why it's part of a system, and the system has to work together.
 
 ## What We Need From You
 
