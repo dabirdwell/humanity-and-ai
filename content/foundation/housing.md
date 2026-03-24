@@ -15,6 +15,8 @@ discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/14"
 
 You know the math. You've done it — maybe this morning, maybe last night staring at the ceiling. Rent, utilities, groceries, gas, the payment on whatever's keeping the car running. You add it up, and then you add it up again, because the first time can't be right. But it is. The numbers don't work. They haven't worked for a while.
 
+And here's the thing nobody in a policy office will say this plainly: the numbers were never *designed* to work. A society that can build skyscrapers but can't house its people has a priorities problem, not a resources problem.
+
 *Rosa is not one person. She is a pattern.* She's a home health aide in Oklahoma City — she cares for elderly people in their homes so they can stay out of nursing facilities. The work is essential. Everyone says so. It pays $11.50 an hour. The cheapest one-bedroom near her clients rents for $876 a month. She works five days a week and lives with her sister's family — two adults and three kids in a two-bedroom apartment — because there is no other option. She's been on the affordable housing waiting list for three years. The list has 2,000 names on it.
 
 Rosa's math: at $11.50 an hour, working full time, she can afford $598 a month in rent without being cost-burdened. The one-bedroom costs $876. The two-bedroom costs $1,091. There is no version of this arithmetic where Rosa lives alone. Not because she doesn't work hard enough. Because the numbers were never designed to add up for her.
@@ -26,6 +28,8 @@ Foundation is built on a simple premise: there is a minimum set of conditions pe
 In 1990, the median home in America cost about three times the median household income. A stretch, but reachable. By 2025, that ratio hit five to one. In parts of the West Coast, it's eight or nine to one. Since 1985, median household income has risen about 255 percent. Median home prices have surged over 415 percent. The gap isn't closing. It's accelerating.
 
 And it's not just buying. The national housing wage — what you'd need to earn per hour to afford a modest two-bedroom rental without spending more than 30 percent of your income — is $33.63. The average renter earns $23.60. That's a ten-dollar gap, every hour, between what people make and what housing costs. Almost half of all U.S. workers earn less than the one-bedroom housing wage. Of the 25 most common jobs in America, 17 pay median wages below what a one-bedroom apartment requires. Those 17 occupations employ 74 million people.
+
+Seventy-four million workers in this country can't afford a one-bedroom apartment on what they earn. That's not a housing market. That's a math problem with no solution.
 
 In Oklahoma — not California, not New York — a minimum wage worker would need to put in 93 hours a week just to afford a one-bedroom apartment. Ninety-three hours. That's more than two full-time jobs, for a single room. Oklahoma's minimum wage is still $7.25 — the federal floor, unchanged since 2009. Rents in the Oklahoma City metro have risen over 26 percent since 2019, with a 24 percent spike in a single year around 2021-2022 that was the fastest in the nation. The wage didn't move. The rent did. The math was always going to produce this outcome.
 
@@ -77,19 +81,19 @@ Housing First programs — giving people housing unconditionally and then addres
 
 This means community land trusts — over 300 now operating across 46 states, holding more than 44,000 permanently affordable units. Nonprofit ownership of the land, with affordable housing on it, keeping prices stable instead of letting speculation drive them up. It means public housing that's actually maintained and destigmatized — Vienna houses 60 percent of its population in publicly subsidized housing that's desirable, well-maintained, and mixed-income. It works at scale. The question is whether we have the will to adapt it.
 
-And it means building housing as part of the broader infrastructure system. AI-optimized modular construction can cut building costs and time dramatically — some companies are building homes in days rather than months. That technology exists. The question, as always, is who it serves: if it's deployed to build more luxury units for investors, it makes the problem worse. If it's deployed to build affordable, high-quality housing where people actually need to live, it's the lever that moves the whole system.
+And it means building housing as part of the broader infrastructure system. AI-assisted modular construction can help cut building costs and timelines dramatically — some companies are already building homes in days rather than months. Human architects and planners guide the design for local conditions and community needs. AI helps them work faster. The question, as always, is who this technology serves: if it's deployed to build more luxury units for investors, it makes the problem worse. If it's deployed to build affordable, high-quality housing where people actually need to live, it's the lever that moves the whole system.
 
 ## What We Need From You
 
-Those who say we can't afford to house everyone are the same ones whose portfolios depend on housing being scarce. The obstacle isn't resources — it's who profits from the scarcity. That can change. It has to.
+Those who say we can't afford to house everyone are often the same ones whose portfolios depend on housing being scarce. The obstacle isn't resources — it's who profits from the scarcity. A society that can build skyscrapers but can't house its people has made a choice. It can make a different one.
 
-We have a framework. We don't have all the answers — and that's deliberate. Here are directions we think matter. Push back on them, extend them, or bring your own:
+We have a framework. We don't have all the answers — and that's deliberate. Foundation is citizen-developed work, which means the people closest to the problem help shape the solution. Here are directions we think matter. Push back on them, extend them, or bring your own:
 
 - **Community land trusts as default, not exception.** Three hundred CLTs are already operating. They keep housing permanently affordable by taking the land out of the speculative market. What would it take to make this the standard model for new affordable development in your city, instead of the alternative one? What does your community need that the CLT model doesn't yet provide?
 
 - **Vienna-scale public housing, American-adapted.** Sixty percent of Vienna lives in public housing — and it's housing people *want* to live in. Mixed-income, well-maintained, integrated into the city. The American version doesn't have to look like Vienna's. But the principle — that public housing can be desirable, not punitive — has been proven. What would that look like in Oklahoma City? In your town?
 
-- **AI-optimized construction for the public good.** Modular construction designed by AI for local conditions, deployed to build affordable housing fast, at scale, where it's needed most. Not another luxury development with a "workforce housing" unit in the basement. Actual housing, for actual people, built with the tools we already have. What's standing in the way in your community — zoning? land costs? political will? All three?
+- **AI-assisted construction for the public good.** Modular homes designed with AI assistance for local climate, soil, and community needs — with human architects and local planners guiding every decision. Deployed to build affordable housing fast, at scale, where it's needed most. Not another luxury development with a "workforce housing" unit in the basement. Actual housing, for actual people, built with tools that already exist. What's standing in the way in your community — zoning? Land costs? Political will? All three?
 
 What does "affordable" mean where you live? What models preserve community while providing stability? What do people who've experienced housing insecurity know that no one in a policy office has thought to ask?
 
