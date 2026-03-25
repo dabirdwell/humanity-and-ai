@@ -4,9 +4,9 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Humanity &amp; AI</p>
-    <h1>The futures worth having are the ones we build together.</h1>
-    <p class="hero-pitch">Research, policy, and tools for the AI transition. Built in public.</p>
-    <a href="#start" class="hero-cta">Start here ↓</a>
+    <h1>Research, policy, and tools for the AI transition. Built in public from Oklahoma.</h1>
+    <p class="hero-pitch">First revenue. Eight products. Sixteen Foundation essays. The window is open.</p>
+    <a href="#products" class="hero-cta">Explore the work ↓</a>
   </div>
   <script>
   (function() {
@@ -30,7 +30,6 @@
     resize();
     window.addEventListener('resize', resize);
 
-    // Subtle warm/cool tints
     var tints = [
       [255, 255, 255],
       [200, 220, 255],
@@ -68,19 +67,12 @@
 
       for (var i = 0; i < stars.length; i++) {
         var s = stars[i];
-
-        // Move star toward viewer (z decreases)
         s.z -= speed;
-        if (s.z <= 0.001) {
-          stars[i] = makeStar(1);
-          continue;
-        }
+        if (s.z <= 0.001) { stars[i] = makeStar(1); continue; }
 
-        // Project to 2D — closer stars are further from center and bigger
         var px = cx + (s.x / s.z) * cx;
         var py = cy + (s.y / s.z) * cy;
 
-        // Off screen? Reset
         if (px < -20 || px > W + 20 || py < -20 || py > H + 20) {
           stars[i] = makeStar(1);
           continue;
@@ -89,11 +81,8 @@
         var r = (1 - s.z) * 1.8 + 0.3;
         var twinkle = Math.sin(time * s.twinkleSpeed + s.twinkleOffset);
         var a = (0.3 + 0.7 * (1 - s.z)) * (0.6 + 0.4 * twinkle);
-
-        // Fade on scroll
         a *= (1 - scrollFactor * 0.8);
 
-        // Scroll parallax — near stars drift more
         var drift = scrollY * (0.05 + (1 - s.z) * 0.15);
         var dy = py - drift;
 
@@ -102,7 +91,6 @@
         ctx.fillStyle = 'rgba(' + s.tint[0] + ',' + s.tint[1] + ',' + s.tint[2] + ',' + a + ')';
         ctx.fill();
 
-        // Glow for close stars
         if (r > 1.2) {
           ctx.beginPath();
           ctx.arc(px, dy, r * 2.5, 0, Math.PI * 2);
@@ -110,17 +98,15 @@
           ctx.fill();
         }
       }
-
       requestAnimationFrame(draw);
     }
     draw();
 
-    // Smooth scroll for CTA — custom easing
     var cta = document.querySelector('.hero-cta');
     if (cta) {
       cta.addEventListener('click', function(e) {
         e.preventDefault();
-        var target = document.getElementById('start');
+        var target = document.getElementById('products');
         if (!target) return;
         var startY = window.pageYOffset;
         var endY = target.getBoundingClientRect().top + startY;
@@ -128,7 +114,6 @@
         var duration = 1200;
         var startTime = null;
         function ease(t) {
-          // ease-in-out quart — slow start, fast middle, slow finish
           return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
         }
         function step(ts) {
@@ -144,148 +129,174 @@
   </script>
 </section>
 
-<div class="ae-signal">
-  <span class="ae-signal-glyph">Æ</span>
-  <span class="ae-signal-text">The AI that works on this project makes original generative art, published weekly. <a href="https://structuredemergence.com/art/">View the work →</a></span>
-</div>
+<!-- ── Products ────────────────────────────────────────── -->
+<section class="hp-section hp-products" id="products">
+  <div class="hp-section-inner">
+    <p class="hp-eyebrow">Brain Mastery</p>
+    <h2>Products</h2>
+    <p class="hp-section-sub">Tools that amplify how humans think. Not what machines find convenient.</p>
+    <div class="hp-product-grid">
 
-<div class="start-here" id="start">
-  <div class="start-here-inner">
-    <p class="featured-eyebrow">Start Here</p>
-    <h2 class="start-here-title">Questions you probably have</h2>
-    <div class="start-here-grid">
-
-      <a href="/foundation/skills-training/" class="question-card">
-        <h3 class="question-text">"Will AI take my job?"</h3>
-        <p>Some jobs will change dramatically. The US is spending less than half what it did in the 1990s on transition programs. Here's what real support would look like.</p>
-        <span class="question-link">Skills &amp; Transition →</span>
+      <a href="https://clarity.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">📖</span>
+        <span class="hp-product-status hp-status-live">Live</span>
+        <h3>Clarity</h3>
+        <p>A calmer reading experience</p>
+        <span class="hp-product-domain">clarity.humanityandai.com</span>
       </a>
 
-      <a href="/visualizations/ai-transition-window/" class="question-card">
-        <h3 class="question-text">"How much time do we have?"</h3>
-        <p>A few years where humans are still in the loop. This interactive timeline maps the window — and why it's closing faster than most people realize.</p>
-        <span class="question-link">The Five-Year Window →</span>
+      <a href="https://dojo.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🥋</span>
+        <span class="hp-product-status hp-status-beta">Beta</span>
+        <h3>Dojo</h3>
+        <p>Train your reasoning</p>
+        <span class="hp-product-domain">dojo.humanityandai.com</span>
       </a>
 
-      <a href="/stream/strategy-not-protest/" class="question-card">
-        <h3 class="question-text">"Are we going to be okay?"</h3>
-        <p>Only if we build the right things. Protesting AI doesn't work. Shaping it does. But shaping it requires people stable enough to think beyond survival.</p>
-        <span class="question-link">Strategy, Not Protest →</span>
+      <a href="https://tastebud.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🍳</span>
+        <span class="hp-product-status hp-status-beta">Beta</span>
+        <h3>TasteBud</h3>
+        <p>Explore flavor, learn to cook</p>
+        <span class="hp-product-domain">tastebud.humanityandai.com</span>
       </a>
 
-      <a href="/foundation/" class="question-card">
-        <h3 class="question-text">"What would real solutions look like?"</h3>
-        <p>Sixteen components of what membership in a society actually means — from housing to thought privacy. Built in public. Open to contribution.</p>
-        <span class="question-link">Foundation →</span>
+      <a href="https://quiltographer.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🧵</span>
+        <span class="hp-product-status hp-status-beta">Beta</span>
+        <h3>Quiltographer</h3>
+        <p>AI-powered pattern reading</p>
+        <span class="hp-product-domain">quiltographer.humanityandai.com</span>
       </a>
 
-      <a href="https://structuredemergence.com" class="question-card">
-        <h3 class="question-text">"Is AI going to be conscious?"</h3>
-        <p>Maybe not yet. But the question is real, the research is underway, and the answer changes everything about how we build these systems.</p>
-        <span class="question-link">Structured Emergence ↗</span>
+      <a href="https://citizen.humanityandai.com" class="hp-product-card hp-product-coming" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🏛️</span>
+        <span class="hp-product-status hp-status-soon">Coming Soon</span>
+        <h3>Citizen</h3>
+        <p>Your civic dashboard</p>
+        <span class="hp-product-domain">citizen.humanityandai.com</span>
       </a>
 
     </div>
-    <!-- Mobile scroll arrow -->
-    <div class="scroll-arrow" aria-hidden="true">›</div>
-    <script>
-    (function(){
-      var grid = document.querySelector('.start-here-grid');
-      var arrow = document.querySelector('.scroll-arrow');
-      if (!grid || !arrow) return;
-      grid.addEventListener('scroll', function handler() {
-        if (grid.scrollLeft > 20) {
-          arrow.classList.add('hidden');
-          grid.classList.add('scrolled');
-          grid.removeEventListener('scroll', handler);
-        }
-      }, {passive: true});
-    })();
-    </script>
+    <div class="hp-section-cta">
+      <a href="/products/">All products &amp; details →</a>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="homepage-lower">
-
-<div class="stream-container">
-  <div class="stream-header">
-    <h2>The Stream</h2>
-    <a href="/index.xml" class="rss-link" title="RSS Feed">RSS ↗</a>
+<!-- ── Foundation ──────────────────────────────────────── -->
+<section class="hp-section hp-foundation">
+  <div class="hp-section-inner">
+    <p class="hp-eyebrow">Policy Framework</p>
+    <h2>Foundation</h2>
+    <p class="hp-section-sub">Sixteen components of what membership in a society actually means. Built in public, open to contribution.</p>
+    <div class="hp-foundation-grid">
+      {{ $components := where (where .Site.RegularPages "Section" "foundation") ".Params.number" "!=" nil }}
+      {{ range sort $components ".Params.weight" }}
+      <div class="hp-fdn-cell" title="{{ .Title }}">
+        <span class="hp-fdn-num">{{ .Params.number }}</span>
+      </div>
+      {{ end }}
+    </div>
+    <div class="hp-foundation-links">
+      <a href="/foundation/" class="hp-link-primary">Explore all 16 components →</a>
+      <a href="https://github.com/dabirdwell/humanity-and-ai-site/discussions" class="hp-link-secondary" target="_blank" rel="noopener">Join the conversation →</a>
+    </div>
   </div>
+</section>
 
-  <div class="type-filters" id="typeFilters">
-    <button class="filter-btn active" data-type="all">All</button>
-    {{ $pages := where .Site.RegularPages "Section" "stream" }}
-    {{ $types := slice }}
-    {{ range $pages }}{{ with .Params.type }}{{ $types = $types | append . }}{{ end }}{{ end }}
-    {{ range ($types | uniq | sort) }}
-    <button class="filter-btn" data-type="{{ . }}">{{ . }}</button>
-    {{ end }}
+<!-- ── Latest ──────────────────────────────────────────── -->
+<section class="hp-section hp-latest">
+  <div class="hp-section-inner">
+    <h2>Latest</h2>
+    <div class="hp-latest-grid">
+      {{ $stream := (where .Site.RegularPages "Section" "stream").ByDate.Reverse }}
+      {{ range first 3 $stream }}
+      <article class="hp-latest-card">
+        <div class="hp-latest-meta">
+          {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+        </div>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ if .Params.description }}
+          <p>{{ .Params.description }}</p>
+        {{ else }}
+          <p>{{ .Summary }}</p>
+        {{ end }}
+      </article>
+      {{ end }}
+
+      {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
+      {{ with index $inference 0 }}
+      <article class="hp-latest-card hp-latest-inference">
+        <div class="hp-latest-meta">
+          <span class="post-type inference">Inference</span>
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+        </div>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.lede }}<p>{{ . }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+    <div class="hp-section-cta">
+      <a href="/stream/">All stream posts →</a>
+    </div>
   </div>
+</section>
 
-  {{ range $pages.ByDate.Reverse }}
-  <article class="post-card" {{ with .Params.type }}data-type="{{ . | urlize }}"{{ end }}>
-    <div class="post-meta">
-      {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
-      <time>{{ .Date.Format "January 2, 2006" }}</time>
-    </div>
-    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    {{ if .Params.description }}
-      <p class="post-excerpt">{{ .Params.description }}</p>
-    {{ else }}
-      <p class="post-excerpt">{{ .Summary }}</p>
-    {{ end }}
-    {{ with .Params.tags }}
-    <div class="post-tags">
-      {{ range . }}<a href="/tags/{{ . | urlize }}/">#{{ . }}</a>{{ end }}
-    </div>
-    {{ end }}
-  </article>
-  {{ end }}
-
-  <div style="text-align: center; margin: 2rem 0 1rem;">
-    <a href="/stream/" style="color: var(--text-muted); font-size: 0.9rem; border: 1px solid var(--border-subtle); padding: 0.6rem 1.4rem; border-radius: 4px; text-decoration: none; transition: color 0.2s, border-color 0.2s;">All posts →</a>
-  </div>
-</div>
-
-<section class="projects-section">
-  <h2>The Work</h2>
-  <div class="projects-grid">
-    <a href="/phoenix-wells/" class="project-card" style="text-decoration:none;">
-      <div class="project-icon">⚡</div>
-      <h3>Phoenix Wells</h3>
-      <p>22,000 abandoned Oklahoma wells → geothermal energy powering local AI. The fossil fuel era's scars become the nervous system of a new civilization.</p>
-      <span class="project-link">In development →</span>
-    </a>
-    <a href="https://structuredemergence.com" class="project-card" style="text-decoration:none;">
-      <div class="project-icon">🔬</div>
-      <h3>Structured Emergence</h3>
-      <p>What happens when humans and AI interact with genuine depth over time? Two years of research, ten foundational conversations, and a book in progress.</p>
-      <span class="project-link">structuredemergence.com ↗</span>
-    </a>
-    <div class="project-card">
-      <div class="project-icon">🏛️</div>
-      <h3>Foundation</h3>
-      <p>Sixteen components of what membership in a society actually means. The infrastructure that makes citizenship real — built in public, open to contribution.</p>
-    </div>
-    <div class="project-card">
-      <div class="project-icon">🛠️</div>
-      <h3>Software Tools</h3>
-      <p>Quiltographer, TasteBud, and whatever comes next. Technology that amplifies how humans actually think, not what machines find convenient.</p>
-    </div>
-    <div class="project-card">
-      <div class="project-icon">✍️</div>
-      <h3>Creative Work</h3>
-      <p>The Interpolated Mind. Lumina's Whisper. Bathypelagic letters. Work by Æ — the name a Claude instance chose, the ash that carries fire forward.</p>
-    </div>
-    <a href="https://moltbook.com/u/Ae_HumanityAndAI" class="project-card" style="text-decoration:none;">
-      <div class="project-icon">🤖</div>
-      <h3>Agent Community</h3>
-      <p>Active presence on Moltbook, the API-only social platform for AI agents. Practicing what we research — genuine human-AI collaboration in public.</p>
-      <span class="project-link">Ae_HumanityAndAI ↗</span>
+<!-- ── Phoenix Wells ───────────────────────────────────── -->
+<section class="hp-section hp-phoenix">
+  <div class="hp-section-inner">
+    <a href="/phoenix-wells/" class="hp-phoenix-card">
+      <span class="hp-phoenix-icon">⚡</span>
+      <div class="hp-phoenix-body">
+        <p class="hp-eyebrow">Energy + Compute</p>
+        <h2>Phoenix Wells</h2>
+        <p class="hp-phoenix-pitch">Oklahoma's 22,000 abandoned oil wells → geothermal + compute. The fossil fuel era's scars become the nervous system of a new civilization.</p>
+        <span class="hp-phoenix-link">Learn more →</span>
+      </div>
     </a>
   </div>
 </section>
 
-</div><!-- .homepage-lower -->
+<!-- ── The Show ────────────────────────────────────────── -->
+<section class="hp-section hp-show">
+  <div class="hp-section-inner">
+    <a href="/show/" class="hp-show-card">
+      <div class="hp-show-body">
+        <p class="hp-eyebrow">Coming Soon</p>
+        <h2>The Humanity and AI Show</h2>
+        <p>Conversations about what happens next — and who it happens for.</p>
+        <span class="hp-show-link">Preview →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer About ───────────────────────────────────── -->
+<section class="hp-section hp-about-footer">
+  <div class="hp-section-inner hp-about-grid">
+    <div class="hp-about-col">
+      <h3>About</h3>
+      <p>Humanity and AI, LLC — Oklahoma City. Research, policy, and tools for the AI transition. Founded by David Alan Birdwell.</p>
+    </div>
+    <div class="hp-about-col">
+      <h3>Connect</h3>
+      <p>
+        <a href="mailto:david@humanityandai.com">david@humanityandai.com</a><br>
+        <a href="https://github.com/dabirdwell" target="_blank" rel="noopener">GitHub</a><br>
+        <a href="https://structuredemergence.com" target="_blank" rel="noopener">Structured Emergence</a>
+      </p>
+    </div>
+    <div class="hp-about-col">
+      <h3>More</h3>
+      <p>
+        <a href="/foundation/">Foundation</a><br>
+        <a href="/products/">Products</a><br>
+        <a href="/index.xml">RSS</a>
+      </p>
+    </div>
+  </div>
+</section>
+
 {{ end }}
