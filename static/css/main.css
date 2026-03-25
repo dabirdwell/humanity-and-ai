@@ -3677,33 +3677,44 @@ a:hover { color: var(--accent-primary); }
 
 .hp-foundation-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 6px;
-  max-width: 480px;
+  max-width: 600px;
   margin-bottom: 1.5rem;
 }
 
 .hp-fdn-cell {
-  aspect-ratio: 1;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 10px 6px;
   transition: border-color 0.2s, background 0.2s;
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  gap: 2px;
 }
 .hp-fdn-cell:hover {
   border-color: var(--accent-primary);
   background: var(--bg-card-hover);
+  text-decoration: none;
 }
 
 .hp-fdn-num {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: var(--text-muted);
   font-weight: 500;
+}
+.hp-fdn-name {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.2;
 }
 
 .hp-foundation-links {
@@ -3917,7 +3928,7 @@ a:hover { color: var(--accent-primary); }
   .hp-product-domain { font-size: 0.65rem; }
 
   .hp-foundation-grid {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     max-width: 100%;
   }
 
@@ -3942,5 +3953,5 @@ a:hover { color: var(--accent-primary); }
   .hp-product-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .hp-product-card { padding: 0.9rem; }
   .hp-product-status { font-size: 0.58rem; }
-  .hp-foundation-grid { grid-template-columns: repeat(4, 1fr); gap: 5px; }
+  .hp-foundation-grid { grid-template-columns: repeat(2, 1fr); gap: 5px; }
 }
