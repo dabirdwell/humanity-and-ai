@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cortisol Tax — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:680px;margin:0 auto}
+@media(prefers-color-scheme:dark){body{background:#141412;color:#d3d1c7}}
+h1{font-size:22px;font-weight:500;margin:0 0 4px}
+.sub{font-size:14px;color:#888;margin:0 0 16px}
+.ct-body{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.ct-figure{flex:0 0 160px}
+.ct-systems{flex:1;min-width:240px}
+.sys-card{border-radius:0;padding:10px 12px;margin:0 0 6px;border-left:3px solid;transition:all 0.3s}
+.sys-card .name{font-size:13px;font-weight:500;margin:0}
+.sys-card .effect{font-size:12px;margin:2px 0 0;opacity:0.8}
+.sys-card .stat{font-size:11px;margin:4px 0 0;opacity:0.6}
+.ct-slider{display:flex;gap:12px;align-items:center;font-size:13px;color:#888;margin:0 0 14px}
+.ct-slider input{flex:1;accent-color:#534AB7}
+.ct-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 0}
+.ct-stat{background:rgba(0,0,0,0.03);border-radius:10px;padding:10px}
+@media(prefers-color-scheme:dark){.ct-stat{background:rgba(255,255,255,0.04)}}
+.ct-stat .num{font-size:18px;font-weight:500;margin:0}
+.ct-stat .lbl{font-size:11px;color:#888;margin:2px 0 0}
+.note{font-size:12px;color:#999;margin:14px 0 0;line-height:1.6}
+.credit{font-size:11px;color:#666;margin:20px 0 0;text-align:center}
+.credit a{color:#534AB7;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>The cortisol tax</h1>
+<p class="sub">Poverty isn't just economics — it rewires your biology. Slide the stress level to see the cost.</p>
+<div class="ct-slider">
+  <span>Chronic stress level</span>
+  <input type="range" id="stress" min="0" max="100" value="70" oninput="updateStress()">
+  <span id="sv" style="min-width:40px;text-align:right;font-weight:500">70%</span>
+</div>
+<div class="ct-body">
+<div class="ct-figure">
+<svg viewBox="0 0 160 340" width="160" style="display:block">
+  <ellipse cx="80" cy="30" rx="22" ry="26" fill="none" stroke="#888" stroke-width="1" />
+  <line x1="80" y1="56" x2="80" y2="180" stroke="#888" stroke-width="1.5"/>
+  <line x1="80" y1="80" x2="40" y2="140" stroke="#888" stroke-width="1"/>
+  <line x1="80" y1="80" x2="120" y2="140" stroke="#888" stroke-width="1"/>
+  <line x1="80" y1="180" x2="50" y2="300" stroke="#888" stroke-width="1"/>
+  <line x1="80" y1="180" x2="110" y2="300" stroke="#888" stroke-width="1"/>
+  <circle cx="80" cy="25" r="8" id="brain-dot" fill="#E24B4A" opacity="0.5"/>
+  <circle cx="80" cy="110" r="6" id="heart-dot" fill="#D85A30" opacity="0.5"/>
+  <circle cx="80" cy="150" r="5" id="gut-dot" fill="#BA7517" opacity="0.5"/>
+  <circle cx="80" cy="175" r="5" id="immune-dot" fill="#534AB7" opacity="0.5"/>
+  <circle cx="95" cy="90" r="4" id="adrenal-dot" fill="#D4537E" opacity="0.5"/>
+</svg>
+</div>
+<div class="ct-systems" id="systems"></div>
+</div>
+<div class="ct-summary">
+  <div class="ct-stat"><p class="num" id="lifespan" style="color:#E24B4A">-7.2 yrs</p><p class="lbl">Life expectancy impact</p></div>
+  <div class="ct-stat"><p class="num" id="cogcost" style="color:#D85A30">-13 IQ pts</p><p class="lbl">Cognitive bandwidth lost</p></div>
+  <div class="ct-stat"><p class="num" id="healthcost" style="color:#BA7517">$4,800</p><p class="lbl">Annual excess health cost</p></div>
+  <div class="ct-stat"><p class="num" id="kidcost" style="color:#534AB7">2.3x</p><p class="lbl">ACE risk multiplier for children</p></div>
+</div>
+<p class="note">Source: Mani et al. (Science, 2013) on cognitive bandwidth; American Psychological Association on cortisol and chronic stress; CDC Adverse Childhood Experiences study. "Asking millions to overcome biology with willpower alone — like asking someone to outswim a current."</p>
+<div class="credit">Æ — <a href="https://humanityandai.com/foundation/">Foundation</a> · Humanity and AI</div>
+<script>
+const dark=matchMedia('(prefers-color-scheme:dark)').matches;
+const systems=[
+  {name:'Brain',effect:'Prefrontal cortex suppressed. Decision-making, planning, impulse control all degraded.',stat:'13 IQ points of bandwidth consumed by financial stress (Science, 2013)',color:'#E24B4A',dot:'brain-dot'},
+  {name:'Heart',effect:'Elevated blood pressure, inflammation. Chronic fight-or-flight activation.',stat:'40% higher cardiovascular disease risk in lowest income quintile',color:'#D85A30',dot:'heart-dot'},
+  {name:'Digestive',effect:'Cortisol disrupts gut microbiome. Nutrient absorption impaired.',stat:'IBS rates 2x higher in food-insecure populations',color:'#BA7517',dot:'gut-dot'},
+  {name:'Immune',effect:'Chronic inflammation. Wound healing slowed. Vaccine response diminished.',stat:'Telomere shortening equivalent to 7-10 years of additional aging',color:'#534AB7',dot:'immune-dot'},
+  {name:'Endocrine',effect:'Adrenal glands in constant overdrive. Cortisol elevated. Sleep disrupted.',stat:'Poverty-related sleep deprivation costs US economy $411B/year',color:'#D4537E',dot:'adrenal-dot'},
+];
+function updateStress(){
+  const s=+document.getElementById('stress').value;
+  document.getElementById('sv').textContent=s+'%';
+  const intensity=s/100;
+  systems.forEach(sys=>{const dot=document.getElementById(sys.dot);
+    if(dot){dot.setAttribute('opacity',0.15+intensity*0.75);dot.setAttribute('r',String(parseFloat(dot.getAttribute('r')>6?8:4)+intensity*6))}});
+  document.getElementById('lifespan').textContent='-'+(intensity*10.3).toFixed(1)+' yrs';
+  document.getElementById('cogcost').textContent='-'+Math.round(intensity*13)+' IQ pts';
+  document.getElementById('healthcost').textContent='$'+Math.round(intensity*6800).toLocaleString();
+  document.getElementById('kidcost').textContent=(1+intensity*2.1).toFixed(1)+'x';
+  renderSystems(intensity);
+}
+function renderSystems(intensity){
+  const cont=document.getElementById('systems');cont.innerHTML='';
+  systems.forEach(sys=>{const alpha=0.04+intensity*0.1;
+    const card=document.createElement('div');card.className='sys-card';
+    card.style.background=dark?`rgba(255,255,255,${alpha*0.5})`:`rgba(0,0,0,${alpha*0.4})`;
+    card.style.borderLeftColor=sys.color;
+    card.innerHTML=`<p class="name" style="color:${sys.color}">${sys.name}</p><p class="effect">${sys.effect}</p><p class="stat">${sys.stat}</p>`;
+    cont.appendChild(card)});
+}
+updateStress();
+</script></body></html>
