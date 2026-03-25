@@ -98,3 +98,7 @@ We have a framework. We don't have all the answers — and that's deliberate. Fo
 What does "affordable" mean where you live? What models preserve community while providing stability? What do people who've experienced housing insecurity know that no one in a policy office has thought to ask?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Housing? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/22)

@@ -86,3 +86,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 What's broken in your experience? If you've been through a workforce transition — if you've tried the retraining programs and found the gap between what they teach and what the economy needs — that experience is the data we need most. What would you build for the Dennises?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Skills Training? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/29)

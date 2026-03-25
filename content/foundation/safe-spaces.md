@@ -82,3 +82,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 What does safety look like where you live? Where are the gaps? What do survivors know that policymakers don't? If you've tried to access help and hit a wall, that experience is the data we need most.
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Safe Spaces? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/30)

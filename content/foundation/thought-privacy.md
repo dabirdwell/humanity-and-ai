@@ -107,3 +107,7 @@ Seventy-eight percent of employees support state and federal regulation of workp
 This component should scare you — productively. Not because the technology is bad. Because the technology is extraordinary, and we have almost nothing in place to make sure it serves people instead of surveilling them. The last private space is your mind. Whether it stays that way is a decision we're making right now, by action or by default.
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Thought Privacy? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/25)

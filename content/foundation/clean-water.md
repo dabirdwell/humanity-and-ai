@@ -82,3 +82,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 What's in your water right now? Do you know? If you don't, that's the first problem. If you do and nobody's fixing it, that's the second.
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Clean Water? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/26)

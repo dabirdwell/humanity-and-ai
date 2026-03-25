@@ -106,3 +106,7 @@ We have a framework here, not a curriculum. And that's deliberate. Here are dire
 What does the transition from the system we have to the system we need actually look like — without leaving a generation in the gap? What would an AI-assisted classroom mean for a rural school in Seminole? What's working in your community that others should know about?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Education? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/19)

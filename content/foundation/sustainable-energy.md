@@ -113,3 +113,7 @@ We do not head north with the climate flight. We make our stand here. This is th
 We need perspectives from people who work in energy, people who live near its infrastructure, and people who pay the bills. If you know what energy poverty feels like — the thermostat math, the bill dread, the choice between comfort and food — that experience is data no spreadsheet captures. Bring it.
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Sustainable Energy? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/27)

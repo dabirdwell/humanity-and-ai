@@ -113,3 +113,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 What should the transition look like? What models are already working that we should be learning from? What are we getting wrong?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Healthcare? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/20)

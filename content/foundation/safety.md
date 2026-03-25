@@ -90,3 +90,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 What does safety actually look like where you live? Not the brochure version — the real version. What's working? What's been tried and failed? What would you build if the budget currently spent on punishment were available for prevention?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Safety? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/18)

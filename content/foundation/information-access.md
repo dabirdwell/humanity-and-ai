@@ -98,3 +98,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 What does the information landscape look like where you live? Who's covering your school board? What would your community gain from a public broadband co-op? What's the tool you need but can't afford?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Information Access? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/24)

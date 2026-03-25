@@ -78,3 +78,7 @@ What does education look like where you are? What's working? What's been tried a
 How much could we do, if we raised an entire generation free from so many of the constraints and misfortunes that hinder and suppress our society's potential today?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Accessible Education? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/33)

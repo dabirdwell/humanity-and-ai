@@ -96,3 +96,7 @@ We have a framework. We don't have all the answers — and that's deliberate. Fo
 What's broken in your experience? What works? What would you build if you could start from scratch? Therapists, addiction counselors, people in recovery, and especially people who've tried to access mental health care and hit a wall — your experience is the data no policy paper can replace.
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Mental Health? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/21)

@@ -112,3 +112,7 @@ What does economic security unlock? What are we getting wrong? What do you know 
 Foundation is a coherent philosophy that delivers. And this is where it comes together.
 
 This is citizen-developed work. This is one of sixteen components — the one that connects to all the others. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Universal Basic Income? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/32)

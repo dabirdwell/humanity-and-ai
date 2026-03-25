@@ -72,3 +72,7 @@ People who live where there's no bus. People who've missed medical appointments 
 What does mobility mean where you live? What opportunity did you lose because you couldn't get there? What do you know about rural transportation that no one in a policy office has thought to ask?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Transportation? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/28)

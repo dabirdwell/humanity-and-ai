@@ -86,3 +86,7 @@ We're not prescribing what people eat. We're not imagining government meal plans
 What's working in your community that others should know about? Where are the food deserts near you, and what would it take to turn them into food sources? What would universal school meals change for the kids in your life?
 
 This is citizen-developed work. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Food? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/23)

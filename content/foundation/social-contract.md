@@ -117,3 +117,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 What would a social contract that actually worked for you look like? What would you be willing to contribute — not just in taxes, but in time, in attention, in civic participation — if you believed the system was working for you? What's the version of this deal that earns your trust back?
 
 This is citizen-developed work. The entire purpose of building Foundation this way is that you are part of the renegotiation. This is one of sixteen components. [Explore the full framework →](/foundation/)
+
+## Join the Conversation
+
+Have ideas about Social Contract? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/31)
