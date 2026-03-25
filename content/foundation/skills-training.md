@@ -13,19 +13,23 @@ aliases:
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/12"
 ---
 
+Think about the thing you're good at. Not a credential — the actual thing. The skill that took years to develop, the judgment that comes from doing something long enough that you can feel when it's right and when it's off. Maybe it's reading a room. Maybe it's diagnosing a problem before the diagnostic tool catches it. Maybe it's the thing you do that nobody taught you in school because it can't really be taught — it has to be built, slowly, through repetition and failure and paying attention.
+
+Now imagine someone tells you it's worthless. Not because you got worse at it. Because a machine got good enough at the measurable parts that the system can't see your value anymore.
+
 Dennis spent 24 years as a claims adjuster in Tulsa. He was good at it — built a career reading people, understanding context, making judgment calls that software couldn't. Then his company deployed an AI system that handled 70 percent of standard claims without human review. Dennis was "redeployed" to handle edge cases. Eighteen months later, there weren't enough edge cases to justify his position.
 
 He's 51. He's got a mortgage, two kids in high school, and 24 years of domain knowledge that his industry just told him is worthless. The retraining programs in his area are designed for people twenty years younger, teach coding skills he could learn but wouldn't compete on, and lead to jobs starting at $14 an hour. The workforce development office gave him a brochure.
 
 *Dennis is not one person. He is a pattern.* He's several million people, arriving at the same cliff at different speeds. And the system that was supposed to catch them was built for a world where industries changed slowly enough that a worker could see it coming and adjust. That world is gone.
 
-Foundation is built on a simple premise: there is a minimum set of conditions people need to thrive, and a society wealthy enough to provide them has no excuse not to. Skills training is one of [sixteen components](/foundation/) in this framework — and it addresses the hardest question of the AI transition: what do we actually prepare people *for* when machines can do an increasing share of cognitive and physical labor?
+Foundation is built on a simple premise: there is a minimum set of conditions people need to thrive, and a society wealthy enough to provide them has no excuse not to. Skills training is one of [sixteen components](/foundation/) in this framework — and it addresses the hardest question of the AI transition: what do we actually prepare people *for* when AI tools can handle an increasing share of cognitive and physical labor?
 
 ## The Numbers That Should Be on Every School Board's Wall
 
 Andrej Karpathy — one of the people who helped build modern AI — recently mapped every major US job category by its exposure to AI transformation. The average score across the entire economy: 5.3 out of 10. That means the typical American job is already more than halfway exposed to significant AI disruption.
 
-But the distribution is what should alarm you. Software engineers — the career path that guidance counselors across America have been steering kids toward for twenty years — scored 8 to 9. Accountants, paralegals, radiologists, claims adjusters like Dennis: all in the high-exposure range. The jobs most vulnerable to AI aren't the ones we feared — factory floors, truck routes, warehouse lines. They're knowledge-economy jobs. The ones we told an entire generation to go into debt for. The ones our current [education](/foundation/education/) system is *still* optimized to produce workers for.
+But the distribution is what should alarm you. Software engineers — the career path that guidance counselors across America have been steering kids toward for twenty years — scored 8 to 9. Accountants, paralegals, radiologists, claims adjusters like Dennis: all in the high-exposure range. The jobs most vulnerable to AI transformation aren't the ones we feared — factory floors, truck routes, warehouse lines. They're knowledge-economy jobs. The ones we told an entire generation to go into debt for. The ones our current [education](/foundation/education/) system is *still* optimized to produce workers for.
 
 The World Economic Forum's 2025 Future of Jobs report estimates that 83 million jobs globally will be displaced in the next five years, while 69 million new ones are created. That's a net loss of 14 million — but the real problem isn't the net number. It's that the 83 million disappearing jobs and the 69 million emerging ones require fundamentally different skills. The people losing the jobs are not the people who can walk into the new ones. Not without massive, sustained, well-funded retraining infrastructure that does not currently exist.
 
@@ -39,7 +43,7 @@ The state's workforce development system runs primarily through Oklahoma Works a
 
 And the numbers on the ground: Oklahoma's labor force participation rate lags the national average. Median household income is roughly $59,000 — well below the national median of $80,000. Over 15 percent of Oklahomans live below the poverty line. These aren't people with a cushion. They can't afford to stop working for two years to retrain. They can't absorb a pay cut from $25 an hour to $14 while they learn a new stack. The retraining has to meet them where they are — financially, geographically, and in terms of the skills they already have.
 
-Dennis's 24 years of reading people, understanding context, and making judgment calls aren't worthless. They're the skills that AI can't replicate — complex ethical reasoning, genuine empathy, judgment in ambiguous situations. The system just doesn't know how to value them, because it was built to value the tasks that machines are about to do better.
+Dennis's 24 years of reading people, understanding context, and making judgment calls aren't worthless. They're the skills that AI tools can't replicate — complex ethical reasoning, genuine empathy, judgment in ambiguous situations. They're the human capacities that supervise and guide the technology, not the other way around. The system just doesn't know how to value them, because it was built to value the tasks that machines are about to handle faster.
 
 ## What This Does to a Person
 
@@ -63,9 +67,9 @@ That means:
 
 Lifelong learning accounts — every citizen gets resources they can use at any age, at any accredited program, for any skill. No expiration. No means testing. If Karpathy's right that the average job is at 5.3 out of 10 AI exposure, this isn't a perk. It's survival infrastructure for an economy that will never stop reshaping itself.
 
-AI-paired skill development — instead of discarding what Dennis knows and starting over, pair experienced workers with AI tools that amplify their existing judgment and domain knowledge. Dennis's 24 years of context aren't obsolete. They're the foundation that AI tools extend. The claims adjusting might be automated, but the ability to read a situation, assess risk, and make nuanced decisions has applications across dozens of fields — if the system is designed to translate rather than discard.
+AI-paired skill development — instead of discarding what Dennis knows and starting over, pair experienced workers with AI tools that support and amplify their existing judgment and domain knowledge. Dennis's 24 years of context aren't obsolete. They're the foundation that AI tools extend. The claims adjusting might be automated, but the ability to read a situation, assess risk, and make nuanced decisions has applications across dozens of fields — if the system is designed to translate rather than discard. The human decides. The AI assists. That's the right relationship.
 
-And it means training for the skills that actually matter now. Not just technical skills — though those matter — but the capacities that hold a society together and that AI can't replace: ethical reasoning, conflict resolution, mentorship, care work, community organizing, creative synthesis, civic participation. We systematically undervalue and underfund training in exactly these areas while over-investing in skills that AI is about to commoditize. That has to reverse.
+And it means training for the skills that actually matter now. Not just technical skills — though those matter — but the capacities that hold a society together and that AI can't replace: ethical reasoning, conflict resolution, mentorship, care work, community organizing, creative synthesis, civic participation. These are the human skills that guide how AI tools get used, and by whom, and for what purpose. We systematically undervalue and underfund training in exactly these areas while over-investing in skills that AI is about to commoditize. That has to reverse.
 
 ## What We Need From You
 
@@ -73,11 +77,11 @@ Those who say the market will handle workforce transition are the same ones whos
 
 We have a framework. We don't have all the answers — and that's deliberate. Here are directions we think matter. Push back on them, extend them, or bring your own:
 
-- **AI-paired apprenticeships, not replacement.** Instead of discarding Dennis, pair experienced workers with AI tools that amplify their judgment and domain knowledge. The 24 years of context Dennis built aren't worthless — they're the thing AI can't replicate. Build systems that translate that expertise into new fields, instead of systems that throw it away. What would it look like if every displaced worker had an AI co-pilot that helped them carry their knowledge forward?
+- **AI-paired apprenticeships, not replacement.** Instead of discarding Dennis, pair experienced workers with AI tools that help them carry their knowledge forward. The 24 years of context Dennis built aren't worthless — they're the thing AI can't replicate. The human supervises, decides, and guides. The AI assists, surfaces options, and handles the parts that used to be rote. Build systems that translate expertise into new fields, instead of systems that throw it away. What would it look like if every displaced worker had an AI assistant that helped them apply their judgment in a new domain?
 
-- **Portable skills credentials.** A system where skills are verified and transferable — not locked to one employer, one certification body, or one state licensing board. Your demonstrated abilities follow you. Employers see what you can do, not where you went to school or what your last job title was. What skills do you have that no credential captures?
+- **Portable skills credentials.** A system where skills are verified and transferable — not locked to one employer, one certification body, or one state licensing board. Your demonstrated abilities follow you. Employers see what you can do, not where you went to school or what your last job title was. AI tools can help assess and document skills that don't fit in traditional credential boxes — but the skills themselves are yours, and so is the credential. What skills do you have that no credential captures?
 
-- **Civic reasoning as workforce infrastructure.** Logical reasoning, argument construction, information evaluation, and collaborative problem-solving as core professional skills — not electives. A population that can't evaluate arguments can't govern itself, and self-governance is the whole point. And a workforce that can think clearly about complexity is a workforce that adapts, instead of one that freezes.
+- **Civic reasoning as workforce infrastructure.** Logical reasoning, argument construction, information evaluation, and collaborative problem-solving as core professional skills — not electives. A population that can't evaluate arguments can't govern itself, and self-governance is the whole point. And a workforce that can think clearly about complexity is a workforce that adapts, instead of one that freezes. These are the human capacities that determine whether AI tools get used well or badly.
 
 What's broken in your experience? If you've been through a workforce transition — if you've tried the retraining programs and found the gap between what they teach and what the economy needs — that experience is the data we need most. What would you build for the Dennises?
 

@@ -13,11 +13,17 @@ aliases:
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/8"
 ---
 
-The ideal use for AI is as a democratizing interface for the collection of all human knowledge. It has the ability, if made available freely, to dissolve all gatekeeping and economic barriers to knowledge and creativity. That's the possibility. Here's the reality.
+Think about the last time you needed to know something that mattered — not trivia, not entertainment, but something that would change a decision. Maybe it was a diagnosis you didn't understand, or a clause in a lease, or whether your kid's school was actually teaching what it said it was teaching. You probably reached for a screen. And it was probably there.
 
-*Jaylen is not one person. He is a pattern.* He's a junior in a small town outside McAlester, Oklahoma. He's trying to apply to college — first in his family to try. The school counselor covers three campuses and sees him twice a year. His family's satellite internet drops when it rains. ChatGPT, the AI that tutors students in suburban Edmond, costs $20 a month — about what his mother spends on gas to get to work each week. Jaylen writes his college essay on a phone, in the parking lot of the public library, using the Wi-Fi that reaches the lot after the building closes at 6.
+Now imagine it wasn't. Imagine the screen couldn't connect, or the answer was behind a paywall, or the local paper that used to cover your school board closed three years ago and nobody replaced it. Imagine the only information reaching you was whatever the algorithm decided would keep you scrolling longest.
 
-In Edmond, fifteen miles from Oklahoma City, a high school junior is getting personalized essay coaching, SAT prep feedback, and answers to chemistry questions at 11 PM. The schools are 90 miles and one subscription tier apart. One student has the tools that are rapidly becoming the infrastructure of knowledge itself. The other has a phone, a parking lot, and a signal that cuts out in the rain.
+For millions of Americans, that isn't imagination. That's Tuesday.
+
+*Jaylen is not one person. He is a pattern.* He's a junior in a small town outside McAlester, Oklahoma. He's trying to apply to college — first in his family to try. The school counselor covers three campuses and sees him twice a year. His family's satellite internet drops when it rains. The AI tools that tutor students in suburban Edmond cost $20 a month — about what his mother spends on gas to get to work each week. Jaylen writes his college essay on a phone, in the parking lot of the public library, using the Wi-Fi that reaches the lot after the building closes at 6.
+
+In Edmond, fifteen miles from Oklahoma City, a high school junior is getting personalized essay coaching, SAT prep feedback, and answers to chemistry questions at 11 PM. The schools are 90 miles and one subscription tier apart. One student has access to tools that are rapidly becoming the infrastructure of knowledge itself. The other has a phone, a parking lot, and a signal that cuts out in the rain.
+
+The ideal use for AI is as a democratizing interface for the collection of all human knowledge. It has the ability, if made freely available, to dissolve every gatekeeper and every economic barrier between a person and what they need to know. That's the possibility. Jaylen is the reality.
 
 Foundation is built on a simple premise: there is a minimum set of conditions people need to thrive, and a society wealthy enough to provide them has no excuse not to. Access to reliable information and AI tools is one of [sixteen components](/foundation/) — because in 2026, information access isn't a luxury. It's the prerequisite for every other right in this framework.
 
@@ -37,17 +43,15 @@ And then there's the homework gap — 17 percent of American children can't comp
 
 So that's the connectivity crisis — the pipes. Now look at what's flowing through them, and who controls it.
 
-We are living through the most severe information crisis in modern history. Not because information is scarce — because it's overwhelming, manipulated, and monetized. Algorithms optimize for engagement, not truth. Deepfakes are becoming indistinguishable from reality. And the tools to navigate this landscape are being locked behind paywalls.
+Things are already beginning to get confusing, aren't they? We are living through the most severe information crisis in modern history. Not because information is scarce — because it's overwhelming, manipulated, and monetized. Algorithms optimize for engagement, not truth. Deepfakes are becoming indistinguishable from reality. And the tools to navigate this landscape are being locked behind paywalls.
 
 Two hundred and thirteen counties in America are now news deserts — communities with no local news coverage at all. Fifty million Americans have limited or no access to local news. Nearly 40 percent of the country's newspapers have closed in the past two decades — 136 in the past year alone, more than two per week. The people who covered your school board, your city council, your local police department — they're gone. And 80 percent of news deserts are in rural counties, the same places where broadband is weakest.
 
 When local news disappears, two things fill the void: national partisan media and social media algorithms. Neither one tells you what's happening on your street. Neither one is accountable to your community. And neither one is optimized for anything except keeping your attention — not informing it.
 
-Meanwhile, AI is rapidly becoming the interface through which people access knowledge, make decisions, and interact with institutions. The best medical AI, the best legal reasoning, the best educational tools are premium products — subscription-only, behind corporate walls. If that's how it stays, we've built a new class system. Mediated communication holds us hostage. The owners of these systems decide what we see and when we see it, and the frames in which it is presented to us.
+Meanwhile, AI is rapidly becoming the interface through which people access knowledge, make decisions, and interact with institutions. The best medical AI tools, the best legal reasoning assistants, the best educational platforms are premium products — subscription-only, behind corporate walls. If that's how it stays, we've built a new class system. Mediated communication holds us hostage. The owners of these systems decide what we see and when we see it, and the frames in which it is presented to us.
 
 ## What's Happening to the Infrastructure
-
-Here's where the sprint says: "use web search for current statistics." Here's what the search found.
 
 The BEAD program — $42.45 billion in federal broadband funding from the Infrastructure Investment and Jobs Act — has not deployed a single dollar for actual construction as of early 2026. Twenty-six state spending plans have been approved, but the administration restructured the program in June 2025, removing fiber preference requirements and mandating lowest-cost technology. States had to redo their plans.
 
@@ -73,11 +77,11 @@ The digital divide isn't just about who has fast internet. It's about who gets t
 
 Foundation says access to valid information and beneficial AI is a citizenship right. Not access to any particular platform or product — a guarantee that every citizen can access high-quality, unmanipulated information and AI tools that serve their interests rather than extracting from them.
 
-That means a publicly owned AI model, maintained to the highest standards, available to every citizen. Not as competition to private AI — as infrastructure. The way public roads don't compete with private cars. You always have a baseline. It's always yours. It doesn't sell your data or manipulate your attention. When private AI makes a medical recommendation, a citizen can verify against the public model. When algorithmic systems inform decisions about credit, employment, or justice, the public model provides a transparency baseline.
+That means a publicly owned AI model, maintained to the highest standards, available to every citizen. Not as competition to private AI — as infrastructure. The way public roads don't compete with private cars. You always have a baseline. It's always yours. It doesn't sell your data or manipulate your attention. When private AI tools help with a medical question, a citizen can check the answer against the public model. When algorithmic systems support decisions about credit, employment, or justice, the public model provides a transparency baseline. Humans decide. The tools serve.
 
 This isn't about government-controlled information. It's not a truth ministry. It's about ensuring the infrastructure of information — the pipes, not the content — serves the public interest. Just as we regulate water quality without controlling what people drink, we can ensure information infrastructure quality without controlling what people think.
 
-And access without literacy is just exposure. Foundation's [education](/foundation/education/) components include information literacy as a core skill — the ability to evaluate sources, detect manipulation, and engage with AI tools as informed citizens rather than passive consumers. Stop calling yourself a consumer. You are a citizen.
+And access without literacy is just exposure. Foundation's [education](/foundation/education/) components include information literacy as a core skill — the ability to evaluate sources, detect manipulation, and engage with AI tools as informed citizens who guide the technology rather than get guided by it. Stop calling yourself a consumer. You are a citizen.
 
 ## What We Need From You
 
@@ -85,11 +89,11 @@ Those who say the market will close the digital divide are the same ones whose m
 
 We have a framework. We don't have all the answers — and that's deliberate. Here are directions we think matter. Push back on them, extend them, or bring your own:
 
-- **A publicly owned AI model as civic infrastructure.** Maintained to the highest standards, available to every citizen, free. Not competing with private AI — serving as baseline. The way public roads don't compete with private cars. You always have a floor. What would you use a free, private, publicly accountable AI tool for? What would it change for your family?
+- **A publicly owned AI model as civic infrastructure.** Maintained to the highest standards, available to every citizen, free. Not competing with private AI — serving as the floor. The way public roads don't compete with private cars. You always have a baseline, and it's always yours. Citizens decide what to ask it. Citizens evaluate what it returns. The AI assists — you supervise. What would you use a free, private, publicly accountable AI tool for? What would it change for your family?
 
-- **Community broadband cooperatives.** Municipally or cooperatively owned internet, like the electrical co-ops that brought power to rural America in the 1930s. Over 900 communities already run their own broadband. What would it take to start one in your town? What's standing in the way — state law, incumbent lobbying, capital, all three?
+- **Community broadband cooperatives.** Municipally or cooperatively owned internet, like the electrical co-ops that brought power to rural America in the 1930s. Over 900 communities already run their own broadband. The organizational model is proven. What would it take to start one in your town? What's standing in the way — state law, incumbent lobbying, capital, all three?
 
-- **AI literacy as public education.** Not coding classes — critical thinking about how algorithms shape what you see, how to evaluate AI-generated content, and how to use these tools as an informed citizen rather than a passive data source. This should be in every school and every library. What does information literacy look like for someone who's 65? For someone who's 12?
+- **AI literacy as public education.** Not coding classes — critical thinking about how algorithms shape what you see, how to evaluate AI-generated content, and how to use these tools as a citizen who guides the technology, not the other way around. AI can help surface information, flag inconsistencies, and organize what you're learning — but the judgment about what matters and what's true stays with you. This should be in every school and every library. What does information literacy look like for someone who's 65? For someone who's 12?
 
 What does the information landscape look like where you live? Who's covering your school board? What would your community gain from a public broadband co-op? What's the tool you need but can't afford?
 

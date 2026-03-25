@@ -17,6 +17,8 @@ aliases:
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/7"
 ---
 
+Think about the last time you opened your utility bill and did math you shouldn't have to do. Not budget math — survival math. The kind where you're weighing the thermostat against the grocery list, the space heater against the copay, the gas tank against the rent. Most Americans have done that calculation at least once. For one in seven families, it happens every month.
+
 Loretta lives outside Seminole, Oklahoma. Her family has lived in oil country for three generations — her grandfather worked the fields, her uncle drove tankers. The energy economy built this region. It also left it. The wells that made millionaires in Houston left behind methane leaks, contaminated groundwater, and communities whose tax base collapsed when the boom moved on.
 
 She heats with a propane tank she refills when she can afford it. In winter she keeps the thermostat at 62. Her granddaughter has asthma — one of the respiratory conditions researchers have begun linking to proximity to orphaned well emissions. Loretta doesn't need a green energy lecture. She needs a utility bill she can pay without choosing between warmth and dinner.
@@ -25,7 +27,7 @@ She heats with a propane tank she refills when she can afford it. In winter she 
 
 And the disparity doesn't land evenly. Hispanic households pay 42 percent more than the national average for combined energy costs. Black households pay 10 percent more. The people who got the least benefit from the fossil fuel boom carry the highest cost of its infrastructure.
 
-This is what energy poverty looks like in a state that powers the country. And it's what makes the energy transition an opportunity rather than just a sacrifice — if we design it that way.
+This is what energy poverty looks like in a state that powers the country. And it's what makes the energy transition not just a moral obligation but an *opportunity* — if we design it that way.
 
 Foundation is built on the premise that there is a minimum set of conditions people need to thrive. Sustainable energy is one of [sixteen components](/foundation/), and in Oklahoma it means something specific: the same land, the same skills, the same ingenuity that built the fossil fuel industry can build what comes next. If we choose to.
 
@@ -86,7 +88,7 @@ Oklahoma has every advantage: the wind, the geological knowledge, the skilled wo
 
 Here's the complication AI advocates don't talk about enough: AI is extraordinarily energy-hungry. Training large models consumes enormous power. Data centers are proliferating. If we build the AI future on fossil fuels, we've traded one crisis for another.
 
-This is why Phoenix Wells matters beyond Oklahoma. It's a model for powering AI computing with geothermal energy from the very holes the old economy left behind. Sustainable energy isn't just environmentally necessary — it's the only way to scale AI infrastructure without accelerating the problems we're trying to solve.
+This is why Phoenix Wells matters beyond Oklahoma. It's a model for powering AI computing with geothermal energy from the very holes the old economy left behind. AI can help optimize these microgrids, predict maintenance windows, and balance generation across a community — but the ownership stays local, and the decisions about where that power goes stay with the people who live there. Sustainable energy isn't just environmentally necessary — it's the only way to scale AI infrastructure without accelerating the problems we're trying to solve.
 
 ## What This Does to a Person — And to Everything Else
 
@@ -106,7 +108,7 @@ We do not head north with the climate flight. We make our stand here. This is th
 
 - **Tribal energy sovereignty** — tribal nations as first adopters of full-stack community energy, leapfrogging the broken centralized model entirely. The geological knowledge and the sovereign authority already exist. Over 90 percent of persistent poverty counties are already served by cooperatives — the organizational model is proven. What would it take to extend this to tribal-owned renewable generation?
 
-- **AI-optimized microgrids** — distributed energy networks managed by AI, balancing generation and demand in real time across a community. When one house generates excess solar, the grid routes it where it's needed automatically. This is the [transportation](/foundation/transportation/) and [housing](/foundation/housing/) connection: microgrids power the EV charging networks that connect communities and the homes that shelter them. What does this look like in a town of 5,000?
+- **AI-assisted microgrids** — distributed energy networks where AI helps balance generation and demand in real time across a community, with humans supervising the system and deciding priorities. When one house generates excess solar, the grid routes it where it's needed automatically. Communities decide the rules — the AI handles the math. This is the [transportation](/foundation/transportation/) and [housing](/foundation/housing/) connection: microgrids power the EV charging networks that connect communities and the homes that shelter them. What does this look like in a town of 5,000?
 
 We need perspectives from people who work in energy, people who live near its infrastructure, and people who pay the bills. If you know what energy poverty feels like — the thermostat math, the bill dread, the choice between comfort and food — that experience is data no spreadsheet captures. Bring it.
 
