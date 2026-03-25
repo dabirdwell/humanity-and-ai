@@ -65,6 +65,8 @@ It means addressing the root causes, not just the immediate crisis. Economic dep
 
 And it means rebuilding the community infrastructure that's been hollowed out — the places where people gather not to consume but to connect. Community resilience hubs. Intergenerational spaces. Support networks that exist in physical space, not just on a screen. The 71-year-old who needs a ride to dialysis and the 26-year-old who needs mentorship might be each other's answer — but only if there's a place where they can meet.
 
+And it means being honest about what technology changes. AI can help — matching survivors with available shelter beds in real time, flagging patterns of escalation before they become emergencies, connecting isolated elders with support services they didn't know existed. AI-assisted coordination tools can help community resilience hubs share capacity across a region, so Maria isn't told the nearest opening is 90 miles away when there's a bed 12 miles down the road. But these tools only work when the people they serve help design them — when survivors, advocates, and communities guide what gets built and how it's used. Humans decide what safety means. Technology helps deliver it. Surveillance dressed as care isn't safety. It's control with a softer name.
+
 ## What We Need From You
 
 Those who mock the concept of safe spaces have never needed one. Or they have, and the need was met so seamlessly they didn't notice. Safety is invisible when you have it. It's everything when you don't.
