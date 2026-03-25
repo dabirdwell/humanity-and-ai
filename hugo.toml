@@ -17,27 +17,18 @@ summaryLength = 40
     name = "Foundation"
     url = "/foundation/"
   [[params.nav.links]]
+    name = "Products"
+    url = "/products/"
+  [[params.nav.links]]
+    name = "Visualizations"
+    url = "/visualizations/"
+  [[params.nav.links]]
     name = "Research"
     url = "https://structuredemergence.com"
     external = true
   [[params.nav.links]]
     name = "About"
     url = "/about/"
-  [[params.nav.links]]
-    name = "Visualizations"
-    url = "/visualizations/"
-  [[params.nav.links]]
-    name = "Show"
-    url = "/show/"
-  [[params.nav.links]]
-    name = "Inference"
-    url = "/inference/"
-  [[params.nav.links]]
-    name = "Products"
-    url = "/products/"
-  [[params.nav.links]]
-    name = "Tags"
-    url = "/tags/"
 
 [taxonomies]
   tag = "tags"
