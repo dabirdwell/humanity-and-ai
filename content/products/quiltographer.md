@@ -1,6 +1,6 @@
 ---
 title: "Quiltographer"
-description: "A pattern design tool built for the way quilters actually think — in fabric, in color relationships, in the math that hides inside beauty."
+description: "AI-powered quilting pattern reader — parses PDFs into step-by-step instructions."
 weight: 4
 status: "beta"
 tagline: "Design the way you think."
@@ -12,22 +12,20 @@ icon: "🧵"
 
 ## What Is Quiltographer?
 
-Quiltographer is a pattern design tool that starts from how quilters actually think. It understands fabric as material with drape and grain. It knows that a quarter-inch seam allowance isn't optional. It treats color the way quilters treat color — not as hex codes but as relationships that shift under different lighting.
+Quiltographer is an AI-powered quilting pattern reader. Feed it a pattern PDF and it parses the document into clear, step-by-step instructions — extracting cutting lists, piecing sequences, fabric requirements, and assembly order from the dense formatting that most pattern designers use.
 
-Most quilting software was built by software people, not quilt people. The tools force quilters to think in grids and coordinates when they're actually thinking in relationships — how this fabric plays against that one, how a color shifts meaning when its neighbor changes.
+## Key Features
 
-## How It Works
-
-Design in the language of quilting. Choose fabrics, not fill colors. See how patterns interact with grain direction. Test color palettes under warm and cool lighting. Get precise cutting lists and yardage calculations that account for real-world seam allowances and fabric width.
-
-The AI layer suggests complementary fabrics, identifies potential construction challenges before you cut, and learns your aesthetic preferences over time — not to design for you, but to help you see options you might have missed.
+- **PDF pattern parsing** — Upload any quilting pattern PDF. Quiltographer's AI reads the document structure, identifies instructions, measurements, and diagrams, and reorganizes them into a guided workflow.
+- **Step-by-step mode** — Work through your pattern one step at a time with clear instructions, visual references, and progress tracking. No more flipping back and forth through a 20-page PDF.
+- **Smart cutting lists** — Extracts and consolidates all cutting instructions, accounting for seam allowances and fabric width. Calculates yardage with waste minimization.
 
 ## Why It Exists
 
-This is one of the software projects under Humanity and AI — not because quilting is an AI problem, but because building tools that respect how humans actually think is the entire thesis. Technology should amplify human intelligence, not flatten it into something machines find convenient.
+Most quilting software was built by software people, not quilt people. Quiltographer starts from how quilters actually work — pattern in hand, fabric on the table, trying to figure out what to cut next. The AI serves the quilter's existing workflow instead of replacing it.
 
 ## Status
 
-**Beta.** Core features available, actively adding capabilities based on quilter feedback.
+**Beta.** Core PDF parsing and step-by-step mode available. Actively improving based on quilter feedback.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

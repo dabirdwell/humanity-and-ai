@@ -6,4 +6,4 @@ layout: "list"
 
 Brain Mastery is the product line of [Humanity and AI LLC](/about/). Every app starts from the same principle: technology should work alongside how humans actually think, not flatten human intelligence into something machines find convenient.
 
-These aren't productivity tools. They're mastery tools — software that helps you see deeper into domains you care about, guided by AI that teaches rather than replaces.
+These aren't productivity tools. They're mastery tools — built to deepen how you read, reason, cook, create, and participate.

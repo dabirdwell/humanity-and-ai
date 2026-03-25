@@ -1,8 +1,8 @@
 ---
 title: "Dojo"
-description: "Structured critical thinking training — learn to spot fallacies, evaluate evidence, and argue with precision."
+description: "Logical reasoning training — spot fallacies, evaluate sources, and argue with precision."
 weight: 2
-status: "coming-soon"
+status: "beta"
 tagline: "Think sharper."
 domain: "Critical Thinking"
 link: "mailto:david@humanityandai.com?subject=Dojo%20Waitlist"
@@ -12,22 +12,21 @@ icon: "🥋"
 
 ## What Is Dojo?
 
-Dojo is a critical thinking training ground. It teaches you to identify logical fallacies, evaluate evidence quality, construct sound arguments, and recognize when someone — or something — is trying to manipulate your reasoning.
+Dojo is a critical thinking training ground with four game modes that teach you to identify manipulation, evaluate evidence, and build stronger arguments. Not flashcards — a sparring partner that adapts to your skill level.
 
-Not a quiz app. A sparring partner. Dojo presents real-world scenarios — news articles, political speeches, marketing claims, scientific abstracts — and trains you to see the structure underneath the rhetoric.
+## Game Modes
 
-## How It Works
+- **Fallacy Flash** — Real-world arguments appear on screen. Identify the logical fallacy before the timer runs out. Difficulty escalates from obvious (ad hominem, straw man) to subtle (framing effects, statistical misrepresentation).
+- **Source Check** — Evaluate a claim and its supporting evidence. Is the source credible? Is the data being used correctly? Does the conclusion follow from the evidence?
+- **Steel Man** — The hardest mode. Take an argument you disagree with and construct the strongest possible version of it. The AI evaluates whether you've genuinely engaged with the opposing view.
+- **Daily Brief** — A curated set of real headlines and claims from the past 24 hours. Apply your skills to what's actually happening in the world.
 
-Adaptive difficulty. Dojo starts where you are and escalates as your skills develop. Early rounds teach pattern recognition: ad hominem, false dichotomy, appeal to authority. Later rounds get harder — subtle framing effects, statistical misrepresentation, emotional manipulation disguised as logic.
+## Progression
 
-The AI doesn't just grade you. It explains *why* an argument fails, shows you how it could be strengthened, and challenges you to construct better versions. You learn by doing, not by memorizing a list of fallacy names.
-
-## Why It Exists
-
-The AI transition is flooding every channel with persuasive, well-structured content that may or may not be true. The defense isn't media literacy posters. It's practiced skill in recognizing manipulation — the kind of skill that takes reps, feedback, and escalating challenge. That's what Dojo provides.
+Belt system from white to black. Each belt requires demonstrated competence across all four modes. The AI tracks not just accuracy but reasoning quality — getting the right answer for the wrong reason doesn't count.
 
 ## Status
 
-**Coming soon.** In active development.
+**Beta.** Core game modes functional, belt progression in testing.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

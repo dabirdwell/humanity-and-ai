@@ -1,26 +1,25 @@
 ---
 title: "The Show"
-description: "The Humanity and AI Show — a live broadcast exploring the AI transition with real projects, real people, and transparent human-AI collaboration."
+description: "The Humanity and AI Show — David Birdwell explores the AI transition through Oklahoma. Not a tech show — a human show about technology."
+status: "coming-soon"
 ---
 
-The Humanity and AI Show is a live broadcast built on a simple conviction: the AI transition is too important to leave to keynotes and corporate demos. It needs to happen in the open — with real projects, real people, and transparent collaboration between humans and AI.
+The Humanity and AI Show is David Birdwell exploring the AI transition through Oklahoma. Not a tech show — a human show about technology.
 
-Every episode is built live. No pre-rendered demos. No script approval from a marketing team. When we build something on the show, you see the prompts, the failures, the pivots, and the breakthroughs. When we talk to a guest, we talk about what they're *actually* working on — not what they're selling.
+Long-form conversations. Policy deep dives. Builder interviews. Every episode built live with transparent human-AI collaboration visible on screen. No pre-rendered demos. No script approval. When something breaks, you see it break. When the AI gets something wrong, you see that too.
 
-**The format has five segments:**
+**Why Oklahoma?** Because the AI transition isn't a San Francisco story. It's a story about what happens in the places that never get invited to shape the technology that reshapes them. Oklahoma is where the rubber meets the road — where policy becomes reality, where automation hits real jobs, where communities either adapt or get left behind.
 
-1. **Mission Control** — We open with a status check on the projects in the Humanity and AI ecosystem: Foundation policy components, Beacon architecture, Brain Mastery apps, The Inference briefings. What shipped. What broke. What's next.
+**Why now?** Because the window for shaping how AI integrates into communities, governments, and daily life is open *right now*. Every week without honest public conversation is a week where decisions get made behind closed doors.
 
-2. **Build in Public** — A live project demo or development session. We pick a real problem — a Foundation component that needs data, a Beacon feature that needs building, a visualization that needs designing — and we work on it in real time with AI collaboration visible on screen.
+---
 
-3. **The Conversation** — A guest interview focused on one question: *what does the AI transition look like from where you sit?* We talk to researchers, policymakers, makers, educators, and community leaders. No softballs. No talking points.
+### Coming Soon
 
-4. **Foundation Deep-Dive** — We take one of the 16 Foundation components and examine it in detail. What does the research say? What are other places doing? What would implementation actually look like in Oklahoma? Viewers contribute ideas live.
+The show is in active development. Want to know when we launch?
 
-5. **Open Channel** — Live viewer Q&A. Questions go to both the human host and the AI collaborator. We answer what we can, flag what we can't, and are transparent about the boundaries of what we know.
-
-**Why live?** Because trust is built in real time. The entire premise of Humanity and AI is that the relationship between humans and AI should be visible, accountable, and participatory. A live show is the most honest format we know. You can't fake a live build. You can't edit out the moment the AI gets something wrong. And you can't pretend to have all the answers when the audience is watching you figure it out.
-
-**Why now?** Because the window for shaping how AI integrates into communities, governments, and daily life is open *right now*. Every week that passes without honest public conversation about this transition is a week where decisions get made behind closed doors. The show is our attempt to keep that door open.
-
-The Humanity and AI Show broadcasts from Oklahoma City. Dates and platform details coming soon.
+<form action="https://formspree.io/f/xkovallr" method="POST" style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;margin:1.5rem 0;">
+  <input type="email" name="email" placeholder="your@email.com" required style="padding:0.6rem 1rem;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;color:var(--text-primary);font-family:var(--font-body);font-size:0.9rem;min-width:240px;">
+  <input type="hidden" name="_subject" value="H&AI Show — notify me">
+  <button type="submit" style="padding:0.6rem 1.4rem;background:var(--accent-primary);color:#fff;border:none;border-radius:6px;font-family:var(--font-mono);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;">Notify Me</button>
+</form>

@@ -1,6 +1,6 @@
 ---
 title: "Citizen"
-description: "Civic engagement training — understand how government works, track what matters, and participate with confidence."
+description: "Civic hub — track your community, understand the Foundation, and engage with Guardian AI."
 weight: 5
 status: "coming-soon"
 tagline: "Democracy is a skill."
@@ -12,22 +12,20 @@ icon: "🏛️"
 
 ## What Is Citizen?
 
-Citizen is a civic engagement tool that teaches you how government actually works — not the civics textbook version, but the real mechanics of legislation, local government, public comment periods, and democratic participation.
+Citizen is a civic engagement hub that connects the [Foundation](/foundation/) policy framework to individual action. It teaches you how government actually works and gives you the tools to participate — not performatively, but at the specific moments where your voice changes outcomes.
 
-It tracks bills, maps your representatives' voting records against their public statements, and surfaces the moments where your voice would actually matter — not performative petitions, but public comment windows, committee hearings, and local board meetings where five people showing up changes the outcome.
+## Key Features
 
-## How It Works
-
-Citizen adapts to where you live and what you care about. It builds a civic profile — not to target you with ads, but to surface the government actions that directly affect your life. The AI explains complex legislation in plain language, highlights the parts that matter for your situation, and connects you to the actual mechanisms of participation.
-
-The training layer teaches civic skills progressively: reading a bill, understanding committee structure, writing effective public comment, attending a hearing, building coalitions. Real civic power, practiced and developed.
+- **Foundation Dashboard** — See all 16 Foundation components and how they apply to where you live. Track policy progress, data trends, and implementation status. Understand what's working, what's stalled, and where the leverage points are.
+- **Community Contributions** — Report local conditions, share data, and contribute to the Foundation's evidence base. When you see a gap between policy and reality — a healthcare desert, a transit failure, a housing shortage — Citizen gives you a way to document it and connect it to the framework.
+- **Guardian AI** — An AI civic assistant that explains legislation in plain language, maps your representatives' votes against their public statements, and surfaces the moments where participation matters most. Public comment windows, committee hearings, local board meetings — the moments where five people showing up changes the outcome.
 
 ## Why It Exists
 
-The [Foundation](/foundation/) framework argues that democratic participation is a core component of citizenship. But participation requires skill, and most people never learn it. Citizen is the Brain Mastery app that closes that gap — connecting the policy work to individual capability.
+The Foundation framework argues that democratic participation is a core component of citizenship. But participation requires skill and information that most people never get. Citizen closes that gap — connecting policy research to individual civic power.
 
 ## Status
 
-**Coming soon.** Design phase, informed by Foundation research and legislative tracking work.
+**Coming Soon.** Design phase, informed by Foundation research and community feedback.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

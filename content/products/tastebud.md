@@ -1,6 +1,6 @@
 ---
 title: "TasteBud"
-description: "Gamified culinary education — see flavor as interactive 3D shapes, guided by AI mentors."
+description: "Culinary education — explore flavor visually, learn from AI mentors, and cook with what you have."
 weight: 3
 status: "coming-soon"
 tagline: "See what flavor looks like."
@@ -12,22 +12,17 @@ icon: "🍳"
 
 ## What Is TasteBud?
 
-TasteBud is a gamified culinary education tool. It gives flavor a visual representation — not a chart or a wheel, but an interactive space where shapes represent sweet, salty, umami, spicy, sour, and bitter. Place an ingredient and watch its flavor profile respond in real time: shapes resize, distort, change color. Swap ingredients in and out of a recipe and *see* whether the balance works before you ever turn on the stove.
+TasteBud is a culinary education app that makes flavor visible. It teaches you to understand *why* food works — not just follow recipes, but develop the intuition that separates someone who cooks from someone who reads instructions.
 
-## How It Teaches
+## Key Features
 
-The basic layer teaches the grammar of taste. What happens when you add acid to richness. Why a pinch of salt makes chocolate taste more like chocolate. How brightness emerges from combinations you'd never think to pair.
-
-Above that: AI-assisted learning paths inspired by great food thinkers. Structured teaching where a chef's sensibility or technique guides you from simple flavor understanding to creative improvisation. Culinary education that adapts to how you actually learn.
-
-## Why It Exists
-
-This is software that amplifies how humans already think about complex domains rather than replacing that thinking with something flatter and more machine-convenient. The same philosophy that drives [Quiltographer](/products/quiltographer/) and the rest of the Brain Mastery work.
-
-The idea is a decade old. The technology to build it — real-time visualization, capable AI, affordable compute — only recently caught up.
+- **FlavorMap** — An interactive visualization where ingredients have flavor profiles rendered as shapes. Place an ingredient and watch sweet, salty, umami, spicy, sour, and bitter respond in real time. Swap ingredients in and out of a recipe and *see* whether the balance works before you turn on the stove.
+- **AI Mentors** — Structured learning paths inspired by culinary traditions and great food thinkers. Each mentor teaches a different sensibility — technique, improvisation, regional cuisine, fermentation, pastry science. The AI adapts to how you learn.
+- **Recipe Explorer** — Browse and adapt recipes with real-time flavor analysis. See how substitutions change the balance. Understand why the original recipe works so you can riff on it with confidence.
+- **Pantry Mode** — Tell TasteBud what's in your kitchen. It suggests what you can make, what's missing, and what would elevate what you've got. No more staring into the fridge.
 
 ## Status
 
-**Coming soon.** Core concept validated, building toward prototype.
+**Coming Soon.** Core concept validated, FlavorMap prototype in development.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*
