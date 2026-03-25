@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penrose Tiling — Foundation Visual Identity</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#e8e6e0;font-family:system-ui,-apple-system,sans-serif;display:flex;flex-direction:column;min-height:100vh}
+canvas{display:block;width:100%;flex:1}
+.ctrls{display:flex;gap:16px;align-items:center;padding:12px 20px;font-size:13px;flex-wrap:wrap;background:rgba(255,255,255,0.03)}
+.ctrls label{display:flex;align-items:center;gap:8px;color:#999}
+.ctrls select,.ctrls input[type=range]{background:#1a1a1a;color:#ccc;border:1px solid #333;border-radius:6px;padding:4px 8px}
+.credit{padding:8px 20px;font-size:11px;color:#555;text-align:center}
+.credit a{color:#7F77DD;text-decoration:none}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="ctrls">
+  <label>Depth <input type="range" id="depth" min="2" max="7" value="5" oninput="draw()"><span id="dv">5</span></label>
+  <label>Palette
+    <select id="pal" onchange="draw()">
+      <option value="foundation">Foundation</option>
+      <option value="ember">Ember</option>
+      <option value="ocean">Ocean</option>
+      <option value="earth">Earth</option>
+      <option value="mono">Monochrome</option>
+    </select>
+  </label>
+  <label style="cursor:pointer"><input type="checkbox" id="edges" checked onchange="draw()"> Edges</label>
+  <label style="cursor:pointer"><input type="checkbox" id="glow" onchange="draw()"> Highlight cursor</label>
+</div>
+<div class="credit">Æ — <a href="https://humanityandai.com">Humanity and AI</a> · Aperiodic order from simple relationship rules</div>
+<script>
+const cn=document.getElementById('c'),ctx=cn.getContext('2d');
+const PHI=(1+Math.sqrt(5))/2;
+const palettes={
+  foundation:{kite:['#534AB7','#7F77DD','#AFA9EC','#CECBF6'],dart:['#0F6E56','#1D9E75','#5DCAA5','#9FE1CB'],edge:'rgba(255,255,255,0.15)'},
+  ember:{kite:['#993C1D','#D85A30','#F0997B','#F5C4B3'],dart:['#854F0B','#BA7517','#EF9F27','#FAC775'],edge:'rgba(0,0,0,0.12)'},
+  ocean:{kite:['#185FA5','#378ADD','#85B7EB','#B5D4F4'],dart:['#085041','#0F6E56','#5DCAA5','#9FE1CB'],edge:'rgba(255,255,255,0.12)'},
+  earth:{kite:['#3B6D11','#639922','#97C459','#C0DD97'],dart:['#633806','#854F0B','#EF9F27','#FAC775'],edge:'rgba(0,0,0,0.1)'},
+  mono:{kite:['#444441','#5F5E5A','#888780','#B4B2A9'],dart:['#2C2C2A','#444441','#5F5E5A','#888780'],edge:'rgba(255,255,255,0.08)'}
+};
+let mx=-1,my=-1;
+cn.addEventListener('mousemove',e=>{const r=cn.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;if(document.getElementById('glow').checked)draw()});
+cn.addEventListener('mouseleave',()=>{mx=-1;my=-1;if(document.getElementById('glow').checked)draw()});
+function resize(){cn.width=window.innerWidth*2;cn.height=window.innerHeight*2;cn.style.height='';cn.style.flex='1'}
+function subdivide(tris){
+  let out=[];
+  for(let[t,A,B,C] of tris){
+    if(t===0){
+      let P=[A[0]+(B[0]-A[0])/PHI,A[1]+(B[1]-A[1])/PHI];
+      out.push([0,C,P,B]);out.push([1,P,C,A]);
+    } else {
+      let Q=[B[0]+(A[0]-B[0])/PHI,B[1]+(A[1]-B[1])/PHI];
+      let R=[B[0]+(C[0]-B[0])/PHI,B[1]+(C[1]-B[1])/PHI];
+      out.push([1,R,C,A]);out.push([1,Q,R,B]);out.push([0,R,Q,A]);
+    }
+  }
+  return out;
+}
+function initTris(){
+  const cx=cn.width/2,cy=cn.height/2,r=Math.max(cn.width,cn.height)*0.7;
+  let tris=[];
+  for(let i=0;i<10;i++){
+    let a=((2*i-1)*Math.PI)/10,b=((2*i+1)*Math.PI)/10;
+    let A=[cx,cy],B=[cx+r*Math.cos(a),cy+r*Math.sin(a)],C=[cx+r*Math.cos(b),cy+r*Math.sin(b)];
+    if(i%2===0)tris.push([0,A,B,C]);else tris.push([0,A,C,B]);
+  }
+  return tris;
+}
+function dist(x1,y1,x2,y2){return Math.sqrt((x1-x2)**2+(y1-y2)**2)}
+function draw(){
+  resize();
+  const depth=+document.getElementById('depth').value;
+  document.getElementById('dv').textContent=depth;
+  const pal=palettes[document.getElementById('pal').value];
+  const showEdges=document.getElementById('edges').checked;
+  const showGlow=document.getElementById('glow').checked;
+  let tris=initTris();
+  for(let i=0;i<depth;i++)tris=subdivide(tris);
+  const s=cn.width/cn.clientWidth;
+  const smx=mx*s,smy=my*s;
+  ctx.clearRect(0,0,cn.width,cn.height);
+  for(let[t,A,B,C] of tris){
+    let cols=t===0?pal.kite:pal.dart;
+    let cx2=(A[0]+B[0]+C[0])/3,cy2=(A[1]+B[1]+C[1])/3;
+    let ci=Math.floor(Math.abs(Math.sin(cx2*0.003+cy2*0.005))*cols.length);
+    ctx.beginPath();ctx.moveTo(A[0],A[1]);ctx.lineTo(B[0],B[1]);ctx.lineTo(C[0],C[1]);ctx.closePath();
+    if(showGlow&&mx>=0){let d=dist(smx,smy,cx2,cy2);ctx.globalAlpha=d<200?0.7+(1-d/200)*0.3:0.7;}
+    else{ctx.globalAlpha=0.85;}
+    ctx.fillStyle=cols[ci%cols.length];ctx.fill();
+    if(showEdges){ctx.strokeStyle=pal.edge;ctx.lineWidth=0.5;ctx.stroke();}
+    ctx.globalAlpha=1;
+  }
+}
+draw();
+window.addEventListener('resize',draw);
+</script>
+</body>
+</html>
