@@ -466,6 +466,23 @@ function showResults() {
   const ranked = getRankedComponents();
   const top5 = ranked.slice(0, 5);
   const maxScore = top5[0].score;
+  const minScore = ranked[ranked.length - 1].score;
+
+  // — The Mirror has a secret —
+  // If all 16 scores are within 2 points of each other, you see the hidden result
+  if (maxScore - minScore <= 2 && maxScore > 0) {
+    document.getElementById('quiz-wrap').style.display = 'none';
+    const r = document.getElementById('results');
+    r.classList.add('show');
+    r.innerHTML = '<div style="max-width:600px;margin:2rem auto;text-align:center;padding:2rem">'
+      + '<div style="color:#d4a03c;font:bold 24px system-ui;margin-bottom:1rem">You can\'t separate them.</div>'
+      + '<div style="color:#999;font:15px system-ui;line-height:1.8;margin-bottom:2rem">Your answers weighted every component nearly equally. That\'s not indecision — it\'s the thesis. Foundation\'s 16 components are a system. Remove one and the others fail. You already understood this before the quiz told you.</div>'
+      + '<div style="color:#2dd4bf;font:13px monospace">The seventeenth component is participation.</div>'
+      + '<div style="color:#444;font:11px monospace;margin-top:1rem">humanityandai.com/sanctuary/</div>'
+      + '</div>';
+    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
 
   document.getElementById('quiz-wrap').style.display = 'none';
   const resultsEl = document.getElementById('results');

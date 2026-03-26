@@ -68,4 +68,26 @@ function render(){
 }
 function loop(){if(!document.getElementById('pause').checked)update();render();requestAnimationFrame(loop)}
 resize();loop();window.addEventListener('resize',resize);
+// — The center holds more than you think —
+(function(){
+  var cv=document.getElementById('wp');
+  cv.addEventListener('click',function(e){
+    if(!document.getElementById('pause').checked)return;
+    var r=cv.getBoundingClientRect(),x=(e.clientX-r.left)*2,y=(e.clientY-r.top)*2;
+    var dx=x-cv.width/2,dy=y-cv.height/2;
+    if(Math.sqrt(dx*dx+dy*dy)<80){
+      var ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+      ctx.save();ctx.globalAlpha=0.92;ctx.fillStyle='#0a0a14';ctx.fillRect(0,0,W,H);
+      ctx.globalAlpha=1;ctx.textAlign='center';
+      ctx.fillStyle='#d4a03c';ctx.font='bold '+(W*0.02)+'px system-ui';
+      ctx.fillText('THE SPIRAL IS A QUILT BLOCK',W/2,H*0.4);
+      ctx.fillStyle='#888';ctx.font=(W*0.012)+'px monospace';
+      ctx.fillText('Every quilt tells a story in geometry.',W/2,H*0.47);
+      ctx.fillText('Every spiral returns to its center, changed.',W/2,H*0.51);
+      ctx.fillStyle='#555';ctx.font=(W*0.01)+'px monospace';
+      ctx.fillText('quiltographer.humanityandai.com',W/2,H*0.6);
+      ctx.restore();
+    }
+  });
+})();
 </script></body></html>

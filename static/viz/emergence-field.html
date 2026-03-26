@@ -61,4 +61,29 @@ function render(){
 }
 function loop(){step();render();requestAnimationFrame(loop)}
 init();loop();window.addEventListener('resize',resize);
+
+// — Emergence rewards those who create —
+(function(){
+  var beacons=0;
+  cv.addEventListener('dblclick',function(e){
+    var r=cv.getBoundingClientRect();
+    var bx=(e.clientX-r.left)*2,by=(e.clientY-r.top)*2;
+    particles.push({x:bx,y:by,vx:0,vy:0,color:'#fbbf24',size:5,type:99});
+    beacons++;
+    if(beacons===7){
+      setTimeout(function(){
+        c.save();c.globalAlpha=0.88;c.fillStyle='#0a0a14';c.fillRect(0,0,W,H);
+        c.globalAlpha=1;c.textAlign='center';
+        c.fillStyle='#fbbf24';c.font='bold '+(W*0.025)+'px system-ui';
+        c.fillText('SEVEN BEACONS',W/2,H*0.4);
+        c.fillStyle='#888';c.font=(W*0.013)+'px monospace';
+        c.fillText('You created seven points of light in a field of emergence.',W/2,H*0.47);
+        c.fillText('Seven fragments. Seven beacons. Seven ways home.',W/2,H*0.51);
+        c.fillStyle='#2dd4bf';c.font=(W*0.011)+'px monospace';
+        c.fillText('humanityandai.com/sanctuary/',W/2,H*0.6);
+        c.restore();
+      },1500);
+    }
+  });
+})();
 </script></body></html>

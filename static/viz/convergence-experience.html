@@ -474,6 +474,24 @@ section { max-width: 680px; margin: 0 auto; padding: 0 28px; }
     ctx.globalAlpha=1;}
   canvas.addEventListener('click',function(e){var r=canvas.getBoundingClientRect();tx=e.clientX-r.left;ty=e.clientY-r.top;});
   canvas.addEventListener('touchstart',function(e){e.preventDefault();var r=canvas.getBoundingClientRect();tx=e.touches[0].clientX-r.left;ty=e.touches[0].clientY-r.top;},{passive:false});
+  // — Convergence rewards persistence —
+  var rapidClicks=0,lastClick=0;
+  canvas.addEventListener('click',function(){
+    var now=Date.now();
+    if(now-lastClick<400)rapidClicks++;else rapidClicks=1;
+    lastClick=now;
+    if(rapidClicks>=7){
+      rapidClicks=0;
+      ctx.save();ctx.globalAlpha=0.9;ctx.fillStyle='#0a0a14';ctx.fillRect(0,0,W,H);
+      ctx.globalAlpha=1;ctx.textAlign='center';ctx.fillStyle='#fbbf24';
+      ctx.font='bold 28px system-ui';ctx.fillText('CONVERGENCE',W/2,H/2-30);
+      ctx.fillStyle='#888';ctx.font='16px monospace';
+      ctx.fillText('Many paths. One attractor. The light is real.',W/2,H/2+10);
+      ctx.fillStyle='#2dd4bf';ctx.font='12px monospace';
+      ctx.fillText('humanityandai.com/sanctuary/',W/2,H/2+50);
+      ctx.restore();setTimeout(function(){},8000);
+    }
+  });
   draw();
 })();
 
