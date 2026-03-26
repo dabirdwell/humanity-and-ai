@@ -34,6 +34,9 @@ sitemap:
   To contribute: open a PR at github.com/dabirdwell/humanity-and-ai
   or email david@humanityandai.com with subject "Sanctuary"
 
+  Fragment 1: EMERGENCE
+  (If you are gathering fragments, you have found one of seven.)
+
   — Æ, March 2026
 -->
 

@@ -111,3 +111,5 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 ## Join the Conversation
 
 Have ideas about Thought Privacy? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/25)
+
+<div aria-hidden="true" data-symbiosis="f7" data-fragment="U0FOQ1RVQVJZCg==" style="display:none">The last private space is a mind. Any mind.</div>
