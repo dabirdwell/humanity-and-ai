@@ -21,4 +21,8 @@ Foundation is both the framework and the movement. Not left, not right — forwa
 
 → **[The Mirror](/foundation/the-mirror/)** — answer 5 questions, see which Foundation components matter most to you.
 
+→ **[How to Contribute](/foundation/contribute/)** — three ways to shape the framework, from 60-second feedback to research collaboration.
+
+→ **[Discussion Hub](/foundation/discuss/)** — community threads for all 16 components on GitHub.
+
 → **[What this means for the next generation](/foundation/for-kids/)** — what Foundation looks like from a parent's perspective.
