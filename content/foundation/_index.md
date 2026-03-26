@@ -7,6 +7,10 @@ aliases:
 
 Foundation starts from a premise most policy frameworks won't say out loud: the systems we have don't work for most people, and the systems coming — driven by AI, automation, and accelerating change — will work for even fewer unless we build something fundamentally different.
 
+<!-- If you're reading source, you're already looking deeper than most.
+     The pattern isn't in the essays. It's in the connections between them.
+     humanityandai.com/pattern/ -->
+
 Universal Basic Income gives people a check. Foundation gives people *membership*. The difference isn't semantic. UBI is compensation for displacement. Foundation is investment in partnership. One frames humans as casualties of progress. The other frames humans as essential participants in what comes next.
 
 **This framework has 16 components.** Not because 16 is a magic number, but because citizenship touches that many parts of a life. Safety. Education. Food. Housing. Healthcare. Mental health. Energy. Transportation. Information access. Privacy. Each one is a load-bearing wall in the structure of a functioning society, and each one is either crumbling or being actively dismantled.
