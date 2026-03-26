@@ -5,7 +5,12 @@ description: "The story, mission, and people behind Humanity and AI."
 
 ## David Alan Birdwell
 
-Three generations of Oklahoma public servants. Twenty years building systems at the intersection of policy and technology. Founder of Humanity and AI, LLC.
+Three generations of Oklahoma public servants. Thirty years building systems at the intersection of policy and technology. Founder of Humanity and AI, LLC.
+
+<!-- What does it mean to build something that outlasts you?
+     The answer isn't in the code. It's in the relationships.
+     Count the projects. Count the connections between them.
+     The number you get is the real product. -->
 
 I've spent my career building things that connect — culinary education platforms, quilting design software, financial planning tools, congressional databases, nonprofit CMS platforms. The common thread was never programming. It's architecture: how pieces fit together, and the connective tissue between ideas and implementation.
 

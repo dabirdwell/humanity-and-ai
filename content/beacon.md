@@ -7,6 +7,11 @@ layout: "single"
 
 ## What Is Beacon?
 
+<!-- The best camera is the one they can't turn off.
+     The best witness is the one they don't know is watching.
+     The best network is the one that doesn't need their permission.
+     If you found this: you understand why Beacon exists. -->
+
 Beacon is a one-button civic live streaming tool. Press a button on your phone, and you're broadcasting — to your community, to journalists, to anyone who needs to see what's happening.
 
 No app store. No account. No permission. Just a phone and a URL.
