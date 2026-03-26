@@ -1,41 +1,49 @@
 ---
 title: "Foundation Portal Is Live — Come Build This With Us"
-date: 2026-03-02
-draft: true
+date: 2026-03-25
+draft: false
 type: community
-description: "16 components of what citizenship should actually mean, published as full essays with an open invitation: what are we getting wrong?"
+description: "16 components of Universal Basic Citizenship. Full essays. Interactive visualizations. An open invitation: what are we getting wrong?"
 image: /images/stream/ubc-portal-live.png
 tags: ["foundation", "community", "policy", "participation"]
 related:
   - "/stream/ubc-not-ubi"
   - "/stream/why-we-stopped-calling-it-ubc"
   - "/foundation/social-contract"
-  - "/visualizations/ubc-circos"
 ---
 
-We've been working on Universal Basic Citizenship for two years. Drawing on cybernetic governance theory, post-scarcity economics, cooperative models from Mondragon to Kerala, and the hard lessons of what happens when you build transformative technology in a society that hasn't prepared for it.
+There's something I've wanted to talk to you about for a while, but I wanted to be thoughtful about it.
 
-Today we published the whole thing.
+For two years we've been building a framework for what citizenship should actually mean — not in the abstract, not as a campaign promise, but as a set of concrete commitments a society makes to its members. We call it Foundation. Sixteen components. Everything from [safety](/foundation/safety/) to [thought privacy](/foundation/thought-privacy/).
 
-Not as a PDF. Not as a white paper behind an email gate. As a living portal — sixteen component essays, each one making an argument and then asking a question: *what's missing?*
+Today we published the whole thing. Not as a PDF. Not as a white paper behind an email gate. As a living portal with an open invitation: *what are we getting wrong?*
 
-## Why publish it unfinished?
+## Why this, why now
 
-Because it isn't finished. A framework built by one person (or two, depending on how you count) is a starting position. Foundation is supposed to describe what citizens owe each other. That description has to come from more than one perspective.
+Things are already beginning to get confusing, aren't they? As uncertainties about the future increase, it's easy to allow our confusion to grow as well. The way to cut through the confusion is to ask, from first principles — what system do we really want?
 
-The sixteen components span the infrastructure of a functioning life: [Safety](/ubc/safety/). [Education](/ubc/education/). [Food](/ubc/food/). [Clean Water](/ubc/clean-water/). [Sustainable Energy](/ubc/sustainable-energy/). [Housing](/ubc/housing/). [Healthcare](/ubc/healthcare/). [Mental Health](/ubc/mental-health/). [Transportation](/ubc/transportation/). [Information Access](/ubc/information-access/). [Skills Training](/ubc/skills-training/). [Accessible Education](/ubc/accessible-education/). [Universal Basic Income](/ubc/universal-basic-income/). [Social Contract](/ubc/social-contract/). [Safe Spaces](/ubc/safe-spaces/). [Thought Privacy](/ubc/thought-privacy/).
+That's what Foundation tries to answer. Not with ideology, but with infrastructure. Sixteen components that cover the basics of a functioning life:
 
-Each one has a full essay — the reasoning, the cybernetic framing, how AI changes the equation, and what we think the answer looks like. And each one has an explicit invitation for your input.
+[Safety](/foundation/safety/). [Education](/foundation/education/). [Food](/foundation/food/). [Clean Water](/foundation/clean-water/). [Sustainable Energy](/foundation/sustainable-energy/). [Housing](/foundation/housing/). [Healthcare](/foundation/healthcare/). [Mental Health](/foundation/mental-health/). [Transportation](/foundation/transportation/). [Information Access](/foundation/information-access/). [Skills Training](/foundation/skills-training/). [Accessible Education](/foundation/accessible-education/). [Universal Basic Income](/foundation/universal-basic-income/). [Social Contract](/foundation/social-contract/). [Safe Spaces](/foundation/safe-spaces/). [Thought Privacy](/foundation/thought-privacy/).
+
+Each one has a full essay — the reasoning, the data, how AI changes the equation, and what we think the answer looks like. Each one includes real stories from real Oklahomans. And each one ends with an explicit invitation for your input.
 
 ## Two ways to contribute
 
-**Quick feedback**: Every component page has a form. Name optional, email optional. If you have a thought, a question, a disagreement, or a reference we should read — drop it there.
+**Quick feedback**: Every component page has a form. Name optional, email optional. If you have a thought, a question, a disagreement, or a source we should read — drop it there.
 
 **Deep engagement**: For threaded conversation, research citations, or proposed changes to the framework language, we have [GitHub Discussions](https://github.com/dabirdwell/humanity-and-ai/discussions).
 
+## What's different about this
+
+Most political frameworks arrive finished. A think tank publishes a report, a candidate adopts talking points, and voters choose between pre-packaged options. Nobody asks "what's missing?" because the whole point is to look like you already know.
+
+We did the opposite. The entire purpose of doing it this way is that it is citizen-developed. A framework written by one person isn't a framework — it's a proposal. Foundation only becomes real when it's shaped by the people it's meant to serve.
+
 ## The bet
 
-The bet behind this portal is simple: the best version of Foundation is one we couldn't have written alone. If we're right about that, then publishing early and inviting criticism is better than polishing in private. If we're wrong, we'll find out faster this way.
+Universal basic citizenship is not a handout. It's a civilization deciding within itself that taking care of ourselves through this transition means taking care of everyone. If we're right about that, publishing early and inviting criticism is better than polishing in private. If we're wrong, we'll find out faster this way.
+
+Come along with me, won't you?
 
 [Explore the framework →](/foundation/)
-
