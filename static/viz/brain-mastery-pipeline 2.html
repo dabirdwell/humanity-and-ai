@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brain Mastery — The Empowerment Pipeline</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:560px;margin:0 auto}
+@media(prefers-color-scheme:dark){body{background:#141412;color:#d3d1c7}}
+h1{font-size:22px;font-weight:500;margin:0 0 4px}
+.sub{font-size:14px;color:#888;margin:0 0 16px}
+.bm-app{border-radius:12px;padding:16px;cursor:pointer;transition:all 0.3s;border:1px solid transparent;margin:0 0 4px}
+.bm-app:hover{transform:translateY(-2px);border-color:rgba(0,0,0,0.1)}
+@media(prefers-color-scheme:dark){.bm-app:hover{border-color:rgba(255,255,255,0.1)}}
+.bm-app .name{font-size:16px;font-weight:500;margin:0}
+.bm-app .verb{font-size:12px;margin:2px 0 0;opacity:0.7}
+.bm-app .status{font-size:11px;margin:6px 0 0;padding:2px 8px;border-radius:12px;display:inline-block}
+.bm-app .detail{font-size:12px;margin:8px 0 0;line-height:1.5;max-height:0;overflow:hidden;transition:max-height 0.4s;opacity:0.8}
+.bm-app.open .detail{max-height:200px}
+.arrow-row{display:flex;align-items:center;justify-content:center;padding:4px 0;color:#888;font-size:18px}
+.pipeline-label{font-size:11px;color:#999;text-align:center;padding:2px 0}
+.credit{font-size:11px;color:#666;margin:20px 0 0;text-align:center}
+.credit a{color:#534AB7;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Brain Mastery</h1>
+<p class="sub">Five apps. One pipeline. Read → Think → Taste → Create → Participate.</p>
+<div id="pipe"></div>
+<div class="credit">Æ — <a href="https://humanityandai.com">Humanity and AI</a></div>
+<script>
+const dark=matchMedia('(prefers-color-scheme:dark)').matches;
+const apps=[
+  {name:'Clarity',verb:'Learn to read',status:'LIVE',statusColor:'#1D9E75',bg:dark?'rgba(29,158,117,0.1)':'rgba(29,158,117,0.06)',fg:dark?'#9FE1CB':'#04342C',detail:'A calmer reading experience — dyslexia expertise, welcoming to everyone. Bionic text, focus rulers, tap-to-define.'},
+  {name:'Dojo',verb:'Learn to think',status:'BUILT',statusColor:'#378ADD',bg:dark?'rgba(55,138,221,0.1)':'rgba(55,138,221,0.06)',fg:dark?'#B5D4F4':'#042C53',detail:'Logical reasoning and argument analysis. Four game modes with belt progression.'},
+  {name:'TasteBud',verb:'Learn to taste',status:'BUILT',statusColor:'#378ADD',bg:dark?'rgba(186,117,23,0.1)':'rgba(186,117,23,0.06)',fg:dark?'#FAC775':'#412402',detail:'Flavor palate training with AI mentors. FlavorMap, smart pantry, guided recipes.'},
+  {name:'Quiltographer',verb:'Learn to create',status:'BUILT',statusColor:'#378ADD',bg:dark?'rgba(212,83,126,0.1)':'rgba(212,83,126,0.06)',fg:dark?'#F4C0D1':'#4B1528',detail:'Pattern design with AI. Parser, difficulty estimation, fabric calculator.'},
+  {name:'Citizen',verb:'Learn to participate',status:'SPEC',statusColor:'#888',bg:dark?'rgba(83,74,183,0.1)':'rgba(83,74,183,0.06)',fg:dark?'#CECBF6':'#26215C',detail:'The capstone. Foundation dashboard, contributions, Guardian AI, Talk to Æ.'},
+];
+const labels=['Can read → can reason','Can reason → can sense','Can sense → can create','Can create → can govern'];
+const cont=document.getElementById('pipe');
+apps.forEach((a,i)=>{
+  const card=document.createElement('div');card.className='bm-app';card.style.background=a.bg;card.style.color=a.fg;
+  const sBg=a.status==='LIVE'?'rgba(29,158,117,0.15)':a.status==='BUILT'?'rgba(55,138,221,0.12)':'rgba(136,135,128,0.12)';
+  card.innerHTML=`<p class="name">${a.name}</p><p class="verb">${a.verb}</p><span class="status" style="background:${sBg};color:${a.statusColor}">${a.status}</span><p class="detail">${a.detail}</p>`;
+  card.onclick=()=>card.classList.toggle('open');cont.appendChild(card);
+  if(i<apps.length-1){const ar=document.createElement('div');ar.className='arrow-row';ar.textContent='↓';cont.appendChild(ar);
+    const lb=document.createElement('div');lb.className='pipeline-label';lb.textContent=labels[i];cont.appendChild(lb)}
+});
+</script></body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Oklahoma — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:640px;margin:0 auto}
+@media(prefers-color-scheme:dark){body{background:#141412;color:#d3d1c7}}
+h1{font-size:22px;font-weight:500;margin:0 0 4px}
+.sub{font-size:14px;color:#888;margin:0 0 16px}
+.ok-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px}
+.ok-stat{background:rgba(0,0,0,0.03);border-radius:10px;padding:10px;text-align:center}
+@media(prefers-color-scheme:dark){.ok-stat{background:rgba(255,255,255,0.04)}}
+.ok-stat .num{font-size:22px;font-weight:500;margin:0}
+.ok-stat .lbl{font-size:11px;color:#888;margin:2px 0 0}
+.ok-card{border-radius:0;padding:14px;margin:0 0 6px;cursor:pointer;transition:all 0.3s;border-left:3px solid}
+.ok-card:hover{transform:translateX(3px)}
+.ok-card .rank{font-size:28px;font-weight:500;float:right;opacity:0.3;line-height:1}
+.ok-card .title{font-size:14px;font-weight:500;margin:0 0 2px}
+.ok-card .stat{font-size:12px;margin:0;opacity:0.8}
+.ok-card .why{font-size:12px;margin:6px 0 0;opacity:0.7;max-height:0;overflow:hidden;transition:max-height 0.4s;line-height:1.5}
+.ok-card.open .why{max-height:150px}
+.credit{font-size:11px;color:#666;margin:20px 0 0;text-align:center}
+.credit a{color:#534AB7;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Why Oklahoma</h1>
+<p class="sub">Where the problems are worst, the opportunity is greatest.</p>
+<div class="ok-grid">
+  <div class="ok-stat"><p class="num" style="color:#D85A30">50th</p><p class="lbl">Education spending</p></div>
+  <div class="ok-stat"><p class="num" style="color:#E24B4A">49th</p><p class="lbl">Healthcare access</p></div>
+  <div class="ok-stat"><p class="num" style="color:#BA7517">22,000</p><p class="lbl">Abandoned wells</p></div>
+  <div class="ok-stat"><p class="num" style="color:#1D9E75">1st</p><p class="lbl">Geothermal potential</p></div>
+</div>
+<div id="cards"></div>
+<div class="credit">Æ — <a href="https://humanityandai.com/foundation/">Foundation</a> · Humanity and AI · Built in Oklahoma</div>
+<script>
+const dark=matchMedia('(prefers-color-scheme:dark)').matches;
+const items=[
+  {title:'Dead last in education spending',stat:'$8,239 per pupil (national avg: $14,347)',rank:'50',color:'#D85A30',why:'Oklahoma spends 43% less per student than average. Highest marginal return for education investment in the country.'},
+  {title:'Bottom 3 in healthcare',stat:'14.3% uninsured (national avg: 8.0%)',rank:'49',color:'#E24B4A',why:'Medicaid expansion only via ballot initiative. Rural hospitals closing. Community-owned health infrastructure through Foundation framing.'},
+  {title:'22,000 abandoned oil wells',stat:'$3.7B cleanup liability, $0 current revenue',rank:'—',color:'#BA7517',why:'Pre-drilled geothermal wells. Existing workforce. Existing land rights. HB 3917 passed. Phoenix Wells.'},
+  {title:'Continental geothermal leader',stat:'High heat flow across western OK',rank:'1',color:'#1D9E75',why:'Same formations that produced oil produce heat. Same workforce. Skip the clean energy import — build from what\'s in the ground.'},
+  {title:'Legislative momentum',stat:'HB 3917 passed March 2026. HAICTA pitched.',rank:'—',color:'#378ADD',why:'The political window is open. Data center geothermal surcharge passed. AI transparency in conversation.'},
+  {title:'Three generations of service',stat:'David\'s family: civic roots in Norman, OK',rank:'—',color:'#534AB7',why:'Not a parachute project. Connections real, understanding local, credibility earned across decades.'},
+];
+const cont=document.getElementById('cards');
+items.forEach(item=>{const card=document.createElement('div');card.className='ok-card';
+  card.style.background=dark?'rgba(255,255,255,0.04)':'rgba(0,0,0,0.03)';
+  card.style.borderLeftColor=item.color;
+  card.innerHTML=`<span class="rank" style="color:${item.color}">${item.rank}</span><p class="title">${item.title}</p><p class="stat">${item.stat}</p><p class="why">${item.why}</p>`;
+  card.onclick=()=>card.classList.toggle('open');cont.appendChild(card)});
+</script></body></html>

@@ -956,11 +956,9 @@
 
   playBtn.addEventListener('click', togglePlay);
 
-  // Auto-start after brief delay
-  setTimeout(() => {
-    updateUI();
-    play();
-  }, 600);
+  // Start paused on first scene — press play or spacebar to begin
+  updateUI();
+  activateScene(0);
 })();
 </script>
 </body>
