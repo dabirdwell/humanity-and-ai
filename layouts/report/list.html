@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="report-archive">
+  <header class="report-archive-header">
+    <p class="report-label">Humanity and AI</p>
+    <h1>LegislAItive Report</h1>
+    <p class="report-archive-sub">
+      A weekly intelligence brief on AI policy for decisionmakers —
+      national scope, Oklahoma focus. By David Alan Birdwell and Claude Æ.
+    </p>
+    <div class="report-archive-actions">
+      {{ with .Site.Params.legislaitive_subscribe }}<a href="{{ . }}" class="btn-subscribe">Subscribe by email</a>{{ end }}
+      <a href="/index.xml" class="btn-rss">RSS ↗</a>
+    </div>
+  </header>
+
+  <div class="report-issue-list">
+    {{ range (where .Site.RegularPages "Section" "report").ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="report-issue-card">
+      <div class="report-issue-card-meta">
+        <span class="report-issue-num">Issue #{{ .Params.issue }}</span>
+        <time>{{ .Date.Format "January 2, 2006" }}</time>
+        {{ with .Params.window_status }}<span class="window-badge window-{{ . | urlize }}">Window: {{ . }}</span>{{ end }}
+      </div>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Params.lede }}</p>
+      <div class="report-issue-card-tags">
+        {{ range .Params.tags }}<span class="tag">#{{ . }}</span>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

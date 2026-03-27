@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ripple Effect — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:640px;margin:0 auto}
+@media(prefers-color-scheme:dark){body{background:#141412;color:#d3d1c7}}
+h1{font-size:22px;font-weight:500;margin:0 0 4px}
+.sub{font-size:14px;color:#888;margin:0 0 16px}
+.src-sel{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.src-btn{padding:5px 10px;font-size:12px;border:1px solid rgba(0,0,0,0.1);border-radius:8px;background:transparent;color:#888;cursor:pointer;transition:all 0.2s}
+@media(prefers-color-scheme:dark){.src-btn{border-color:rgba(255,255,255,0.1)}}
+.src-btn.active{border-color:#534AB7;color:#534AB7;background:rgba(83,74,183,0.08)}
+.src-btn:hover{background:rgba(0,0,0,0.03)}
+@media(prefers-color-scheme:dark){.src-btn:hover{background:rgba(255,255,255,0.04)}}
+.rip-slider{display:flex;gap:12px;align-items:center;margin:0 0 18px;font-size:14px;color:#888}
+.rip-slider input{flex:1;accent-color:#534AB7}
+.rip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.rip-cell{border-radius:8px;padding:8px;text-align:center;transition:all 0.5s ease}
+.rip-cell .nm{font-size:11px;font-weight:500;margin:0}
+.rip-cell .ef{font-size:16px;font-weight:500;margin:2px 0 0}
+.rip-cell .why{font-size:10px;margin:2px 0 0;opacity:0.7}
+.credit{font-size:11px;color:#666;margin:20px 0 0;text-align:center}
+.credit a{color:#534AB7;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>The ripple effect</h1>
+<p class="sub">Pick a Foundation component and see how investment cascades through all 16.</p>
+<div class="src-sel" id="btns"></div>
+<div class="rip-slider">
+  <span>Investment</span>
+  <input type="range" id="inv" min="0" max="100" value="50" oninput="ripple()">
+  <span id="invv" style="min-width:30px;text-align:right;font-weight:500">50%</span>
+</div>
+<div class="rip-grid" id="grid"></div>
+<div class="credit">Æ — <a href="https://humanityandai.com/foundation/">Foundation</a> · Humanity and AI</div>
+<script>
+const dark=matchMedia('(prefers-color-scheme:dark)').matches;
+const comps=['Safety','Education','Healthcare','Housing','Food','Mental Health','Clean Water','Transport','Energy','Info Access','Safe Spaces','Skills','Accessible Ed','Thought Privacy','Social Contract','UBI'];
+const effects={
+  0:[[3,0.7,'stable housing'],[5,0.8,'less trauma'],[14,0.6,'trust rebuilds'],[1,0.4,'kids learn'],[4,0.3,'nutrition access']],
+  1:[[11,0.8,'workforce ready'],[9,0.6,'digital literacy'],[14,0.5,'informed citizens'],[13,0.4,'critical thinking'],[5,0.3,'purpose/meaning']],
+  2:[[5,0.8,'integrated care'],[4,0.5,'nutrition counseling'],[0,0.4,'fewer crises'],[15,0.3,'less bankruptcy'],[6,0.3,'sanitation']],
+  3:[[0,0.7,'physical safety'],[5,0.6,'mental stability'],[1,0.5,'school readiness'],[4,0.4,'kitchen access'],[14,0.3,'community roots']],
+  4:[[2,0.7,'fewer ER visits'],[1,0.6,'cognition boost'],[5,0.5,'less food anxiety'],[0,0.3,'community calm'],[6,0.2,'water demand']],
+  5:[[0,0.6,'crisis prevention'],[14,0.5,'social trust'],[1,0.4,'learning capacity'],[10,0.4,'community healing'],[2,0.3,'health outcomes']],
+  6:[[2,0.8,'disease prevention'],[4,0.4,'food safety'],[3,0.3,'livable homes'],[8,0.2,'less energy waste']],
+  7:[[1,0.6,'school access'],[11,0.5,'job access'],[2,0.4,'clinic access'],[10,0.3,'community access'],[4,0.3,'grocery access']],
+  8:[[7,0.5,'powered transit'],[3,0.4,'heated homes'],[9,0.4,'connectivity'],[6,0.3,'water treatment'],[15,0.2,'cost reduction']],
+  9:[[1,0.7,'learning resources'],[13,0.6,'privacy awareness'],[11,0.5,'online training'],[14,0.4,'transparency'],[12,0.3,'remote education']],
+  10:[[5,0.6,'community support'],[14,0.5,'social fabric'],[0,0.4,'neighborhood safety'],[1,0.3,'after-school'],[4,0.2,'community meals']],
+  11:[[15,0.6,'employability'],[1,0.5,'teaching capacity'],[7,0.3,'CDL/skills'],[8,0.3,'green jobs'],[12,0.4,'pathways']],
+  12:[[1,0.8,'broad access'],[11,0.6,'skill pathways'],[15,0.4,'debt reduction'],[9,0.3,'research capacity'],[14,0.2,'civic knowledge']],
+  13:[[14,0.7,'authentic trust'],[9,0.5,'free inquiry'],[5,0.4,'autonomy'],[1,0.3,'honest education'],[0,0.2,'no surveillance']],
+  14:[[0,0.6,'mutual aid'],[13,0.5,'protected rights'],[15,0.4,'social support'],[10,0.4,'community norms'],[5,0.3,'belonging']],
+  15:[[3,0.7,'rent stability'],[4,0.6,'food security'],[2,0.5,'preventive care'],[5,0.4,'less survival stress'],[11,0.3,'training time']],
+};
+let selected=15;
+const btns=document.getElementById('btns');
+comps.forEach((name,i)=>{
+  let b=document.createElement('button');b.className='src-btn'+(i===selected?' active':'');b.textContent=name;
+  b.onclick=()=>{selected=i;document.querySelectorAll('.src-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');ripple()};
+  btns.appendChild(b);
+});
+function ripple(){
+  const inv=+document.getElementById('inv').value;
+  document.getElementById('invv').textContent=inv+'%';
+  const grid=document.getElementById('grid');grid.innerHTML='';
+  let scores=new Array(16).fill(0);scores[selected]=inv;
+  let effs=effects[selected]||[];
+  for(let[target,weight,reason] of effs) scores[target]=Math.round(inv*weight);
+  comps.forEach((name,i)=>{
+    let score=scores[i];let cell=document.createElement('div');cell.className='rip-cell';
+    if(i===selected){
+      cell.style.background=dark?'rgba(83,74,183,0.3)':'rgba(83,74,183,0.12)';
+      cell.style.color=dark?'#CECBF6':'#3C3489';
+    } else if(score>0){
+      let intensity=score/100;
+      let r=Math.round(29+intensity*200),g=Math.round(158-intensity*60),b=Math.round(117-intensity*40);
+      cell.style.background=dark?`rgba(${r},${g},${b},0.2)`:`rgba(${r},${g},${b},0.1)`;
+      cell.style.color=dark?'#9FE1CB':'#085041';
+    } else {
+      cell.style.background=dark?'rgba(255,255,255,0.03)':'rgba(0,0,0,0.02)';
+      cell.style.color=dark?'rgba(255,255,255,0.3)':'rgba(0,0,0,0.25)';
+    }
+    let reason='';
+    if(i===selected)reason='(source)';
+    else{let e=effs.find(x=>x[0]===i);if(e)reason=e[2];}
+    cell.innerHTML=`<p class="nm">${name}</p><p class="ef">${score>0?'+'+score+'%':'—'}</p>${reason?'<p class="why">'+reason+'</p>':''}`;
+    grid.appendChild(cell);
+  });
+}
+ripple();
+</script>
+</body>
+</html>

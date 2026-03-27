@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Classroom — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#0a0a0f;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;overflow-x:hidden}
+
+.page{max-width:900px;margin:0 auto;padding:48px 24px 80px}
+
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#4ecdc4;margin-bottom:12px}
+h1{font-size:clamp(22px,4vw,34px);font-weight:300;line-height:1.25;margin-bottom:8px;color:#f0f0f0}
+.subtitle{font-size:14px;color:#888;line-height:1.6;max-width:620px;margin-bottom:12px}
+
+/* STAT TABS */
+.stat-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.tab-btn{padding:8px 16px;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:transparent;color:#888;font-size:12px;letter-spacing:.5px;cursor:pointer;transition:all .2s;font-family:inherit}
+.tab-btn:hover{border-color:rgba(78,205,196,.4);color:#ccc}
+.tab-btn.active{background:rgba(78,205,196,.1);border-color:#4ecdc4;color:#4ecdc4}
+
+/* CLASSROOM GRID */
+.classroom-wrap{margin-bottom:40px}
+.classroom-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;flex-wrap:wrap;gap:8px}
+.stat-display{font-size:clamp(28px,5vw,42px);font-weight:200;line-height:1}
+.stat-display .num{color:#f0f0f0}
+.stat-display .denom{color:#555;font-size:0.6em}
+.stat-context{font-size:13px;color:#888;max-width:320px;text-align:right;line-height:1.5}
+@media(max-width:520px){.stat-context{text-align:left;max-width:100%}}
+
+.figure-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;justify-content:flex-start}
+.figure-wrap{position:relative;cursor:pointer;transition:transform .15s}
+.figure-wrap:hover{transform:scale(1.05)}
+.figure-wrap.active-story{transform:scale(1.08)}
+
+svg.figure{display:block;overflow:visible}
+svg.figure .head{transition:fill .4s}
+svg.figure .body{transition:fill .4s}
+svg.figure .legs{transition:fill .4s}
+
+.figure-wrap.lit .head{fill:#4ecdc4}
+.figure-wrap.lit .body{fill:#4ecdc4;opacity:.85}
+.figure-wrap.lit .legs{fill:#4ecdc4;opacity:.7}
+
+.figure-wrap.dim .head{fill:#2a2a35}
+.figure-wrap.dim .body{fill:#2a2a35;opacity:.8}
+.figure-wrap.dim .legs{fill:#2a2a35;opacity:.6}
+
+.figure-wrap.dim:hover .head{fill:#5a5a70}
+.figure-wrap.dim:hover .body{fill:#5a5a70;opacity:.8}
+.figure-wrap.dim:hover .legs{fill:#5a5a70;opacity:.6}
+
+.grid-caption{font-size:11px;color:#555;letter-spacing:.5px;margin-top:4px}
+
+/* STORY PANEL */
+.story-panel{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px 32px;margin-bottom:40px;min-height:120px;transition:all .3s}
+.story-panel.empty{border-style:dashed;display:flex;align-items:center;justify-content:center}
+.story-hint{font-size:13px;color:#555;text-align:center;letter-spacing:.5px}
+.story-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:10px}
+.story-name{font-size:18px;font-weight:500;color:#f0f0f0;margin-bottom:4px}
+.story-role{font-size:13px;color:#888;margin-bottom:16px}
+.story-text{font-size:15px;line-height:1.75;color:#ccc}
+.story-text strong{color:#f0f0f0;font-weight:500}
+.story-text em{font-style:italic;color:#e0e0e0}
+.story-footer{margin-top:16px;font-size:12px;color:#666;line-height:1.6;border-top:1px solid rgba(255,255,255,.05);padding-top:12px}
+.story-what-helps{margin-top:12px;padding:10px 14px;background:rgba(78,205,196,.06);border-left:3px solid rgba(78,205,196,.4);border-radius:0 6px 6px 0;font-size:13px;color:#aaa;line-height:1.6}
+.story-what-helps strong{color:#4ecdc4}
+
+/* CONTEXT BOX */
+.context-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:22px 26px;margin-bottom:40px}
+.context-box-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:14px}
+.context-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.context-stat{text-align:center;padding:12px}
+.context-stat .big{font-size:28px;font-weight:200;color:#f0f0f0;line-height:1;margin-bottom:4px}
+.context-stat .small{font-size:11px;color:#666;line-height:1.4}
+
+/* FOOTER */
+.footer-callout{text-align:center;padding:32px 0 0;border-top:1px solid rgba(255,255,255,.06)}
+.footer-callout p{font-size:14px;color:#888;margin-bottom:12px}
+.footer-callout a.cta{display:inline-block;padding:10px 24px;border:1px solid rgba(78,205,196,.4);border-radius:24px;color:#4ecdc4;font-size:13px;letter-spacing:.5px;transition:all .2s}
+.footer-callout a.cta:hover{background:rgba(78,205,196,.08);text-decoration:none}
+.source-note{font-size:10px;color:#444;margin-top:32px;line-height:1.6;text-align:center}
+html:not(.in-iframe) body{min-height:100vh}
+</style>
+<script>if(window.self!==window.top)document.documentElement.classList.add("in-iframe")</script>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Foundation — Education Component</div>
+  <h1>Look Around the Room</h1>
+  <p class="subtitle">Every figure below represents one person in thirty. Hover or tap the dimmed ones. They aren't failures. They're patterns — shaped by the systems we chose.</p>
+
+  <!-- STAT TABS -->
+  <div class="stat-tabs">
+    <button class="tab-btn active" data-stat="literacy">Reading</button>
+    <button class="tab-btn" data-stat="mentalhealth">Mental Health</button>
+    <button class="tab-btn" data-stat="housing">Housing</button>
+    <button class="tab-btn" data-stat="healthcare">Healthcare</button>
+    <button class="tab-btn" data-stat="food">Food</button>
+  </div>
+
+  <!-- CLASSROOM GRID -->
+  <div class="classroom-wrap">
+    <div class="classroom-header">
+      <div class="stat-display"><span class="num" id="stat-num">23</span><span class="denom"> / 30 unaffected</span></div>
+      <div class="stat-context" id="stat-context">77% of Americans can read at or above a basic level. 23% cannot.</div>
+    </div>
+    <div class="figure-grid" id="figure-grid"></div>
+    <div class="grid-caption" id="grid-caption">Each figure = 1 person. Teal = unaffected. Dimmed = affected. Tap a dimmed figure for their story.</div>
+  </div>
+
+  <!-- STORY PANEL -->
+  <div class="story-panel empty" id="story-panel">
+    <div class="story-hint">← Tap any dimmed figure to meet them</div>
+  </div>
+
+  <!-- CONTEXT STATS -->
+  <div class="context-box">
+    <div class="context-box-title">The scale</div>
+    <div class="context-grid" id="context-grid"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-callout" id="footer-link-wrap">
+    <p id="footer-text">Education is the foundation beneath every other Foundation component.</p>
+    <a href="/foundation/education/" class="cta" id="footer-link">Read the Education Component →</a>
+  </div>
+
+  <div class="source-note" id="source-note">
+    Sources: NCES National Assessment of Adult Literacy · SAMHSA National Survey on Drug Use and Health · 
+    NLIHC Gap Report 2025 · Census Bureau ACS 2023 · USDA Economic Research Service
+  </div>
+</div>
+
+<script>
+const STATS = {
+  literacy: {
+    label: 'Reading',
+    total: 30,
+    affected: 7, // ~23% of 30 = ~7
+    headline: '7 in 30 Americans cannot read at a basic functional level.',
+    context: '54% read below a 6th-grade level. Most job applications require 8th-grade literacy.',
+    caption: 'Each figure = 1 person. Teal = reads independently. Dimmed = below functional literacy. Tap to meet them.',
+    componentLink: '/foundation/education/',
+    componentName: 'Education',
+    componentText: 'Literacy is Component 7 of the Foundation framework. It unlocks every other component.',
+    contextStats: [
+      { big: '130M', small: 'Americans below 6th-grade reading level' },
+      { big: '50th', small: 'Oklahoma ranks 50th in education spending' },
+      { big: '93%', small: 'of jobs now require digital literacy' },
+      { big: '$2.2T', small: 'annual cost of low literacy to the US economy' }
+    ],
+    sourceNote: 'Sources: NCES National Assessment of Adult Literacy · ProLiteracy · ETS Research · Oklahoma Policy Institute',
+    stories: [
+      {
+        name: 'Marcus, 34',
+        role: 'Warehouse worker, Tulsa',
+        text: `<strong>Marcus can read enough to get by</strong> — road signs, price tags, short texts from his kids. He's been hiding it at work for eleven years. When the new shift manager started posting detailed safety instructions on the board, Marcus started coming in early just to ask coworkers to walk him through them. He's not slow. He runs the fastest picker route in his warehouse. He just grew up in a school that didn't have enough reading specialists. <em>There was a waiting list. He was on it for two years. Then they cut the program.</em>`,
+        whatHelps: '<strong>Foundation Education Component:</strong> Subsidized adult literacy programs embedded in workplaces. No shame, no waiting list — on-site, on-shift.'
+      },
+      {
+        name: 'Diane, 52',
+        role: 'Home health aide, Oklahoma City',
+        text: `<strong>Diane can read, but medication labels are hard.</strong> The dosages, the warnings, the interaction notes — they blur into a wall of small print. She's responsible for four patients and their medication schedules. She's never made a mistake. She triple-checks everything with a neighbor who used to be a nurse. <em>She's been doing this for eight years. She makes $13.40 an hour. Oklahoma has no state literacy fund.</em>`,
+        whatHelps: '<strong>Foundation Healthcare + Education:</strong> Clear-language medication labeling standards. Plain-language training for care workers, funded as part of healthcare infrastructure.'
+      },
+      {
+        name: 'Tyler, 7',
+        role: '2nd grader, rural Wagoner County',
+        text: `<strong>Tyler's teacher noticed something in September.</strong> He's bright — memorizes every dinosaur name, builds elaborate things with blocks. But letters scramble on him. She put in for a psychoeducational evaluation in October. <em>The waiting list is six months. By the time he gets assessed, he'll have missed most of 2nd grade.</em> His reading group is already a year ahead of him. The gap compounds every week.`,
+        whatHelps: '<strong>Foundation Education Component:</strong> Every school has a reading specialist. Evaluations happen in weeks, not months. Early identification changes trajectories.'
+      }
+    ]
+  },
+  mentalhealth: {
+    label: 'Mental Health',
+    total: 30,
+    affected: 6, // ~1 in 5
+    headline: '6 in 30 Americans experience a mental health condition each year.',
+    context: '1 in 5 adults. Fewer than half receive treatment. Rural America has almost none.',
+    caption: 'Each figure = 1 person. Teal = no current mental health crisis. Dimmed = experiencing one. Tap to meet them.',
+    componentLink: '/foundation/mental-health/',
+    componentName: 'Mental Health',
+    componentText: 'Mental health is Component 5 of the Foundation framework.',
+    contextStats: [
+      { big: '1 in 5', small: 'adults experience mental illness annually' },
+      { big: '2 hrs', small: 'nearest psychiatrist from many rural OK towns' },
+      { big: '47%', small: 'of those who need treatment receive it' },
+      { big: '$193B', small: 'economic cost of untreated mental illness per year' }
+    ],
+    sourceNote: 'Sources: SAMHSA National Survey on Drug Use and Health · HRSA Rural Health · Mental Health America',
+    stories: [
+      {
+        name: 'James, 41',
+        role: 'Army veteran, Ada, Oklahoma',
+        text: `<strong>James came back from two tours with something he couldn't name.</strong> He didn't sleep well. He drove badly — hypervigilant at every overpass. He finally called the VA crisis line in 2021. They were kind. They put him on a waiting list. <em>He waited four months for his first appointment.</em> His wife had left by then. He's stable now — found a peer support group at his church. But he did it in spite of the system, not because of it.`,
+        whatHelps: '<strong>Foundation Mental Health Component:</strong> Telehealth mandated at parity with in-person. Veterans fast-tracked, not waitlisted. Peer support workers paid as healthcare workers.'
+      },
+      {
+        name: 'Kira, 16',
+        role: 'High schooler, Enid, Oklahoma',
+        text: `<strong>Kira's school has a counselor who serves 600 students.</strong> She's good at her job — really good. But she's one person. Kira asked to see her three times before they could fit her in. By then, Kira had stopped asking. Her grades dropped. Her mom noticed but didn't know what to do. <em>There's a therapist in town who takes their insurance — 6-week waitlist, closed to new patients.</em>`,
+        whatHelps: '<strong>Foundation Education + Mental Health:</strong> Every school funded at one counselor per 100 students. Community mental health centers in every county, funded at federal level.'
+      },
+      {
+        name: 'Ray, 58',
+        role: 'Oil field worker, Seminole County',
+        text: `<strong>Ray doesn't call it depression.</strong> He calls it "the heaviness." It started after the layoffs in 2020 — the third set in ten years. He's back working now but the heaviness didn't leave. He mentioned it once to his doctor, who prescribed something. The prescription costs $180 a month. <em>Ray fills it every other month.</em>`,
+        whatHelps: '<strong>Foundation Healthcare + Mental Health:</strong> Mental health medications at generic prices, covered. No ration choices. Prescription costs treated like infrastructure costs.'
+      }
+    ]
+  },
+  housing: {
+    label: 'Housing',
+    total: 30,
+    affected: 10, // ~1 in 3 cost-burdened
+    headline: '10 in 30 American renters spend more than 30% of income on housing.',
+    context: 'Called "cost-burdened." 1 in 2 renters in Oklahoma\'s cities. Many are one crisis from eviction.',
+    caption: 'Each figure = 1 person. Teal = housing stable. Dimmed = housing cost-burdened or unstable. Tap to meet them.',
+    componentLink: '/foundation/housing/',
+    componentName: 'Housing',
+    componentText: 'Housing is Component 14 of the Foundation framework.',
+    contextStats: [
+      { big: '93 hrs', small: 'work/week at OK min wage for 1-bedroom' },
+      { big: '$900', small: 'average SSI check vs $1,200+ average rent' },
+      { big: '1 in 4', small: 'Tulsa homeless were employed in 2024' },
+      { big: '7M', small: 'extremely low-income renters, no affordable unit exists for them' }
+    ],
+    sourceNote: 'Sources: NLIHC Out of Reach 2025 · Oklahoma Policy Institute · Tulsa CDBG Data · HUD Housing Affordability',
+    stories: [
+      {
+        name: 'Rosa, 38',
+        role: 'Home health aide, Tulsa',
+        text: `<strong>Rosa cares for elderly patients so they can stay out of nursing facilities.</strong> The work is essential. It pays $13.40 an hour. The cheapest one-bedroom near her clients runs $950 a month. She works 50-hour weeks and shares an apartment with her sister's family. <em>Three adults, two children, two bedrooms.</em> She's been on the Section 8 waitlist for four years. The waiting list is closed in most Oklahoma counties now.`,
+        whatHelps: '<strong>Foundation Housing Component:</strong> Community land trusts, rent control pilots, Section 8 expanded to cover gap — not waitlisted. Housing as infrastructure, not investment vehicle.'
+      },
+      {
+        name: 'Don, 67',
+        role: 'Retired, fixed income, Muskogee',
+        text: `<strong>Don's rent went up $200 in January.</strong> His Social Security stayed flat. He switched to eating once a day to make it work. His doctor told him his blood sugar was out of control. He didn't mention the diet. <em>He's been in that apartment for nine years. He has nowhere else to go.</em> The nearest shelter has a 90-day waitlist.`,
+        whatHelps: '<strong>Foundation Housing + Healthcare:</strong> Rent stabilization for seniors on fixed income. Healthcare visits that include social determinants screening — catch the diet before the ER visit.'
+      },
+      {
+        name: 'Amara, 28',
+        role: 'Teacher\'s aide, single mother, OKC',
+        text: `<strong>Amara is not homeless.</strong> She's doubled up — living in her cousin's spare room with her two kids. She has a job. She's saving. But childcare alone takes $900 a month. Her take-home is $1,700. <em>The math doesn't close.</em> She's been "almost stable" for three years. Almost doesn't count as safe when you're raising children.`,
+        whatHelps: '<strong>Foundation Housing + Childcare:</strong> Universal childcare subsidy breaks the trap. Without it, working parents can\'t save enough to get housed. The components only work together.'
+      }
+    ]
+  },
+  healthcare: {
+    label: 'Healthcare',
+    total: 30,
+    affected: 8, // ~1 in 4 underinsured/uninsured
+    headline: '8 in 30 Americans are uninsured or so underinsured they avoid care.',
+    context: '26 million uninsured. Tens of millions more skip care due to cost. Oklahoma ranks among the worst.',
+    caption: 'Each figure = 1 person. Teal = has reliable healthcare access. Dimmed = uninsured or avoiding care. Tap to meet them.',
+    componentLink: '/foundation/healthcare/',
+    componentName: 'Healthcare',
+    componentText: 'Healthcare is Component 1 of the Foundation framework.',
+    contextStats: [
+      { big: '26M', small: 'Americans with no health insurance' },
+      { big: '1 in 4', small: 'diabetics ration insulin due to cost' },
+      { big: '$14K', small: 'avg ER bill for preventable diabetic crisis' },
+      { big: '6th', small: 'worst state for healthcare access: Oklahoma' }
+    ],
+    sourceNote: 'Sources: KFF Health Insurance Coverage · American Diabetes Association · Peterson-KFF Health System Tracker · Oklahoma Health Care Authority',
+    stories: [
+      {
+        name: 'James, 44',
+        role: 'Subcontractor, Broken Arrow',
+        text: `<strong>James is diabetic.</strong> When his contract hours got cut, he lost his insurance. Insulin — the kind that keeps him stable — runs $300 a month out of pocket. He started rationing it. Halving doses. Skipping days when cash was tight. <em>In March he ended up in the ER. The bill was $14,000.</em> He's on a payment plan now — $180 a month for the next seven years — for a crisis that $900 of insulin would have prevented.`,
+        whatHelps: '<strong>Foundation Healthcare Component:</strong> Insulin at cost. Coverage that doesn\'t hinge on employer status. The math on prevention vs. crisis care isn\'t close.'
+      },
+      {
+        name: 'Lucia, 33',
+        role: 'Restaurant worker, Norman',
+        text: `<strong>Lucia has a tooth that\'s been hurting for six months.</strong> She doesn't have dental coverage. The cheapest quote she got was $800. She's been managing it with ibuprofen and hoping. Last week the pain reached her jaw. Her coworker told her that's how infections go to your brain. <em>She's scared but she still can't afford the $800.</em> She's looking up payment plans. She's also looking up what sepsis feels like.`,
+        whatHelps: '<strong>Foundation Healthcare Component:</strong> Dental as healthcare — not as luxury. Community health centers in every zip code, sliding scale. Lucia\'s infection was $80 to treat at the right stage.'
+      },
+      {
+        name: 'Carl, 71',
+        role: 'Retired, Cherokee County',
+        text: `<strong>Carl has Medicare but his prescriptions cost $400 a month</strong> after the coverage gap — what people call the "donut hole." He takes five medications. He's tried cutting two of them to afford the others. His blood pressure spiked. <em>His doctor doesn't know he's rationing.</em> Carl is embarrassed to say it. He was a machinist for 35 years. He paid in. This isn't what he expected.`,
+        whatHelps: '<strong>Foundation Healthcare Component:</strong> Prescription drug negotiation + Medicare donut hole closure. Carl worked 35 years. The deal should hold.'
+      }
+    ]
+  },
+  food: {
+    label: 'Food',
+    total: 30,
+    affected: 4, // ~1 in 8 food insecure
+    headline: '4 in 30 Americans experience food insecurity.',
+    context: '44 million people. In Oklahoma, 1 in 6. The USDA stopped tracking it in 2025.',
+    caption: 'Each figure = 1 person. Teal = food secure. Dimmed = food insecure. Tap to meet them.',
+    componentLink: '/foundation/food/',
+    componentName: 'Food',
+    componentText: 'Food security is Component 10 of the Foundation framework.',
+    contextStats: [
+      { big: '44M', small: 'Americans who experience food insecurity' },
+      { big: '1 in 6', small: 'Oklahomans are food insecure — 47th worst' },
+      { big: '13M', small: 'children go to bed hungry in the US each year' },
+      { big: '2025', small: 'USDA eliminated its annual food insecurity report' }
+    ],
+    sourceNote: 'Sources: USDA Economic Research Service (pre-elimination) · Feeding America 2024 · Oklahoma Association of Food Banks · Annie E. Casey Foundation',
+    stories: [
+      {
+        name: 'Deja, 9',
+        role: '4th grader, Lawton, Oklahoma',
+        text: `<strong>Deja's school has free lunch.</strong> She qualifies. But the free lunch tray is a different color from the paid tray, and some kids noticed last year and said something. <em>Now Deja skips lunch twice a week.</em> She tells the lunch monitor she's not hungry. She goes to the library. She can't concentrate in 5th period. Her teacher thinks she might have ADHD. Her teacher doesn't know about the tray.`,
+        whatHelps: '<strong>Foundation Food + Education Component:</strong> Universal school meals — every tray the same. No shame mechanism built into the system. Hungry kids don\'t learn. Fed kids do.'
+      },
+      {
+        name: 'Sandra, 61',
+        role: 'Grandmother, caregiver, Tulsa',
+        text: `<strong>Sandra is raising her two grandchildren</strong> on a fixed income after her daughter's addiction crisis. SNAP covers about 60% of their food budget. The rest comes from the food pantry on Tuesdays — but it's only open until 2pm, and Sandra doesn't have a car. <em>She takes two buses. It takes three hours round trip.</em> She does it every week because the kids need to eat.`,
+        whatHelps: '<strong>Foundation Food + Transportation:</strong> SNAP at full nutrition cost, not political cost. Mobile food distribution as public infrastructure. Sandra shouldn\'t need three hours and two buses to feed her grandchildren.'
+      },
+      {
+        name: 'Miguel, 47',
+        role: 'Farmworker, Western Oklahoma',
+        text: `<strong>Miguel grows food for a living.</strong> He and his crew harvest wheat, sorghum, soybeans — thousands of acres. His employer provides housing but deducts it from wages. After the deduction, after sending money home, <em>Miguel eats what he can afford, which is usually not much, and almost never fresh.</em> He's harvested enough food this year to feed a small city. He goes to bed hungry.`,
+        whatHelps: '<strong>Foundation Food + Labor Component:</strong> Farmworker wage floors that account for housing deductions. Food dignity shouldn\'t be ironic — the people growing our food deserve to eat.'
+      }
+    ]
+  }
+};
+
+let currentStat = 'literacy';
+let activeStoryIdx = null;
+
+function makeFigureSVG(lit, idx) {
+  return `<svg class="figure" width="36" height="56" viewBox="0 0 36 56" xmlns="http://www.w3.org/2000/svg">
+    <circle class="head" cx="18" cy="9" r="8" fill="${lit ? '#4ecdc4' : '#2a2a35'}"/>
+    <rect class="body" x="10" y="19" width="16" height="22" rx="4" fill="${lit ? '#4ecdc4' : '#2a2a35'}" opacity="${lit ? '.85' : '.8'}"/>
+    <rect class="legs" x="10" y="38" width="6" height="16" rx="3" fill="${lit ? '#4ecdc4' : '#2a2a35'}" opacity="${lit ? '.7' : '.6'}"/>
+    <rect class="legs" x="20" y="38" width="6" height="16" rx="3" fill="${lit ? '#4ecdc4' : '#2a2a35'}" opacity="${lit ? '.7' : '.6'}"/>
+  </svg>`;
+}
+
+function renderGrid() {
+  const s = STATS[currentStat];
+  const grid = document.getElementById('figure-grid');
+  const litCount = s.total - s.affected;
+
+  // Headline
+  document.getElementById('stat-num').textContent = litCount;
+  document.getElementById('stat-context').textContent = s.headline;
+  document.getElementById('grid-caption').textContent = s.caption;
+
+  // Context stats
+  const ctxGrid = document.getElementById('context-grid');
+  ctxGrid.innerHTML = s.contextStats.map(c =>
+    `<div class="context-stat"><div class="big">${c.big}</div><div class="small">${c.small}</div></div>`
+  ).join('');
+
+  // Footer
+  document.getElementById('footer-text').textContent = s.componentText;
+  document.getElementById('footer-link').href = s.componentLink;
+  document.getElementById('footer-link').textContent = `Read the ${s.componentName} Component →`;
+  document.getElementById('source-note').textContent = s.sourceNote;
+
+  // Figures
+  grid.innerHTML = '';
+  for (let i = 0; i < s.total; i++) {
+    const lit = i < litCount;
+    const wrap = document.createElement('div');
+    wrap.className = `figure-wrap ${lit ? 'lit' : 'dim'}`;
+    wrap.innerHTML = makeFigureSVG(lit, i);
+
+    if (!lit) {
+      const dimIdx = i - litCount;
+      const storyIdx = dimIdx % s.stories.length;
+      wrap.dataset.story = storyIdx;
+      wrap.addEventListener('click', () => showStory(storyIdx, wrap));
+      wrap.title = 'Tap to meet them';
+    }
+    grid.appendChild(wrap);
+  }
+
+  // Reset story panel
+  resetStoryPanel();
+  activeStoryIdx = null;
+}
+
+function resetStoryPanel() {
+  const panel = document.getElementById('story-panel');
+  panel.className = 'story-panel empty';
+  panel.innerHTML = '<div class="story-hint">← Tap any dimmed figure to meet them</div>';
+}
+
+function showStory(idx, wrapEl) {
+  const s = STATS[currentStat];
+  const story = s.stories[idx];
+
+  // Remove active from all
+  document.querySelectorAll('.figure-wrap.active-story').forEach(el => el.classList.remove('active-story'));
+  wrapEl.classList.add('active-story');
+
+  const panel = document.getElementById('story-panel');
+  panel.className = 'story-panel';
+  panel.innerHTML = `
+    <div class="story-eyebrow">One of ${s.affected} in 30</div>
+    <div class="story-name">${story.name}</div>
+    <div class="story-role">${story.role}</div>
+    <div class="story-text">${story.text}</div>
+    <div class="story-what-helps">${story.whatHelps}</div>
+    <div class="story-footer">This is a composite portrait — a pattern drawn from real data, real interviews, and real conditions in Oklahoma and across the country. The name is fictional. The situation is not.</div>
+  `;
+
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  activeStoryIdx = idx;
+}
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    currentStat = this.dataset.stat;
+    renderGrid();
+  });
+});
+
+// Init
+renderGrid();
+</script>
+<script>
+function _reportHeight() {
+  window.parent.postMessage({iframeHeight: document.documentElement.scrollHeight}, '*');
+}
+window.addEventListener('load', _reportHeight);
+window.addEventListener('resize', _reportHeight);
+new MutationObserver(_reportHeight).observe(document.body, {childList:true, subtree:true, attributes:true, characterData:true});
+</script>
+</body>
+</html>

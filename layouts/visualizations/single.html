@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="viz-single">
+  <header class="viz-header">
+    <div class="post-meta">
+      {{ with .Params.type }}<span class="post-type visualization">interactive</span>{{ end }}
+      <time>{{ .Date.Format "January 2, 2006" }}</time>
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="viz-description">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="viz-content">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.tags }}
+  <div class="post-tags" style="max-width: var(--max-width); margin: 2rem auto 0; padding: 1.5rem 2rem 0; border-top: 1px solid var(--border-subtle);">
+    {{ range . }}<a href="/tags/{{ . | urlize }}/">#{{ . }}</a>{{ end }}
+  </div>
+  {{ end }}
+
+  <div style="margin-top: 2rem; text-align: center;">
+    <a href="/visualizations/" style="color: var(--text-muted); font-size: 0.85rem;">← All Visualizations</a>
+  </div>
+</article>
+{{ end }}

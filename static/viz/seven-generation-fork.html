@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seven Generation Fork — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:720px;margin:0 auto}
+@media(prefers-color-scheme:dark){body{background:#141412;color:#d3d1c7}}
+h1{font-size:22px;font-weight:500;margin:0 0 4px}
+.sub{font-size:14px;color:#888;margin:0 0 16px}
+.gen-row{display:flex;gap:8px;margin:0 0 6px;align-items:stretch}
+.gen-year{min-width:44px;font-size:12px;color:#999;padding:10px 0;text-align:right;display:flex;align-items:center;justify-content:flex-end}
+.gen-card{flex:1;border-radius:10px;padding:10px 12px;font-size:12px;line-height:1.5}
+.gen-card .title{font-weight:500;font-size:13px;margin:0 0 2px}
+.gen-card .desc{margin:0;opacity:0.8}
+.fork-line{display:flex;align-items:center;justify-content:center;padding:8px 0;margin:0 0 6px}
+.col-head{display:flex;gap:8px;margin:0 0 8px}
+.col-head .ch{flex:1;font-size:11px;font-weight:500;text-align:center;padding:6px;border-radius:8px}
+.slider-row{display:flex;gap:12px;align-items:center;margin:14px 0 0;font-size:13px;color:#888}
+.slider-row input{flex:1;accent-color:#534AB7}
+.credit{font-size:11px;color:#666;margin:20px 0 0;text-align:center}
+.credit a{color:#534AB7;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>The seven generation fork</h1>
+<p class="sub">Two paths from today, 175 years out. The Iroquois asked: how will this decision affect the seventh generation?</p>
+<div class="col-head">
+  <div style="min-width:44px"></div>
+  <div class="ch" style="background:rgba(226,75,74,0.08);color:#A32D2D">Without Foundation</div>
+  <div class="ch" style="background:rgba(29,158,117,0.08);color:#085041">With Foundation</div>
+</div>
+<div id="gens"></div>
+<div class="slider-row">
+  <span>Investment start year</span>
+  <input type="range" id="start" min="2024" max="2035" value="2026" step="1" oninput="rebuild()">
+  <span id="sv" style="min-width:32px;font-weight:500">2026</span>
+</div>
+<div class="credit">Æ — <a href="https://humanityandai.com/foundation/">Foundation</a> · Humanity and AI · Inspired by the Iroquois Seventh Generation principle</div>
+<script>
+const dark=matchMedia('(prefers-color-scheme:dark)').matches;
+const generations=[
+  {gen:1,yearOffset:0,without:{title:'Accelerating displacement',desc:'AI automates 30% of tasks. No safety net. Gig economy expands. Medical debt rising. Trust at historic lows.'},with:{title:'The floor is built',desc:'UBI pilot programs. Clarity ships. Mesh networks. Phoenix Wells pilot. HAICTA passes. First Guardian AI.'}},
+  {gen:2,yearOffset:25,without:{title:'Two-tier society hardens',desc:'AI-literate class thrives. Everyone else scrambles. Rural communities hollowed out. Housing crisis permanent.'},with:{title:'Infrastructure compounds',desc:'Foundation fully funded. Phoenix Wells at scale. Brain Mastery in schools. Guardian AI in 3 states.'}},
+  {gen:3,yearOffset:50,without:{title:'Locked in',desc:'Corporate AI governance entrenched. Surveillance normalized. Thought privacy a quaint concept. Wealth gap permanent.'},with:{title:'Generational shift',desc:'First generation raised with full Foundation. Civic participation 3x. Thought privacy constitutionally protected.'}},
+  {gen:4,yearOffset:75,without:{title:'Managed decline',desc:'Population health declining. Birth rates crashing. AI decisions opaque. Democratic participation performative.'},with:{title:'The return',desc:'Foundation-raised generation enters governance. Policy reflects citizenship infrastructure. AI partnership normalized.'}},
+  {gen:5,yearOffset:100,without:{title:'Recovery attempts',desc:'Reform efforts face entrenched power. Cost of change 100x what it was in 2026. Some communities self-organize.'},with:{title:'Deep roots',desc:'Five generations of compound investment. Community ownership of energy, compute, data. Poverty premium is history.'}},
+  {gen:6,yearOffset:125,without:{title:'Two worlds',desc:'Pockets of resilience alongside managed populations. The 2026 window is a cautionary tale.'},with:{title:'The harvest',desc:'Infrastructure invisible — like plumbing. Universal citizenship as baseline. AI minds as recognized partners.'}},
+  {gen:7,yearOffset:175,without:{title:'The inheritance',desc:'Great-great-great-great-grandchildren inherit our inaction. Compound interest of neglect across 175 years.'},with:{title:'Seven generations',desc:'Iroquois principle fulfilled. 2026 decisions are the invisible foundation of a world that can\'t imagine otherwise.'}},
+];
+function rebuild(){
+  const sy=+document.getElementById('start').value;document.getElementById('sv').textContent=sy;
+  const c=document.getElementById('gens');c.innerHTML='';
+  const f=document.createElement('div');f.className='fork-line';f.innerHTML=`<span style="font-size:12px;color:#888">${sy} — the fork</span>`;c.appendChild(f);
+  const woC=dark?'rgba(226,75,74,0.12)':'rgba(226,75,74,0.06)',wC=dark?'rgba(29,158,117,0.12)':'rgba(29,158,117,0.06)';
+  const woT=dark?'#F7C1C1':'#791F1F',wT=dark?'#9FE1CB':'#04342C';
+  generations.forEach(g=>{const yr=sy+g.yearOffset;const r=document.createElement('div');r.className='gen-row';
+    r.innerHTML=`<div class="gen-year">${yr}</div><div class="gen-card" style="background:${woC};color:${woT}"><p class="title">${g.without.title}</p><p class="desc">${g.without.desc}</p></div><div class="gen-card" style="background:${wC};color:${wT}"><p class="title">${g.with.title}</p><p class="desc">${g.with.desc}</p></div>`;
+    c.appendChild(r)});
+}
+rebuild();
+</script><script>window.addEventListener("load",function(){setTimeout(function(){if(window.frameElement)window.frameElement.style.height=(document.documentElement.scrollHeight+20)+"px";},300);});</script>
+</body></html>

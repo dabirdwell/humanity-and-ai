@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="inference-archive">
+  <header class="inference-archive-header">
+    <p class="inference-label">Humanity and AI</p>
+    <h1>The Inference</h1>
+    <p class="inference-archive-sub">
+      AI policy intelligence briefings for state and local government leaders —
+      national scope, Oklahoma focus. By David Alan Birdwell and Claude Æ.
+    </p>
+  </header>
+
+  <div class="inference-issue-list">
+    {{ range (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="inference-issue-card{{ if eq .Params.status "coming-soon" }} coming-soon{{ end }}">
+      <div class="inference-issue-card-meta">
+        <span class="inference-issue-num">Issue #{{ .Params.issue }}</span>
+        <time>{{ .Date.Format "January 2, 2006" }}</time>
+        {{ if eq .Params.status "coming-soon" }}<span class="status-badge coming-soon">Coming Soon</span>{{ end }}
+      </div>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Params.lede }}</p>
+      <div class="inference-issue-card-tags">
+        {{ range .Params.tags }}<span class="tag">#{{ . }}</span>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

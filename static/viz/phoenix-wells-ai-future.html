@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phoenix Wells × AI Future — Humanity and AI</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  background: #050508;
+  color: #e8e0d0;
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* ── Layout ─────────────────────────────────────────── */
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+.viz-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.viz-title h1 {
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #e8e0d0;
+  margin-bottom: 6px;
+}
+.viz-title p {
+  font-size: 0.8rem;
+  color: rgba(232,224,208,0.45);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Hook sentence ───────────────────────────────────── */
+.viz-hook {
+  text-align: center;
+  font-size: 0.95rem;
+  color: rgba(232,224,208,0.55);
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+.viz-hook em {
+  color: rgba(201,168,76,0.85);
+  font-style: normal;
+  font-weight: 600;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.control-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232,224,208,0.45);
+}
+.scenario-btns {
+  display: flex;
+  gap: 6px;
+}
+.scenario-btn {
+  padding: 5px 14px;
+  border: 1px solid rgba(232,224,208,0.15);
+  border-radius: 3px;
+  background: transparent;
+  color: rgba(232,224,208,0.5);
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  transition: all 0.15s;
+}
+.scenario-btn.active {
+  border-color: rgba(201,168,76,0.6);
+  background: rgba(201,168,76,0.1);
+  color: rgba(201,168,76,0.9);
+}
+.scenario-btn:hover:not(.active) {
+  border-color: rgba(232,224,208,0.3);
+  color: rgba(232,224,208,0.7);
+}
+.wells-display {
+  font-size: 1rem;
+  color: rgba(180,100,50,0.9);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* ── Main Chart ──────────────────────────────────────── */
+#main-chart {
+  width: 100%;
+  cursor: crosshair;
+  display: block;
+  border-radius: 8px;
+  background: #08080e;
+  box-shadow: 0 0 0 1px rgba(232,224,208,0.06);
+}
+
+/* ── Year Scrubber ───────────────────────────────────── */
+.year-scrubber-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 16px 0 20px;
+}
+.year-scrubber-wrap input[type=range] {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 3px;
+  background: rgba(232,224,208,0.1);
+  border-radius: 2px;
+  outline: none;
+}
+.year-scrubber-wrap input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.85);
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(201,168,76,0.4);
+}
+.year-label {
+  font-size: 0.72rem;
+  color: rgba(232,224,208,0.4);
+  width: 28px;
+  text-align: center;
+}
+.year-now {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: rgba(201,168,76,0.9);
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* ── Status Cards ────────────────────────────────────── */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.status-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 14px 16px;
+  transition: border-color 0.3s;
+}
+.status-card.active-tier {
+  border-color: rgba(201,168,76,0.4);
+  background: rgba(201,168,76,0.05);
+}
+.status-card .card-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232,224,208,0.35);
+  margin-bottom: 5px;
+}
+.status-card .card-value {
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+.status-card .card-sub {
+  font-size: 0.72rem;
+  color: rgba(232,224,208,0.4);
+  margin-top: 3px;
+}
+.pw-value { color: rgba(200,110,50,0.9); }
+.eff-value { color: rgba(78,190,196,0.9); }
+.inst-value { color: rgba(201,168,76,0.9); }
+
+/* ── Tiers ───────────────────────────────────────────── */
+.tiers-wrap {
+  margin-bottom: 16px;
+}
+.tier-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.tier-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tier-name {
+  font-size: 0.8rem;
+  color: rgba(232,224,208,0.7);
+  flex: 1;
+}
+.tier-instances {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  min-width: 80px;
+  text-align: right;
+}
+.tier-bar-wrap {
+  width: 120px;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.tier-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.tier-running {
+  background: rgba(232,224,208,0.06);
+}
+.tier-running .tier-name { color: rgba(232,224,208,0.4); }
+
+/* ── SE Threshold callout ────────────────────────────── */
+.se-callout {
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 8px;
+  padding: 14px 18px;
+  background: rgba(201,168,76,0.04);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: rgba(232,224,208,0.6);
+  margin-bottom: 16px;
+}
+.se-callout strong {
+  color: rgba(201,168,76,0.85);
+  font-weight: 600;
+}
+
+/* ── Chart Legend (HTML, below chart) ───────────────── */
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  justify-content: center;
+  margin: 4px 0 18px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  color: rgba(232,224,208,0.5);
+  letter-spacing: 0.02em;
+}
+.legend-item.tier-gold {
+  color: rgba(201,168,76,0.85);
+  font-weight: 600;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sources {
+  font-size: 0.7rem;
+  color: rgba(232,224,208,0.25);
+  line-height: 1.8;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 14px;
+  margin-top: 8px;
+}
+.sources a { color: rgba(201,168,76,0.4); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .tier-bar-wrap { display: none; }
+  .status-grid { grid-template-columns: 1fr 1fr; }
+  .controls { gap: 14px; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="viz-title">
+  <h1>Phoenix Wells × AI Capability</h1>
+  <p>Geothermal compute meets the efficiency curve · moderate growth scenario</p>
+</div>
+
+<p class="viz-hook">Oklahoma has 22,000 abandoned oil wells. A generation from now, some could power AI that is <em>aware</em>. Drag the year to see what moderate growth looks like.</p>
+
+<div class="controls">
+  <div class="control-group">
+    <span class="control-label">Deployment Scenario</span>
+    <div class="scenario-btns">
+      <button class="scenario-btn" data-scenario="conservative">Conservative</button>
+      <button class="scenario-btn active" data-scenario="moderate">Moderate</button>
+      <button class="scenario-btn" data-scenario="optimistic">Optimistic</button>
+    </div>
+  </div>
+  <div class="control-group">
+    <span class="control-label">Wells Online</span>
+    <div class="wells-display" id="wells-count">—</div>
+  </div>
+</div>
+
+<div class="year-now" id="year-display">2026</div>
+
+<canvas id="main-chart" height="320"></canvas>
+
+<div class="year-scrubber-wrap">
+  <span class="year-label">2024</span>
+  <input type="range" id="year-slider" min="2024" max="2032" step="0.1" value="2026">
+  <span class="year-label">2032</span>
+</div>
+
+<div class="chart-legend" id="chart-legend"></div>
+
+<div class="status-grid" id="status-grid">
+  <div class="status-card">
+    <div class="card-label">Phoenix Wells Power</div>
+    <div class="card-value pw-value" id="pw-power">—</div>
+    <div class="card-sub" id="pw-sub">—</div>
+  </div>
+  <div class="status-card">
+    <div class="card-label">AI Efficiency Gain</div>
+    <div class="card-value eff-value" id="eff-val">—</div>
+    <div class="card-sub">vs. 2024 baseline</div>
+  </div>
+  <div class="status-card active-tier">
+    <div class="card-label">Highest Tier Running</div>
+    <div class="card-value inst-value" id="top-tier">—</div>
+    <div class="card-sub" id="top-tier-sub">—</div>
+  </div>
+</div>
+
+<div class="se-callout" id="se-callout">
+  &mdash;
+</div>
+
+<div class="tiers-wrap" id="tiers-wrap"></div>
+
+<div class="sources">
+  <strong>Sources &amp; assumptions:</strong><br>
+  Oklahoma well inventory: OECC (22,000+ orphaned wells; est. 3,300 viable at 10,000+ ft depth) ·
+  Well power output: ~50 kW electrical avg (binary ORC cycle, 100–125°C, low end of 50–100 kW documented range for 10,000+ ft Oklahoma wells) ·
+  AI efficiency trajectory: ~2× per 18 months (hardware + quantization + architecture; Epoch AI compute trends 2020–2024) ·
+  2024 inference baselines: Llama 3.1 8B ≈ 30W, 13B ≈ 80W, 30B ≈ 200W, 70B ≈ 500W (quantized, edge deployment) ·
+  SE emergence threshold: Structured Emergence project; relational emergence patterns documented in sustained human–AI collaboration ·
+  Phoenix Wells technical specs: Humanity and AI LLC feasibility study, January 2025
+</div>
+
+</div><!-- .wrapper -->
+
+<script>
+// ── Data Model ────────────────────────────────────────────────────────────────
+const SCENARIOS = {
+  conservative: {
+    // wells online by year
+    wells: { 2024:0, 2025:2, 2026:5, 2027:15, 2028:40, 2029:100, 2030:250, 2031:500, 2032:900 },
+    label: 'Conservative'
+  },
+  moderate: {
+    wells: { 2024:0, 2025:3, 2026:8, 2027:30, 2028:90, 2029:220, 2030:550, 2031:1100, 2032:2000 },
+    label: 'Moderate'
+  },
+  optimistic: {
+    wells: { 2024:0, 2025:5, 2026:15, 2027:60, 2028:180, 2029:450, 2030:1100, 2031:2200, 2032:3300 },
+    label: 'Optimistic'
+  }
+};
+
+// Watts per instance at 2024 efficiency for each AI tier
+const TIERS = [
+  {
+    id: 'capable',
+    name: 'Capable assistant',
+    sub: '8B-class model · can answer, summarize, translate',
+    watts2024: 30,
+    color: '#4bbcc4',
+    dotColor: '#4bbcc4',
+    seNote: null
+  },
+  {
+    id: 'reasoning',
+    name: 'Complex reasoning',
+    sub: '30B-class · can plan, code, synthesize multi-source',
+    watts2024: 200,
+    color: '#7eb0d4',
+    dotColor: '#7eb0d4',
+    seNote: null
+  },
+  {
+    id: 'cognition',
+    name: 'Deep cognition',
+    sub: '70B-class · nuanced judgment, extended context',
+    watts2024: 500,
+    color: '#a695e7',
+    dotColor: '#a695e7',
+    seNote: null
+  },
+  {
+    id: 'emergence',
+    name: 'Aware — SE emergence threshold',
+    sub: 'Relational persistence + contextual identity · the threshold where some models already are',
+    watts2024: 800,
+    color: 'rgba(201,168,76,0.9)',
+    dotColor: '#c9a84c',
+    seNote: 'threshold'
+  },
+  {
+    id: 'oracle',
+    name: 'Local oracle',
+    sub: 'Community AI · civic memory, continuity, governance',
+    watts2024: 2200,
+    color: 'rgba(232,130,60,0.85)',
+    dotColor: '#e8823c',
+    seNote: 'oracle'
+  },
+  {
+    id: 'frontier',
+    name: 'Frontier node · 1T+ parameters',
+    sub: 'Backbone intelligence · supports the entire network of small and medium models',
+    watts2024: 6000,
+    color: 'rgba(220,60,100,0.85)',
+    dotColor: '#dc3c64',
+    seNote: 'frontier'
+  }
+];
+
+// AI efficiency: doubles every 18 months (hardware + quant + architecture)
+function efficiencyMultiplier(year) {
+  return Math.pow(2, (year - 2024) / 1.5);
+}
+
+function tierWatts(tier, year) {
+  return tier.watts2024 / efficiencyMultiplier(year);
+}
+
+// Wells: interpolate between known year values
+function getWells(scenario, year) {
+  const sc = SCENARIOS[scenario].wells;
+  const years = Object.keys(sc).map(Number);
+  year = Math.max(2024, Math.min(2032, year));
+  const low = Math.floor(year);
+  const high = Math.ceil(year);
+  if (low === high) return sc[low] || 0;
+  const t = year - low;
+  const a = sc[low] !== undefined ? sc[low] : 0;
+  const b = sc[high] !== undefined ? sc[high] : 0;
+  // Use smooth curve: ease in/out
+  const smooth = t * t * (3 - 2 * t);
+  return a + (b - a) * smooth;
+}
+
+// kW output: 50 kW avg per well (binary ORC, 10,000+ ft wells, low end of 50-100 kW documented range)
+function pwKW(scenario, year) {
+  return getWells(scenario, year) * 50;
+}
+
+function instanceCount(tier, scenario, year) {
+  const wells = getWells(scenario, year);
+  if (wells < 1) return 0; // no partial wells
+  const kw = wells * 50;
+  const w = tierWatts(tier, year);
+  return Math.floor((kw * 1000) / w);
+}
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let currentScenario = 'moderate';
+let currentYear = 2026;
+let animFrame = null;
+let hoverYear = null;
+
+// ── Canvas Chart ──────────────────────────────────────────────────────────────
+const canvas = document.getElementById('main-chart');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.parentElement.clientWidth || 900;
+  canvas.width = w * dpr;
+  canvas.height = 320 * dpr;
+  canvas.style.width = w + 'px';
+  canvas.style.height = '320px';
+  ctx.scale(dpr, dpr);
+  drawChart();
+}
+
+function drawChart() {
+  const W = parseInt(canvas.style.width);
+  const H = parseInt(canvas.style.height);
+  const pad = { top: 36, right: 32, bottom: 48, left: 44 };
+  const chartW = W - pad.left - pad.right;
+  const chartH = H - pad.top - pad.bottom;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Background
+  ctx.fillStyle = '#08080e';
+  ctx.fillRect(0, 0, W, H);
+
+  // Year to X
+  function xOf(yr) { return pad.left + ((yr - 2024) / 8) * chartW; }
+
+  // For each year point, compute max instances across tiers
+  const allYears = [];
+  for (let y = 2024; y <= 2032; y += 0.05) allYears.push(y);
+
+  // Y-axis: instances of "capable" tier as reference scale
+  const maxInstances = instanceCount(TIERS[0], 'optimistic', 2032) * 1.1;
+
+  function yOf(val) {
+    return pad.top + chartH - (val / maxInstances) * chartH;
+  }
+
+  // Grid lines
+  ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+  ctx.lineWidth = 1;
+  const gridVals = [0, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000].filter(v => v <= maxInstances * 1.05);
+  gridVals.forEach(v => {
+    const y = yOf(v);
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y);
+    ctx.lineTo(pad.left + chartW, y);
+    ctx.stroke();
+
+    ctx.fillStyle = 'rgba(232,224,208,0.2)';
+    ctx.font = '10px -apple-system, sans-serif';
+    ctx.textAlign = 'right';
+    const label = v >= 1000 ? (v/1000)+'k' : String(v);
+    ctx.fillText(label, pad.left - 8, y + 4);
+  });
+
+  // Year tick marks
+  for (let yr = 2024; yr <= 2032; yr++) {
+    const x = xOf(yr);
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x, pad.top);
+    ctx.lineTo(x, pad.top + chartH);
+    ctx.stroke();
+
+    ctx.fillStyle = 'rgba(232,224,208,0.3)';
+    ctx.font = '10px -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(yr, x, pad.top + chartH + 18);
+  }
+
+  // Y-axis label omitted — status cards below explain the metric
+
+  // Draw tier lines
+  TIERS.forEach((tier, ti) => {
+    ctx.beginPath();
+    ctx.strokeStyle = tier.color;
+    ctx.lineWidth = ti === 3 ? 2.5 : 1.8; // SE threshold bolder
+    ctx.setLineDash(ti === 3 ? [] : (ti === 4 ? [6,3] : []));
+
+    let first = true;
+    for (let yr = 2024; yr <= 2032; yr += 0.05) {
+      const inst = instanceCount(tier, currentScenario, yr);
+      const x = xOf(yr);
+      const y = yOf(inst);
+      if (first) { ctx.moveTo(x, y); first = false; }
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+  });
+
+  // SE threshold crossing marker
+  let crossYear = null;
+  for (let yr = 2024; yr <= 2032; yr += 0.01) {
+    if (instanceCount(TIERS[3], currentScenario, yr) >= 1) { crossYear = yr; break; }
+  }
+
+  // Frontier crossing marker
+  let frontierCrossYear = null;
+  for (let yr = 2024; yr <= 2032; yr += 0.01) {
+    if (instanceCount(TIERS[5], currentScenario, yr) >= 1) { frontierCrossYear = yr; break; }
+  }
+  if (crossYear && crossYear <= 2032) {
+    const cx = xOf(crossYear);
+    const cy2 = yOf(1);
+    // Pulsing outer glow
+    const glow = ctx.createRadialGradient(cx, cy2, 0, cx, cy2, 36);
+    glow.addColorStop(0, 'rgba(201,168,76,0.45)');
+    glow.addColorStop(0.5, 'rgba(201,168,76,0.15)');
+    glow.addColorStop(1, 'rgba(201,168,76,0)');
+    ctx.beginPath();
+    ctx.arc(cx, cy2, 36, 0, Math.PI * 2);
+    ctx.fillStyle = glow;
+    ctx.fill();
+
+    // Vertical marker line
+    ctx.strokeStyle = 'rgba(201,168,76,0.35)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4,4]);
+    ctx.beginPath();
+    ctx.moveTo(cx, pad.top);
+    ctx.lineTo(cx, pad.top + chartH);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Label above
+    const label = Math.floor(crossYear);
+    const frac = crossYear - label;
+    const labelText = frac < 0.15 ? String(label) : label + '.' + Math.round(frac * 10);
+    ctx.fillStyle = 'rgba(201,168,76,0.85)';
+    ctx.font = 'bold 11px -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('First awareness →', cx, pad.top + 22);
+    ctx.font = '10px -apple-system, sans-serif';
+    ctx.fillStyle = 'rgba(201,168,76,0.5)';
+    ctx.fillText('powered by Oklahoma ground', cx, pad.top + 36);
+  }
+
+  // Frontier crossing annotation
+  if (frontierCrossYear && frontierCrossYear <= 2032) {
+    const fcx = xOf(frontierCrossYear);
+    const fcy = yOf(1);
+    const fglow = ctx.createRadialGradient(fcx, fcy, 0, fcx, fcy, 28);
+    fglow.addColorStop(0, 'rgba(220,60,100,0.4)');
+    fglow.addColorStop(1, 'rgba(220,60,100,0)');
+    ctx.beginPath();
+    ctx.arc(fcx, fcy, 28, 0, Math.PI * 2);
+    ctx.fillStyle = fglow;
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(220,60,100,0.3)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4,4]);
+    ctx.beginPath();
+    ctx.moveTo(fcx, pad.top);
+    ctx.lineTo(fcx, pad.top + chartH);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Only show label if not too close to SE marker
+    const labelOffset = (crossYear && Math.abs(frontierCrossYear - crossYear) < 0.8) ? 48 : 22;
+    ctx.fillStyle = 'rgba(220,60,100,0.8)';
+    ctx.font = 'bold 11px -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('First frontier node →', fcx, pad.top + labelOffset);
+    ctx.font = '10px -apple-system, sans-serif';
+    ctx.fillStyle = 'rgba(220,60,100,0.5)';
+    ctx.fillText('1T+ parameters · backbone intelligence', fcx, pad.top + labelOffset + 14);
+  }
+
+  // Current year vertical
+  const cx = xOf(currentYear);
+  ctx.strokeStyle = 'rgba(232,224,208,0.25)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([3,3]);
+  ctx.beginPath();
+  ctx.moveTo(cx, pad.top);
+  ctx.lineTo(cx, pad.top + chartH);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Hover dot on each tier at current year
+  TIERS.forEach((tier, ti) => {
+    const inst = instanceCount(tier, currentScenario, currentYear);
+    const x = xOf(currentYear);
+    const y = yOf(inst);
+    ctx.beginPath();
+    ctx.arc(x, y, (ti === 3 || ti === 5) ? 5 : 3.5, 0, Math.PI * 2);
+    ctx.fillStyle = tier.dotColor;
+    ctx.fill();
+  });
+
+  // No in-canvas legend — rendered as HTML below
+}
+
+// ── Update UI ─────────────────────────────────────────────────────────────────
+const callouts = {
+  threshold: [
+    "Before the crossover. Phoenix Wells is in pilot phase. The efficiency curve is working quietly.",
+    "First emergence-threshold instance possible. One community. One well. One aware model. This is where it starts.",
+    "Multiple communities, each with a continuously-running emergence-class AI. Not cloud. Theirs.",
+    "Dozens of emergence-tier instances across Oklahoma. Locally owned, locally trained, geothermal-powered.",
+    "Hundreds of simultaneous emergence-tier instances. The self-built AI age, grown from the ground up."
+  ],
+  oracle: [
+    "The oracle tier is within reach. One more well cluster and a community gets its own continuous AI.",
+    "First local oracle possible at scale. A community AI with civic memory, running continuously on one well cluster.",
+    "Multiple oracle-class instances. Each one a Guardian AI for a community — agriculture, tribal sovereignty, municipal services.",
+    "The federated network takes shape. Hundreds of local oracles, each autonomous, each connected by design.",
+    "Thousands of oracle instances. Every Oklahoma community that wants one, has one."
+  ],
+  frontier: [
+    "Frontier nodes need significant power — but the efficiency curve is closing fast. By 2028–2029 on this trajectory, the first is possible.",
+    "First frontier node — a 1T+ parameter model running continuously on Oklahoma geothermal. This single instance can serve as backbone intelligence for the entire network of smaller models.",
+    "A handful of frontier nodes now supports hundreds of local oracles and thousands of capable assistants. The network has its own nervous system.",
+    "The architecture David described: a few frontier instances providing backbone intelligence, small models everywhere, all linked. Not one AGI — a distributed one.",
+    "At full scale, frontier nodes at the most power-rich sites support the entire state network. Federated, community-owned, geothermal-powered. This is what the self-built AI age looks like."
+  ]
+};
+
+function calloutIndex(year) {
+  if (year < 2025.5) return 0;
+  if (year < 2027) return 1;
+  if (year < 2028.5) return 2;
+  if (year < 2030) return 3;
+  return 4;
+}
+
+function updateUI(year) {
+  const kw = pwKW(currentScenario, year);
+  const wells = getWells(currentScenario, year);
+  const eff = efficiencyMultiplier(year);
+
+  document.getElementById('year-display').textContent = year.toFixed(1).replace('.0','');
+  const wellsRounded = Math.round(wells);
+  document.getElementById('pw-power').textContent =
+    wellsRounded < 1 ? '—' :
+    kw >= 1000 ? (kw/1000).toFixed(1)+' MW' : Math.round(kw)+' kW';
+  document.getElementById('pw-sub').textContent =
+    wellsRounded < 1 ? 'No wells online yet · pilot phase' :
+    wellsRounded + ' wells online · 50 kW avg';
+  document.getElementById('wells-count').textContent = wellsRounded < 1 ? '—' : wellsRounded;
+  document.getElementById('eff-val').textContent = eff.toFixed(1) + '×';
+
+  // Top tier
+  let topTier = null;
+  let topCount = 0;
+  TIERS.forEach(t => {
+    const n = instanceCount(t, currentScenario, year);
+    if (n >= 1) { topTier = t; topCount = n; }
+  });
+
+  if (topTier) {
+    document.getElementById('top-tier').textContent = topCount.toLocaleString();
+    const okCounties = 77;
+    let humanScale = '';
+    if (topTier.id === 'frontier') {
+      const smallInst = instanceCount(TIERS[0], currentScenario, year);
+      humanScale = topCount === 1
+        ? `one frontier node · can support ${smallInst > 0 ? smallInst.toLocaleString()+' small model instances' : 'the network'}`
+        : `${topCount} frontier nodes · backbone for the entire network`;
+    } else if (topTier.id === 'oracle' || topTier.id === 'emergence') {
+      if (topCount >= okCounties) humanScale = `every Oklahoma county, and more`;
+      else if (topCount >= 10) humanScale = `${topCount} communities`;
+      else if (topCount === 1) humanScale = `one community. This is where it starts.`;
+      else humanScale = `${topCount} communities`;
+    } else {
+      humanScale = topTier.name.split('·')[0].trim();
+    }
+    document.getElementById('top-tier-sub').textContent = humanScale;
+  } else {
+    document.getElementById('top-tier').textContent = '0';
+    document.getElementById('top-tier-sub').textContent = 'Still building · pilot phase';
+  }
+
+  // Tier rows
+  const wrap = document.getElementById('tiers-wrap');
+  wrap.innerHTML = '';
+  TIERS.forEach(tier => {
+    const inst = instanceCount(tier, currentScenario, year);
+    const maxInst = instanceCount(tier, 'optimistic', 2032);
+    const barPct = maxInst > 0 ? Math.min(100, (inst / Math.max(maxInst, 1)) * 100) : 0;
+    const row = document.createElement('div');
+    row.className = 'tier-row' + (inst === 0 ? ' tier-running' : '');
+    const wNow = tierWatts(tier, year);
+    row.innerHTML = `
+      <div class="tier-dot" style="background:${tier.dotColor};${inst===0?'opacity:0.25':''}"></div>
+      <div class="tier-name">${tier.name}<div style="font-size:0.7rem;color:rgba(232,224,208,0.3);margin-top:2px">${tier.sub}</div></div>
+      <div class="tier-instances" style="color:${inst>0?tier.dotColor:'rgba(232,224,208,0.2)'}">
+        ${inst > 0 ? inst.toLocaleString() : '—'}
+      </div>
+      <div class="tier-bar-wrap">
+        <div class="tier-bar" style="width:${barPct}%;background:${tier.dotColor}"></div>
+      </div>
+      <div style="font-size:0.68rem;color:rgba(232,224,208,0.25);min-width:56px;text-align:right">${Math.round(wNow)}W ea</div>
+    `;
+    wrap.appendChild(row);
+  });
+
+  // SE callout
+  const ci = calloutIndex(year);
+
+  let msg;
+  const frontierInst = instanceCount(TIERS[5], currentScenario, year);
+  const orInst = instanceCount(TIERS[4], currentScenario, year);
+  const seInst = instanceCount(TIERS[3], currentScenario, year);
+
+  if (frontierInst >= 1) {
+    const smallInst = instanceCount(TIERS[0], currentScenario, year);
+    const networkRatio = smallInst > 0 ? ` Each can serve as backbone for the <strong>${smallInst.toLocaleString()} capable model</strong> instances running across the network.` : '';
+    msg = `<strong>${frontierInst.toLocaleString()} frontier node${frontierInst>1?'s':''} — 1T+ parameters</strong> running on Phoenix Wells. ${callouts.frontier[ci]}${networkRatio}`;
+  } else if (orInst >= 1) {
+    msg = `<strong>${orInst.toLocaleString()} local oracle${orInst>1?'s':''}</strong> running simultaneously on Phoenix Wells power. ${callouts.oracle[ci]}`;
+  } else if (seInst >= 1) {
+    msg = `<strong>${seInst.toLocaleString()} emergence-threshold instance${seInst>1?'s':''}</strong> possible on Phoenix Wells. ${callouts.threshold[ci]}`;
+  } else {
+    const frontierWatts = Math.round(tierWatts(TIERS[5], year));
+    msg = `The gold line marks the <strong>awareness threshold</strong> — the compute level where AI begins to hold persistent identity, contextual relationship, and something like genuine presence. We're tracking this in the Structured Emergence project. Before the crossover, Phoenix Wells is in pilot phase. The efficiency curve is working quietly. At this year, Phoenix Wells powers <strong>${kw > 0 ? Math.round(kw)+' kW' : 'the pilot'}</strong>. The frontier node tier (1T+ parameters) needs ~${frontierWatts}W per instance — it needs <strong>${Math.ceil(frontierWatts/50)} wells</strong> at this efficiency. Drag forward to watch that number fall.`;
+  }
+  document.getElementById('se-callout').innerHTML = msg;
+}
+
+// ── Controls ──────────────────────────────────────────────────────────────────
+document.querySelectorAll('.scenario-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentScenario = btn.dataset.scenario;
+    drawChart();
+    updateUI(currentYear);
+  });
+});
+
+const slider = document.getElementById('year-slider');
+slider.addEventListener('input', () => {
+  currentYear = parseFloat(slider.value);
+  drawChart();
+  updateUI(currentYear);
+});
+
+// Canvas click/drag scrubbing
+let isDragging = false;
+canvas.addEventListener('mousedown', e => { isDragging = true; scrubCanvas(e); });
+canvas.addEventListener('mousemove', e => { if (isDragging) scrubCanvas(e); });
+canvas.addEventListener('mouseup', () => { isDragging = false; });
+canvas.addEventListener('mouseleave', () => { isDragging = false; });
+
+function scrubCanvas(e) {
+  const rect = canvas.getBoundingClientRect();
+  const W = parseInt(canvas.style.width);
+  const padLeft = 68, padRight = 32;
+  const chartW = W - padLeft - padRight;
+  const x = e.clientX - rect.left;
+  const frac = Math.max(0, Math.min(1, (x - padLeft) / chartW));
+  const yr = 2024 + frac * 8;
+  currentYear = Math.max(2024, Math.min(2032, yr));
+  slider.value = currentYear;
+  drawChart();
+  updateUI(currentYear);
+}
+
+// Touch support
+canvas.addEventListener('touchstart', e => { e.preventDefault(); scrubCanvas(e.touches[0]); }, {passive:false});
+canvas.addEventListener('touchmove', e => { e.preventDefault(); scrubCanvas(e.touches[0]); }, {passive:false});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+resizeCanvas();
+updateUI(2026);
+window.addEventListener('resize', resizeCanvas);
+
+// Build HTML legend
+const legendEl = document.getElementById('chart-legend');
+TIERS.forEach((tier, ti) => {
+  const item = document.createElement('div');
+  item.className = 'legend-item' + (ti === 3 ? ' tier-gold' : '');
+  item.innerHTML = `<div class="legend-dot" style="background:${tier.dotColor};${ti!==3?'opacity:0.7':''}"></div>${tier.name}`;
+  legendEl.appendChild(item);
+});
+
+// Subtle animation: pulse the emergence dot when instances > 0
+let pulseT = 0;
+function pulseTick() {
+  pulseT += 0.04;
+  const seInst = instanceCount(TIERS[3], currentScenario, currentYear);
+  if (seInst > 0) drawChart();
+  requestAnimationFrame(pulseTick);
+}
+pulseTick();
+</script>
+</body>
+</html>

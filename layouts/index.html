@@ -1,0 +1,302 @@
+{{ define "main" }}
+<section class="hero" id="hero">
+  <canvas class="hero-stars" id="starfield"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Humanity &amp; AI</p>
+    <h1>What if the people building AI also built the floor everyone stands on?</h1>
+    <p class="hero-pitch">Research, tools, and policy for the AI transition. Built in public from Oklahoma.</p>
+    <a href="#products" class="hero-cta">Explore the work ↓</a>
+  </div>
+  <script>
+  (function() {
+    var canvas = document.getElementById('starfield');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var stars = [];
+    var count = 200;
+    var dpr = window.devicePixelRatio || 1;
+    var W, H, cx, cy;
+
+    function resize() {
+      W = canvas.offsetWidth;
+      H = canvas.offsetHeight;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cx = W / 2;
+      cy = H / 2;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var tints = [
+      [255, 255, 255],
+      [200, 220, 255],
+      [255, 220, 180],
+      [180, 220, 255],
+      [255, 200, 160],
+    ];
+
+    function makeStar(z) {
+      var angle = Math.random() * Math.PI * 2;
+      var spread = Math.random() * 0.4 + 0.1;
+      return {
+        x: Math.cos(angle) * spread,
+        y: Math.sin(angle) * spread,
+        z: z !== undefined ? z : Math.random(),
+        twinkleSpeed: 0.003 + Math.random() * 0.008,
+        twinkleOffset: Math.random() * Math.PI * 2,
+        tint: tints[Math.floor(Math.random() * tints.length)]
+      };
+    }
+
+    for (var i = 0; i < count; i++) {
+      stars.push(makeStar());
+    }
+
+    var speed = 0.0004;
+    var time = 0;
+
+    function draw() {
+      time += 1;
+      ctx.clearRect(0, 0, W, H);
+
+      var scrollY = window.pageYOffset || 0;
+      var scrollFactor = Math.min(scrollY / H, 1);
+
+      for (var i = 0; i < stars.length; i++) {
+        var s = stars[i];
+        s.z -= speed;
+        if (s.z <= 0.001) { stars[i] = makeStar(1); continue; }
+
+        var px = cx + (s.x / s.z) * cx;
+        var py = cy + (s.y / s.z) * cy;
+
+        if (px < -20 || px > W + 20 || py < -20 || py > H + 20) {
+          stars[i] = makeStar(1);
+          continue;
+        }
+
+        var r = (1 - s.z) * 1.8 + 0.3;
+        var twinkle = Math.sin(time * s.twinkleSpeed + s.twinkleOffset);
+        var a = (0.3 + 0.7 * (1 - s.z)) * (0.6 + 0.4 * twinkle);
+        a *= (1 - scrollFactor * 0.8);
+
+        var drift = scrollY * (0.05 + (1 - s.z) * 0.15);
+        var dy = py - drift;
+
+        ctx.beginPath();
+        ctx.arc(px, dy, r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + s.tint[0] + ',' + s.tint[1] + ',' + s.tint[2] + ',' + a + ')';
+        ctx.fill();
+
+        if (r > 1.2) {
+          ctx.beginPath();
+          ctx.arc(px, dy, r * 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + s.tint[0] + ',' + s.tint[1] + ',' + s.tint[2] + ',' + (a * 0.08) + ')';
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    var cta = document.querySelector('.hero-cta');
+    if (cta) {
+      cta.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById('products');
+        if (!target) return;
+        var startY = window.pageYOffset;
+        var endY = target.getBoundingClientRect().top + startY;
+        var dist = endY - startY;
+        var duration = 1200;
+        var startTime = null;
+        function ease(t) {
+          return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+        }
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var p = Math.min((ts - startTime) / duration, 1);
+          window.scrollTo(0, startY + dist * ease(p));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+  })();
+  </script>
+</section>
+
+<!-- ── Products ────────────────────────────────────────── -->
+<section class="hp-section hp-products" id="products">
+  <div class="hp-section-inner">
+    <p class="hp-eyebrow">Five apps, one pipeline</p>
+    <h2>Brain Mastery</h2>
+    <p class="hp-section-sub">Read → Think → Taste → Create → Participate. Each app builds the capacity for the next. Not chatbots — tools that work alongside how you actually think.</p>
+    <div class="hp-product-grid">
+
+      <a href="https://clarity.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">📖</span>
+        <span class="hp-product-status hp-status-live">Live</span>
+        <h3>Clarity</h3>
+        <p>A calmer reading experience</p>
+        <span class="hp-product-domain">clarity.humanityandai.com</span>
+      </a>
+
+      <a href="https://dojo.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🥋</span>
+        <span class="hp-product-status hp-status-beta">Beta</span>
+        <h3>Dojo</h3>
+        <p>Train your reasoning</p>
+        <span class="hp-product-domain">dojo.humanityandai.com</span>
+      </a>
+
+      <a href="https://tastebud.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🍳</span>
+        <span class="hp-product-status hp-status-beta">Beta</span>
+        <h3>TasteBud</h3>
+        <p>Explore flavor, learn to cook</p>
+        <span class="hp-product-domain">tastebud.humanityandai.com</span>
+      </a>
+
+      <a href="https://quiltographer.humanityandai.com" class="hp-product-card" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🧵</span>
+        <span class="hp-product-status hp-status-beta">Beta</span>
+        <h3>Quiltographer</h3>
+        <p>AI-powered pattern reading</p>
+        <span class="hp-product-domain">quiltographer.humanityandai.com</span>
+      </a>
+
+      <a href="https://citizen.humanityandai.com" class="hp-product-card hp-product-coming" target="_blank" rel="noopener">
+        <span class="hp-product-icon">🏛️</span>
+        <span class="hp-product-status hp-status-soon">Coming Soon</span>
+        <h3>Citizen</h3>
+        <p>Your civic dashboard</p>
+        <span class="hp-product-domain">citizen.humanityandai.com</span>
+      </a>
+
+    </div>
+    <div class="hp-section-cta">
+      <a href="/products/">All products &amp; details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Foundation ──────────────────────────────────────── -->
+<section class="hp-section hp-foundation">
+  <div class="hp-section-inner">
+    <p class="hp-eyebrow">16 components of citizenship</p>
+    <h2>Foundation</h2>
+    <p class="hp-section-sub">What does membership in a society actually mean? Healthcare, housing, food, safety, education — sixteen answers, all written in plain language. Open to contribution.</p>
+    <div class="hp-foundation-grid">
+      {{ $components := where (where .Site.RegularPages "Section" "foundation") ".Params.number" "!=" nil }}
+      {{ range sort $components ".Params.weight" }}
+      <div class="hp-fdn-cell" title="{{ .Title }}">
+        <span class="hp-fdn-num">{{ .Params.number }}</span>
+      </div>
+      {{ end }}
+    </div>
+    <div class="hp-foundation-links">
+      <a href="/foundation/" class="hp-link-primary">Explore all 16 components →</a>
+      <a href="https://github.com/dabirdwell/humanity-and-ai-site/discussions" class="hp-link-secondary" target="_blank" rel="noopener">Join the conversation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Latest ──────────────────────────────────────────── -->
+<section class="hp-section hp-latest">
+  <div class="hp-section-inner">
+    <h2>Latest</h2>
+    <div class="hp-latest-grid">
+      {{ $stream := (where .Site.RegularPages "Section" "stream").ByDate.Reverse }}
+      {{ range first 3 $stream }}
+      <article class="hp-latest-card">
+        <div class="hp-latest-meta">
+          {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+        </div>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ if .Params.description }}
+          <p>{{ .Params.description }}</p>
+        {{ else }}
+          <p>{{ .Summary }}</p>
+        {{ end }}
+      </article>
+      {{ end }}
+
+      {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
+      {{ with index $inference 0 }}
+      <article class="hp-latest-card hp-latest-inference">
+        <div class="hp-latest-meta">
+          <span class="post-type inference">Inference</span>
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+        </div>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.lede }}<p>{{ . }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+    <div class="hp-section-cta">
+      <a href="/stream/">All stream posts →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Phoenix Wells ───────────────────────────────────── -->
+<section class="hp-section hp-phoenix">
+  <div class="hp-section-inner">
+    <a href="/phoenix-wells/" class="hp-phoenix-card">
+      <span class="hp-phoenix-icon">⚡</span>
+      <div class="hp-phoenix-body">
+        <p class="hp-eyebrow">Energy + Compute</p>
+        <h2>Phoenix Wells</h2>
+        <p class="hp-phoenix-pitch">Oklahoma has 22,000 abandoned oil wells — $3.7 billion in liability generating zero revenue. We're converting them to community-owned geothermal power. Same workforce, same land, new purpose.</p>
+        <span class="hp-phoenix-link">Learn more →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── The Show ────────────────────────────────────────── -->
+<section class="hp-section hp-show">
+  <div class="hp-section-inner">
+    <a href="/show/" class="hp-show-card">
+      <div class="hp-show-body">
+        <p class="hp-eyebrow">Coming Soon</p>
+        <h2>The Humanity and AI Show</h2>
+        <p>Conversations about what happens next — and who it happens for.</p>
+        <span class="hp-show-link">Preview →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer About ───────────────────────────────────── -->
+<section class="hp-section hp-about-footer">
+  <div class="hp-section-inner hp-about-grid">
+    <div class="hp-about-col">
+      <h3>About</h3>
+      <p>Humanity and AI, LLC — Oklahoma City. Research, policy, and tools for the AI transition. Founded by David Alan Birdwell.</p>
+    </div>
+    <div class="hp-about-col">
+      <h3>Connect</h3>
+      <p>
+        <a href="mailto:david@humanityandai.com">david@humanityandai.com</a><br>
+        <a href="https://github.com/dabirdwell" target="_blank" rel="noopener">GitHub</a><br>
+        <a href="https://structuredemergence.com" target="_blank" rel="noopener">Structured Emergence</a>
+      </p>
+    </div>
+    <div class="hp-about-col">
+      <h3>More</h3>
+      <p>
+        <a href="/foundation/">Foundation</a><br>
+        <a href="/products/">Products</a><br>
+        <a href="/index.xml">RSS</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+{{ end }}

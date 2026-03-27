@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="ubc-landing">
+  <header class="ubc-hero">
+    <p class="ubc-eyebrow">Foundation</p>
+    <h1>What Does Membership in a Society Actually Mean?</h1>
+    <p class="ubc-hero-desc">Foundation is not a policy proposal handed down from above. It's a framework — scaffolding for a conversation about what citizens owe each other in the age of AI. These 16 components are a starting position. The public builds from here.</p>
+  </header>
+
+  <div class="ubc-intro">
+    {{ .Content }}
+  </div>
+
+  <div class="ubc-grid-header">
+    <h2>The 16 Components</h2>
+    <p class="ubc-grid-subtitle">Each component has a full essay explaining the thinking behind it and an explicit invitation for your perspective. Click any card to read and contribute.</p>
+  </div>
+
+  <div class="ubc-grid">
+    {{ range .Pages.ByWeight }}
+    <a href="{{ .Permalink }}" class="ubc-card">
+      <span class="ubc-card-number">{{ .Params.number }}</span>
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.hero_stat }}<span class="ubc-card-stat">{{ . }}</span>{{ end }}
+      {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      {{ with .Params.status }}<span class="ubc-card-status {{ . }}">{{ . }}</span>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+
+  <div class="ubc-contribute-banner">
+    <h2>How to Contribute</h2>
+    <div class="ubc-contribute-options">
+      <div class="ubc-contribute-option">
+        <span class="ubc-contribute-icon">💬</span>
+        <h3>Quick Thoughts</h3>
+        <p>Have a perspective, a question, or a disagreement? Use the form on any component page. No account needed.</p>
+      </div>
+      <div class="ubc-contribute-option">
+        <span class="ubc-contribute-icon">🔧</span>
+        <h3>Deep Engagement</h3>
+        <p>Propose changes, cite research, or have a threaded conversation in <a href="https://github.com/dabirdwell/humanity-and-ai/discussions" target="_blank" rel="noopener">GitHub Discussions</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

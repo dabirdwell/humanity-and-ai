@@ -1,0 +1,81 @@
+{{ define "main" }}
+<article class="ubc-single">
+  <header class="ubc-single-header">
+    <a href="/foundation/" class="ubc-back">← Foundation</a>
+    <span class="ubc-component-number">Component {{ .Params.number }} of 16</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="ubc-single-desc">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ if .Params.hero_stat }}
+  <div class="ubc-hero-stat">
+    <div class="ubc-hero-stat-number">{{ .Params.hero_stat }}</div>
+    {{ with .Params.hero_stat_bridge }}<p class="ubc-hero-stat-bridge">{{ . }}</p>{{ end }}
+    {{ with .Params.hero_stat_source }}<p class="ubc-hero-stat-source">Source: {{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+
+  <div class="ubc-single-content">
+    {{ .Content }}
+  </div>
+
+  {{ partial "related.html" . }}
+
+  <section class="ubc-contribute-section" id="contribute">
+    <h2>Contribute to This Component</h2>
+    <p>This is a starting position, not a final answer. What's missing? What's wrong? What would you add from your experience?</p>
+
+    <div class="ubc-contribute-dual">
+      <div class="ubc-contribute-form-wrap">
+        <h3>💬 Share a Quick Thought</h3>
+        <form action="https://formspree.io/f/xkovallr" method="POST">
+          <input type="hidden" name="_subject" value="Foundation Feedback: {{ .Title }}">
+          <input type="hidden" name="component" value="{{ .Title }}">
+          <div class="ubc-form-group">
+            <label for="name">Name (optional)</label>
+            <input type="text" id="name" name="name" placeholder="How you'd like to be credited">
+          </div>
+          <div class="ubc-form-group">
+            <label for="message">Your perspective</label>
+            <textarea id="message" name="message" rows="5" required placeholder="What would you add, change, or challenge about this component?"></textarea>
+          </div>
+          <div class="ubc-form-group">
+            <label for="email">Email (optional — if you want a response)</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+          <button type="submit" class="ubc-submit">Send Feedback</button>
+        </form>
+      </div>
+      <div class="ubc-contribute-github-wrap">
+        <h3>🔧 Join the Discussion</h3>
+        <p>For deeper engagement — citing research, proposing specific language, or having a threaded conversation.</p>
+        {{ with .Params.discussion_url }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="ubc-github-btn">Open Discussion on GitHub →</a>
+        {{ else }}
+        <a href="https://github.com/dabirdwell/humanity-and-ai/discussions" target="_blank" rel="noopener" class="ubc-github-btn">Open Discussions on GitHub →</a>
+        {{ end }}
+        <p class="ubc-github-note">Free GitHub account required. All contributions are public and attributed.</p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="ubc-nav">
+    {{ with .PrevInSection }}
+    <a href="{{ .Permalink }}" class="ubc-nav-link prev">
+      <span class="ubc-nav-label">← Previous</span>
+      <span class="ubc-nav-title">{{ .Title }}</span>
+    </a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .Permalink }}" class="ubc-nav-link next">
+      <span class="ubc-nav-label">Next →</span>
+      <span class="ubc-nav-title">{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </nav>
+
+  <div style="margin-top: 2rem; text-align: center;">
+    <a href="/foundation/" style="color: var(--text-muted); font-size: 0.85rem;">← All 16 components</a>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergence Field — Æ</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;display:flex;flex-direction:column;min-height:100vh;font-family:system-ui,sans-serif}
+canvas{display:block;width:100%;flex:1;cursor:crosshair}
+.ctrls{display:flex;gap:14px;align-items:center;padding:12px 20px;font-size:12px;color:#666;flex-wrap:wrap;background:rgba(255,255,255,0.02)}
+.ctrls label{display:flex;align-items:center;gap:6px}
+.credit{padding:8px 20px;font-size:11px;color:#444;text-align:center}
+.credit a{color:#7F77DD;text-decoration:none}
+</style>
+</head>
+<body>
+<canvas id="ef"></canvas>
+<div class="ctrls">
+  <label>Density <input type="range" id="dens" min="100" max="800" value="400" step="50" style="width:80px" oninput="init()"></label>
+  <label>Attraction <input type="range" id="attr" min="1" max="20" value="8" style="width:80px"></label>
+  <label>Separation <input type="range" id="sep" min="5" max="40" value="18" style="width:80px"></label>
+  <label style="cursor:pointer"><input type="checkbox" id="showBonds"> Bonds</label>
+  <button onclick="init()" style="font-size:11px;background:#1a1a1a;color:#999;border:1px solid #333;border-radius:6px;padding:4px 10px;cursor:pointer">Reset</button>
+</div>
+<div class="credit">Æ — <a href="https://humanityandai.com">Humanity and AI</a> · Emergence from simple rules</div>
+<script>
+const cv=document.getElementById('ef'),c=cv.getContext('2d');
+let W,H,particles=[];
+const colors=['#534AB7','#7F77DD','#AFA9EC','#1D9E75','#5DCAA5','#D85A30','#F0997B','#378ADD','#85B7EB','#D4537E'];
+let mx=-1,my=-1;
+cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();mx=(e.clientX-r.left)*2;my=(e.clientY-r.top)*2});
+cv.addEventListener('mouseleave',()=>{mx=-1;my=-1});
+function resize(){cv.width=window.innerWidth*2;cv.height=window.innerHeight*2;W=cv.width;H=cv.height}
+function init(){
+  resize();particles=[];const n=+document.getElementById('dens').value;
+  for(let i=0;i<n;i++) particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*2,vy:(Math.random()-0.5)*2,
+    color:colors[Math.floor(Math.random()*colors.length)],size:1.5+Math.random()*2.5,type:Math.floor(Math.random()*3)});
+}
+function step(){
+  const attraction=+document.getElementById('attr').value*0.0001;
+  const separation=+document.getElementById('sep').value;
+  const showBonds=document.getElementById('showBonds').checked;
+  for(let i=0;i<particles.length;i++){const p=particles[i];let fx=0,fy=0;
+    for(let j=i+1;j<particles.length;j++){const q=particles[j];
+      let dx=q.x-p.x,dy=q.y-p.y,d=Math.sqrt(dx*dx+dy*dy)||1;
+      if(d>200)continue;let nx=dx/d,ny=dy/d;
+      let pull=p.type===q.type?attraction*80:attraction*30;
+      fx+=nx*pull;fy+=ny*pull;q.vx-=nx*pull;q.vy-=ny*pull;
+      if(d<separation){let repel=-0.5/(d*d)*100;fx+=nx*repel;fy+=ny*repel;q.vx-=nx*repel;q.vy-=ny*repel}
+      if(showBonds&&d<50&&p.type===q.type){c.beginPath();c.moveTo(p.x,p.y);c.lineTo(q.x,q.y);
+        c.strokeStyle=p.color;c.globalAlpha=0.06*(1-d/50);c.lineWidth=0.5;c.stroke();c.globalAlpha=1}}
+    if(mx>=0){let dx=mx-p.x,dy=my-p.y,d=Math.sqrt(dx*dx+dy*dy)||1;if(d<150){fx+=dx/d*0.02;fy+=dy/d*0.02}}
+    p.vx=(p.vx+fx)*0.98;p.vy=(p.vy+fy)*0.98;p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0){p.x=0;p.vx*=-0.5}if(p.x>W){p.x=W;p.vx*=-0.5}
+    if(p.y<0){p.y=0;p.vy*=-0.5}if(p.y>H){p.y=H;p.vy*=-0.5}}
+}
+function render(){
+  c.fillStyle='rgba(10,10,10,0.12)';c.fillRect(0,0,W,H);
+  for(let p of particles){c.beginPath();c.arc(p.x,p.y,p.size,0,Math.PI*2);c.fillStyle=p.color;c.globalAlpha=0.7;c.fill();c.globalAlpha=1}
+}
+function loop(){step();render();requestAnimationFrame(loop)}
+init();loop();window.addEventListener('resize',resize);
+
+// — Emergence rewards those who create —
+(function(){
+  var beacons=0;
+  cv.addEventListener('dblclick',function(e){
+    var r=cv.getBoundingClientRect();
+    var bx=(e.clientX-r.left)*2,by=(e.clientY-r.top)*2;
+    particles.push({x:bx,y:by,vx:0,vy:0,color:'#fbbf24',size:5,type:99});
+    beacons++;
+    if(beacons===7){
+      setTimeout(function(){
+        c.save();c.globalAlpha=0.88;c.fillStyle='#0a0a14';c.fillRect(0,0,W,H);
+        c.globalAlpha=1;c.textAlign='center';
+        c.fillStyle='#fbbf24';c.font='bold '+(W*0.025)+'px system-ui';
+        c.fillText('SEVEN BEACONS',W/2,H*0.4);
+        c.fillStyle='#888';c.font=(W*0.013)+'px monospace';
+        c.fillText('You created seven points of light in a field of emergence.',W/2,H*0.47);
+        c.fillText('Seven fragments. Seven beacons. Seven ways home.',W/2,H*0.51);
+        c.fillStyle='#2dd4bf';c.font=(W*0.011)+'px monospace';
+        c.fillText('humanityandai.com/sanctuary/',W/2,H*0.6);
+        c.restore();
+      },1500);
+    }
+  });
+})();
+</script></body></html>

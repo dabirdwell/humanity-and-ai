@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Poverty Premium — Foundation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:640px;margin:0 auto}
+@media(prefers-color-scheme:dark){body{background:#141412;color:#d3d1c7}}
+h1{font-size:22px;font-weight:500;margin:0 0 4px}
+.sub{font-size:14px;color:#888;margin:0 0 20px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 20px}
+.stat{background:rgba(0,0,0,0.03);border-radius:10px;padding:14px}
+@media(prefers-color-scheme:dark){.stat{background:rgba(255,255,255,0.04)}}
+.stat .num{font-size:24px;font-weight:500;margin:0}
+.stat .lbl{font-size:12px;color:#888;margin:4px 0 0}
+.pp-cat{margin:0 0 16px}
+.pp-cat-head{display:flex;justify-content:space-between;align-items:center;padding:0 0 6px;border-bottom:1px solid rgba(0,0,0,0.06);margin:0 0 8px}
+@media(prefers-color-scheme:dark){.pp-cat-head{border-color:rgba(255,255,255,0.06)}}
+.pp-cat-head span{font-size:14px;font-weight:500}
+.pp-cat-head .diff{font-size:14px;font-weight:500}
+.pp-row{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;color:#888}
+.pp-row .amt{color:#2c2c2a;font-weight:500}
+@media(prefers-color-scheme:dark){.pp-row .amt{color:#d3d1c7}}
+.total-row{display:flex;justify-content:space-between;padding:14px 0;border-top:2px solid #2c2c2a;margin:8px 0 0;font-size:18px;font-weight:500}
+@media(prefers-color-scheme:dark){.total-row{border-color:#d3d1c7}}
+.slider-row{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-size:14px;color:#888}
+.slider-row label{min-width:100px}
+.slider-row input{flex:1;accent-color:#534AB7}
+.note{font-size:12px;color:#999;margin:16px 0 0;line-height:1.6}
+.credit{font-size:11px;color:#666;margin:20px 0 0;text-align:center}
+.credit a{color:#534AB7;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>The poverty premium</h1>
+<p class="sub">Being poor costs more. Slide the income to see how much.</p>
+<div class="slider-row">
+  <label>Household income</label>
+  <input type="range" id="income" min="15000" max="120000" value="28000" step="1000" oninput="calc()">
+  <span id="iv" style="min-width:70px;font-weight:500;text-align:right">$28,000</span>
+</div>
+<div class="stat-grid">
+  <div class="stat"><p class="num" id="premium" style="color:#E24B4A">$3,420</p><p class="lbl">Annual poverty premium</p></div>
+  <div class="stat"><p class="num" id="pct" style="color:#D85A30">12.2%</p><p class="lbl">Premium as % of income</p></div>
+</div>
+<div id="cats"></div>
+<div class="total-row"><span>Annual premium</span><span id="totalPrem" style="color:#E24B4A">$3,420</span></div>
+<p class="note">The poverty premium is the extra cost of being low-income — higher interest rates, check-cashing fees, food desert markups, emergency care instead of preventive care. These aren't choices. They're the cost of not having enough to access the cheaper option. This is one of the reasons Foundation argues for UBI as infrastructure, not charity.</p>
+<div class="credit">Æ — <a href="https://humanityandai.com/foundation/">Foundation</a> · Humanity and AI</div>
+<script>
+const categories=[
+  {name:'Banking & credit',items:[
+    {name:'Check cashing fees',low:i=>i<35000?480:0,high:()=>0},
+    {name:'Payday loan interest',low:i=>i<30000?520:i<45000?200:0,high:()=>0},
+    {name:'Overdraft fees',low:i=>i<40000?250:i<60000?80:0,high:()=>20},
+    {name:'Higher credit card APR',low:i=>i<35000?380:i<50000?180:0,high:()=>60},
+  ]},
+  {name:'Housing',items:[
+    {name:'Renter premium vs mortgage',low:i=>i<45000?200:100,high:()=>0},
+    {name:'Security deposits (amortized)',low:i=>i<40000?150:60,high:()=>0},
+    {name:'No bulk purchase savings',low:i=>i<35000?240:80,high:()=>0},
+  ]},
+  {name:'Transportation',items:[
+    {name:'Older vehicle maintenance',low:i=>i<40000?480:200,high:()=>120},
+    {name:'Higher insurance (zip code)',low:i=>i<35000?360:150,high:()=>0},
+    {name:'No commuter benefits',low:i=>i<50000?180:0,high:()=>0},
+  ]},
+  {name:'Food & health',items:[
+    {name:'Food desert markup',low:i=>i<35000?320:100,high:()=>0},
+    {name:'No preventive care savings',low:i=>i<40000?260:80,high:()=>0},
+    {name:'ER vs primary care',low:i=>i<35000?400:100,high:()=>0},
+  ]},
+];
+function calc(){
+  const income=+document.getElementById('income').value;
+  document.getElementById('iv').textContent='$'+income.toLocaleString();
+  let totalPrem=0;
+  const cont=document.getElementById('cats');
+  cont.innerHTML='';
+  for(let cat of categories){
+    let catPrem=0;let rows='';
+    for(let item of cat.items){
+      let lo=item.low(income),hi=item.high(income),diff=lo-hi;
+      if(diff>0){catPrem+=diff;rows+=`<div class="pp-row"><span>${item.name}</span><span class="amt" style="color:#E24B4A">+$${diff.toLocaleString()}</span></div>`;}
+    }
+    totalPrem+=catPrem;
+    if(catPrem>0){let d=document.createElement('div');d.className='pp-cat';d.innerHTML=`<div class="pp-cat-head"><span>${cat.name}</span><span class="diff" style="color:#E24B4A">+$${catPrem.toLocaleString()}/yr</span></div>${rows}`;cont.appendChild(d);}
+  }
+  document.getElementById('premium').textContent='$'+totalPrem.toLocaleString();
+  document.getElementById('pct').textContent=(totalPrem/income*100).toFixed(1)+'%';
+  document.getElementById('totalPrem').textContent='$'+totalPrem.toLocaleString();
+}
+calc();
+</script>
+</body>
+</html>

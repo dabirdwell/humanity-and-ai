@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Access in America</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#0a0a0f;color:#e0e0e0;font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;display:flex;flex-direction:column;align-items:center;padding:28px 20px 20px}
+.container{max-width:740px;width:100%}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#4ecdc4;margin-bottom:8px}
+h1{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:500;letter-spacing:.3px;color:#f0f0f0;margin-bottom:4px}
+.subtitle{font-size:13px;color:#888;margin-bottom:22px;letter-spacing:.3px}
+.toggle-bar{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.toggle-btn{background:transparent;border:1px solid rgba(255,255,255,.15);color:#aaa;font-family:'Inter',system-ui,sans-serif;font-size:12px;font-weight:500;padding:8px 16px;border-radius:20px;cursor:pointer;transition:all .25s;letter-spacing:.3px;white-space:nowrap}
+.toggle-btn:hover{border-color:rgba(78,205,196,.4);color:#ccc}
+.toggle-btn.active{background:#4ecdc4;color:#0a0a0f;border-color:#4ecdc4;font-weight:600}
+.map-wrap{position:relative;margin-bottom:16px}
+#map-svg{width:100%;max-width:700px;display:block;margin:0 auto}
+.tooltip{position:fixed;pointer-events:none;background:rgba(15,15,22,.95);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;font-size:12px;line-height:1.5;color:#e0e0e0;z-index:100;opacity:0;transition:opacity .15s;max-width:240px;backdrop-filter:blur(8px)}
+.tooltip .tt-state{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;color:#f0f0f0;margin-bottom:2px}
+.tooltip .tt-value{color:#4ecdc4;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px}
+.tooltip .tt-rank{color:#888;font-size:11px;margin-top:2px}
+.legend-wrap{max-width:400px;margin:0 auto 18px;position:relative}
+.legend-bar{height:12px;border-radius:6px;width:100%;position:relative}
+.legend-labels{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:#888}
+.legend-avg{position:absolute;top:-8px;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #e0e0e0}
+.legend-avg-label{position:absolute;top:-22px;transform:translateX(-50%);font-size:9px;color:#bbb;white-space:nowrap;letter-spacing:.3px}
+.toggle-btn.foundation-btn { border-color: rgba(34,197,94,.35); color: #4ade80; }
+.toggle-btn.foundation-btn.active { background: #22c55e; color: #0a0a0f; border-color: #22c55e; }
+
+.foundation-map-note {
+  background: rgba(34,197,94,.07);
+  border: 1px solid rgba(34,197,94,.25);
+  border-left: 3px solid #22c55e;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #86efac;
+  line-height: 1.7;
+  display: none;
+}
+.foundation-map-note strong { color: #dcfce7; }
+.foundation-map-note a { color: #4ade80; text-decoration: none; }
+padding:14px 18px;margin-bottom:16px;font-size:13px;color:#bbb;line-height:1.7;border-radius:0 8px 8px 0}
+.ok-callout strong{color:#e0e0e0;font-weight:500}
+.ok-callout .ok-stat{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#ff6b35}
+.source-line{font-size:10px;color:#555;letter-spacing:.3px;text-align:center;margin-top:4px}
+.source-line a{color:#4ecdc4;text-decoration:none}
+.source-line a:hover{text-decoration:underline}
+path.state{stroke:rgba(255,255,255,.15);stroke-width:.5px;cursor:pointer;transition:opacity .15s}
+path.state:hover{opacity:.85;stroke:rgba(255,255,255,.4);stroke-width:1px}
+@media(max-width:480px){
+  body{padding:20px 12px 16px}
+  h1{font-size:18px}
+  .toggle-btn{font-size:11px;padding:6px 12px}
+  .subtitle{font-size:12px}
+  .ok-callout{font-size:12px;padding:12px 14px}
+}
+html:not(.in-iframe) body{min-height:100vh}
+</style>
+<script>if(window.self!==window.top)document.documentElement.classList.add("in-iframe")</script>
+</head>
+<body>
+
+<div class="container">
+  <p class="eyebrow">Health Access in America</p>
+  <h1>Where the Gaps Are</h1>
+  <p class="subtitle">Select a layer to explore</p>
+
+  <div class="toggle-bar">
+    <button class="toggle-btn active" data-layer="mental_health">Mental Health Shortage</button>
+    <button class="toggle-btn" data-layer="food_access">Food Access</button>
+    <button class="toggle-btn" data-layer="uninsured">Uninsured Rate</button>
+    <button class="toggle-btn foundation-btn" data-layer="foundation_coverage">⚡ With Foundation</button>
+  </div>
+
+  <div class="map-wrap">
+    <svg id="map-svg"></svg>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+
+  <div class="legend-wrap">
+    <div class="legend-avg-label" id="legendAvgLabel">Nat'l avg</div>
+    <div class="legend-avg" id="legendAvg"></div>
+    <canvas id="legendBar" class="legend-bar" height="12"></canvas>
+    <div class="legend-labels">
+      <span id="legendMin">0%</span>
+      <span id="legendMax">100%</span>
+    </div>
+  </div>
+
+  <div class="ok-callout" id="okCallout"></div>
+  <div class="foundation-map-note" id="foundationNote">
+    <strong>This is what the map looks like with universal healthcare coverage.</strong>
+    Every state uninsured rate → 0%. The red disappears not because people got healthier,
+    but because a policy decision removed the barrier. Canada, Germany, France, Japan all
+    have maps that look like this. <a href="/foundation/healthcare/">→ Foundation Healthcare proposal</a>
+  </div>
+
+  <p class="source-line" id="sourceLine"></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson@3/dist/topojson.min.js"></script>
+<script>
+const layers = {
+  mental_health: {
+    label: "Mental Health Shortage",
+    unit: "% in shortage area",
+    source: "HRSA, December 2025",
+    sourceUrl: "https://data.hrsa.gov/topics/health-workforce/shortage-areas",
+    okNote: "Oklahoma has some of the fewest mental health providers per capita in the US.",
+    natAvg: 37,
+    data: {
+      "AL":43.8,"AK":86.4,"AZ":24.6,"AR":54.5,"CA":28.4,"CO":11.5,"CT":37.2,
+      "DE":62.3,"DC":17.4,"FL":28.3,"GA":19.6,"HI":33.5,"ID":38.4,"IL":22.6,
+      "IN":20.0,"IA":34.6,"KS":37.8,"KY":43.9,"LA":40.2,"ME":60.5,"MD":21.6,
+      "MA":16.7,"MI":19.4,"MN":18.0,"MS":40.2,"MO":36.3,"MT":46.5,"NE":24.3,
+      "NV":24.8,"NH":32.1,"NJ":17.0,"NM":43.2,"NY":19.6,"NC":21.6,"ND":40.8,
+      "OH":19.3,"OK":34.2,"OR":32.5,"PA":39.9,"RI":24.8,"SC":24.1,"SD":40.3,
+      "TN":41.5,"TX":24.9,"UT":13.8,"VT":48.0,"VA":24.7,"WA":20.9,"WV":61.0,
+      "WI":21.8,"WY":36.5
+    }
+  },
+  food_access: {
+    label: "Food Desert",
+    unit: "% low-income, low-access",
+    source: "USDA Food Access Research Atlas, 2019",
+    sourceUrl: "https://www.ers.usda.gov/data-products/food-access-research-atlas",
+    okNote: "8.9% of Oklahomans are low-income and live far from a grocery store.",
+    natAvg: 6.1,
+    data: {
+      "AL":8.8,"AK":7.9,"AZ":8.7,"AR":10.0,"CA":3.2,"CO":5.0,"CT":4.3,
+      "DE":6.3,"DC":1.6,"FL":7.6,"GA":10.0,"HI":5.4,"ID":7.9,"IL":4.8,
+      "IN":8.7,"IA":5.7,"KS":8.4,"KY":6.4,"LA":10.7,"ME":3.5,"MD":3.6,
+      "MA":3.9,"MI":6.4,"MN":5.7,"MS":11.4,"MO":7.2,"MT":7.3,"NE":5.6,
+      "NV":6.1,"NH":4.2,"NJ":3.7,"NM":13.0,"NY":2.4,"NC":7.5,"ND":6.9,
+      "OH":6.9,"OK":8.9,"OR":4.7,"PA":4.6,"RI":4.7,"SC":9.8,"SD":8.5,
+      "TN":8.9,"TX":8.3,"UT":5.8,"VT":3.0,"VA":4.4,"WA":5.1,"WV":7.5,
+      "WI":5.0,"WY":8.0
+    }
+  },
+  uninsured: {
+    label: "Uninsured Rate",
+    unit: "% without insurance (0\u201364)",
+    source: "Census ACS / KFF, 2024",
+    sourceUrl: "https://www.census.gov/topics/health/health-insurance.html",
+    okNote: "Oklahoma is a non-expansion state. The coverage gap affects hundreds of thousands.",
+    natAvg: 9.5,
+    data: {
+      "AL":10.0,"AK":12.9,"AZ":12.6,"AR":11.2,"CA":6.9,"CO":9.2,"CT":6.9,
+      "DE":8.6,"DC":5.3,"FL":13.6,"GA":14.0,"HI":4.1,"ID":10.9,"IL":8.1,
+      "IN":8.9,"IA":6.9,"KS":10.4,"KY":8.3,"LA":9.2,"ME":7.3,"MD":7.3,
+      "MA":3.3,"MI":6.1,"MN":6.3,"MS":11.7,"MO":9.3,"MT":10.9,"NE":9.1,
+      "NV":13.6,"NH":5.8,"NJ":9.2,"NM":12.6,"NY":5.9,"NC":10.3,"ND":7.1,
+      "OH":8.1,"OK":13.9,"OR":6.4,"PA":7.4,"RI":5.9,"SC":11.2,"SD":9.6,
+      "TN":11.6,"TX":19.2,"UT":9.3,"VT":5.6,"VA":8.1,"WA":7.8,"WV":7.4,
+      "WI":6.6,"WY":12.1
+    }
+  },
+  foundation_coverage: {
+    label: "With Foundation Universal Coverage",
+    unit: "% uninsured under universal care",
+    source: "Foundation projection — universal healthcare",
+    sourceUrl: "/foundation/healthcare/",
+    okNote: "Under universal coverage, Oklahoma's 13.9% uninsured rate goes to zero. The map turns teal.",
+    natAvg: 0,
+    isFoundation: true,
+    data: Object.fromEntries(Object.keys({
+      "AL":1,"AK":1,"AZ":1,"AR":1,"CA":1,"CO":1,"CT":1,"DE":1,"DC":1,"FL":1,
+      "GA":1,"HI":1,"ID":1,"IL":1,"IN":1,"IA":1,"KS":1,"KY":1,"LA":1,"ME":1,
+      "MD":1,"MA":1,"MI":1,"MN":1,"MS":1,"MO":1,"MT":1,"NE":1,"NV":1,"NH":1,
+      "NJ":1,"NM":1,"NY":1,"NC":1,"ND":1,"OH":1,"OK":1,"OR":1,"PA":1,"RI":1,
+      "SC":1,"SD":1,"TN":1,"TX":1,"UT":1,"VT":1,"VA":1,"WA":1,"WV":1,"WI":1,"WY":1
+    }).map(abbr => [abbr, 0]))
+  }
+};
+
+const fipsToAbbr = {
+  "01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT",
+  "10":"DE","11":"DC","12":"FL","13":"GA","15":"HI","16":"ID","17":"IL",
+  "18":"IN","19":"IA","20":"KS","21":"KY","22":"LA","23":"ME","24":"MD",
+  "25":"MA","26":"MI","27":"MN","28":"MS","29":"MO","30":"MT","31":"NE",
+  "32":"NV","33":"NH","34":"NJ","35":"NM","36":"NY","37":"NC","38":"ND",
+  "39":"OH","40":"OK","41":"OR","42":"PA","44":"RI","45":"SC","46":"SD",
+  "47":"TN","48":"TX","49":"UT","50":"VT","51":"VA","53":"WA","54":"WV",
+  "55":"WI","56":"WY"
+};
+
+const stateNames = {
+  "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California",
+  "CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia",
+  "FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois",
+  "IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana",
+  "ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota",
+  "MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada",
+  "NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York",
+  "NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma",
+  "OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina",
+  "SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont",
+  "VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
+};
+
+let activeLayer = "mental_health";
+let geoData = null;
+
+function colorScale(t) {
+  // teal (#4ecdc4) at 0 -> yellow (#f0c040) at 0.45 -> red (#c0392b) at 1
+  if (t <= 0.45) {
+    const s = t / 0.45;
+    return d3.interpolateRgb("#4ecdc4", "#f0c040")(s);
+  } else {
+    const s = (t - 0.45) / 0.55;
+    return d3.interpolateRgb("#f0c040", "#c0392b")(s);
+  }
+}
+
+function getRank(abbr, data) {
+  const sorted = Object.entries(data).sort((a, b) => b[1] - a[1]);
+  const idx = sorted.findIndex(d => d[0] === abbr);
+  return idx + 1;
+}
+
+function ordinal(n) {
+  const s = ["th","st","nd","rd"];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+function updateMap() {
+  const layer = layers[activeLayer];
+  const data = layer.data;
+  const isFoundation = layer.isFoundation;
+
+  // Foundation layer: all teal, bypass normal scale
+  if (isFoundation) {
+    d3.selectAll("path.state").transition().duration(600)
+      .attr("fill", "#4ecdc4");
+
+    const canvas = document.getElementById("legendBar");
+    const ctx = canvas.getContext("2d");
+    const w = canvas.offsetWidth; canvas.width = w; canvas.height = 12;
+    ctx.fillStyle = "#4ecdc4"; ctx.fillRect(0, 0, w, 12);
+    // rounded corners
+    ctx.globalCompositeOperation = "destination-in";
+    ctx.beginPath();
+    const r = 6;
+    ctx.moveTo(r,0);ctx.lineTo(w-r,0);ctx.quadraticCurveTo(w,0,w,r);
+    ctx.lineTo(w,12-r);ctx.quadraticCurveTo(w,12,w-r,12);
+    ctx.lineTo(r,12);ctx.quadraticCurveTo(0,12,0,12-r);
+    ctx.lineTo(0,r);ctx.quadraticCurveTo(0,0,r,0);ctx.closePath();ctx.fill();
+    ctx.globalCompositeOperation = "source-over";
+
+    document.getElementById("legendMin").textContent = "0%";
+    document.getElementById("legendMax").textContent = "0%";
+    document.getElementById("legendAvg").style.left = "0%";
+    document.getElementById("legendAvgLabel").textContent = "Universal: 0%";
+
+    document.getElementById("okCallout").innerHTML = '';
+    document.getElementById("okCallout").style.display = 'none';
+    document.getElementById("foundationNote").style.display = 'block';
+    document.getElementById("sourceLine").innerHTML =
+      'Foundation projection · <a href="/foundation/healthcare/" style="color:#4ecdc4">Read the Healthcare proposal</a>';
+
+    document.querySelectorAll(".toggle-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.layer === activeLayer);
+    });
+    return;
+  }
+
+  document.getElementById("foundationNote").style.display = 'none';
+  document.getElementById("okCallout").style.display = '';
+
+  const vals = Object.values(data);
+  const mn = d3.min(vals);
+  const mx = d3.max(vals);
+  const scale = d3.scaleLinear().domain([mn, mx]).range([0, 1]);
+
+  d3.selectAll("path.state").transition().duration(350)
+    .attr("fill", function() {
+      const abbr = d3.select(this).attr("data-abbr");
+      const v = data[abbr];
+      return v != null ? colorScale(scale(v)) : "#222";
+    });
+
+  // Legend
+  const canvas = document.getElementById("legendBar");
+  const ctx = canvas.getContext("2d");
+  const w = canvas.offsetWidth;
+  canvas.width = w;
+  canvas.height = 12;
+  for (let x = 0; x < w; x++) {
+    ctx.fillStyle = colorScale(x / w);
+    ctx.fillRect(x, 0, 1, 12);
+  }
+  // rounded corners via clip — use manual arc path for Safari compat
+  ctx.globalCompositeOperation = "destination-in";
+  ctx.beginPath();
+  const r = 6;
+  ctx.moveTo(r, 0);
+  ctx.lineTo(w - r, 0);
+  ctx.quadraticCurveTo(w, 0, w, r);
+  ctx.lineTo(w, 12 - r);
+  ctx.quadraticCurveTo(w, 12, w - r, 12);
+  ctx.lineTo(r, 12);
+  ctx.quadraticCurveTo(0, 12, 0, 12 - r);
+  ctx.lineTo(0, r);
+  ctx.quadraticCurveTo(0, 0, r, 0);
+  ctx.closePath();
+  ctx.fill();
+  ctx.globalCompositeOperation = "source-over";
+
+  document.getElementById("legendMin").textContent = mn.toFixed(1) + "%";
+  document.getElementById("legendMax").textContent = mx.toFixed(1) + "%";
+
+  // National avg marker
+  const avgPct = ((layer.natAvg - mn) / (mx - mn)) * 100;
+  const avgEl = document.getElementById("legendAvg");
+  const avgLabel = document.getElementById("legendAvgLabel");
+  avgEl.style.left = avgPct + "%";
+  avgLabel.style.left = avgPct + "%";
+  avgLabel.textContent = "Nat'l avg: " + layer.natAvg + "%";
+
+  // Oklahoma callout
+  const okVal = data["OK"];
+  const okRank = getRank("OK", data);
+  const callout = document.getElementById("okCallout");
+  callout.innerHTML = '<strong>Oklahoma</strong> ranks <span class="ok-stat">' +
+    ordinal(okRank) + ' highest</span> for ' + layer.label.toLowerCase() +
+    ' at <span class="ok-stat">' + okVal + '%</span>. ' + layer.okNote;
+
+  // Source
+  document.getElementById("sourceLine").innerHTML =
+    'Source: <a href="' + layer.sourceUrl + '" target="_blank" rel="noopener">' +
+    layer.source + '</a>';
+
+  // Toggle buttons
+  document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.layer === activeLayer);
+  });
+}
+
+function showTooltip(e, abbr) {
+  const layer = layers[activeLayer];
+  const v = layer.data[abbr];
+  if (v == null) return;
+  const rank = getRank(abbr, layer.data);
+  const tt = document.getElementById("tooltip");
+  tt.innerHTML = '<div class="tt-state">' + stateNames[abbr] + '</div>' +
+    '<div class="tt-value">' + v + '% ' + layer.unit + '</div>' +
+    '<div class="tt-rank">' + ordinal(rank) + ' highest</div>';
+  tt.style.opacity = "1";
+  const x = e.clientX + 14;
+  const y = e.clientY - 10;
+  tt.style.left = Math.min(x, window.innerWidth - 260) + "px";
+  tt.style.top = Math.max(y, 10) + "px";
+}
+
+function hideTooltip() {
+  document.getElementById("tooltip").style.opacity = "0";
+}
+
+// Init
+async function init() {
+  const us = await d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json");
+  geoData = topojson.feature(us, us.objects.states);
+
+  const svg = d3.select("#map-svg");
+  const width = 700;
+  const height = 450;
+  svg.attr("viewBox", "0 0 " + width + " " + height)
+     .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const projection = d3.geoAlbersUsa().fitSize([width, height], geoData);
+  const path = d3.geoPath().projection(projection);
+
+  svg.selectAll("path.state")
+    .data(geoData.features)
+    .enter().append("path")
+    .attr("class", "state")
+    .attr("d", path)
+    .attr("data-abbr", d => fipsToAbbr[d.id] || "")
+    .attr("fill", "#222")
+    .on("mousemove", function(e) {
+      const abbr = d3.select(this).attr("data-abbr");
+      if (abbr) showTooltip(e, abbr);
+    })
+    .on("mouseleave", hideTooltip);
+
+  document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeLayer = btn.dataset.layer;
+      updateMap();
+    });
+  });
+
+  updateMap();
+
+  // Self-size iframe
+  // Auto-resize when embedded as iframe
+  function reportHeight() {
+    window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+  }
+  window.addEventListener('load', reportHeight);
+  window.addEventListener('resize', function() { setTimeout(reportHeight, 50); });
+  new MutationObserver(function() { setTimeout(reportHeight, 100); })
+    .observe(document.body, { childList: true, subtree: true, attributes: false });
+
+  init();
+
+</script>
+</body>
+</html>

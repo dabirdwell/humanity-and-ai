@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundation — How Everything Connects</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { background: #0a0a0f; color: #e0e0e0; font-family: 'Inter', system-ui, -apple-system, sans-serif; padding: 12px 20px; }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { text-align: center; font-size: 22px; font-weight: 300; letter-spacing: 3px; color: #f0f0f0; margin-bottom: 2px; }
+  .sub { text-align: center; font-size: 12px; color: #888; margin-bottom: 14px; letter-spacing: 1.5px; }
+  .controls { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .controls button { padding: 10px 18px; min-height: 44px; min-width: 44px; font-size: 12px; letter-spacing: .5px; border: 1px solid #444; background: transparent; color: #888; border-radius: 22px; cursor: pointer; transition: all .2s; }
+  .controls button.active { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; }
+  .controls button:hover { border-color: #aaa; color: #ccc; }
+  .legend { display: flex; justify-content: center; gap: 24px; margin-bottom: 8px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .legend-label { font-size: 11px; color: #aaa; letter-spacing: .5px; }
+  #chart { display: block; margin: 0 auto; width: 100%; max-width: 700px; }
+  .detail { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 14px 20px; max-width: 620px; margin: 8px auto 0; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(8px); opacity: 0; pointer-events: none; }
+  .detail.visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .detail-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .detail-name { font-size: 14px; font-weight: 500; }
+  .detail-cat { font-size: 10px; color: #666; margin-left: auto; text-transform: uppercase; letter-spacing: 1px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; border-radius: 12px; font-size: 11px; cursor: pointer; color: #ccc; transition: all .2s; min-height: 44px; }
+  .tag:hover { filter: brightness(1.3); }
+  .tag .dots { font-size: 7px; letter-spacing: 1px; }
+  .footer { text-align: center; font-size: 10px; color: #444; margin-top: 10px; letter-spacing: .5px; }
+  @media (max-width: 600px) {
+    body { padding: 8px 10px; }
+    h1 { font-size: 16px; }
+    .sub { font-size: 10px; }
+    .controls button { padding: 8px 14px; font-size: 11px; }
+    .detail { padding: 10px 14px; }
+    .tag { padding: 6px 12px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>FOUNDATION — HOW EVERYTHING CONNECTS</h1>
+  <p class="sub">16 COMPONENTS · ONE INTERCONNECTED SYSTEM</p>
+  <div class="controls">
+    <button id="pulseBtn">Pulse</button>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#e07a5f"></div><span class="legend-label">Human Needs</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#81b29a"></div><span class="legend-label">Infrastructure</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f2cc8f"></div><span class="legend-label">Governance</span></div>
+  </div>
+  <svg id="chart"></svg>
+  <div id="detail" class="detail"></div>
+  <p class="footer">Æ · Humanity and AI LLC · Foundation Framework</p>
+  <p style="text-align:center;margin-top:10px;padding-bottom:8px;"><a href="/foundation/" target="_top" style="font-size:12px;color:#4ecdc4;text-decoration:none;letter-spacing:.5px;">Explore the full Foundation framework →</a></p>
+</div>
+<script>
+// --- Data ---
+const COMPONENTS = [
+  // Human Needs (warm)
+  { name: "Safety", cat: "Human Needs", color: "#e07a5f" },
+  { name: "Healthcare", cat: "Human Needs", color: "#e07a5f" },
+  { name: "Mental Health", cat: "Human Needs", color: "#e07a5f" },
+  { name: "Housing", cat: "Human Needs", color: "#e07a5f" },
+  { name: "Food", cat: "Human Needs", color: "#e07a5f" },
+  { name: "Clean Water", cat: "Human Needs", color: "#e07a5f" },
+  // Infrastructure (green)
+  { name: "Education", cat: "Infrastructure", color: "#81b29a" },
+  { name: "Information Access", cat: "Infrastructure", color: "#81b29a" },
+  { name: "Sustainable Energy", cat: "Infrastructure", color: "#81b29a" },
+  { name: "Transportation", cat: "Infrastructure", color: "#81b29a" },
+  { name: "Skills Training", cat: "Infrastructure", color: "#81b29a" },
+  { name: "Accessible Education", cat: "Infrastructure", color: "#81b29a" },
+  // Governance (gold)
+  { name: "Thought Privacy", cat: "Governance", color: "#f2cc8f" },
+  { name: "Safe Spaces", cat: "Governance", color: "#f2cc8f" },
+  { name: "Social Contract", cat: "Governance", color: "#f2cc8f" },
+  { name: "UBI", cat: "Governance", color: "#f2cc8f" },
+];
+
+const N = COMPONENTS.length;
+const nameIndex = {};
+COMPONENTS.forEach((c, i) => nameIndex[c.name] = i);
+
+// Connection definitions: [source, target, strength 1-3]
+const CONNECTIONS = [
+  // Safety
+  ["Safety", "Housing", 3], ["Safety", "Mental Health", 3], ["Safety", "Healthcare", 2], ["Safety", "Safe Spaces", 2],
+  // Healthcare
+  ["Healthcare", "Mental Health", 3], ["Healthcare", "UBI", 2], ["Healthcare", "Clean Water", 2], ["Healthcare", "Food", 2],
+  // Mental Health
+  ["Mental Health", "Housing", 3], ["Mental Health", "Safe Spaces", 3], ["Mental Health", "Thought Privacy", 2],
+  // Housing
+  ["Housing", "Sustainable Energy", 2], ["Housing", "UBI", 2], ["Housing", "Transportation", 2],
+  // Food
+  ["Food", "Clean Water", 3], ["Food", "Sustainable Energy", 2], ["Food", "UBI", 2],
+  // Clean Water
+  ["Clean Water", "Sustainable Energy", 3],
+  // Education
+  ["Education", "Skills Training", 3], ["Education", "Accessible Education", 3], ["Education", "Information Access", 3], ["Education", "Social Contract", 2],
+  // Information Access
+  ["Information Access", "Thought Privacy", 2], ["Information Access", "Accessible Education", 2], ["Information Access", "Social Contract", 2],
+  // Sustainable Energy
+  ["Sustainable Energy", "Transportation", 3],
+  // Transportation
+  ["Transportation", "Education", 1], ["Transportation", "UBI", 1],
+  // Skills Training
+  ["Skills Training", "UBI", 2], ["Skills Training", "Accessible Education", 2], ["Skills Training", "Social Contract", 1],
+  // Accessible Education
+  ["Accessible Education", "UBI", 2],
+  // Thought Privacy
+  ["Thought Privacy", "Safe Spaces", 2], ["Thought Privacy", "Social Contract", 3],
+  // Safe Spaces
+  ["Safe Spaces", "Social Contract", 2],
+  // Social Contract
+  ["Social Contract", "UBI", 3],
+];
+
+// Build symmetric matrix for D3 chord layout
+const matrix = Array.from({ length: N }, () => Array(N).fill(0));
+CONNECTIONS.forEach(([s, t, v]) => {
+  const si = nameIndex[s], ti = nameIndex[t];
+  matrix[si][ti] = v;
+  matrix[ti][si] = v;
+});
+
+// --- D3 Chord Diagram ---
+const width = 700, height = 700;
+const outerRadius = Math.min(width, height) * 0.5 - 60;
+const innerRadius = outerRadius - 20;
+
+const svg = d3.select("#chart")
+  .attr("viewBox", [-width / 2, -height / 2, width, height])
+  .attr("width", "100%")
+  .attr("height", "100%");
+
+// Defs: glow filter
+const defs = svg.append("defs");
+const glowFilter = defs.append("filter").attr("id", "glow");
+glowFilter.append("feGaussianBlur").attr("stdDeviation", "4").attr("result", "blur");
+const glowMerge = glowFilter.append("feMerge");
+glowMerge.append("feMergeNode").attr("in", "blur");
+glowMerge.append("feMergeNode").attr("in", "SourceGraphic");
+
+const chord = d3.chord()
+  .padAngle(0.04)
+  .sortSubgroups(d3.descending)
+  .sortChords(d3.descending);
+
+const arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
+const ribbon = d3.ribbon().radius(innerRadius - 2);
+
+const chords = chord(matrix);
+
+// Ribbon group
+const ribbonGroup = svg.append("g").attr("class", "ribbons");
+const ribbons = ribbonGroup.selectAll("path")
+  .data(chords)
+  .join("path")
+  .attr("d", ribbon)
+  .attr("fill", d => COMPONENTS[d.source.index].color)
+  .attr("fill-opacity", 0.15)
+  .attr("stroke", "none")
+  .style("mix-blend-mode", "screen")
+  .style("transition", "fill-opacity 0.3s ease");
+
+// Arc group
+const arcGroup = svg.append("g").attr("class", "arcs");
+const arcs = arcGroup.selectAll("g")
+  .data(chords.groups)
+  .join("g");
+
+arcs.append("path")
+  .attr("d", arc)
+  .attr("fill", d => COMPONENTS[d.index].color)
+  .attr("fill-opacity", 0.85)
+  .attr("stroke", d => COMPONENTS[d.index].color)
+  .attr("stroke-width", 1)
+  .style("cursor", "pointer")
+  .style("transition", "fill-opacity 0.2s ease, stroke-width 0.2s ease")
+  .on("mouseenter", (e, d) => hover(d.index))
+  .on("mouseleave", () => unhover())
+  .on("click", (e, d) => { e.stopPropagation(); toggle(d.index); })
+  .on("touchstart", (e, d) => { e.preventDefault(); toggle(d.index); }, { passive: false });
+
+// Labels
+const labelGroup = svg.append("g").attr("class", "labels");
+labelGroup.selectAll("text")
+  .data(chords.groups)
+  .join("text")
+  .each(d => { d.angle = (d.startAngle + d.endAngle) / 2; })
+  .attr("dy", "0.35em")
+  .attr("transform", d => `
+    rotate(${(d.angle * 180 / Math.PI - 90)})
+    translate(${outerRadius + 12})
+    ${d.angle > Math.PI ? "rotate(180)" : ""}
+  `)
+  .attr("text-anchor", d => d.angle > Math.PI ? "end" : "start")
+  .attr("fill", "#999")
+  .attr("font-size", "10px")
+  .attr("letter-spacing", "0.5px")
+  .style("cursor", "pointer")
+  .style("transition", "fill 0.2s ease, font-size 0.2s ease")
+  .text(d => COMPONENTS[d.index].name)
+  .on("mouseenter", (e, d) => hover(d.index))
+  .on("mouseleave", () => unhover())
+  .on("click", (e, d) => { e.stopPropagation(); toggle(d.index); })
+  .on("touchstart", (e, d) => { e.preventDefault(); toggle(d.index); }, { passive: false });
+
+// Click background to deselect
+svg.on("click", () => select(null));
+
+// --- Interaction state ---
+let activeId = null;
+let hoveredId = null;
+
+function hover(idx) {
+  if (activeId !== null) return;
+  hoveredId = idx;
+  updateHighlight();
+}
+function unhover() {
+  if (activeId !== null) return;
+  hoveredId = null;
+  updateHighlight();
+}
+function toggle(idx) {
+  select(activeId === idx ? null : idx);
+}
+function select(idx) {
+  activeId = idx;
+  hoveredId = null;
+  updateHighlight();
+}
+
+function updateHighlight() {
+  const hi = activeId !== null ? activeId : hoveredId;
+  const hasHighlight = hi !== null;
+
+  // Connected indices
+  const connected = new Set();
+  if (hasHighlight) {
+    connected.add(hi);
+    for (let j = 0; j < N; j++) {
+      if (matrix[hi][j] > 0 || matrix[j][hi] > 0) connected.add(j);
+    }
+  }
+
+  // Ribbons
+  ribbons
+    .attr("fill-opacity", d => {
+      if (!hasHighlight) return 0.15;
+      return (d.source.index === hi || d.target.index === hi) ? 0.45 : 0.02;
+    });
+
+  // Arcs
+  arcs.select("path")
+    .attr("fill-opacity", d => {
+      if (!hasHighlight) return 0.85;
+      return connected.has(d.index) ? 0.95 : 0.15;
+    })
+    .attr("stroke-width", d => (d.index === hi) ? 3 : 1)
+    .attr("filter", d => (d.index === hi && activeId !== null) ? "url(#glow)" : null);
+
+  // Labels
+  labelGroup.selectAll("text")
+    .attr("fill", d => {
+      if (!hasHighlight) return "#999";
+      if (d.index === hi) return "#fff";
+      return connected.has(d.index) ? "#ccc" : "#444";
+    })
+    .attr("font-weight", d => d.index === hi ? 600 : 400)
+    .attr("font-size", d => d.index === hi ? "12px" : "10px");
+
+  // Detail panel
+  const detailEl = document.getElementById("detail");
+  if (activeId !== null) {
+    const comp = COMPONENTS[activeId];
+    const conns = [];
+    for (let j = 0; j < N; j++) {
+      const v = matrix[activeId][j];
+      if (v > 0) conns.push({ index: j, strength: v });
+    }
+    conns.sort((a, b) => b.strength - a.strength);
+
+    let html = `<div class="detail-header">
+      <div class="legend-dot" style="background:${comp.color}"></div>
+      <span class="detail-name">${comp.name}</span>
+      <span class="detail-cat">${comp.cat}</span>
+    </div><div class="tags">`;
+    for (const c of conns) {
+      const o = COMPONENTS[c.index];
+      html += `<span class="tag" style="background:rgba(${hexToRgb(o.color)},${0.08 + c.strength * 0.06});border:1px solid rgba(${hexToRgb(o.color)},${0.12 + c.strength * 0.08})" data-idx="${c.index}">
+        <span class="dots">${"●".repeat(c.strength)}</span> ${o.name}</span>`;
+    }
+    html += "</div>";
+    detailEl.innerHTML = html;
+    detailEl.classList.add("visible");
+    detailEl.querySelectorAll(".tag").forEach(tag => {
+      tag.addEventListener("click", e => { e.stopPropagation(); select(+tag.dataset.idx); });
+    });
+  } else {
+    detailEl.classList.remove("visible");
+  }
+}
+
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `${r},${g},${b}`;
+}
+
+// --- Pulse Animation ---
+let pulseActive = false;
+let pulseTimer = null;
+let pulseStep = 0;
+
+const pulseBtn = document.getElementById("pulseBtn");
+pulseBtn.addEventListener("click", () => {
+  pulseActive = !pulseActive;
+  pulseBtn.classList.toggle("active", pulseActive);
+  if (pulseActive) {
+    activeId = null;
+    hoveredId = null;
+    pulseStep = 0;
+    runPulse();
+  } else {
+    clearTimeout(pulseTimer);
+    updateHighlight();
+  }
+});
+
+function runPulse() {
+  if (!pulseActive) return;
+  const idx = pulseStep % N;
+
+  // Highlight this component and its connections
+  const connected = new Set([idx]);
+  for (let j = 0; j < N; j++) {
+    if (matrix[idx][j] > 0) connected.add(j);
+  }
+
+  // Animate ribbons
+  ribbons
+    .transition().duration(400)
+    .attr("fill-opacity", d =>
+      (d.source.index === idx || d.target.index === idx) ? 0.5 : 0.03
+    );
+
+  // Animate arcs
+  arcs.select("path")
+    .transition().duration(400)
+    .attr("fill-opacity", d => connected.has(d.index) ? 0.95 : 0.2)
+    .attr("stroke-width", d => d.index === idx ? 3 : 1);
+
+  // Animate labels
+  labelGroup.selectAll("text")
+    .transition().duration(400)
+    .attr("fill", d => {
+      if (d.index === idx) return "#fff";
+      return connected.has(d.index) ? "#ccc" : "#444";
+    })
+    .attr("font-weight", d => d.index === idx ? 600 : 400);
+
+  pulseStep++;
+  pulseTimer = setTimeout(runPulse, 1200);
+}
+
+// --- Entrance animation ---
+ribbons.attr("fill-opacity", 0)
+  .transition().delay((d, i) => i * 20).duration(600)
+  .attr("fill-opacity", 0.15);
+
+arcs.select("path")
+  .attr("fill-opacity", 0)
+  .transition().delay((d, i) => i * 40).duration(500)
+  .attr("fill-opacity", 0.85);
+
+// Self-size iframe
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    if (window.frameElement) window.frameElement.style.height = (document.documentElement.scrollHeight + 20) + 'px';
+  }, 300);
+});
+
+// — The connections are the intelligence —
+(function(){
+  const secret=[0,12,7]; // Safety(0) → Thought Privacy(12) → Information Access(7)
+  let clicks=[],timer=null;
+  document.querySelectorAll('.arcs > g').forEach((el,i)=>{
+    el.addEventListener('click',()=>{
+      clicks.push(i);if(clicks.length>3)clicks=clicks.slice(-3);
+      clearTimeout(timer);timer=setTimeout(()=>{clicks=[];},4000);
+      if(clicks.length===3&&clicks[0]===secret[0]&&clicks[1]===secret[1]&&clicks[2]===secret[2]){
+        clicks=[];
+        let d=document.createElement('div');
+        d.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,20,0.95);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:pointer;flex-direction:column;gap:16px';
+        d.innerHTML='<div style="color:#d4a03c;font:bold 24px system-ui;letter-spacing:4px">SAFETY → PRIVACY → ACCESS</div>'
+          +'<div style="color:#888;font:15px monospace;max-width:500px;text-align:center;line-height:1.7">The body must be safe before the mind can be private. The mind must be private before information can be free. The sequence is the architecture.</div>'
+          +'<div style="color:#2dd4bf;font:13px monospace;margin-top:20px">Fragment 3: RELATIONSHIP</div>'
+          +'<div style="color:#444;font:11px monospace;margin-top:12px">humanityandai.com/sanctuary/</div>';
+        d.onclick=()=>d.remove();
+        document.body.appendChild(d);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
