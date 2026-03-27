@@ -1,0 +1,6 @@
+SEO: OG tags, Organization schema, RSS autodiscovery
+
+OG tags and RSS autodiscovery were already present; added Organization
+JSON-LD structured data to head.
+
+Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
