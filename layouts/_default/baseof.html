@@ -41,6 +41,21 @@
   <link rel="stylesheet" href="/css/main.css?v=20260324a">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
 
+  <!-- Organization structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Humanity and AI LLC",
+    "url": "https://humanityandai.com",
+    "description": "Research, tools, and advocacy at the intersection of humanity and artificial intelligence",
+    "founder": {
+      "@type": "Person",
+      "name": "David Birdwell"
+    }
+  }
+  </script>
+
   {{ block "head" . }}{{ end }}
 
   <!-- Privacy-friendly analytics by Plausible -->
