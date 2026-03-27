@@ -10,7 +10,7 @@ hero_stat_bridge: "Clean water isn't a developing-world problem. It's an America
 hero_stat_source: "EPA 7th Drinking Water Infrastructure Needs Survey, 2023; ASCE 2025 Report Card; Trump FY2026 budget proposal"
 aliases:
   - "/ubc/clean-water/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/6"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/42"
 ---
 
 Turn on the tap. Fill a glass. Drink it without thinking. That's the promise — the most basic promise a modern society makes to its citizens. You built the roads, you paid the taxes, you held up your end. In return, the water is clean.
@@ -85,4 +85,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Clean Water? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/26)
+Have ideas about Clean Water? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/42)

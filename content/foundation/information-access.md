@@ -10,7 +10,7 @@ hero_stat_bridge: "In 2026, internet access is oxygen for economic participation
 hero_stat_source: "BroadbandNow audit, 2025; Northwestern Medill State of Local News, 2025; FCC"
 aliases:
   - "/ubc/information-access/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/8"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/39"
 ---
 
 Think about the last time you needed to know something that mattered — not trivia, not entertainment, but something that would change a decision. Maybe it was a diagnosis you didn't understand, or a clause in a lease, or whether your kid's school was actually teaching what it said it was teaching. You probably reached for a screen. And it was probably there.
@@ -101,4 +101,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Information Access? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/24)
+Have ideas about Information Access? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/39)

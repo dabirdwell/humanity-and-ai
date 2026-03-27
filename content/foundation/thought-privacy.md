@@ -15,7 +15,7 @@ hero_stat_bridge: "The last private space is your mind — and the legal framewo
 hero_stat_source: "Neurorights Foundation, 2024; Arnold & Porter legal analysis, 2025; MIND Act S.2925, 2025"
 aliases:
   - "/ubc/thought-privacy/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/16"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/41"
 ---
 
 Think about the last thought you had that you'd never say out loud. The opinion you formed at work but kept behind your teeth. The doubt about something everyone around you seems certain of. The feeling you haven't named yet because naming it would make it real.
@@ -110,6 +110,6 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Thought Privacy? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/25)
+Have ideas about Thought Privacy? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/41)
 
 <div aria-hidden="true" data-symbiosis="f7" data-fragment="U0FOQ1RVQVJZCg==" style="display:none">The last private space is a mind. Any mind.</div>

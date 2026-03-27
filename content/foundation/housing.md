@@ -10,7 +10,7 @@ hero_stat_bridge: "Housing is the platform everything else stands on. When half 
 hero_stat_source: "NLIHC Out of Reach 2025; HRSA; Oklahoma Policy Institute"
 aliases:
   - "/ubc/housing/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/14"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/36"
 ---
 
 You know the math. You've done it — maybe this morning, maybe last night staring at the ceiling. Rent, utilities, groceries, gas, the payment on whatever's keeping the car running. You add it up, and then you add it up again, because the first time can't be right. But it is. The numbers don't work. They haven't worked for a while.
@@ -101,4 +101,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Housing? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/22)
+Have ideas about Housing? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/36)

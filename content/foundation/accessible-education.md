@@ -10,7 +10,7 @@ hero_stat_bridge: "When education creates a generation of debtors, it's not acce
 hero_stat_source: "Federal Reserve; Federal Student Aid, Q4 2025"
 aliases:
   - "/ubc/accessible-education/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/10"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/40"
 ---
 
 Think about the last thing you wanted to learn and couldn't. Not because you weren't smart enough — because you couldn't afford it, couldn't find it, or couldn't fit it into a life already stretched to breaking. Maybe it was a skill that would have changed your career. Maybe it was something you were just curious about — the kind of learning that used to be called enrichment, back when we believed people deserved to grow for reasons beyond their usefulness to an employer.
@@ -81,4 +81,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Accessible Education? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/33)
+Have ideas about Accessible Education? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/40)

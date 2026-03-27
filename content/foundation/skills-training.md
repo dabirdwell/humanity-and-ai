@@ -10,7 +10,7 @@ hero_stat_bridge: "Half the economy is significantly exposed to AI transformatio
 hero_stat_source: "Karpathy AI Job Exposure Analysis, 2024; McKinsey Global Institute; World Economic Forum Future of Jobs, 2025; DOL"
 aliases:
   - "/ubc/skills-training/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/12"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/47"
 ---
 
 Think about the thing you're good at. Not a credential — the actual thing. The skill that took years to develop, the judgment that comes from doing something long enough that you can feel when it's right and when it's off. Maybe it's reading a room. Maybe it's diagnosing a problem before the diagnostic tool catches it. Maybe it's the thing you do that nobody taught you in school because it can't really be taught — it has to be built, slowly, through repetition and failure and paying attention.
@@ -89,4 +89,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Skills Training? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/29)
+Have ideas about Skills Training? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/47)

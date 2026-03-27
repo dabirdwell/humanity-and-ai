@@ -10,21 +10,23 @@ Foundation is citizen-developed work. These discussion threads are where the wor
 
 | Component | Discussion Thread |
 |-----------|------------------|
-| Safety | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/18) |
-| Education | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/19) |
-| Healthcare | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/20) |
-| Mental Health & Addiction Support | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/21) |
-| Housing | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/22) |
-| Food | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/23) |
-| Information Access & AI Benefits | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/24) |
-| Thought Privacy | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/25) |
-| Clean Water | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/26) |
-| Sustainable Energy | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/27) |
-| Universal Transportation | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/28) |
-| Skills Training & Education Evolution | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/29) |
-| Safe Spaces | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/30) |
-| Social Contract Reevaluation | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/31) |
-| Universal Basic Income | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/32) |
-| Accessible Education & Training | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/33) |
+| Safety | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/49) |
+| Education | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/34) |
+| Food Security | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/35) |
+| Housing | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/36) |
+| Healthcare | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/37) |
+| Mental Health | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/38) |
+| Information Access | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/39) |
+| Accessible Education | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/40) |
+| Thought Privacy | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/41) |
+| Clean Water | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/42) |
+| Safe Spaces | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/43) |
+| Social Contract | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/44) |
+| Sustainable Energy | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/45) |
+| Transportation | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/46) |
+| Skills Training | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/47) |
+| Universal Basic Income | [Share your ideas →](https://github.com/dabirdwell/humanity-and-ai/discussions/48) |
+
+**New here?** Start with the [Welcome post →](https://github.com/dabirdwell/humanity-and-ai/discussions/50)
 
 [← Back to Foundation](/foundation/) | [View all discussions on GitHub →](https://github.com/dabirdwell/humanity-and-ai/discussions)

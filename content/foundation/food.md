@@ -10,7 +10,7 @@ hero_stat_bridge: "The wealthiest nation on earth has 47 million people who aren
 hero_stat_source: "USDA Economic Research Service, 2024 (final report — series terminated)"
 aliases:
   - "/ubc/food/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/5"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/35"
 ---
 
 You know the math. Maybe not personally — but you've seen it. The parent in the checkout line quietly putting something back. The coworker who skips lunch and says she's not hungry. The kid at your child's school who eats fast and focused, like he's not sure when the next one is coming.
@@ -89,4 +89,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Food? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/23)
+Have ideas about Food? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/35)

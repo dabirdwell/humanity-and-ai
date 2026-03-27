@@ -15,7 +15,7 @@ hero_stat_bridge: "Throwing money at a broken system doesn't fix outcomes. Educa
 hero_stat_source: "OECD/PISA 2022"
 aliases:
   - "/ubc/education/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/2"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/34"
 ---
 
 You know the moment. Your kid comes home, drops the backpack by the door, and you ask what they learned today. *Nothing.* Not because nothing happened — because nothing connected. Nothing lit up the part of their brain that used to catch fire over bugs and stars and how bridges stay up. And you stand there thinking about the version of this kid you saw two years ago, the one who wouldn't stop asking questions, and you wonder: what happened?
@@ -109,4 +109,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Education? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/19)
+Have ideas about Education? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/34)

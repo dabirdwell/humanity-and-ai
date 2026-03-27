@@ -14,7 +14,7 @@ hero_stat_bridge: "Energy poverty isn't about choosing paper or plastic. It's ab
 hero_stat_source: "DOE Low-Income Energy Affordability Data Tool; RMI 2024; EIA Oklahoma State Profile; ACEEE Energy Burden Research 2024"
 aliases:
   - "/ubc/sustainable-energy/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/7"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/45"
 ---
 
 Think about the last time you opened your utility bill and did math you shouldn't have to do. Not budget math — survival math. The kind where you're weighing the thermostat against the grocery list, the space heater against the copay, the gas tank against the rent. Most Americans have done that calculation at least once. For one in seven families, it happens every month.
@@ -116,4 +116,4 @@ This is citizen-developed work. This is one of sixteen components. [Explore the 
 
 ## Join the Conversation
 
-Have ideas about Sustainable Energy? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/27)
+Have ideas about Sustainable Energy? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/45)

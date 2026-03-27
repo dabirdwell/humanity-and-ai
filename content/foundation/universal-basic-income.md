@@ -16,7 +16,7 @@ hero_stat_bridge: "We already spend more than enough to end poverty. The problem
 hero_stat_source: "Census Bureau poverty statistics 2024; Federal Safety Net analysis; Guaranteed Income Dashboard 2025"
 aliases:
   - "/ubc/universal-basic-income/"
-discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/13"
+discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/48"
 ---
 
 Think about the last time money kept you up at night. Not the abstract worry about the economy or retirement — the immediate kind. The kind that sits in your chest at 2 a.m. The kind where you're doing arithmetic between the electric bill and groceries, and neither answer works. Where a $400 emergency — a flat tire, a sick kid, a broken furnace — isn't an inconvenience but a catastrophe.
@@ -115,4 +115,4 @@ This is citizen-developed work. This is one of sixteen components — the one th
 
 ## Join the Conversation
 
-Have ideas about Universal Basic Income? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/32)
+Have ideas about Universal Basic Income? [Share them in our community discussion →](https://github.com/dabirdwell/humanity-and-ai/discussions/48)
