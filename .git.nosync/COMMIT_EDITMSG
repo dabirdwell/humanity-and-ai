@@ -1,6 +1,9 @@
-SEO: OG tags, Organization schema, RSS autodiscovery
+Add Beacon and The Inference products, update existing product cards
 
-OG tags and RSS autodiscovery were already present; added Organization
-JSON-LD structured data to head.
+- Add Beacon (alpha) and The Inference (live) as new product pages
+- Update card descriptions, statuses, and links for all products
+- Link cards directly to apps/repos instead of internal pages
+- Add alpha CSS status badge style
+- TasteBud promoted from coming-soon to beta
 
 Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
