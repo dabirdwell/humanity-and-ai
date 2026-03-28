@@ -26,6 +26,9 @@ summaryLength = 40
     name = "Brain Mastery"
     url = "/brain-mastery/"
   [[params.nav.links]]
+    name = "The Show"
+    url = "/show/"
+  [[params.nav.links]]
     name = "Visualizations"
     url = "/visualizations/"
   [[params.nav.links]]
