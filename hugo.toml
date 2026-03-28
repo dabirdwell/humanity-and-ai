@@ -51,7 +51,7 @@ summaryLength = 40
     style = 'monokai'
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON"]
 
 [mediaTypes]
   [mediaTypes."application/rss+xml"]

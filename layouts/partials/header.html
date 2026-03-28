@@ -6,6 +6,9 @@
         <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
       {{ end }}
     </nav>
+    <a href="/search/" class="search-toggle" aria-label="Search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </a>
     <button class="theme-toggle" aria-label="Toggle light/dark theme" onclick="toggleTheme()">
       <span class="icon-sun">☀️</span>
       <span class="icon-moon">🌙</span>
