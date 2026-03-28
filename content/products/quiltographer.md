@@ -1,12 +1,12 @@
 ---
 title: "Quiltographer"
-description: "AI-powered quilting pattern reader — parses PDFs into step-by-step instructions."
-weight: 4
+description: "AI-powered quilting pattern parser and assistant."
+weight: 3
 status: "beta"
-tagline: "Design the way you think."
+tagline: "AI-powered quilting pattern parser and assistant."
 domain: "Quilting"
-link: "https://quiltographer.humanityandai.com"
-link_text: "Try the beta →"
+link: "https://github.com/dabirdwell/quiltographer"
+link_text: "View on GitHub →"
 icon: "🧵"
 ---
 

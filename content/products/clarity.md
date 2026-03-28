@@ -3,7 +3,7 @@ title: "Clarity"
 description: "A calmer reading experience built with dyslexia expertise."
 weight: 1
 status: "live"
-tagline: "Reading, understood."
+tagline: "A calmer reading experience built with dyslexia expertise."
 domain: "Reading"
 link: "https://clarity.humanityandai.com"
 link_text: "Open Clarity →"

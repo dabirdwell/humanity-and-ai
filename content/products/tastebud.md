@@ -1,12 +1,12 @@
 ---
 title: "TasteBud"
-description: "Culinary education — explore flavor visually, learn from AI mentors, and cook with what you have."
-weight: 3
-status: "coming-soon"
-tagline: "See what flavor looks like."
+description: "Develop your palate with flavor science and guided cooking."
+weight: 4
+status: "beta"
+tagline: "Develop your palate with flavor science and guided cooking."
 domain: "Culinary"
-link: "mailto:david@humanityandai.com?subject=TasteBud%20Waitlist"
-link_text: "Join waitlist →"
+link: "https://github.com/dabirdwell/tastebud"
+link_text: "View on GitHub →"
 icon: "🍳"
 ---
 

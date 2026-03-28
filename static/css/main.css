@@ -3030,6 +3030,12 @@ a:hover { color: var(--accent-primary); }
   border: 1px solid rgba(251, 191, 36, 0.25);
 }
 
+.product-status.alpha {
+  background: rgba(255, 107, 53, 0.15);
+  color: var(--accent-primary);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
 .product-card h3 {
   font-family: var(--font-display);
   font-size: 1.35rem;

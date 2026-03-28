@@ -1,12 +1,12 @@
 ---
 title: "Citizen"
-description: "Civic hub — track your community, understand the Foundation, and engage with Guardian AI."
+description: "Your civic hub — Foundation status, contributions, and Guardian AI."
 weight: 5
 status: "coming-soon"
-tagline: "Democracy is a skill."
+tagline: "Your civic hub — Foundation status, contributions, and Guardian AI."
 domain: "Civic"
-link: "mailto:david@humanityandai.com?subject=Citizen%20Waitlist"
-link_text: "Join waitlist →"
+link: ""
+link_text: "Coming soon"
 icon: "🏛️"
 ---
 

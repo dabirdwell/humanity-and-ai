@@ -1,12 +1,12 @@
 ---
 title: "Dojo"
-description: "Logical reasoning training — spot fallacies, evaluate sources, and argue with precision."
+description: "Train your logical thinking through gamified argument analysis."
 weight: 2
 status: "beta"
-tagline: "Think sharper."
+tagline: "Train your logical thinking through gamified argument analysis."
 domain: "Critical Thinking"
-link: "mailto:david@humanityandai.com?subject=Dojo%20Waitlist"
-link_text: "Join waitlist →"
+link: "https://github.com/dabirdwell/dojo"
+link_text: "View on GitHub →"
 icon: "🥋"
 ---
 
