@@ -30,3 +30,5 @@ Foundation is both the framework and the movement. Not left, not right — forwa
 → **[Discussion Hub](/foundation/discuss/)** — community threads for all 16 components on GitHub.
 
 → **[Foundation for Kids](/foundation/for-kids/)** — all 16 components explained for the next generation.
+
+→ **[The Poverty Premium](/foundation/poverty-premium/)** — interactive calculator showing the hidden cost of being poor.

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Poverty Premium Calculator</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #0f1117;
+    color: #e2e8f0;
+    padding: 24px 16px 40px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #f1f5f9;
+    text-align: center;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .calculator { max-width: 700px; margin: 0 auto; }
+
+  /* Income slider section */
+  .income-section {
+    background: #1a1f2e;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .income-section label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .income-display {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .income-display span { color: #475569; font-weight: 500; }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #ef4444 0%, #eab308 30%, #22c55e 60%, #22c55e 100%);
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: 3px solid #0f1117;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    cursor: pointer;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: 3px solid #0f1117;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    cursor: pointer;
+  }
+
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: #475569;
+    margin-top: 6px;
+  }
+
+  /* Category cards */
+  .categories { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+
+  .category {
+    background: #1a1f2e;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .category:hover { border-color: #2d3548; }
+
+  .cat-header {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  .cat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .cat-icon.banking { background: #1e3a5f; }
+  .cat-icon.laundry { background: #1a2e35; }
+  .cat-icon.transport { background: #2d1f3d; }
+  .cat-icon.food { background: #2d2a1a; }
+  .cat-icon.credit { background: #3d1a1a; }
+
+  .cat-title-area {}
+  .cat-name {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 2px;
+  }
+  .cat-subtitle {
+    font-size: 0.7rem;
+    color: #64748b;
+    line-height: 1.3;
+  }
+
+  .cat-cost {
+    text-align: right;
+    min-width: 80px;
+  }
+  .cat-cost-number {
+    font-family: 'Space Grotesk', 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ef4444;
+  }
+  .cat-cost-label {
+    font-size: 0.6rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .cat-detail {
+    display: none;
+    padding: 0 16px 16px;
+    border-top: 1px solid #1e293b;
+  }
+  .cat-detail.open { display: block; padding-top: 16px; }
+
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .comp-side {
+    border-radius: 8px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .comp-poor {
+    background: #1e1215;
+    border: 1px solid #3d1a1a;
+  }
+  .comp-stable {
+    background: #0a1a12;
+    border: 1px solid #166534;
+  }
+
+  .comp-flag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .comp-poor .comp-flag { color: #ef4444; }
+  .comp-stable .comp-flag { color: #22c55e; }
+
+  .comp-amount {
+    font-family: 'Space Grotesk', 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .comp-poor .comp-amount { color: #fca5a5; }
+  .comp-stable .comp-amount { color: #86efac; }
+
+  .comp-detail {
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+  .comp-poor .comp-detail { color: #7f1d1d; }
+  .comp-stable .comp-detail { color: #166534; }
+
+  .comp-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: 0.04em;
+  }
+
+  .comp-extra {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #1e293b;
+  }
+  .comp-extra strong { color: #e2e8f0; }
+
+  /* Total premium */
+  .total-section {
+    background: linear-gradient(135deg, #1e1215 0%, #1a1f2e 50%, #0a1a12 100%);
+    border: 2px solid #ff6b35;
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .total-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #ff6b35;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .total-number {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: clamp(2.8rem, 7vw, 4rem);
+    font-weight: 800;
+    color: #ff6b35;
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: -0.03em;
+  }
+
+  .total-sublabel {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin-bottom: 16px;
+  }
+
+  .total-context {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .total-context strong { color: #e2e8f0; }
+
+  .pct-bar-wrap {
+    max-width: 400px;
+    margin: 16px auto 8px;
+  }
+  .pct-bar {
+    height: 12px;
+    border-radius: 6px;
+    background: #1e293b;
+    overflow: hidden;
+    position: relative;
+  }
+  .pct-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #ff6b35, #ef4444);
+    transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .pct-bar-label {
+    font-size: 0.68rem;
+    color: #64748b;
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  /* Time cost callout */
+  .time-callout {
+    background: #1a2235;
+    border: 1px solid #1e3a5f;
+    border-left: 3px solid #4ecdc4;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .time-callout strong { color: #4ecdc4; }
+
+  .source {
+    text-align: center;
+    font-size: 0.62rem;
+    color: #334155;
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  @media (max-width: 520px) {
+    .comparison { grid-template-columns: 1fr; gap: 6px; }
+    .comp-vs { padding: 2px 0; }
+    .cat-header { grid-template-columns: 32px 1fr auto; gap: 8px; padding: 12px; }
+    .cat-icon { width: 32px; height: 32px; font-size: 1rem; }
+    .cat-cost-number { font-size: 1rem; }
+  }
+
+  html:not(.in-iframe) body { min-height: 100vh; }
+</style>
+<script>if(window.self!==window.top)document.documentElement.classList.add("in-iframe")</script>
+</head>
+<body>
+
+<h1>The Poverty Premium Calculator</h1>
+<p class="subtitle">How much more does it cost to be poor? Adjust your income and find out.</p>
+
+<div class="calculator">
+
+  <div class="income-section">
+    <label>Monthly Gross Income</label>
+    <div class="income-display">$<span id="income-val">2,500</span><span>/mo</span></div>
+    <input type="range" id="income-slider" min="800" max="8000" value="2500" step="100" oninput="update()">
+    <div class="range-labels">
+      <span>$800/mo</span>
+      <span>Federal poverty line (single): ~$1,275/mo</span>
+      <span>$8,000/mo</span>
+    </div>
+  </div>
+
+  <div class="categories" id="categories"></div>
+
+  <div class="total-section" id="total-section">
+    <div class="total-label">Total Annual Poverty Premium</div>
+    <div class="total-number" id="total-number">$0</div>
+    <div class="total-sublabel" id="total-sublabel">per year in extra costs for being poor</div>
+    <div class="pct-bar-wrap">
+      <div class="pct-bar"><div class="pct-bar-fill" id="pct-fill" style="width:0%"></div></div>
+      <div class="pct-bar-label" id="pct-label">0% of annual income</div>
+    </div>
+    <div class="total-context" id="total-context"></div>
+  </div>
+
+  <div class="time-callout" id="time-callout"></div>
+
+  <div class="source">
+    Sources: Brookings Institution, "The Hidden Cost of Being Poor" (2015, updated); FDIC National Survey of Unbanked and Underbanked Households (2021);<br>
+    USDA Economic Research Service food price data; CFPB Payday Lending Report; Bureau of Labor Statistics Consumer Expenditure Survey.<br>
+    Figures are national averages — actual costs vary by location.
+  </div>
+</div>
+
+<script>
+const cats = [
+  {
+    id: 'banking',
+    icon: '🏦',
+    name: 'Banking',
+    subtitle: 'Check cashing fees vs. free direct deposit',
+    calc(monthly) {
+      const annual = monthly * 12;
+      const feeRate = monthly < 2000 ? 0.04 : monthly < 3500 ? 0.03 : 0.025;
+      const poorCost = annual * feeRate;
+      const stableCost = 0;
+      return {
+        premium: poorCost - stableCost,
+        poor: { amount: poorCost, detail: `${(feeRate*100).toFixed(0)}% fee on every check` },
+        stable: { amount: stableCost, detail: 'Free direct deposit' },
+        extra: `<strong>${(26.7).toLocaleString()} million</strong> US adults are unbanked or underbanked. Check cashers charge 2–5% per check. On $${monthly.toLocaleString()}/mo, that's $${Math.round(monthly * feeRate)} gone every month — before rent, before food, before anything.`
+      };
+    }
+  },
+  {
+    id: 'laundry',
+    icon: '🧺',
+    name: 'Laundry',
+    subtitle: 'Laundromat vs. owning a washer/dryer',
+    calc(monthly) {
+      const poorCost = 2.50 * 2 * 4 * 52; // $2.50 wash + $2.50 dry, 4 loads/week
+      const stableCost = 800 / 10; // $800 set amortized over 10 years
+      return {
+        premium: poorCost - stableCost,
+        poor: { amount: poorCost, detail: '$5/load × 4 loads/wk × 52 wks' },
+        stable: { amount: stableCost, detail: '$800 washer/dryer ÷ 10 years' },
+        extra: `The laundromat tax is invisible but relentless. <strong>4 loads a week</strong> at $5 per load (wash + dry) is $20/week, $1,040/year. A washer/dryer set costs ~$800 — but you need a home with hookups, money upfront, and somewhere to put it. The premium isn't ignorance. It's inaccessibility.`
+      };
+    }
+  },
+  {
+    id: 'transport',
+    icon: '🚌',
+    name: 'Transportation',
+    subtitle: 'Bus pass + lost time vs. car ownership',
+    calc(monthly) {
+      const busCost = 65 * 12; // $65/mo bus pass
+      const carPayment = 350 * 12; // $350/mo total car cost
+      const timeLostHrsYr = 1.5 * 260; // 1.5 hrs/day extra, 260 work days
+      const hourlyWage = monthly / 160; // rough hourly from monthly
+      const timeCostValue = timeLostHrsYr * hourlyWage;
+      // Premium is the time cost (bus is cheaper in dollars but devastating in time)
+      const premium = timeCostValue;
+      return {
+        premium: premium,
+        poor: { amount: busCost, detail: '$65/mo bus pass + 2hr daily commute' },
+        stable: { amount: carPayment, detail: '$350/mo car costs, saves 1.5hr/day' },
+        extra: `The bus pass costs less in dollars — <strong>$${Math.round(busCost/12)}/mo vs $350/mo</strong>. But a 2-hour daily commute vs 30 minutes steals <strong>${Math.round(timeLostHrsYr)} hours/year</strong>. At $${hourlyWage.toFixed(2)}/hr, that lost time is worth <strong>$${Math.round(timeCostValue).toLocaleString()}</strong>. Time you can't spend with your kids, on a side job, on rest.`,
+        timeHrs: timeLostHrsYr
+      };
+    }
+  },
+  {
+    id: 'food',
+    icon: '🛒',
+    name: 'Food',
+    subtitle: 'Corner store markup vs. grocery store prices',
+    calc(monthly) {
+      const groceryCost = 100 * 52; // $100/week at a real grocery
+      const cornerCost = 150 * 52; // $150/week at the corner store (50% markup)
+      return {
+        premium: cornerCost - groceryCost,
+        poor: { amount: cornerCost, detail: '$150/wk — corner store markup' },
+        stable: { amount: groceryCost, detail: '$100/wk at a full grocery store' },
+        extra: `Food deserts aren't about choice — they're about geography. <strong>23.5 million</strong> Americans live more than a mile from a supermarket. Corner stores charge 30–50% more for the same items. Same basket, same week: $100 at a grocery vs $150 at the corner store. That's $2,600/year for being in the wrong zip code.`
+      };
+    }
+  },
+  {
+    id: 'credit',
+    icon: '💳',
+    name: 'Credit',
+    subtitle: 'Payday loan vs. bank loan on $500',
+    calc(monthly) {
+      // Payday loan: $15 per $100 borrowed for 2-week term, rolled over ~8 times avg
+      const paydayFee = 500 * 0.15; // $75 per rollover
+      const rollovers = 8;
+      const paydayCost = paydayFee * rollovers; // $600 in fees on a $500 loan
+      // Bank personal loan: 8% APR on $500 for same period (~4 months)
+      const bankInterest = 500 * 0.08 * (4/12); // ~$13.33
+      return {
+        premium: paydayCost - bankInterest,
+        poor: { amount: paydayCost, detail: '$75/rollover × 8 avg rollovers' },
+        stable: { amount: bankInterest, detail: '8% APR, repaid in 4 months' },
+        extra: `A $500 payday loan at typical terms ($15 per $100 per 2-week period) costs <strong>$75 every two weeks</strong>. The average borrower rolls over 8 times before paying off. Total cost: <strong>$600 in fees on a $500 loan</strong>. The same $500 from a bank at 8% APR costs $${bankInterest.toFixed(0)} in interest. That's a <strong>${Math.round(paydayCost/bankInterest)}×</strong> penalty for not having a bank account or credit score.`
+      };
+    }
+  }
+];
+
+let openCat = null;
+
+function toggleDetail(id) {
+  const el = document.getElementById('detail-' + id);
+  if (openCat === id) {
+    el.classList.remove('open');
+    openCat = null;
+  } else {
+    if (openCat) document.getElementById('detail-' + openCat).classList.remove('open');
+    el.classList.add('open');
+    openCat = id;
+  }
+}
+
+function update() {
+  const monthly = parseInt(document.getElementById('income-slider').value);
+  document.getElementById('income-val').textContent = monthly.toLocaleString();
+
+  const annual = monthly * 12;
+  let totalPremium = 0;
+  let totalTimeHrs = 0;
+
+  const container = document.getElementById('categories');
+  container.innerHTML = '';
+
+  cats.forEach(cat => {
+    const result = cat.calc(monthly);
+    totalPremium += result.premium;
+    if (result.timeHrs) totalTimeHrs += result.timeHrs;
+
+    const div = document.createElement('div');
+    div.className = 'category';
+    div.innerHTML = `
+      <div class="cat-header" onclick="toggleDetail('${cat.id}')" role="button" tabindex="0" aria-expanded="false" aria-controls="detail-${cat.id}">
+        <div class="cat-icon ${cat.id}">${cat.icon}</div>
+        <div class="cat-title-area">
+          <div class="cat-name">${cat.name}</div>
+          <div class="cat-subtitle">${cat.subtitle}</div>
+        </div>
+        <div class="cat-cost">
+          <div class="cat-cost-number">+$${Math.round(result.premium).toLocaleString()}</div>
+          <div class="cat-cost-label">per year</div>
+        </div>
+      </div>
+      <div class="cat-detail" id="detail-${cat.id}">
+        <div class="comparison">
+          <div class="comp-side comp-poor">
+            <div class="comp-flag">Without resources</div>
+            <div class="comp-amount">$${Math.round(result.poor.amount).toLocaleString()}/yr</div>
+            <div class="comp-detail">${result.poor.detail}</div>
+          </div>
+          <div class="comp-vs">VS</div>
+          <div class="comp-side comp-stable">
+            <div class="comp-flag">With resources</div>
+            <div class="comp-amount">$${Math.round(result.stable.amount).toLocaleString()}/yr</div>
+            <div class="comp-detail">${result.stable.detail}</div>
+          </div>
+        </div>
+        <div class="comp-extra">${result.extra}</div>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+
+  // Reopen previously open category
+  if (openCat) {
+    const el = document.getElementById('detail-' + openCat);
+    if (el) el.classList.add('open');
+  }
+
+  // Total section
+  const pctOfIncome = (totalPremium / annual) * 100;
+  document.getElementById('total-number').textContent = '$' + Math.round(totalPremium).toLocaleString();
+  document.getElementById('total-sublabel').textContent = `per year in extra costs for being poor`;
+
+  const fillPct = Math.min(pctOfIncome, 100);
+  document.getElementById('pct-fill').style.width = fillPct + '%';
+  document.getElementById('pct-label').textContent = pctOfIncome.toFixed(1) + '% of annual income';
+
+  const monthsRent = (totalPremium / 1000).toFixed(1);
+  document.getElementById('total-context').innerHTML =
+    `At <strong>$${monthly.toLocaleString()}/mo</strong> income, the poverty premium consumes <strong>${pctOfIncome.toFixed(1)}%</strong> of your annual earnings. ` +
+    `That's <strong>$${Math.round(totalPremium / 12).toLocaleString()} every month</strong> — money that goes to fees, markups, and penalties instead of savings, education, or stability.`;
+
+  // Time callout
+  document.getElementById('time-callout').innerHTML =
+    `Beyond dollars: the transit time penalty alone costs <strong>${Math.round(totalTimeHrs)} hours per year</strong> — ` +
+    `that's <strong>${(totalTimeHrs / 24).toFixed(0)} full days</strong> of your life, every year, spent on a bus instead of with your family, building skills, or resting. ` +
+    `The poverty premium isn't just money. It's time. It's health. It's possibility.`;
+
+  reportHeight();
+}
+
+// Auto-resize when embedded as iframe
+function reportHeight() {
+  window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', () => { update(); reportHeight(); });
+window.addEventListener('resize', () => setTimeout(reportHeight, 50));
+new MutationObserver(() => setTimeout(reportHeight, 100))
+  .observe(document.body, { childList: true, subtree: true, attributes: false });
+
+update();
+</script>
+
+</body>
+</html>
