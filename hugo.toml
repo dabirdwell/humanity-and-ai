@@ -17,6 +17,9 @@ summaryLength = 40
     name = "Foundation"
     url = "/foundation/"
   [[params.nav.links]]
+    name = "The Inference"
+    url = "/inference/"
+  [[params.nav.links]]
     name = "Products"
     url = "/products/"
   [[params.nav.links]]
