@@ -1,5 +1,7 @@
 # Humanity and AI
 
+[![Hugo Build CI](https://github.com/dabirdwell/humanity-and-ai/actions/workflows/deploy.yml/badge.svg)](https://github.com/dabirdwell/humanity-and-ai/actions/workflows/deploy.yml)
+
 **Research. Tools. Ideas. Futures we direct.**
 
 A living notebook from the intersection of humanity and artificial intelligence. Built with [Hugo](https://gohugo.io/).

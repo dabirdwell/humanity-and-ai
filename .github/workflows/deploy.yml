@@ -1,0 +1,41 @@
+name: Hugo Build CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Hugo CLI
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          TZ: America/Chicago
+        run: hugo --gc --minify
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "public" ] || [ -z "$(ls -A public)" ]; then
+            echo "::error::Build produced no output in public/"
+            exit 1
+          fi
+          echo "Build succeeded — $(find public -type f | wc -l | tr -d ' ') files generated"
