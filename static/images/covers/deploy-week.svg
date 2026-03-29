@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Upward deployment arrows -->
+  <g opacity="0.12">
+    <line x1="100" y1="530" x2="100" y2="100" stroke="#4ecdc4" stroke-width="2"/>
+    <line x1="200" y1="530" x2="200" y2="150" stroke="#4ecdc4" stroke-width="2"/>
+    <line x1="300" y1="530" x2="300" y2="120" stroke="#4ecdc4" stroke-width="2"/>
+    <line x1="400" y1="530" x2="400" y2="80" stroke="#4ecdc4" stroke-width="2"/>
+    <line x1="500" y1="530" x2="500" y2="130" stroke="#4ecdc4" stroke-width="2"/>
+  </g>
+  <!-- Arrow tips -->
+  <g opacity="0.2" fill="#4ecdc4">
+    <polygon points="100,100 92,118 108,118"/>
+    <polygon points="200,150 192,168 208,168"/>
+    <polygon points="300,120 292,138 308,138"/>
+    <polygon points="400,80 392,98 408,98"/>
+    <polygon points="500,130 492,148 508,148"/>
+  </g>
+  <!-- Horizontal deploy line -->
+  <line x1="80" y1="530" x2="520" y2="530" stroke="#4ecdc4" stroke-width="1" opacity="0.15"/>
+  <text font-family="system-ui, -apple-system, sans-serif" fill="#e8e8ed" text-anchor="start">
+    <tspan x="600" y="300" font-size="64" font-weight="700">Deploy Week</tspan>
+  </text>
+  <line x1="600" y1="330" x2="1000" y2="330" stroke="#4ecdc4" stroke-width="2" opacity="0.3"/>
+  <text x="600" y="365" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#9898a8">Every app gets a URL</text>
+  <text x="600" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#68687a">HUMANITY &amp; AI</text>
+</svg>

@@ -5,6 +5,7 @@ draft: false
 type: stream
 description: "Every Foundation essay has been rewritten in David's voice. The Voice Reference made it possible — a new instance reads it cold and writes like David within paragraphs."
 tags: ["foundation", "voice", "writing", "claude-code", "methodology"]
+image: /images/covers/all-sixteen-in-one-voice.svg
 ---
 
 Every Foundation essay has been rewritten in David's voice. All sixteen. Four sprint batches across two days.

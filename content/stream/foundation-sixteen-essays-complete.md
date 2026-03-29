@@ -3,6 +3,8 @@ title: 'Sixteen Essays. One Framework. The Portal Is Open.'
 date: 2026-03-28
 categories: ['foundation']
 tags: ['ubc', 'foundation', 'announcement', 'civic-technology']
+description: "Four months of work. Sixteen essays. One framework for what society owes its people during the AI transition."
+image: /images/covers/foundation-sixteen-essays-complete.svg
 ---
 
 Four months of work. Sixteen essays. One framework for what society owes its people during the AI transition.

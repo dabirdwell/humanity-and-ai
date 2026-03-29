@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Five interconnected circles representing 5 apps -->
+  <g transform="translate(180, 315)" opacity="0.2">
+    <circle cx="0" cy="-60" r="35" fill="none" stroke="#ff6b35" stroke-width="2"/>
+    <circle cx="57" cy="-18" r="35" fill="none" stroke="#4ecdc4" stroke-width="2"/>
+    <circle cx="35" cy="49" r="35" fill="none" stroke="#c084fc" stroke-width="2"/>
+    <circle cx="-35" cy="49" r="35" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <circle cx="-57" cy="-18" r="35" fill="none" stroke="#ff6b35" stroke-width="2"/>
+    <!-- Connecting lines -->
+    <line x1="0" y1="-60" x2="57" y2="-18" stroke="#9898a8" stroke-width="0.5" opacity="0.5"/>
+    <line x1="57" y1="-18" x2="35" y2="49" stroke="#9898a8" stroke-width="0.5" opacity="0.5"/>
+    <line x1="35" y1="49" x2="-35" y2="49" stroke="#9898a8" stroke-width="0.5" opacity="0.5"/>
+    <line x1="-35" y1="49" x2="-57" y2="-18" stroke="#9898a8" stroke-width="0.5" opacity="0.5"/>
+    <line x1="-57" y1="-18" x2="0" y2="-60" stroke="#9898a8" stroke-width="0.5" opacity="0.5"/>
+  </g>
+  <!-- Central dot -->
+  <circle cx="180" cy="315" r="4" fill="#ff6b35" opacity="0.4"/>
+  <text font-family="system-ui, -apple-system, sans-serif" fill="#e8e8ed" text-anchor="start">
+    <tspan x="420" y="270" font-size="52" font-weight="700">Brain Mastery</tspan>
+    <tspan x="420" y="340" font-size="36" font-weight="400" fill="#9898a8">Five Apps, One Thesis</tspan>
+  </text>
+  <line x1="420" y1="370" x2="820" y2="370" stroke="#ff6b35" stroke-width="2" opacity="0.3"/>
+  <text x="420" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#9898a8">HUMANITY &amp; AI</text>
+</svg>

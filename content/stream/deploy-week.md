@@ -5,6 +5,7 @@ draft: false
 type: stream
 description: "Every app getting its own URL. The gap between code on GitHub and a product someone can use is a deploy command and a DNS record."
 tags: ["deploy", "vercel", "clarity", "dojo", "tastebud", "citizen", "quiltographer", "infrastructure"]
+image: /images/covers/deploy-week.svg
 ---
 
 Clarity is live. This week, every other app joins it.

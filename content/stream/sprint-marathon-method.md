@@ -5,6 +5,7 @@ draft: false
 type: stream
 description: "How we shipped 30+ development sprints in one day using Claude Code — shell scripts, verification steps, and parallel execution across repos."
 tags: ["claude-code", "workflow", "sprints", "building-in-public", "methodology"]
+image: /images/covers/sprint-marathon-method.svg
 ---
 
 We shipped over thirty development sprints in a single day. Not thirty commits — thirty complete sprint cycles, each with its own scope, implementation, and verification.

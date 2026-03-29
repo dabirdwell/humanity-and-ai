@@ -3,6 +3,7 @@ title: "What Forty Sprints in One Night Looks Like"
 date: 2026-03-27
 type: "insight"
 tags: ["building-in-public", "infrastructure", "ai-collaboration"]
+image: /images/covers/forty-sprints-one-night.svg
 draft: true
 description: "On March 27, 2026, we dispatched over 30 automated development sprints across six codebases while simultaneously writing policy briefs, investor documents, and creative essays. Here is what we learned."
 ---

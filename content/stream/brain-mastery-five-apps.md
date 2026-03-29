@@ -5,6 +5,7 @@ draft: false
 type: stream
 description: "Clarity, Dojo, TasteBud, Quiltographer, Citizen — five apps built on one idea: AI should make human skills deeper, not replace them."
 tags: ["clarity", "dojo", "tastebud", "quiltographer", "citizen", "products", "thesis"]
+image: /images/covers/brain-mastery-five-apps.svg
 ---
 
 Five apps. One thesis.

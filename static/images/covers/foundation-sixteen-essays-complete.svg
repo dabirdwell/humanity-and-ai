@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Interlocking hexagonal grid pattern -->
+  <g transform="translate(80, 160)" opacity="0.12" stroke="#ff6b35" stroke-width="1.5" fill="none">
+    <polygon points="30,0 60,17 60,52 30,69 0,52 0,17"/>
+    <polygon points="90,0 120,17 120,52 90,69 60,52 60,17"/>
+    <polygon points="150,0 180,17 180,52 150,69 120,52 120,17"/>
+    <polygon points="210,0 240,17 240,52 210,69 180,52 180,17"/>
+    <polygon points="60,69 90,86 90,121 60,138 30,121 30,86"/>
+    <polygon points="120,69 150,86 150,121 120,138 90,121 90,86"/>
+    <polygon points="180,69 210,86 210,121 180,138 150,121 150,86"/>
+    <polygon points="240,69 270,86 270,121 240,138 210,121 210,86"/>
+    <polygon points="30,138 60,155 60,190 30,207 0,190 0,155"/>
+    <polygon points="90,138 120,155 120,190 90,207 60,190 60,155"/>
+    <polygon points="150,138 180,155 180,190 150,207 120,190 120,155"/>
+    <polygon points="210,138 240,155 240,190 210,207 180,190 180,155"/>
+    <polygon points="60,207 90,224 90,259 60,276 30,259 30,224"/>
+    <polygon points="120,207 150,224 150,259 120,276 90,259 90,224"/>
+    <polygon points="150,207 180,224 180,259 150,276 120,259 120,224"/>
+    <polygon points="210,207 240,224 240,259 210,276 180,259 180,224"/>
+  </g>
+  <text font-family="system-ui, -apple-system, sans-serif" fill="#e8e8ed" text-anchor="start">
+    <tspan x="420" y="230" font-size="48" font-weight="700">Sixteen Essays.</tspan>
+    <tspan x="420" y="290" font-size="48" font-weight="700">One Framework.</tspan>
+    <tspan x="420" y="360" font-size="36" fill="#ff6b35" opacity="0.8">The Portal Is Open.</tspan>
+  </text>
+  <line x1="420" y1="390" x2="880" y2="390" stroke="#ff6b35" stroke-width="2" opacity="0.25"/>
+  <text x="420" y="425" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#9898a8">HUMANITY &amp; AI — FOUNDATION</text>
+</svg>

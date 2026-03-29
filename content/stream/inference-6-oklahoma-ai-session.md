@@ -3,6 +3,8 @@ title: "The Inference #6: The Oklahoma AI Session"
 date: 2026-03-27
 type: "report"
 tags: ["inference", "ai-policy", "oklahoma", "legislation"]
+description: "AI policy intelligence for Oklahoma decision-makers. Issue 6 covers the full 2026 legislative session — 12 AI bills tracked, 4 passed, and what it means."
+image: /images/covers/inference-6-oklahoma-ai-session.svg
 draft: false
 ---
 
