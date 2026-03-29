@@ -4301,3 +4301,85 @@ footer.site-footer ~ .newsletter-signup,
   .search-result { padding: 0.85rem 1rem; }
   .search-result-title { font-size: 1rem; }
 }
+
+/* ═══════════════════════════════════════
+   INFERENCE SUBSCRIBE
+   ═══════════════════════════════════════ */
+
+.inference-subscribe { max-width: 560px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.inference-subscribe-header { text-align: center; margin-bottom: 2.5rem; }
+.inference-subscribe-header h1 { font-family: var(--font-display); font-size: 2rem; margin: 0.3rem 0 0.75rem; }
+.inference-subscribe-sub { font-size: 1rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.3rem; }
+.inference-subscribe-tagline { font-size: 0.88rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; }
+
+.inference-subscribe-form { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem; }
+.inference-form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.inference-form-group label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); }
+.inference-form-group .required { color: var(--accent-primary); }
+
+.inference-form-group input,
+.inference-form-group select {
+  padding: 0.65rem 0.85rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.inference-form-group input:focus,
+.inference-form-group select:focus {
+  outline: none;
+  border-color: var(--accent-secondary);
+}
+.inference-form-group select { cursor: pointer; }
+
+.inference-subscribe-btn { width: 100%; margin-top: 0.5rem; padding: 0.75rem; font-size: 1rem; }
+
+.inference-subscribe-privacy { text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2rem; }
+.inference-subscribe-back { text-align: center; }
+.inference-subscribe-back a { font-size: 0.85rem; color: var(--accent-secondary); text-decoration: none; }
+.inference-subscribe-back a:hover { text-decoration: underline; }
+
+/* Archive subscribe CTA */
+.inference-subscribe-cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  border: 1px solid rgba(78,205,196,.35);
+  border-radius: 5px;
+  padding: 0.45rem 1rem;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.inference-subscribe-cta:hover {
+  background: rgba(78,205,196,.08);
+  border-color: rgba(78,205,196,.55);
+}
+
+/* Footer Inference callout */
+.footer-inference-callout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-subtle);
+}
+.footer-inference-callout strong { color: var(--text-primary); }
+.footer-inference-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: var(--accent-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.footer-inference-link:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+  .inference-subscribe-header h1 { font-size: 1.5rem; }
+}

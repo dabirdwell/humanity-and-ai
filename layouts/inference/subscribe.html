@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="inference-subscribe">
+  <header class="inference-subscribe-header">
+    <p class="inference-label">Humanity and AI</p>
+    <h1>Subscribe to The Inference</h1>
+    <p class="inference-subscribe-sub">
+      AI policy intelligence for Oklahoma decision makers.
+    </p>
+    <p class="inference-subscribe-tagline">Published biweekly. Data-driven. No hype.</p>
+  </header>
+
+  <form action="https://formspree.io/f/YOUR_ID" method="POST" class="inference-subscribe-form">
+    <div class="inference-form-group">
+      <label for="subscribe-email">Email <span class="required">*</span></label>
+      <input type="email" id="subscribe-email" name="email" placeholder="you@example.com" required aria-label="Email address">
+    </div>
+
+    <div class="inference-form-group">
+      <label for="subscribe-name">Name</label>
+      <input type="text" id="subscribe-name" name="name" placeholder="Optional">
+    </div>
+
+    <div class="inference-form-group">
+      <label for="subscribe-role">Role</label>
+      <select id="subscribe-role" name="role" aria-label="Your role">
+        <option value="" disabled selected>Select your role…</option>
+        <option value="legislator">Legislator</option>
+        <option value="staffer">Staffer</option>
+        <option value="journalist">Journalist</option>
+        <option value="researcher">Researcher</option>
+        <option value="citizen">Citizen</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <input type="hidden" name="_subject" value="New Inference subscriber">
+    <button type="submit" class="newsletter-btn inference-subscribe-btn">Subscribe</button>
+  </form>
+
+  <p class="inference-subscribe-privacy">
+    We respect your inbox. Unsubscribe anytime.
+  </p>
+
+  <div class="inference-subscribe-back">
+    <a href="/inference/">← Browse past issues</a>
+  </div>
+</div>
+{{ end }}
