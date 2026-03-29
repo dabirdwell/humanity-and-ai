@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{ $data := $.Site.Data.ok_bills_2026 }}
+<div class="leg-tracker">
+  <header class="leg-header">
+    <p class="leg-eyebrow">Legislation Tracker</p>
+    <h1>{{ .Title }}</h1>
+    <p class="leg-subtitle">Tracking {{ len $data.bills }} bills across AI governance, energy policy, and data privacy in the Oklahoma Legislature.</p>
+    <p class="leg-meta">Updated weekly. Data compiled from <a href="https://oklegislature.gov" target="_blank" rel="noopener">Oklahoma Legislature</a>, Radio Oklahoma News, KOSU StateImpact. Last updated {{ $data.lastUpdated }}.</p>
+    <p class="leg-meta">For deeper analysis, see <a href="/inference/">The Inference</a> — our AI policy intelligence briefing.</p>
+  </header>
+
+  <div class="leg-filters" id="legFilters">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="ai">AI Governance</button>
+    <button class="filter-btn" data-category="energy">Energy</button>
+    <button class="filter-btn" data-category="privacy">Privacy</button>
+    <button class="filter-btn" data-category="consumer">Consumer</button>
+  </div>
+
+  <div class="leg-bill-list" id="legBillList">
+    {{ range sort $data.bills "lastActionDate" "desc" }}
+    <div class="leg-bill-card" data-category="{{ .category }}">
+      <div class="leg-bill-top">
+        <span class="leg-bill-id">{{ .id }}</span>
+        <span class="leg-bill-chamber {{ if eq .chamber "Senate" }}senate{{ else }}house{{ end }}">{{ .chamber }}</span>
+        <span class="leg-status leg-status--{{ .status }}">
+          {{ if eq .status "filed" }}Filed
+          {{ else if eq .status "committee" }}In Committee
+          {{ else if eq .status "passed_chamber" }}Passed Chamber
+          {{ else if eq .status "signed" }}Signed into Law
+          {{ else if eq .status "dead" }}Dead
+          {{ else }}{{ .statusLabel }}
+          {{ end }}
+        </span>
+      </div>
+      <h3 class="leg-bill-title">{{ .shortTitle }}</h3>
+      <p class="leg-bill-full-title">{{ .title }}</p>
+      <div class="leg-bill-details">
+        <p class="leg-bill-authors">{{ delimit .authors ", " }}</p>
+        {{ with .votes }}<p class="leg-bill-votes">Vote: {{ . }}</p>{{ end }}
+        <p class="leg-bill-action">{{ .lastAction }}</p>
+      </div>
+      <p class="leg-bill-relevance">{{ .policyRelevance }}</p>
+      <div class="leg-bill-footer">
+        <span class="leg-bill-category leg-cat--{{ .category }}">
+          {{ if eq .category "ai" }}AI Governance
+          {{ else if eq .category "energy" }}Energy
+          {{ else if eq .category "privacy" }}Privacy
+          {{ else if eq .category "consumer" }}Consumer Protection
+          {{ end }}
+        </span>
+        {{ with .inferenceIssue }}<a href="/inference/" class="leg-bill-inference">{{ . }}</a>{{ end }}
+        <time class="leg-bill-date">{{ .lastActionDate }}</time>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="leg-no-results" id="legNoResults" style="display:none;">
+    <p>No bills match this filter.</p>
+  </div>
+
+  <div class="leg-legend">
+    <h3>Status Guide</h3>
+    <div class="leg-legend-items">
+      <span class="leg-status leg-status--filed">Filed</span>
+      <span class="leg-status leg-status--committee">In Committee</span>
+      <span class="leg-status leg-status--passed_chamber">Passed Chamber</span>
+      <span class="leg-status leg-status--signed">Signed into Law</span>
+      <span class="leg-status leg-status--dead">Dead</span>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var filters = document.getElementById('legFilters');
+  var cards = document.querySelectorAll('.leg-bill-card');
+  var noResults = document.getElementById('legNoResults');
+  if (!filters) return;
+  filters.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('filter-btn')) return;
+    var cat = e.target.dataset.category;
+    filters.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    e.target.classList.add('active');
+    var visible = 0;
+    cards.forEach(function(card) {
+      if (cat === 'all' || card.dataset.category === cat) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    noResults.style.display = visible === 0 ? '' : 'none';
+  });
+});
+</script>
+{{ end }}
