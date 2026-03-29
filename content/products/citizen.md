@@ -2,11 +2,11 @@
 title: "Citizen"
 description: "Your civic hub — Foundation status, contributions, and Guardian AI."
 weight: 5
-status: "coming-soon"
+status: "live"
 tagline: "Your civic hub — Foundation status, contributions, and Guardian AI."
 domain: "Civic"
-link: "mailto:david@humanityandai.com?subject=Citizen%20Updates"
-link_text: "Get Notified →"
+link: "https://citizen-lemon.vercel.app"
+link_text: "Open Citizen →"
 icon: "🏛️"
 ---
 

@@ -2,11 +2,11 @@
 title: "Dojo"
 description: "Train your logical thinking through gamified argument analysis."
 weight: 2
-status: "development"
+status: "live"
 tagline: "Train your logical thinking through gamified argument analysis."
 domain: "Critical Thinking"
-link: "mailto:david@humanityandai.com?subject=Dojo%20Waitlist"
-link_text: "Join Waitlist →"
+link: "https://dojo-ten-wine.vercel.app"
+link_text: "Open Dojo →"
 icon: "🥋"
 ---
 

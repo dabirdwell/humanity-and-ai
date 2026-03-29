@@ -2,11 +2,11 @@
 title: "Quiltographer"
 description: "AI-powered quilting pattern parser and assistant."
 weight: 3
-status: "prototype"
+status: "live"
 tagline: "AI-powered quilting pattern parser and assistant."
 domain: "Quilting"
-link: "mailto:david@humanityandai.com?subject=Quiltographer%20Waitlist"
-link_text: "Join Waitlist →"
+link: "https://quiltographer-app.vercel.app"
+link_text: "Open Quiltographer →"
 icon: "🧵"
 ---
 

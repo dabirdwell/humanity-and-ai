@@ -2,11 +2,11 @@
 title: "TasteBud"
 description: "Develop your palate with flavor science and guided cooking."
 weight: 4
-status: "development"
+status: "live"
 tagline: "Develop your palate with flavor science and guided cooking."
 domain: "Culinary"
-link: "mailto:david@humanityandai.com?subject=TasteBud%20Waitlist"
-link_text: "Join Waitlist →"
+link: "https://tastebud-pied.vercel.app"
+link_text: "Open TasteBud →"
 icon: "🍳"
 ---
 
