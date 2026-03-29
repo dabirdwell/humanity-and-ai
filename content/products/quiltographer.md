@@ -2,11 +2,11 @@
 title: "Quiltographer"
 description: "AI-powered quilting pattern parser and assistant."
 weight: 3
-status: "beta"
+status: "prototype"
 tagline: "AI-powered quilting pattern parser and assistant."
 domain: "Quilting"
-link: "https://github.com/dabirdwell/quiltographer"
-link_text: "View on GitHub →"
+link: "mailto:david@humanityandai.com?subject=Quiltographer%20Waitlist"
+link_text: "Join Waitlist →"
 icon: "🧵"
 ---
 
@@ -26,6 +26,6 @@ Most quilting software was built by software people, not quilt people. Quiltogra
 
 ## Status
 
-**Beta.** Core PDF parsing and step-by-step mode available. Actively improving based on quilter feedback.
+**Prototype.** Core PDF parsing and step-by-step mode in development. Join the waitlist for early access.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

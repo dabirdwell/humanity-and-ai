@@ -2,11 +2,11 @@
 title: "Dojo"
 description: "Train your logical thinking through gamified argument analysis."
 weight: 2
-status: "beta"
+status: "development"
 tagline: "Train your logical thinking through gamified argument analysis."
 domain: "Critical Thinking"
-link: "https://github.com/dabirdwell/dojo"
-link_text: "View on GitHub →"
+link: "mailto:david@humanityandai.com?subject=Dojo%20Waitlist"
+link_text: "Join Waitlist →"
 icon: "🥋"
 ---
 
@@ -27,6 +27,6 @@ Belt system from white to black. Each belt requires demonstrated competence acro
 
 ## Status
 
-**Beta.** Core game modes functional, belt progression in testing.
+**In Development.** Architecture and game mode design complete. Join the waitlist for early access.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

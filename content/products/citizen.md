@@ -5,8 +5,8 @@ weight: 5
 status: "coming-soon"
 tagline: "Your civic hub — Foundation status, contributions, and Guardian AI."
 domain: "Civic"
-link: ""
-link_text: "Coming soon"
+link: "mailto:david@humanityandai.com?subject=Citizen%20Updates"
+link_text: "Get Notified →"
 icon: "🏛️"
 ---
 

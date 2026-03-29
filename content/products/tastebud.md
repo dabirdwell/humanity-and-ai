@@ -2,11 +2,11 @@
 title: "TasteBud"
 description: "Develop your palate with flavor science and guided cooking."
 weight: 4
-status: "beta"
+status: "development"
 tagline: "Develop your palate with flavor science and guided cooking."
 domain: "Culinary"
-link: "https://github.com/dabirdwell/tastebud"
-link_text: "View on GitHub →"
+link: "mailto:david@humanityandai.com?subject=TasteBud%20Waitlist"
+link_text: "Join Waitlist →"
 icon: "🍳"
 ---
 
