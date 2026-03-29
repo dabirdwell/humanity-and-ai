@@ -26,6 +26,6 @@ Most quilting software was built by software people, not quilt people. Quiltogra
 
 ## Status
 
-**Prototype.** Core PDF parsing and step-by-step mode in development. Join the waitlist for early access.
+**Live.** Available now at [quiltographer-app.vercel.app](https://quiltographer-app.vercel.app). Try the [Pattern Reader](https://quiltographer-app.vercel.app/reader) or explore the [Design Studio](https://quiltographer-app.vercel.app/design).
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

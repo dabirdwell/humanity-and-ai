@@ -26,6 +26,6 @@ The Foundation framework argues that democratic participation is a core componen
 
 ## Status
 
-**Coming Soon.** Design phase, informed by Foundation research and community feedback.
+**Live.** Available now at [citizen-lemon.vercel.app](https://citizen-lemon.vercel.app). Meet the [Guardian AI](https://citizen-lemon.vercel.app/guardian) — your civic assistant.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

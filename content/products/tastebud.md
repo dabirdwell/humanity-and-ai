@@ -23,6 +23,6 @@ TasteBud is a culinary education app that makes flavor visible. It teaches you t
 
 ## Status
 
-**Coming Soon.** Core concept validated, FlavorMap prototype in development.
+**Live.** Available now at [tastebud-pied.vercel.app](https://tastebud-pied.vercel.app). Explore the [FlavorMap](https://tastebud-pied.vercel.app/flavor-map) to see flavor science in action.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

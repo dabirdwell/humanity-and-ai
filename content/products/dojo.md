@@ -27,6 +27,6 @@ Belt system from white to black. Each belt requires demonstrated competence acro
 
 ## Status
 
-**In Development.** Architecture and game mode design complete. Join the waitlist for early access.
+**Live.** Available now at [dojo-ten-wine.vercel.app](https://dojo-ten-wine.vercel.app). Step into the dojo and start training.
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*
