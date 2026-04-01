@@ -3,7 +3,7 @@ backend:
   repo: dabirdwell/humanity-and-ai
   branch: main
   auth_type: pkce
-  app_id: Ov23liTxqlu5cMQGNakJ
+  app_id: Ov23lis4oErYLzX5a7uj
 
 media_folder: static/images/stream
 public_folder: /images/stream
