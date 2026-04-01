@@ -4,6 +4,7 @@ date: 2026-03-31
 type: policy
 draft: false
 description: "A third of the world's helium is trapped behind a closed strait. The containers have a shelf life. When the helium escapes, it leaves Earth permanently. This is what dependency looks like."
+image: /images/stream/four-billion-years-48-days.svg
 tags: ["foundation", "energy", "supply-chain", "helium", "infrastructure"]
 related:
   - "/foundation/sustainable-energy"
