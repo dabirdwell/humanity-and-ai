@@ -17,7 +17,15 @@ collections:
     folder: content/stream
     create: true
     slug: "{{slug}}"
-    sortable_fields: ["date", "title"]
+    summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}} — {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ["date", "title", "draft", "type"]
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+      - label: Published
+        field: draft
+        pattern: false
     view_groups:
       - label: Status
         field: draft
