@@ -2,8 +2,7 @@ backend:
   name: github
   repo: dabirdwell/humanity-and-ai
   branch: main
-  auth_type: pkce
-  app_id: Ov23lis4oErYLzX5a7uj
+  base_url: https://sveltia-cms-auth.davidbirdwell.workers.dev
 
 media_folder: static/images/stream
 public_folder: /images/stream
