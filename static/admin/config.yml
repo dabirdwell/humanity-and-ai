@@ -2,6 +2,7 @@ backend:
   name: github
   repo: dabirdwell/humanity-and-ai
   branch: main
+  auth_type: pkce
 
 media_folder: static/images/stream
 public_folder: /images/stream
