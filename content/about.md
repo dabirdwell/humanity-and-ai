@@ -1,6 +1,7 @@
 ---
 title: "About"
 layout: "single"
+description: "David Alan Birdwell — writer, systems composer, and citizen researcher in Oklahoma City. Founder of Humanity and AI LLC. Thirty years building systems at the intersection of policy and technology."
 ---
 
 ## David Alan Birdwell
