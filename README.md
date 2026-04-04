@@ -21,6 +21,16 @@ This is the hub site for [Humanity and AI, LLC](https://humanityandai.com) — t
 hugo server -D
 ```
 
+## Social Cards (OG Images)
+
+Auto-generated SVG social preview cards live in `static/social-cards/`. After adding or renaming content, regenerate them:
+
+```bash
+python3 scripts/generate-social-cards.py
+```
+
+Cards use the site's navy/teal/terracotta palette and display the post title, section tag, and site name. The `baseof.html` template automatically sets `og:image` to the matching card.
+
 ## Deploy
 
 ```bash

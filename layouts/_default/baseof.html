@@ -24,10 +24,31 @@
   {{ with .Params.tags }}{{ range . }}<meta property="article:tag" content="{{ . }}">{{ end }}{{ end }}
   {{ end }}
 
+  <!-- OG Image: auto-generated social card -->
+  {{- $ogImage := "" -}}
+  {{- if .File -}}
+    {{- $section := .Section -}}
+    {{- $slug := .File.ContentBaseName -}}
+    {{- if and $section (ne $slug "_index") -}}
+      {{- $cardPath := printf "/social-cards/%s--%s.svg" $section $slug -}}
+      {{- $ogImage = $cardPath -}}
+    {{- else if not $section -}}
+      {{- $ogImage = printf "/social-cards/%s.svg" $slug -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $ogImage }}{{ $ogImage = .Site.Params.ogImage }}{{ end -}}
+  {{ with $ogImage }}
+  <meta property="og:image" content="{{ . | absURL }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ $.Title }}">
+  {{ end }}
+
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="{{ if $ogImage }}summary_large_image{{ else }}summary{{ end }}">
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ with $ogImage }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
