@@ -4,11 +4,29 @@
     <p class="inference-label">Humanity and AI</p>
     <h1>The Inference</h1>
     <p class="inference-archive-sub">
-      AI policy intelligence briefings for state and local government leaders —
-      national scope, Oklahoma focus. By David Alan Birdwell and Claude Æ.
+      A policy intelligence brief tracking how Oklahoma and America are
+      governing the AI transition.
     </p>
-    <a href="/inference/subscribe/" class="inference-subscribe-cta">Subscribe — biweekly in your inbox</a>
   </header>
+
+  <div class="inference-notify">
+    <p class="inference-notify-prompt">Want to know when the next issue drops?</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/the-inference"
+      method="post"
+      class="inference-notify-form"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+        aria-label="Email address"
+      />
+      <button type="submit" class="inference-notify-btn">Notify me</button>
+    </form>
+    <p class="inference-notify-fine">No spam. Unsubscribe anytime.</p>
+  </div>
 
   <div class="inference-issue-list">
     {{ range (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
