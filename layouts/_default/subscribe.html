@@ -1,0 +1,61 @@
+{{ define "main" }}
+<div class="subscribe-landing">
+  <header class="subscribe-landing-header">
+    <p class="inference-label">The Inference</p>
+    <h1>Want to know when the next issue drops?</h1>
+  </header>
+
+  <div class="subscribe-landing-body">
+    <div class="subscribe-section">
+      <h2>What is The Inference?</h2>
+      <p>
+        A policy intelligence brief tracking how Oklahoma and America are
+        governing the AI transition. Each issue covers legislation, agency
+        moves, and the decisions that shape how AI meets public life — written
+        for people who need the signal without the noise.
+      </p>
+    </div>
+
+    <div class="subscribe-section">
+      <h2>What you get</h2>
+      <p>
+        A short email when a new issue is published. That's it. No weekly
+        digest, no "content" calendar, no drip sequence. When something is
+        ready, you'll know.
+      </p>
+    </div>
+
+    <div class="subscribe-section">
+      <h2>The privacy part</h2>
+      <p>
+        Your email is stored with <a href="https://buttondown.com" target="_blank" rel="noopener">Buttondown</a>,
+        a small, independent email platform. We don't sell data, don't share
+        lists, and don't spam. One ping per issue. Unsubscribe with one click,
+        anytime.
+      </p>
+    </div>
+  </div>
+
+  <div class="subscribe-landing-form-wrapper">
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/the-inference"
+      method="post"
+      class="subscribe-landing-form"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+        aria-label="Email address"
+      />
+      <button type="submit" class="subscribe-landing-btn">Notify me</button>
+    </form>
+    <p class="subscribe-landing-fine">No spam. No data selling. Just a ping when something's ready.</p>
+  </div>
+
+  <div class="subscribe-landing-back">
+    <a href="/inference/">Browse past issues &rarr;</a>
+  </div>
+</div>
+{{ end }}
