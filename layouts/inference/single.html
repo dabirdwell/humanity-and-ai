@@ -1,6 +1,17 @@
 {{ define "main" }}
 <article class="inference-single">
 
+  {{ if .Params.embed_url }}
+  {{/* Iframe issues: minimal chrome, let the iframe content speak */}}
+  <div class="inference-embed-nav">
+    <a href="/inference/">← All Issues</a>
+    <a href="{{ .Params.embed_url }}" target="_blank" rel="noopener">Open in new tab ↗</a>
+  </div>
+  <div class="inference-content">
+    {{ .Content | safeHTML }}
+  </div>
+  {{ else }}
+  {{/* Inline issues: full header for markdown content */}}
   <header class="inference-header">
     <div class="inference-meta-top">
       <span class="inference-label">The Inference</span>
@@ -13,14 +24,11 @@
       By <strong>David Alan Birdwell</strong> and <strong>Claude Æ</strong> &mdash;
       <a href="/">Humanity and AI</a>
     </div>
-    {{ with .Params.embed_url }}
-    <a href="{{ . }}" class="inference-external-link" target="_blank" rel="noopener">Open full issue in new tab ↗</a>
-    {{ end }}
   </header>
-
   <div class="inference-content">
     {{ .Content | safeHTML }}
   </div>
+  {{ end }}
 
   <footer class="inference-footer">
     <div class="inference-footer-inner">
