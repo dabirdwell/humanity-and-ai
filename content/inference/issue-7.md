@@ -2,7 +2,7 @@
 title: "The Blueprint That Would Kill 78 State AI Bills"
 description: "AI policy intelligence brief. Issue 7: The White House AI Legislative Framework, the 78-bill state tsunami, Oklahoma's surprising alignment, and what preemption means for the bills your legislators just passed."
 date: 2026-04-08
-draft: false
+draft: true
 issue: 7
 lede: "The White House released its National AI Legislative Framework on March 20 — a seven-pillar policy blueprint that explicitly calls on Congress to preempt state AI laws. The same week, Oklahoma advanced SB 1521 out of committee 8-0. Seventy-eight chatbot safety bills in 27 states are now in the crosshairs."
 tags: ["ai-policy", "governance", "oklahoma", "preemption", "white-house", "state-legislation"]
