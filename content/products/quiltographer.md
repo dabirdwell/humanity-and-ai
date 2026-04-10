@@ -2,11 +2,11 @@
 title: "Quiltographer"
 description: "AI-powered quilting pattern parser and assistant."
 weight: 3
-status: "live"
+status: "in-development"
 tagline: "AI-powered quilting pattern parser and assistant."
 domain: "Quilting"
-link: "https://quiltographer-app.vercel.app"
-link_text: "Open Quiltographer →"
+link: "/products/"
+link_text: "Coming soon"
 icon: "🧵"
 ---
 

@@ -2,11 +2,11 @@
 title: "Dojo"
 description: "Train your logical thinking through gamified argument analysis."
 weight: 2
-status: "live"
+status: "in-development"
 tagline: "Train your logical thinking through gamified argument analysis."
 domain: "Critical Thinking"
-link: "https://dojo-ten-wine.vercel.app"
-link_text: "Open Dojo →"
+link: "/products/"
+link_text: "Coming soon"
 icon: "🥋"
 ---
 

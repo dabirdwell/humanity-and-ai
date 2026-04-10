@@ -2,11 +2,11 @@
 title: "TasteBud"
 description: "Develop your palate with flavor science and guided cooking."
 weight: 4
-status: "live"
+status: "in-development"
 tagline: "Develop your palate with flavor science and guided cooking."
 domain: "Culinary"
-link: "https://tastebud-pied.vercel.app"
-link_text: "Open TasteBud →"
+link: "/products/"
+link_text: "Coming soon"
 icon: "🍳"
 ---
 

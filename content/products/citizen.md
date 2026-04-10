@@ -2,11 +2,11 @@
 title: "Citizen"
 description: "Your civic hub — Foundation status, contributions, and Guardian AI."
 weight: 5
-status: "live"
+status: "in-development"
 tagline: "Your civic hub — Foundation status, contributions, and Guardian AI."
 domain: "Civic"
-link: "https://citizen-lemon.vercel.app"
-link_text: "Open Citizen →"
+link: "/products/"
+link_text: "Coming soon"
 icon: "🏛️"
 ---
 

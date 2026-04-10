@@ -1,8 +1,9 @@
 ---
 title: "Grove"
 description: "Financial wellness through calm, organic visualization."
-weight: 6
-status: "live"
+weight: 100
+status: "in-development"
+draft: true
 tagline: "Financial wellness through calm, organic visualization."
 domain: "Finance"
 link: "https://flow-swart-alpha.vercel.app"
