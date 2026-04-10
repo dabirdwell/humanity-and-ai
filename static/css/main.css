@@ -3736,7 +3736,7 @@ a:hover { color: var(--accent-primary); }
   flex-direction: column;
   gap: 0.6rem;
 }
-.hp-fdn-item {
+a.hp-fdn-item {
   font-size: 0.95rem;
   color: var(--text-secondary);
   display: flex;
@@ -3744,6 +3744,12 @@ a:hover { color: var(--accent-primary); }
   gap: 0.7rem;
   padding: 0.35rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.04);
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+a.hp-fdn-item:hover {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent-primary);
 }
 .hp-fdn-item .hp-fdn-num {
   font-size: 0.75rem;
@@ -3869,6 +3875,10 @@ a:hover { color: var(--accent-primary); }
   border-radius: 12px;
   padding: 1.4rem;
   transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 .hp-latest-card:hover {
   background: var(--bg-card-hover);
@@ -3892,13 +3902,8 @@ a:hover { color: var(--accent-primary); }
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
-}
-.hp-latest-card h3 a {
   color: var(--text-primary);
-  text-decoration: none;
 }
-.hp-latest-card h3 a:hover {
-  color: var(--accent-secondary);
 }
 
 .hp-latest-card p {

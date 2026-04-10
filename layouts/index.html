@@ -92,24 +92,24 @@
     <p class="hp-section-sub">What does membership in a society actually mean — especially when AI is reshaping the economy? Sixteen components of citizenship, each one a concrete answer. Written in plain language, open to contribution.</p>
     <div class="hp-foundation-list">
       <div class="hp-fdn-group">
-        <div class="hp-fdn-item"><span class="hp-fdn-num">01</span> Safety</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">02</span> Education</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">03</span> Safe Spaces</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">04</span> Social Contract</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">05</span> Food</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">06</span> Clean Water</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">07</span> Sustainable Energy</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">08</span> Information Access</div>
+        <a href="/foundation/safety/" class="hp-fdn-item"><span class="hp-fdn-num">01</span> Safety</a>
+        <a href="/foundation/education/" class="hp-fdn-item"><span class="hp-fdn-num">02</span> Education</a>
+        <a href="/foundation/safe-spaces/" class="hp-fdn-item"><span class="hp-fdn-num">03</span> Safe Spaces</a>
+        <a href="/foundation/social-contract/" class="hp-fdn-item"><span class="hp-fdn-num">04</span> Social Contract</a>
+        <a href="/foundation/food/" class="hp-fdn-item"><span class="hp-fdn-num">05</span> Food</a>
+        <a href="/foundation/clean-water/" class="hp-fdn-item"><span class="hp-fdn-num">06</span> Clean Water</a>
+        <a href="/foundation/sustainable-energy/" class="hp-fdn-item"><span class="hp-fdn-num">07</span> Sustainable Energy</a>
+        <a href="/foundation/information-access/" class="hp-fdn-item"><span class="hp-fdn-num">08</span> Information Access</a>
       </div>
       <div class="hp-fdn-group">
-        <div class="hp-fdn-item"><span class="hp-fdn-num">09</span> Mental Health</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">10</span> Accessible Education</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">11</span> Transportation</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">12</span> Skills Training</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">13</span> Universal Basic Income</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">14</span> Housing</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">15</span> National Healthcare</div>
-        <div class="hp-fdn-item"><span class="hp-fdn-num">16</span> Thought Privacy</div>
+        <a href="/foundation/mental-health/" class="hp-fdn-item"><span class="hp-fdn-num">09</span> Mental Health</a>
+        <a href="/foundation/accessible-education/" class="hp-fdn-item"><span class="hp-fdn-num">10</span> Accessible Education</a>
+        <a href="/foundation/transportation/" class="hp-fdn-item"><span class="hp-fdn-num">11</span> Transportation</a>
+        <a href="/foundation/skills-training/" class="hp-fdn-item"><span class="hp-fdn-num">12</span> Skills Training</a>
+        <a href="/foundation/universal-basic-income/" class="hp-fdn-item"><span class="hp-fdn-num">13</span> Universal Basic Income</a>
+        <a href="/foundation/housing/" class="hp-fdn-item"><span class="hp-fdn-num">14</span> Housing</a>
+        <a href="/foundation/healthcare/" class="hp-fdn-item"><span class="hp-fdn-num">15</span> National Healthcare</a>
+        <a href="/foundation/thought-privacy/" class="hp-fdn-item"><span class="hp-fdn-num">16</span> Thought Privacy</a>
       </div>
     </div>
     <div class="hp-foundation-links">
@@ -141,30 +141,30 @@
     <div class="hp-latest-grid">
       {{ $stream := (where .Site.RegularPages "Section" "stream").ByDate.Reverse }}
       {{ range first 3 $stream }}
-      <article class="hp-latest-card">
+      <a href="{{ .Permalink }}" class="hp-latest-card">
         <div class="hp-latest-meta">
           {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
           <time>{{ .Date.Format "Jan 2, 2006" }}</time>
         </div>
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <h3>{{ .Title }}</h3>
         {{ if .Params.description }}
           <p>{{ .Params.description }}</p>
         {{ else }}
           <p>{{ .Summary }}</p>
         {{ end }}
-      </article>
+      </a>
       {{ end }}
 
       {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
       {{ with index $inference 0 }}
-      <article class="hp-latest-card hp-latest-inference">
+      <a href="{{ .Permalink }}" class="hp-latest-card hp-latest-inference">
         <div class="hp-latest-meta">
           <span class="post-type inference">The Inference</span>
           <time>{{ .Date.Format "Jan 2, 2006" }}</time>
         </div>
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <h3>{{ .Title }}</h3>
         {{ with .Params.lede }}<p>{{ . }}</p>{{ end }}
-      </article>
+      </a>
       {{ end }}
     </div>
     <div class="hp-section-cta">
