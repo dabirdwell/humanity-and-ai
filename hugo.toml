@@ -12,7 +12,7 @@ summaryLength = 40
 [params.nav]
   [[params.nav.links]]
     name = "Stream"
-    url = "/"
+    url = "/stream/"
   [[params.nav.links]]
     name = "Foundation"
     url = "/foundation/"
