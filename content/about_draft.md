@@ -1,5 +1,6 @@
 ---
 title: "About"
+draft: true
 description: "David Alan Birdwell — writer, systems thinker, and founder of Humanity and AI LLC in Oklahoma City. Building tools and policy frameworks for the AI transition."
 layout: "single"
 ---

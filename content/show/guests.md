@@ -1,5 +1,6 @@
 ---
 title: "Guest Wishlist"
+draft: true
 description: "People we want to talk to on the Humanity and AI Show — and why."
 weight: 3
 status: "planning"

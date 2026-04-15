@@ -1,5 +1,6 @@
 ---
 title: "Beacon — One-Button Civic Live Streaming"
+draft: true
 description: "One-button PWA for live streaming civic events. Docker Compose stack with MediaMTX and nginx. WHIP protocol, camera toggle, HLS viewer."
 ---
 

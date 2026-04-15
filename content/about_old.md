@@ -1,5 +1,6 @@
 ---
 title: "About"
+draft: true
 description: "David Alan Birdwell — writer, systems composer, and citizen researcher. Founder of Humanity and AI LLC, building at the intersection of policy, technology, and human potential."
 layout: "single"
 ---

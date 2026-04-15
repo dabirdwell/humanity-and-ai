@@ -1,5 +1,6 @@
 ---
 title: "AI Agents Enter the Workforce. Congress Notices. Oklahoma Watches."
+draft: true
 description: "LegislAItive Report Issue 1. Agentic AI moved from demo to deployment — the policy apparatus is twelve months behind. What Oklahoma decisionmakers need to know."
 issue: 1
 date: 2026-03-01

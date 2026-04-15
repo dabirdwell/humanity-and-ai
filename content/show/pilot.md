@@ -1,5 +1,6 @@
 ---
 title: "The Window"
+draft: true
 description: "Pilot episode — why the next 5 years matter more than the next 50."
 date: 2026-03-22
 weight: 1

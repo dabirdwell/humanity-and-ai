@@ -1,5 +1,6 @@
 ---
 title: "TasteBud"
+draft: true
 description: "Gamified culinary education — see flavor as interactive 3D shapes, guided by AI mentors."
 type: "page"
 layout: "single"

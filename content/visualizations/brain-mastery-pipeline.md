@@ -1,5 +1,6 @@
 ---
 title: "Brain Mastery"
+draft: true
 description: "Five apps, one pipeline: Read → Think → Taste → Create → Participate. Each builds the capacity for the next. The empowerment path from literacy to citizenship."
 date: 2026-03-24T23:45:00
 type: "visualizations"

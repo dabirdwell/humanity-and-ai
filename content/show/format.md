@@ -1,5 +1,6 @@
 ---
 title: "Format"
+draft: true
 description: "How the Humanity and AI Show is structured — five segments designed for transparency, depth, and participation."
 weight: 2
 status: "planning"

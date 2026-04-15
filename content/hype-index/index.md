@@ -1,5 +1,6 @@
 ---
 title: "The Hype Index"
+draft: true
 description: "AI claims rated against evidence. Who overstates, who delivers, and what the pattern looks like over time."
 date: 2026-03-01
 type: "hype-index"
