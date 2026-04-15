@@ -1,5 +1,6 @@
 ---
 title: "Quiltographer"
+draft: true
 description: "AI-powered quilting pattern parser and assistant."
 weight: 3
 status: "in-development"

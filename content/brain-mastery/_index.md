@@ -1,5 +1,6 @@
 ---
 title: "Brain Mastery"
+draft: true
 description: "Five tools. One journey. Your mind, amplified."
 ---
 

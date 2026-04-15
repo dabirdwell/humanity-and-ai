@@ -1,5 +1,6 @@
 ---
 title: "TasteBud: What If You Could See Flavor"
+draft: true
 date: 2026-01-20
 type: tool
 description: "A decade-old idea for gamified culinary education — shapes in 3D space that represent flavor profiles, with AI mentors guiding you through the grammar of taste."

@@ -23,12 +23,6 @@ summaryLength = 40
     name = "Legislation"
     url = "/legislation/"
   [[params.nav.links]]
-    name = "Products"
-    url = "/products/"
-  [[params.nav.links]]
-    name = "Brain Mastery"
-    url = "/brain-mastery/"
-  [[params.nav.links]]
     name = "The Show"
     url = "/show/"
   [[params.nav.links]]

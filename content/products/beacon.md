@@ -1,5 +1,6 @@
 ---
 title: "Beacon"
+draft: true
 description: "One-button civic live streaming for transparency."
 weight: 6
 status: "alpha"

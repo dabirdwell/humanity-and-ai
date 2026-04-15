@@ -1,5 +1,6 @@
 ---
 title: "Citizen"
+draft: true
 description: "Your civic hub — Foundation status, contributions, and Guardian AI."
 weight: 5
 status: "in-development"

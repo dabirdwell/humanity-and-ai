@@ -1,5 +1,6 @@
 ---
 title: "Quiltographer: Software That Sees What Quilters See"
+draft: true
 date: 2026-02-15
 type: tool
 description: "A pattern design tool built for the way quilters actually think — in fabric, in color relationships, in the math that hides inside beauty."

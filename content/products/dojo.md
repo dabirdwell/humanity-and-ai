@@ -1,5 +1,6 @@
 ---
 title: "Dojo"
+draft: true
 description: "Train your logical thinking through gamified argument analysis."
 weight: 2
 status: "in-development"
