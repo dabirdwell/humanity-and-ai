@@ -1,7 +1,7 @@
 ---
 title: "The Sprint Marathon Method"
 date: 2026-03-24
-draft: false
+draft: true
 type: stream
 description: "How we shipped 30+ development sprints in one day using Claude Code — shell scripts, verification steps, and parallel execution across repos."
 tags: ["claude-code", "workflow", "sprints", "building-in-public", "methodology"]

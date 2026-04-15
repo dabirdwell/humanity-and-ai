@@ -1,6 +1,6 @@
 ---
 title: "Foundation"
-description: "Foundation is the infrastructure that makes citizenship real. Sixteen components of what membership in a society actually means — built in public, open to contribution."
+description: "Foundation is the infrastructure that makes citizenship real. Sixteen components of what membership in a society actually means — open to contribution."
 aliases:
   - /ubc/
 ---

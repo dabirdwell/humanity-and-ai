@@ -1,6 +1,7 @@
 ---
 title: "Beacon Ships"
 date: 2026-03-22
+draft: true
 type: tool
 description: "The civic live streaming MVP is built. One Docker command, one red button, and democracy gets a witness."
 image: /images/stream/beacon-ships.png

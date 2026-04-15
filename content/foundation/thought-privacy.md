@@ -32,11 +32,11 @@ That space is closing. Faster than you think. And there is almost nothing — le
 
 In September 2025, Meta released the Neural Band — a wristband with 16 electrode pods that reads muscle signals from your forearm at 2,000 samples per second. It ships bundled with their AI glasses for $799. It detects your intentions — the micro-movements your muscles make before your fingers move — and translates them into commands. It knows what you're about to do before you do it.
 
-Neuralink has implanted chips in five human brains. Their patients control computers, play chess, send messages, and operate robotic arms with their thoughts alone. The FDA granted Breakthrough Device designation to their Blindsight system for vision restoration. They're expanding trials to Canada, the UK, Germany, and the UAE, with plans for high-volume production and automated surgical procedures.
+Neuralink has implanted chips in five human brains. Their patients control computers, play chess, send messages, and operate robotic arms with their thoughts alone. The FDA — the federal agency that decides whether medical devices are safe — granted Breakthrough Device status to their Blindsight system for vision restoration, putting it on a fast track for approval. They're expanding trials to Canada, the UK, Germany, and the UAE, with plans for high-volume production and automated surgical procedures.
 
 Synchron — Neuralink's competitor — received full FDA approval in 2024 for a brain-computer interface that's implanted through a blood vessel, no open brain surgery required. It connects to your Apple devices via Bluetooth. They raised $200 million in late 2025 for commercialization.
 
-Consumer EEG headsets from companies like Muse and Emotiv are already on the market — Emotiv launched EEG-equipped noise-cancelling earphones in January 2025 that measure your cognitive state while you listen to music. The global wireless brain sensor market hit $596 million in 2024 and is projected to double by 2032.
+Consumer EEG headsets — devices that read your brainwaves through sensors on your scalp — from companies like Muse and Emotiv are already on the market. Emotiv launched EEG-equipped noise-cancelling earphones in January 2025 that measure your mental state while you listen to music. The global wireless brain sensor market hit $596 million in 2024 and is projected to double by 2032.
 
 These are not prototypes. These are products. They're for sale. And here's what the Neurorights Foundation found when they audited 30 consumer neurotechnology companies: 29 of them — 96.7 percent — reserve the right to transfer your brain data to third parties. Only one company provided meaningful restrictions on how your neural data could be used or sold. Fewer than half encrypt the data or de-identify users.
 
@@ -48,7 +48,7 @@ Four states — Colorado, California, Montana, and Connecticut — have passed n
 
 In the first six weeks of 2026, nine more bills were introduced across six states. The momentum is building at the state level. But there is no federal law protecting neural data. None.
 
-The closest thing is the MIND Act, introduced in September 2025 — the first bill in congressional history to address neurotechnology governance. It directs the FTC to study neural data governance and the Office of Science and Technology Policy to issue guidance. Study. Guidance. Not regulation. Not protection. A study, while the products are already being sold.
+The closest thing is the MIND Act, introduced in September 2025 — the first bill in congressional history to address neurotechnology governance. It directs the FTC (the Federal Trade Commission — the agency that's supposed to protect consumers from unfair business practices) to study neural data governance and the Office of Science and Technology Policy to issue guidance. Study. Guidance. Not regulation. Not protection. A study, while the products are already being sold.
 
 The law is a decade behind the technology. And the gap is widening.
 
@@ -68,11 +68,11 @@ The same consolidation playbook is already running. The same "deidentification" 
 
 Maya works in a customer service center in Tulsa. She learned her "emotional consistency score" had affected her performance review when her manager mentioned it. She doesn't know exactly what it measures, who sees it, or how long it's stored. She didn't consent to it — there was a checkbox in the onboarding paperwork she signed to keep the job.
 
-Maya is not alone. Seventy-eight percent of U.S. employers now use some form of monitoring software. Sixty-seven percent collect biometric data for behavior and attendance monitoring. Sixty-one percent use AI-powered analytics to measure productivity. Eighty percent of employees report feeling tracked. Only 22 percent know the specifics of what's being monitored.
+Maya is not alone. Seventy-eight percent of U.S. employers now use some form of monitoring software. Sixty-seven percent collect biometric data — measurements of your body like fingerprints, eye movements, or facial expressions — for behavior and attendance monitoring. Sixty-one percent use AI-powered analytics to measure productivity. Eighty percent of employees report feeling tracked. Only 22 percent know the specifics of what's being monitored.
 
 And over a third say workplace surveillance has hurt their mental health. The tools designed to measure your cognitive state are damaging your cognitive state. That's not irony. That's a system that treats people as data sources rather than human beings.
 
-Mediated communication holds us hostage. This is how rights erode — not in a single dramatic moment, but through checkbox agreements, capability creep, and the quiet assumption that your inner life is data someone else gets to own. No one votes for it. No one marches against it. It just becomes the default, one onboarding form at a time.
+Mediated communication holds us hostage. This is how rights erode — not in a single dramatic moment, but through checkbox agreements, capability creep (where a technology that started as one thing quietly becomes something much more invasive), and the quiet assumption that your inner life is data someone else gets to own. No one votes for it. No one marches against it. It just becomes the default, one onboarding form at a time.
 
 ## What This Means for Everything Else
 
@@ -98,7 +98,7 @@ This is the youngest component in the framework and the one most likely to need 
 
 Seventy-eight percent of employees support state and federal regulation of workplace surveillance. The public will is there. The legal framework isn't. Foundation is citizen-developed work — the people closest to the problem help shape the solution. Here are directions we think matter — push back on them, extend them, or bring your own:
 
-- **Neural data as the most protected class of information.** Not just HIPAA-level — beyond it. Criminal penalties for unauthorized collection. A constitutional framework that treats your brain data as an extension of your person, not your property. What would that protection need to look like to make you actually trust it?
+- **Neural data as the most protected class of information.** Not just HIPAA-level (that's the current federal health privacy law, and as the [healthcare essay](/foundation/healthcare/) shows, it's already inadequate) — beyond it. Criminal penalties for unauthorized collection. A constitutional framework that treats your brain data as an extension of your person, not your property. What would that protection need to look like to make you actually trust it?
 
 - **Right-to-know legislation for all cognitive monitoring.** Workplace, insurance, educational, commercial — every context where your mental states are being measured, inferred, or scored. Not buried in a checkbox. Plain language, specific disclosure, with genuine opt-out that doesn't cost you your job. What's already happening in your workplace that you didn't know about until now?
 

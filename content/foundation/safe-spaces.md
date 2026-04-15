@@ -5,9 +5,9 @@ number: "03"
 weight: 3
 status: "seed"
 tags: ["foundation", "safe-spaces", "community", "foundation", "policy"]
-hero_stat: "On a single day, over 70,000 DV victims sought help — and roughly 9,500 requests went unmet. LGBTQ+ youth are 120% more likely to experience homelessness. One in ten elders over 60 is abused, and only 1 in 24 cases is reported."
+hero_stat: "On a single day, over 70,000 domestic violence victims sought help — and roughly 9,500 requests went unmet. LGBTQ+ youth are 120% more likely to experience homelessness. One in ten elders over 60 is abused, and only 1 in 24 cases is reported."
 hero_stat_bridge: "Safe spaces aren't an abstract concept — they're the difference between a roof and the street, between a person who heals and a person who breaks. When safety is a privilege, everything else in this framework is theoretical."
-hero_stat_source: "NNEDV Census; Chapin Hall/University of Chicago; NCOA; CDC NISVS"
+hero_stat_source: "NNEDV Census (National Network to End Domestic Violence); Chapin Hall/University of Chicago; NCOA; CDC NISVS"
 aliases:
   - "/ubc/safe-spaces/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/43"
@@ -27,11 +27,11 @@ Foundation is built on a simple premise: there is a minimum set of conditions pe
 
 One in four women and one in nine men in America experience severe intimate partner violence. Not a harsh word, not a slammed door — severe physical violence, sexual violence, or stalking by a partner. Those are CDC numbers, and they're conservative, because this is the most underreported category of crime there is.
 
-On a single day — one representative day — the National Network to End Domestic Violence counted over 70,000 victims who sought help. Roughly 9,500 of those requests went unmet. Not because people didn't try. Because there wasn't room. No shelter bed, no transitional housing, no legal advocate available. Over the course of a year, the unmet requests run into the hundreds of thousands.
+On a single day — one representative day — the National Network to End Domestic Violence counted over 70,000 victims who sought help. Roughly 9,500 of those requests went unmet. Not because people didn't try. Because there wasn't room. No shelter bed, no transitional housing (the temporary apartments that help people get back on their feet after leaving a crisis), no legal advocate available. Over the course of a year, the unmet requests run into the hundreds of thousands.
 
 Oklahoma ranks consistently among the top five states in the nation for domestic violence homicide. That's not a statistic that fluctuates. It's a ranking that holds, year after year, because the systems that could change it are chronically underfunded. Approximately 1,600 to 1,800 Americans are killed by intimate partners every year — roughly half of all female homicide victims in this country die at the hands of someone who said they loved them.
 
-Domestic violence is a leading cause of homelessness for women and families. About 38 percent of DV survivors become homeless at some point. And when researchers ask survivors what the biggest barrier was to leaving, the most common answer isn't fear — though fear is real. It's housing. They had nowhere to go. The absence of safe, affordable [housing](/foundation/housing/) traps people in dangerous situations, and the dangerous situation destroys the stability that housing requires. It's a loop with teeth.
+Domestic violence is a leading cause of homelessness for women and families. About 38 percent of domestic violence survivors become homeless at some point. And when researchers ask survivors what the biggest barrier was to leaving, the most common answer isn't fear — though fear is real. It's housing. They had nowhere to go. The absence of safe, affordable [housing](/foundation/housing/) traps people in dangerous situations, and the dangerous situation destroys the stability that housing requires. It's a loop with teeth.
 
 ## The People We Don't See
 
@@ -45,9 +45,9 @@ And then there are the spaces that used to exist and don't anymore. Libraries de
 
 Here's what connects Maria calculating whether tonight will be bad enough, the teenager sleeping in a car because their parents couldn't accept who they are, and the 78-year-old who can't report the person stealing from her because that person is also her ride to the doctor.
 
-When you live without safety — when the background frequency of your existence is threat — it reorganizes everything. Your brain allocates its resources to survival. Cortisol stays elevated. Decision-making narrows to the immediate. The future shrinks to the next hour, the next night, the next day you have to get through. Long-term thinking becomes physically impossible — not because you lack intelligence or will, but because your nervous system has correctly identified that right now, the only thing that matters is not getting hurt.
+When you live without safety — when the background frequency of your existence is threat — it reorganizes everything. Your brain shifts its resources to survival. Stress hormones stay elevated. Decision-making narrows to the immediate. The future shrinks to the next hour, the next night, the next day you have to get through. Long-term thinking becomes physically impossible — not because you lack intelligence or will, but because your nervous system has correctly identified that right now, the only thing that matters is not getting hurt.
 
-This connects to [mental health](/foundation/mental-health/) directly — chronic exposure to danger produces PTSD, depression, anxiety, and substance use at rates that dwarf the general population. Survivors of intimate partner violence experience PTSD at rates comparable to combat veterans. But while we've built — imperfectly, insufficiently — some infrastructure for veterans, we've built almost nothing for the people living through the domestic version of the same neurological damage.
+This connects to [mental health](/foundation/mental-health/) directly — living with chronic danger produces PTSD (post-traumatic stress disorder), depression, anxiety, and substance use at rates far above the general population. Survivors of intimate partner violence experience PTSD at rates comparable to combat veterans. But while we've built — imperfectly, insufficiently — some infrastructure for veterans, we've built almost nothing for the people living through the domestic version of the same damage.
 
 It connects to [healthcare](/foundation/healthcare/) — the medical costs of intimate partner violence alone run into the billions annually. Emergency room visits, chronic pain, traumatic brain injury from repeated blows to the head, pregnancies complicated by abuse. These costs are borne by a healthcare system that treats the symptoms and sends people back to the source.
 

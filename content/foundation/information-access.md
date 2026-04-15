@@ -29,7 +29,7 @@ Foundation is built on a simple premise: there is a minimum set of conditions pe
 
 ## The Divide Is Getting Wider
 
-Twenty-six million Americans lack broadband internet access. That's the real number — a BroadbandNow audit found the FCC's maps overcount access by 33 percent, inflating coverage by 6.4 million people. The maps that guide billions in funding don't match the ground.
+Twenty-six million Americans lack broadband internet access. That's the real number — a BroadbandNow audit found the FCC's maps — the Federal Communications Commission is the agency that's supposed to track who has internet and who doesn't — overcount access by 33 percent, inflating coverage by 6.4 million people. The maps that guide billions in funding don't match the ground.
 
 And "access" doesn't mean "connected." One-third of Americans who have broadband available don't subscribe — because they can't afford it. The Affordable Connectivity Program, which provided $30 a month to help low-income households stay online, expired in June 2024 when its $14.2 billion in funding ran out. Congress has not renewed it. Five million households have already cut internet service since the program ended. Millions more have reduced spending on food, medical care, and other essentials to stay connected — because in 2026, being offline means being locked out of work, school, healthcare, and government services.
 
@@ -37,7 +37,7 @@ The replacement? The Lifeline program — $9.25 a month. In a country where the 
 
 Rural America is hit hardest. Twenty-two percent of rural Americans and 28 percent of Tribal land residents lack even basic broadband. In 32 states, the speed gap between urban and rural users actually *increased* in 2024. Only 35 percent of rural households have more than one broadband provider to choose from, which means no competition, no pressure on price, no alternative when the service is bad.
 
-And then there's the homework gap — 17 percent of American children can't complete homework because of limited internet access. Those kids are disproportionately students of color, low-income, English learners, and students with disabilities. The FCC, in September 2025, voted to remove school bus Wi-Fi and at-home hotspot lending from E-Rate eligibility — cutting one of the few tools schools had to reach students without home internet. The gap is getting wider because we're pulling up the planks of the bridge while people are still crossing it.
+And then there's the homework gap — 17 percent of American children can't complete homework because of limited internet access. Those kids are disproportionately students of color, low-income, English learners, and students with disabilities. The FCC, in September 2025, voted to remove school bus Wi-Fi and at-home hotspot lending from E-Rate eligibility — E-Rate is the federal program that gives schools and libraries discounted internet service, and it was one of the few tools schools had to reach students without home internet. The gap is getting wider because we're pulling up the planks of the bridge while people are still crossing it.
 
 ## The New Gatekeeping
 
@@ -53,13 +53,13 @@ Meanwhile, AI is rapidly becoming the interface through which people access know
 
 ## What's Happening to the Infrastructure
 
-The BEAD program — $42.45 billion in federal broadband funding from the Infrastructure Investment and Jobs Act — has not deployed a single dollar for actual construction as of early 2026. Twenty-six state spending plans have been approved, but the administration restructured the program in June 2025, removing fiber preference requirements and mandating lowest-cost technology. States had to redo their plans.
+The BEAD program — that's "Broadband Equity, Access, and Deployment," $42.45 billion in federal broadband funding from the 2021 infrastructure law — has not deployed a single dollar for actual construction as of early 2026. Twenty-six state spending plans have been approved, but the administration restructured the program in June 2025, removing fiber preference requirements and mandating lowest-cost technology. States had to redo their plans.
 
 Oklahoma was allocated $797 million. After the restructuring, the state is returning $225 million to the federal government and shifting to a mix of 65 percent fiber, 20 percent fixed wireless, and 15 percent satellite. Critics say returning a quarter billion dollars while 40,000 Oklahomans remain unserved is indefensible. The state broadband office says everyone will still be covered. Construction isn't expected to begin until summer 2026 — four years after the money was appropriated.
 
 The Digital Equity Act — $2.5 billion in funding for digital literacy and inclusion programs — was terminated outright in May 2025. The administration called it "unconstitutional, racist and illegal." Twenty-two state attorneys general filed suit.
 
-The Institute of Museum and Library Services — the federal agency that funds public libraries — was ordered to reduce its functions "to the maximum extent consistent with applicable law." The proposed 2026 budget would eliminate it entirely. A court struck down the dismantling order and grants are being reinstated, but the signal is clear: the institutions that provide free information access to people who can't afford to pay for it are under direct attack.
+The Institute of Museum and Library Services (IMLS) — the federal agency that funds public libraries — was ordered to reduce its functions "to the maximum extent consistent with applicable law." The proposed 2026 budget would eliminate it entirely. A court struck down the dismantling order and grants are being reinstated, but the signal is clear: the institutions that provide free information access to people who can't afford to pay for it are under direct attack.
 
 In Oklahoma, rural libraries depend on IMLS-funded programs for 98 percent discounts on databases and tutoring services. If IMLS goes, those go with it — and the communities that need them most lose what little they have.
 
@@ -91,7 +91,7 @@ We have a framework. We don't have all the answers — and that's deliberate. He
 
 - **A publicly owned AI model as civic infrastructure.** Maintained to the highest standards, available to every citizen, free. Not competing with private AI — serving as the floor. The way public roads don't compete with private cars. You always have a baseline, and it's always yours. Citizens decide what to ask it. Citizens evaluate what it returns. The AI assists — you supervise. What would you use a free, private, publicly accountable AI tool for? What would it change for your family?
 
-- **Community broadband cooperatives.** Municipally or cooperatively owned internet, like the electrical co-ops that brought power to rural America in the 1930s. Over 900 communities already run their own broadband. The organizational model is proven. What would it take to start one in your town? What's standing in the way — state law, incumbent lobbying, capital, all three?
+- **Community broadband cooperatives.** Internet service owned by the town or by a co-op — like the electrical cooperatives that brought power to rural America in the 1930s. Over 900 communities already run their own broadband. The organizational model is proven. What would it take to start one in your town? What's standing in the way — state law, lobbying by the big internet companies that don't want the competition, lack of funding, all three?
 
 - **AI literacy as public education.** Not coding classes — critical thinking about how algorithms shape what you see, how to evaluate AI-generated content, and how to use these tools as a citizen who guides the technology, not the other way around. AI can help surface information, flag inconsistencies, and organize what you're learning — but the judgment about what matters and what's true stays with you. This should be in every school and every library. What does information literacy look like for someone who's 65? For someone who's 12?
 

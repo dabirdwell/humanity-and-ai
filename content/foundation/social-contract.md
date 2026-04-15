@@ -58,15 +58,15 @@ Here's why this can't wait.
 
 The old social contract rested on an exchange: you contribute your labor, and society provides a pathway to security. That exchange assumed that human labor would remain the primary engine of economic value. AI breaks that assumption. Not for everyone at once — but for enough people, fast enough, that the system destabilizes.
 
-We've seen early versions in manufacturing towns that hollowed out, in newsrooms that emptied, in retail districts that went dark. The AI wave is bigger by orders of magnitude. Karpathy's data shows the average American job is already at 5.3 out of 10 on AI exposure. The World Economic Forum projects 83 million jobs displaced in five years. When automation can perform most cognitive labor, the fundamental exchange — your productive output in return for economic participation — stops functioning.
+We've seen early versions in manufacturing towns that hollowed out, in newsrooms that emptied, in retail districts that went dark. The AI wave is far bigger. Karpathy — an engineer who helped build modern AI at OpenAI and Tesla — mapped every major US job category by how much AI is likely to change the work. The average American job scored 5.3 out of 10. The World Economic Forum projects 83 million jobs displaced in five years. When automation can handle most of the thinking work that used to require a human, the fundamental exchange — your productive output in return for a paycheck and a pathway — stops functioning.
 
-And neither party has a plan for this. Not a real plan. Not based on a cohesive attempt to understand the myriad of rapidly changing factors that will determine what kind of world we inhabit. One side offers deregulation and tax cuts — solutions designed for a scarcity-of-capital problem in an era that will be defined by abundance of capability. The other offers incremental adjustments to a system whose premises are evaporating — more job training for jobs that won't exist, more subsidies for costs that shouldn't exist.
+And neither party has a plan for this. Not a real plan. Not based on a cohesive attempt to understand the myriad of rapidly changing factors that will determine what kind of world we inhabit. One side offers deregulation and tax cuts — solutions designed for a world where the problem was not enough money flowing to businesses, in an era that will be defined by machines that can do the work without people. The other offers incremental adjustments to a system whose foundations are shifting — more job training for jobs that won't exist, more subsidies for costs that shouldn't exist.
 
 We are not servants to political parties. We are not servants to industries. We are individuals, in a free society, with free minds, if we choose to exercise them as such. And what's needed now is not a tweak. It's a renegotiation.
 
 ## Rights AND Responsibilities
 
-Here's what a new social contract could look like — and this is the part that makes it different from both the left's welfare state and the right's market fundamentalism.
+Here's what a new social contract could look like — and this is the part that makes it different from both the left's vision of government taking care of everything and the right's belief that the free market will sort it out on its own.
 
 The old contract was transactional: contribute labor, receive security. The new contract is relational, and it has two sides.
 
@@ -78,7 +78,7 @@ This isn't utopian. It's pragmatic. A society of empowered, educated, healthy pe
 
 ## What This Means for Everything Else
 
-This is the meta-essay because the social contract is the connective tissue of the entire framework. Every other component assumes a society willing to provide it. Every component fails if citizens don't trust the system enough to participate in it.
+This is the essay that ties everything else together, because the social contract is the connective tissue of the entire framework. Every other component assumes a society willing to provide it. Every component fails if citizens don't trust the system enough to participate in it.
 
 When trust collapses, it doesn't matter how good your [healthcare](/foundation/healthcare/) policy is — people won't use systems they don't believe serve them. It doesn't matter how well-designed your [education](/foundation/education/) infrastructure is — parents who don't trust institutions won't send their kids. It doesn't matter how effective your [safety](/foundation/safety/) programs are — communities that see government as the threat won't cooperate with government solutions.
 
@@ -92,9 +92,9 @@ Only institutions that work will survive from now on. That's not a threat — it
 
 Renegotiating a social contract requires governance mechanisms that most democracies don't currently have. You can't ask people to participate in a system that won't let them participate meaningfully. Foundation proposes building the tools:
 
-Secure, transparent voting infrastructure — not as a partisan issue but as civic infrastructure. The people who run elections shouldn't have shareholders. The machines that count votes should be open-source and publicly auditable. Participation should be as easy as the system can make it — automatic registration, expanded access, election days that don't require choosing between voting and working.
+Secure, transparent voting infrastructure — not as a partisan issue but as civic infrastructure. The people who run elections shouldn't have shareholders. The machines that count votes should be open-source — meaning anyone can inspect how the software works — and publicly auditable. Participation should be as easy as the system can make it — automatic registration, expanded access, election days that don't require choosing between voting and working.
 
-Ranked-choice voting and proportional representation — systems that reduce polarization by design, that let people vote their actual preferences instead of their strategic fears, that break the duopoly without requiring revolution. Already working in Alaska, Maine, and dozens of cities. The data is in. It reduces negative campaigning. It increases turnout. It produces candidates who have to appeal beyond their base.
+Ranked-choice voting and proportional representation — where elected bodies actually reflect the range of what voters believe, not just which of two parties won each district. These are systems that reduce polarization by design, that let people vote their actual preferences instead of their strategic fears, that break the two-party stranglehold without requiring revolution. Already working in Alaska, Maine, and dozens of cities. The data is in. It reduces negative campaigning. It increases turnout. It produces candidates who have to appeal beyond their base.
 
 Citizen assemblies — randomly selected groups of citizens who deliberate on specific policy questions with expert support, like jury duty for democracy. Ireland used this to resolve its most divisive issues — abortion and marriage equality — through structured public deliberation rather than partisan combat. France used it for climate policy. The model works. It works because it treats citizens as capable of reasoning through complexity when given the resources to do so.
 

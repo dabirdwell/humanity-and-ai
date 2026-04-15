@@ -21,7 +21,7 @@ Think about the last time you opened your utility bill and did math you shouldn'
 
 Loretta lives outside Seminole, Oklahoma. Her family has lived in oil country for three generations — her grandfather worked the fields, her uncle drove tankers. The energy economy built this region. It also left it. The wells that made millionaires in Houston left behind methane leaks, contaminated groundwater, and communities whose tax base collapsed when the boom moved on.
 
-She heats with a propane tank she refills when she can afford it. In winter she keeps the thermostat at 62. Her granddaughter has asthma — one of the respiratory conditions researchers have begun linking to proximity to orphaned well emissions. Loretta doesn't need a green energy lecture. She needs a utility bill she can pay without choosing between warmth and dinner.
+She heats with a propane tank she refills when she can afford it. In winter she keeps the thermostat at 62. Her granddaughter has asthma — one of the respiratory conditions researchers have begun linking to gases leaking from old, abandoned oil wells nearby. Loretta doesn't need a green energy lecture. She needs a utility bill she can pay without choosing between warmth and dinner.
 
 *Loretta is not one person. She is a pattern.* One in seven American families lives in energy poverty — spending 14 percent or more of their income just to keep the lights on and the house warm. Low-income households spend an average of 8.6 percent of their income on energy, while everyone else pays about 3 percent. That's a three-to-one ratio, and it's not an accident. It's a system designed to extract from the people who can absorb it least. Layer in transportation fuel and the picture gets worse: low-income families spend 17.8 percent of their income on combined energy costs — nearly one in five dollars, gone before rent, before food, before anything else.
 
@@ -54,7 +54,7 @@ window.addEventListener('message', function(e) {
 
 ## Oklahoma: Wind Giant, Energy Colony
 
-Here's a fact that should make you angry: Oklahoma generates 41 percent of its electricity from wind — third in the nation, behind only Texas and Iowa. We have 5,624 active wind turbines and over 12,600 megawatts of installed capacity. The wind blows through this state like it was designed for it. And yet Loretta can't heat her house.
+Here's a fact that should make you angry: Oklahoma generates 41 percent of its electricity from wind — third in the nation, behind only Texas and Iowa. We have 5,624 active wind turbines and enough generating capacity to power millions of homes. The wind blows through this state like it was designed for it. And yet Loretta can't heat her house.
 
 That's because Oklahoma's energy abundance doesn't belong to Oklahoma. The wind farms are owned by out-of-state corporations. The electricity they generate flows to grids in other states. The royalties are structured to benefit investors, not communities. We produce the energy and export the wealth. The same pattern that defined oil — boom, extract, leave — is being replicated with renewables, and nobody in the statehouse is asking why.
 
@@ -62,7 +62,7 @@ This isn't an argument against wind energy. Wind is extraordinary — it's one o
 
 ## The Cooperative Model That Already Exists
 
-The answer isn't theoretical. It's already operating at scale, in the form of electric cooperatives — 832 of them nationwide, serving 42 million people across 48 states. Co-ops are nonprofit. They return over a billion dollars annually to their consumer-members. They serve 92 percent of the nation's persistent poverty counties — the places where investor-owned utilities decided the profit margins weren't worth the trouble.
+The answer isn't theoretical. It's already operating at scale, in the form of electric cooperatives — 832 of them nationwide, serving 42 million people across 48 states. Co-ops are nonprofit. They return over a billion dollars annually to their consumer-members. They serve 92 percent of the nation's persistent poverty counties — the places where poverty has been entrenched for decades, where investor-owned utilities decided the profit margins weren't worth the trouble.
 
 Over 90 percent of electric cooperatives now include renewable generation in their portfolios. These aren't boutique experiments. They're the backbone of rural electricity in America, and they've been doing community-owned energy for decades. Foundation's energy model doesn't invent community ownership. It extends the cooperative model to the energy transition itself — so that when fossil fuels phase out, the communities that powered the old system own what replaces it.
 
@@ -88,7 +88,7 @@ Oklahoma has every advantage: the wind, the geological knowledge, the skilled wo
 
 Here's the complication AI advocates don't talk about enough: AI is extraordinarily energy-hungry. Training large models consumes enormous power. Data centers are proliferating. If we build the AI future on fossil fuels, we've traded one crisis for another.
 
-This is why Phoenix Wells matters beyond Oklahoma. It's a model for powering AI computing with geothermal energy from the very holes the old economy left behind. AI can help optimize these microgrids, predict maintenance windows, and balance generation across a community — but the ownership stays local, and the decisions about where that power goes stay with the people who live there. Sustainable energy isn't just environmentally necessary — it's the only way to scale AI infrastructure without accelerating the problems we're trying to solve.
+This is why Phoenix Wells matters beyond Oklahoma. It's a model for powering AI computing with geothermal energy from the very holes the old economy left behind. Microgrids — small, local energy networks that a community controls instead of depending on a distant power company — are the key. AI can help optimize them, predict maintenance windows, and balance generation across a community — but the ownership stays local, and the decisions about where that power goes stay with the people who live there. Sustainable energy isn't just environmentally necessary — it's the only way to scale AI infrastructure without accelerating the problems we're trying to solve.
 
 ## What This Does to a Person — And to Everything Else
 
@@ -104,7 +104,7 @@ Those who say the energy transition will kill jobs are defending the industries 
 
 We do not head north with the climate flight. We make our stand here. This is the right place. We will invent our way out of this. Here are the directions we're building toward:
 
-- **Phoenix Wells at scale** — convert Oklahoma's 22,000 abandoned wells into community-owned geothermal power plants. Same workforce, same land, new century. Per pod: $280-350K annual revenue, 2-year payback. Federal ITC covers 40-50% of capital. What engineering challenges do we need to solve first? What does the workforce transition actually look like on the ground?
+- **Phoenix Wells at scale** — convert Oklahoma's 22,000 abandoned wells into community-owned geothermal power plants. Same workforce, same land, new century. Each well cluster could generate $280-350K in annual revenue with a 2-year payback. Federal investment tax credits cover 40-50% of the upfront cost. What engineering challenges do we need to solve first? What does the workforce transition actually look like on the ground?
 
 - **Tribal energy sovereignty** — tribal nations as first adopters of full-stack community energy, leapfrogging the broken centralized model entirely. The geological knowledge and the sovereign authority already exist. Over 90 percent of persistent poverty counties are already served by cooperatives — the organizational model is proven. What would it take to extend this to tribal-owned renewable generation?
 

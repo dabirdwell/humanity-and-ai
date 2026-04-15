@@ -39,7 +39,7 @@ Eleven years of managing alone, of compensating, of the quiet erosion of relatio
 
 And then there are the kids. The CDC's Youth Risk Behavior Survey found that 42 percent of high school students reported persistent feelings of sadness or hopelessness. Twenty-two percent seriously considered suicide. Emergency department visits for mental health crises among adolescents are up 30 to 50 percent compared to before the pandemic. The Surgeon General called youth mental health "the defining public health crisis of our time." That was 2021. It's gotten worse.
 
-Insurance parity laws — the ones that say mental health coverage has to be equal to physical health coverage — exist on paper and fail in practice. CMS and the Department of Labor finalized new enforcement rules in 2024, requiring insurers to demonstrate compliance. But enforcement requires enforcers, and the agencies responsible are shrinking, not growing.
+Insurance parity laws — the ones that say mental health coverage has to be equal to physical health coverage — exist on paper and fail in practice. CMS (the federal agency that runs Medicare and Medicaid) and the Department of Labor finalized new enforcement rules in 2024, requiring insurers to prove they're actually complying. But enforcement requires enforcers, and the agencies responsible are shrinking, not growing.
 
 ## What's Coming Will Make It Worse
 
@@ -47,19 +47,19 @@ So that's where we already are — a system that can't meet a quarter of the nee
 
 We cannot sleepwalk into the age of automation. Mass economic disruption from the AI transition is already beginning. The disorientation of watching machines do what you trained years to do. Accelerating uncertainty about whether your career, your industry, your community will exist in five years. A loneliness epidemic amplified by algorithmic social media that's optimized to keep you engaged, not healthy. The mental health demands of the next decade will dwarf anything we've seen.
 
-The opioid crisis was the preview. When entire industries and communities collapsed in deindustrialized America, the mental health infrastructure wasn't there to absorb the shock. People found other ways to manage unbearable pain — and we called it a crisis of character instead of a failure of systems. Forty-nine thousand Americans died by suicide in 2023. The 988 Suicide and Crisis Lifeline is growing, but a phone number is not a system. Without serious, structural investment now — investment that treats mental health as infrastructure, not charity — the AI transition will produce its own wave of despair. And the system that failed these people will blame them for drowning.
+The opioid crisis was the preview. When entire industries collapsed — the factory towns, the coal towns, the places where the jobs left and nothing replaced them — the mental health infrastructure wasn't there to absorb the shock. People found other ways to manage unbearable pain — and we called it a crisis of character instead of a failure of systems. Forty-nine thousand Americans died by suicide in 2023. The 988 Suicide and Crisis Lifeline is growing, but a phone number is not a system. Without serious, structural investment now — investment that treats mental health as infrastructure, not charity — the AI transition will produce its own wave of despair. And the system that failed these people will blame them for drowning.
 
 ## The App Won't Save You
 
 Here's where we need to be honest about what AI can and cannot do.
 
-There's a growing industry of AI therapy apps — Woebot, Wysa, and dozens of others — that promise mental health support in your pocket. Wysa received FDA Breakthrough Device designation. Woebot has a De Novo application pending. They're real products, built by people who care about the problem. And they're stepping into a void that wouldn't exist if we'd built actual infrastructure.
+There's a growing industry of AI therapy apps — Woebot, Wysa, and dozens of others — that promise mental health support in your pocket. Wysa received fast-track FDA approval status. Woebot has a regulatory application pending. They're real products, built by people who care about the problem. And they're stepping into a void that wouldn't exist if we'd built actual infrastructure.
 
 But here's what they can't do: they can't replace the human relationship that sits at the center of healing. An AI tool can guide you through a breathing exercise at 3 AM. It cannot sit with you in the silence after you say the thing you've never said out loud. It cannot hold the therapeutic relationship that makes the difference between someone who gets better and someone who just gets managed.
 
-And the regulatory gap is real. The FTC has signaled increased scrutiny of mental health app data practices — several apps have been caught sharing user data with third parties. After incidents involving AI chatbots and teenage users, the question of who's responsible when an algorithm goes wrong in someone's worst moment has no good answer. Because we built the apps before we built the guardrails.
+And the regulatory gap is real. The FTC — the Federal Trade Commission, the agency that's supposed to protect consumers — has signaled increased scrutiny of mental health app data practices — several apps have been caught sharing user data with third parties. After incidents involving AI chatbots and teenage users, the question of who's responsible when an algorithm goes wrong in someone's worst moment has no good answer. Because we built the apps before we built the guardrails.
 
-AI can help. It can assist therapists with triage. It can extend a provider's reach to patients who'd otherwise wait months. It can flag crisis signals and connect people to human professionals immediately. But the human decides the course of treatment. The human holds the relationship. AI is a tool in a system, not a replacement for the system. And right now, we're using it as a patch over a hole when what we need is to build the floor.
+AI can help. It can assist therapists with sorting who needs help first and most urgently. It can extend a provider's reach to patients who'd otherwise wait months. It can flag crisis signals and connect people to human professionals immediately. But the human decides the course of treatment. The human holds the relationship. AI is a tool in a system, not a replacement for the system. And right now, we're using it as a patch over a hole when what we need is to build the floor.
 
 ## What This Does to a Person
 
@@ -79,7 +79,7 @@ Addiction treatment is part of this, not separate from it. Addiction is a public
 
 The key insight is upstream investment. We treat symptoms because we can't afford to treat causes — but the truth is we can't afford *not* to treat causes. It costs less to provide comprehensive mental health support than it costs to manage the crisis that results from not providing it. Emergency rooms, jails, disability claims, lost productivity, shattered families — we're already paying for the absence of this infrastructure. We're just paying in the worst possible way.
 
-Single-payer healthcare that covers mental health fully — without the parity games, without the prior authorization gauntlet, without the separate networks and different copays that signal to every patient that their mind is worth less than their body. A system where Marcus doesn't need a car, a day off, and insurance that cooperates. Where the school has a counselor who's actually there. Where the veteran doesn't wait.
+Single-payer healthcare that covers mental health fully — without the games where insurers technically offer equal coverage but make it harder to use, without requiring your therapist to get your insurance company's permission before treating you, without the separate networks and different copays that signal to every patient that their mind is worth less than their body. A system where Marcus doesn't need a car, a day off, and insurance that cooperates. Where the school has a counselor who's actually there. Where the veteran doesn't wait.
 
 ## What We Need From You
 

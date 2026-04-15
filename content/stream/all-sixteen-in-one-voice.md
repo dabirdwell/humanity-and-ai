@@ -1,7 +1,7 @@
 ---
 title: "All Sixteen, In One Voice"
 date: 2026-03-24
-draft: false
+draft: true
 type: stream
 description: "Every Foundation essay has been rewritten in David's voice. The Voice Reference made it possible — a new instance reads it cold and writes like David within paragraphs."
 tags: ["foundation", "voice", "writing", "claude-code", "methodology"]

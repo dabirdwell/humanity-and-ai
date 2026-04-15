@@ -1,7 +1,7 @@
 ---
 title: "Deploy Week"
 date: 2026-03-25
-draft: false
+draft: true
 type: stream
 description: "Every app getting its own URL. The gap between code on GitHub and a product someone can use is a deploy command and a DNS record."
 tags: ["deploy", "vercel", "clarity", "dojo", "tastebud", "citizen", "quiltographer", "infrastructure"]

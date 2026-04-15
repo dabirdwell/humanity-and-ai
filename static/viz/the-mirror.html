@@ -341,38 +341,84 @@ const QUESTIONS = [
 // Reflections keyed by top-1 component
 const REFLECTIONS = {
   'safety':
-    'Your answers center on <strong>safety</strong> \u2014 the most basic layer of the Foundation. Without it, nothing else holds. You\u2019re not asking for luxury. You\u2019re asking for ground that doesn\u2019t shift. <em>That\u2019s where every Foundation begins.</em>',
+    'Your answers center on <strong>safety</strong> \u2014 the most basic layer of the Foundation. Without it, nothing else holds. Not the safety of locks and cameras \u2014 the safety that comes from living in a place where the conditions that produce violence have been addressed. You\u2019re not asking for protection. You\u2019re asking for ground that doesn\u2019t shift. <em>That\u2019s where every Foundation begins.</em>',
   'education':
-    'You keep coming back to <strong>learning</strong>. Not credentials \u2014 actual understanding. Foundation treats education not as a product but as infrastructure. <em>Something everyone walks on, not something everyone pays for.</em>',
+    'You keep coming back to <strong>learning</strong>. Not credentials, not test scores \u2014 actual understanding. The kind of education that teaches people how to think, not what to memorize. Foundation treats education not as a product you purchase but as infrastructure you walk on. <em>Like roads. Always there. Always yours. Always free.</em>',
   'healthcare':
-    '<strong>Healthcare</strong> dominates your priorities. Not healthcare as an industry \u2014 healthcare as a right. The kind that doesn\u2019t ask for your credit score before it asks about your symptoms. <em>The one most Americans feel first.</em>',
+    '<strong>Healthcare</strong> dominates your priorities. Not healthcare as a billing system with medicine attached \u2014 healthcare as a relationship between a person and the people who take care of them. You\u2019re pointing at the thing most Americans feel first and talk about last: the quiet arithmetic of whether you can afford to be sick. <em>That calculation should not exist.</em>',
   'housing':
-    'Your answers keep returning to <strong>housing</strong> \u2014 the most tangible form of stability. A place that doesn\u2019t consume your income, your energy, your ability to plan ahead. <em>Everything else in the Foundation sits on top of this.</em>',
+    'Your answers keep returning to <strong>housing</strong> \u2014 the most tangible form of stability. Not shelter as a speculative asset that enriches investors. Shelter as the platform everything else stands on. When a person knows they have a home next month, they can think about next year. <em>You can\u2019t build anything on a floor that might disappear.</em>',
   'food':
-    'You gravitate toward <strong>food security</strong> \u2014 not as a luxury, but as a right. Access to nutrition that doesn\u2019t require a spreadsheet or a second job. <em>Foundation starts with what sustains the body before it addresses anything else.</em>',
+    'You gravitate toward <strong>food security</strong>. In a country that grows more than enough food and throws away a third of it, you\u2019re pointing at the fact that people go hungry not because food is scarce but because access is organized around profit instead of need. The nine-year-old choosing hunger over the shame of a different-colored lunch bag \u2014 <em>that\u2019s a policy outcome, not a personal failure.</em>',
   'mental-health':
-    '<strong>Mental health</strong> surfaces clearly in your answers. Not as a luxury or an app subscription \u2014 as infrastructure. The kind of support that should exist before the crisis, not only after. <em>Not optional. Foundational.</em>',
+    '<strong>Mental health</strong> surfaces clearly in your answers. The average person waits eleven years between their first symptoms and their first treatment. You see what that gap produces: people managing alone, relationships fracturing, capacity eroding. Not because help doesn\u2019t exist \u2014 because the system that should deliver it was built as an afterthought. <em>You\u2019re saying it should be the floor, not the ceiling.</em>',
   'information-access':
-    'Your responses keep pointing to <strong>information</strong> \u2014 who has it, who controls it, who can reach it. In a world of noise, access to reliable information isn\u2019t a convenience. <em>It\u2019s a structural precondition for democracy.</em>',
+    'Your responses keep pointing to <strong>information</strong> \u2014 who has it, who controls it, who can reach it. You see that in a world where algorithms choose what you see, access to reliable information isn\u2019t a convenience. It\u2019s the difference between a citizen who can make informed decisions and a consumer who gets fed what keeps them clicking. <em>Democracy requires knowing things. Not being told things.</em>',
   'skills-training':
-    'You\u2019re drawn to <strong>skills training</strong> \u2014 the bridge between where people are and where the economy is going. Not retraining as consolation prize. <em>Training as infrastructure \u2014 continuous, accessible, and built for a world that keeps changing.</em>',
+    'You\u2019re drawn to <strong>skills training</strong> \u2014 the bridge between where people are and where the economy is going. Not the six-month certificate program that starts after your savings run out. The kind of continuous development that treats human adaptation as infrastructure, not crisis response. <em>The economy won\u2019t stop changing. People need the tools to change with it.</em>',
   'ubi':
-    '<strong>Universal basic income</strong> runs through your priorities. Not as utopia \u2014 as math. A floor beneath which no one falls. <em>Foundation doesn\u2019t argue whether people deserve it. It argues whether a system without it can survive what\u2019s coming.</em>',
+    '<strong>Universal basic income</strong> runs through your priorities. Not as charity \u2014 as engineering. A floor beneath which no one falls, so that people can take risks, start things, care for each other, and think past the next paycheck. The data from every pilot says the same thing: give people stability and they don\u2019t stop working. <em>They start living.</em>',
   'thought-privacy':
-    'Your answers surface <strong>thought privacy</strong> \u2014 the newest, least obvious component of the Foundation. The right to an inner life that isn\u2019t optimized, predicted, or monetized. <em>In a world of AI, this one will define the others.</em>',
+    'Your answers surface <strong>thought privacy</strong> \u2014 the newest, least obvious component of the Foundation. While everyone argues about data breaches and passwords, you\u2019re looking at the frontier: the right to an inner life that isn\u2019t optimized, predicted, or monetized. Twenty-nine of thirty brain-tech companies reserve the right to share your neural data. <em>The last private space is your mind. You\u2019re asking who\u2019s guarding the door.</em>',
   'clean-water':
-    'Your instinct pulls toward the most fundamental resource: <strong>clean water</strong>. It\u2019s the kind of thing that should be invisible \u2014 so reliable you never think about it. <em>When you do think about it, something has already failed.</em>',
+    'Your instinct pulls toward the most fundamental resource: <strong>clean water</strong>. The thing that should be so reliable you never think about it. Nine million homes still get their water through lead pipes. Half the country is drinking forever chemicals. You see that when the most basic promise breaks \u2014 that what comes out of the tap is safe \u2014 <em>trust in everything else breaks with it.</em>',
   'social-contract':
-    'Your answers point toward the <strong>social contract</strong> \u2014 the invisible agreement that the system should work for people, not just around them. When that breaks, everything else feels like compensation. <em>You\u2019re asking for the deal to be real.</em>',
+    'Your answers point toward the <strong>social contract</strong> \u2014 the invisible agreement that the system should work for people, not just around them. In 1964, 77 percent of Americans trusted their government. Now it\u2019s 17 percent. You\u2019re not cynical \u2014 you\u2019re paying attention. When the deal breaks, everything else feels like compensation. <em>You\u2019re asking for the deal to be real again.</em>',
   'sustainable-energy':
-    '<strong>Sustainable energy</strong> runs through your answers \u2014 the long-term infrastructure that determines whether everything else we build can last. <em>You\u2019re thinking in decades, not news cycles. That\u2019s what the Foundation needs.</em>',
+    '<strong>Sustainable energy</strong> runs through your answers. You\u2019re thinking in decades, not news cycles \u2014 asking whether the things we build today can last, whether the communities that powered the old economy get to own what replaces it. Oklahoma has 22,000 abandoned oil wells and enough wind to power the future. <em>The resources are in the ground. The question is who they belong to.</em>',
   'transportation':
-    '<strong>Transportation</strong> threads through your answers \u2014 the ability to get to work, to healthcare, to opportunity. It sounds mundane until it\u2019s not there. <em>Mobility is infrastructure. When it breaks, everything else becomes harder to reach.</em>',
+    '<strong>Transportation</strong> threads through your answers. It sounds mundane until you\u2019re the person who turned down a job because there\u2019s no bus. Until you\u2019re the veteran who missed dialysis because the ride didn\u2019t come. Mobility is the connective tissue between every other component. <em>Without it, you can offer people everything and watch them not be able to reach any of it.</em>',
   'safe-spaces':
-    'What surfaces in your answers is the need for <strong>spaces that feel safe</strong> \u2014 physically, emotionally, digitally. Not bubble-wrapped. Just places where people can exist without performing survival. <em>That\u2019s rarer than it should be.</em>',
+    'What surfaces in your answers is the need for <strong>spaces that feel safe</strong> \u2014 physically, emotionally, digitally. Not bubble-wrapped. Places where people can exist without performing survival. Where the person fleeing violence has somewhere to go that isn\u2019t 90 miles away. Where the teenager thrown out for being who they are has a door that opens. <em>Safety that\u2019s a place, not just a feeling.</em>',
   'accessible-education':
-    'Your answers highlight <strong>accessible education</strong> \u2014 learning that doesn\u2019t depend on zip code, income, or luck. Not just education that exists. Education that\u2019s <em>reachable</em>. <em>The gap isn\u2019t in knowledge \u2014 it\u2019s in access to it.</em>'
+    'Your answers highlight <strong>accessible education</strong> \u2014 learning that doesn\u2019t depend on zip code, income, or luck. Not just education that exists somewhere \u2014 education that\u2019s reachable from where you actually are, at the age you actually are, for the thing you actually need. The gap between the kid writing college essays in a library parking lot and the kid with an AI tutor at home \u2014 <em>that gap is the one you want closed.</em>'
 };
+
+// Cluster connections — what it means when your top 3 form a pattern
+function getCluster(id) {
+  const body = ['safety', 'food', 'clean-water', 'housing', 'healthcare', 'sustainable-energy'];
+  const mind = ['education', 'accessible-education', 'skills-training', 'mental-health'];
+  const system = ['social-contract', 'information-access', 'thought-privacy', 'transportation', 'safe-spaces', 'ubi'];
+  if (body.includes(id)) return 'body';
+  if (mind.includes(id)) return 'mind';
+  return 'system';
+}
+
+function generateClusterInsight(top3) {
+  const clusters = top3.map(c => getCluster(c.id));
+  const names = top3.map(c => '<strong>' + c.name + '</strong>');
+  const allSame = clusters[0] === clusters[1] && clusters[1] === clusters[2];
+  const allDiff = clusters[0] !== clusters[1] && clusters[1] !== clusters[2] && clusters[0] !== clusters[2];
+
+  if (allSame && clusters[0] === 'body') {
+    return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 form the <em>physical survival layer</em>. You see that the body has to be whole before the mind can think. That\u2019s not a value system. That\u2019s biology. Foundation starts here because you\u2019re right: nothing else works until people are fed, sheltered, safe, and well.';
+  }
+  if (allSame && clusters[0] === 'mind') {
+    return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 trace the arc of <em>human development</em>. You believe people don\u2019t just need to survive \u2014 they need to grow. To think, to learn, to heal, to adapt. The infrastructure of the mind is what turns survival into participation.';
+  }
+  if (allSame && clusters[0] === 'system') {
+    return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 point at the <em>architecture</em>. You\u2019re not asking what people need. You\u2019re asking how the system works \u2014 who has access, who has a voice, who gets to move through the world with dignity. You\u2019re looking at the operating system, not just the applications.';
+  }
+  if (allDiff) {
+    return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 span the entire framework: physical security, human development, and systemic design. You don\u2019t see these as separate problems. <em>That\u2019s the thesis.</em> Foundation works because the components work together. You already understood that before the quiz told you.';
+  }
+
+  // Two from same cluster + one from another
+  if (clusters[0] === 'body' || clusters[1] === 'body') {
+    if (clusters.includes('mind')) {
+      return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 move from <em>survival to development</em>. First stabilize the body. Then free the mind. You see the sequence that most policy conversations skip: you can\u2019t educate or heal people who are hungry, unhoused, or unsafe. The foundation has to be physical before it can be anything else.';
+    }
+    if (clusters.includes('system')) {
+      return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 connect <em>physical security to structural reform</em>. You see that broken infrastructure breaks people \u2014 and that fixing the pipes, the homes, the food systems requires changing who controls them. The material and the systemic aren\u2019t separate problems. They\u2019re the same problem at different scales.';
+    }
+  }
+  if (clusters.includes('mind') && clusters.includes('system')) {
+    return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 link <em>human capacity to systemic design</em>. People need both the ability and the opportunity. The ability to think, learn, and heal \u2014 and a system that\u2019s actually designed to let them use it. You\u2019re looking at both sides of the equation.';
+  }
+
+  // Fallback
+  return 'Your top three \u2014 ' + names.join(', ') + ' \u2014 reveal where you feel the gap most. Not in the abstract \u2014 in the daily experience of living in a system that wasn\u2019t built for the world that\u2019s arriving. <em>Foundation is built to close that gap.</em>';
+}
 
 // ─── STATE ───
 let currentQ = 0;
@@ -518,9 +564,12 @@ function showResults() {
     });
   }, 200);
 
-  // Reflection
+  // Reflection — component + cluster
   const topId = top5[0].id;
-  document.getElementById('reflection-text').innerHTML = REFLECTIONS[topId] || '';
+  const clusterInsight = generateClusterInsight(top5.slice(0, 3));
+  document.getElementById('reflection-text').innerHTML =
+    (REFLECTIONS[topId] || '') +
+    '<br><br>' + clusterInsight;
 
   // Full breakdown grid
   const grid = document.getElementById('breakdown-grid');

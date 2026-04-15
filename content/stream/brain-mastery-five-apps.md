@@ -1,7 +1,7 @@
 ---
 title: "Brain Mastery: Five Apps, One Thesis"
 date: 2026-03-25
-draft: false
+draft: true
 type: stream
 description: "Clarity, Dojo, TasteBud, Quiltographer, Citizen — five apps built on one idea: AI should make human skills deeper, not replace them."
 tags: ["clarity", "dojo", "tastebud", "quiltographer", "citizen", "products", "thesis"]

@@ -1,7 +1,7 @@
 ---
 title: "First Revenue"
 date: 2026-03-24
-draft: false
+draft: true
 type: stream
 description: "Clarity Pro processed its first subscription. $4.99/month. The full pipeline works — from Oklahoma."
 tags: ["clarity", "revenue", "building-in-public", "stripe", "oklahoma"]
