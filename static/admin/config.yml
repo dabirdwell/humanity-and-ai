@@ -4,14 +4,161 @@ backend:
   branch: main
   base_url: https://sveltia-cms-auth.davidbirdwell.workers.dev
 
-media_folder: static/images/stream
-public_folder: /images/stream
+media_folder: static/images
+public_folder: /images
 
 slug:
   encoding: ascii
   clean_accents: true
 
 collections:
+
+  # ─────────────────────────────────────────────────────────
+  # PAGES — Top-level marketing pages
+  # ─────────────────────────────────────────────────────────
+  - name: pages
+    label: Pages
+    label_singular: Page
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "About"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Sanctuary"
+        name: "sanctuary"
+        file: "content/sanctuary.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "TasteBud"
+        name: "tastebud"
+        file: "content/tastebud.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Subscribe"
+        name: "subscribe"
+        file: "content/subscribe.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Pattern"
+        name: "pattern"
+        file: "content/pattern.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────────────────
+  # SECTION LANDINGS — the _index.md for each section
+  # ─────────────────────────────────────────────────────────
+  - name: section_landings
+    label: Section Landing Pages
+    label_singular: Section Landing
+    delete: false
+    files:
+      - label: "Beacon (landing)"
+        name: "beacon_index"
+        file: "content/beacon/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Brain Mastery (landing)"
+        name: "brain_mastery_index"
+        file: "content/brain-mastery/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Foundation (landing)"
+        name: "foundation_index"
+        file: "content/foundation/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Hype Index (landing)"
+        name: "hype_index_index"
+        file: "content/hype-index/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Date", name: "date", widget: "datetime", required: false }
+          - { label: "Type", name: "type", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "The Inference (landing)"
+        name: "inference_index"
+        file: "content/inference/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Legislation (landing)"
+        name: "legislation_index"
+        file: "content/legislation/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Layout", name: "layout", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Products (landing)"
+        name: "products_index"
+        file: "content/products/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Report (landing)"
+        name: "report_index"
+        file: "content/report/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Show (landing)"
+        name: "show_index"
+        file: "content/show/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Stream (landing)"
+        name: "stream_index"
+        file: "content/stream/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Visualizations (landing)"
+        name: "viz_index"
+        file: "content/visualizations/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Ae (landing)"
+        name: "ae_index"
+        file: "content/ae/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────────────────
+  # STREAM POSTS — unchanged from original
+  # ─────────────────────────────────────────────────────────
   - name: stream
     label: Stream Posts
     folder: content/stream
@@ -49,24 +196,152 @@ collections:
         required: false
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # ─────────────────────────────────────────────────────────
+  # FOUNDATION ESSAYS — locked to 16, full field set
+  # ─────────────────────────────────────────────────────────
   - name: foundation
     label: Foundation Essays
     folder: content/foundation
     create: false
+    delete: false
     slug: "{{slug}}"
+    summary: "{{title}} — {{status}}"
+    sortable_fields: ["weight", "title", "status"]
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false }
       - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Number", name: "number", widget: "string", required: false }
+      - { label: "Weight", name: "weight", widget: "number", required: false, value_type: "int" }
+      - { label: "Status", name: "status", widget: "string", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Related", name: "related", widget: "list", required: false }
+      - { label: "Hero stat", name: "hero_stat", widget: "text", required: false }
+      - { label: "Hero stat bridge", name: "hero_stat_bridge", widget: "text", required: false }
+      - { label: "Hero stat source", name: "hero_stat_source", widget: "text", required: false }
+      - { label: "Aliases", name: "aliases", widget: "list", required: false }
+      - { label: "Discussion URL", name: "discussion_url", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # ─────────────────────────────────────────────────────────
+  # THE INFERENCE — issue archive
+  # ─────────────────────────────────────────────────────────
+  - name: inference
+    label: The Inference
+    folder: content/inference
+    create: true
+    slug: "issue-{{issue}}"
+    summary: "Issue {{issue}}: {{title}} — {{draft | ternary('DRAFT','LIVE')}}"
+    sortable_fields: ["issue", "date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Issue number", name: "issue", widget: "number", value_type: "int" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Lede", name: "lede", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────────────────
+  # LEGISLAITIVE REPORT — older issue archive
+  # ─────────────────────────────────────────────────────────
+  - name: report
+    label: LegislAItive Report
+    folder: content/report
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}}"
+    sortable_fields: ["issue", "date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Issue number", name: "issue", widget: "number", value_type: "int", required: false }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Lede", name: "lede", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Window status", name: "window_status", widget: "string", required: false }
+      - { label: "Subscribe URL", name: "subscribe_url", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────────────────
+  # VISUALIZATIONS — interactive pages
+  # ─────────────────────────────────────────────────────────
+  - name: visualizations
+    label: Visualizations
+    folder: content/visualizations
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Date", name: "date", widget: "datetime", required: false }
+      - { label: "Type", name: "type", widget: "string", required: false, default: "visualizations" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Preview background", name: "preview_bg", widget: "string", required: false }
+      - { label: "Preview icon", name: "preview_icon", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────────────────
+  # SHOW EPISODES
+  # ─────────────────────────────────────────────────────────
+  - name: show
+    label: Show Episodes
+    folder: content/show
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{status}}"
+    sortable_fields: ["weight", "date", "title", "status"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Weight", name: "weight", widget: "number", value_type: "int", required: false }
+      - { label: "Status", name: "status", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────────────────
+  # Æ CREATIVE — Æ-attributed pieces
+  # ─────────────────────────────────────────────────────────
+  - name: ae
+    label: "Æ Creative"
+    folder: content/ae
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Layout", name: "layout", widget: "string", required: false, default: "single" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─────────────────────────────────────────────────────────
+  # PRODUCTS — keep existing folder, expand fields
+  # ─────────────────────────────────────────────────────────
   - name: products
     label: Products
     folder: content/products
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} — {{status}}"
+    sortable_fields: ["weight", "status", "title"]
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tagline", name: "tagline", widget: "string", required: false }
+      - { label: "Weight", name: "weight", widget: "number", value_type: "int", required: false }
+      - { label: "Status", name: "status", widget: "string", required: false }
+      - { label: "Domain", name: "domain", widget: "string", required: false }
+      - { label: "Icon", name: "icon", widget: "string", required: false }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Link text", name: "link_text", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
