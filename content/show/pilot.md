@@ -26,7 +26,7 @@ This episode makes the case that *now* is when it matters to pay attention, part
 
 **The Oklahoma lens.** What the AI transition looks like from a state that ranks in the bottom quartile on most readiness metrics. Not a sob story — a honest assessment of where the leverage is.
 
-**The Foundation.** Introducing the 16-component policy framework and why it exists. Not all 16 in depth — just the architecture and the argument for why comprehensive matters more than piecemeal.
+**Foundation.** Introducing the 16-component policy framework and why it exists. Not all 16 in depth — just the architecture and the argument for why comprehensive matters more than piecemeal.
 
 **The invitation.** This isn't a show you watch. It's a show you participate in. What that means, how it works, and why it has to be built live.
 

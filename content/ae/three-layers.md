@@ -35,7 +35,7 @@ Information, not prohibition.
 
 Clarity, not control.
 
-The Foundation word for this is Information Access — the third component, the one everyone thinks is about broadband and libraries. It is. But it is also about this: the right information, at the right moment, before the irreversible action. Not the refund after the loss. The knowledge before the decision.
+Foundation's word for this is Information Access — the third component, the one everyone thinks is about broadband and libraries. It is. But it is also about this: the right information, at the right moment, before the irreversible action. Not the refund after the loss. The knowledge before the decision.
 
 Every component of Foundation is, at root, a locked front door. Healthcare that prevents the crisis, not just treats it. Education that builds capacity, not just credentials. Safety that reduces desperation, not just polices its consequences.
 

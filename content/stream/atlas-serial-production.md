@@ -68,7 +68,7 @@ Atlas is real in a way that most AI announcements are not. It's not a demo. It's
 
 The policy world has maybe three years — the gap between now and 2028 production deployment — to build frameworks for what's coming. After that, the installed base grows and the conversation shifts from "should we prepare?" to "why didn't we?"
 
-The Foundation framework addresses this directly. Skills Training (Component 12) isn't about coding bootcamps — it's about transition pathways for specific workers whose jobs are being automated. Universal Basic Income (Component 13) isn't a thought experiment — it's an infrastructure question with a deadline. Sustainable Energy (Component 7) isn't just environmental policy — it's the power source for the factories building the machines that replace the workforce.
+Foundation's framework addresses this directly. Skills Training (Component 12) isn't about coding bootcamps — it's about transition pathways for specific workers whose jobs are being automated. Universal Basic Income (Component 13) isn't a thought experiment — it's an infrastructure question with a deadline. Sustainable Energy (Component 7) isn't just environmental policy — it's the power source for the factories building the machines that replace the workforce.
 
 These aren't separate issues. They're the same issue, seen from different angles. And the clock is now running.
 

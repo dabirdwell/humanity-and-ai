@@ -1,0 +1,72 @@
+backend:
+  name: github
+  repo: dabirdwell/humanity-and-ai
+  branch: main
+  base_url: https://sveltia-cms-auth.davidbirdwell.workers.dev
+
+media_folder: static/images/stream
+public_folder: /images/stream
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: stream
+    label: Stream Posts
+    folder: content/stream
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}} — {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ["date", "title", "draft", "type"]
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+      - label: Published
+        field: draft
+        pattern: false
+    view_groups:
+      - label: Status
+        field: draft
+      - label: Type
+        field: type
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options: ["policy", "research", "insight", "futurism", "tool", "community", "letter"]
+        default: "insight"
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - label: "Related"
+        name: "related"
+        widget: "list"
+        required: false
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: foundation
+    label: Foundation Essays
+    folder: content/foundation
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: products
+    label: Products
+    folder: content/products
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

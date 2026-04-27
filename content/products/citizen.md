@@ -23,7 +23,7 @@ Citizen is a civic engagement hub that connects the [Foundation](/foundation/) p
 
 ## Why It Exists
 
-The Foundation framework argues that democratic participation is a core component of citizenship. But participation requires skill and information that most people never get. Citizen closes that gap — connecting policy research to individual civic power.
+Foundation's framework argues that democratic participation is a core component of citizenship. But participation requires skill and information that most people never get. Citizen closes that gap — connecting policy research to individual civic power.
 
 ## Status
 
