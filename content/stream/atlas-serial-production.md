@@ -48,7 +48,7 @@ What we have is a handful of state-level AI bills, most focused on deepfakes and
 
 ## What Oklahoma Should Be Thinking About
 
-Oklahoma has 14,000 manufacturing jobs and a workforce that skews toward exactly the kind of physical labor that Atlas is designed to replace. The state also has something most states don't: a legitimate shot at the energy infrastructure that robot factories require.
+Oklahoma has over 141,000 manufacturing jobs and a workforce that skews toward exactly the kind of physical labor that Atlas is designed to replace. The state also has something most states don't: a legitimate shot at the energy infrastructure that robot factories require.
 
 The same $26 billion Hyundai is investing in American manufacturing needs power. Lots of it. States that can offer reliable, affordable energy — especially from non-fossil sources that qualify for federal incentives — will attract the next wave of advanced manufacturing. Oklahoma's 22,000 abandoned oil wells represent potential geothermal capacity that could power exactly this kind of industrial buildout.
 
