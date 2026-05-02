@@ -28,6 +28,7 @@ collections:
         file: "content/about.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Sanctuary"
@@ -35,6 +36,7 @@ collections:
         file: "content/sanctuary.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "TasteBud"
@@ -42,6 +44,7 @@ collections:
         file: "content/tastebud.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Subscribe"
@@ -49,12 +52,14 @@ collections:
         file: "content/subscribe.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Pattern"
         name: "pattern"
         file: "content/pattern.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false }
           - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
