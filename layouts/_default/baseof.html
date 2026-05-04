@@ -154,11 +154,40 @@
           setTimeout(function() {
             overlay.classList.add('visible');
             if (researchLink) researchLink.classList.add('nav-pulse');
+
+            // Create flying arrow
+            var arrow = document.createElement('div');
+            arrow.className = 'welcome-arrow-animated';
+            arrow.textContent = '↑';
+            document.body.appendChild(arrow);
+
+            // Position at the hint text location
+            var hint = document.querySelector('.welcome-hint');
+            if (hint && researchLink) {
+              var hintRect = hint.getBoundingClientRect();
+              arrow.style.top = (hintRect.top - 30) + 'px';
+              arrow.style.left = (hintRect.left + hintRect.width / 2 - 10) + 'px';
+
+              // After a beat, fly to the Research link
+              setTimeout(function() {
+                var linkRect = researchLink.getBoundingClientRect();
+                arrow.classList.add('flying');
+                arrow.style.top = (linkRect.bottom + 4) + 'px';
+                arrow.style.left = (linkRect.left + linkRect.width / 2 - 8) + 'px';
+
+                // After arriving, pulse in place
+                setTimeout(function() {
+                  arrow.classList.add('arrived');
+                }, 1300);
+              }, 800);
+            }
           }, 1500);
 
           function closeWelcome() {
             overlay.style.opacity = '0';
             setTimeout(function() { overlay.style.display = 'none'; }, 400);
+            var flyingArrow = document.querySelector('.welcome-arrow-animated');
+            if (flyingArrow) flyingArrow.remove();
             localStorage.setItem('hai_welcomed', '1');
             setTimeout(function() {
               if (researchLink) researchLink.classList.remove('nav-pulse');
