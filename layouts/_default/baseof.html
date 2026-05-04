@@ -100,6 +100,24 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   {{ partial "header.html" . }}
 
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <div class="welcome-card">
+      <h2>Welcome to Humanity &amp; AI</h2>
+      <div class="welcome-halves">
+        <div class="welcome-half">
+          <span class="welcome-label">This site</span>
+          <p>Policy, tools, fiction, and the full vision of a futurism company.</p>
+        </div>
+        <div class="welcome-half">
+          <span class="welcome-label welcome-label--research">Research</span>
+          <p>Consciousness studies, behavioral probes, and the Structured Emergence project.</p>
+        </div>
+      </div>
+      <p class="welcome-hint">The <strong>Research</strong> link above takes you there anytime. <span class="welcome-arrow">↑</span></p>
+      <button class="welcome-dismiss" id="welcomeDismiss">Got it</button>
+    </div>
+  </div>
+
   <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
@@ -121,6 +139,38 @@
 
     // Type filter
     document.addEventListener('DOMContentLoaded', function() {
+
+      // First-visit welcome overlay
+      if (!localStorage.getItem('hai_welcomed')) {
+        var overlay = document.getElementById('welcomeOverlay');
+        var dismiss = document.getElementById('welcomeDismiss');
+        var researchLink = null;
+
+        document.querySelectorAll('.site-nav a').forEach(function(a) {
+          if (a.textContent.trim() === 'Research') researchLink = a;
+        });
+
+        if (overlay && dismiss) {
+          setTimeout(function() {
+            overlay.classList.add('visible');
+            if (researchLink) researchLink.classList.add('nav-pulse');
+          }, 1500);
+
+          function closeWelcome() {
+            overlay.style.opacity = '0';
+            setTimeout(function() { overlay.style.display = 'none'; }, 400);
+            localStorage.setItem('hai_welcomed', '1');
+            setTimeout(function() {
+              if (researchLink) researchLink.classList.remove('nav-pulse');
+            }, 5000);
+          }
+
+          dismiss.addEventListener('click', closeWelcome);
+          overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeWelcome();
+          });
+        }
+      }
 
       const filters = document.getElementById('typeFilters');
       if (!filters) return;

@@ -2508,8 +2508,8 @@ a:hover { color: var(--accent-primary); }
 
 /* Research nav link pulse */
 @keyframes navPulse {
-  0%, 100% { color: #ff6b35; text-shadow: 0 0 6px rgba(255, 107, 53, 0.3); }
-  50% { color: #ffaa77; text-shadow: 0 0 16px rgba(255, 107, 53, 0.7), 0 0 32px rgba(255, 107, 53, 0.3); }
+  0%, 100% { color: #C8964E; text-shadow: 0 0 6px rgba(200, 150, 78, 0.3); }
+  50% { color: #E8C88A; text-shadow: 0 0 16px rgba(200, 150, 78, 0.7), 0 0 32px rgba(200, 150, 78, 0.3); }
 }
 
 .site-nav a.nav-pulse {
