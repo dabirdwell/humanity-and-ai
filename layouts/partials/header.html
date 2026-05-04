@@ -3,7 +3,7 @@
     <a href="/" class="site-logo">Humanity <span>&</span> AI</a>
     <nav class="site-nav" aria-label="Main navigation">
       {{ range .Site.Params.nav.links }}
-        <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
+        <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}{{ with .class }} class="{{ . }}"{{ end }}>{{ .name }}</a>
       {{ end }}
     </nav>
     <a href="/search/" class="search-toggle" aria-label="Search">

@@ -32,6 +32,7 @@ summaryLength = 40
     name = "Research"
     url = "https://structuredemergence.com"
     external = true
+    class = "nav-pulse"
   [[params.nav.links]]
     name = "About"
     url = "/about/"
