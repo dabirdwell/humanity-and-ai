@@ -1,6 +1,15 @@
 ---
+title: "Clarity"
+description: "A calmer reading experience built with dyslexia expertise."
+weight: 1
+status: "live"
+tagline: "A calmer reading experience built with dyslexia expertise."
+domain: "Reading"
+link: "https://clarity.humanityandai.com"
+link_text: "Open Clarity →"
+icon: "📖"
+---
 
-## title: "Clarity" description: "A calmer reading experience built with dyslexia expertise." weight: 1 status: "live" tagline: "A calmer reading experience built with dyslexia expertise." domain: "Reading" link: "<https://clarity.humanityandai.com>" link_text: "Open Clarity →" icon: "📖"
 ## What Is Clarity?
 
 Clarity is a calmer reading experience built with dyslexia expertise. Not a summarizer — a reading environment designed around how people actually process text, especially those who've been told they're bad at it.

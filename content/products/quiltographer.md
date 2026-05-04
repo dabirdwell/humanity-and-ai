@@ -1,13 +1,12 @@
 ---
 title: "Quiltographer"
-draft: true
-description: "AI-powered quilting pattern parser and assistant."
-weight: 3
-status: "in-development"
-tagline: "AI-powered quilting pattern parser and assistant."
+description: "Your AI quilting companion — upload a pattern, get step-by-step guidance."
+weight: 2
+status: "live"
+tagline: "Your AI quilting companion — upload a pattern, get step-by-step guidance."
 domain: "Quilting"
-link: "/products/"
-link_text: "Coming soon"
+link: "https://quiltographer.vercel.app"
+link_text: "Try Quiltographer →"
 icon: "🧵"
 ---
 
@@ -27,6 +26,6 @@ Most quilting software was built by software people, not quilt people. Quiltogra
 
 ## Status
 
-**Live.** Available now at [quiltographer-app.vercel.app](https://quiltographer-app.vercel.app). Try the [Pattern Reader](https://quiltographer-app.vercel.app/reader) or explore the [Design Studio](https://quiltographer-app.vercel.app/design).
+**Live.** Available now at [quiltographer.vercel.app](https://quiltographer.vercel.app). Try the [Pattern Reader](https://quiltographer.vercel.app/reader) or explore the [Design Studio](https://quiltographer.vercel.app/design).
 
 *Built by [Humanity and AI LLC](/) — tools for the AI transition.*

@@ -1,95 +1,40 @@
 ---
 title: "Brain Mastery"
-draft: true
-description: "Five tools. One journey. Your mind, amplified."
+description: "AI tools built around how people actually think. Reading, creating, reasoning, cooking, civic life."
 ---
 
-<div class="bm-pipeline-viz">
-  <span class="bm-pip">Clarity</span>
-  <span class="bm-pip-arrow">→</span>
-  <span class="bm-pip">Dojo</span>
-  <span class="bm-pip-arrow">→</span>
-  <span class="bm-pip">TasteBud</span>
-  <span class="bm-pip-arrow">→</span>
-  <span class="bm-pip">Quiltographer</span>
-  <span class="bm-pip-arrow">→</span>
-  <span class="bm-pip">Citizen</span>
-</div>
-
-<div class="bm-label-row">
-  <span>Read</span>
-  <span>Think</span>
-  <span>Taste</span>
-  <span>Create</span>
-  <span>Participate</span>
-</div>
+Software that amplifies how humans actually think — not chatbots, not productivity tools. Each one is built around a specific domain of human mastery.
 
 ---
 
-## Clarity
+## Live Now
+
+### Clarity — Reading
 
 **A calmer reading experience, built with dyslexia expertise.**
 
 Clarity strips away the noise and rebuilds how text reaches your brain. Adjustable fonts, pacing controls, comprehension scaffolding — all informed by decades of reading research and real dyslexia expertise. Not a summary tool. A reading tool.
 
-<span class="pipeline-status live">Live — First Revenue March 2026</span>
+<span class="pipeline-status live">Live — Free + $4.99/mo Pro</span>
 
 <a href="https://clarity.humanityandai.com" class="bm-app-link">Open Clarity →</a>
 
 ---
 
-## Dojo
+## In Testing
 
-**Train your thinking. Spot fallacies, evaluate sources, build arguments.**
+### Quiltographer — Pattern Reading
 
-Dojo is a critical thinking gym. It presents claims, asks you to evaluate them, and adapts difficulty based on how you reason — not just whether you get the right answer. Fallacy recognition, source evaluation, argument mapping. The reps your mind never got.
+**Your AI quilting companion. Upload a pattern, get step-by-step guidance.**
 
-<span class="pipeline-status coming-soon">In Development</span>
+Quiltographer reads quilting pattern PDFs and breaks them into clear, step-by-step instructions — extracting cutting lists, piecing sequences, fabric requirements, and assembly order. Currently in closed beta testing with quilters.
 
-<a href="mailto:david@humanityandai.com?subject=Dojo%20Waitlist" class="bm-app-link">Join Waitlist →</a>
-
----
-
-## TasteBud
-
-**Develop your palate. Flavor science meets cooking confidence.**
-
-TasteBud gamifies culinary education. 3D flavor visualization, guided tasting exercises, AI-mentored learning paths. It doesn't tell you what to cook — it teaches you *why* flavors work together so you can improvise with confidence.
-
-<span class="pipeline-status coming-soon">In Development</span>
-
-<a href="mailto:david@humanityandai.com?subject=TasteBud%20Waitlist" class="bm-app-link">Join Waitlist →</a>
+<span class="pipeline-status beta">Closed Beta</span>
 
 ---
 
-## Quiltographer
+## What's Coming
 
-**Read any quilt pattern. AI-powered pattern parsing.**
+We're building toward a full pipeline of mastery tools — from reading to civic participation. Clarity is the foundation. Next up: tools for critical thinking and civic engagement. We'll announce them when they're ready to use, not before.
 
-Upload a pattern, and Quiltographer breaks it down: fabric requirements, cutting instructions, assembly order, seam allowances. It understands grain, color placement, and the hundred small decisions quilters make that software usually ignores.
-
-<span class="pipeline-status coming-soon">Prototype</span>
-
-<a href="mailto:david@humanityandai.com?subject=Quiltographer%20Waitlist" class="bm-app-link">Join Waitlist →</a>
-
----
-
-## Citizen
-
-**Your civic hub. Foundation status, Guardian AI, contribute.**
-
-Citizen connects you to the work of self-governance. Track legislation, see how your representatives vote, find public comment windows, and engage with the Foundation's 16 components of what membership in a society should mean. Guardian AI watches the policy landscape so you don't have to. Citizen is free — you don't charge people to participate in democracy.
-
-<span class="pipeline-status coming-soon">Architecture Complete</span>
-
-<a href="mailto:david@humanityandai.com?subject=Citizen%20Waitlist" class="bm-app-link">Join Waitlist →</a>
-
----
-
-## Philosophy
-
-These are not chatbots. They are tools that work alongside you to create, learn, and play. The AI is invisible infrastructure — you never talk to it, it just makes the experience better.
-
-Every Brain Mastery app starts from the same principle: technology should amplify how humans actually think, not flatten human intelligence into something machines find convenient. The progression — read, think, taste, create, participate — isn't accidental. It's a pipeline from comprehension to citizenship.
-
-Civic infrastructure is free. Personal development tools are priced fairly. Not productivity tools. Mastery tools.
+The philosophy: AI should be invisible infrastructure that amplifies how you actually think in a specific domain. You never talk to it. It just makes the experience better.

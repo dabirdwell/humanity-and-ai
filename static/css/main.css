@@ -1,24 +1,27 @@
 /* ========================================
-   HUMANITY AND AI — Main Stylesheet
-   Dark. Alive. Future-forward.
+   HUMANITY AND AI — A Futurism Company
+   Warm earth. Technological depth.
+   Derived from the business card: gold → sandstone → steel-lavender.
    ======================================== */
 
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-card: #16161f;
-  --bg-card-hover: #1c1c28;
-  --text-primary: #e8e8ed;
-  --text-secondary: #9898a8;
-  --text-muted: #68687a;
-  --accent-primary: #ff6b35;    /* Phoenix orange */
-  --accent-secondary: #4ecdc4;  /* Teal/emergence */
-  --accent-tertiary: #c084fc;   /* Purple/creative */
-  --accent-warm: #fbbf24;       /* Gold/insight */
-  --border-subtle: rgba(255,255,255,0.06);
-  --border-hover: rgba(255,255,255,0.12);
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Space Grotesk', var(--font-body);
+  --bg-primary: #0A0A0C;
+  --bg-secondary: #111113;
+  --bg-card: #161618;
+  --bg-card-hover: #1C1C1F;
+  --text-primary: #F0EDE6;
+  --text-secondary: #9B978E;
+  --text-muted: #6B6760;
+  --accent-primary: #C8964E;    /* Gold — brand primary */
+  --accent-secondary: #8B9DBF;  /* Steel lavender — technology */
+  --accent-tertiary: #BF6745;   /* Terracotta — energy, warmth */
+  --accent-warm: #E8C88A;       /* Light gold — highlights */
+  --accent-sage: #5A8A7A;       /* Sage — civic, growth */
+  --accent-sandstone: #B8956A;  /* Sandstone — the bridge */
+  --border-subtle: rgba(240,237,230,0.06);
+  --border-hover: rgba(240,237,230,0.12);
+  --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-display: 'Syne', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --max-width: 860px;
   --max-width-wide: 1100px;
@@ -52,22 +55,22 @@ button:focus-visible,
 
 /* ---- Light Theme ---- */
 [data-theme="light"] {
-  --bg-primary: #E8E8ED;
-  --bg-secondary: #DDDDE4;
-  --bg-card: #F2F2F5;
-  --bg-card-hover: #F8F8FA;
-  --text-primary: #1a1a2e;
-  --text-secondary: #3a3a50;
-  --text-muted: #5a5a6e;
-  --accent-primary: #d04e1e;
-  --accent-secondary: #238a82;
-  --accent-tertiary: #8a4ad0;
-  --accent-warm: #b88a10;
-  --border-subtle: rgba(0, 0, 0, 0.10);
-  --border-hover: rgba(0, 0, 0, 0.20);
+  --bg-primary: #F0EDE6;
+  --bg-secondary: #E8E4DC;
+  --bg-card: #F5F2EC;
+  --bg-card-hover: #FAF8F4;
+  --text-primary: #1A1412;
+  --text-secondary: #3D342C;
+  --text-muted: #6B6560;
+  --accent-primary: #8B6834;
+  --accent-secondary: #5A7094;
+  --accent-tertiary: #8B4A2E;
+  --accent-warm: #A07830;
+  --border-subtle: rgba(26, 20, 18, 0.10);
+  --border-hover: rgba(26, 20, 18, 0.20);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400&display=swap');
 
 /* Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -168,30 +171,35 @@ a:hover { color: var(--accent-primary); }
 }
 
 .hero-eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 0.75rem;
-  letter-spacing: 3px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent-primary);
   margin-bottom: 1.5rem;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #C8964E 0%, #B8956A 45%, #8B9DBF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-pitch {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  color: var(--accent-secondary);
-  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  font-weight: 300;
   margin-bottom: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.8;
+  font-family: var(--font-body);
 }
 
 .hero-sub {
@@ -216,20 +224,20 @@ a:hover { color: var(--accent-primary); }
 }
 
 .hero-cta:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: var(--accent-secondary);
-  color: var(--accent-secondary);
+  background: rgba(200,150,78,0.1);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
   transform: translateY(-2px);
 }
 
 /* Hero stays dark in all themes */
-[data-theme="light"] .hero { background: #000; }
-[data-theme="light"] .hero h1 { color: #e8e8ed; }
-[data-theme="light"] .hero-pitch { color: #4ecdc4; }
-[data-theme="light"] .hero-eyebrow { color: #68687a; }
-[data-theme="light"] .hero-sub { color: #68687a; }
-[data-theme="light"] .hero-cta { color: #e8e8ed; border-color: rgba(255,255,255,0.12); }
-[data-theme="light"] .hero-cta:hover { color: #4ecdc4; border-color: #4ecdc4; }
+[data-theme="light"] .hero { background: #0A0A0C; }
+[data-theme="light"] .hero h1 { -webkit-text-fill-color: transparent; }
+[data-theme="light"] .hero-pitch { color: #9B978E; }
+[data-theme="light"] .hero-eyebrow { color: #C8964E; }
+[data-theme="light"] .hero-sub { color: #6B6760; }
+[data-theme="light"] .hero-cta { color: #F0EDE6; border-color: rgba(240,237,230,0.12); }
+[data-theme="light"] .hero-cta:hover { color: #C8964E; border-color: #C8964E; }
 [data-theme="light"] .hero-overlay { background: linear-gradient(to bottom, transparent, #E8E8ED); }
 
 /* ---- STREAM / FEED ---- */
@@ -3660,7 +3668,81 @@ a:hover { color: var(--accent-primary); }
 
 /* ── Products Grid ───────────────────────────── */
 .hp-products {
-  background: linear-gradient(180deg, rgba(78,205,196,0.03) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(200,150,78,0.03) 0%, transparent 100%);
+}
+
+/* Brain Mastery App Cards */
+.hp-bm-apps {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.hp-bm-app {
+  flex: 1;
+  min-width: 120px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.hp-bm-live {
+  cursor: pointer;
+}
+.hp-bm-live:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.hp-bm-coming {
+  opacity: 0.5;
+}
+.hp-bm-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.hp-bm-name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.hp-bm-domain {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+.hp-bm-status {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+.hp-bm-live .hp-bm-status {
+  color: var(--accent-sage, #5A8A7A);
+}
+.hp-bm-coming .hp-bm-status {
+  color: var(--text-muted);
+}
+@media (max-width: 700px) {
+  .hp-bm-apps {
+    flex-wrap: wrap;
+  }
+  .hp-bm-app {
+    min-width: calc(50% - 0.5rem);
+    flex: unset;
+  }
 }
 
 .hp-product-grid {
@@ -3796,9 +3878,72 @@ a.hp-fdn-item:hover {
   opacity: 0.85;
 }
 
+/* ── Facets Grid ─────────────────────────────── */
+.hp-facets {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+.hp-facets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (max-width: 700px) {
+  .hp-facets-grid { grid-template-columns: 1fr; }
+}
+.hp-facet {
+  display: block;
+  padding: 1.75rem;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.hp-facet::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--facet-start), var(--facet-end));
+}
+.hp-facet:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.hp-facet-cat {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.hp-facet-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+.hp-facet-desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 /* ── Foundation Mini-Grid ────────────────────── */
 .hp-foundation {
-  background: linear-gradient(180deg, rgba(255,107,53,0.03) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(200,150,78,0.03) 0%, transparent 100%);
 }
 
 .hp-foundation-grid {
