@@ -2,7 +2,7 @@
 title: "Quiltographer"
 description: "Your AI quilting companion — upload a pattern, get step-by-step guidance."
 weight: 2
-status: "live"
+status: "beta"
 tagline: "Your AI quilting companion — upload a pattern, get step-by-step guidance."
 domain: "Quilting"
 link: "https://quiltographer.vercel.app"

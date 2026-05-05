@@ -1,9 +1,11 @@
 ---
 title: "Products"
-description: "Brain Mastery apps — software that amplifies how humans actually think. Reading, critical thinking, culinary arts, quilting, and civic engagement."
+description: "Software tools from Humanity and AI LLC."
 layout: "list"
 ---
 
-Brain Mastery is the product line of [Humanity and AI LLC](/about/). Every app starts from the same principle: technology should work alongside how humans actually think, not flatten human intelligence into something machines find convenient.
+Tools we've built and shipped. Each one starts from the same principle: technology should work alongside how humans actually think.
 
-These aren't productivity tools. They're mastery tools — built to deepen how you read, reason, cook, create, and participate.
+For the Brain Mastery app series, see [Brain Mastery](/brain-mastery/).
+
+For our open source tools, see [Gifio](https://dabirdwell.github.io/gifio/) — a free, private GIF maker that runs entirely in your browser.
