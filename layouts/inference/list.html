@@ -4,29 +4,21 @@
     <p class="inference-label">Humanity and AI</p>
     <h1>The Inference</h1>
     <p class="inference-archive-sub">
-      A policy intelligence brief tracking how Oklahoma and America are
-      governing the AI transition.
+      AI, energy, and long-horizon policy for Oklahoma. Weekly intelligence for decision-makers navigating the AI transition.
     </p>
   </header>
 
   <div class="inference-notify">
-    <p class="inference-notify-prompt">Want to know when the next issue drops?</p>
-    <form
-      action="https://buttondown.com/api/emails/embed-subscribe/the-inference"
-      method="post"
-      class="inference-notify-form"
-    >
-      <input
-        type="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-        aria-label="Email address"
-      />
-      <button type="submit" class="inference-notify-btn">Notify me</button>
-    </form>
-    <p class="inference-notify-fine">No spam. Unsubscribe anytime.</p>
+    <p class="inference-notify-prompt">Subscribe on Substack</p>
+    <p class="inference-notify-fine">Free subscribers get blog posts and research updates. Paid subscribers ($5.55/mo) get The Inference delivered weekly.</p>
+    <a href="https://humanityandaiofficial.substack.com" class="inference-notify-btn" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;text-align:center;">Subscribe →</a>
   </div>
+
+  {{ if .Content }}
+  <div class="about-content">
+    {{ .Content }}
+  </div>
+  {{ end }}
 
   <div class="inference-issue-list">
     {{ range (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
