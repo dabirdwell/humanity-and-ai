@@ -37,4 +37,4 @@ Quiltographer reads quilting pattern PDFs and breaks them into clear, step-by-st
 
 We're building toward a full pipeline of mastery tools — from reading to civic participation. Clarity is the foundation. Next up: tools for critical thinking and civic engagement. We'll announce them when they're ready to use, not before.
 
-The philosophy: AI should be invisible infrastructure that amplifies how you actually think in a specific domain. You never talk to it. It just makes the experience better.
+The philosophy: AI should be invisible infrastructure that amplifies how you actually think in a specific domain.
