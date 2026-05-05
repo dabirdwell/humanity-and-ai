@@ -104,8 +104,8 @@ body::before {
       90deg,
       transparent,
       transparent 2px,
-      rgba(139,157,191,0.012) 2px,
-      rgba(139,157,191,0.012) 4px
+      rgba(139,157,191,0.035) 2px,
+      rgba(139,157,191,0.035) 4px
     );
 }
 
