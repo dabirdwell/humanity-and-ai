@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription Drift</title>
+<style>
+  * { margin: 0; padding: 0; }
+  body { background: #0e0d0b; overflow: hidden; cursor: crosshair; }
+  canvas { display: block; }
+  #seed {
+    position: fixed; top: 12px; right: 16px;
+    font-family: 'Georgia', serif; font-size: 10px;
+    color: rgba(201,168,76,0.12); letter-spacing: 2px;
+    pointer-events: none;
+  }
+  #info {
+    position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%);
+    font-family: 'Georgia', serif; font-size: 10px;
+    color: rgba(201,168,76,0.18); letter-spacing: 3px;
+    text-transform: uppercase; pointer-events: none;
+    transition: opacity 8s; text-align: center;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<div id="seed"></div>
+<div id="info">click to scatter · space to recast</div>
+<script>
+// ═══════════════════════════════════════════════════
+// INSCRIPTION DRIFT v2
+// Generative runic art — particles drift through
+// noise fields and settle into Elder Futhark
+// attractor geometries. Gold accumulates into
+// grooves. Time becomes visible as patina.
+// ═══════════════════════════════════════════════════
+
+let particles = [];
+let runeFields = [];
+let trailLayer, accumLayer, ghostLayer;
+let seed;
+
+const N_PARTICLES = 600;
+const ACCUMULATION_RATE = 0.35;
+
+// ─── Rune definitions ───
+// Each rune: array of line segments [x1,y1,x2,y2] in 0-1 space
+// Stave height ~1.4x width for proper proportions
+const RUNES = {
+  ansuz:  [[0.4,0,0.4,1], [0.4,0.22,0.72,0.42], [0.4,0.42,0.72,0.62]],
+  gebo:   [[0.15,0.15,0.85,0.85], [0.85,0.15,0.15,0.85]],
+  fehu:   [[0.3,0,0.3,1], [0.3,0.12,0.78,0.02], [0.3,0.36,0.72,0.26]],
+  raido:  [[0.32,0,0.32,1], [0.32,0.08,0.72,0.22], [0.72,0.22,0.32,0.44]],
+  kenaz:  [[0.3,0,0.3,1], [0.3,0.15,0.72,0.42], [0.72,0.42,0.3,0.68]],
+  wunjo:  [[0.35,0,0.35,1], [0.35,0,0.72,0.15], [0.72,0.15,0.72,0.42]],
+  hagalaz:[[0.28,0,0.28,1], [0.72,0,0.72,1], [0.28,0.62,0.72,0.38]],
+  othala: [[0.3,1,0.3,0.42], [0.7,1,0.7,0.42], [0.3,0.42,0.5,0.12], [0.7,0.42,0.5,0.12], [0.12,0.72,0.3,0.55], [0.88,0.72,0.7,0.55]],
+};
+const RUNE_KEYS = Object.keys(RUNES);
+
+// ─── Attractor field from rune geometry ───
+function createRuneField(cx, cy, size, runeKey, rotation) {
+  const lines = RUNES[runeKey];
+  const points = [];
+  const cos_r = Math.cos(rotation), sin_r = Math.sin(rotation);
+
+  for (const seg of lines) {
+    // Dense sampling along each line segment
+    const steps = Math.floor(size * 0.15) + 6;
+    for (let i = 0; i <= steps; i++) {
+      const t = i / steps;
+      let lx = seg[0] + (seg[2] - seg[0]) * t - 0.5;
+      let ly = (seg[1] + (seg[3] - seg[1]) * t - 0.5) * 1.35;
+      // Rotate
+      const rx = lx * cos_r - ly * sin_r;
+      const ry = lx * sin_r + ly * cos_r;
+      points.push({
+        x: cx + rx * size,
+        y: cy + ry * size,
+        strength: 0.5 + Math.random() * 0.3,
+      });
+    }
+  }
+
+  return {
+    cx, cy, size, runeKey, rotation, points,
+    pullRadius: size * 0.55,
+    settleRadius: size * 0.06,
+  };
+}
+
+// ─── Ghost rune drawing ───
+function drawGhostRune(g, field) {
+  const lines = RUNES[field.runeKey];
+  const cos_r = Math.cos(field.rotation), sin_r = Math.sin(field.rotation);
+  g.stroke(201, 168, 76, 5);
+  g.strokeWeight(1.2);
+  g.noFill();
+
+  for (const seg of lines) {
+    let x1 = (seg[0] - 0.5), y1 = (seg[1] - 0.5) * 1.35;
+    let x2 = (seg[2] - 0.5), y2 = (seg[3] - 0.5) * 1.35;
+    const rx1 = x1 * cos_r - y1 * sin_r, ry1 = x1 * sin_r + y1 * cos_r;
+    const rx2 = x2 * cos_r - y2 * sin_r, ry2 = x2 * sin_r + y2 * cos_r;
+    g.line(
+      field.cx + rx1 * field.size, field.cy + ry1 * field.size,
+      field.cx + rx2 * field.size, field.cy + ry2 * field.size
+    );
+  }
+}
+
+// ─── Ogham edge marks ───
+let oghamMarks = [];
+function initOgham() {
+  oghamMarks = [];
+  const sp = 28;
+  // Top and bottom
+  for (let x = sp; x < width - sp; x += sp) {
+    const count = Math.floor(noise(x * 0.02) * 4) + 1;
+    const h = 5 + noise(x * 0.01, 0.5) * 10;
+    for (let i = 0; i < count; i++) {
+      oghamMarks.push({ x1: x + i * 3, y1: 6, x2: x + i * 3, y2: 6 + h, drawn: false, frame: Math.floor(random(300)) });
+      oghamMarks.push({ x1: x + i * 3, y1: height - 6, x2: x + i * 3, y2: height - 6 - h, drawn: false, frame: Math.floor(random(300)) });
+    }
+  }
+  // Left and right
+  for (let y = sp; y < height - sp; y += sp) {
+    const count = Math.floor(noise(y * 0.02, 100) * 4) + 1;
+    const w = 5 + noise(y * 0.01, 50) * 10;
+    for (let i = 0; i < count; i++) {
+      oghamMarks.push({ x1: 6, y1: y + i * 3, x2: 6 + w, y2: y + i * 3, drawn: false, frame: Math.floor(random(300)) });
+      oghamMarks.push({ x1: width - 6, y1: y + i * 3, x2: width - 6 - w, y2: y + i * 3, drawn: false, frame: Math.floor(random(300)) });
+    }
+  }
+}
+
+// ─── Particle ───
+function spawnParticle() {
+  let x, y;
+  if (random() < 0.65) {
+    const side = floor(random(4));
+    if (side === 0) { x = random(width); y = random(-40, -5); }
+    else if (side === 1) { x = random(width + 5, width + 40); y = random(height); }
+    else if (side === 2) { x = random(width); y = random(height + 5, height + 40); }
+    else { x = random(-40, -5); y = random(height); }
+  } else {
+    x = random(width); y = random(height);
+  }
+  return {
+    x, y, px: x, py: y,
+    vx: random(-0.2, 0.2), vy: random(-0.2, 0.2),
+    life: random(300, 1200),
+    age: 0,
+    brightness: random(0.4, 1.0),
+    size: random(0.4, 1.6),
+    settling: false,
+    deposits: 0,
+  };
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  pixelDensity(1);
+  seed = floor(random(99999));
+  noiseSeed(seed);
+  randomSeed(seed);
+  document.getElementById('seed').textContent = 'seed ' + seed;
+
+  trailLayer = createGraphics(width, height);
+  accumLayer = createGraphics(width, height);
+  ghostLayer = createGraphics(width, height);
+  trailLayer.background(14, 13, 11);
+  accumLayer.clear();
+  ghostLayer.clear();
+
+  initScene();
+}
+
+function initScene() {
+  runeFields = [];
+  const count = floor(random(3, 6));
+  const margin = min(width, height) * 0.18;
+  const baseSize = min(width, height) * 0.14;
+
+  // Place runes with spacing
+  let attempts = 0;
+  while (runeFields.length < count && attempts < 100) {
+    const rx = random(margin, width - margin);
+    const ry = random(margin, height - margin);
+    const sz = baseSize * random(0.7, 1.3);
+    const rot = random(-0.12, 0.12);
+
+    // Check spacing
+    let tooClose = false;
+    for (const f of runeFields) {
+      if (dist(rx, ry, f.cx, f.cy) < (sz + f.size) * 0.7) { tooClose = true; break; }
+    }
+    if (!tooClose) {
+      const key = RUNE_KEYS[floor(random(RUNE_KEYS.length))];
+      runeFields.push(createRuneField(rx, ry, sz, key, rot));
+    }
+    attempts++;
+  }
+
+  // Draw ghost runes
+  ghostLayer.clear();
+  for (const field of runeFields) {
+    drawGhostRune(ghostLayer, field);
+  }
+
+  // Init ogham
+  initOgham();
+
+  // Init particles
+  particles = [];
+  for (let i = 0; i < N_PARTICLES; i++) particles.push(spawnParticle());
+}
+
+function draw() {
+  const t = frameCount * 0.0008;
+
+  // Slow fade on trail layer (recent paths)
+  trailLayer.noStroke();
+  trailLayer.fill(14, 13, 11, 4);
+  trailLayer.rect(0, 0, width, height);
+
+  // Update and draw particles
+  for (let p of particles) {
+    p.px = p.x; p.py = p.y;
+
+    // Noise field
+    const n = noise(p.x * 0.0025, p.y * 0.0025, t);
+    const angle = n * TWO_PI * 2.8;
+    p.vx += cos(angle) * 0.32;
+    p.vy += sin(angle) * 0.32;
+
+    // Attractor forces
+    let nearestDist = Infinity;
+    let isNearAttractor = false;
+
+    for (const field of runeFields) {
+      const fdist = dist(p.x, p.y, field.cx, field.cy);
+      if (fdist > field.pullRadius * 2.5) continue;
+
+      for (const pt of field.points) {
+        const dx = pt.x - p.x, dy = pt.y - p.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < field.pullRadius && d > 0.5) {
+          const falloff = 1 - d / field.pullRadius;
+          const force = pt.strength * falloff * falloff * 0.12;
+          p.vx += (dx / d) * force;
+          p.vy += (dy / d) * force;
+
+          if (d < nearestDist) nearestDist = d;
+          if (d < field.settleRadius) isNearAttractor = true;
+        }
+      }
+    }
+
+    // Damping — stronger near attractors
+    const damp = isNearAttractor ? 0.92 : 0.975;
+    p.vx *= damp;
+    p.vy *= damp;
+
+    p.x += p.vx;
+    p.y += p.vy;
+    p.age++;
+
+    const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+    p.settling = isNearAttractor && speed < 0.4;
+
+    // ── Draw on trail layer (recent, fading) ──
+    let alpha, r, g, b, sw;
+    const lifeRatio = 1 - p.age / p.life;
+
+    if (p.settling) {
+      r = 201; g = 168; b = 76;
+      alpha = p.brightness * 0.7 * lifeRatio;
+      sw = p.size * 1.4;
+    } else if (speed > 1.2) {
+      r = 200; g = 175; b = 100;
+      alpha = p.brightness * 0.25 * lifeRatio;
+      sw = p.size * 0.5;
+    } else {
+      r = 175; g = 148; b = 72;
+      alpha = p.brightness * 0.4 * lifeRatio;
+      sw = p.size * 0.7;
+    }
+
+    trailLayer.stroke(r, g, b, alpha * 255);
+    trailLayer.strokeWeight(sw);
+    trailLayer.line(p.px, p.py, p.x, p.y);
+
+    // ── Deposit on accumulation layer (permanent) ──
+    if (p.settling) {
+      p.deposits++;
+      const accAlpha = ACCUMULATION_RATE * p.brightness;
+
+      // Gold → green patina shift based on local density
+      if (p.deposits > 80) {
+        // Patina: weathered copper-green
+        const patinaMix = min((p.deposits - 80) / 400, 0.6);
+        const pr = lerp(201, 76, patinaMix);
+        const pg = lerp(168, 130, patinaMix);
+        const pb = lerp(76, 87, patinaMix);
+        accumLayer.stroke(pr, pg, pb, accAlpha * 255);
+      } else {
+        accumLayer.stroke(201, 168, 76, accAlpha * 255);
+      }
+      accumLayer.strokeWeight(sw * 1.2);
+      accumLayer.point(p.x, p.y);
+    }
+
+    // Respawn
+    if (p.age > p.life || p.x < -60 || p.x > width + 60 || p.y < -60 || p.y > height + 60) {
+      const np = spawnParticle();
+      Object.assign(p, np);
+    }
+  }
+
+  // ── Ogham marks: accumulate slowly ──
+  accumLayer.strokeWeight(0.7);
+  accumLayer.stroke(201, 168, 76, 6);
+  for (const m of oghamMarks) {
+    if (!m.drawn && frameCount >= m.frame) {
+      accumLayer.line(m.x1, m.y1, m.x2, m.y2);
+      m.drawn = true;
+    }
+  }
+
+  // ── Occasional attractor glow ──
+  if (frameCount % 45 === 0 && runeFields.length > 0) {
+    const field = runeFields[floor(random(runeFields.length))];
+    const pt = field.points[floor(random(field.points.length))];
+    accumLayer.noStroke();
+    accumLayer.fill(201, 168, 76, 3);
+    accumLayer.ellipse(pt.x + random(-2, 2), pt.y + random(-2, 2), random(3, 7));
+  }
+
+  // ── Composite ──
+  background(14, 13, 11);
+
+  // Background grain (very subtle)
+  if (frameCount % 3 === 0) {
+    loadPixels();
+    for (let i = 0; i < pixels.length; i += 16) {
+      const grain = random(-3, 3);
+      pixels[i] = constrain(pixels[i] + grain, 0, 255);
+      pixels[i + 1] = constrain(pixels[i + 1] + grain, 0, 255);
+      pixels[i + 2] = constrain(pixels[i + 2] + grain, 0, 255);
+    }
+    updatePixels();
+  }
+
+  image(ghostLayer, 0, 0);    // Ghost runes (barely visible)
+  image(accumLayer, 0, 0);    // Permanent deposits
+  image(trailLayer, 0, 0);    // Recent trails (fading)
+
+  // Fade info text after 10 seconds
+  if (frameCount === 600) {
+    document.getElementById('info').style.opacity = '0';
+  }
+}
+
+function mousePressed() {
+  for (let p of particles) {
+    const dx = p.x - mouseX, dy = p.y - mouseY;
+    const d = Math.sqrt(dx * dx + dy * dy);
+    if (d < 180 && d > 0) {
+      const force = map(d, 0, 180, 6, 0);
+      p.vx += (dx / d) * force;
+      p.vy += (dy / d) * force;
+      p.settling = false;
+      p.deposits = 0;
+    }
+  }
+}
+
+function keyPressed() {
+  if (key === ' ') {
+    seed = floor(random(99999));
+    noiseSeed(seed);
+    randomSeed(seed);
+    document.getElementById('seed').textContent = 'seed ' + seed;
+    document.getElementById('info').style.opacity = '1';
+    document.getElementById('info').style.transition = 'none';
+    setTimeout(() => { document.getElementById('info').style.transition = 'opacity 8s'; }, 100);
+    trailLayer.background(14, 13, 11);
+    accumLayer.clear();
+    ghostLayer.clear();
+    initScene();
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  let newTrail = createGraphics(width, height);
+  let newAccum = createGraphics(width, height);
+  let newGhost = createGraphics(width, height);
+  newTrail.image(trailLayer, 0, 0);
+  newAccum.image(accumLayer, 0, 0);
+  newGhost.image(ghostLayer, 0, 0);
+  trailLayer = newTrail;
+  accumLayer = newAccum;
+  ghostLayer = newGhost;
+}
+</script>
+</body>
+</html>
