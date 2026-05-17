@@ -1,15 +1,45 @@
+# =============================================================
+# Humanity and AI — Sveltia CMS configuration
+# Editor: https://humanityandai.com/admin/
+# Preview (drafts visible): https://humanityandai.com/preview/
+# =============================================================
+
 backend:
   name: github
   repo: dabirdwell/humanity-and-ai
   branch: main
   base_url: https://sveltia-cms-auth.davidbirdwell.workers.dev
+  # Sveltia opens a fresh OAuth window per session — keep this short list
+  auth_scope: repo
+  commit_messages:
+    create: 'CMS: create {{collection}} "{{slug}}"'
+    update: 'CMS: update {{collection}} "{{slug}}"'
+    delete: 'CMS: delete {{collection}} "{{slug}}"'
+    uploadMedia: 'CMS: upload "{{path}}"'
+    deleteMedia: 'CMS: delete media "{{path}}"'
+
+# Public-facing site & draft-preview URLs (Sveltia uses these for header links)
+site_url: https://humanityandai.com
+display_url: https://humanityandai.com
+logo_url: https://humanityandai.com/favicon.svg
+
+# Show "View" links next to entries that point at the live preview path.
+# Drafts render at /preview/<section>/<slug>/ (see hugo.yml).
+show_preview_links: true
 
 media_folder: static/images
 public_folder: /images
 
+# Sveltia-specific media library tuning
+media_libraries:
+  default:
+    config:
+      max_file_size: 5_000_000   # 5 MB hard cap to keep the repo lean
+
 slug:
   encoding: ascii
   clean_accents: true
+  sanitize_replacement: '-'
 
 collections:
 
@@ -19,6 +49,7 @@ collections:
   - name: pages
     label: Pages
     label_singular: Page
+    description: Top-level pages (About, Sanctuary, etc.)
     delete: false
     editor:
       preview: false
@@ -26,40 +57,46 @@ collections:
       - label: "About"
         name: "about"
         file: "content/about.md"
+        preview_path: "about/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "single" }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Sanctuary"
         name: "sanctuary"
         file: "content/sanctuary.md"
+        preview_path: "sanctuary/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "TasteBud"
         name: "tastebud"
         file: "content/tastebud.md"
+        preview_path: "tastebud/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Subscribe"
         name: "subscribe"
         file: "content/subscribe.md"
+        preview_path: "subscribe/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Pattern"
         name: "pattern"
         file: "content/pattern.md"
+        preview_path: "pattern/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
@@ -68,27 +105,39 @@ collections:
   - name: section_landings
     label: Section Landing Pages
     label_singular: Section Landing
+    description: The _index.md page that fronts each section.
     delete: false
     files:
+      - label: "Ae (landing)"
+        name: "ae_index"
+        file: "content/ae/_index.md"
+        preview_path: "ae/"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
       - label: "Beacon (landing)"
         name: "beacon_index"
         file: "content/beacon/_index.md"
+        preview_path: "beacon/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Brain Mastery (landing)"
         name: "brain_mastery_index"
         file: "content/brain-mastery/_index.md"
+        preview_path: "brain-mastery/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Foundation (landing)"
         name: "foundation_index"
         file: "content/foundation/_index.md"
+        preview_path: "foundation/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -96,16 +145,18 @@ collections:
       - label: "Hype Index (landing)"
         name: "hype_index_index"
         file: "content/hype-index/index.md"
+        preview_path: "hype-index/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Draft", name: "draft", widget: "boolean", default: false }
+          - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Date", name: "date", widget: "datetime", required: false }
-          - { label: "Type", name: "type", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "hidden", default: "hype-index" }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "The Inference (landing)"
         name: "inference_index"
         file: "content/inference/_index.md"
+        preview_path: "inference/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -113,14 +164,24 @@ collections:
       - label: "Legislation (landing)"
         name: "legislation_index"
         file: "content/legislation/_index.md"
+        preview_path: "legislation/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Layout", name: "layout", widget: "string", required: false }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "list" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Phoenix Wells (landing)"
+        name: "phoenix_wells_index"
+        file: "content/phoenix-wells/_index.md"
+        preview_path: "phoenix-wells/"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Products (landing)"
         name: "products_index"
         file: "content/products/_index.md"
+        preview_path: "products/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -128,13 +189,24 @@ collections:
       - label: "Report (landing)"
         name: "report_index"
         file: "content/report/_index.md"
+        preview_path: "report/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Research (landing)"
+        name: "research_index"
+        file: "content/research/_index.md"
+        preview_path: "research/"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "single" }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Show (landing)"
         name: "show_index"
         file: "content/show/_index.md"
+        preview_path: "show/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -142,6 +214,7 @@ collections:
       - label: "Stream (landing)"
         name: "stream_index"
         file: "content/stream/_index.md"
+        preview_path: "stream/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -149,40 +222,34 @@ collections:
       - label: "Visualizations (landing)"
         name: "viz_index"
         file: "content/visualizations/_index.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Ae (landing)"
-        name: "ae_index"
-        file: "content/ae/_index.md"
+        preview_path: "visualizations/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
-  # STREAM POSTS — unchanged from original
+  # STREAM POSTS
   # ─────────────────────────────────────────────────────────
   - name: stream
     label: Stream Posts
+    description: Blog posts, dispatches, daily updates.
     folder: content/stream
+    preview_path: "stream/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}} — {{date | date('YYYY-MM-DD')}}"
     sortable_fields: ["date", "title", "draft", "type"]
     view_filters:
-      - label: Drafts
-        field: draft
-        pattern: true
-      - label: Published
-        field: draft
-        pattern: false
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+      - { label: "Type: Policy", field: type, pattern: policy }
+      - { label: "Type: Research", field: type, pattern: research }
+      - { label: "Type: Insight", field: type, pattern: insight }
     view_groups:
-      - label: Status
-        field: draft
-      - label: Type
-        field: type
+      - { label: Status, field: draft }
+      - { label: Type, field: type }
+      - { label: Year, field: date, pattern: '\d{4}' }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
@@ -195,10 +262,7 @@ collections:
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-      - label: "Related"
-        name: "related"
-        widget: "list"
-        required: false
+      - { label: "Related", name: "related", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
@@ -206,12 +270,23 @@ collections:
   # ─────────────────────────────────────────────────────────
   - name: foundation
     label: Foundation Essays
+    description: The 16 essays. Locked — no creating or deleting.
     folder: content/foundation
+    preview_path: "foundation/{{slug}}/"
     create: false
     delete: false
     slug: "{{slug}}"
-    summary: "{{title}} — {{status}}"
-    sortable_fields: ["weight", "title", "status"]
+    summary: "{{title}} — {{status}} — {{draft | ternary('DRAFT','LIVE')}}"
+    sortable_fields: ["weight", "title", "status", "draft"]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+      - { label: "Status: Seed", field: status, pattern: seed }
+      - { label: "Status: Growing", field: status, pattern: growing }
+      - { label: "Status: Mature", field: status, pattern: mature }
+    view_groups:
+      - { label: Status, field: status }
+      - { label: Draft, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
@@ -233,11 +308,18 @@ collections:
   # ─────────────────────────────────────────────────────────
   - name: inference
     label: The Inference
+    description: Issues of The Inference newsletter.
     folder: content/inference
+    preview_path: "inference/{{slug}}/"
     create: true
     slug: "issue-{{issue}}"
     summary: "Issue {{issue}}: {{title}} — {{draft | ternary('DRAFT','LIVE')}}"
-    sortable_fields: ["issue", "date", "title"]
+    sortable_fields: ["issue", "date", "title", "draft"]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+    view_groups:
+      - { label: Status, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Issue number", name: "issue", widget: "number", value_type: "int" }
@@ -249,15 +331,22 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
-  # LEGISLAITIVE REPORT — older issue archive
+  # LEGISLATIVE REPORT — older issue archive
   # ─────────────────────────────────────────────────────────
   - name: report
     label: LegislAItive Report
+    description: The LegislAItive Report archive.
     folder: content/report
+    preview_path: "report/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}}"
-    sortable_fields: ["issue", "date", "title"]
+    sortable_fields: ["issue", "date", "title", "draft"]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+    view_groups:
+      - { label: Status, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Issue number", name: "issue", widget: "number", value_type: "int", required: false }
@@ -275,16 +364,24 @@ collections:
   # ─────────────────────────────────────────────────────────
   - name: visualizations
     label: Visualizations
+    description: Interactive visualizations and data essays.
     folder: content/visualizations
+    preview_path: "visualizations/{{slug}}/"
     create: true
     slug: "{{slug}}"
-    summary: "{{title}}"
-    sortable_fields: ["date", "title"]
+    summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}}"
+    sortable_fields: ["date", "title", "draft"]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+    view_groups:
+      - { label: Status, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Date", name: "date", widget: "datetime", required: false }
-      - { label: "Type", name: "type", widget: "string", required: false, default: "visualizations" }
+      - { label: "Type", name: "type", widget: "hidden", default: "visualizations" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Preview background", name: "preview_bg", widget: "string", required: false }
       - { label: "Preview icon", name: "preview_icon", widget: "string", required: false }
@@ -295,11 +392,19 @@ collections:
   # ─────────────────────────────────────────────────────────
   - name: show
     label: Show Episodes
+    description: The Humanity and AI Show — episodes and format pages.
     folder: content/show
+    preview_path: "show/{{slug}}/"
     create: true
     slug: "{{slug}}"
-    summary: "{{title}} — {{status}}"
-    sortable_fields: ["weight", "date", "title", "status"]
+    summary: "{{title}} — {{status}} — {{draft | ternary('DRAFT','LIVE')}}"
+    sortable_fields: ["weight", "date", "title", "status", "draft"]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+    view_groups:
+      - { label: Status, field: status }
+      - { label: Draft, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
@@ -315,29 +420,45 @@ collections:
   # ─────────────────────────────────────────────────────────
   - name: ae
     label: "Æ Creative"
+    description: Pieces attributed to Æ.
     folder: content/ae
+    preview_path: "ae/{{slug}}/"
     create: true
     slug: "{{slug}}"
-    summary: "{{title}} — {{date | date('YYYY-MM-DD')}}"
-    sortable_fields: ["date", "title"]
+    summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}} — {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ["date", "title", "draft"]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+    view_groups:
+      - { label: Status, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
       - { label: "Layout", name: "layout", widget: "string", required: false, default: "single" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
-  # PRODUCTS — keep existing folder, expand fields
+  # PRODUCTS
   # ─────────────────────────────────────────────────────────
   - name: products
     label: Products
+    description: The product catalogue (Beacon, Citizen, Clarity, …).
     folder: content/products
+    preview_path: "products/{{slug}}/"
     create: true
     slug: "{{slug}}"
-    summary: "{{title}} — {{status}}"
-    sortable_fields: ["weight", "status", "title"]
+    summary: "{{title}} — {{status}} — {{draft | ternary('DRAFT','LIVE')}}"
+    sortable_fields: ["weight", "status", "title", "draft"]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Published, field: draft, pattern: false }
+    view_groups:
+      - { label: Status, field: status }
+      - { label: Draft, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }

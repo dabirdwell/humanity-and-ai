@@ -2,6 +2,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /preview/
+Disallow: /admin/
 
 Sitemap: https://humanityandai.com/sitemap.xml
 

@@ -120,6 +120,7 @@
 
   <main id="main-content">
     {{ block "main" . }}{{ end }}
+    {{ partial "edit-link.html" . }}
   </main>
   {{ partial "footer.html" . }}
   <script>

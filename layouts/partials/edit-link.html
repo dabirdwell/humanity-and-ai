@@ -1,0 +1,81 @@
+{{/*
+  Renders an "Edit this page" link that deep-links into Sveltia CMS for the
+  current content file. Hidden when no file is associated (taxonomy pages, 404).
+
+  URL format (Sveltia is Decap-API-compatible):
+    /admin/#/collections/<collection>/entries/<slug-or-file-name>
+*/}}
+{{- $page := . -}}
+{{- if $page.File -}}
+  {{- $section := $page.Section -}}
+  {{- $base := $page.File.ContentBaseName -}}
+
+  {{/* Map of folder-collection sections we expose in the CMS. */}}
+  {{- $folderSections := dict
+      "stream"          "stream"
+      "foundation"      "foundation"
+      "inference"       "inference"
+      "report"          "report"
+      "visualizations"  "visualizations"
+      "show"            "show"
+      "ae"              "ae"
+      "products"        "products"
+  -}}
+
+  {{/* Map of section -> section_landings entry name (for _index.md). */}}
+  {{- $landingMap := dict
+      "ae"              "ae_index"
+      "beacon"          "beacon_index"
+      "brain-mastery"   "brain_mastery_index"
+      "foundation"      "foundation_index"
+      "hype-index"      "hype_index_index"
+      "inference"       "inference_index"
+      "legislation"     "legislation_index"
+      "phoenix-wells"   "phoenix_wells_index"
+      "products"        "products_index"
+      "report"          "report_index"
+      "research"        "research_index"
+      "show"            "show_index"
+      "stream"          "stream_index"
+      "visualizations"  "viz_index"
+  -}}
+
+  {{/* Top-level pages mapped to the `pages` file-collection. */}}
+  {{- $rootPages := dict
+      "about"      "about"
+      "sanctuary"  "sanctuary"
+      "tastebud"   "tastebud"
+      "subscribe"  "subscribe"
+      "pattern"    "pattern"
+  -}}
+
+  {{- $collection := "" -}}
+  {{- $entry := "" -}}
+
+  {{- if or (eq $base "_index") (eq $base "index") -}}
+    {{- with index $landingMap $section -}}
+      {{- $collection = "section_landings" -}}
+      {{- $entry = . -}}
+    {{- end -}}
+  {{- else if not $section -}}
+    {{- with index $rootPages $base -}}
+      {{- $collection = "pages" -}}
+      {{- $entry = . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with index $folderSections $section -}}
+      {{- $collection = . -}}
+      {{- $entry = $base -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if and $collection $entry -}}
+  <p class="edit-this-page" style="margin-top:2rem; text-align:center; font-size:0.8rem;">
+    <a href="/admin/#/collections/{{ $collection }}/entries/{{ $entry }}"
+       style="color: var(--text-muted); text-decoration: none; border-bottom: 1px dotted var(--text-muted);"
+       rel="nofollow noopener">
+      ✎ Edit this page
+    </a>
+  </p>
+  {{- end -}}
+{{- end -}}
