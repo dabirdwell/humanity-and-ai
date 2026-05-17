@@ -4,6 +4,10 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  # Daily rebuild at 11:00 UTC (6 AM Central Time) so entries whose
+  # publishDate has just passed flip from hidden to live without a push.
+  schedule:
+    - cron: '0 11 * * *'
 
 permissions:
   contents: read

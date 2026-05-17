@@ -2,6 +2,13 @@
 # Humanity and AI — Sveltia CMS configuration
 # Editor: https://humanityandai.com/admin/
 # Preview (drafts visible): https://humanityandai.com/preview/
+#
+# Scheduled publishing: any entry with a future `publishDate` is
+# treated by Hugo as not-yet-published — it won't render in the
+# live build. The /preview/ build uses --buildFuture so future-dated
+# entries are visible there. A daily 11:00 UTC (6 AM CT) cron job in
+# .github/workflows/hugo.yml rebuilds the site so scheduled posts
+# go live automatically.
 # =============================================================
 
 backend:
@@ -24,7 +31,8 @@ display_url: https://humanityandai.com
 logo_url: https://humanityandai.com/favicon.svg
 
 # Show "View" links next to entries that point at the live preview path.
-# Drafts render at /preview/<section>/<slug>/ (see hugo.yml).
+# Every preview_path uses the /preview/ prefix so drafts and future-dated
+# entries always resolve in the preview build.
 show_preview_links: true
 
 media_folder: static/images
@@ -57,35 +65,38 @@ collections:
       - label: "About"
         name: "about"
         file: "content/about.md"
-        preview_path: "about/"
+        preview_path: "preview/about/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Layout", name: "layout", widget: "hidden", default: "single" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
-          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+          - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Sanctuary"
         name: "sanctuary"
         file: "content/sanctuary.md"
-        preview_path: "sanctuary/"
+        preview_path: "preview/sanctuary/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
-          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+          - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "TasteBud"
         name: "tastebud"
         file: "content/tastebud.md"
-        preview_path: "tastebud/"
+        preview_path: "preview/tastebud/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
-          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+          - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
           - { label: "Body", name: "body", widget: "markdown" }
       - label: "Subscribe"
         name: "subscribe"
         file: "content/subscribe.md"
-        preview_path: "subscribe/"
+        preview_path: "preview/subscribe/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
@@ -93,7 +104,7 @@ collections:
       - label: "Pattern"
         name: "pattern"
         file: "content/pattern.md"
-        preview_path: "pattern/"
+        preview_path: "preview/pattern/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
@@ -111,7 +122,7 @@ collections:
       - label: "Ae (landing)"
         name: "ae_index"
         file: "content/ae/_index.md"
-        preview_path: "ae/"
+        preview_path: "preview/ae/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -119,7 +130,7 @@ collections:
       - label: "Beacon (landing)"
         name: "beacon_index"
         file: "content/beacon/_index.md"
-        preview_path: "beacon/"
+        preview_path: "preview/beacon/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
@@ -128,7 +139,7 @@ collections:
       - label: "Brain Mastery (landing)"
         name: "brain_mastery_index"
         file: "content/brain-mastery/_index.md"
-        preview_path: "brain-mastery/"
+        preview_path: "preview/brain-mastery/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
@@ -137,7 +148,7 @@ collections:
       - label: "Foundation (landing)"
         name: "foundation_index"
         file: "content/foundation/_index.md"
-        preview_path: "foundation/"
+        preview_path: "preview/foundation/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -145,7 +156,7 @@ collections:
       - label: "Hype Index (landing)"
         name: "hype_index_index"
         file: "content/hype-index/index.md"
-        preview_path: "hype-index/"
+        preview_path: "preview/hype-index/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
@@ -156,7 +167,7 @@ collections:
       - label: "The Inference (landing)"
         name: "inference_index"
         file: "content/inference/_index.md"
-        preview_path: "inference/"
+        preview_path: "preview/inference/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -164,7 +175,7 @@ collections:
       - label: "Legislation (landing)"
         name: "legislation_index"
         file: "content/legislation/_index.md"
-        preview_path: "legislation/"
+        preview_path: "preview/legislation/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -173,7 +184,7 @@ collections:
       - label: "Phoenix Wells (landing)"
         name: "phoenix_wells_index"
         file: "content/phoenix-wells/_index.md"
-        preview_path: "phoenix-wells/"
+        preview_path: "preview/phoenix-wells/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -181,7 +192,7 @@ collections:
       - label: "Products (landing)"
         name: "products_index"
         file: "content/products/_index.md"
-        preview_path: "products/"
+        preview_path: "preview/products/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -189,7 +200,7 @@ collections:
       - label: "Report (landing)"
         name: "report_index"
         file: "content/report/_index.md"
-        preview_path: "report/"
+        preview_path: "preview/report/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -197,7 +208,7 @@ collections:
       - label: "Research (landing)"
         name: "research_index"
         file: "content/research/_index.md"
-        preview_path: "research/"
+        preview_path: "preview/research/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Layout", name: "layout", widget: "hidden", default: "single" }
@@ -206,7 +217,7 @@ collections:
       - label: "Show (landing)"
         name: "show_index"
         file: "content/show/_index.md"
-        preview_path: "show/"
+        preview_path: "preview/show/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -214,7 +225,7 @@ collections:
       - label: "Stream (landing)"
         name: "stream_index"
         file: "content/stream/_index.md"
-        preview_path: "stream/"
+        preview_path: "preview/stream/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -222,7 +233,7 @@ collections:
       - label: "Visualizations (landing)"
         name: "viz_index"
         file: "content/visualizations/_index.md"
-        preview_path: "visualizations/"
+        preview_path: "preview/visualizations/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
@@ -231,11 +242,16 @@ collections:
   # ─────────────────────────────────────────────────────────
   # STREAM POSTS
   # ─────────────────────────────────────────────────────────
+  # Creation templates (the editor picks one via the Type field on create):
+  #   • Blog Post     — type: insight,  standard post with title, date, tags, body
+  #   • Policy Brief  — type: policy,   adds related_essays
+  #   • Research Note — type: research, adds related_essays
+  #   • Quick Take    — type: insight,  shorter format, no related_essays needed
   - name: stream
     label: Stream Posts
     description: Blog posts, dispatches, daily updates.
     folder: content/stream
-    preview_path: "stream/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}} — {{date | date('YYYY-MM-DD')}}"
@@ -250,19 +266,50 @@ collections:
       - { label: Status, field: draft }
       - { label: Type, field: type }
       - { label: Year, field: date, pattern: '\d{4}' }
+    # Sveltia/Decap surfaces these as "Create from template" options when supported.
+    templates:
+      - name: blog_post
+        label: "Blog Post"
+        fields:
+          - { name: "type", default: "insight" }
+      - name: policy_brief
+        label: "Policy Brief"
+        fields:
+          - { name: "type", default: "policy" }
+      - name: research_note
+        label: "Research Note"
+        fields:
+          - { name: "type", default: "research" }
+      - name: quick_take
+        label: "Quick Take"
+        fields:
+          - { name: "type", default: "insight" }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      # publishDate: Hugo natively respects this — entries with a future
+      # publishDate are excluded from the live build until that moment.
+      - { label: "Publish Date (scheduled)", name: "publishDate", widget: "datetime", required: false, hint: "Future date = post stays hidden on the live site until then. Daily 11:00 UTC cron republishes the site." }
       - label: "Type"
         name: "type"
         widget: "select"
         options: ["policy", "research", "insight", "futurism", "tool", "community", "letter"]
         default: "insight"
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Related", name: "related", widget: "list", required: false }
+      - label: "Related Essays"
+        name: "related_essays"
+        widget: "relation"
+        collection: "foundation"
+        search_fields: ["title"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
+        multiple: true
+        required: false
       - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
@@ -272,7 +319,7 @@ collections:
     label: Foundation Essays
     description: The 16 essays. Locked — no creating or deleting.
     folder: content/foundation
-    preview_path: "foundation/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: false
     delete: false
     slug: "{{slug}}"
@@ -289,13 +336,26 @@ collections:
       - { label: Draft, field: draft }
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Number", name: "number", widget: "string", required: false }
       - { label: "Weight", name: "weight", widget: "number", required: false, value_type: "int" }
       - { label: "Status", name: "status", widget: "string", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      # publishDate: Hugo natively respects this — future-dated essays
+      # stay hidden on the live site until the daily cron republishes.
+      - { label: "Publish Date (scheduled)", name: "publishDate", widget: "datetime", required: false, hint: "Future date = essay stays hidden on the live site until then." }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Related", name: "related", widget: "list", required: false }
+      - label: "Related Posts"
+        name: "related_posts"
+        widget: "relation"
+        collection: "stream"
+        search_fields: ["title"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
+        multiple: true
+        required: false
       - { label: "Hero stat", name: "hero_stat", widget: "text", required: false }
       - { label: "Hero stat bridge", name: "hero_stat_bridge", widget: "text", required: false }
       - { label: "Hero stat source", name: "hero_stat_source", widget: "text", required: false }
@@ -306,11 +366,13 @@ collections:
   # ─────────────────────────────────────────────────────────
   # THE INFERENCE — issue archive
   # ─────────────────────────────────────────────────────────
+  # Creation template: the field defaults below pre-fill the standard issue structure
+  # (draft on, empty lede, empty tags, empty body) so a new issue starts ready-to-fill.
   - name: inference
     label: The Inference
     description: Issues of The Inference newsletter.
     folder: content/inference
-    preview_path: "inference/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: true
     slug: "issue-{{issue}}"
     summary: "Issue {{issue}}: {{title}} — {{draft | ternary('DRAFT','LIVE')}}"
@@ -320,14 +382,33 @@ collections:
       - { label: Published, field: draft, pattern: false }
     view_groups:
       - { label: Status, field: draft }
+    templates:
+      - name: standard_issue
+        label: "Standard Issue"
+        fields:
+          - { name: "draft", default: true }
+          - { name: "lede", default: "" }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Issue number", name: "issue", widget: "number", value_type: "int" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      # publishDate: Hugo natively respects this — future-dated issues
+      # stay hidden until the daily cron republishes the site.
+      - { label: "Publish Date (scheduled)", name: "publishDate", widget: "datetime", required: false, hint: "Future date = issue stays hidden on the live site until then." }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Lede", name: "lede", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
+      - label: "Related Issues"
+        name: "related_issues"
+        widget: "relation"
+        collection: "inference"
+        search_fields: ["title"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
+        multiple: true
+        required: false
       - { label: "Body", name: "body", widget: "markdown" }
 
   # ─────────────────────────────────────────────────────────
@@ -337,7 +418,7 @@ collections:
     label: LegislAItive Report
     description: The LegislAItive Report archive.
     folder: content/report
-    preview_path: "report/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}}"
@@ -352,7 +433,8 @@ collections:
       - { label: "Issue number", name: "issue", widget: "number", value_type: "int", required: false }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Lede", name: "lede", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Window status", name: "window_status", widget: "string", required: false }
@@ -366,7 +448,7 @@ collections:
     label: Visualizations
     description: Interactive visualizations and data essays.
     folder: content/visualizations
-    preview_path: "visualizations/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}}"
@@ -379,7 +461,8 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Date", name: "date", widget: "datetime", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "visualizations" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
@@ -394,7 +477,7 @@ collections:
     label: Show Episodes
     description: The Humanity and AI Show — episodes and format pages.
     folder: content/show
-    preview_path: "show/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{status}} — {{draft | ternary('DRAFT','LIVE')}}"
@@ -408,10 +491,14 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      # publishDate: Hugo natively respects this — future-dated episodes
+      # stay hidden until the daily cron republishes the site.
+      - { label: "Publish Date (scheduled)", name: "publishDate", widget: "datetime", required: false, hint: "Future date = episode stays hidden on the live site until then." }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Weight", name: "weight", widget: "number", value_type: "int", required: false }
       - { label: "Status", name: "status", widget: "string", required: false }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
@@ -422,7 +509,7 @@ collections:
     label: "Æ Creative"
     description: Pieces attributed to Æ.
     folder: content/ae
-    preview_path: "ae/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{draft | ternary('DRAFT','LIVE')}} — {{date | date('YYYY-MM-DD')}}"
@@ -435,9 +522,13 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      # publishDate: Hugo natively respects this — future-dated pieces
+      # stay hidden until the daily cron republishes the site.
+      - { label: "Publish Date (scheduled)", name: "publishDate", widget: "datetime", required: false, hint: "Future date = piece stays hidden on the live site until then." }
       - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
       - { label: "Layout", name: "layout", widget: "string", required: false, default: "single" }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
@@ -448,7 +539,7 @@ collections:
     label: Products
     description: The product catalogue (Beacon, Citizen, Clarity, …).
     folder: content/products
-    preview_path: "products/{{slug}}/"
+    preview_path: "preview/{{collection}}/{{slug}}/"
     create: true
     slug: "{{slug}}"
     summary: "{{title}} — {{status}} — {{draft | ternary('DRAFT','LIVE')}}"
@@ -462,7 +553,8 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Keep under 160 characters for search engines" }
+      - { label: "Social Image", name: "og_image", widget: "image", required: false, hint: "1200x630 recommended" }
       - { label: "Tagline", name: "tagline", widget: "string", required: false }
       - { label: "Weight", name: "weight", widget: "number", value_type: "int", required: false }
       - { label: "Status", name: "status", widget: "string", required: false }
