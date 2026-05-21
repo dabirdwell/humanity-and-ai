@@ -39,7 +39,7 @@ Water contamination doesn't happen randomly. It follows fault lines of race, cla
 
 Daniel's family connected to a rural water system as a stopgap. The groundwater pollution isn't fixed. It may never be.
 
-Oklahoma has the nation's second-highest number of orphan wells — abandoned oil and gas wells that nobody maintains. The state has catalogued about 20,000 of them. Federal researchers estimate the true number may exceed 300,000. Each unplugged well is a pathway for toxic wastewater to seep down into the underground water sources — the aquifers — that rural Oklahomans depend on for drinking water.
+Oklahoma has the nation's second-highest number of orphan wells — abandoned oil and gas wells that nobody maintains. The state has catalogued more than 20,000 of them. Federal researchers estimate the true number may exceed 300,000. Each unplugged well is a pathway for toxic wastewater to seep down into the underground water sources — the aquifers — that rural Oklahomans depend on for drinking water.
 
 The state's drinking water infrastructure needs $6.9 billion in investment. Four hundred and forty-nine dams are rated high-hazard potential. And for the 38 Tribal Nations in Oklahoma, the situation is worse: in May 2025, the EPA revoked a requirement that states consult with tribes before receiving EPA approval of environmental authority in Indian Country. The safeguard was in place for five months before it was removed.
 

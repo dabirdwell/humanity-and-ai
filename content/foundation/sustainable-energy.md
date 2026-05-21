@@ -10,7 +10,7 @@ related:
   - "/stream/phoenix-wells-22000-holes"
   - "/visualizations/energy-burden-calculator"
 hero_stat: "Low-income households spend 3x more of their income on energy than everyone else. One in seven American families lives in energy poverty — and in Oklahoma, the state that powers the country, some of the deepest energy poverty sits on top of some of the richest geology on earth."
-hero_stat_bridge: "Energy poverty isn't about choosing paper or plastic. It's about choosing between heating your home and feeding your kids — in a state with 5,624 wind turbines and 22,000 abandoned oil wells that could be harvested for geothermal heat."
+hero_stat_bridge: "Energy poverty isn't about choosing paper or plastic. It's about choosing between heating your home and feeding your kids — in a state with 5,624 wind turbines and 20,000+ abandoned oil wells that could be harvested for geothermal heat."
 hero_stat_source: "DOE Low-Income Energy Affordability Data Tool; RMI 2024; EIA Oklahoma State Profile; ACEEE Energy Burden Research 2024"
 aliases:
   - "/ubc/sustainable-energy/"
@@ -70,7 +70,7 @@ Energy sovereignty. Intelligence sovereignty. Leapfrog. Three beats. Each one a 
 
 ## Phoenix Wells: The Oklahoma Model
 
-We have 22,000 abandoned oil wells in Oklahoma alone. They're leaking methane, threatening groundwater, and sitting there like an apology nobody made. Our Phoenix Wells project converts them into community-owned geothermal power plants — using the same boreholes that extracted fossil fuels to harvest the Earth's heat for electricity, heating, and cooling. The Earth already did the work. We're just accepting the gift.
+We have 20,000+ abandoned oil wells in Oklahoma alone. They're leaking methane, threatening groundwater, and sitting there like an apology nobody made. Our Phoenix Wells project converts them into community-owned geothermal power plants — using the same boreholes that extracted fossil fuels to harvest the Earth's heat for electricity, heating, and cooling. The Earth already did the work. We're just accepting the gift.
 
 The workforce that drilled those wells has the skills to convert them. The communities that depend on energy jobs get new ones — and not the "retraining for a job that doesn't exist yet" kind. The same hands, the same equipment, the same geological knowledge. Red dirt intelligence. The land heals. And the energy stays local, because the ownership is local.
 
@@ -104,7 +104,7 @@ Those who say the energy transition will kill jobs are defending the industries 
 
 We do not head north with the climate flight. We make our stand here. This is the right place. We will invent our way out of this. Here are the directions we're building toward:
 
-- **Phoenix Wells at scale** — convert Oklahoma's 22,000 abandoned wells into community-owned geothermal power plants. Same workforce, same land, new century. Each well cluster could generate $280-350K in annual revenue with a 2-year payback. Federal investment tax credits cover 40-50% of the upfront cost. What engineering challenges do we need to solve first? What does the workforce transition actually look like on the ground?
+- **Phoenix Wells at scale** — convert Oklahoma's 20,000+ abandoned wells into community-owned geothermal power plants. Same workforce, same land, new century. Each well conversion costs $500-700K in capital, generating ~$72-91K in gross annual revenue with a ~6.2-year payback at ~14% IRR. The federal investment tax credit covers 40% of the upfront cost. What engineering challenges do we need to solve first? What does the workforce transition actually look like on the ground?
 
 - **Tribal energy sovereignty** — tribal nations as first adopters of full-stack community energy, leapfrogging the broken centralized model entirely. The geological knowledge and the sovereign authority already exist. Over 90 percent of persistent poverty counties are already served by cooperatives — the organizational model is proven. What would it take to extend this to tribal-owned renewable generation?
 
