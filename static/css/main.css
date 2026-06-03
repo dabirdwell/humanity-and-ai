@@ -5364,3 +5364,15 @@ html { scroll-behavior: smooth; }
   margin: 0;
   max-width: 720px;
 }
+
+
+/* Home — Foundation three-layer teaser (2026-06) */
+.hp-fdn-layers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+@media (max-width: 700px) {
+  .hp-fdn-layers { grid-template-columns: 1fr; }
+}
