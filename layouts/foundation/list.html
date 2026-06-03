@@ -4,9 +4,7 @@
   <header class="fdn-hero">
     <p class="fdn-hero__eyebrow">Foundation</p>
     <h1 class="fdn-hero__title">{{ .Title }}</h1>
-    <div class="fdn-hero__thesis">
-      {{ .Content }}
-    </div>
+    {{ with .Params.description }}<p class="fdn-hero__lead">{{ . }}</p>{{ end }}
     <div class="fdn-hero__tiers" aria-hidden="true">
       <a href="#freedom-from" class="fdn-hero__tier fdn-hero__tier--from">Freedom <em>from</em></a>
       <a href="#freedom-to" class="fdn-hero__tier fdn-hero__tier--to">Freedom <em>to</em></a>
@@ -23,8 +21,9 @@
 
       <section class="fdn-generation fdn-generation--{{ $genSlug }}" id="{{ $genSlug }}">
         <header class="fdn-generation__header">
+          <p class="fdn-generation__eyebrow">{{ .Title }}</p>
           <h2 class="fdn-generation__title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}">{{ .Params.layername | default .Title }}</a>
           </h2>
           {{ with .Params.description }}
             <p class="fdn-generation__description">{{ . }}</p>
@@ -45,6 +44,13 @@
       {{ end }}
     {{ end }}
   </div>
+
+  <section class="fdn-thesis">
+    <h2 class="fdn-thesis__title">Why three layers</h2>
+    <div class="fdn-hero__thesis fdn-thesis__body">
+      {{ .Content }}
+    </div>
+  </section>
 
   <aside class="fdn-contribute">
     <h2 class="fdn-contribute__title">Build with us</h2>

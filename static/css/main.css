@@ -5314,3 +5314,53 @@ footer.site-footer ~ .newsletter-signup,
 .fdn-hero__tier--to:hover { background: rgba(90, 138, 122, 0.1); }
 .fdn-hero__tier--generative:hover { background: rgba(200, 150, 78, 0.1); }
 html { scroll-behavior: smooth; }
+
+
+/* Foundation — three-layer presentation refinements (2026-06) */
+.fdn-hero__lead {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.fdn-generation__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.25rem;
+  color: var(--text-secondary);
+}
+.fdn-generation--freedom-from .fdn-generation__eyebrow { color: var(--accent-tertiary); }
+.fdn-generation--freedom-to .fdn-generation__eyebrow { color: var(--accent-sage); }
+.fdn-generation--generative-freedom .fdn-generation__eyebrow { color: var(--accent-primary); }
+
+.fdn-generation-page__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0.75rem 0 0.25rem;
+  color: var(--accent-secondary);
+}
+
+.fdn-thesis {
+  max-width: var(--max-width);
+  margin: 1rem auto 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.fdn-thesis__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+.fdn-thesis__body {
+  text-align: left;
+  margin: 0;
+  max-width: 720px;
+}

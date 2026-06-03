@@ -1,5 +1,6 @@
 ---
 title: "Freedom From"
+layername: "The Floor"
 description: "The floor beneath which no citizen falls. Safety, sustenance, shelter, health, and income — the non-negotiable baseline of membership in a society."
 weight: 1
 generation: "first"

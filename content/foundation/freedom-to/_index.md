@@ -1,5 +1,6 @@
 ---
 title: "Freedom To"
+layername: "The Doors"
 description: "The capability to live a life one would choose. Education, information, skills, movement, energy, and the spaces where people become who they are capable of being."
 weight: 2
 generation: "second"
