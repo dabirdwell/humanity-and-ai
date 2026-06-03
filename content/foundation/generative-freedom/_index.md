@@ -1,6 +1,7 @@
 ---
 title: "Generative Freedom"
-layername: "The Generative Layer"
+layername: "The Future"
+eyebrow: "Freedom to matter"
 description: "Freedom that creates more freedom. The structural guarantee that every person has access to meaning, dignity, and agency — not as a reward for productivity, but as a condition of citizenship."
 weight: 3
 generation: "third"

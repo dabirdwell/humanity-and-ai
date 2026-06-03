@@ -21,7 +21,7 @@
 
       <section class="fdn-generation fdn-generation--{{ $genSlug }}" id="{{ $genSlug }}">
         <header class="fdn-generation__header">
-          <p class="fdn-generation__eyebrow">{{ .Title }}</p>
+          <p class="fdn-generation__eyebrow">{{ .Params.eyebrow | default .Title }}</p>
           <h2 class="fdn-generation__title">
             <a href="{{ .RelPermalink }}">{{ .Params.layername | default .Title }}</a>
           </h2>

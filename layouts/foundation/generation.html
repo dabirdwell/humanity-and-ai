@@ -4,7 +4,7 @@
   <header class="fdn-generation-page__header">
     <p class="fdn-hero__eyebrow"><a href="{{ "/foundation/" | relURL }}" style="color: inherit; text-decoration: none;">Foundation</a></p>
     {{ $genSlug := path.Base (strings.TrimSuffix "/" .RelPermalink) }}
-    <p class="fdn-generation-page__eyebrow">{{ .Title }}</p>
+    <p class="fdn-generation-page__eyebrow">{{ .Params.eyebrow | default .Title }}</p>
     <h1 class="fdn-generation-page__title fdn-generation--{{ $genSlug }}">{{ .Params.layername | default .Title }}</h1>
     {{ with .Params.description }}
       <p class="fdn-generation-page__description">{{ . }}</p>
