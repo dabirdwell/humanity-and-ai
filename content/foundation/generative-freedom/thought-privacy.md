@@ -6,6 +6,7 @@ weight: 16
 status: "seed"
 tags: ["foundation", "privacy", "digital-rights", "ai", "policy"]
 related:
+  - "/stream/graduated-obligation"
   - "/stream/the-merger-that-needed-a-war"
   - "/foundation/information-access"
   - "/foundation/safety"
