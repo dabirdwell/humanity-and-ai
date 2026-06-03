@@ -13,10 +13,10 @@ Each issue tracks legislation, analyzes policy, and connects the dots between wh
 
 ### Subscribe
 
-New issues of The Inference publish weekly on [Substack](https://humanityandaiofficial.substack.com) every Friday. **Paid subscribers get each issue the day it drops.** Free subscribers and this archive receive issues after a one-week window. If you want real-time Oklahoma AI and energy policy intelligence, [subscribe on Substack](https://humanityandaiofficial.substack.com).
+The Inference publishes weekly on [Substack](https://humanityandaiofficial.substack.com), every Friday — and it's free. Subscribe there to get each issue in your inbox the morning it drops. Back issues are collected in the archive below.
 
 ---
 
 ### Archive
 
-*Back issues appear here one week after initial publication.*
+*Back issues are collected here.*
