@@ -9,6 +9,7 @@ hero_stat: "Oklahoma locks up more people per person than any state in the natio
 hero_stat_bridge: "Safety built on cages doesn't produce safety. It produces a population organized around punishment instead of prevention — and the incarceration capital of the world to prove it."
 hero_stat_source: "Prison Policy Initiative, 2025; CDC NISVS; Cure Violence Global meta-analysis; Oklahoma DOC"
 aliases:
+  - "/foundation/safety/"
   - "/ubc/safety/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/49"
 ---

@@ -9,6 +9,7 @@ hero_stat: "Only 17% of Americans trust the federal government to do the right t
 hero_stat_bridge: "When five out of six Americans don't trust their government, the social contract isn't a contract anymore — it's a memory. And AI is about to void whatever's left."
 hero_stat_source: "Pew Research Center, Public Trust in Government 1958-2025; Gallup Confidence in Institutions, 2025"
 aliases:
+  - "/foundation/social-contract/"
   - "/ubc/social-contract/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/44"
 ---

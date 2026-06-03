@@ -166,6 +166,21 @@
       "votes": "",
       "policyRelevance": "Requires insurance companies to disclose when AI algorithms are used in rate-setting and claims decisions, with an appeals process for consumers.",
       "inferenceIssue": ""
+    },
+    {
+      "id": "SB 259",
+      "title": "Data Center Groundwater Protection Act",
+      "shortTitle": "Data Center Groundwater Metering & Closed-Loop Cooling",
+      "chamber": "Senate",
+      "authors": ["Sen. TBD"],
+      "status": "needs-verification",
+      "statusLabel": "Status: Needs Verification",
+      "lastAction": "Reported as a Senate measure mandating groundwater metering and closed-loop cooling for large-load data centers. Current chamber status, vote history, and effective date pending verification against the Oklahoma Legislature bill tracker.",
+      "lastActionDate": "2026-06-02",
+      "category": "energy",
+      "votes": "",
+      "policyRelevance": "Would require large-load data center customers to meter groundwater withdrawals and operate closed-loop cooling systems — addressing the water-cost half of the data center consent question that HB 2992 left untouched. The water-side companion to HB 2992's cost-attribution floor. Of direct relevance to Phoenix Wells and any geothermal procurement pathway: enhanced geothermal does not consume the cooling-tower water cycle most hyperscale data centers rely on.",
+      "inferenceIssue": "Issue #15"
     }
   ]
 }

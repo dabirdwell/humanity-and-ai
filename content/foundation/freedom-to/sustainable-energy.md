@@ -13,13 +13,14 @@ hero_stat: "Low-income households spend 3x more of their income on energy than e
 hero_stat_bridge: "Energy poverty isn't about choosing paper or plastic. It's about choosing between heating your home and feeding your kids — in a state with 5,624 wind turbines and 20,000+ abandoned oil wells that could be harvested for geothermal heat."
 hero_stat_source: "DOE Low-Income Energy Affordability Data Tool; RMI 2024; EIA Oklahoma State Profile; ACEEE Energy Burden Research 2024"
 aliases:
+  - "/foundation/sustainable-energy/"
   - "/ubc/sustainable-energy/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/45"
 ---
 
 Think about the last time you opened your utility bill and did math you shouldn't have to do. Not budget math — survival math. The kind where you're weighing the thermostat against the grocery list, the space heater against the copay, the gas tank against the rent. Most Americans have done that calculation at least once. For one in seven families, it happens every month.
 
-Loretta lives outside Seminole, Oklahoma. Her family has lived in oil country for three generations — her grandfather worked the fields, her uncle drove tankers. The energy economy built this region. It also left it. The wells that made millionaires in Houston left behind methane leaks, contaminated groundwater, and communities whose tax base collapsed when the boom moved on.
+Loretta lives outside Seminole, Oklahoma. Her family has lived in oil country for three layers — her grandfather worked the fields, her uncle drove tankers. The energy economy built this region. It also left it. The wells that made millionaires in Houston left behind methane leaks, contaminated groundwater, and communities whose tax base collapsed when the boom moved on.
 
 She heats with a propane tank she refills when she can afford it. In winter she keeps the thermostat at 62. Her granddaughter has asthma — one of the respiratory conditions researchers have begun linking to gases leaking from old, abandoned oil wells nearby. Loretta doesn't need a green energy lecture. She needs a utility bill she can pay without choosing between warmth and dinner.
 

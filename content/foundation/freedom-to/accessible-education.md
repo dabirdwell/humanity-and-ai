@@ -9,6 +9,7 @@ hero_stat: "$1.78 trillion. That's how much Americans owe in student loans. 43 m
 hero_stat_bridge: "When education creates a generation of debtors, it's not accessible — it's extractive."
 hero_stat_source: "Federal Reserve; Federal Student Aid, Q4 2025"
 aliases:
+  - "/foundation/accessible-education/"
   - "/ubc/accessible-education/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/40"
 ---

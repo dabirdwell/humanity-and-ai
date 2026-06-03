@@ -9,6 +9,7 @@ hero_stat: "45% of Americans have no access to public transit. 16 million adults
 hero_stat_bridge: "When half the country has no transit option and millions can't afford cars, transportation isn't convenience — it's the prerequisite for every other opportunity. And we've been grading it like it doesn't matter."
 hero_stat_source: "APTA 2025; NRDC 2025; AAA Your Driving Costs 2025; ASCE Infrastructure Report Card"
 aliases:
+  - "/foundation/transportation/"
   - "/ubc/transportation/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/46"
 ---

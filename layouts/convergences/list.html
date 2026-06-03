@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="fdn-convergences">
+
+  <header class="fdn-convergences__header">
+    <p class="fdn-hero__eyebrow">Foundation</p>
+    <h1>{{ .Title }}</h1>
+    <div class="fdn-convergences__intro">
+      {{ .Content }}
+    </div>
+  </header>
+
+  <div class="fdn-convergences__grid">
+    {{ range .Pages.ByWeight }}
+    <a href="{{ .RelPermalink }}" class="ubc-card fdn-convergence-card">
+      {{ with .Params.tradition }}<span class="fdn-card__number">{{ . }}</span>{{ end }}
+      <h3 class="fdn-card__title">{{ .Title }}</h3>
+      {{ with .Params.authors }}<p style="font-size: 0.85rem; color: var(--accent-warm); margin: 0.3rem 0;">{{ . }}</p>{{ end }}
+      {{ with .Params.description }}<p class="fdn-card__description">{{ . }}</p>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+
+</article>
+{{ end }}

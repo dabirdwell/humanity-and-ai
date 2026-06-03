@@ -9,6 +9,7 @@ hero_stat: "The EPA says America needs $625 billion for water infrastructure ove
 hero_stat_bridge: "Clean water isn't a developing-world problem. It's an American infrastructure problem — and we're defunding it while the pipes rot."
 hero_stat_source: "EPA 7th Drinking Water Infrastructure Needs Survey, 2023; ASCE 2025 Report Card; Trump FY2026 budget proposal"
 aliases:
+  - "/foundation/clean-water/"
   - "/ubc/clean-water/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/42"
 ---
@@ -35,7 +36,7 @@ Water contamination doesn't happen randomly. It follows fault lines of race, cla
 
 ## What This Looks Like in Oklahoma
 
-*Daniel is not one person. He is a pattern.* He lives outside Kingfisher, in central Oklahoma, where his family has run cattle for three generations. The well water turned bad two years ago — started smelling like sulfur, then worse. A ProPublica investigation found that toxic wastewater from oil and gas operations had been pouring out of the ground near his property for months, killing crops and trees, while Oklahoma regulators failed to stop it.
+*Daniel is not one person. He is a pattern.* He lives outside Kingfisher, in central Oklahoma, where his family has run cattle for three layers. The well water turned bad two years ago — started smelling like sulfur, then worse. A ProPublica investigation found that toxic wastewater from oil and gas operations had been pouring out of the ground near his property for months, killing crops and trees, while Oklahoma regulators failed to stop it.
 
 Daniel's family connected to a rural water system as a stopgap. The groundwater pollution isn't fixed. It may never be.
 

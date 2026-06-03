@@ -9,6 +9,7 @@ hero_stat: "170 million Americans live in areas with a shortage of mental health
 hero_stat_bridge: "You can't bootstrap your way out of a mental health crisis when there's literally no one to call. And the AI transition will make the demand worse before anything gets better."
 hero_stat_source: "HRSA Health Professional Shortage Areas, 2025; NAMI/Wang et al.; SAMHSA NSDUH 2023"
 aliases:
+  - "/foundation/mental-health/"
   - "/ubc/mental-health/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/38"
 ---

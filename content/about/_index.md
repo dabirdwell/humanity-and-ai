@@ -63,7 +63,7 @@ Everything we build connects. Six layers, from ground to mind — each one suppo
   </div>
   <div class="stack-layer layer-ground">
     <span class="stack-label">Ground</span>
-    <span class="stack-desc">Oklahoma — red dirt, public service, three generations deep</span>
+    <span class="stack-desc">Oklahoma — red dirt, public service, three layers deep</span>
   </div>
 </div>
 

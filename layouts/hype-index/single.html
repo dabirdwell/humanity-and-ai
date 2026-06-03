@@ -19,7 +19,7 @@
   </header>
 
   {{ $claims := slice }}
-  {{ with .Site.Data.hype_index }}{{ $claims = where . "active" true }}{{ end }}
+  {{ with site.Data.hype_index }}{{ $claims = where . "active" true }}{{ end }}
   {{ $sources := slice }}
   {{ range $claims }}{{ with .source }}{{ $sources = $sources | append . }}{{ end }}{{ end }}
   {{ $sources = $sources | uniq | sort }}

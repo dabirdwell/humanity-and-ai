@@ -9,6 +9,7 @@ hero_stat: "A minimum wage worker in Oklahoma would need to work 93 hours a week
 hero_stat_bridge: "Housing is the platform everything else stands on. When half the workforce can't afford where they live, every other system breaks."
 hero_stat_source: "NLIHC Out of Reach 2025; HRSA; Oklahoma Policy Institute"
 aliases:
+  - "/foundation/housing/"
   - "/ubc/housing/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/36"
 ---

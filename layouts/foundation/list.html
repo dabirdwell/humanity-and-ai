@@ -1,46 +1,60 @@
 {{ define "main" }}
-<div class="ubc-landing">
-  <header class="ubc-hero">
-    <p class="ubc-eyebrow">Foundation</p>
-    <h1>What Does Membership in a Society Actually Mean?</h1>
-    <p class="ubc-hero-desc">Foundation is not a policy proposal handed down from above. It's a framework — scaffolding for a conversation about what citizens owe each other in the age of AI. These 16 components are a starting position. The public builds from here.</p>
+<article class="fdn-foundation">
+
+  <header class="fdn-hero">
+    <p class="fdn-hero__eyebrow">Foundation</p>
+    <h1 class="fdn-hero__title">{{ .Title }}</h1>
+    <div class="fdn-hero__thesis">
+      {{ .Content }}
+    </div>
+    <div class="fdn-hero__tiers" aria-hidden="true">
+      <a href="#freedom-from" class="fdn-hero__tier fdn-hero__tier--from">Freedom <em>from</em></a>
+      <a href="#freedom-to" class="fdn-hero__tier fdn-hero__tier--to">Freedom <em>to</em></a>
+      <a href="#generative-freedom" class="fdn-hero__tier fdn-hero__tier--generative">Generative freedom</a>
+    </div>
   </header>
 
-  <div class="ubc-intro">
-    {{ .Content }}
-  </div>
+  <div class="fdn-generations">
+    {{ range .Sections }}
+      {{ if .Params.generation }}
+      {{ $genSlug := path.Base (strings.TrimSuffix "/" .RelPermalink) }}
+      {{ $components := .Pages }}
+      {{ $components = sort $components "Weight" "asc" }}
 
-  <div class="ubc-grid-header">
-    <h2>The 16 Components</h2>
-    <p class="ubc-grid-subtitle">Each component has a full essay explaining the thinking behind it and an explicit invitation for your perspective. Click any card to read and contribute.</p>
-  </div>
+      <section class="fdn-generation fdn-generation--{{ $genSlug }}" id="{{ $genSlug }}">
+        <header class="fdn-generation__header">
+          <h2 class="fdn-generation__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          {{ with .Params.description }}
+            <p class="fdn-generation__description">{{ . }}</p>
+          {{ end }}
+        </header>
 
-  <div class="ubc-grid">
-    {{ range .Pages.ByWeight }}
-    <a href="{{ .Permalink }}" class="ubc-card">
-      <span class="ubc-card-number">{{ .Params.number }}</span>
-      <h3>{{ .Title }}</h3>
-      {{ with .Params.hero_stat }}<span class="ubc-card-stat">{{ . }}</span>{{ end }}
-      {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
-      {{ with .Params.status }}<span class="ubc-card-status {{ . }}">{{ . }}</span>{{ end }}
-    </a>
+        <div class="fdn-generation__grid">
+          {{ range $components }}
+            <a href="{{ .RelPermalink }}" class="ubc-card fdn-card fdn-card--{{ $genSlug }}">
+              {{ with .Params.number }}<span class="fdn-card__number">{{ . }}</span>{{ end }}
+              <h3 class="fdn-card__title">{{ .Title }}</h3>
+              {{ with .Params.description }}<p class="fdn-card__description">{{ . }}</p>{{ end }}
+              {{ with .Params.status }}<span class="fdn-card__status">{{ . }}</span>{{ end }}
+            </a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
     {{ end }}
   </div>
 
-  <div class="ubc-contribute-banner">
-    <h2>How to Contribute</h2>
-    <div class="ubc-contribute-options">
-      <div class="ubc-contribute-option">
-        <span class="ubc-contribute-icon">💬</span>
-        <h3>Quick Thoughts</h3>
-        <p>Have a perspective, a question, or a disagreement? Use the form on any component page. No account needed.</p>
-      </div>
-      <div class="ubc-contribute-option">
-        <span class="ubc-contribute-icon">🔧</span>
-        <h3>Deep Engagement</h3>
-        <p>Propose changes, cite research, or have a threaded conversation in <a href="https://github.com/dabirdwell/humanity-and-ai/discussions" target="_blank" rel="noopener">GitHub Discussions</a>.</p>
-      </div>
-    </div>
-  </div>
-</div>
+  <aside class="fdn-contribute">
+    <h2 class="fdn-contribute__title">Build with us</h2>
+    <p class="fdn-contribute__body">Foundation is a living framework. Every component has an open discussion thread. Revisions are public.</p>
+    <p class="fdn-contribute__actions">
+      <a href="{{ "/foundation/contribute/" | relURL }}" class="fdn-contribute__cta">How to Contribute</a>
+      <a href="{{ "/foundation/discuss/" | relURL }}" class="fdn-contribute__cta fdn-contribute__cta--ghost">Discussion Hub</a>
+      <a href="{{ "/foundation/the-mirror/" | relURL }}" class="fdn-contribute__cta fdn-contribute__cta--ghost">The Mirror</a>
+    </p>
+  </aside>
+
+</article>
 {{ end }}

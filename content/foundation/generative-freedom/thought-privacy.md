@@ -14,6 +14,7 @@ hero_stat: "29 of 30 consumer neurotechnology companies reserve the right to sha
 hero_stat_bridge: "The last private space is your mind — and the legal framework to protect it doesn't exist yet. The technology is ahead of the law by a decade."
 hero_stat_source: "Neurorights Foundation, 2024; Arnold & Porter legal analysis, 2025; MIND Act S.2925, 2025"
 aliases:
+  - "/foundation/thought-privacy/"
   - "/ubc/thought-privacy/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/41"
 ---

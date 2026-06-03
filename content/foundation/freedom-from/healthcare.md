@@ -9,6 +9,7 @@ hero_stat: "66.5% of US bankruptcies are linked to medical expenses. No other we
 hero_stat_bridge: "Healthcare as a right isn't radical — it's what every peer nation already does. The question isn't whether we can afford it. It's whether we can afford not to."
 hero_stat_source: "American Journal of Public Health (Himmelstein et al.); Kaiser Family Foundation"
 aliases:
+  - "/foundation/healthcare/"
   - "/ubc/healthcare/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/37"
 ---

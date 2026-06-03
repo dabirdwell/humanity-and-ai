@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="fdn-convergence-page">
+
+  <header class="fdn-convergence-page__header">
+    <p class="fdn-hero__eyebrow"><a href="{{ "/convergences/" | relURL }}" style="color: inherit; text-decoration: none;">Convergences</a></p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tradition }}<p class="fdn-convergence-page__tradition">{{ . }}</p>{{ end }}
+    {{ with .Params.authors }}<p class="fdn-convergence-page__authors">{{ . }}{{ with $.Params.organization }} · {{ . }}{{ end }}{{ with $.Params.location }} · {{ . }}{{ end }}</p>{{ end }}
+    {{ with .Params.description }}<p class="fdn-convergence-page__description">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="fdn-convergence-page__body">
+    {{ .Content }}
+  </div>
+
+  <nav class="fdn-generation-page__nav">
+    <a href="{{ "/convergences/" | relURL }}">← All Convergences</a>
+    <a href="{{ "/foundation/" | relURL }}" style="margin-left: 2rem;">← Foundation</a>
+  </nav>
+
+</article>
+{{ end }}

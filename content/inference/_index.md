@@ -11,12 +11,6 @@ Each issue tracks legislation, analyzes policy, and connects the dots between wh
 
 ---
 
-### Subscribe
-
-The Inference publishes weekly on [Substack](https://humanityandaiofficial.substack.com), every Friday — and it's free. Subscribe there to get each issue in your inbox the morning it drops. Back issues are collected in the archive below.
-
----
-
 ### Archive
 
 *Back issues are collected here.*

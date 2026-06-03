@@ -9,6 +9,7 @@ hero_stat: "Andrej Karpathy mapped every major US job category by AI exposure. T
 hero_stat_bridge: "Half the economy is significantly exposed to AI transformation, and the retraining infrastructure was built for a world that moved thirty years ago. This isn't a skills gap. It's a systems failure."
 hero_stat_source: "Karpathy AI Job Exposure Analysis, 2024; McKinsey Global Institute; World Economic Forum Future of Jobs, 2025; DOL"
 aliases:
+  - "/foundation/skills-training/"
   - "/ubc/skills-training/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/47"
 ---

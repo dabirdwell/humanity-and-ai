@@ -9,6 +9,7 @@ hero_stat: "On a single day, over 70,000 domestic violence victims sought help â
 hero_stat_bridge: "Safe spaces aren't an abstract concept â€” they're the difference between a roof and the street, between a person who heals and a person who breaks. When safety is a privilege, everything else in this framework is theoretical."
 hero_stat_source: "NNEDV Census (National Network to End Domestic Violence); Chapin Hall/University of Chicago; NCOA; CDC NISVS"
 aliases:
+  - "/foundation/safe-spaces/"
   - "/ubc/safe-spaces/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/43"
 ---

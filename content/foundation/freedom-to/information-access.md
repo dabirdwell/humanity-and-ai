@@ -9,6 +9,7 @@ hero_stat: "26 million Americans lack broadband. 50 million have limited or no a
 hero_stat_bridge: "In 2026, internet access is oxygen for economic participation. We're not just failing to close the digital divide — we're defunding the bridge."
 hero_stat_source: "BroadbandNow audit, 2025; Northwestern Medill State of Local News, 2025; FCC"
 aliases:
+  - "/foundation/information-access/"
   - "/ubc/information-access/"
 discussion_url: "https://github.com/dabirdwell/humanity-and-ai/discussions/39"
 ---

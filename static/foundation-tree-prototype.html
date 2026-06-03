@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundation Tree — Interactive Prototype v2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@400;500;600&display=swap');
+:root {
+  --bg: #0A0A0C; --text: #F0EDE6; --muted: #9B978E; --dim: #6B6760;
+  --terracotta: #BF6745; --sage: #5A8A7A; --gold: #C8964E;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Raleway', sans-serif; min-height: 100vh; padding: 2rem; }
+
+.foundation-header {
+  text-align: center; margin-bottom: 1.5rem;
+}
+.foundation-header h1 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500;
+  color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;
+}
+
+.tree-layout {
+  display: flex; max-width: 1000px; margin: 0 auto; gap: 2rem; align-items: center;
+}
+
+.tree-side { flex: 0 0 55%; }
+.tree-side svg { width: 100%; height: auto; }
+
+.stat-side {
+  flex: 1; min-height: 300px; display: flex; flex-direction: column; justify-content: center;
+}
+
+.stat-card {
+  padding: 1.5rem 0; border-left: 3px solid transparent;
+  padding-left: 1.5rem; transition: all 0.3s ease;
+}
+.stat-card.layer-from { border-left-color: var(--terracotta); }
+.stat-card.layer-to { border-left-color: var(--sage); }
+.stat-card.layer-gen { border-left-color: var(--gold); }
+
+.stat-title {
+  font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.8rem;
+  transition: color 0.3s;
+}
+.layer-from .stat-title { color: var(--terracotta); }
+.layer-to .stat-title { color: var(--sage); }
+.layer-gen .stat-title { color: var(--gold); }
+
+.stat-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem; line-height: 1.65; font-weight: 500;
+  color: var(--text); margin-bottom: 0.8rem;
+  transition: opacity 0.3s;
+}
+
+.stat-source {
+  font-family: 'Raleway', sans-serif; font-size: 0.65rem;
+  color: var(--dim); margin-bottom: 1rem; line-height: 1.4;
+}
+
+.stat-link {
+  font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 500;
+  text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s;
+}
+.layer-from .stat-link { color: var(--terracotta); }
+.layer-to .stat-link { color: var(--sage); }
+.layer-gen .stat-link { color: var(--gold); }
+.stat-link:hover { opacity: 0.8; }
+
+/* Component interaction */
+.component { cursor: pointer; transition: opacity 0.25s; }
+.component:hover, .component:focus { opacity: 1 !important; }
+.component:focus { outline: none; }
+svg:has(.component:hover) .component:not(:hover) { opacity: 0.25 !important; }
+svg:has(.component:focus) .component:not(:focus) { opacity: 0.25 !important; }
+
+/* Glow on hover */
+.component:hover path, .component:hover circle,
+.component:focus path, .component:focus circle,
+.component.active path, .component.active circle {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* Active pulse */
+@keyframes pulse { 0%,100% { filter: drop-shadow(0 0 4px currentColor); } 50% { filter: drop-shadow(0 0 10px currentColor); } }
+.component.active path, .component.active circle { animation: pulse 2s ease-in-out infinite; }
+.component:hover path, .component:hover circle { animation: none; filter: drop-shadow(0 0 8px currentColor); }
+
+/* Labels brighten on component hover */
+.tree-labels { pointer-events: none; transition: opacity 0.3s; }
+
+/* Fade-in */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.layer.roots { animation: fadeUp 0.5s ease-out 0.1s both; }
+.layer.trunk { animation: fadeUp 0.5s ease-out 0.2s both; }
+.layer.canopy { animation: fadeUp 0.5s ease-out 0.35s both; }
+
+/* Layer legend */
+.layer-legend {
+  display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem;
+}
+.legend-item {
+  font-size: 0.7rem; color: var(--dim); display: flex; align-items: center; gap: 0.4rem;
+  letter-spacing: 0.05em;
+}
+.legend-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tree-layout { flex-direction: column; }
+  .tree-side { flex: none; width: 100%; }
+  .stat-side { min-height: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="foundation-header">
+  <h1>Foundation</h1>
+</div>
+
+<div class="tree-layout">
+  <div class="tree-side">
+    <svg id="tree" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<!-- Ground line -->
+<line x1="80" y1="370" x2="720" y2="370" stroke="#8B6834" stroke-width="1" opacity="0.25"/>
+
+<!-- ROOTS (Freedom From) -->
+<g class="layer roots" opacity="0.7">
+<g class="component" data-id="safety" data-layer="from" tabindex="0">
+<path d="M400 370 L400 510" stroke="var(--terracotta)" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="400" cy="516" r="5" fill="var(--terracotta)" opacity="0.7"/>
+</g>
+<g class="component" data-id="housing" data-layer="from" tabindex="0">
+<path d="M400 400 C360 410, 290 440, 220 490" stroke="var(--terracotta)" stroke-width="4" fill="none" stroke-linecap="round"/>
+<circle cx="216" cy="494" r="4" fill="var(--terracotta)" opacity="0.6"/>
+</g>
+<g class="component" data-id="income" data-layer="from" tabindex="0">
+<path d="M400 400 C440 410, 510 440, 580 490" stroke="var(--terracotta)" stroke-width="4" fill="none" stroke-linecap="round"/>
+<circle cx="584" cy="494" r="4" fill="var(--terracotta)" opacity="0.6"/>
+</g>
+<g class="component" data-id="food" data-layer="from" tabindex="0">
+<path d="M400 390 C370 395, 310 415, 260 440" stroke="var(--terracotta)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M260 440 C240 452, 210 462, 175 475" stroke="var(--terracotta)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+<circle cx="172" cy="478" r="3.5" fill="var(--terracotta)" opacity="0.5"/>
+</g>
+<g class="component" data-id="healthcare" data-layer="from" tabindex="0">
+<path d="M400 390 C430 395, 490 415, 540 440" stroke="var(--terracotta)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M540 440 C560 452, 590 462, 625 475" stroke="var(--terracotta)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+<circle cx="628" cy="478" r="3.5" fill="var(--terracotta)" opacity="0.5"/>
+</g>
+<g class="component" data-id="water" data-layer="from" tabindex="0">
+<path d="M400 420 C375 430, 330 455, 300 480" stroke="var(--terracotta)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M300 480 C285 492, 265 502, 245 515" stroke="var(--terracotta)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+<circle cx="242" cy="518" r="3" fill="var(--terracotta)" opacity="0.5"/>
+</g>
+</g>
+
+<!-- TRUNK + BRANCHES (Freedom To) -->
+<g class="layer trunk" opacity="0.7">
+<g class="component" data-id="education" data-layer="to" tabindex="0">
+<path d="M400 370 L400 200" stroke="var(--sage)" stroke-width="9" fill="none" stroke-linecap="round"/>
+</g>
+<g class="component" data-id="skills" data-layer="to" tabindex="0">
+<path d="M400 320 C370 310, 320 295, 280 280" stroke="var(--sage)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+</g>
+<g class="component" data-id="transportation" data-layer="to" tabindex="0">
+<path d="M400 310 C430 300, 480 285, 530 275" stroke="var(--sage)" stroke-width="4" fill="none" stroke-linecap="round"/>
+</g>
+<g class="component" data-id="information" data-layer="to" tabindex="0">
+<path d="M400 280 C365 268, 310 250, 255 240" stroke="var(--sage)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+</g>
+<g class="component" data-id="energy" data-layer="to" tabindex="0">
+<path d="M400 270 C435 258, 490 245, 545 238" stroke="var(--sage)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+</g>
+<g class="component" data-id="safespaces" data-layer="to" tabindex="0">
+<path d="M400 245 C370 235, 325 220, 280 210" stroke="var(--sage)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<g class="component" data-id="accessible" data-layer="to" tabindex="0">
+<path d="M400 235 C430 225, 475 215, 520 208" stroke="var(--sage)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+</g>
+
+<!-- CANOPY (Generative Freedom) -->
+<g class="layer canopy" opacity="0.7">
+<circle cx="280" cy="135" r="55" fill="var(--gold)" opacity="0.08"/>
+<circle cx="400" cy="105" r="65" fill="var(--gold)" opacity="0.10"/>
+<circle cx="520" cy="135" r="55" fill="var(--gold)" opacity="0.08"/>
+<circle cx="340" cy="80" r="40" fill="var(--gold)" opacity="0.06"/>
+<circle cx="460" cy="80" r="40" fill="var(--gold)" opacity="0.06"/>
+<circle cx="400" cy="55" r="35" fill="var(--gold)" opacity="0.07"/>
+<g class="component" data-id="mentalhealth" data-layer="gen" tabindex="0">
+<circle cx="280" cy="135" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.35"/>
+<circle cx="265" cy="120" r="4" fill="var(--gold)" opacity="0.3"/>
+<circle cx="295" cy="115" r="3.5" fill="var(--gold)" opacity="0.25"/>
+<circle cx="275" cy="150" r="3" fill="var(--gold)" opacity="0.25"/>
+</g>
+<g class="component" data-id="socialcontract" data-layer="gen" tabindex="0">
+<circle cx="400" cy="100" r="45" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.4"/>
+<circle cx="385" cy="85" r="4.5" fill="var(--gold)" opacity="0.35"/>
+<circle cx="415" cy="80" r="4" fill="var(--gold)" opacity="0.3"/>
+<circle cx="400" cy="115" r="3.5" fill="var(--gold)" opacity="0.3"/>
+</g>
+<g class="component" data-id="thoughtprivacy" data-layer="gen" tabindex="0">
+<circle cx="520" cy="135" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.35"/>
+<circle cx="505" cy="120" r="4" fill="var(--gold)" opacity="0.3"/>
+<circle cx="535" cy="118" r="3.5" fill="var(--gold)" opacity="0.25"/>
+<circle cx="525" cy="148" r="3" fill="var(--gold)" opacity="0.25"/>
+</g>
+<path d="M200 185 C185 155, 200 115, 235 90 C260 72, 290 55, 325 48 C355 42, 380 40, 400 42 C420 40, 445 42, 475 48 C510 55, 540 72, 565 90 C600 115, 615 155, 600 185 C590 200, 570 208, 545 210 C510 214, 460 205, 400 200 C340 205, 290 214, 255 210 C230 208, 210 200, 200 185Z" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.25"/>
+</g>
+
+<text x="400" y="575" text-anchor="middle" fill="var(--dim)" font-family="Cormorant Garamond,serif" font-size="12" font-style="italic" opacity="0.6">A living framework. Hover to explore.</text>
+
+<!-- Component name labels -->
+<g class="tree-labels" font-family="Raleway,sans-serif" font-size="10" font-weight="500" opacity="0.5">
+<!-- Roots -->
+<text x="400" y="545" text-anchor="middle" fill="var(--terracotta)">Safety</text>
+<text x="195" y="505" text-anchor="end" fill="var(--terracotta)">Housing</text>
+<text x="605" y="505" text-anchor="start" fill="var(--terracotta)">Income</text>
+<text x="152" y="488" text-anchor="end" fill="var(--terracotta)">Food</text>
+<text x="648" y="488" text-anchor="start" fill="var(--terracotta)">Healthcare</text>
+<text x="222" y="530" text-anchor="end" fill="var(--terracotta)">Water</text>
+<!-- Branches -->
+<text x="260" y="275" text-anchor="end" fill="var(--sage)">Skills</text>
+<text x="550" y="270" text-anchor="start" fill="var(--sage)">Transport</text>
+<text x="235" y="235" text-anchor="end" fill="var(--sage)">Information</text>
+<text x="565" y="233" text-anchor="start" fill="var(--sage)">Energy</text>
+<text x="260" y="205" text-anchor="end" fill="var(--sage)">Safe spaces</text>
+<text x="540" y="203" text-anchor="start" fill="var(--sage)">Education access</text>
+<text x="420" y="295" text-anchor="start" fill="var(--sage)">Education</text>
+<!-- Canopy -->
+<text x="280" y="180" text-anchor="middle" fill="var(--gold)">Mental health</text>
+<text x="400" y="155" text-anchor="middle" fill="var(--gold)">Social contract</text>
+<text x="520" y="180" text-anchor="middle" fill="var(--gold)">Thought privacy</text>
+</g>
+    </svg>
+
+    <div class="layer-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--terracotta)"></div>Freedom from</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--sage)"></div>Freedom to</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div>Generative freedom</div>
+    </div>
+  </div>
+
+  <div class="stat-side">
+    <div id="stat-card" class="stat-card layer-from">
+      <div id="stat-title" class="stat-title">Safety</div>
+      <p id="stat-text" class="stat-text">Oklahoma locks up more people per person than any state in the nation — and any country on earth. Meanwhile, 24 people per minute experience intimate partner violence, and community violence intervention programs cost a fraction of policing.</p>
+      <p id="stat-source" class="stat-source">Prison Policy Initiative, 2025; CDC NISVS; Cure Violence Global; Oklahoma DOC</p>
+      <a id="stat-link" class="stat-link" href="/foundation/freedom-from/safety/">Read the essay →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const data = {
+  safety: { title: "Safety", layer: "from", stat: "Oklahoma locks up more people per person than any state in the nation \u2014 and any country on earth. Meanwhile, 24 people per minute experience intimate partner violence, and community violence intervention programs cost a fraction of policing.", source: "Prison Policy Initiative, 2025; CDC NISVS; Cure Violence Global; Oklahoma DOC", url: "/foundation/freedom-from/safety/" },
+  housing: { title: "Housing", layer: "from", stat: "A minimum wage worker in Oklahoma would need to work 93 hours a week just to afford a one-bedroom apartment. That\u2019s not a housing market. That\u2019s a math problem with no solution.", source: "NLIHC Out of Reach 2025; HRSA; Oklahoma Policy Institute", url: "/foundation/freedom-from/housing/" },
+  income: { title: "Universal Basic Income", layer: "from", stat: "The US poverty gap is $288 billion \u2014 the cost to lift every American above the poverty line. We spend $481 billion on welfare programs. Poverty hasn\u2019t moved in 50 years.", source: "Census Bureau 2024; Federal Safety Net; Guaranteed Income Dashboard 2025", url: "/foundation/freedom-from/universal-basic-income/" },
+  food: { title: "Food", layer: "from", stat: "18.3 million US households were food insecure in 2024 \u2014 the highest rate in nearly a decade. And the government just killed the report that tracks it.", source: "USDA Economic Research Service, 2024 (final report \u2014 series terminated)", url: "/foundation/freedom-from/food/" },
+  healthcare: { title: "Healthcare", layer: "from", stat: "66.5% of US bankruptcies are linked to medical expenses. No other wealthy nation bankrupts its citizens for getting sick.", source: "American Journal of Public Health; Kaiser Family Foundation", url: "/foundation/freedom-from/healthcare/" },
+  water: { title: "Clean Water", layer: "from", stat: "The EPA says America needs $625 billion for water infrastructure over the next 20 years. The proposed 2026 federal budget cuts water funding by 89%.", source: "EPA 7th DWINSA, 2023; ASCE 2025; Trump FY2026 budget", url: "/foundation/freedom-from/clean-water/" },
+  education: { title: "Education", layer: "to", stat: "The US spends $16,080 per student \u2014 5th highest in the world \u2014 yet ranks 28th in math among developed nations.", source: "OECD/PISA 2022", url: "/foundation/freedom-to/education/" },
+  skills: { title: "Skills Training", layer: "to", stat: "Andrej Karpathy mapped every major US job category by AI exposure. The average score: 5.3 out of 10. Software engineers \u2014 the career we told a generation to pursue \u2014 scored 8 to 9.", source: "Karpathy AI Job Exposure Analysis, 2024; McKinsey; WEF Future of Jobs, 2025", url: "/foundation/freedom-to/skills-training/" },
+  transportation: { title: "Transportation", layer: "to", stat: "45% of Americans have no access to public transit. The average cost of car ownership hit $11,577 a year \u2014 nearly $1,000 a month.", source: "APTA 2025; AAA Your Driving Costs 2025; ASCE", url: "/foundation/freedom-to/transportation/" },
+  information: { title: "Information Access", layer: "to", stat: "26 million Americans lack broadband. 50 million have limited or no access to local news. The Affordable Connectivity Program expired, and 5 million households cut internet service.", source: "BroadbandNow 2025; Northwestern Medill, 2025; FCC", url: "/foundation/freedom-to/information-access/" },
+  energy: { title: "Sustainable Energy", layer: "to", stat: "Low-income households spend 3x more of their income on energy than everyone else. In Oklahoma, some of the deepest energy poverty sits on top of some of the richest geology on earth.", source: "DOE LEAD Tool; RMI 2024; EIA Oklahoma; ACEEE 2024", url: "/foundation/freedom-to/sustainable-energy/" },
+  safespaces: { title: "Safe Spaces", layer: "to", stat: "On a single day, over 70,000 domestic violence victims sought help \u2014 and roughly 9,500 requests went unmet. LGBTQ+ youth are 120% more likely to experience homelessness.", source: "NNEDV Census; Chapin Hall; NCOA; CDC NISVS", url: "/foundation/freedom-to/safe-spaces/" },
+  accessible: { title: "Accessible Education", layer: "to", stat: "$1.78 trillion. That\u2019s how much Americans owe in student loans. 43 million borrowers. Average debt: $39,000.", source: "Federal Reserve; Federal Student Aid, Q4 2025", url: "/foundation/freedom-to/accessible-education/" },
+  mentalhealth: { title: "Mental Health", layer: "gen", stat: "170 million Americans live in areas with a shortage of mental health professionals. The average person waits 11 years between first symptoms and first treatment.", source: "HRSA HPSA, 2025; NAMI/Wang et al.; SAMHSA NSDUH 2023", url: "/foundation/generative-freedom/mental-health/" },
+  socialcontract: { title: "Social Contract", layer: "gen", stat: "Only 17% of Americans trust the federal government to do the right thing. In 1964, it was 77%. Neither party has a plan for what comes next.", source: "Pew Research Center, 1958-2025; Gallup, 2025", url: "/foundation/generative-freedom/social-contract/" },
+  thoughtprivacy: { title: "Thought Privacy", layer: "gen", stat: "29 of 30 consumer neurotechnology companies reserve the right to share your brain data with third parties. Four states have neural privacy laws. Zero federal laws exist.", source: "Neurorights Foundation, 2024; Arnold & Porter, 2025", url: "/foundation/generative-freedom/thought-privacy/" }
+};
+
+const layerClass = { from: 'layer-from', to: 'layer-to', gen: 'layer-gen' };
+const card = document.getElementById('stat-card');
+const titleEl = document.getElementById('stat-title');
+const textEl = document.getElementById('stat-text');
+const sourceEl = document.getElementById('stat-source');
+const linkEl = document.getElementById('stat-link');
+
+function showStat(id) {
+  const d = data[id];
+  if (!d) return;
+  card.className = 'stat-card ' + layerClass[d.layer];
+  titleEl.textContent = d.title;
+  textEl.textContent = d.stat;
+  sourceEl.textContent = d.source;
+  linkEl.href = d.url;
+  linkEl.textContent = 'Read the essay \u2192';
+  document.querySelectorAll('.component.active').forEach(el => el.classList.remove('active'));
+  const comp = document.querySelector('.component[data-id="' + id + '"]');
+  if (comp) comp.classList.add('active');
+}
+
+document.querySelectorAll('.component').forEach(el => {
+  const id = el.dataset.id;
+  el.addEventListener('mouseenter', () => showStat(id));
+  el.addEventListener('focus', () => showStat(id));
+  el.addEventListener('click', () => { const d = data[id]; if (d) window.location.href = d.url; });
+});
+
+// Pre-activate Safety on load
+document.querySelector('.component[data-id="safety"]').classList.add('active');
+</script>
+</body>
+</html>

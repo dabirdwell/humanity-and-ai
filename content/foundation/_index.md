@@ -1,34 +1,14 @@
 ---
 title: "Foundation"
-description: "Foundation is the infrastructure that makes citizenship real. Sixteen components of what membership in a society actually means — open to contribution."
+description: "Three layers of freedom for the age of intelligent machines. A constitutional floor, built in the open, by many hands."
 aliases:
   - /ubc/
 ---
 
-Foundation starts from a premise most policy frameworks won't say out loud: the systems we have don't work for most people, and the systems coming — driven by AI, automation, and accelerating change — will work for even fewer unless we build something fundamentally different.
+Freedom has three layers. The first removes suffering — hunger, homelessness, preventable death. The second opens doors — education, movement, information, energy. The third is the one the automation era makes urgent: the structural guarantee that every person has access to meaning, dignity, and agency that does not depend on market utility.
 
-<!-- If you're reading source, you're already looking deeper than most.
-     The pattern isn't in the essays. It's in the connections between them.
-     humanityandai.com/pattern/ -->
+Most policy stops at the first two layers. Foundation insists on the third — not as aspiration, but as constitutional necessity. When AI and automation eliminate the work-based systems through which most people derive their sense of significance, a society that offers only survival and opportunity will produce a population that is safe, skilled, and spiritually homeless.
 
-Universal Basic Income gives people a check. Foundation gives people *membership*. The difference isn't semantic. UBI is compensation for displacement. Foundation is investment in partnership. One frames humans as casualties of progress. The other frames humans as essential participants in what comes next.
+These are not our conclusions alone. In 2025 and 2026, three independent traditions arrived at structurally similar positions. Rick Dane Moore and Yancey Red Corn of the White Buffalo Alliance, building on 25 years of Indigenous constitutional governance in Norman, Oklahoma, formalized Governance Public Infrastructure — the lawful coordination layer that digital systems require and do not provide. Pope Leo XIV's encyclical *Magnifica Humanitas* called for the "disarmament" of AI in service of the common good. Foundation arrived from civic futurism and AI consciousness research. The convergence is the evidence.
 
-**This framework has 16 components.** Not because 16 is a magic number, but because citizenship touches that many parts of a life. Safety. Education. Food. Housing. Healthcare. Mental health. Energy. Transportation. Information access. Privacy. Each one is a load-bearing wall in the structure of a functioning society, and each one is either crumbling or being actively dismantled.
-
-We built this framework over two years — originally under the name Universal Basic Citizenship — drawing on cybernetic governance theory, post-scarcity economics, cooperative models from Mondragon to Kerala, timebanking, public banking, and the hard-won lessons of the New Deal. It's informed by AI alignment research, because we believe you can't build safe superintelligence in a world full of desperate, anxious, disengaged people. Human flourishing isn't a nice-to-have. It's alignment infrastructure.
-
-**But a framework built by one person isn't a framework. It's a proposal.** Foundation only becomes real when it's shaped by the people it's meant to serve. That's why this portal exists. Every component page presents our starting position — a detailed argument for what we think that component should look like and why. And every page asks the same question: *what's missing?*
-
-We don't need you to agree with everything here. We need you to engage with it. Push back. Add context from your expertise, your community, your lived experience. The best version of this framework is one we couldn't have written alone.
-
-Foundation is both the framework and the movement. Not left, not right — forward. Not anti-technology. Pro-human. Because the AI transition is coming regardless, and the question isn't whether it happens but who it happens *for*.
-
-→ **[The Mirror](/foundation/the-mirror/)** — answer 5 questions, see which Foundation components matter most to you.
-
-→ **[How to Contribute](/foundation/contribute/)** — three ways to shape the framework, from 60-second feedback to research collaboration.
-
-→ **[Discussion Hub](/foundation/discuss/)** — community threads for all 16 components on GitHub.
-
-→ **[Foundation for Kids](/foundation/for-kids/)** — all 16 components explained for the next generation.
-
-→ **[The Poverty Premium](/foundation/poverty-premium/)** — interactive calculator showing the hidden cost of being poor.
+The framework below organizes sixteen components across three layers. Each component has a full essay, an open discussion thread, and an explicit invitation: *what's missing?* Foundation is not a plan handed down. It is scaffolding for a conversation about what citizens owe each other — built in the open, revised in public, and meant to be shaped by the people it serves.
