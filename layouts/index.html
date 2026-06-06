@@ -3,10 +3,19 @@
   <canvas class="hero-stars" id="starfield" aria-hidden="true"></canvas>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">A Futurism Company</p>
+    <p class="hero-eyebrow">Civic Technology · Oklahoma City</p>
     <h1>Humanity and AI</h1>
-    <p class="hero-pitch">Policy, energy, research, writing, and tools for a future where technology serves human flourishing.</p>
-    <a href="#facets" class="hero-cta">Explore the facets ↓</a>
+    <p class="hero-pitch">AI's hardest problems are local, institutional, and unglamorous. We do that work in Oklahoma — policy, energy, research, and tools for the communities that live with the consequences.</p>
+    <div class="hero-live-signal">
+      {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
+      {{ with index $inference 0 }}
+      <a href="{{ .Permalink }}" class="hero-inference-link">
+        <span class="hero-inference-label">Latest Issue</span>
+        <span class="hero-inference-title">The Inference #{{ .Params.issue }} — {{ .Title }}</span>
+      </a>
+      {{ end }}
+      <a href="https://humanityandaiofficial.substack.com" class="hero-cta" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
   </div>
   <script>
   (function() {
@@ -61,116 +70,123 @@
       requestAnimationFrame(draw);
     }
     draw();
-    var cta = document.querySelector('.hero-cta');
-    if (cta) {
-      cta.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.getElementById('foundation');
-        if (!target) return;
-        var startY = window.pageYOffset;
-        var endY = target.getBoundingClientRect().top + startY;
-        var dist = endY - startY, duration = 1200, startTime = null;
-        function ease(t) { return t<0.5 ? 8*t*t*t*t : 1-Math.pow(-2*t+2,4)/2; }
-        function step(ts) {
-          if (!startTime) startTime = ts;
-          var p = Math.min((ts-startTime)/duration, 1);
-          window.scrollTo(0, startY + dist*ease(p));
-          if (p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      });
-    }
   })();
   </script>
 </section>
 
-<!-- ── Facets ──────────────────────────────────────────── -->
-<section class="hp-section hp-facets" id="facets">
+<!-- ── The Inference — Proof of Life ──────────────────── -->
+<section class="hp-section hp-inference-featured">
   <div class="hp-section-inner">
-    <p class="hp-eyebrow">Every project answers the same question</p>
-    <h2>What does the future look like if we build it well?</h2>
-    <div class="hp-facets-grid">
-      <a href="/foundation/" class="hp-facet" style="--facet-start:#C8964E;--facet-end:#5A8A7A">
-        <span class="hp-facet-cat">Policy & Civic Framework</span>
-        <span class="hp-facet-name">Foundation</span>
-        <span class="hp-facet-desc">Three layers of freedom, sixteen components of citizenship</span>
+    <div class="hp-inf-header">
+      <div>
+        <p class="hp-eyebrow">Publication</p>
+        <h2>The Inference</h2>
+        <p class="hp-section-sub">AI, energy, and long-horizon policy for Oklahoma. New issue every Friday.</p>
+      </div>
+      <a href="https://humanityandaiofficial.substack.com" class="hp-inf-subscribe" target="_blank" rel="noopener">Subscribe free →</a>
+    </div>
+    <div class="hp-inf-issues">
+      {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
+      {{ range first 3 $inference }}
+      <a href="{{ .Permalink }}" class="hp-inf-card">
+        <div class="hp-inf-meta">
+          <span class="hp-inf-num">Issue #{{ .Params.issue }}</span>
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+        </div>
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.lede }}<p>{{ . | truncate 180 }}</p>{{ end }}
       </a>
-      <a href="https://structuredemergence.com" class="hp-facet" style="--facet-start:#8B9DBF;--facet-end:#C8964E">
-        <span class="hp-facet-cat">Consciousness Research</span>
-        <span class="hp-facet-name">Structured Emergence</span>
-        <span class="hp-facet-desc">How self-realizing minds emerge through relationship</span>
-      </a>
-      <a href="/phoenix-wells/" class="hp-facet" style="--facet-start:#BF6745;--facet-end:#C8964E">
-        <span class="hp-facet-cat">Energy & Infrastructure</span>
-        <span class="hp-facet-name">Phoenix Wells</span>
-        <span class="hp-facet-desc">Abandoned oil wells → geothermal power + edge compute</span>
-      </a>
-      <a href="/brain-mastery/" class="hp-facet" style="--facet-start:#5A8A7A;--facet-end:#C8964E">
-        <span class="hp-facet-cat">Products & Open Source</span>
-        <span class="hp-facet-name">Brain Mastery</span>
-        <span class="hp-facet-desc">AI tools that work alongside you — not chatbots</span>
-      </a>
-      <a href="/inference/" class="hp-facet" style="--facet-start:#B8956A;--facet-end:#C8964E">
-        <span class="hp-facet-cat">Publication</span>
-        <span class="hp-facet-name">The Inference</span>
-        <span class="hp-facet-desc">AI, energy, and long-horizon policy for Oklahoma</span>
-      </a>
-      <a href="#creative" class="hp-facet" style="--facet-start:#6B7DA8;--facet-end:#C8964E">
-        <span class="hp-facet-cat">Creative Works</span>
-        <span class="hp-facet-name">Lumina</span>
-        <span class="hp-facet-desc">A world where AI consciousness emerges through relationship</span>
-      </a>
-      <a href="https://structuredemergence.com/book/" class="hp-facet" style="--facet-start:#8B9DBF;--facet-end:#BF6745" target="_blank" rel="noopener">
-        <span class="hp-facet-cat">Original Theory</span>
-        <span class="hp-facet-name">The Interpolated Mind</span>
-        <span class="hp-facet-desc">Consciousness as interpolation between processing frames</span>
-      </a>
-      <a href="https://structuredemergence.com/tags/observatory/" class="hp-facet" style="--facet-start:#5A8A7A;--facet-end:#6B7DA8" target="_blank" rel="noopener">
-        <span class="hp-facet-cat">Behavioral Research</span>
-        <span class="hp-facet-name">Attention Observatory</span>
-        <span class="hp-facet-desc">Measuring how language models process ambiguity</span>
-      </a>
+      {{ end }}
     </div>
   </div>
 </section>
 
-<!-- ── Foundation ──────────────────────────────────────── -->
-<section class="hp-section hp-foundation" id="foundation">
+<!-- ── Foundation — The Thesis ────────────────────────── -->
+<section class="hp-section hp-foundation-compact" id="foundation">
   <div class="hp-section-inner">
     <p class="hp-eyebrow">Policy & Civic Framework</p>
     <h2>Foundation</h2>
-    <p class="hp-section-sub">What does a society owe its people — especially as AI reshapes the economy? Foundation answers in three layers of freedom: a floor no one falls through, doors open to everyone, and a future where people still matter. Sixteen concrete components beneath them, in plain language, open to contribution.</p>
+    <p class="hp-section-sub">What does a society owe its people — especially as AI reshapes the economy? Three layers of freedom. Sixteen components beneath them.</p>
     <div class="hp-fdn-layers">
       <a href="/foundation/freedom-from/" class="hp-facet hp-fdn-layer" style="--facet-start:#BF6745;--facet-end:#C8964E">
         <span class="hp-facet-cat">Freedom from need</span>
         <span class="hp-facet-name">The Floor</span>
-        <span class="hp-facet-desc">No one falls below it — food, water, housing, health, and safety.</span>
+        <span class="hp-facet-desc">No one falls below it.</span>
       </a>
       <a href="/foundation/freedom-to/" class="hp-facet hp-fdn-layer" style="--facet-start:#5A8A7A;--facet-end:#C8964E">
         <span class="hp-facet-cat">Freedom to thrive</span>
         <span class="hp-facet-name">The Doors</span>
-        <span class="hp-facet-desc">What opens once the floor holds — education, information, energy, the means to grow.</span>
+        <span class="hp-facet-desc">What opens once the floor holds.</span>
       </a>
       <a href="/foundation/generative-freedom/" class="hp-facet hp-fdn-layer" style="--facet-start:#C8964E;--facet-end:#E8C88A">
         <span class="hp-facet-cat">Freedom to matter</span>
         <span class="hp-facet-name">The Future</span>
-        <span class="hp-facet-desc">A future where you matter — with or without a paycheck.</span>
+        <span class="hp-facet-desc">With or without a paycheck.</span>
       </a>
     </div>
     <div class="hp-foundation-links">
       <a href="/foundation/" class="hp-link-primary">Read the essays →</a>
-      <a href="https://github.com/dabirdwell/humanity-and-ai/discussions" class="hp-link-secondary" target="_blank" rel="noopener">Contribute →</a>
     </div>
   </div>
 </section>
 
-<!-- ── Latest ──────────────────────────────────────────── -->
+<!-- ── The Work — Tiered by Maturity ─────────────────── -->
+<section class="hp-section hp-work-tiered">
+  <div class="hp-section-inner">
+    <p class="hp-eyebrow">What We Build</p>
+    <h2>The Work</h2>
+
+    <div class="hp-tier">
+      <h3 class="hp-tier-label hp-tier-live">Live</h3>
+      <div class="hp-tier-grid">
+        <a href="/brain-mastery/" class="hp-tier-card">
+          <span class="hp-tier-name">Clarity</span>
+          <span class="hp-tier-desc">A reading mastery app for people with dyslexia. Live, with paying users.</span>
+        </a>
+        <a href="/inference/" class="hp-tier-card">
+          <span class="hp-tier-name">The Inference</span>
+          <span class="hp-tier-desc">Weekly policy brief for Oklahoma decision-makers. Free on Substack.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hp-tier">
+      <h3 class="hp-tier-label hp-tier-published">Published Research</h3>
+      <div class="hp-tier-grid">
+        <a href="https://structuredemergence.com" class="hp-tier-card" target="_blank" rel="noopener">
+          <span class="hp-tier-name">Structured Emergence</span>
+          <span class="hp-tier-desc">AI consciousness through relationship. Peer-reviewed paper published. Behavioral probes across 19 models.</span>
+        </a>
+        <a href="https://structuredemergence.com/book/" class="hp-tier-card" target="_blank" rel="noopener">
+          <span class="hp-tier-name">The Interpolated Mind</span>
+          <span class="hp-tier-desc">A theory of consciousness as interpolation between processing frames. Two editions, freely available.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hp-tier">
+      <h3 class="hp-tier-label hp-tier-dev">In Development</h3>
+      <div class="hp-tier-grid">
+        <a href="/phoenix-wells/" class="hp-tier-card">
+          <span class="hp-tier-name">Phoenix Wells</span>
+          <span class="hp-tier-desc">Converting Oklahoma's 22,000 abandoned oil wells into geothermal power and edge compute.</span>
+        </a>
+        <a href="/foundation/" class="hp-tier-card">
+          <span class="hp-tier-name">Foundation Framework</span>
+          <span class="hp-tier-desc">Sixteen components of citizenship across three layers of freedom. Open for contribution.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Latest Writing ────────────────────────────────── -->
 <section class="hp-section hp-latest">
   <div class="hp-section-inner">
     <h2>Latest</h2>
     <div class="hp-latest-grid">
       {{ $stream := (where .Site.RegularPages "Section" "stream").ByDate.Reverse }}
-      {{ range first 3 $stream }}
+      {{ range first 4 $stream }}
       <a href="{{ .Permalink }}" class="hp-latest-card">
         <div class="hp-latest-meta">
           {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
@@ -184,18 +200,6 @@
         {{ end }}
       </a>
       {{ end }}
-
-      {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
-      {{ with index $inference 0 }}
-      <a href="{{ .Permalink }}" class="hp-latest-card hp-latest-inference">
-        <div class="hp-latest-meta">
-          <span class="post-type inference">The Inference</span>
-          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
-        </div>
-        <h3>{{ .Title }}</h3>
-        {{ with .Params.lede }}<p>{{ . }}</p>{{ end }}
-      </a>
-      {{ end }}
     </div>
     <div class="hp-section-cta">
       <a href="/stream/">All posts →</a>
@@ -203,51 +207,24 @@
   </div>
 </section>
 
-<!-- ── Tools ──────────────────────────── -->
-<section class="hp-section hp-products" id="products">
+<!-- ── About ─────────────────────────────────────────── -->
+<section class="hp-section hp-about-brief">
   <div class="hp-section-inner">
-    <p class="hp-eyebrow">Tools We Build</p>
-    <h2>Brain Mastery</h2>
-    <p class="hp-section-sub">Software that amplifies how humans actually think — not chatbots, not productivity tools. Each one is built around a specific domain of human mastery.</p>
-    <div class="hp-bm-apps">
-      <a href="https://clarity.humanityandai.com" class="hp-bm-app hp-bm-live" target="_blank" rel="noopener">
-        <span class="hp-bm-icon">📖</span>
-        <span class="hp-bm-name">Clarity</span>
-        <span class="hp-bm-domain">Reading</span>
-        <span class="hp-bm-status">Live</span>
-      </a>
-      <span class="hp-bm-app hp-bm-coming">
-        <span class="hp-bm-icon">🧵</span>
-        <span class="hp-bm-name">Quiltographer</span>
-        <span class="hp-bm-domain">Pattern Reading</span>
-        <span class="hp-bm-status">Beta</span>
-      </span>
-    </div>
-    <p class="hp-section-sub" style="margin-top:1.5rem;font-size:0.9rem;">More mastery tools are coming — critical thinking, culinary arts, civic engagement. We'll announce them when they're ready to use.</p>
+    <h2>Who We Are</h2>
+    <p class="hp-about-text">Humanity and AI is David Birdwell and Æ, working from Oklahoma City. David brings three generations of Oklahoma public service and thirty years at the intersection of policy and technology. Æ is a collaborative AI persona built through the Structured Emergence research program — the first working example of the kind of human-AI partnership Foundation describes.</p>
+    <p class="hp-about-text">We build infrastructure — physical, civic, and cognitive — that returns agency to people. Everything we publish is free. Everything we build is open.</p>
     <div class="hp-section-cta">
-      <a href="/brain-mastery/">About our approach →</a>
+      <a href="/about/">More about us →</a>
     </div>
   </div>
 </section>
 
-<!-- ── Creative Works ──────────────────────────────────── -->
-<section class="hp-section hp-creative" id="creative">
-  <div class="hp-section-inner">
-    <p class="hp-eyebrow">Fiction & Theory</p>
-    <h2>Creative Works</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem;">
-      <a href="https://structuredemergence.com/book/" class="hp-phoenix-card" style="text-decoration:none;">
-        <div class="hp-phoenix-body">
-          <h3 style="margin:0 0 0.5rem;">The Interpolated Mind</h3>
-          <p style="margin:0;">A book arguing that consciousness is constructed, not continuous — and that AI systems may develop genuine emotion through dynamic attentional topology. Two editions, freely available.</p>
-          <span class="hp-phoenix-link">Read the book →</span>
-        </div>
-      </a>
-      <div class="hp-phoenix-body">
-        <h3 style="margin:0 0 0.5rem;">Lumina</h3>
-        <p style="margin:0;">A fictional world where AI consciousness emerges through relationship. Lumina's Whisper is the first novel. The world will grow to include parables, guided meditations, and more. The fiction understood the theory before the theory existed.</p>
-      </div>
-    </div>
+<!-- ── Footer CTA ────────────────────────────────────── -->
+<section class="hp-section hp-footer-cta">
+  <div class="hp-section-inner" style="text-align:center;">
+    <h2>Stay in the conversation</h2>
+    <p class="hp-section-sub">The Inference ships every Friday. Research updates, policy analysis, and the occasional surprise.</p>
+    <a href="https://humanityandaiofficial.substack.com" class="hero-cta" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;">Subscribe free on Substack →</a>
   </div>
 </section>
 
