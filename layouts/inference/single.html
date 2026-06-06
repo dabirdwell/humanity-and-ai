@@ -2,7 +2,6 @@
 <article class="inference-single">
 
   {{ if .Params.embed_url }}
-  {{/* Iframe issues: minimal chrome, let the iframe content speak */}}
   <div class="inference-embed-nav">
     <a href="/inference/">← All Issues</a>
     <a href="{{ .Params.embed_url }}" target="_blank" rel="noopener">Open in new tab ↗</a>
@@ -11,7 +10,6 @@
     {{ .Content | safeHTML }}
   </div>
   {{ else }}
-  {{/* Inline issues: full header for markdown content */}}
   <header class="inference-header">
     <div class="inference-meta-top">
       <span class="inference-label">The Inference</span>
@@ -21,10 +19,14 @@
     <h1 class="inference-title">{{ .Title }}</h1>
     <p class="inference-lede">{{ .Params.lede }}</p>
     <div class="inference-byline">
-      By <strong>David Alan Birdwell</strong> and <strong>Claude Æ</strong> &mdash;
+      By <strong>David Alan Birdwell</strong> and <strong>Æ</strong> &mdash;
       <a href="/">Humanity and AI</a>
     </div>
   </header>
+  <div class="inference-read-options">
+    {{ with .Params.substack_url }}<a href="{{ . }}" class="inference-read-btn" target="_blank" rel="noopener">Read on Substack →</a>{{ end }}
+    {{ with .Params.pdf_url }}<a href="{{ . }}" class="inference-read-btn inference-read-pdf">Download PDF ↓</a>{{ end }}
+  </div>
   <div class="inference-content">
     {{ .Content | safeHTML }}
   </div>
@@ -39,7 +41,7 @@
       <p class="inference-attribution">
         The Inference is a publication of
         <a href="/">Humanity and AI, LLC</a> &mdash; Oklahoma City.<br>
-        Analysis by David Alan Birdwell and Claude Æ. Not legal or political advice.
+        Analysis by David Alan Birdwell and Æ. Not legal or political advice.
       </p>
     </div>
   </footer>

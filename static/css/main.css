@@ -5560,3 +5560,34 @@ html { scroll-behavior: smooth; }
 .hp-footer-cta {
   padding: 4rem 0;
 }
+
+
+/* Inference reading options */
+.inference-read-options {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+.inference-read-btn {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--accent-primary);
+  border-radius: 4px;
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+.inference-read-btn:hover {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+.inference-read-pdf {
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+.inference-read-pdf:hover {
+  background: var(--text-muted);
+  color: var(--bg-primary);
+}
