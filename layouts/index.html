@@ -3,9 +3,9 @@
   <canvas class="hero-stars" id="starfield" aria-hidden="true"></canvas>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Civic Technology · Oklahoma City</p>
+    <p class="hero-eyebrow">A Futurism Company</p>
     <h1>Humanity and AI</h1>
-    <p class="hero-pitch">AI's hardest problems are local, institutional, and unglamorous. We do that work in Oklahoma — policy, energy, research, and tools for the communities that live with the consequences.</p>
+    <p class="hero-pitch">Everything we build answers one question: what does the future look like if we build it well? Policy and energy, research and tools, minds and machines &mdash; facets of a single practice, carried out in the open.</p>
     <div class="hero-live-signal">
       {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
       {{ with index $inference 0 }}
@@ -22,51 +22,101 @@
     var canvas = document.getElementById('starfield');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var stars = [];
-    var count = 200;
     var dpr = window.devicePixelRatio || 1;
-    var W, H, cx, cy;
+    var W, H, stars = [];
     function resize() {
       W = canvas.offsetWidth; H = canvas.offsetHeight;
       canvas.width = W * dpr; canvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cx = W / 2; cy = H / 2;
+      build();
     }
-    resize(); window.addEventListener('resize', resize);
-    var tints = [[255,255,255],[200,220,255],[255,220,180],[180,220,255],[255,200,160]];
-    function makeStar(z) {
-      var angle = Math.random() * Math.PI * 2;
-      var spread = Math.random() * 0.4 + 0.1;
-      return { x: Math.cos(angle)*spread, y: Math.sin(angle)*spread,
-        z: z !== undefined ? z : Math.random(),
-        twinkleSpeed: 0.003 + Math.random()*0.008,
-        twinkleOffset: Math.random()*Math.PI*2,
-        tint: tints[Math.floor(Math.random()*tints.length)] };
+    function build() {
+      stars = [];
+      var n = Math.round(W * H / 1600);
+      if (n > 320) n = 320;
+      var horizon = H * 0.74;
+      for (var i = 0; i < n; i++) {
+        var y = Math.random() * horizon;
+        var near = 1 - (y / horizon);
+        stars.push({
+          x: Math.random() * W, y: y,
+          r: Math.random() * 1.1 + 0.3,
+          base: 0.25 + Math.random() * 0.6 * near,
+          ts: 0.004 + Math.random() * 0.010,
+          to: Math.random() * Math.PI * 2,
+          big: Math.random() < 0.06
+        });
+      }
     }
-    for (var i = 0; i < count; i++) stars.push(makeStar());
-    var speed = 0.0004, time = 0;
+    resize();
+    window.addEventListener('resize', resize);
+    var t = 0;
     function draw() {
-      time += 1; ctx.clearRect(0, 0, W, H);
+      t += 1;
+      ctx.clearRect(0, 0, W, H);
       var scrollY = window.pageYOffset || 0;
-      var scrollFactor = Math.min(scrollY / H, 1);
+      var fade = 1 - Math.min(scrollY / H, 1) * 0.85;
+      var horizon = H * 0.74;
+      var mg = ctx.createLinearGradient(W * 0.15, 0, W * 0.85, horizon * 0.9);
+      mg.addColorStop(0, 'rgba(58,74,114,0)');
+      mg.addColorStop(0.5, 'rgba(60,64,112,' + (0.16 * fade) + ')');
+      mg.addColorStop(1, 'rgba(58,74,114,0)');
+      ctx.save();
+      ctx.translate(W * 0.5, horizon * 0.42);
+      ctx.rotate(-0.32);
+      ctx.fillStyle = mg;
+      ctx.fillRect(-W * 0.9, -horizon * 0.22, W * 1.8, horizon * 0.44);
+      ctx.restore();
       for (var i = 0; i < stars.length; i++) {
-        var s = stars[i]; s.z -= speed;
-        if (s.z <= 0.001) { stars[i] = makeStar(1); continue; }
-        var px = cx + (s.x/s.z)*cx, py = cy + (s.y/s.z)*cy;
-        if (px < -20 || px > W+20 || py < -20 || py > H+20) { stars[i] = makeStar(1); continue; }
-        var r = (1-s.z)*1.8+0.3;
-        var twinkle = Math.sin(time*s.twinkleSpeed + s.twinkleOffset);
-        var a = (0.3+0.7*(1-s.z))*(0.6+0.4*twinkle) * (1-scrollFactor*0.8);
-        var drift = scrollY * (0.05+(1-s.z)*0.15);
-        ctx.beginPath(); ctx.arc(px, py-drift, r, 0, Math.PI*2);
-        ctx.fillStyle = 'rgba('+s.tint[0]+','+s.tint[1]+','+s.tint[2]+','+a+')';
-        ctx.fill();
-        if (r > 1.2) {
-          ctx.beginPath(); ctx.arc(px, py-drift, r*2.5, 0, Math.PI*2);
-          ctx.fillStyle = 'rgba('+s.tint[0]+','+s.tint[1]+','+s.tint[2]+','+(a*0.08)+')';
+        var s = stars[i];
+        var tw = 0.55 + 0.45 * Math.sin(t * s.ts + s.to);
+        var a = s.base * tw * fade;
+        if (s.big) {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r * 2.4, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(207,224,255,' + (a * 0.18) + ')';
           ctx.fill();
         }
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,' + a + ')';
+        ctx.fill();
       }
+      var gg = ctx.createLinearGradient(0, horizon - H * 0.18, 0, horizon + 2);
+      gg.addColorStop(0, 'rgba(150,61,24,0)');
+      gg.addColorStop(0.6, 'rgba(122,51,24,' + (0.40 * fade) + ')');
+      gg.addColorStop(1, 'rgba(150,61,24,' + (0.62 * fade) + ')');
+      ctx.fillStyle = gg;
+      ctx.fillRect(0, horizon - H * 0.18, W, H * 0.18 + 2);
+      ctx.fillStyle = '#0a0604';
+      ctx.beginPath();
+      ctx.moveTo(0, horizon);
+      ctx.quadraticCurveTo(W * 0.5, horizon - 6, W, horizon - 1);
+      ctx.lineTo(W, H); ctx.lineTo(0, H); ctx.closePath();
+      ctx.fill();
+      var tx = W * 0.30, ty = horizon, sc = Math.min(H / 420, 1.2);
+      ctx.save();
+      ctx.translate(tx, ty);
+      ctx.scale(sc, sc);
+      ctx.fillStyle = '#05080f';
+      ctx.fillRect(-4, -58, 8, 60);
+      ctx.beginPath();
+      ctx.moveTo(0, -50);
+      ctx.bezierCurveTo(-26, -56, -40, -78, -30, -100);
+      ctx.bezierCurveTo(-40, -96, -30, -120, -14, -126);
+      ctx.bezierCurveTo(-22, -140, 0, -150, 14, -140);
+      ctx.bezierCurveTo(30, -150, 44, -128, 32, -116);
+      ctx.bezierCurveTo(48, -118, 44, -92, 26, -88);
+      ctx.bezierCurveTo(40, -80, 24, -58, 0, -50);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = '#05080f';
+      ctx.lineWidth = 3; ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(0, -30); ctx.quadraticCurveTo(-16, -38, -26, -30);
+      ctx.moveTo(0, -16); ctx.quadraticCurveTo(18, -22, 30, -14);
+      ctx.stroke();
+      ctx.restore();
       requestAnimationFrame(draw);
     }
     draw();

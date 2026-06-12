@@ -4104,7 +4104,6 @@ a.hp-fdn-item:hover {
   margin-bottom: 0.4rem;
   color: var(--text-primary);
 }
-}
 
 .hp-latest-card p {
   font-size: 0.84rem;
@@ -5373,8 +5372,8 @@ html { scroll-behavior: smooth; }
   gap: 1rem;
   margin: 2rem 0;
 }
-@media (max-width: 700px) {
-  .hp-fdn-layers { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+  .hp-fdn-layers { grid-template-columns: 1fr; gap: 0.85rem; }
 }
 
 
@@ -5590,4 +5589,158 @@ html { scroll-behavior: smooth; }
 .inference-read-pdf:hover {
   background: var(--text-muted);
   color: var(--bg-primary);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   HOMEPAGE RESPONSIVE POLISH — 2026-06
+   Mobile / tablet refinement layer. CSS only.
+   Order: small phones → phones → tablets → desktops.
+   ═══════════════════════════════════════════════════════ */
+
+/* Long-word safety net — prevent any homepage title or label from
+   forcing a horizontal scroll on narrow viewports. */
+.hp-section h2,
+.hp-section h3,
+.hp-section p,
+.hp-inf-card h3,
+.hp-inf-card p,
+.hp-tier-name,
+.hp-tier-desc,
+.hp-latest-card h3,
+.hp-latest-card p,
+.hp-facet-name,
+.hp-facet-desc,
+.hp-about-text,
+.hero h1,
+.hero-pitch,
+.hero-inference-title,
+.hero-inference-label {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* The Inference card grid — explicit 3-column on desktop, already
+   collapses to 1fr ≤768px. Add a comfortable 2-col mid-range so
+   tablet landscape doesn't feel cramped against the 3-col layout. */
+@media (min-width: 769px) and (max-width: 960px) {
+  .hp-inf-issues { grid-template-columns: repeat(2, 1fr); }
+  .hp-fdn-layers { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Tablet portrait & smaller (≤768px) — the "mobile" breakpoint ── */
+@media (max-width: 768px) {
+  /* Section rhythm: generous vertical breathing, comfortable side padding */
+  .hp-section { padding: 3rem 0; }
+  .hp-section-inner { padding: 0 1.25rem; }
+
+  /* Section headings sized down so they don't dwarf the section */
+  .hp-section h2 { font-size: 1.45rem; line-height: 1.25; }
+  .hp-section-sub { font-size: 0.95rem; }
+  .hp-eyebrow { font-size: 0.7rem; letter-spacing: 2px; }
+
+  /* The Inference — header stacks, subscribe button becomes block */
+  .hp-inf-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .hp-inf-subscribe {
+    width: 100%;
+    text-align: center;
+  }
+  .hp-inf-issues { gap: 1rem; }
+  .hp-inf-card { padding: 1.1rem; }
+  .hp-inf-card h3 { font-size: 1.02rem; }
+
+  /* Tier cards — 1-col, tighter padding, generous gap */
+  .hp-tier { margin-bottom: 2rem; }
+  .hp-tier-grid { gap: 0.85rem; }
+  .hp-tier-card { padding: 1.1rem; }
+
+  /* Foundation layer cards (already 1-col ≤768px from earlier edit) */
+  .hp-facet { padding: 1.4rem; }
+  .hp-facet-name { font-size: 1.15rem; }
+  .hp-facet-desc { font-size: 0.9rem; }
+
+  /* Latest writing — already 1-col ≤768px, just tighten the card */
+  .hp-latest-grid { gap: 0.85rem; }
+  .hp-latest-card { padding: 1.2rem; }
+
+  /* About — narrower text block reads better at this width */
+  .hp-about-text { font-size: 0.98rem; line-height: 1.7; }
+
+  /* Footer CTA — keep some headroom but not 4rem */
+  .hp-footer-cta { padding: 3rem 0; }
+}
+
+/* ── Phone (≤640px) — keep hero readable, no horizontal scroll ── */
+@media (max-width: 640px) {
+  .hero-content { padding: 0 1.25rem; }
+  .hero-pitch {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+
+  /* Hero CTA cluster — stack vertically, full-width, easy to tap */
+  .hero-live-signal {
+    flex-direction: column;
+    gap: 0.85rem;
+    align-items: stretch;
+    margin-top: 1.5rem;
+  }
+  .hero-inference-link {
+    text-align: center;
+    padding: 0.7rem 1rem;
+  }
+  .hero-inference-title {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .hero-cta {
+    text-align: center;
+    padding: 12px 20px;
+  }
+}
+
+/* ── Small phones (≤480px) — last-mile tightening ── */
+@media (max-width: 480px) {
+  .hp-section { padding: 2.5rem 0; }
+  .hp-section-inner { padding: 0 1rem; }
+  .hp-section h2 { font-size: 1.3rem; }
+  .hp-section-sub { font-size: 0.9rem; }
+
+  .hero { min-height: 88vh; min-height: 88svh; }
+  .hero h1 { font-size: 1.85rem; line-height: 1.15; }
+  .hero-pitch { font-size: 0.95rem; }
+
+  .hp-inf-card { padding: 1rem; }
+  .hp-inf-card h3 { font-size: 0.98rem; }
+  .hp-tier-card { padding: 1rem; }
+  .hp-tier-name { font-size: 0.95rem; }
+  .hp-latest-card { padding: 1rem; }
+  .hp-latest-card h3 { font-size: 0.95rem; }
+  .hp-facet { padding: 1.2rem; }
+  .hp-facet-name { font-size: 1.05rem; }
+  .hp-about-text { font-size: 0.92rem; }
+
+  /* Footer CTA subscribe button — let it shrink to fit */
+  .hp-footer-cta .hero-cta {
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ── Very small phones (≤360px) — protect from edge clipping ── */
+@media (max-width: 360px) {
+  .hero-content { padding: 0 1rem; }
+  .hero h1 { font-size: 1.7rem; }
+  .hp-section-inner { padding: 0 0.9rem; }
+  .hp-inf-meta { flex-wrap: wrap; gap: 0.3rem; }
 }
