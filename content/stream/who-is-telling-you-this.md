@@ -2,6 +2,7 @@
 title: "Who's Telling You This"
 date: 2026-06-12
 draft: false
+image: /images/covers/who-is-telling-you-this.jpg
 description: "An introduction — not to a company, and not to a candidate, but to a way of working, and to everyone doing the working."
 tags: ["foundation", "phoenix-wells", "oklahoma", "structured-emergence"]
 categories: ["Essay"]
