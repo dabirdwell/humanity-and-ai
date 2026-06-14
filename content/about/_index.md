@@ -55,7 +55,7 @@ Everything we build connects. Six layers, from ground to mind — each one suppo
   </div>
   <div class="stack-layer layer-data">
     <span class="stack-label">Data</span>
-    <span class="stack-desc"><a href="/stream/beacon-ships/">Beacon</a>, civic streaming, transparency tools — information as infrastructure</span>
+    <span class="stack-desc">Beacon, civic streaming, transparency tools — information as infrastructure</span>
   </div>
   <div class="stack-layer layer-energy">
     <span class="stack-label">Energy</span>
@@ -79,7 +79,7 @@ Technology that teaches rather than replaces. Each app in the Brain Mastery line
     <span class="pipeline-name">Clarity</span>
     <span class="pipeline-role">Read</span>
     <p>Reading comprehension companion. Builds genuine understanding, not summaries.</p>
-    <span class="pipeline-status live">Live</span>
+    <span class="pipeline-status coming-soon">Rebuilding</span>
   </div>
   <span class="pipeline-arrow">→</span>
   <div class="pipeline-step">
@@ -103,7 +103,7 @@ Technology that teaches rather than replaces. Each app in the Brain Mastery line
     <span class="pipeline-name">Quiltographer</span>
     <span class="pipeline-role">Create</span>
     <p>Pattern design for quilters. Understands fabric, grain, seam allowances, color.</p>
-    <span class="pipeline-status beta">Beta</span>
+    <span class="pipeline-status coming-soon">In Development</span>
   </div>
   <span class="pipeline-arrow">→</span>
   <div class="pipeline-step">
