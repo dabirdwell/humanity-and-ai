@@ -17,3 +17,5 @@ Thumbs.db
 
 # Obsidian vault (content editing)
 .obsidian/
+*.corrected.md
+content/emdash_audit_report.md
