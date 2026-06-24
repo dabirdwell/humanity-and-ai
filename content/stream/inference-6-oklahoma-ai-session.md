@@ -16,9 +16,9 @@ draft: false
 
 ## The Big Picture
 
-The 2026 Oklahoma legislative session is quietly becoming one of the most AI-active in the country. More than a dozen AI-related bills are moving through the legislature, a chatbot safety bill and a responsible technology in schools act have both cleared their chambers of origin, and Chief AI Officer Tai Phan is four months into his role advocating "accountable innovation." Meanwhile, on the energy side, the Well Repurposing Act sailed through the House 85-6 and awaits Senate action — creating the legal framework for exactly the kind of geothermal-to-compute conversion that could position Oklahoma as distributed AI infrastructure.
+The 2026 Oklahoma legislative session is quietly becoming one of the most AI-active in the country. More than a dozen AI-related bills are moving through the legislature, a chatbot safety bill and a responsible technology in schools act have both cleared their chambers of origin, and Chief AI Officer Tai Phan is four months into his role advocating "accountable innovation." Meanwhile, on the energy side, the Well Repurposing Act sailed through the House 85-6 and awaits Senate action, creating the legal framework for exactly the kind of geothermal-to-compute conversion that could position Oklahoma as distributed AI infrastructure.
 
-Oklahoma isn't waiting for Congress. The question is whether the state is moving fast enough — and in the right direction.
+Oklahoma isn't waiting for Congress. The question is whether the state is moving fast enough, and in the right direction.
 
 ---
 
@@ -27,7 +27,7 @@ Oklahoma isn't waiting for Congress. The question is whether the state is moving
 ### Bills That Have Moved
 
 **SB 1734 — Oklahoma Responsible Technology in Schools Act**
-Passed the full Senate 42-0 on March 23. Now in the House. Requires development of guidance for AI and emerging technology use in education. Sen. Selfried and Rep. Moore. The unanimous vote signals that school-focused AI governance is politically safe ground — nobody opposes protecting students.
+Passed the full Senate 42-0 on March 23. Now in the House. Requires development of guidance for AI and emerging technology use in education. Sen. Selfried and Rep. Moore. The unanimous vote signals that school-focused AI governance is politically safe ground. Nobody opposes protecting students.
 
 **HB 3544 and SB 1521 — Chatbot Safety Bills**
 Both approved by their chambers of origin this week. These companion measures address AI chatbot interactions with minors. Oklahoma joins Idaho, Georgia, and other states pursuing chatbot safety after a year of national attention on AI companion apps and youth mental health.
@@ -50,7 +50,7 @@ Passed House 92-2. Rep. Brad Boles (R-Marlow). Requires large-load data centers 
 
 ### The Pattern
 
-The bills cluster into three themes: protecting children (chatbots, schools), protecting consumers (data centers, health insurance), and establishing frameworks (AI rights, professional standards). What's missing: any comprehensive approach to AI governance that connects these threads. Each bill addresses a symptom; none addresses the system.
+The bills cluster into three themes: protecting children (chatbots, schools), protecting consumers (data centers, health insurance), and establishing frameworks (AI rights, professional standards). What's missing is any comprehensive approach to AI governance that connects these threads. Each bill addresses a symptom; none addresses the system.
 
 ---
 
@@ -58,9 +58,9 @@ The bills cluster into three themes: protecting children (chatbots, schools), pr
 
 Oklahoma's first Chief AI and Technology Officer spoke at the Adobe Government Forum in Washington in February, introducing the framing "AI = Accountable Innovation." Key positions from his public remarks:
 
-The state is focused on "amplifying the workforce" through AI — making existing state employees more effective rather than replacing them. Phan emphasized that reliability requires both tooling and people: technology producing accurate answers only matters if the people using it are qualified to evaluate those answers. He called for transparency about where AI models source their data and what they're trained on, stating AI systems should be able to explain their reasoning and sources.
+The state is focused on "amplifying the workforce" through AI, making existing state employees more effective rather than replacing them. Phan emphasized that reliability requires both tooling and people: technology producing accurate answers only matters if the people using it are qualified to evaluate those answers. He called for transparency about where AI models source their data and what they're trained on, stating AI systems should be able to explain their reasoning and sources.
 
-Phan also raised procurement concerns — state agencies sometimes make technology purchasing decisions without IT involvement on the front end, creating unintended ROI consequences. He's positioning the Chief AI Officer role as a quality gate for technology decisions, not just an innovation cheerleader.
+Phan also raised procurement concerns. State agencies sometimes make technology purchasing decisions without IT involvement on the front end, creating unintended ROI consequences. He's positioning the Chief AI Officer role as a quality gate for technology decisions, not just an innovation cheerleader.
 
 His salary is $190,000. He reports to State CIO Dan Cronin.
 
@@ -84,7 +84,7 @@ This creates a strategic window: 7 years of full ITC eligibility for Oklahoma we
 
 A detail worth watching: HB 3173 defines geothermal development as earth heat above 250°F. OU's Mewbourne School of Petroleum and Geological Engineering director Runar Nygaard told KOSU the threshold may be too high for Oklahoma's geology. McCaskill, another researcher, recommended dropping to 180°F.
 
-Oklahoma is not Nevada or California — temperatures at accessible depths are generally lower. If the 250°F floor excludes the majority of viable wells, the bill becomes symbolic rather than operational. Senate amendments to lower the threshold could significantly expand the act's practical impact.
+Oklahoma is not Nevada or California. Temperatures at accessible depths are generally lower. If the 250°F floor excludes the majority of viable wells, the bill becomes symbolic rather than operational. Senate amendments to lower the threshold could significantly expand the act's practical impact.
 
 ---
 
@@ -94,7 +94,7 @@ Oklahoma is not alone in its AI legislative activity this session. Utah's govern
 
 The Transparency Coalition identifies a national pattern: chatbot safety and youth protection bills are advancing fastest, followed by education-focused AI governance, with comprehensive AI frameworks still struggling for traction.
 
-Oklahoma's mix of consumer protection, education, and energy infrastructure bills places it in the "pragmatic middle" — not pursuing grand AI frameworks like Colorado's SB 205, but not ignoring the issue either. The question is whether pragmatism becomes strategy, or whether the state simply accumulates a patchwork of reactive measures.
+Oklahoma's mix of consumer protection, education, and energy infrastructure bills places it in the "pragmatic middle." It is not pursuing grand AI frameworks like Colorado's SB 205, but not ignoring the issue either. The question is whether pragmatism becomes strategy, or whether the state simply accumulates a patchwork of reactive measures.
 
 ---
 
@@ -104,7 +104,7 @@ Oklahoma's mix of consumer protection, education, and energy infrastructure bill
 
 **For the Governor's office:** Phan's "accountable innovation" framing is solid, but his office lacks statutory authority. If the session ends without legislation anchoring the Chief AI Officer role, the position remains an executive appointment that can be eliminated by the next governor.
 
-**For businesses:** Seven years of full geothermal ITC eligibility, combined with bipartisan legislative support and a new legal framework for well conversion, creates a time-limited but significant opportunity. The window is not infinite — space-based compute reaches cost parity with ground-based by roughly 2035, and federal tax credits phase down in 2034.
+**For businesses:** Seven years of full geothermal ITC eligibility, combined with bipartisan legislative support and a new legal framework for well conversion, creates a time-limited but significant opportunity. The window is not infinite. Space-based compute reaches cost parity with ground-based by roughly 2035, and federal tax credits phase down in 2034.
 
 **For communities:** Both data center bills (HB 2992 and HB 3917) protect ratepayers from subsidizing tech infrastructure. This is the right instinct. The next question is whether communities can also *benefit* from that infrastructure, not just avoid paying for someone else's.
 
