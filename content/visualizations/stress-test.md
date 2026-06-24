@@ -1,6 +1,6 @@
 ---
 title: "The Stress Test"
-description: "Five questions. No income brackets. No political framing. Just honest answers about your own life — and what they reveal about the system you're living in."
+description: "Five questions. No income brackets. No political framing. Just honest answers about your own life, and what they reveal about the system you're living in."
 date: 2026-03-06T16:00:00
 type: "visualizations"
 tags: ["economy", "healthcare", "housing", "labor", "interactive", "personal"]
@@ -27,11 +27,11 @@ window.addEventListener('message', function(e) {
 
 ## On the Design
 
-The Stress Test deliberately avoids income brackets, poverty language, and political framing. The questions are about concrete situations — a missed paycheck, a medical bill, a car repair — because those situations don't care about how you identify politically, or whether you consider yourself "doing well."
+The Stress Test deliberately avoids income brackets, poverty language, and political framing. The questions are about concrete situations (a missed paycheck, a medical bill, a car repair) because those situations don't care about how you identify politically, or whether you consider yourself "doing well."
 
-The result isn't a judgment. It's a mirror — showing where you land relative to other Americans, and then showing what that same position looks like in Germany or Denmark. The gap isn't explained by personal choices. It's explained by policy choices: paid sick leave, universal healthcare, housing subsidies, unemployment replacement rates.
+The result isn't a judgment. It's a mirror: showing where you land relative to other Americans, and then showing what that same position looks like in Germany or Denmark. The gap isn't explained by personal choices. It's explained by policy choices: paid sick leave, universal healthcare, housing subsidies, unemployment replacement rates.
 
-The comparison statistics are drawn from OECD financial resilience data, Federal Reserve Survey of Consumer Finances, and Eurostat household financial stability surveys. The peer-nation figures represent households at equivalent purchasing-power-adjusted income levels — same economic position, different infrastructure beneath them.
+The comparison statistics are drawn from OECD financial resilience data, Federal Reserve Survey of Consumer Finances, and Eurostat household financial stability surveys. The peer-nation figures represent households at equivalent purchasing-power-adjusted income levels: same economic position, different infrastructure beneath them.
 
 This is the most shareable visualization in the Foundation series precisely because it's personal before it's political. The system reveals itself through your own answers.
 

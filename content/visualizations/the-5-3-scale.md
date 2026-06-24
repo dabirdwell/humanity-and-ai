@@ -8,7 +8,7 @@ preview_bg: "linear-gradient(135deg, rgba(226,75,74,0.2), rgba(29,158,117,0.15),
 preview_icon: "📊"
 ---
 
-Andrej Karpathy — former OpenAI researcher, Tesla AI lead — rated the average American job at 5.3 out of 10 for AI automation exposure. Software developers scored 8-9. Plumbers scored under 2. Search for your job.
+Andrej Karpathy (former OpenAI researcher, Tesla AI lead) rated the average American job at 5.3 out of 10 for AI automation exposure. Software developers scored 8-9. Plumbers scored under 2. Search for your job.
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
@@ -18,11 +18,11 @@ Andrej Karpathy — former OpenAI researcher, Tesla AI lead — rated the averag
 
 ## What 5.3 Means for Foundation
 
-If the average job is more than halfway automatable, and AI capability is accelerating, then the displacement isn't coming — it's here. The question isn't whether people will need a floor. The question is whether the floor exists when they need it.
+If the average job is more than halfway automatable, and AI capability is accelerating, then the displacement isn't coming. It's here. The question isn't whether people will need a floor. The question is whether the floor exists when they need it.
 
-Foundation's 16 components — especially UBI, Skills Training, and Accessible Education — are designed for exactly this moment. Not to prevent automation (that ship has sailed) but to ensure that the people whose jobs score above 5 have somewhere to land that isn't debt, homelessness, and civic withdrawal.
+Foundation's 16 components (especially UBI, Skills Training, and Accessible Education) are designed for exactly this moment. Not to prevent automation (that ship has sailed) but to ensure that the people whose jobs score above 5 have somewhere to land that isn't debt, homelessness, and civic withdrawal.
 
-Notice what scores low: trades that require physical presence in variable environments. Plumbers, electricians, construction workers. The jobs that can't be done from a data center. Phoenix Wells is designed to create more of these jobs — geothermal conversion requires the same hands-on skills that built Oklahoma's oil infrastructure.
+Notice what scores low: trades that require physical presence in variable environments. Plumbers, electricians, construction workers. The jobs that can't be done from a data center. Phoenix Wells is designed to create more of these jobs: geothermal conversion requires the same hands-on skills that built Oklahoma's oil infrastructure.
 
 [See the full Foundation framework →](/foundation/)
 

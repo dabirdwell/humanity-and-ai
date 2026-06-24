@@ -3,14 +3,14 @@ title: "The Inference #6: The Oklahoma AI Session"
 date: 2026-03-27
 type: "report"
 tags: ["inference", "ai-policy", "oklahoma", "legislation"]
-description: "AI policy intelligence for Oklahoma decision-makers. Issue 6 covers the full 2026 legislative session — 12 AI bills tracked, 4 passed, and what it means."
+description: "AI policy intelligence for Oklahoma decision-makers. Issue 6 covers the full 2026 legislative session: 12 AI bills tracked, 4 passed, and what it means."
 image: /images/covers/inference-6-oklahoma-ai-session.svg
 draft: false
 ---
 
 # The Inference
 ## AI Policy Intelligence for Oklahoma Decision-Makers
-### Issue 6 — March 27, 2026
+### Issue 6: March 27, 2026
 
 ---
 
@@ -26,27 +26,27 @@ Oklahoma isn't waiting for Congress. The question is whether the state is moving
 
 ### Bills That Have Moved
 
-**SB 1734 — Oklahoma Responsible Technology in Schools Act**
+**SB 1734: Oklahoma Responsible Technology in Schools Act**
 Passed the full Senate 42-0 on March 23. Now in the House. Requires development of guidance for AI and emerging technology use in education. Sen. Selfried and Rep. Moore. The unanimous vote signals that school-focused AI governance is politically safe ground. Nobody opposes protecting students.
 
-**HB 3544 and SB 1521 — Chatbot Safety Bills**
+**HB 3544 and SB 1521: Chatbot Safety Bills**
 Both approved by their chambers of origin this week. These companion measures address AI chatbot interactions with minors. Oklahoma joins Idaho, Georgia, and other states pursuing chatbot safety after a year of national attention on AI companion apps and youth mental health.
 
-**HB 3173 — Well Repurposing Act**
+**HB 3173: Well Repurposing Act**
 Passed the House 85-6. Bipartisan: Rep. Nick Archer (R-Elk City) and Rep. John Waldron (D-Tulsa). Allows conversion of abandoned wells to geothermal energy and storage. Sen. Darcy Jech carries it in the Senate. Senate committee hearing not yet scheduled. If signed, effective November 1, 2026.
 
-**HB 2992 — Data Center Infrastructure Costs**
+**HB 2992: Data Center Infrastructure Costs**
 Passed House 92-2. Rep. Brad Boles (R-Marlow). Requires large-load data centers to pay their share of infrastructure costs. Prevents ratepayer subsidization of tech company buildouts. A consumer protection measure that complements HB 3917's data center surcharge approach.
 
 ### Bills In Committee
 
-**SB 2085** — Establishes AI rights. Sen. Hamilton. Referred to Technology and Telecommunications Committee.
+**SB 2085**: Establishes AI rights. Sen. Hamilton. Referred to Technology and Telecommunications Committee.
 
-**SB 1967** — AI use by medical professionals. Sen. Mann. In Technology and Telecommunications Committee.
+**SB 1967**: AI use by medical professionals. Sen. Mann. In Technology and Telecommunications Committee.
 
-**SB 2038** — AI in health insurance decisions. Sen. Goodwin. Referred to Business and Insurance Committee.
+**SB 2038**: AI in health insurance decisions. Sen. Goodwin. Referred to Business and Insurance Committee.
 
-**HB 4348** — AI in civil legal proceedings. Concerns attorney duties and exhibit authenticity.
+**HB 4348**: AI in civil legal proceedings. Concerns attorney duties and exhibit authenticity.
 
 ### The Pattern
 

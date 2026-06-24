@@ -9,4 +9,4 @@ tags: ["ai-policy", "governance", "oklahoma", "cybersecurity", "economic-policy"
 embed_url: "https://dabirdwell.github.io/legislaitive-report/issue-7/"
 ---
 
-<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-7/" class="inference-embed" title="The Inference — Issue 7" loading="lazy"></iframe>
+<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-7/" class="inference-embed" title="The Inference: Issue 7" loading="lazy"></iframe>

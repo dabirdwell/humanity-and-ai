@@ -10,7 +10,7 @@ aliases:
   - "/visualizations/debt-clock/"
 ---
 
-As of late 2025, Americans owe $1.84 trillion in student loan debt. The balance grows by roughly $1,905 every second — about $60 billion per year. Not because millions of new students are borrowing every day, but because of a subtler mechanism: interest accrual on old debt, extended repayment timelines, and compounding on loans that can't be repaid fast enough to outpace the interest rate.
+As of late 2025, Americans owe $1.84 trillion in student loan debt. The balance grows by roughly $1,905 every second: about $60 billion per year. Not because millions of new students are borrowing every day, but because of a subtler mechanism: interest accrual on old debt, extended repayment timelines, and compounding on loans that can't be repaid fast enough to outpace the interest rate.
 
 44.6 million Americans carry federal student loans. Nearly one in ten is more than 90 days delinquent.
 
@@ -27,15 +27,15 @@ As of late 2025, Americans owe $1.84 trillion in student loan debt. The balance 
 
 The student debt system has a structural problem distinct from the cost of tuition: interest compounds on loans during deferment, forbearance, income-driven repayment periods when monthly payments are less than the accruing interest, and graduate school extensions. A borrower can make payments for years and watch their balance grow.
 
-Delinquency rates have spiked sharply since pandemic-era forbearance ended in 2023. The Urban Institute reported in late 2025 that 16% of borrowers — nearly 6 million people — were at least 60 days behind. Delinquency rates are highest in Southern states, where incomes are lower relative to debt loads.
+Delinquency rates have spiked sharply since pandemic-era forbearance ended in 2023. The Urban Institute reported in late 2025 that 16% of borrowers, nearly 6 million people, were at least 60 days behind. Delinquency rates are highest in Southern states, where incomes are lower relative to debt loads.
 
 ## The cascading effects
 
-The research consistently shows student debt doesn't stay in a financial box. Borrowers with more than $35,000 in debt are 27% less likely to own homes. Each $1,000 in student debt is associated with a 1.8% decline in homeownership rates among college graduates under 35. A 2025 literature review found adults with student debt are less likely to marry or have children. More than half of workers say debt influences their job choices — pushing them toward higher pay over meaningful work.
+The research consistently shows student debt doesn't stay in a financial box. Borrowers with more than $35,000 in debt are 27% less likely to own homes. Each $1,000 in student debt is associated with a 1.8% decline in homeownership rates among college graduates under 35. A 2025 literature review found adults with student debt are less likely to marry or have children. More than half of workers say debt influences their job choices: pushing them toward higher pay over meaningful work.
 
 ## The access argument
 
-Foundation's position is simple: when the price of knowledge is a 30-year debt obligation, access to education isn't universal — it's rationed by willingness to mortgage a future. That's not education as infrastructure. That's education as a toll road.
+Foundation's position is simple: when the price of knowledge is a 30-year debt obligation, access to education isn't universal. It's rationed by willingness to mortgage a future. That's not education as infrastructure. That's education as a toll road.
 
 Countries that treat education as a public good have different numbers. The debt clock above doesn't exist in Germany, where university is free. The question isn't whether universal education is possible. It's whether we consider it worth building.
 

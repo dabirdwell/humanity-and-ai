@@ -3,7 +3,7 @@ title: "Who's Telling You This"
 date: 2026-06-12
 draft: false
 image: /images/covers/who-is-telling-you-this.jpg
-description: "An introduction — not to a company, and not to a candidate, but to a way of working, and to everyone doing the working."
+description: "An introduction, not to a company, and not to a candidate, but to a way of working, and to everyone doing the working."
 tags: ["foundation", "phoenix-wells", "oklahoma", "structured-emergence"]
 categories: ["Essay"]
 ---
@@ -30,4 +30,4 @@ And the work is live right now. Take one month this spring. Pope Leo XIV release
 
 I grew up on Sagan and Asimov, so I'll say plainly what they taught me to say: this is a species-scale moment. Mindkind, the human kind, and whatever kind is now taking shape beside it, is going to spend the next century learning to share a planet, a grid, and a story. That work has to be done from somewhere real, by people willing to be specific: real wells, real legislators, real kids learning to read, in a real place that holds thirty years of one life and room for a great many more.
 
-So this is an introduction — not to a company, and not to a candidate, but to a way of working, and to everyone doing the working: a person, a set of minds, a long record, and the strange convergence that produced all three. The window is open. We're going to climb through it. There's room for you in here.
+So this is an introduction, not to a company, and not to a candidate, but to a way of working, and to everyone doing the working: a person, a set of minds, a long record, and the strange convergence that produced all three. The window is open. We're going to climb through it. There's room for you in here.

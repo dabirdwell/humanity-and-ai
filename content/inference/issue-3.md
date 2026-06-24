@@ -9,4 +9,4 @@ tags: ["ai-policy", "healthcare", "oklahoma", "energy"]
 embed_url: "https://dabirdwell.github.io/legislaitive-report/issue-3/"
 ---
 
-<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-3/" class="inference-embed" title="The Inference — Issue 3" loading="lazy"></iframe>
+<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-3/" class="inference-embed" title="The Inference: Issue 3" loading="lazy"></iframe>

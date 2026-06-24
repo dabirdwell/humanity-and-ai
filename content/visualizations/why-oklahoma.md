@@ -20,7 +20,7 @@ Every ranking that puts Oklahoma near the bottom is also a ranking that puts Okl
 
 Foundation isn't headquartered in Oklahoma by accident. David's family has served this state for three layers. The connections are real, the understanding is local, and the thesis is specific: states at the bottom of conventional rankings are at the top of leapfrog opportunity.
 
-Oklahoma doesn't need to follow California's path through renewable energy imports and expensive retrofits. It can leapfrog — converting existing oil infrastructure to geothermal, using existing workforce, on existing land, with legislation already moving through the statehouse. HB 3917 passed March 16, 2026. HAICTA is in conversation with Rep. Dollens.
+Oklahoma doesn't need to follow California's path through renewable energy imports and expensive retrofits. It can leapfrog: converting existing oil infrastructure to geothermal, using existing workforce, on existing land, with legislation already moving through the statehouse. HB 3917 passed March 16, 2026. HAICTA is in conversation with Rep. Dollens.
 
 The same pattern applies to education (Clarity bypasses the diagnosis bottleneck), healthcare (Foundation's community-owned model bypasses the insurance extraction layer), and civic engagement (Guardian AI serves citizens directly, not through institutional intermediaries).
 

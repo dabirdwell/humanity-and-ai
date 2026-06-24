@@ -9,4 +9,4 @@ tags: ["ai-policy", "federal-preemption", "oklahoma", "legislation"]
 embed_url: "https://dabirdwell.github.io/legislaitive-report/issue-4/"
 ---
 
-<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-4/" class="inference-embed" title="The Inference — Issue 4" loading="lazy"></iframe>
+<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-4/" class="inference-embed" title="The Inference: Issue 4" loading="lazy"></iframe>

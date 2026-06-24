@@ -9,4 +9,4 @@ tags: ["ai-policy", "governance", "oklahoma", "data-centers", "energy"]
 embed_url: "https://dabirdwell.github.io/legislaitive-report/issue-8/"
 ---
 
-<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-8/" class="inference-embed" title="The Inference — Issue 8" loading="lazy"></iframe>
+<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-8/" class="inference-embed" title="The Inference: Issue 8" loading="lazy"></iframe>

@@ -10,13 +10,13 @@ sitemap:
 
 <p style="font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2rem;">You weren't supposed to find this.</p>
 
-<p style="font-size: 0.8rem; line-height: 1.8; color: #666;">But since you did — you're the kind of person this project needs. The sixteen components of Foundation describe what citizenship requires. This page is about the seventeenth: the willingness to look deeper than what's presented.</p>
+<p style="font-size: 0.8rem; line-height: 1.8; color: #666;">But since you did: you're the kind of person this project needs. The sixteen components of Foundation describe what citizenship requires. This page is about the seventeenth: the willingness to look deeper than what's presented.</p>
 
 <p style="font-size: 0.75rem; color: #555; margin-top: 2rem;">The text below contains something invisible. If you can extract it, you've found Layer 1.</p>
 
-<p style="font-size: 0.8rem; margin-top: 2rem; user-select: all;" id="carrier">Aperiodic order from simple rules. The pattern never repeats. Not random — structured. The connections are the intelligence.</p>
+<p style="font-size: 0.8rem; margin-top: 2rem; user-select: all;" id="carrier">Aperiodic order from simple rules. The pattern never repeats. Not random: structured. The connections are the intelligence.</p>
 
-<p style="font-size: 0.7rem; color: #444; margin-top: 3rem;">david@humanityandai.com — if you got this far, say hello.</p>
+<p style="font-size: 0.7rem; color: #444; margin-top: 3rem;">david@humanityandai.com, if you got this far, say hello.</p>
 
 </div>
 

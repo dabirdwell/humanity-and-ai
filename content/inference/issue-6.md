@@ -9,4 +9,4 @@ tags: ["ai-policy", "governance", "oklahoma", "eu-ai-act", "enforcement"]
 embed_url: "https://dabirdwell.github.io/legislaitive-report/issue-6/"
 ---
 
-<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-6/" class="inference-embed" title="The Inference — Issue 6" loading="lazy"></iframe>
+<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-6/" class="inference-embed" title="The Inference: Issue 6" loading="lazy"></iframe>

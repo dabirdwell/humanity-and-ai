@@ -20,7 +20,7 @@ The Haudenosaunee (Iroquois) Seventh Generation Principle says that decisions sh
 
 Slide the start year forward. Watch how each year of delay compresses the "with Foundation" timeline while the "without" path stays the same. The infrastructure doesn't build itself. Every year we wait, the cost of catching up grows exponentially and the window to act narrows.
 
-This isn't about pessimism vs. optimism. Both paths are plausible. The question is which one we're building, and whether we're building it fast enough. The compound interest of early investment works in both directions — for you if you invest, against you if you don't.
+This isn't about pessimism vs. optimism. Both paths are plausible. The question is which one we're building, and whether we're building it fast enough. The compound interest of early investment works in both directions: for you if you invest, against you if you don't.
 
 [See the full Foundation framework →](/foundation/)
 

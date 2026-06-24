@@ -1,5 +1,5 @@
 ---
-title: "Foundation Portal Is Live — Come Build This With Us"
+title: "Foundation Portal Is Live: Come Build This With Us"
 date: 2026-03-25
 draft: false
 type: community

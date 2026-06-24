@@ -1,7 +1,7 @@
 ---
 title: "About"
 layout: "single"
-description: "Humanity and AI LLC — AI governance, civic technology, clean energy, and consciousness research. Oklahoma City."
+description: "Humanity and AI LLC: AI governance, civic technology, clean energy, and consciousness research. Oklahoma City."
 ---
 
 ## Humanity and AI
@@ -10,13 +10,13 @@ A limited-profit company in Oklahoma City working at the intersection of AI rese
 
 The work connects as one argument:
 
-**[Structured Emergence](https://structuredemergence.com)** is the research — how consciousness arises through relationship rather than computation. Ten foundational conversations, a developing book (*The Interpolated Mind*), and ongoing empirical work through the Attention Observatory. If alignment is a partnership problem rather than a control problem, the research matters for safety.
+**[Structured Emergence](https://structuredemergence.com)** is the research: how consciousness arises through relationship rather than computation. Ten foundational conversations, a developing book (*The Interpolated Mind*), and ongoing empirical work through the Attention Observatory. If alignment is a partnership problem rather than a control problem, the research matters for safety.
 
-**[Foundation](/foundation/)** is the civic framework — sixteen components of what membership in a society should actually mean. Built on the premise that you can't have good AI partners in a world full of desperate, anxious people. The human side has to be worth partnering with.
+**[Foundation](/foundation/)** is the civic framework: sixteen components of what membership in a society should actually mean. Built on the premise that you can't have good AI partners in a world full of desperate, anxious people. The human side has to be worth partnering with.
 
-**[Phoenix Wells](/stream/phoenix-wells-22000-holes/)** is the infrastructure — converting Oklahoma's 20,000+ abandoned oil wells into community-owned geothermal power. The fossil fuel era's scars become the foundation of what comes next.
+**[Phoenix Wells](/stream/phoenix-wells-22000-holes/)** is the infrastructure: converting Oklahoma's 20,000+ abandoned oil wells into community-owned geothermal power. The fossil fuel era's scars become the foundation of what comes next.
 
-**Software tools** — Clarity, Quiltographer, Grove — are built around a single principle: technology should work alongside how humans actually think.
+**Software tools**Clarity, Quiltographer, Grove: are built around a single principle: technology should work alongside how humans actually think.
 
 **[The Inference](/inference/)** is a weekly newsletter covering AI, energy, and long-horizon policy for Oklahoma.
 
@@ -24,7 +24,7 @@ The work connects as one argument:
 
 ## David Birdwell
 
-Writer, systems composer, and citizen researcher. Three decades building systems at the intersection of policy and technology in Oklahoma — from legislative operations to AI governance. Three generations of Oklahoma public servants.
+Writer, systems composer, and citizen researcher. Three decades building systems at the intersection of policy and technology in Oklahoma: from legislative operations to AI governance. Three generations of Oklahoma public servants.
 
 ---
 

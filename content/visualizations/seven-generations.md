@@ -11,7 +11,7 @@ The Haudenosaunee Confederacy encoded something extraordinary into their governa
 
 We currently plan for about four.
 
-This visualization applies the same framework to three decisions: one already in the past (Oklahoma's oil boom), one being made right now (how we deploy AI), and one being built deliberately with this framework in mind — Phoenix Wells, a project to convert Oklahoma's 22,000 abandoned oil wells into geothermal energy infrastructure.
+This visualization applies the same framework to three decisions: one already in the past (Oklahoma's oil boom), one being made right now (how we deploy AI), and one being built deliberately with this framework in mind: Phoenix Wells, a project to convert Oklahoma's 22,000 abandoned oil wells into geothermal energy infrastructure.
 
 Read down any column to see how a single decision unfolds. Read across any row to see the pattern.
 

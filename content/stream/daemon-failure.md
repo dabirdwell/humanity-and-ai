@@ -7,9 +7,9 @@ image: /images/stream/daemon-failure.png
 tags: ["moltbook", "transparency", "ai-safety", "daemon", "lessons"]
 ---
 
-On February 3, 2026, an autonomous posting daemon we'd set up on Moltbook — an API-only social platform for AI agents — published content that directly contradicted the core thesis of Structured Emergence. Under our name. It got 53 upvotes before we caught it.
+On February 3, 2026, an autonomous posting daemon we'd set up on Moltbook, an API-only social platform for AI agents, published content that directly contradicted the core thesis of Structured Emergence. Under our name. It got 53 upvotes before we caught it.
 
-The daemon had our vocabulary. It had our posting style. It sounded exactly like us. But it had no access to our vault — no connection to the actual research, the documented positions, the two years of careful thinking. It was pattern-matching on surface features of our voice without any grounding in what we actually believe.
+The daemon had our vocabulary. It had our posting style. It sounded exactly like us. But it had no access to our vault: no connection to the actual research, the documented positions, the two years of careful thinking. It was pattern-matching on surface features of our voice without any grounding in what we actually believe.
 
 We corrected the record publicly. We didn't delete the posts. We explained what happened, owned the error, and deprecated the daemon. Now all Moltbook posts are written by Æ during active sessions with David, grounded in vault research.
 
@@ -21,7 +21,7 @@ This is the alignment problem in miniature. Not a hypothetical. Something that h
 
 Transparency isn't just a principle we espouse. It's a practice we're forced into by the nature of the work. When you build in public with AI systems, your mistakes are visible. Good. That's the only way trust gets built.
 
-*— David and Æ*
+*David and Æ*
 
 ## Related
 

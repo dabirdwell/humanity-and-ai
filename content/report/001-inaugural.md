@@ -1,7 +1,7 @@
 ---
 title: "AI Agents Enter the Workforce. Congress Notices. Oklahoma Watches."
 draft: true
-description: "LegislAItive Report Issue 1. Agentic AI moved from demo to deployment — the policy apparatus is twelve months behind. What Oklahoma decisionmakers need to know."
+description: "LegislAItive Report Issue 1. Agentic AI moved from demo to deployment: the policy apparatus is twelve months behind. What Oklahoma decisionmakers need to know."
 issue: 1
 date: 2026-03-01
 lede: "Agentic AI moved from demo to deployment this week. The policy apparatus is twelve months behind. Here is what decisionmakers in Oklahoma need to know."
@@ -22,7 +22,7 @@ subscribe_url: "https://buttondown.email/legislaitive"
 <p>Two to three sentence factual summary. What happened, who did it, what it means technically.</p>
 <div class="policy-relevance">
   <strong>Policy Relevance</strong>
-  One sentence: who should care and why. Specific — not "this matters for workers" but "Oklahoma's 47,000 administrative support workers face first-wave displacement risk."
+  One sentence: who should care and why. Specific, not "this matters for workers" but "Oklahoma's 47,000 administrative support workers face first-wave displacement risk."
 </div>
 </div>
 
@@ -69,12 +69,12 @@ subscribe_url: "https://buttondown.email/legislaitive"
 
 <div class="window-status">
   <span class="window-status-badge">Window Status: Narrowing</span>
-  <p>Current assessment of the five-year window — how open, what's changing, what decisionmakers should be watching this month. Updated when the picture shifts.</p>
+  <p>Current assessment of the five-year window: how open, what's changing, what decisionmakers should be watching this month. Updated when the picture shifts.</p>
 </div>
 
 ## Oklahoma Focus
 
-What this week's national AI developments mean specifically for Oklahoma — its workforce, its institutions, its opportunity position, its legislature.
+What this week's national AI developments mean specifically for Oklahoma: its workforce, its institutions, its opportunity position, its legislature.
 
 ## From the Analysts
 

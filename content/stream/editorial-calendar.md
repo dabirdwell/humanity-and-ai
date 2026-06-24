@@ -41,20 +41,20 @@ description: "Internal editorial calendar for Humanity & AI stream posts. Not pu
 
 ---
 
-## Upcoming Posts — Target Cadence: 2/month minimum
+## Upcoming Posts (Target Cadence: 2/month minimum)
 
 ### April 2026
 
 | Target | Topic | Notes |
 |--------|-------|-------|
-| Early Apr | **Clarity First Revenue Story** | Deep dive on the $4.99 moment — Stripe pipeline, what it means to ship from Oklahoma, the distance between "it works" and "someone paid for it." Expand on the first-revenue post with numbers and lessons. |
+| Early Apr | **Clarity First Revenue Story** | Deep dive on the $4.99 moment: Stripe pipeline, what it means to ship from Oklahoma, the distance between "it works" and "someone paid for it." Expand on the first-revenue post with numbers and lessons. |
 | Mid Apr | **Phoenix Wells: The 250-Degree Threshold** | Technical explainer on geothermal conversion thresholds for abandoned wells. Why 250°F is the magic number, how many Oklahoma wells qualify, and what the energy math looks like at scale. |
 
 ### May 2026
 
 | Target | Topic | Notes |
 |--------|-------|-------|
-| Early May | **Brain Mastery Pipeline Announcement** | Clarity, Dojo, TasteBud, Quiltographer, Citizen — what shipped, what's next, user numbers, and the thesis validated by real usage data. Product update + roadmap. |
+| Early May | **Brain Mastery Pipeline Announcement** | Clarity, Dojo, TasteBud, Quiltographer, Citizen: what shipped, what's next, user numbers, and the thesis validated by real usage data. Product update + roadmap. |
 | Mid May | **Foundation for Kids Launch** | Announcing the simplified Foundation essays for younger audiences. Why civic literacy starts early, how the 16 components translate for K-12, and the educators who helped shape it. |
 
 ### June 2026
@@ -68,7 +68,7 @@ description: "Internal editorial calendar for Humanity & AI stream posts. Not pu
 
 | Target | Topic | Notes |
 |--------|-------|-------|
-| Early Jul | **Guardian AI: Concept Introduction** | What it means to build AI systems that protect rather than surveil. The architecture of digital guardianship — privacy-preserving, user-sovereign, transparent. Connects to Foundation's thought-privacy and safety pillars. |
+| Early Jul | **Guardian AI: Concept Introduction** | What it means to build AI systems that protect rather than surveil. The architecture of digital guardianship: privacy-preserving, user-sovereign, transparent. Connects to Foundation's thought-privacy and safety pillars. |
 | Mid Jul | **Inter-Model Dialogue Preview** | What happens when different AI models engage in structured conversation about consciousness, ethics, and collaboration. Early findings from cross-model dialogue experiments. Preview of upcoming research. |
 
 ---

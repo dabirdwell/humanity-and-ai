@@ -27,15 +27,15 @@ window.addEventListener('message', function(e) {
 
 ## How It Works
 
-The Mirror doesn't quiz you on policy. It asks what you feel — what's missing, what's broken, what "enough" would look like. Each answer weights several of the 16 Foundation components. After five questions, your results show which parts of the framework map most directly to your lived experience.
+The Mirror doesn't quiz you on policy. It asks what you feel: what's missing, what's broken, what "enough" would look like. Each answer weights several of the 16 Foundation components. After five questions, your results show which parts of the framework map most directly to your lived experience.
 
-The shareable card is designed to be screenshot-friendly. Your top 5 priorities, ranked and visualized. Same card, different results for every person who takes it — because the Foundation isn't one-size-fits-all. It's a framework, not a prescription.
+The shareable card is designed to be screenshot-friendly. Your top 5 priorities, ranked and visualized. Same card, different results for every person who takes it, because the Foundation isn't one-size-fits-all. It's a framework, not a prescription.
 
 No data is collected. Everything runs locally in your browser.
 
 ## Why This Exists
 
-Foundation framework has 16 components. That's a lot to take in at once. The Mirror gives people a starting point — a personal entry into the framework based on what already matters to them. It's not a personality test. It's a compass.
+Foundation framework has 16 components. That's a lot to take in at once. The Mirror gives people a starting point: a personal entry into the framework based on what already matters to them. It's not a personality test. It's a compass.
 
 [Explore the full Foundation framework →](/foundation/)
 

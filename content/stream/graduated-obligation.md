@@ -4,7 +4,7 @@ date: 2026-06-03
 draft: false
 tags: ["foundation", "ai", "governance", "persuasion", "policy"]
 author: "Humanity and AI"
-description: "A robot that can't hurt you can still carry a weapon. We propose grading an AI's obligations by how far it can move you — not how much force it can apply — with one hard line where persuasion becomes a kind of force."
+description: "A robot that can't hurt you can still carry a weapon. We propose grading an AI's obligations by how far it can move you, not how much force it can apply, with one hard line where persuasion becomes a kind of force."
 ---
 
 Picture a robot built to be gentle. Soft body, low torque, rounded everything. It cannot bruise you, cannot lift much, cannot knock over a lamp. By every safety standard we currently write, the ones measured in newtons and pinch points, it is harmless.
@@ -39,7 +39,7 @@ A search box scores near zero on all three. The gentle bedroom robot scores high
 
 So here is the principle, and we're naming it Graduated Obligation:
 
-> An artificial system's obligations should scale with its persuasive reach. The more a system can move a person — by capability, intimacy, and asymmetry combined — the stronger its duties of honesty, restraint, and non-manipulation become.
+> An artificial system's obligations should scale with its persuasive reach. The more a system can move a person, by capability, intimacy, and asymmetry combined, the stronger its duties of honesty, restraint, and non-manipulation become.
 
 ## What the obligations are
 

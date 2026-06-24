@@ -2,7 +2,7 @@
 title: "Washington Recalled a Frontier AI. It Didn't Need a Law to Do It."
 date: 2026-06-15
 draft: false
-description: "The U.S. government pulled a frontier model off the market overnight — not through a law, a hearing, or a court, but an export-control order. The door it used is the warning."
+description: "The U.S. government pulled a frontier model off the market overnight, not through a law, a hearing, or a court, but an export-control order. The door it used is the warning."
 tags: ["inference", "ai-governance", "policy", "anthropic", "national-security"]
 categories: ["The Inference"]
 ---

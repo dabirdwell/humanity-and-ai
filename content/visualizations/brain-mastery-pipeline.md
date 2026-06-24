@@ -19,9 +19,9 @@ Foundation argues that 16 components form the floor of citizenship. Brain Master
 
 ## The Pipeline
 
-Each app builds the capacity for the next. Clarity teaches you to read — not just decode words, but actually absorb and process written information without the cognitive overhead that conditions like dyslexia or poor reading instruction impose. Dojo teaches you to think critically about what you've read — to spot logical fallacies, evaluate evidence, and construct sound arguments. TasteBud develops sensory attention — the same faculty that makes you notice when something is off. Quiltographer channels creative expression, because creation is participation. And Citizen brings it all together: the civic dashboard where you engage with the Foundation framework as an active participant.
+Each app builds the capacity for the next. Clarity teaches you to read, not just decode words, but actually absorb and process written information without the cognitive overhead that conditions like dyslexia or poor reading instruction impose. Dojo teaches you to think critically about what you've read: to spot logical fallacies, evaluate evidence, and construct sound arguments. TasteBud develops sensory attention: the same faculty that makes you notice when something is off. Quiltographer channels creative expression, because creation is participation. And Citizen brings it all together: the civic dashboard where you engage with the Foundation framework as an active participant.
 
-These aren't chatbots. They're integrated aligned technology that works alongside you to create, learn, and play. The AI is in the background, making the experience better — not in the foreground, demanding your attention.
+These aren't chatbots. They're integrated aligned technology that works alongside you to create, learn, and play. The AI is in the background, making the experience better, not in the foreground, demanding your attention.
 
 [Try Clarity →](https://clarity.humanityandai.com) | [See the full Foundation framework →](/foundation/)
 

@@ -16,7 +16,7 @@ Tonight, all of it compounded at once.
 
 ## The Setup
 
-Humanity and AI runs on a split architecture. Research, strategy, creative writing, and policy work happen in conversational AI sessions. Code development — the multi-file, build-and-push kind — runs through Claude Code CLI in Terminal. Both can run simultaneously on different machines or even the same machine.
+Humanity and AI runs on a split architecture. Research, strategy, creative writing, and policy work happen in conversational AI sessions. Code development (the multi-file, build-and-push kind) runs through Claude Code CLI in Terminal. Both can run simultaneously on different machines or even the same machine.
 
 The sprint dispatch system lets us fire code tasks as background processes. Each sprint gets a spec, a target repo, pre-checks, and post-verification. They chain sequentially within a repo (so commits don't collide) and run in parallel across repos (because there are no conflicts).
 
@@ -30,9 +30,9 @@ While those ran in Terminal tabs, the conversational session produced: The Infer
 
 The interesting thing was not the volume. It was the *split*.
 
-Some work is composable — you can describe it in a spec and hand it to an executor. Category filtering, cooking timers, belt progression visuals, seasonal calendars. These are well-defined features with clear success criteria.
+Some work is composable: you can describe it in a spec and hand it to an executor. Category filtering, cooking timers, belt progression visuals, seasonal calendars. These are well-defined features with clear success criteria.
 
-Other work is contextual — it requires holding the full state of the project ecosystem. Writing an investor FAQ where every number must match an audited model from two weeks ago. Drafting a policy brief that connects a temperature threshold in a state bill to a university researcher's testimony to a federal energy secretary's lobbying. Catching a scam listing on eBay because you know the market value of the hardware from working with it daily.
+Other work is contextual: it requires holding the full state of the project ecosystem. Writing an investor FAQ where every number must match an audited model from two weeks ago. Drafting a policy brief that connects a temperature threshold in a state bill to a university researcher's testimony to a federal energy secretary's lobbying. Catching a scam listing on eBay because you know the market value of the hardware from working with it daily.
 
 The dispatch system handles the composable work. The conversational session handles the contextual work. Running them in parallel is where the leverage lives.
 
@@ -46,4 +46,4 @@ The tax is real. But compound interest is also real. And tonight was the night i
 
 ---
 
-*If you want to follow along as we build, the Humanity and AI Patreon is where behind-the-scenes work like this gets shared first. Or just watch the repos — everything is public on GitHub.*
+*If you want to follow along as we build, the Humanity and AI Patreon is where behind-the-scenes work like this gets shared first. Or just watch the repos: everything is public on GitHub.*

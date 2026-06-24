@@ -1,10 +1,10 @@
 ---
 title: "Foundation Discussions"
-description: "Join the conversation — community threads for all 16 Foundation components."
+description: "Join the conversation: community threads for all 16 Foundation components."
 layout: "single"
 ---
 
-Foundation is citizen-developed work. These discussion threads are where the work happens — share your ideas, experiences, research, and questions for each component.
+Foundation is citizen-developed work. These discussion threads are where the work happens: share your ideas, experiences, research, and questions for each component.
 
 ## Component Discussions
 

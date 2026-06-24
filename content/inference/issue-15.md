@@ -1,7 +1,7 @@
 ---
 title: "Water on the Meter"
 draft: false
-description: "The Inference — Issue 15: Oklahoma becomes the first state to tie a groundwater permit to data-center cooling architecture."
+description: "The Inference: Issue 15: Oklahoma becomes the first state to tie a groundwater permit to data-center cooling architecture."
 date: 2026-06-06
 issue: 15
 lede: "Oklahoma just became the first state to tie a groundwater permit to data-center cooling architecture."

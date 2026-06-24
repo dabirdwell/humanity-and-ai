@@ -18,13 +18,13 @@ Foundation exists to shape AI's impact on human life, not to resist AI itself. A
 
 But here's the part most people miss: participation requires something most Americans don't have right now. The stability to think beyond survival. Hard to engage thoughtfully with AI policy when you're worried about rent. Hard to participate in shaping the future when the present is consuming all your bandwidth.
 
-This is why Foundation isn't a social program — it's strategic infrastructure for democratic participation in the AI transition. The sixteen components aren't charity. They're what it takes to have a population that can actually show up for the decisions that matter.
+This is why Foundation isn't a social program. It's strategic infrastructure for democratic participation in the AI transition. The sixteen components aren't charity. They're what it takes to have a population that can actually show up for the decisions that matter.
 
-The argument to power is straightforward: you're going to build AI regardless. The question is whether you build it in a society of engaged, educated, creative partners, or in a society of desperate, anxious people with nothing to lose. History is very clear about which scenario produces better outcomes for everyone — including the people holding power.
+The argument to power is straightforward: you're going to build AI regardless. The question is whether you build it in a society of engaged, educated, creative partners, or in a society of desperate, anxious people with nothing to lose. History is very clear about which scenario produces better outcomes for everyone, including the people holding power.
 
-I see no leader stepping up to insist on bold change like this. Neither party has a plan for the future — not a real plan. Not based on a cohesive attempt to understand the myriad of rapidly changing factors that will determine what kind of world we inhabit. So we're building one. Not as an advocacy group begging for consideration, but as a framework that makes the AI transition work for the people building it *and* the people living in it.
+I see no leader stepping up to insist on bold change like this. Neither party has a plan for the future. Not a real plan. Not based on a cohesive attempt to understand the myriad of rapidly changing factors that will determine what kind of world we inhabit. So we're building one. Not as an advocacy group begging for consideration, but as a framework that makes the AI transition work for the people building it *and* the people living in it.
 
-— David
+David
 
 ## Related
 

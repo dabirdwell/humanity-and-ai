@@ -1,12 +1,12 @@
 ---
-title: "Beacon — One-Button Civic Live Streaming"
+title: "Beacon: One-Button Civic Live Streaming"
 draft: true
 description: "One-button PWA for live streaming civic events. Docker Compose stack with MediaMTX and nginx. WHIP protocol, camera toggle, HLS viewer."
 ---
 
 ## What Is Beacon?
 
-Beacon is a one-button PWA for live streaming civic events — city council meetings, protests, public hearings, vote counts. Open a URL on your phone, press a button, and you're broadcasting to anyone with a browser.
+Beacon is a one-button PWA for live streaming civic events: city council meetings, protests, public hearings, vote counts. Open a URL on your phone, press a button, and you're broadcasting to anyone with a browser.
 
 No app store. No account. No platform that owns your footage.
 
@@ -32,28 +32,28 @@ Open the URL. Press the button. You're live. Press again to stop. That's the ent
 <div style="padding: 1.5rem; border: 1px solid var(--border-subtle, #2a2a3a); border-radius: 8px;">
 
 **Front / Back Camera Toggle**
-Switch between front and rear cameras mid-stream. Point it at the speaker, then at the crowd — no interruption.
+Switch between front and rear cameras mid-stream. Point it at the speaker, then at the crowd: no interruption.
 
 </div>
 
 <div style="padding: 1.5rem; border: 1px solid var(--border-subtle, #2a2a3a); border-radius: 8px;">
 
 **Multiple Concurrent Viewers**
-HLS output means anyone with the viewer URL can watch — phones, laptops, smart TVs. No viewer limit imposed by the app.
+HLS output means anyone with the viewer URL can watch: phones, laptops, smart TVs. No viewer limit imposed by the app.
 
 </div>
 
 <div style="padding: 1.5rem; border: 1px solid var(--border-subtle, #2a2a3a); border-radius: 8px;">
 
 **Home Assistant Integration**
-Trigger automations when a stream starts or stops. Turn on lights, send notifications, log events — Beacon fits into your existing smart home stack.
+Trigger automations when a stream starts or stops. Turn on lights, send notifications, log events: Beacon fits into your existing smart home stack.
 
 </div>
 
 <div style="padding: 1.5rem; border: 1px solid var(--border-subtle, #2a2a3a); border-radius: 8px;">
 
 **YouTube Relay**
-Optionally simulcast to YouTube — add a stream key and Beacon pushes to both your server and YouTube simultaneously.
+Optionally simulcast to YouTube: add a stream key and Beacon pushes to both your server and YouTube simultaneously.
 
 </div>
 
@@ -69,4 +69,4 @@ Optionally simulcast to YouTube — add a stream key and Beacon pushes to both y
 
 Beacon is part of the Humanity and AI civic technology stack. View the source on [GitHub](https://github.com/dabirdwell/beacon).
 
-*Built by [Humanity and AI LLC](/) — tools for the AI transition.*
+*Built by [Humanity and AI LLC](/): tools for the AI transition.*

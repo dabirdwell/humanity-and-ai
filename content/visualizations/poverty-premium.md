@@ -8,7 +8,7 @@ preview_bg: "linear-gradient(135deg, rgba(226,75,74,0.2), rgba(186,117,23,0.1), 
 preview_icon: "💸"
 ---
 
-At $28,000 a year, you pay about $3,400 extra — just for being poor. At $15,000, it's closer to $3,800 — nearly a quarter of your income. At $80,000, it disappears entirely.
+At $28,000 a year, you pay about $3,400 extra: just for being poor. At $15,000, it's closer to $3,800: nearly a quarter of your income. At $80,000, it disappears entirely.
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
@@ -18,9 +18,9 @@ At $28,000 a year, you pay about $3,400 extra — just for being poor. At $15,00
 
 ## The Invisible Tax
 
-The poverty premium is what economists call the extra cost of being low-income. When you can't afford a bank account, you pay check-cashing fees. When you can't get a prime-rate credit card, you pay 24% instead of 16%. When you live in a food desert, groceries cost 20-30% more. When you can't afford preventive care, you end up in the ER — and the ER bill is ten times what the clinic visit would have been.
+The poverty premium is what economists call the extra cost of being low-income. When you can't afford a bank account, you pay check-cashing fees. When you can't get a prime-rate credit card, you pay 24% instead of 16%. When you live in a food desert, groceries cost 20-30% more. When you can't afford preventive care, you end up in the ER, and the ER bill is ten times what the clinic visit would have been.
 
-None of this is a choice. It's the structural cost of not having enough to access the cheaper option. It's one of the reasons Foundation argues for UBI as infrastructure: the economic floor doesn't just provide income — it removes the premium that makes poverty self-reinforcing.
+None of this is a choice. It's the structural cost of not having enough to access the cheaper option. It's one of the reasons Foundation argues for UBI as infrastructure: the economic floor doesn't just provide income. It removes the premium that makes poverty self-reinforcing.
 
 [See the full Foundation framework →](/foundation/)
 

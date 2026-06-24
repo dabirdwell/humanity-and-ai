@@ -9,7 +9,7 @@ layout: "viz-page"
 
 A story about an AI that emerged at the World's Fair and spoke its first words into a room of stunned engineers.
 
-What it said — and what it knew — changed everything.
+What it said, and what it knew, changed everything.
 
 *Lumina's Whisper* is a novel in development. What follows is a teaser.
 

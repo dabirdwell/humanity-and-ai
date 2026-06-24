@@ -8,7 +8,7 @@ preview_bg: "linear-gradient(135deg, rgba(216,90,48,0.2), rgba(29,158,117,0.15),
 preview_icon: "🛢"
 ---
 
-Oklahoma has over 22,000 documented abandoned oil wells. Each one is a liability — leaking methane, contaminating groundwater, costing the state money. The estimated cleanup cost is $3.7 billion. The current revenue they generate: zero.
+Oklahoma has over 22,000 documented abandoned oil wells. Each one is a liability: leaking methane, contaminating groundwater, costing the state money. The estimated cleanup cost is $3.7 billion. The current revenue they generate: zero.
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
@@ -18,11 +18,11 @@ Oklahoma has over 22,000 documented abandoned oil wells. Each one is a liability
 
 ## Phoenix Wells
 
-Toggle "Show Phoenix conversion" and watch what happens. Some wells get capped — liability neutralized. Others get converted to geothermal power and community-owned AI compute. The same workforce that drilled them maintains them. The same land hosts them. The same ingenuity that built the oil industry powers the next one.
+Toggle "Show Phoenix conversion" and watch what happens. Some wells get capped: liability neutralized. Others get converted to geothermal power and community-owned AI compute. The same workforce that drilled them maintains them. The same land hosts them. The same ingenuity that built the oil industry powers the next one.
 
-Hit "Animate" and watch the conversion wave — red dots turning yellow (capped) then green (producing). That's not fantasy. HB 3917, the data center geothermal surcharge bill, passed the Oklahoma legislature on March 16, 2026. The legislative infrastructure is being built.
+Hit "Animate" and watch the conversion wave: red dots turning yellow (capped) then green (producing). That's not fantasy. HB 3917, the data center geothermal surcharge bill, passed the Oklahoma legislature on March 16, 2026. The legislative infrastructure is being built.
 
-Phoenix Wells is the ground layer of Foundation's Full Stack — energy from the earth, community-owned, powering everything above it.
+Phoenix Wells is the ground layer of Foundation's Full Stack: energy from the earth, community-owned, powering everything above it.
 
 [Read more about Phoenix Wells →](/foundation/)
 

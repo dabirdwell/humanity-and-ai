@@ -4,7 +4,7 @@ description: "Foundation is citizen-developed. Here's how to add your voice."
 layout: "single"
 ---
 
-Foundation exists because no single person — or partnership — can design what citizenship should look like for everyone. The sixteen component essays are a starting position, not a final answer. They're meant to be argued with, extended, corrected, and shaped by the people they're designed to serve.
+Foundation exists because no single person, or partnership, can design what citizenship should look like for everyone. The sixteen component essays are a starting position, not a final answer. They're meant to be argued with, extended, corrected, and shaped by the people they're designed to serve.
 
 Here's how to participate.
 
@@ -12,7 +12,7 @@ Here's how to participate.
 
 ### 1. Quick Feedback (No Account Needed)
 
-Every component essay has a contribution form at the bottom. Tell us what's missing, what resonates, what's wrong. Your name and email are optional — the idea is what matters.
+Every component essay has a contribution form at the bottom. Tell us what's missing, what resonates, what's wrong. Your name and email are optional: the idea is what matters.
 
 This is the lowest-friction path. If you have 60 seconds and one thing to say, this is for you.
 
@@ -46,11 +46,11 @@ We don't need essays. We need signal. Here are real examples of what helps:
 
 **Data:** "Oklahoma's teacher vacancy rate hit 4,000 in 2025. Here's the OSDE report." → *Education*
 
-**Connections:** "Your clean water and sustainable energy components should reference each other — geothermal heat pumps affect groundwater." → *Cross-component*
+**Connections:** "Your clean water and sustainable energy components should reference each other: geothermal heat pumps affect groundwater." → *Cross-component*
 
 ## The Flywheel Principle
 
-We will never give you a blank page. Every component essay ends with specific questions and directions for contribution. Start there. If something sparks a reaction — agreement, disagreement, a memory, a question — that's a contribution.
+We will never give you a blank page. Every component essay ends with specific questions and directions for contribution. Start there. If something sparks a reaction (agreement, disagreement, a memory, a question) that's a contribution.
 
 The best version of this framework is one we couldn't have written alone.
 

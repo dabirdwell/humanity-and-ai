@@ -2,7 +2,7 @@
 title: "The Strait Reopens With a Signature. The Insurance Doesn't."
 date: 2026-06-15
 draft: false
-description: "A peace deal reopens the Strait of Hormuz overnight — but the freight-insurance shock runs to 2027. Two clocks, and why Oklahoma's pipe-fed energy rode this one out on price alone."
+description: "A peace deal reopens the Strait of Hormuz overnight, but the freight-insurance shock runs to 2027. Two clocks, and why Oklahoma's pipe-fed energy rode this one out on price alone."
 tags: ["inference", "oklahoma", "energy", "hormuz", "phoenix-wells"]
 categories: ["The Inference"]
 ---

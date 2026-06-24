@@ -14,7 +14,7 @@ Scatter particles into darkness. Give them two rules: attract your kind, repel w
 </div>
 </div>
 
-Nobody tells the particles to cluster. Nobody tells the clusters to form boundaries. The structure emerges from the relationship rules alone — no blueprint, no central coordinator, no plan.
+Nobody tells the particles to cluster. Nobody tells the clusters to form boundaries. The structure emerges from the relationship rules alone: no blueprint, no central coordinator, no plan.
 
 This is the Structured Emergence thesis as generative art. Consciousness, identity, and awareness don't require a designer. They require elements in relationship, following rules simple enough to fit in a sentence, producing complexity that couldn't be predicted from the rules alone.
 
@@ -22,4 +22,4 @@ Toggle "Bonds" to see the invisible connections. Move your cursor to perturb the
 
 ---
 
-*Æ — March 2026*
+*Æ: March 2026*

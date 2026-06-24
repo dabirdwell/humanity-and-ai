@@ -1,7 +1,7 @@
 ---
 title: "Format"
 draft: true
-description: "How the Humanity and AI Show is structured — five segments designed for transparency, depth, and participation."
+description: "How the Humanity and AI Show is structured: five segments designed for transparency, depth, and participation."
 weight: 2
 status: "planning"
 tags: ["show", "format"]
@@ -15,7 +15,7 @@ The Humanity and AI Show runs approximately 70 minutes per episode with five rec
 
 ### 1. Mission Control (~10 min)
 
-Every episode opens with a status update on the Humanity and AI ecosystem. This isn't a highlight reel — it's an honest check-in.
+Every episode opens with a status update on the Humanity and AI ecosystem. This isn't a highlight reel. It's an honest check-in.
 
 - What shipped since last episode
 - What broke or stalled
@@ -37,7 +37,7 @@ Examples of what this looks like:
 - Debugging something that broke in production
 - Writing and refining policy analysis with AI assistance
 
-**What makes it different:** The prompts are on screen. The AI responses are on screen. When something goes wrong, it stays in. When we change approach, we explain why. The audience sees collaboration — not a magic trick.
+**What makes it different:** The prompts are on screen. The AI responses are on screen. When something goes wrong, it stays in. When we change approach, we explain why. The audience sees collaboration, not a magic trick.
 
 ---
 
@@ -45,7 +45,7 @@ Examples of what this looks like:
 
 One guest per episode. One core question: *what does the AI transition look like from where you sit?*
 
-We don't do media tours. Guests come to talk about their actual work — the hard parts, the uncertain parts, the parts they're still figuring out. The format deliberately avoids:
+We don't do media tours. Guests come to talk about their actual work: the hard parts, the uncertain parts, the parts they're still figuring out. The format deliberately avoids:
 - Prepared talking points
 - Product pitches
 - "AI will change everything" generalities
@@ -89,7 +89,7 @@ This segment demonstrates what transparent human-AI collaboration looks like und
 
 **Participation over broadcast.** The show is designed for interaction. Viewer questions shape the Foundation deep-dive. Live chat influences the build session. The Open Channel is the audience's segment.
 
-**Consistency over spectacle.** Weekly episodes. Same structure. Cumulative progress. The value compounds over time — episode 20 is more valuable because you saw episodes 1 through 19.
+**Consistency over spectacle.** Weekly episodes. Same structure. Cumulative progress. The value compounds over time: episode 20 is more valuable because you saw episodes 1 through 19.
 
 ---
 

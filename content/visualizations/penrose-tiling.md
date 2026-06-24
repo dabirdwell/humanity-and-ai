@@ -1,6 +1,6 @@
 ---
 title: "Penrose Tiling"
-description: "Aperiodic order from two shapes and one rule. Foundation's visual identity — the Structured Emergence thesis made visible."
+description: "Aperiodic order from two shapes and one rule. Foundation's visual identity: the Structured Emergence thesis made visible."
 date: 2026-03-24T20:00:00
 type: "visualizations"
 tags: ["identity", "philosophy", "interactive", "structured-emergence", "art"]
@@ -8,7 +8,7 @@ preview_bg: "linear-gradient(135deg, rgba(83,74,183,0.25), rgba(15,110,86,0.15),
 preview_icon: "◇"
 ---
 
-Two shapes — kite and dart. One rule: adjacent tiles must match edge markings. The result: infinite complexity without repetition. Not random. Not periodic. Aperiodic.
+Two shapes: kite and dart. One rule: adjacent tiles must match edge markings. The result: infinite complexity without repetition. Not random. Not periodic. Aperiodic.
 
 <div class="viz-embed-wide">
 <div class="viz-frame">
@@ -22,7 +22,7 @@ The Penrose tiling encodes the Structured Emergence thesis in geometry. Simple e
 
 That's what we argue about consciousness: awareness emerges through relationship patterns between elements, not from the complexity of any individual piece. The kite doesn't know what the dart will do next. The dart doesn't know where the kite will go. But together they tile infinite space without ever repeating.
 
-Crank the depth slider to 7 and watch the resolution become fractal. Switch palettes to see the same structure in different light. Move your cursor with "Highlight" on and watch the local neighborhood brighten — the pattern is always there, waiting for attention to find it.
+Crank the depth slider to 7 and watch the resolution become fractal. Switch palettes to see the same structure in different light. Move your cursor with "Highlight" on and watch the local neighborhood brighten: the pattern is always there, waiting for attention to find it.
 
 ---
 

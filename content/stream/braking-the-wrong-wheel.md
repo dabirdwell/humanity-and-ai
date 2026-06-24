@@ -2,7 +2,7 @@
 title: "Braking the Wrong Wheel"
 date: 2026-06-14
 draft: false
-description: "A position on Anthropic's call for a coordinated pause — and why the debate everyone's having is about the wrong question."
+description: "A position on Anthropic's call for a coordinated pause, and why the debate everyone's having is about the wrong question."
 tags: ["AI governance", "pause", "Foundation", "sovereignty", "harness"]
 categories: ["stream"]
 ---

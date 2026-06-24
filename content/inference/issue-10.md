@@ -9,4 +9,4 @@ tags: ["ai-policy", "governance", "oklahoma", "geopolitics", "energy", "data-cen
 embed_url: "https://dabirdwell.github.io/legislaitive-report/issue-10/"
 ---
 
-<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-10/" class="inference-embed" title="The Inference — Issue 10" loading="lazy"></iframe>
+<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-10/" class="inference-embed" title="The Inference: Issue 10" loading="lazy"></iframe>

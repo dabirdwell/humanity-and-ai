@@ -13,13 +13,13 @@ icon: "📡"
 
 ## What Is Beacon?
 
-Beacon is a one-button civic live streaming tool designed for transparency. Point it at a public meeting, press start, and the stream goes live — no production skills required, no editorial layer between the event and the public.
+Beacon is a one-button civic live streaming tool designed for transparency. Point it at a public meeting, press start, and the stream goes live: no production skills required, no editorial layer between the event and the public.
 
 ## Key Features
 
-- **One-button streaming** — Open the app, tap once, and you're live. No configuration, no login walls, no pre-roll ads. The stream starts when you start it.
-- **Civic-first design** — Built for city council meetings, school board hearings, community forums, and any public event where transparency matters more than production quality.
-- **Archival by default** — Every stream is automatically archived and indexed. Public meetings shouldn't disappear when the livestream ends.
+- **One-button streaming**Open the app, tap once, and you're live. No configuration, no login walls, no pre-roll ads. The stream starts when you start it.
+- **Civic-first design**Built for city council meetings, school board hearings, community forums, and any public event where transparency matters more than production quality.
+- **Archival by default**Every stream is automatically archived and indexed. Public meetings shouldn't disappear when the livestream ends.
 
 ## Why It Exists
 
@@ -29,4 +29,4 @@ Most live streaming tools are built for entertainment or marketing. Beacon is bu
 
 **Alpha.** Core streaming functionality in development.
 
-*Built by [Humanity and AI LLC](/) — tools for the AI transition.*
+*Built by [Humanity and AI LLC](/): tools for the AI transition.*

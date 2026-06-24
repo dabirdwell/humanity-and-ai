@@ -9,4 +9,4 @@ tags: ["ai-policy", "governance", "oklahoma", "agents"]
 embed_url: "https://dabirdwell.github.io/legislaitive-report/issue-5/"
 ---
 
-<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-5/" class="inference-embed" title="The Inference — Issue 5" loading="lazy"></iframe>
+<iframe src="https://dabirdwell.github.io/legislaitive-report/issue-5/" class="inference-embed" title="The Inference: Issue 5" loading="lazy"></iframe>
