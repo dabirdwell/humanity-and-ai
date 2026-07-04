@@ -1,6 +1,6 @@
 ---
 title: "The Gate"
-draft: true
+draft: false
 description: "The Inference, Issue 19: a frontier model returns from a federal shutdown split in two (the general version to everyone, the dangerous one to a cleared list) the same morning Oklahoma's grid starts gating its largest loads. Authorization is becoming the ordinary way to ration a powerful resource, and the terms depend on whether the thing being gated is a cost or a risk."
 date: 2026-07-03
 issue: 19

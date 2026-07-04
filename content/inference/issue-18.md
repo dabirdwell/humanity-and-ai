@@ -1,6 +1,6 @@
 ---
 title: "The Local Veto"
-draft: true
+draft: false
 description: "The Inference, Issue 18: two weeks before HB 2992 goes operative, the sharpest data-center fight in Oklahoma was a town of 1,700 pausing a project from a Main Street meeting held outdoors because no building could hold the crowd. The moratorium wave is the level of the stack no tariff reaches: whether the host community agreed at all."
 date: 2026-06-26
 issue: 18
