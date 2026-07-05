@@ -20,3 +20,9 @@ Thumbs.db
 *.corrected.md
 content/emdash_audit_report.md
 content/editorial_audit_abstract_urgency.md
+
+# Local working material, not for the public repo (July 5, 2026)
+audits/
+site-health-report-*.md
+# David's unpublished draft: remove this line when he decides to publish it
+content/stream/who-decided.md
