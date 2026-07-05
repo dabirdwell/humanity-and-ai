@@ -9,6 +9,47 @@
     <p class="leg-meta">For deeper analysis, see <a href="/inference/">The Inference</a>, our AI policy intelligence briefing.</p>
   </header>
 
+  {{/* Staff toolkit: renders only published (non-draft) toolkit pages that carry a toolkit_kind. Inert until drafts are flipped. */}}
+  {{ $toolkit := where .RegularPages "Params.toolkit_kind" "!=" nil }}
+  {{ with $toolkit }}
+  <section class="leg-toolkit">
+    <p class="leg-eyebrow">Staff Toolkit</p>
+    <h2>What a staffer can act on today</h2>
+    <p class="leg-toolkit-intro">Plain-language briefs on the bills that became law, plus a model framework for the transparency gap none of them filled. Written to be handed up the chain unedited.</p>
+
+    {{ with where . "Params.toolkit_kind" "Model Framework" }}
+    <div class="leg-toolkit-group">
+      <h3>Model legislation</h3>
+      {{ range . }}
+      <a class="leg-toolkit-card" href="{{ .RelPermalink }}">
+        <span class="leg-toolkit-kind">{{ .Params.toolkit_kind }}</span>
+        <span class="leg-toolkit-title">{{ .Title }}</span>
+        {{ with .Params.description }}<span class="leg-toolkit-desc">{{ . }}</span>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ with where . "Params.toolkit_kind" "Bill Brief" }}
+    <div class="leg-toolkit-group">
+      <h3>Per-bill briefs</h3>
+      {{ range sort . "Title" }}
+      <a class="leg-toolkit-card" href="{{ .RelPermalink }}">
+        <span class="leg-toolkit-kind">{{ .Params.toolkit_kind }}</span>
+        <span class="leg-toolkit-title">{{ .Title }}</span>
+        {{ with .Params.description }}<span class="leg-toolkit-desc">{{ . }}</span>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="leg-toolkit-contact">
+      <h3>Request drafting or ask a question</h3>
+      <p>Full statutory drafting is available to any member office that wants it, at no cost and no obligation. Email <a href="mailto:david@humanityandai.com">david@humanityandai.com</a>.</p>
+    </div>
+  </section>
+  {{ end }}
+
   <div class="leg-filters" id="legFilters">
     <button class="filter-btn active" data-category="all">All</button>
     <button class="filter-btn" data-category="ai">AI Governance</button>
