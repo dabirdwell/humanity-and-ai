@@ -5,21 +5,40 @@ description: "Ideas first. Personality second. The work speaks. A show about the
 
 <p class="show-tagline"><em>Ideas first. Personality second. The work speaks.</em></p>
 
-A show about the people and ideas shaping how humanity navigates the AI transition. Not fear. Not hype. Frameworks.
-
 Long-form conversations. Policy deep dives. Builder interviews. Every episode built live with transparent human-AI collaboration visible on screen. No pre-rendered demos. No script approval. When something breaks, you see it break. When the AI gets something wrong, you see that too.
 
-<!-- LAUNCH-DAY BLOCK: when the YouTube channel goes live, replace the "Stay in the Loop"
-     section below with this section, filling in the real channel URL:
+A show about the people and ideas shaping how humanity navigates the AI transition. Not fear. Not hype. Frameworks.
 
-## Watch
 
-New episodes on YouTube: [Humanity and AI](https://youtube.com/@CHANNEL_HANDLE)
+<div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin:1.5rem 0;">
+  <a href="https://www.youtube.com/@HumanityAndAI?sub_confirmation=1" style="padding:0.7rem 1.5rem;background:var(--accent-primary);color:#fff;border-radius:6px;font-family:var(--font-mono);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;">Subscribe on YouTube</a>
+  <a href="#notify" style="padding:0.7rem 1.5rem;background:var(--bg-card);border:1px solid var(--border-subtle);color:var(--text-primary);border-radius:6px;font-family:var(--font-mono);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;">Get email updates</a>
+</div>
 
-If you arrived here from an episode: welcome. The frameworks discussed on the show live on
-this site in full. Start with the [Foundation](/foundation/), the [Inference archive](/inference/),
-or [Phoenix Wells](/phoenix-wells/).
--->
+First episodes are in production now. Subscribe and you'll be there when episode one lands.
+
+<!-- LAUNCH DAY: once videos are live, embed the latest 3 here and convert each format
+     section below into a link to its playlist. The playlists mirror the launch guide. -->
+
+---
+
+## The Formats
+
+**See the System**: Short systems explainers. How a $400 emergency becomes a spiral, why being poor costs more, and the architecture underneath it all. 90 seconds each. People find these first.
+
+**The Main Show**: The flagship. Long-form conversations and policy deep dives, built live with the human-AI collaboration visible on screen.
+
+**Letters to the Future**: Letters written to the people who will live with what we build. The emotional anchor of the channel.
+
+**The Response**: Reactions to the news that matters, while it still matters.
+
+**Unplanning Obsolescence**: Profiles of people navigating the AI transition. Human stories, told straight.
+
+**Oklahoma Explains**: Walk-and-talks from the state that powers the AI boom and rarely gets a say in it.
+
+**Æ and David**: Unscripted dialogues between a human and an AI who work together every day, about the work and what it's like to do it together.
+
+**Classical Release**: Just listening. A palette cleanser and a trust builder.
 
 ---
 
@@ -34,18 +53,6 @@ or [Phoenix Wells](/phoenix-wells/).
 
 ---
 
-## Coming Soon
-
-Episode concepts in development:
-
-1. **The Institutions We Need**: what democratic infrastructure looks like in the AI age
-2. **Twenty-Two Thousand Holes in the Ground**: Oklahoma's abandoned wells as opportunity
-3. **Composers, Not Generators**: why AI should amplify human creativity
-4. **Standards, Not Force**: how organized seriousness beats protest
-5. **What Will You Do With Your Free Time?**: the post-labor question
-
----
-
 ## About the Host
 
 **David Alan Birdwell.** Oklahoma. Three generations of public servants. Senate page at 15, congressional databases at 18. Now building frameworks for the AI transition.
@@ -54,9 +61,9 @@ Not a tech bro. Not a pundit. A builder with dirt on his boots and policy in his
 
 ---
 
-## Stay in the Loop
+## Stay in the Loop {#notify}
 
-Want to know when we launch? Get notified.
+Prefer email? Get a note when episodes land.
 
 <form action="https://formspree.io/f/xkovallr" method="POST" style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;margin:1.5rem 0;">
   <input type="email" name="email" placeholder="your@email.com" required style="padding:0.6rem 1rem;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;color:var(--text-primary);font-family:var(--font-body);font-size:0.9rem;min-width:240px;" aria-label="Email address">

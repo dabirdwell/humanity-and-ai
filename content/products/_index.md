@@ -1,6 +1,6 @@
 ---
-title: "Products"
-description: "Software tools from Humanity and AI LLC."
+title: "The Studio"
+description: "The consumer tools of Humanity and AI LLC."
 layout: "list"
 ---
 
