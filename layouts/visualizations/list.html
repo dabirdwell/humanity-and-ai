@@ -14,7 +14,7 @@
       <div class="viz-card-body">
         <div class="post-meta">
           {{ with .Params.type }}<span class="post-type visualization">interactive</span>{{ end }}
-          <time>{{ .Date.Format "January 2, 2006" }}</time>
+          {{ if not .Date.IsZero }}<time>{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
         </div>
         <h3>{{ .Title }}</h3>
         {{ with .Params.description }}<p>{{ . }}</p>{{ end }}

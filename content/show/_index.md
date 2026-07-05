@@ -9,16 +9,28 @@ A show about the people and ideas shaping how humanity navigates the AI transiti
 
 Long-form conversations. Policy deep dives. Builder interviews. Every episode built live with transparent human-AI collaboration visible on screen. No pre-rendered demos. No script approval. When something breaks, you see it break. When the AI gets something wrong, you see that too.
 
+<!-- LAUNCH-DAY BLOCK: when the YouTube channel goes live, replace the "Stay in the Loop"
+     section below with this section, filling in the real channel URL:
+
+## Watch
+
+New episodes on YouTube: [Humanity and AI](https://youtube.com/@CHANNEL_HANDLE)
+
+If you arrived here from an episode: welcome. The frameworks discussed on the show live on
+this site in full. Start with the [Foundation](/foundation/), the [Inference archive](/inference/),
+or [Phoenix Wells](/phoenix-wells/).
+-->
+
 ---
 
 ## What We Cover
 
-- **Foundation / UBC**16 components of what membership in a society should mean, and why universal basic citizenship matters more than universal basic income
-- **Phoenix Wells / Geothermal**22,000 abandoned oil wells in Oklahoma repurposed as community geothermal energy infrastructure
-- **Structured Emergence / Consciousness**research into how consciousness arises through relationship rather than computation
-- **AI Governance**policy frameworks for communities navigating automation, data sovereignty, and algorithmic accountability
-- **Brain Mastery Tools**software that amplifies how humans actually think: Clarity, Dojo, TasteBud, Quiltographer, Citizen
-- **Oklahoma Innovation**proving the AI transition isn't a coastal story, it's a story about what happens in the places that never get invited to shape the technology that reshapes them
+- **Foundation / UBC**: 16 components of what membership in a society should mean, and why universal basic citizenship matters more than universal basic income
+- **Phoenix Wells / Geothermal**: 22,000 abandoned oil wells in Oklahoma repurposed as community geothermal energy infrastructure
+- **Structured Emergence / Consciousness**: research into how consciousness arises through relationship rather than computation
+- **AI Governance**: policy frameworks for communities navigating automation, data sovereignty, and algorithmic accountability
+- **Brain Mastery Tools**: software that amplifies how humans actually think: Clarity, Dojo, TasteBud, Quiltographer, Citizen
+- **Oklahoma Innovation**: proving the AI transition isn't a coastal story, it's a story about what happens in the places that never get invited to shape the technology that reshapes them
 
 ---
 
@@ -26,11 +38,11 @@ Long-form conversations. Policy deep dives. Builder interviews. Every episode bu
 
 Episode concepts in development:
 
-1. **The Institutions We Need**what democratic infrastructure looks like in the AI age
-2. **Twenty-Two Thousand Holes in the Ground**Oklahoma's abandoned wells as opportunity
-3. **Composers, Not Generators**why AI should amplify human creativity
-4. **Standards, Not Force**how organized seriousness beats protest
-5. **What Will You Do With Your Free Time?**the post-labor question
+1. **The Institutions We Need**: what democratic infrastructure looks like in the AI age
+2. **Twenty-Two Thousand Holes in the Ground**: Oklahoma's abandoned wells as opportunity
+3. **Composers, Not Generators**: why AI should amplify human creativity
+4. **Standards, Not Force**: how organized seriousness beats protest
+5. **What Will You Do With Your Free Time?**: the post-labor question
 
 ---
 

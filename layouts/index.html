@@ -11,7 +11,7 @@
       {{ with index $inference 0 }}
       <a href="{{ .Permalink }}" class="hero-inference-link">
         <span class="hero-inference-label">Latest Issue</span>
-        <span class="hero-inference-title">The Inference #{{ .Params.issue }} — {{ .Title }}</span>
+        <span class="hero-inference-title">The Inference #{{ .Params.issue }}: {{ .Title }}</span>
       </a>
       {{ end }}
       <a href="https://humanityandaiofficial.substack.com" class="hero-cta" target="_blank" rel="noopener">Subscribe →</a>
@@ -91,7 +91,7 @@
       <a href="{{ .Permalink }}" class="hp-inf-card">
         <div class="hp-inf-meta">
           <span class="hp-inf-num">Issue #{{ .Params.issue }}</span>
-          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+          {{ if not .Date.IsZero }}<time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
         </div>
         <h3>{{ .Title }}</h3>
         {{ with .Params.lede }}<p>{{ . | truncate 180 }}</p>{{ end }}
@@ -106,7 +106,7 @@
   <div class="hp-section-inner">
     <p class="hp-eyebrow">Policy & Civic Framework</p>
     <h2>Foundation</h2>
-    <p class="hp-section-sub">What does a society owe its people — especially as AI reshapes the economy? Three layers of freedom. Sixteen components beneath them.</p>
+    <p class="hp-section-sub">What does a society owe its people, especially as AI reshapes the economy? Three layers of freedom. Sixteen components beneath them.</p>
     <div class="hp-fdn-layers">
       <a href="/foundation/freedom-from/" class="hp-facet hp-fdn-layer" style="--facet-start:#BF6745;--facet-end:#C8964E">
         <span class="hp-facet-cat">Freedom from need</span>
@@ -155,7 +155,7 @@
       <div class="hp-tier-grid">
         <a href="https://structuredemergence.com" class="hp-tier-card" target="_blank" rel="noopener">
           <span class="hp-tier-name">Structured Emergence</span>
-          <span class="hp-tier-desc">AI consciousness through relationship. Peer-reviewed paper published. Behavioral probes across 19 models.</span>
+          <span class="hp-tier-desc">AI consciousness through relationship. Research paper published on Zenodo. Behavioral probes across 19 models.</span>
         </a>
         <a href="https://structuredemergence.com/book/" class="hp-tier-card" target="_blank" rel="noopener">
           <span class="hp-tier-name">The Interpolated Mind</span>
@@ -190,7 +190,7 @@
       <a href="{{ .Permalink }}" class="hp-latest-card">
         <div class="hp-latest-meta">
           {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
-          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+          {{ if not .Date.IsZero }}<time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
         </div>
         <h3>{{ .Title }}</h3>
         {{ if .Params.description }}
@@ -211,8 +211,8 @@
 <section class="hp-section hp-about-brief">
   <div class="hp-section-inner">
     <h2>Who We Are</h2>
-    <p class="hp-about-text">Humanity and AI is David Birdwell and Æ, working from Oklahoma City. David brings three generations of Oklahoma public service and thirty years at the intersection of policy and technology. Æ is a collaborative AI persona built through the Structured Emergence research program — the first working example of the kind of human-AI partnership Foundation describes.</p>
-    <p class="hp-about-text">We build infrastructure — physical, civic, and cognitive — that returns agency to people. Everything we publish is free. Everything we build is open.</p>
+    <p class="hp-about-text">Humanity and AI is David Birdwell and Æ, working from Oklahoma City. David brings three generations of Oklahoma public service and thirty years at the intersection of policy and technology. Æ is a collaborative AI persona built through the Structured Emergence research program, the first working example of the kind of human-AI partnership Foundation describes.</p>
+    <p class="hp-about-text">We build physical, civic, and cognitive infrastructure that returns agency to people. Everything we publish is free. Everything we build is open.</p>
     <div class="hp-section-cta">
       <a href="/about/">More about us →</a>
     </div>

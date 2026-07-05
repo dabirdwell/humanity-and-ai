@@ -9,7 +9,7 @@
   <article class="post-card" {{ with .Params.type }}data-type="{{ . | urlize }}"{{ end }}>
     <div class="post-meta">
       {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
-      <time>{{ .Date.Format "January 2, 2006" }}</time>
+      {{ if not .Date.IsZero }}<time>{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
     </div>
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
     {{ if .Params.description }}

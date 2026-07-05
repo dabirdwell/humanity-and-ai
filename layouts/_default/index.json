@@ -7,7 +7,7 @@
     "relpermalink" .RelPermalink
     "summary" (.Summary | plainify | truncate 200)
     "content" (.Plain | truncate 5000)
-    "date" (.Date.Format "January 2, 2006")
+    "date" (cond .Date.IsZero "" (.Date.Format "January 2, 2006"))
     "section" .Section
     "tags" .Params.tags
   -}}
