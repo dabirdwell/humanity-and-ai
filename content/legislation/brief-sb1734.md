@@ -1,6 +1,6 @@
 ---
 title: "Bill Brief: SB 1734, Oklahoma Responsible Technology in Schools Act"
-draft: true
+draft: false
 description: "One-page staff brief on SB 1734: what the AI-in-schools law does, who it applies to, its effective date, and what districts must do now."
 date: 2026-07-05
 toolkit_kind: "Bill Brief"

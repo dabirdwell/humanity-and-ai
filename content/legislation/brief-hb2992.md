@@ -1,6 +1,6 @@
 ---
 title: "Bill Brief: HB 2992, Data Center Consumer Ratepayer Protection Act"
-draft: true
+draft: false
 description: "One-page staff brief on HB 2992: what the law does, who it applies to, its effective date, and what utilities and large-load customers must do now."
 date: 2026-07-05
 toolkit_kind: "Bill Brief"

@@ -1,6 +1,6 @@
 ---
 title: "Bill Brief: SB 1521, Minor Protection from AI (Conversational AI Services)"
-draft: true
+draft: false
 description: "One-page staff brief on SB 1521: what the chatbot-protection law does, who it applies to, when it was enacted, and what operators must do now."
 date: 2026-07-05
 toolkit_kind: "Bill Brief"

@@ -1,6 +1,6 @@
 ---
 title: "Bill Brief: SB 259, Data Center Groundwater Protection Act"
-draft: true
+draft: false
 description: "One-page staff brief on SB 259: what the law does, who it applies to, when it was signed, and what large-load data centers must do now."
 date: 2026-07-05
 toolkit_kind: "Bill Brief"

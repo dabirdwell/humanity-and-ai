@@ -1,6 +1,6 @@
 ---
 title: "Model Framework: The Human-AI Collaboration Transparency Act (HAICTA)"
-draft: true
+draft: false
 description: "A model transparency framework for human-AI business partnerships, offered to any Oklahoma member office. Concept stage: full statutory language available on request."
 date: 2026-07-05
 toolkit_kind: "Model Framework"
