@@ -1,0 +1,61 @@
+{{ define "head" }}
+<style>
+  .broadsheet .post-meta { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; }
+  .broadsheet .post-header h1 { line-height: 1.15; }
+  .broadsheet .tmp-subtitle { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.5; margin-top: 0.6rem; font-style: italic; }
+  .broadsheet .tmp-byline { display: block; margin-top: 0.9rem; font-size: 0.85rem; color: var(--text-muted); }
+  .broadsheet .tmp-date-placeholder { color: var(--accent-tertiary); font-family: var(--font-mono); font-size: 0.72rem; text-transform: none; letter-spacing: 0; }
+  .broadsheet .post-content h2 { font-family: var(--font-display); font-size: 1.35rem; margin-top: 2.5rem; }
+  .broadsheet .post-content p { line-height: 1.75; }
+  .broadsheet .post-content blockquote { font-family: var(--font-display); font-size: 1.1rem; text-align: center; border: none; margin: 2rem 0; color: var(--accent-warm); }
+  .broadsheet .post-content .footnotes { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--text-secondary); }
+  .broadsheet .post-content .footnotes::before { content: "Notes"; display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; }
+  .broadsheet .post-content .footnotes hr { display: none; }
+  .tmp-provenance { margin-top: 2.5rem; padding: 1rem 1.15rem; border: 1px solid var(--border-subtle); border-radius: 6px; font-family: var(--font-mono); font-size: 0.72rem; line-height: 1.6; color: var(--text-muted); word-break: break-all; }
+  .tmp-provenance strong { color: var(--text-secondary); font-weight: 600; }
+  .tmp-pdf { margin-top: 1.5rem; }
+  .tmp-pdf a { display: inline-block; font-family: var(--font-display); font-size: 0.9rem; padding: 0.6rem 1.1rem; border: 1px solid var(--border-hover); border-radius: 6px; color: var(--text-primary); text-decoration: none; }
+  .tmp-pdf a:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+  .tmp-funnel { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.9rem; }
+  .tmp-funnel a { color: var(--text-secondary); text-decoration: none; }
+  .tmp-funnel a:hover { color: var(--accent-primary); }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<article class="post-single broadsheet">
+  <header class="post-header">
+    <div class="post-meta">
+      {{ with .Params.series }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.part }} &middot; <span>{{ . }}</span>{{ end }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="tmp-subtitle">{{ . }}</p>{{ end }}
+    <span class="tmp-byline">
+      {{ with .Params.byline }}{{ . }}{{ end }}{{ if .Date.IsZero }}<span class="tmp-date-placeholder"> &middot; [ publication date: David sets this at flip time, when draft:false ]</span>{{ else }} &middot; <time>{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
+    </span>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.pdf }}
+  <div class="tmp-pdf">
+    <a href="{{ . }}" download>Download the print broadsheet (PDF)</a>
+  </div>
+  {{ end }}
+
+  {{ with .Params.pdf_sha256 }}
+  <div class="tmp-provenance">
+    <strong>Provenance.</strong> SHA-256 of the print PDF:<br>{{ . }}
+  </div>
+  {{ end }}
+
+  <nav class="tmp-funnel" aria-label="Continue">
+    <a href="/thismachine/">The broadsheets (series index)</a>
+    <a href="https://humanityandaiofficial.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
+    <a href="/foundation/">Read the Foundation framework</a>
+  </nav>
+</article>
+{{ end }}

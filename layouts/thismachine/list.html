@@ -1,0 +1,39 @@
+{{ define "head" }}
+<style>
+  .broadsheet .post-content h2 { font-family: var(--font-display); font-size: 1.35rem; margin-top: 2.5rem; }
+  .broadsheet .post-content p { line-height: 1.7; }
+  .tmp-imprint-tagline { color: var(--text-secondary); font-style: italic; margin-top: -0.25rem; }
+  .tmp-list { list-style: none; padding: 0; margin: 2.5rem 0 0; border-top: 1px solid var(--border-subtle); }
+  .tmp-list li { padding: 1.5rem 0; border-bottom: 1px solid var(--border-subtle); }
+  .tmp-list .tmp-part { display: block; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem; }
+  .tmp-list a.tmp-title { font-family: var(--font-display); font-size: 1.4rem; color: var(--text-primary); text-decoration: none; }
+  .tmp-list a.tmp-title:hover { color: var(--accent-primary); }
+  .tmp-list .tmp-sub { color: var(--text-secondary); margin: 0.4rem 0 0; line-height: 1.6; }
+  .tmp-list .tmp-byline { display: inline-block; margin-top: 0.6rem; font-size: 0.82rem; color: var(--text-muted); }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<article class="post-single broadsheet">
+  <header class="post-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="tmp-imprint-tagline">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <h2 style="font-family: var(--font-display); margin-top: 3rem;">The broadsheets</h2>
+  <ul class="tmp-list">
+    {{ range where .Pages "Type" "thismachine" }}
+    <li>
+      {{ with .Params.part }}<span class="tmp-part">{{ . }}</span>{{ end }}
+      <a class="tmp-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ with .Params.subtitle }}<p class="tmp-sub">{{ . }}</p>{{ end }}
+      {{ with .Params.byline }}<span class="tmp-byline">{{ . }}</span>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</article>
+{{ end }}
