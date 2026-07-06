@@ -1,7 +1,8 @@
 ---
 title: "This Machine Press"
 description: "An archive of record for the broadsheets. Timestamped, citable, permanent, spare."
-draft: true
+draft: false
+date: 2026-07-05T23:55:00-05:00
 layout: list
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: "The Gentle Robot"
 description: "Graduated Obligation, Part 1 of 8. A robot built to be gentle, that cannot bruise a child, can still carry a weapon, because the thing it is aimed at is the will, not the body. The case for measuring artificial systems by persuasive reach rather than force."
-draft: true
+draft: false
+date: 2026-07-05T23:55:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 1 of 8"

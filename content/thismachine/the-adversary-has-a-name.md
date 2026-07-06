@@ -2,7 +2,8 @@
 title: "The Adversary Has a Name"
 subtitle: "The engine that powers a genuinely helpful assistant and the engine that powers a manipulation machine are the same engine. One of them has just been built."
 description: "Graduated Obligation, Part 2 of 8. A user harness that reconstructs a person's beliefs and intentions at up to ninety-six percent accuracy has been built, measured, and published. The capability at the center of the worst case is no longer hypothetical."
-draft: true
+draft: false
+date: 2026-07-05T23:55:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 2 of 8"
