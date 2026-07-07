@@ -29,6 +29,11 @@ summaryLength = 40
     name = "Studio"
     url = "/products/"
   [[params.nav.links]]
+    name = "Research"
+    url = "https://structuredemergence.com"
+    external = true
+    class = "nav-pulse"
+  [[params.nav.links]]
     name = "About"
     url = "/about/"
 
