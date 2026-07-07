@@ -100,6 +100,7 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   {{ partial "header.html" . }}
 
+  {{ if ne .Section "thismachine" }}
   <div class="welcome-overlay" id="welcomeOverlay">
     <div class="welcome-card">
       <h2>Welcome to Humanity &amp; AI</h2>
@@ -117,6 +118,7 @@
       <button class="welcome-dismiss" id="welcomeDismiss">Got it</button>
     </div>
   </div>
+  {{ end }}
 
   <main id="main-content">
     {{ block "main" . }}{{ end }}
