@@ -1,11 +1,11 @@
 ---
 title: "Planning When Reality Gets a Vote"
 date: 2026-07-07
-draft: true
+draft: false
 type: "insight"
 tags: ["foundation", "governance", "tools"]
 description: "A plan says what to do. A war-game asks what Tuesday will do about it. The planning discipline we use in our own shop, and the three questions that tell you whether a public plan is real or just announced."
-author: "David Birdwell and Æ"
+author: "David Alan Birdwell and Æ"
 ---
 
 Everyone has watched a plan meet a Tuesday.
