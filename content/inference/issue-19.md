@@ -5,7 +5,7 @@ description: "The Inference, Issue 19: a frontier model returns from a federal s
 date: 2026-07-03
 issue: 19
 lede: "On June 9 Anthropic released its two most advanced models; three days later a federal export order took them offline; they came back split in two: the general model to everyone on Wednesday, the more dangerous one days earlier and only to a cleared list. The same morning, Oklahoma's grid began sorting its largest loads into a class that must be cleared before it can connect. Two resources are being rationed at once, and the revealing part is how differently: one gate decides who bears a cost, the other who may wield a controlled-risk capability."
-substack_url: ""
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-19-the-gate"
 pdf_url: ""
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "export-controls", "frontier-models", "authorization", "hb-2992", "governance", "infrastructure", "anthropic"]
 distribution:
@@ -13,7 +13,7 @@ distribution:
   surfaces:
     hugo_hai:  { status: done, at: 2026-07-04 }
     email:     { status: done, at: 2026-07-03 }
-    substack:  { status: pending }
+    substack:  { status: done, at: 2026-07-09 }
 ---
 
 > On Wednesday, July 1, an AI product that millions of people had been using came back online after the federal government shut it down nearly three weeks earlier. Not a research prototype. Not a beta test. A tool for writing, researching, analyzing, building lesson plans, sorting medical paperwork, drafting contracts. It came back split in two: the general version to everyone, the more dangerous version only to a cleared list. The same morning, in Oklahoma, a new law took effect requiring the biggest electricity customers to be cleared separately before they can connect. Different resources. Same move: a gate where an open door used to be.
