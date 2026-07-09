@@ -5,15 +5,15 @@ description: "The Inference, Issue 18: two weeks before HB 2992 goes operative, 
 date: 2026-06-26
 issue: 18
 lede: "Luther paused a data center from a folding table on a closed Main Street. Broken Arrow froze for six months. Oklahoma City drew a 75-megawatt line. The cost question is settling at the Commission; the consent question is being answered town by town."
-substack_url: ""
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-18-the-local"
 pdf_url: ""
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "moratorium", "zoning", "hb-2992", "local-government", "ferc", "consent"]
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: pending }
+    hugo_hai:  { status: done, at: 2026-07-04 }
     email:     { status: done, at: 2026-06-26 }
-    substack:  { status: pending }
+    substack:  { status: done, at: 2026-06-26 }
 ---
 
 > On a Wednesday night in June, the town of Luther, Oklahoma, population about 1,700, held its Board of Trustees meeting outdoors on Main Street, because no building in town could hold the crowd. Roughly four hundred people, close to a quarter of the town, came to ask their trustees to pause a data center. The board did. Two weeks before Oklahoma's new cost-attribution law goes operative, the sharpest data-center fight in the state was not at the Corporation Commission or the Capitol. It was on a closed street under floodlights, and the question was not what the load would cost. It was whether anyone had asked.

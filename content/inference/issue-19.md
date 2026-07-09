@@ -11,7 +11,7 @@ tags: ["ai-policy", "oklahoma", "energy", "data-centers", "export-controls", "fr
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: pending }
+    hugo_hai:  { status: done, at: 2026-07-04 }
     email:     { status: done, at: 2026-07-03 }
     substack:  { status: pending }
 ---
