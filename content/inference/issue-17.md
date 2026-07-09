@@ -1,7 +1,7 @@
 ---
 title: "The Meter Goes Live"
 draft: false
-description: "The Inference, Issue 17: HB 2992, Oklahoma's data-center cost-attribution law, goes operative July 1, and on June 16 voters chose the commissioner favored to apply it to the first live load."
+description: "The Inference, Issue 17: HB 2992, Oklahoma's data-center cost-attribution law, goes operative July 1, and on June 16 voters chose the nominee favored to apply it to the first live load."
 date: 2026-06-19
 issue: 17
 lede: "In twelve days HB 2992 stops being a statute and becomes a tariff the Corporation Commission has to apply. PSO has filed the first one, and Oklahoma just chose the nominee favored to read the meter."
