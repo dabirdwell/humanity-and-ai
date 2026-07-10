@@ -6,15 +6,15 @@ date: 2026-07-10
 issue: 20
 headline_alternatives: ["Pay Your Own Way", "The Priced Gate", "The Oklahoma Bet", "Make Them Pay", "Cost of Entry", "Bill, Ban, or Subsidy"]
 lede: "On June 30, Oklahoma's attorney general announced that a utility's request to raise a typical residential power bill by roughly 15 percent, about twenty-five dollars a month, had been negotiated down to about 1 percent, roughly two dollars and forty-five cents. That is a real win, and it came from the old machinery: an attorney general and a coalition working a rate case, not the new data-center law that took effect the very next morning. And on that next morning, July 1, the utility's temporary rates took effect anyway, adding about eleven dollars to a typical bill while the settlement waits for approval. Two kinds of protection, one old and one brand new, and a household still paying more today than it will if the paperwork lands."
-substack_url: ""
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-20-pay-your-own"
 pdf_url: ""
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "hb-2992", "pso", "og-e", "ferc", "rate-cases", "moratorium", "governance", "infrastructure"]
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: pending }
-    email:     { status: pending }
-    substack:  { status: pending }
+    hugo_hai:  { status: done, at: 2026-07-10 }
+    email:     { status: done, at: 2026-07-10 }
+    substack:  { status: done, at: 2026-07-10 }
 ---
 
 > Last week this newsletter described a gate: the new habit, in both artificial intelligence and the power grid, of handing out a once-open resource only by permission. This week the state's protections started producing numbers, and the first one is a genuine win. Public Service Company of Oklahoma had asked to raise a typical residential bill by about 15 percent, roughly twenty-five dollars a month. On June 30 the attorney general announced a settlement cutting that to about 1 percent, roughly two dollars and forty-five cents. That is what ratepayer protection looks like when it lands.
