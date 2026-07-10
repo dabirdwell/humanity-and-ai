@@ -1,6 +1,6 @@
 ---
 title: "Pay Your Own Way"
-draft: true
+draft: false
 description: "The Inference, Issue 20: the week Oklahoma's ratepayer-protection posture produced a real win (a 15 percent power-rate ask negotiated down to about 1 percent for households) while the state's new priced-gate law took effect and awaited its first tariff test, the federal grid regulator forced six regional operators to justify how they connect large loads, other states split between banning data centers and pulling their subsidies, and the AI demand driving all of it cleared to open wider with GPT-5.6's public release. Oklahoma's bet is the priced gate: not a ban, but a bill sent to the load that caused the cost. The first numbers show both that the posture is working and where the household still pays first."
 date: 2026-07-10
 issue: 20
