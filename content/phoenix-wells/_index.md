@@ -1,29 +1,27 @@
 ---
 title: "Phoenix Wells"
-description: "Converting Oklahoma's 22,000 abandoned oil wells to geothermal power and edge compute. Same workforce, same land, new purpose."
+description: "Converting Oklahoma's abandoned oil wells into community-owned clean energy storage. The grid connection is the asset — the battery bolts on."
 ---
 
-## Abandoned Oil Wells → Geothermal Power + Edge Compute
+## Abandoned Oil Wells → Clean Energy Storage
 
-Oklahoma has over 22,000 abandoned oil wells: environmental liabilities costing the state millions in maintenance and cleanup. Phoenix Wells converts them into geothermal energy sources paired with edge computing infrastructure.
+Oklahoma has more than 20,000 documented orphan wells — and the Corporation Commission is still investigating roughly 18,000 more. Each one is an environmental liability costing the state money it doesn't have. Phoenix Wells converts them into clean-energy storage sites.
 
-**The model:** Community-owned, locally operated, using the existing skilled workforce that drilled the wells in the first place. Not corporate data centers demanding grid capacity: distributed, small-scale, resilient.
+**What the wells taught us:** We started with geothermal generation. The wells taught us something better — their real value is what's already built: grid connections with industrial-grade hardware, roads, and permitted, disturbed land. Grid-scale battery storage is getting cheap fast, and the storage build-out is starved for exactly what these sites already have — interconnection, land, and grid adjacency. The battery is a commodity anyone can buy. The sites are the moat.
 
-**The economics:** $500–700K conversion capital per well. $72–91K gross annual revenue. ~14% IRR with the 40% Investment Tax Credit. ~6.2-year payback.
+**The model:** Each converted site pairs battery storage with what the well already offers. Where wells run deep enough, a sealed closed-loop heat exchanger drives a small generator, turning steady geothermal heat into a trickle-charge; every site can also soak up cheap wind power the grid would otherwise curtail. The battery turns both into dispatchable clean power. Community-owned, locally operated, built by the same skilled workforce that drilled the wells in the first place.
 
-**The legislation:** HB 3173 (the Oklahoma Well Repurposing Act) passed the House 85–6 and is moving through the Senate with Sen. Darcy Jech. This bill creates the regulatory framework for well conversion.
-
-**The energy question:** Google is building three data centers in Muskogee and Stillwater, demanding massive grid capacity from OG&E. Phoenix Wells offers the opposite model: distributed generation that strengthens the grid instead of straining it.
+**The legislation:** HB 3173, the Well Repurposing Act, passed the Oklahoma House 85–6 with bipartisan co-authors, then died at the Senate's session deadline. The coalition is proven; the framework isn't going away.
 
 ---
 
 ### Current Status
 
-We are pursuing a DOE Geothermal Technologies Office grant (DE-FOA-0003472, $171.5M pool) with university research partnerships. SAM.gov registration is active. Deadline: May 14, 2026.
+DOE resource-characterization application submitted (DE-FOA-0003472, Topic 6); selections expected at the end of July 2026. Site selection analysis underway on candidate wellfields.
 
 ### How This Connects
 
-Phoenix Wells is the ground layer of the full stack. Energy from the earth funds compute. Compute enables AI tools. AI tools enable civic infrastructure. The infrastructure IS the politics.
+Phoenix Wells is the ground layer of the full stack: energy infrastructure that strengthens the grid instead of straining it, owned by the communities that host it. As data-center load growth forces the question of who pays for the grid, these sites are one answer that keeps the value home.
 
 ---
 
