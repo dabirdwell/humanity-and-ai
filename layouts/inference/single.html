@@ -6,7 +6,7 @@
     <a href="/inference/">← All Issues</a>
     <a href="{{ .Params.embed_url }}" target="_blank" rel="noopener">Open in new tab ↗</a>
   </div>
-  <div class="inference-content">
+  <div class="inference-content prose">
     {{ .Content | safeHTML }}
   </div>
   {{ else }}
@@ -27,7 +27,7 @@
     {{ with .Params.substack_url }}<a href="{{ . }}" class="inference-read-btn" target="_blank" rel="noopener">Read on Substack →</a>{{ end }}
     {{ with .Params.pdf_url }}<a href="{{ . }}" class="inference-read-btn inference-read-pdf">Download PDF ↓</a>{{ end }}
   </div>
-  <div class="inference-content">
+  <div class="inference-content prose">
     {{ .Content | safeHTML }}
   </div>
   {{ end }}
