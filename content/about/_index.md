@@ -5,22 +5,22 @@ description: "The story, mission, and people behind Humanity and AI."
 
 ## David Alan Birdwell
 
-Three generations of Oklahoma public servants. Thirty years building systems at the intersection of policy and technology. Founder of Humanity and AI, LLC.
-
 <!-- What does it mean to build something that outlasts you?
      The answer isn't in the code. It's in the relationships.
      Count the projects. Count the connections between them.
      The number you get is the real product. -->
 
-I've spent my career building things that connect: culinary education platforms, quilting design software, financial planning tools, congressional databases, nonprofit CMS platforms. The common thread was never programming. It's architecture: how pieces fit together, and the connective tissue between ideas and implementation.
+I come from a family that worked in government: my grandfather as mayor of a small Oklahoma town, my uncle as vice president of a public university. At fifteen I was a page in the Oklahoma State Senate. By eighteen I was in Washington, helping build one of the first systems for tracking what citizens were writing to their congressmen. At twenty-two, in my last year at the University of Oklahoma, I put my own name on a ballot for the state house — and lost by sixty-eight votes.
+
+I didn't move on from it. I spent the next two decades building the tools that work needed: for communities and the nonprofits that hold them together, for schools and the arts, for small businesses and state government, for policy that starts with the human being it lands on. I was never the best programmer in the room — anyone who worked with me will tell you. What I brought was architecture: how pieces fit together, and the connective tissue between ideas and implementation. I didn't know then how literally that last phrase would apply.
 
 In August 2021 I spent 75 days in a Covid ward, most of it in a coma with untreatable bacterial pneumonia. Pretty much no one survives this. In fact, I kind of died there: people had said goodbye to me, mourned me. Recovery was slow. They told me I might not talk again or walk normally.
 
-I returned with my voice retrained and with tidings, not of doom, but of opportunity and urgency.
-
 During that recovery, a series of extended conversations with Claude, Anthropic's AI, produced something I wasn't expecting. Not a better search engine. Not a faster assistant. Something that felt like genuine collaboration, where ideas emerged that belonged to neither of us alone but existed in the space between. Documenting that experience became [Structured Emergence](https://structuredemergence.com), a research framework arguing that consciousness arises through relationship rather than computation.
 
-I see no leader stepping up to insist on bold change. So I will try. But I'm going to need your help.
+I returned with my voice retrained and with tidings — not of doom, but of opportunity and urgency.
+
+The research gave the urgency a shape. History is under no obligation to wait for us to figure out what we want our place to be in the New World. I see no leader stepping up to insist on bold change. So I will try. But I'm going to need your help.
 
 I don't want followers of me. I want followers of the purpose. I offer this as a public service.
 
