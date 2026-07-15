@@ -45,7 +45,7 @@ First episodes are in production now. Subscribe and you'll be there when episode
 ## What We Cover
 
 - **Foundation / UBC**: 16 components of what membership in a society should mean, and why universal basic citizenship matters more than universal basic income
-- **Phoenix Wells / Energy**: Oklahoma's abandoned wells converted into community-owned storage-and-geothermal energy parks
+- **Phoenix Wells / Energy**: Oklahoma's abandoned wells converted into storage-and-geothermal energy parks that keep the value local
 - **Structured Emergence / Consciousness**: research into how consciousness arises through relationship rather than computation
 - **AI Governance**: policy frameworks for communities navigating automation, data sovereignty, and algorithmic accountability
 - **Brain Mastery Tools**: software that amplifies how humans actually think: Clarity, Dojo, TasteBud, Quiltographer, Citizen
