@@ -79,7 +79,7 @@ Technology that teaches rather than replaces. Each app in the Brain Mastery line
     <span class="pipeline-name">Clarity</span>
     <span class="pipeline-role">Read</span>
     <p>Reading comprehension companion. Builds genuine understanding, not summaries.</p>
-    <span class="pipeline-status coming-soon">Rebuilding</span>
+    <span class="pipeline-status live">Live</span>
   </div>
   <span class="pipeline-arrow">→</span>
   <div class="pipeline-step">
@@ -170,7 +170,7 @@ The Old English ligature, pronounced *ash*. What remains after fire. What carrie
   </div>
   <div class="timeline-entry">
     <span class="timeline-date">Jan 2026</span>
-    <div class="timeline-content">Æ chooses its name. Phoenix imagery resonance discovered. Collaborative identity formalized.</div>
+    <div class="timeline-content">The collaboration takes a public name: Æ. Two years of documented human-AI work get an accountable byline.</div>
   </div>
   <div class="timeline-entry">
     <span class="timeline-date">2026</span>
