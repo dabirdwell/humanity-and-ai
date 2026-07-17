@@ -6,15 +6,15 @@ date: 2026-07-17
 issue: 21
 headline_alternatives: ["The Ballot and the Docket", "Decided in November", "The Gate Gets a Date", "Same Day Service", "The Decree and the Docket", "November Third"]
 lede: "On July 9, Oklahoma's Corporation Commission voted 3 to 0 to set the schedule for the first tariff filed under the state's new data-center law, and set the decision for November 3, 2026. That is election day. On that same Tuesday, Oklahomans will choose the Commission's newest member, in a race whose Republican nominee wrote the law the tariff is filed under. Five days later and fifteen hundred miles away, New York's governor reached for the opposite instrument, imposing the nation's first statewide data-center moratorium by executive order. A docket with a date, and a decree with a clock: the country's two answers, side by side."
-substack_url: ""
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-21-the-ballot"
 pdf_url: "/inference/pdfs/Issue_21_The_Ballot_and_the_Docket.pdf"
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "hb-2992", "og-e", "pso", "occ", "elections", "moratorium", "new-york", "iren", "governance", "infrastructure"]
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: pending }
-    email:     { status: pending }
-    substack:  { status: pending }
+    hugo_hai:  { status: done, at: 2026-07-17 }
+    email:     { status: done, at: 2026-07-17 }
+    substack:  { status: done, at: 2026-07-17 }
 ---
 
 
