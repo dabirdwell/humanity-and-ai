@@ -6,7 +6,7 @@ date: 2026-06-26
 issue: 18
 lede: "Luther paused a data center from a folding table on a closed Main Street. Broken Arrow froze for six months. Oklahoma City drew a 75-megawatt line. The cost question is settling at the Commission; the consent question is being answered town by town."
 substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-18-the-local"
-pdf_url: ""
+pdf_url: "/inference/pdfs/Issue_18_The_Local_Veto.pdf"
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "moratorium", "zoning", "hb-2992", "local-government", "ferc", "consent"]
 distribution:
   canonical: hugo_hai

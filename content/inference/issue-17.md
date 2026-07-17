@@ -6,7 +6,7 @@ date: 2026-06-19
 issue: 17
 lede: "In twelve days HB 2992 stops being a statute and becomes a tariff the Corporation Commission has to apply. PSO has filed the first one, and Oklahoma just chose the nominee favored to read the meter."
 substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-17-the-meter"
-pdf_url: ""
+pdf_url: "/inference/pdfs/Issue_17_The_Meter_Goes_Live.pdf"
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "hb-2992", "occ", "infrastructure", "governance", "ferc", "tariffs"]
 distribution:
   canonical: hugo_hai

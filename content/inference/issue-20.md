@@ -7,7 +7,7 @@ issue: 20
 headline_alternatives: ["Pay Your Own Way", "The Priced Gate", "The Oklahoma Bet", "Make Them Pay", "Cost of Entry", "Bill, Ban, or Subsidy"]
 lede: "On June 30, Oklahoma's attorney general announced that a utility's request to raise a typical residential power bill by roughly 15 percent, about twenty-five dollars a month, had been negotiated down to about 1 percent, roughly two dollars and forty-five cents. That is a real win, and it came from the old machinery: an attorney general and a coalition working a rate case, not the new data-center law that took effect the very next morning. And on that next morning, July 1, the utility's temporary rates took effect anyway, adding about eleven dollars to a typical bill while the settlement waits for approval. Two kinds of protection, one old and one brand new, and a household still paying more today than it will if the paperwork lands."
 substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-20-pay-your-own"
-pdf_url: ""
+pdf_url: "/inference/pdfs/Issue_20_Pay_Your_Own_Way.pdf"
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "hb-2992", "pso", "og-e", "ferc", "rate-cases", "moratorium", "governance", "infrastructure"]
 distribution:
   canonical: hugo_hai

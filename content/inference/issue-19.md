@@ -6,7 +6,7 @@ date: 2026-07-03
 issue: 19
 lede: "On June 9 Anthropic released its two most advanced models; three days later a federal export order took them offline; they came back split in two: the general model to everyone on Wednesday, the more dangerous one days earlier and only to a cleared list. The same morning, Oklahoma's grid began sorting its largest loads into a class that must be cleared before it can connect. Two resources are being rationed at once, and the revealing part is how differently: one gate decides who bears a cost, the other who may wield a controlled-risk capability."
 substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-19-the-gate"
-pdf_url: ""
+pdf_url: "/inference/pdfs/Issue_19_The_Gate.pdf"
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "export-controls", "frontier-models", "authorization", "hb-2992", "governance", "infrastructure", "anthropic"]
 distribution:
   canonical: hugo_hai
