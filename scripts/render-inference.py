@@ -47,11 +47,13 @@ def render_pdf(html_path: str, pdf_path: str) -> None:
         page.add_style_tag(content="""
             @media print {
                 nav, .site-header, .site-footer, .inference-external-link,
-                .inference-footer-links { display: none !important; }
+                .inference-footer-links, .welcome-overlay, .skip-link,
+                a[href="#main-content"] { display: none !important; }
             }
             /* Also hide in screen context for the PDF render */
             nav, .site-header, .site-footer, .inference-external-link,
-            .inference-footer-links { display: none !important; }
+            .inference-footer-links, .welcome-overlay, .skip-link,
+            a[href="#main-content"] { display: none !important; }
         """)
 
         print(f"Rendering PDF ...")
