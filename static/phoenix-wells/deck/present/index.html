@@ -706,10 +706,7 @@
   const sceneDefs = [
     { id: 'scene1', dur: 10000 },
     { id: 'scene2', dur: 10000 },
-    { id: 'scene3', dur: 10000 },
-    { id: 'scene4', dur: 10000 },
     { id: 'scene5', dur: 10000 },
-    { id: 'scene6', dur: 10000 },
     { id: 'scene7', dur: 7000 },
   ];
   const totalDuration = sceneDefs.reduce((s, d) => s + d.dur, 0);
@@ -780,12 +777,7 @@
     });
     const barT = document.getElementById('bar-trad');
     const barP = document.getElementById('bar-pw');
-    if (barT && barP) {
-      if (idx === 3) {
-        barT.style.height = sceneElapsed >= 1500 ? '78px' : '0';
-        barP.style.height = sceneElapsed >= 2100 ? '180px' : '0';
-      } else { barT.style.height = '0'; barP.style.height = '0'; }
-    }
+    if (barT && barP) { barT.style.height = '0'; barP.style.height = '0'; }
     scrubFill.style.width = Math.min((elapsed / totalDuration) * 100, 100) + '%';
     const secs = Math.floor(elapsed / 1000);
     timeDisplay.textContent = Math.floor(secs / 60) + ':' + String(secs % 60).padStart(2, '0');
@@ -799,7 +791,6 @@
     document.getElementById(s.id).querySelectorAll('[data-delay]').forEach(a => {
       stepSet.add(T + parseInt(a.getAttribute('data-delay')) + 300);
     });
-    if (i === 3) { stepSet.add(T + 1500); stepSet.add(T + 2100); }
   });
   const steps = [...stepSet].sort((a, b) => a - b);
 
