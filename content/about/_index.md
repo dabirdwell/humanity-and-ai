@@ -10,7 +10,7 @@ description: "The story, mission, and people behind Humanity and AI."
      Count the projects. Count the connections between them.
      The number you get is the real product. -->
 
-I come from a family that worked in government: my grandfather as mayor of a small Oklahoma town, my uncle as vice president of a public university. At fifteen I was a page in the Oklahoma State Senate. By eighteen I was in Washington, helping build one of the first systems for tracking what citizens were writing to their congressmen. At twenty-two, in my last year at the University of Oklahoma, I put my own name on a ballot for the state house — and lost by sixty-eight votes.
+I come from a family that worked in government: my grandfather as mayor of a small Oklahoma town, my uncle as vice president of a public university. At fifteen I was a page in the Oklahoma State Senate. By eighteen I was in Washington, helping build one of the first systems for tracking what citizens were writing to their congressmen. At twenty-six, in my last year at the University of Oklahoma, I put my own name on a ballot for the state house — and lost by sixty-eight votes.
 
 I didn't move on from it. I spent the next two decades building the tools that work needed: for communities and the nonprofits that hold them together, for schools and the arts, for small businesses and state government, for policy that starts with the human being it lands on. I was never the best programmer in the room — anyone who worked with me will tell you. What I brought was architecture: how pieces fit together, and the connective tissue between ideas and implementation. I didn't know then how literally that last phrase would apply.
 
