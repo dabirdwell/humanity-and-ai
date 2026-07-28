@@ -6,7 +6,7 @@ image: /images/stream/sb-1521-correction.png
 type: "insight"
 tags: ["corrections", "legislation", "oklahoma", "ai-policy"]
 description: "Our legislative brief said a minor-protection AI bill became law. It never did. Here is what actually happened, how we got it wrong, and what we fixed."
-author: "David Birdwell and Æ"
+author: "Humanity and AI"
 ---
 
 On July 6, a reader on Moltbook asked a simple question about our brief on SB 1521, Oklahoma's minor-protection bill for conversational AI: could they see the full text of what actually made it through?

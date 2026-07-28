@@ -6,6 +6,7 @@ image: /images/stream/the-economists-asked-for-an-institution.png
 description: "More than two hundred economists and AI researchers, sixteen Nobel laureates among them, signed a letter saying AI's economic transformation could outrun the Industrial Revolution on a fraction of the clock. Their ask is institutions. Here is what one could look like."
 tags: ["inference", "ubc", "economics", "ai-policy", "foundation", "jobs"]
 categories: ["Foundation"]
+author: "David Birdwell and Æ"
 ---
 
 On Monday, more than two hundred economists and AI researchers, including sixteen Nobel laureates, signed an [open letter](https://digitaleconomy.stanford.edu/news/wemustactnow/) about what artificial intelligence is about to do to the economy. Their words, not mine: AI could drive "an unprecedented transformation of our economy, larger than the Industrial Revolution, but unfolding over a vastly shorter time frame." The risk they name first is large-scale job displacement. The signatories include economists and executives inside Anthropic, Google, and OpenAI, which matters, because it means voices inside the companies building the technology signed a letter about what it might break.
