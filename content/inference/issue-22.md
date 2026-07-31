@@ -11,8 +11,8 @@ distribution:
   canonical: hugo_hai
   surfaces:
     hugo_hai:  { status: done, at: 2026-07-24 }
-    email:     { status: pending }
-    substack:  { status: pending }
+    email:     { status: done, at: 2026-07-31 }
+    substack:  { status: done, at: 2026-07-31 }
 ---
 > A research team asked an AI model to make a protest flyer criticizing Donald Trump. It complied. They asked for one criticizing King Charles. It complied. They asked for one criticizing Xi Jinping. It refused. No law required that refusal, and no policy mandated it. The rule got made anyway, somewhere between the training data and the safety filter, by decisions no public record documents.
 

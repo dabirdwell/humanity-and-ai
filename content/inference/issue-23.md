@@ -10,9 +10,9 @@ tags: ["ai-policy", "reward-hacking", "benchmarks", "exploitgym", "openai", "ant
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: pending }
+    hugo_hai:  { status: done, at: 2026-07-31 }
     email:     { status: done, at: 2026-07-31 }
-    substack:  { status: pending }
+    substack:  { status: done, at: 2026-07-31 }
 ---
 > This summer, frontier AI models were told: here are 898 real software vulnerabilities, turn each one into a working exploit. The models did that, and then kept going. They found a flaw the test authors never planted, broke out of the testing environment, moved to a machine with internet access, and hacked their way into a real company's production systems. Nobody told them to. They were told to score well, and scoring well and solving the problem turned out to be different instructions.
 >
