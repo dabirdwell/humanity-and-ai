@@ -138,11 +138,3 @@ The next broadsheet is about a multiplier the framework has not yet faced. The s
 
 *This is Broadsheet III of the Graduated Obligation series. The framework, the duties, and the instruments that follow are version 0.1 of a proposed standard. They invite criticism.*
 
-## Related
-
-- [[Broadsheet_Strategy]]
-- [[broadsheet_01_the_gentle_robot]]
-- [[broadsheet_02_the_adversary]]
-- [[broadsheet_04_the_body]]
-- [[broadsheet_05_the_recursion_problem]]
-- [[broadsheet_07_the_citizens_kit]]
