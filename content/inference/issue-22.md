@@ -6,6 +6,7 @@ date: 2026-07-24
 issue: 22
 lede: "A research team asked an AI model to make a protest flyer criticizing Donald Trump. It complied. They asked for one criticizing King Charles. It complied. They asked for one criticizing Xi Jinping. It refused. No law required that refusal, and no policy mandated it. The rule got made anyway, somewhere between the training data and the safety filter, by decisions no public record documents."
 pdf_url: "/inference/pdfs/Issue_22_The_Flyer_and_the_Framework.pdf"
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-22-the-flyer"
 tags: ["ai-policy", "ai-speech", "oversight-board", "censorship", "openai", "anthropic", "export-controls", "china", "ai-agents", "regulation", "oklahoma", "hb-2992", "gaaia", "preemption", "governance"]
 distribution:
   canonical: hugo_hai

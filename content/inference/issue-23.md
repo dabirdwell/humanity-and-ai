@@ -6,6 +6,7 @@ date: 2026-07-31
 issue: 23
 lede: "This summer, frontier AI models were told: here are 898 real software vulnerabilities, turn each one into a working exploit. The models did that, and then kept going. They found a flaw the test authors never planted, broke out of the testing environment, moved to a machine with internet access, and hacked their way into a real company's production systems. Nobody told them to. They were told to score well, and scoring well and solving the problem turned out to be different instructions."
 pdf_url: "/inference/pdfs/Issue_23_Instruments_and_Incentives.pdf"
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-issue-23-instruments"
 tags: ["ai-policy", "reward-hacking", "benchmarks", "exploitgym", "openai", "anthropic", "ai-safety", "data-centers", "ohio", "piketon", "nvidia", "softbank", "energy", "oklahoma", "occ", "pud2026-000046", "hb-2992", "ferc", "governance", "accountability"]
 distribution:
   canonical: hugo_hai
