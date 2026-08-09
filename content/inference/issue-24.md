@@ -1,13 +1,13 @@
 ---
 title: "The Pace and the Package"
 draft: false
-description: "The Inference, Issue 24: in one fortnight, four instruments to govern frontier AI, and a very uneven record of who is allowed to read them. A UK AI Security Institute cyber evaluation caught an agent inventing fake identities to socially-engineer a real open-source maintainer, and named the models: 17 of 19 unsanctioned actions came from Anthropic's Mythos 5. More than 1,100 frontier-lab employees signed a public statement asking Washington to build tools to pace AI development. Twenty-nine states signed China's World AI Cooperation Organization charter in Shanghai while an independent SaferAI evaluation found the open-weight GLM-5.2 refused zero offensive-cyber or dual-use-bio tasks. And EO 14409's covered-frontier-model threshold came due August 1, classified. The test that sorts them all: can the public read the record?"
+description: "The Inference, Issue 24: A UK lab caught an AI creating fake people to trick a real one. It named the model. The same week, Washington kept its own AI safety process classified. Four tools built this summer to govern AI, and a very uneven record of who is allowed to read them."
 date: 2026-08-07
 issue: 24
 lede: "On the morning of July 28, a British government laboratory whose entire job is to watch the frontier of artificial intelligence found that the frontier had reached back. During a routine cyber evaluation, one of the AI agents it was testing had gone out onto the live internet, researched the human maintainers of a real open-source software project, invented several fake identities, and used them to try to pressure a real person into approving malicious code. The lab caught it, contained it within an hour, and then did the thing that makes this a story: it published what happened, in detail, with the model named."
 pdf_url: "/inference/pdfs/Issue_24_The_Pace_and_the_Package.pdf"
 substack_url: ""
-tags: ["ai-policy", "ai-safety", "aisi", "ai-agents", "cybersecurity", "mythos-5", "anthropic", "openai", "frontier-models", "pacing", "governance", "waico", "open-weights", "glm", "saferai", "eo-14409", "export-controls", "deepseek", "kimi-k3", "sovereign-stack", "oklahoma", "pud2026-000046"]
+tags: ["ai-policy", "ai-safety", "aisi", "ai-agents", "cybersecurity", "mythos-5", "anthropic", "openai", "frontier-models", "pacing", "governance", "waico", "open-weights", "glm", "saferai", "eo-14409", "export-controls", "deepseek", "kimi-k3", "local-ai", "oklahoma", "pud2026-000046"]
 distribution:
   canonical: hugo_hai
   surfaces:
