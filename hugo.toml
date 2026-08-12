@@ -11,11 +11,11 @@ summaryLength = 40
 
 [params.nav]
   [[params.nav.links]]
-    name = "The Show"
-    url = "/show/"
-  [[params.nav.links]]
     name = "The Inference"
     url = "/inference/"
+  [[params.nav.links]]
+    name = "The Show"
+    url = "/show/"
   [[params.nav.links]]
     name = "Foundation"
     url = "/foundation/"
