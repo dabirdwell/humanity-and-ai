@@ -26,3 +26,4 @@ audits/
 site-health-report-*.md
 # David's unpublished draft: remove this line when he decides to publish it
 content/stream/who-decided.md
+node_modules/
