@@ -32,7 +32,7 @@
 # it lands.
 title: "The Strike Came Before the Robot"
 date: 2026-08-15
-draft: true
+draft: false
 image: /images/stream/atlas-serial-production.png
 description: "Thirty five thousand Hyundai workers walked out in July over machines that do not reach the line until 2028. Europe just moved its rules for AI inside machinery to August 2028. The United States has no date at all."
 tags:
@@ -53,7 +53,7 @@ Read that demand again, because it is the whole story. Those workers are not try
 
 ## What Atlas actually is now
 
-Boston Dynamics showed the production version of Atlas at CES in January 2026 and started building it in March. The machine has 56 joints that rotate through a full circle, a battery that runs about four hours, and the ability to walk itself to a rack and swap that battery in under three minutes with no person involved. It stands just over six feet, weighs about 200 pounds, and lifts 50 kilograms in a single pick.
+Boston Dynamics showed the production version of Atlas at CES, the big Las Vegas electronics show, in January 2026 and started building it in March. The machine has 56 joints that rotate through a full circle, a battery that runs about four hours, and the ability to walk itself to a rack and swap that battery in under three minutes with no person involved. It stands just over six feet, weighs about 200 pounds, and lifts 50 kilograms in a single pick.
 
 The entire 2026 build is spoken for. Not sold on the open market: committed to two customers, both of them family. Hyundai's own robotics application center gets one fleet. Google DeepMind gets the other. Outside buyers wait until early 2027.
 
@@ -71,7 +71,7 @@ Morgan Stanley also expects about 13 million humanoids in service by 2035, on th
 
 ## Why Hyundai and not Google
 
-DARPA commissioned the first Atlas in 2012, and Boston Dynamics unveiled it on July 11, 2013: six foot two, 330 pounds, 28 hydraulic joints, tethered to a power cable, built to walk into a building like Fukushima so a person would not have to. Google bought the company that same year and never disclosed the price. Four years later it sold Boston Dynamics to SoftBank for about $100 million. SoftBank added $37 million in 2019, then sold eighty percent to Hyundai in a deal that valued the company at $1.1 billion and closed in June 2021. This July, Hyundai moved to buy the remaining twenty percent.
+DARPA, the Pentagon's research arm, commissioned the first Atlas in 2012, and Boston Dynamics unveiled it on July 11, 2013: six foot two, 330 pounds, 28 hydraulic joints, tethered to a power cable, built to walk into a building like Fukushima so a person would not have to. Google bought the company that same year and never disclosed the price. Four years later it sold Boston Dynamics to SoftBank for about $100 million. SoftBank added $37 million in 2019, then sold eighty percent to Hyundai in a deal that valued the company at $1.1 billion and closed in June 2021. This July, Hyundai moved to buy the remaining twenty percent.
 
 Count the owners. A defense research agency, a search company, an investment fund, and finally a carmaker. Only the carmaker got it into production, and the reason has nothing to do with vision. It is inventory.
 
@@ -105,7 +105,7 @@ Oklahoma had 140,300 manufacturing jobs as of December 2025, and they skew towar
 
 The play is not competing with Georgia for a robot factory. Georgia already won that one. The play is power. A plant that makes 30,000 robots a year, and every factory that buys from it, needs electricity that is cheap, firm, and clean enough to qualify for federal money. Oklahoma has 20,406 documented orphaned oil and gas wells across 76 of its 77 counties, and the Corporation Commission's own plan says that at the current pace and current funding it would take 235 years to plug them all. Every one of those holes already goes down to heat.
 
-Phoenix Wells is not only an environmental cleanup. It is workforce transition infrastructure that happens to be shaped like a well.
+Phoenix Wells, our plan to plug Oklahoma's dead oil and gas wells and tap the heat still in them for power, is not only an environmental cleanup. It is workforce transition infrastructure that happens to be shaped like a well.
 
 ## The strongest argument against those workers
 
@@ -113,7 +113,7 @@ Let me state it the way its best advocate would. Thirty five thousand people shu
 
 That argument is right about the history and wrong about the clock. Every previous wave gave people something close to a working lifetime to adjust, and the institutions that made the adjustment survivable, public schools and labor law and social insurance, showed up a generation late and were paid for in the meantime by the people the machines displaced. More than two hundred economists said in July, [in a letter sixteen Nobel laureates signed](https://humanityandai.com/stream/the-economists-asked-for-an-institution/), that this transformation could be larger than the Industrial Revolution and run on a fraction of the schedule.
 
-The workers in Ulsan did not read a Morgan Stanley deck. They read a press release with a date on it, noticed that nothing else in their lives had a date on it, and made one.
+The workers at Hyundai's Ulsan plant in Korea did not read a Morgan Stanley deck. They read a press release with a date on it, noticed that nothing else in their lives had a date on it, and made one.
 
 ## What Foundation says about it
 
