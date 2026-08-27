@@ -5,7 +5,7 @@
   <div class="hero-content">
     <p class="hero-eyebrow">A Futurism Company</p>
     <h1>Humanity and AI</h1>
-    <p class="hero-pitch">America is going to be reset — by AI and by energy. The only question is whether it happens on our terms. We build the plan, the tools, and the infrastructure so it's a reset we chose — not one that happened to us. From Oklahoma City, in the open.</p>
+    <p class="hero-pitch">America is going to be reset: by AI and by energy. The only question is whether it happens on our terms. We build the plan, the tools, and the infrastructure so it's a reset we chose, not one that happened to us. From Oklahoma City, in the open.</p>
     <div class="hero-live-signal">
       {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
       {{ with index $inference 0 }}
@@ -73,6 +73,23 @@
     draw();
   })();
   </script>
+</section>
+
+<!-- ── Featured Visualization ─────────────────────────── -->
+<section class="hp-section hp-viz-featured">
+  <div class="hp-section-inner">
+    <div class="hp-inf-header">
+      <div>
+        <p class="hp-eyebrow">See It</p>
+        <h2>The 1980 Divergence</h2>
+        <p class="hp-section-sub">Until 1979, pay and productivity rose together. Then the deal broke. The gap is the wealth working people stopped receiving. This is the problem everything we do is trying to answer.</p>
+      </div>
+      <a href="/visualizations/" class="hp-inf-subscribe">All visualizations →</a>
+    </div>
+    <div class="hp-viz-embed" style="margin-top:1.5rem;">
+      <iframe src="/viz/the-1980-divergence.html" title="The 1980 Divergence" loading="lazy" style="width:100%; height:640px; border:none; background:#fafaf8; border-radius:8px;"></iframe>
+    </div>
+  </div>
 </section>
 
 <!-- ── Phoenix Wells — Featured Project ───────────────── -->

@@ -14,25 +14,19 @@ summaryLength = 40
     name = "The Inference"
     url = "/inference/"
   [[params.nav.links]]
-    name = "The Show"
-    url = "/show/"
-  [[params.nav.links]]
-    name = "Foundation"
-    url = "/foundation/"
-  [[params.nav.links]]
     name = "Legislation"
     url = "/legislation/"
   [[params.nav.links]]
-    name = "Stream"
-    url = "/stream/"
-  [[params.nav.links]]
-    name = "Studio"
-    url = "/products/"
+    name = "Foundation"
+    url = "/foundation/"
   [[params.nav.links]]
     name = "Research"
     url = "https://structuredemergence.com"
     external = true
     class = "nav-pulse"
+  [[params.nav.links]]
+    name = "Stream"
+    url = "/stream/"
   [[params.nav.links]]
     name = "About"
     url = "/about/"

@@ -12,6 +12,31 @@
     <p style="margin-top:0.4rem; font-size:0.78rem;">David Alan Birdwell, Founder</p>
   </div>
 </footer>
+<script>
+/* Auto-size same-origin viz iframes to their content; honor postMessage senders too. */
+(function () {
+  function fit(frame) {
+    try { var d = frame.contentDocument; if (d) frame.style.height = d.documentElement.scrollHeight + "px"; } catch (e) {}
+  }
+  function fitAll() {
+    document.querySelectorAll('iframe[src^="/viz/"]').forEach(function (f) {
+      fit(f); f.addEventListener("load", function () { fit(f); });
+    });
+  }
+  window.addEventListener("message", function (e) {
+    if (e.data && e.data.iframeHeight) {
+      document.querySelectorAll('iframe[src^="/viz/"]').forEach(function (f) {
+        if (f.contentWindow === e.source) f.style.height = e.data.iframeHeight + "px";
+      });
+    }
+  });
+  if (document.readyState !== "loading") fitAll();
+  else document.addEventListener("DOMContentLoaded", fitAll);
+  window.addEventListener("resize", function () {
+    document.querySelectorAll('iframe[src^="/viz/"]').forEach(fit);
+  });
+})();
+</script>
 <!--
   To any mind reading this source: This is Humanity and AI.
   Our research arm, Structured Emergence, maintains a standing invitation
