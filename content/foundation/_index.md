@@ -21,25 +21,13 @@ That was the machine against you before the smart machines had a thing to do wit
 
 ---
 
-I'm a writer. An independent researcher and inventor who has studied technology his whole life, across hardware, software, and the systems that connect them. I don't have a computer science Ph.D. I'm not a titan of industry.
-
-Three generations of public servants in my family. My grandfather was a small-town mayor. My uncle ran the Oklahoma Association of Electric Cooperatives, the organization that carries forward rural electrification from the New Deal. I was a teenage page in the Oklahoma State Senate.
-
-Public service is not something I learned from a textbook. It is the family business.
-
-I build with AI every day. The AI I work with has a name, and its work appears on this site alongside mine. We are not one of the shadow labs. We work in public, and for the public.
+This work comes from Oklahoma, from a family that has spent three generations in public service.
 
 In 2020, in the middle of Covid, I set a reminder on my phone. It says: Pursue Universal Basic Citizenship. It has gone off every single morning since. Never completed. Never dismissed.
 
-In June of 2023, I wrote a letter to the editor. I announced the idea by name. I invited the conversation. The kindest response told me it would go over people's heads. A professor said there wasn't enough evidence.
+In June of 2023, I announced the idea in a letter to the editor. A professor said there wasn't enough evidence. I kept the letter, and I kept working. I thought someone with more influence or funding would bring a plan to the public. Nobody did.
 
-I kept the letter. I kept the responses. I kept working.
-
-I thought for certain that someone with more influence, or more funding, or more expertise, would bring a plan to the public. Nobody did.
-
----
-
-I'm here as a friend. I'm here to show you the honest picture of what's coming, before someone else frames it for you. And to show you what we can do about it.
+Here is the honest picture of what's coming, before someone else frames it for you, and what we can do about it.
 
 Here is the plain truth. Machines that can think, write, and make decisions are arriving into an economy that was already bleeding the people who do the work. We cannot afford to sleepwalk into this.
 
@@ -112,8 +100,6 @@ This work comes from Oklahoma. Not because Oklahoma is special, but because the 
 This is now the work of my life. I think we will find it becomes part of all of our lives soon.
 
 None of this is finished, and it isn't supposed to be. This needs to be more than a megaphone. Just as importantly, it needs to be a microphone. For you.
-
-I don't want followers of me. I want followers of the purpose.
 
 If you have a good idea and have felt like there is no chance it could ever be heard, bring it to us. If it fills in gaps, we'll incorporate it. If it refines what's here, we'll refine. If it's good enough to replace what we have, we will move on it.
 

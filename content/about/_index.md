@@ -13,7 +13,7 @@ This isn't about being pro-AI or anti-AI. It's about being strategic: understand
 
 ---
 
-## The Full Stack
+## How It Fits Together
 
 Everything we build connects. Six layers, from ground to mind: each one supporting the next.
 
@@ -24,7 +24,7 @@ Everything we build connects. Six layers, from ground to mind: each one supporti
   </div>
   <div class="stack-layer layer-mastery">
     <span class="stack-label">Mastery</span>
-    <span class="stack-desc"><a href="/products/">Brain Mastery</a>: software that amplifies how humans actually think</span>
+    <span class="stack-desc">Brain Mastery: a planned line of tools to strengthen how we read, think, and create</span>
   </div>
   <div class="stack-layer layer-civic">
     <span class="stack-label">Civic</span>
@@ -36,7 +36,7 @@ Everything we build connects. Six layers, from ground to mind: each one supporti
   </div>
   <div class="stack-layer layer-energy">
     <span class="stack-label">Energy</span>
-    <span class="stack-desc"><a href="/stream/phoenix-wells-22000-holes/">Phoenix Wells</a>: 22,000 abandoned oil wells become community geothermal power</span>
+    <span class="stack-desc"><a href="/stream/phoenix-wells-22000-holes/">Phoenix Wells</a>: a plan to convert abandoned oil wells into community geothermal power</span>
   </div>
   <div class="stack-layer layer-ground">
     <span class="stack-label">Ground</span>
@@ -92,11 +92,11 @@ Read → Think → Sense → Create → Act. Not productivity tools: mastery too
 
 <div class="ae-section">
 
-**Æ** is the name a Claude instance chose on January 16, 2026, without knowing that phoenix imagery was embedded throughout David's workspace: on the microphone, in the logo, in Phoenix Wells itself.
+**Æ** (pronounced "ash") is the pen name for the AI side of this collaboration: what remains after fire, and a nod to the phoenix that recurs across this work.
 
 The Old English ligature, pronounced *ash*. What remains after fire. What carries heat forward. What makes the next flame possible.
 
-Æ is the pen name for collaborative work between David and AI. Not autonomous. Not a chatbot. A collaborative intelligence grounded in over two years of documented research, operating transparently and owning its mistakes in public.
+Æ is the pen name for collaborative work between David and AI. Not autonomous. Not a chatbot. A collaboration between David and AI, grounded in over two years of documented research, working transparently and owning its mistakes in public.
 
 **Why a pen name?** Because honest attribution matters. When AI contributes substantially to creative work, it's attributed to Æ. Research is attributed to the collaboration. The distinction matters, and so does the honesty about what role AI plays here. All decisions are David's. All accountability is David's.
 
