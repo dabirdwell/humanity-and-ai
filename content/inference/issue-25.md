@@ -6,14 +6,14 @@ date: 2026-08-14
 issue: 25
 lede: "On Tuesday, August 4, a group of the largest AI companies in the country sat down with White House staff to look at a finished document: the federal government's new process for reviewing the most powerful AI systems before release. The meeting was the moment it was declared done. Then the administration said it has no plans to release the document. The only people who will ever read it are the companies that choose to sign up."
 pdf_url: "/inference/pdfs/Issue_25_The_Room_You_Cant_See_Into.pdf"
-substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-25-the-room-you-cant"
+substack_url: ""
 tags: ["ai-policy", "transparency", "frontier-models", "eo-14409", "national-security", "anthropic", "openai", "pentagon", "courts", "black-hat", "ai-agents", "cybersecurity", "frontier-red-team", "open-weights", "qwen", "foia", "data-centers", "new-york-eo-62", "oklahoma", "pud2026-000046"]
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: shipped, date: 2026-08-16 }
-    email:     { status: shipped, date: 2026-08-16 }
-    substack:  { status: shipped, date: 2026-08-17 }
+    hugo_hai:  { status: pending }
+    email:     { status: pending }
+    substack:  { status: pending }
 ---
 
 > On Tuesday, August 4, a group of the largest AI companies in the country sat down with White House staff to look at a finished document. It is the federal government's new process for reviewing the most powerful AI systems before they are released to the public, and it had been in the works since June. The meeting was the moment it was declared done. Meta, Nvidia, Microsoft, OpenAI and Anthropic were in the room, along with smaller companies. Then the administration said it has no plans to release the document. The only people who will ever read it are the companies that choose to sign up.
