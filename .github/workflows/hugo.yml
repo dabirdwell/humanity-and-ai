@@ -8,6 +8,7 @@ on:
   # publishDate has just passed flip from hidden to live without a push.
   schedule:
     - cron: '0 11 * * *'
+    - cron: '10 16 * * *'   # 11:10 CDT: publishes pages dated 11:00 the same day
 
 permissions:
   contents: read

@@ -2,8 +2,8 @@
 title: "The Last Private Space"
 subtitle: "The machines have arrived at the inside of the head, and the law has started to move."
 description: "Graduated Obligation, Part 7 of 8. Machines already read the body to get at the mind: the ad that knew before you said it, the hotel router that counts your breathing, the glasses that name a stranger in seconds. The inside of a head is the last private space, no tool protects it yet, and five states have already written brain data into law."
-draft: true
-date: 2026-09-03T11:00:00-05:00
+draft: false
+date: 2026-09-03T10:50:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 7 of 8"

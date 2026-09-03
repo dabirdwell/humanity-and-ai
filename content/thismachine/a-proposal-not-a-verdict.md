@@ -2,7 +2,7 @@
 title: "A Proposal, Not a Verdict"
 subtitle: "Six predictions, an AI co-author named, and a date in 2027 when we grade ourselves in public."
 description: "Graduated Obligation, Part 8 of 8. The last paper in the series tests the rule against six predictions, says how sure we are in plain words, commits to grading them in public in August 2027, and names who wrote it, including the AI that helped."
-draft: true
+draft: false
 date: 2026-09-04T11:00:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
