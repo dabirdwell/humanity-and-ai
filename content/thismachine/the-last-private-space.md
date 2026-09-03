@@ -1,14 +1,18 @@
 ---
 title: "The Last Private Space"
 subtitle: "The machines have arrived at the inside of the head, and the law has started to move."
-description: "Graduated Obligation, Part 7 of 8. The last advertisement that unsettled you was not the loud one. It was the quiet one, the one that seemed to know what you were worried about before you had said it to anyone."
+description: "Graduated Obligation, Part 7 of 8. Machines already read the body to get at the mind: the ad that knew before you said it, the hotel router that counts your breathing, the glasses that name a stranger in seconds. The inside of a head is the last private space, no tool protects it yet, and five states have already written brain data into law."
 draft: true
-date: 2026-08-30T10:00:00-05:00
+date: 2026-09-03T11:00:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 7 of 8"
 weight: 7
 ---
+
+*Graduated Obligation, Part 7 of 8*
+
+*This is Part 7 of an eight-part series proposing a rule for machines that are built to change your mind, resting on a simple idea: the more precisely a machine can move you, the more it owes you. The first six parts ([one](/thismachine/the-gentle-robot/), [two](/thismachine/the-adversary-has-a-name/), [three](/thismachine/the-floor-and-the-gradient/), [four](/thismachine/the-body-as-data/), [five](/thismachine/the-recursion-problem/), [six](/thismachine/the-energy-term/)) built the standard, piece by piece. This part is about you. A separate companion piece, for the people who could build what this one describes, follows.*
 
 The last advertisement that unsettled you was not the loud one. It was the quiet one, the one that seemed to know what you were worried about before you had said it to anyone. Maybe you searched a symptom once, late at night, and deleted the search. The ad arrived anyway.
 
@@ -18,35 +22,33 @@ One more. In the fall of 2024, two college students spent about three hundred an
 
 Three different machines, one direction of travel. Each reads something from you that you did not hand over, cannot see leaving, and were never asked about. The first reads what you are worried about. The second reads your body. The third reads your history off your face. Follow the road far enough and it reaches the technologies built to read the mind directly: brain implants, real today for patients who chose them, and a wristband already shipping with Meta's smart glasses that works by reading the nerve signals that move your hand.[^2] You do not need the implant for this to be about you. The wristband, the glasses, and the router are already reading the body to get at the mind.
 
-## The last private space
+## Machines already read your body; the mind is next
 
 Here is the position, stated plainly. The inside of a head belongs to the person whose head it is. Your beliefs, your intentions, your mood, what you are afraid of, what you are likely to do next: a system that works these out about you, without asking, is operating on territory it was never granted.
 
 Every other private space got its protections the hard way. The home has locks and warrants. The phone call, the diary, the medical record: each is guarded, imperfectly, by some mix of law and custom, because each was reachable and someone reached it. The inside of a head was protected by something simpler. Nobody could get in. That protection is ending, and not mainly through implants. It is ending through inference: systems that work out what you believe from what you click and how long you pause, and systems that read your body's signals from across a room.
 
-Three commitments follow, and this piece stands on them.
+Two commitments follow, and this piece stands on them.
 
 *First, consent has to be real.* Reading anyone's inner state requires consent that is informed, freely given, and revocable, and not manufactured. A screen you tapped to make it go away is not consent. A setting buried four menus deep, defaulted to yes, is not consent.
 
-*Second, write the rule so it does not depend on whose mind it is.* It should protect any inner life a system can be shown to have. We do not claim machines have one in the way that matters. We claim the rule should be written so that if that question is ever settled yes, it already covers them, and does not need rewriting on the day it matters most.
+*Second, the duty runs both ways.* A person owes other people the same respect for the interior that this rule asks machines to show. That binds the employer reading stress off a badge, the government reading a crowd, and the person wearing the camera glasses alike.
 
-*Third, the duty runs both ways.* A person owes other people the same respect for the interior that this rule asks machines to show. That binds the employer reading stress off a badge, the government reading a crowd, and the person wearing the camera glasses alike.
-
-## The kit that does not exist
+## No tool protects you yet, so here are the two you are owed
 
 If the territory is real, the next question is practical. What does a person hold, standing in that hotel room, walking past those glasses?
 
-Today, nothing. We want to be honest about that instead of dressing it up. When we set out to write the citizen's kit, we drafted instruments: a scope you could point at any message to see what it was built to do to you, a handheld monitor for what the room is sensing. Read back, the drafts had the shape of a comic-book movie, the scene where the hero turns to the scientist and asks for something nobody knows how to build. Worse, they asked you to do the work, to run every message you receive through a filter, as if anyone lives that way. Nobody lives that way.
+Today, nothing. We want to be honest about that instead of dressing it up. Our own first drafts of this part tried to hand you a kit, tools nobody yet knows how to build, and then asked you to run every message you receive through them, as if anyone lives that way. Nobody lives that way.
 
 So this part makes a different move. Instead of pretending to hand you a kit, it names the two things you are owed, so that when someone builds them you will recognize them, and when someone builds their opposite you will recognize that too.
 
-**You are owed a tool for the mind's side of the territory.** It would live on your phone, where the messages already arrive, and stay silent almost all the time. Rarely, when something arriving was genuinely built to move you, this specific you, it would tap you once. This message is using fear, and using it on purpose. Do you want to check the claim underneath? One flag. One claim underneath. One tap to check it. Not a dashboard, not homework, not a lifestyle. And the tool only counts if it holds three lines: your data never leaves your device, it shows you the mechanics but never tells you what to conclude, and it flags persuasion evenhandedly no matter which side sent it. Anything wearing this description that quietly phones home, or leans one direction, is not the tool. It is the threat in the tool's clothing.
+**You are owed a tool for the mind's side of the territory.** It would live on your phone, where the messages already arrive, and stay silent almost all the time. Rarely, when something arriving was genuinely built to move you, this specific you, it would tap you once. This message is using fear, and using it on purpose. Do you want to check the claim underneath? One flag. One claim underneath. One tap to check it. Not a dashboard, not homework, not a lifestyle. And the tool only counts if it passes three tests: your data never leaves your device, it shows you the mechanics but never tells you what to conclude, and it flags persuasion evenhandedly no matter which side sent it. Anything matching this description that quietly phones home, or leans one direction, is not the tool. It is the threat in the tool's clothing.
 
-**You are owed a tool for the body's side.** A small device, or an app, that reads the radio environment of a room directly and tells you what the network around you is inferring: presence, motion, breathing. The room's behavior, verified from your side, the way a smoke detector answers for smoke whether or not anyone at the front desk mentions it. We will be honest about this one too: building it so it works reliably is an unsolved engineering problem, and early versions will be wrong sometimes. The point is narrower. An instrument of this shape would be the first thing a person has ever had in a class of rooms where, today, they have nothing.
+**You are owed a tool for the body's side.** A small device, or an app, that reads the radio environment of a room directly and tells you what the network around you is inferring: presence, motion, breathing. The room's behavior, verified from your side, the way a smoke detector reports smoke whether or not anyone at the front desk mentions it. We will be honest about this one too: building it so it works reliably is an unsolved engineering problem, and early versions will be wrong sometimes. The point is narrower. An instrument of this shape would be the first thing a person has ever had in a class of rooms where, today, they have nothing.
 
-There is a third thing the standard points toward, larger than either tool: an artificial intelligence run for the public the way a library is run for the public, built to inform you with no sale riding on the answer. It is real, it is delicate, and it deserves a full argument rather than a cameo, so it gets its own broadsheet soon rather than a paragraph here.
+There is a third thing the standard points toward, larger than either tool: an artificial intelligence run for the public the way a library is run for the public, built to inform you with no sale riding on the answer. It is real, it is delicate, and it deserves a full argument rather than a cameo, so it gets its own piece soon rather than a paragraph here.
 
-## The law is starting to arrive
+## Five states already protect brain data, and Montana passed it 100 to 0
 
 Now the part we did not expect to be the most hopeful section in this series. Start with one number. Montana's brain-data privacy law passed the Montana Senate 49 to 1 and the Montana House 100 to 0, and it requires police to get a warrant before touching neural data. Legislatures do not vote like that on contested territory. They vote like that when everyone in the room, whatever else divides them, recognizes the thing being protected.
 
@@ -54,7 +56,7 @@ Montana is one of five states that have already written brain data into privacy 
 
 None of this is finished. Five states is five out of fifty. A bill that orders a study is not yet a law. A UNESCO recommendation binds no one by itself. But the direction is set, and it was set by people who feel this one across every line the country is divided on, before any campaign told them how to feel.
 
-## The one thing
+## The one ask: find out whether your state protects what can be read from your head
 
 This series will not ask you to become a different kind of person. It asks one thing: verify one thing, once, when it matters. And if you want a place to start, here is one that takes five minutes. Find out whether your state protects what can be read from your body and your head. Five states do. Most do not.[^3] The answer is worth having either way, because the next time this reaches your statehouse, you will be one of the few people in the room who already knows it.
 
@@ -66,7 +68,7 @@ The kit should exist.
 
 *This Machine*
 
-*This is Broadsheet VII of the Graduated Obligation series, written under the pen name This Machine. A companion broadsheet, for the people who can build what this one describes, follows. Broadsheet VIII closes the case: six predictions, a self-reference test, and a proposal offered not as a verdict but for argument. The framework and the demands above are version 0.1 of a proposed standard. They invite criticism.*
+*This is Part 7 of the Graduated Obligation series, written under the pen name This Machine. A companion piece, for the people who can build what this one describes, follows. Part 8 closes the case: six predictions, the question of whether the rule applies to the machine that helped write it, and a proposal offered not as a verdict but for argument. The framework and the demands above are version 0.1 of a proposed standard. They invite criticism.*
 
 ## Notes
 
