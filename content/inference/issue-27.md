@@ -6,14 +6,14 @@ date: 2026-08-30
 issue: 27
 lede: "On Thursday, a federal judge in San Francisco finished a job this newsletter keeps arguing belongs to all of us: she read the record. Six months ago the President and the Secretary of War declared an AI company a threat to national security and ordered the government to stop using its products. The company sued. The government produced its file. And the file said something different from the press release. This issue is about what happens when the record gets read back."
 pdf_url: "/inference/pdfs/Issue_27_Make_an_Example.pdf"
-substack_url: ""
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-27-make-an-example"
 tags: ["ai-policy", "anthropic", "first-amendment", "due-process", "administrative-record", "courts", "department-of-war", "transparency", "open-weights", "glm", "zai", "openai", "hugging-face", "melanoma", "mrna", "oklahoma", "occ", "alabama"]
 distribution:
   canonical: hugo_hai
   surfaces:
     hugo_hai:  { status: shipped, date: 2026-08-30 }
-    email:     { status: pending }
-    substack:  { status: pending }
+    email:     { status: shipped, date: 2026-08-30 }
+    substack:  { status: shipped, date: 2026-08-31 }
 ---
 > Six months ago, over five days spanning the end of February and the start of March, the United States government did something it had never done to an American software company. The President and the Secretary of War (the Cabinet office recently renamed from Secretary of Defense) designated Anthropic, the company that makes the AI system called Claude, a supply chain risk to national security. Federal agencies were ordered to stop using its products permanently. Defense contractors were told to drop it. The stated reason was security: the government said it could not risk a saboteur inside its software. The dispute underneath it was public and specific. Anthropic's usage rules refuse two things the Department of War wanted: fully autonomous lethal targeting, and mass surveillance of Americans.
 
