@@ -1,19 +1,19 @@
 ---
 title: "Who Benefits, Who Pays"
-draft: true
+draft: false
 description: "The Inference, Issue 26: The week the data center became a ballot question. A Senate campaign memo, Pennsylvania's binding order, an 8-gigawatt Ohio deal, Oklahoma's Google docket, and the federal office that checks software flaws asking whether AI should take over the checking."
 date: 2026-08-23
 issue: 26
 lede: "On Tuesday, a memo went out from the Senate Republicans' campaign committee to the country's largest AI companies. It was about a Senate seat in Ohio and the committee's own diagnosis of why it is slipping: data centers. Its ask was one sentence: the companies have to fix who benefits, who pays, and why a community should want one. By week's end that question had a docket number in Pennsylvania, in Texas, and at Oklahoma's own Corporation Commission."
 pdf_url: "/inference/pdfs/Issue_26_Who_Benefits_Who_Pays.pdf"
-substack_url: ""
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-26-who-benefits-who"
 tags: ["ai-policy", "data-centers", "energy", "ratepayers", "oklahoma", "ohio", "pennsylvania", "elections", "og-e", "google", "occ", "pud2026-000031", "pud2026-000046", "nvd", "nist", "cve", "cybersecurity", "transparency", "openai", "nvidia"]
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: pending }
-    email:     { status: pending }
-    substack:  { status: pending }
+    hugo_hai:  { status: shipped, date: 2026-08-28 }
+    email:     { status: shipped, date: 2026-08-23 }
+    substack:  { status: shipped, date: 2026-08-24 }
 ---
 
 > On Tuesday, a memo went out from the National Republican Senatorial Committee, the organization that runs Senate campaigns for the Republican Party, addressed to the country's largest AI companies. It was not about innovation, or China, or jobs. It was about a Senate seat in Ohio, and the committee's own diagnosis of why that seat is slipping: data centers. The memo, obtained by Axios, says the buildings that house AI computing have become "the anchor hanging around" their candidate's neck, and it tells the companies that no campaign can fix this for them. The companies, it says, "have to fix how Ohioans see them: who benefits, who pays, and why a community should want one."
