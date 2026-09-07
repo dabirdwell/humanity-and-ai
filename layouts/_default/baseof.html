@@ -30,10 +30,10 @@
     {{- $section := .Section -}}
     {{- $slug := .File.ContentBaseName -}}
     {{- if and $section (ne $slug "_index") -}}
-      {{- $cardPath := printf "/social-cards/%s--%s.svg" $section $slug -}}
+      {{- $cardPath := printf "/social-cards/%s--%s.png" $section $slug -}}
       {{- $ogImage = $cardPath -}}
     {{- else if not $section -}}
-      {{- $ogImage = printf "/social-cards/%s.svg" $slug -}}
+      {{- $ogImage = printf "/social-cards/%s.png" $slug -}}
     {{- end -}}
   {{- end -}}
   {{- if not $ogImage }}{{ $ogImage = .Site.Params.ogImage }}{{ end -}}
@@ -52,6 +52,7 @@
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

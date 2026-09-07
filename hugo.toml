@@ -7,7 +7,7 @@ summaryLength = 40
   tagline = "A Futurism Company"
   description = "Policy, energy, research, writing, and tools for a future where technology serves human flourishing. Made in Oklahoma City."
   author = "David Alan Birdwell"
-  ogImage = "/images/og-default.png"
+  ogImage = "/social-cards/og-default.png"
 
 [params.nav]
   [[params.nav.links]]
