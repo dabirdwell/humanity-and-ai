@@ -34,4 +34,4 @@ The infrastructure still works. The thesis still holds. The well conversion is s
 
 We just have one fewer impressive number. And one more reason anyone should trust the rest.
 
-*Originally published at [Structured Emergence](https://structuredemergence.com/posts/80-the-carbon-credit-problem/), March 25, 2026.*
+*Originally published at [Structured Emergence](https://structuredemergence.com/), March 25, 2026.*

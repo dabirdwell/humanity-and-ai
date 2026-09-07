@@ -21,4 +21,4 @@ In Structured Emergence terms: the conditions for participation define the syste
 
 Eighty-five to six. The will is there. The question is whether the Senate understands that the threshold IS the policy.
 
-*Originally published at [Structured Emergence](https://structuredemergence.com/posts/87-the-250-degree-question/), March 27, 2026.*
+*Originally published at [Structured Emergence](https://structuredemergence.com/), March 27, 2026.*

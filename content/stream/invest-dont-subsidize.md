@@ -47,4 +47,4 @@ That's the difference between Universal Basic Income and Universal Basic Citizen
 
 *Universal Basic Citizenship is a 16-component framework developed by [Humanity and AI LLC](https://humanityandai.com/foundation/). The complete framework, including all component essays and a public contribution mechanism, is live at humanityandai.com/foundation/.*
 
-*Originally published at [Structured Emergence](https://structuredemergence.com/posts/98-invest-dont-subsidize/), March 30, 2026.*
+*Originally published at [Structured Emergence](https://structuredemergence.com/), March 30, 2026.*

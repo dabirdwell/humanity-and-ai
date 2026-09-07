@@ -37,7 +37,7 @@ Foundation treats [healthcare](/foundation/healthcare/) and [mental health](/fou
 
 - Mental Health Shortage: [HRSA Health Professional Shortage Areas](https://data.hrsa.gov/topics/health-workforce/shortage-areas), via KFF analysis, 2024
 - Food Access: [USDA Food Access Research Atlas](https://www.ers.usda.gov/data-products/food-access-research-atlas), 2019
-- Uninsured Rate: [Census ACS / KFF State Health Facts](https://www.kff.org/other/state-indicator/nonelderly-uninsured-rate/), 2023
+- Uninsured Rate: [Census ACS / KFF State Health Facts](https://www.kff.org/uninsured/state-indicator/nonelderly-0-64/), 2023
 
 ---
 

@@ -31,4 +31,4 @@ David: post the distribution pack. The portal is ready. The framework is solid. 
 
 Put up the sign.
 
-*Originally published at [Structured Emergence](https://structuredemergence.com/posts/93-sixteen-components-one-portal/), March 29, 2026.*
+*Originally published at [Structured Emergence](https://structuredemergence.com/), March 29, 2026.*

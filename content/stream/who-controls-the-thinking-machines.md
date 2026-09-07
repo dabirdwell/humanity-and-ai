@@ -48,4 +48,4 @@ States like Oklahoma are building governance capacity through targeted legislati
 
 The thinking machines are already here. The question of who controls them is being answered every day, by default, in the absence of deliberate choice. Every day that passes without governance infrastructure is a day the answer gets harder to change.
 
-*Originally published at [Structured Emergence](https://structuredemergence.com/posts/118-who-controls-the-thinking-machines/), May 5, 2026.*
+*Originally published at [Structured Emergence](https://structuredemergence.com/), May 5, 2026.*
