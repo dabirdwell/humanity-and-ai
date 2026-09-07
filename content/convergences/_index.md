@@ -1,6 +1,7 @@
 ---
 title: "Convergences"
 description: "Independent traditions arriving at structurally similar conclusions about human sovereignty over coordination technology. Not endorsement: evidence."
+draft: true
 ---
 
 Convergence is not endorsement. These are distinct traditions (Indigenous constitutional law, Catholic social teaching, secular civic futurism) arriving at structurally similar conclusions about human sovereignty over coordination technology. Each stands on its own ground. We note the alignment without claiming it.

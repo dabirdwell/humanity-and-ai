@@ -55,28 +55,6 @@ jobs:
             --minify \
             --baseURL "https://humanityandai.com/"
 
-      - name: Build preview (drafts + future) into /preview/
-        env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache_preview
-          HUGO_ENVIRONMENT: preview
-          TZ: America/Chicago
-        run: |
-          hugo \
-            --gc \
-            --minify \
-            --buildDrafts \
-            --buildFuture \
-            --buildExpired \
-            --baseURL "https://humanityandai.com/preview/" \
-            --destination "${{ runner.temp }}/preview-build"
-          mkdir -p public/preview
-          cp -R ${{ runner.temp }}/preview-build/. public/preview/
-          # Ensure /preview/ is never indexed even if robots.txt is missed.
-          cat > public/preview/robots.txt <<'EOF'
-          User-agent: *
-          Disallow: /
-          EOF
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

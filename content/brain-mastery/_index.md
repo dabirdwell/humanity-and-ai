@@ -1,6 +1,7 @@
 ---
 title: "Brain Mastery"
 description: "AI tools built around how people actually think. Reading, creating, reasoning, cooking, civic life."
+draft: true
 ---
 
 Software that amplifies how humans actually think, not chatbots, not productivity tools. Each one is built around a specific domain of human mastery.

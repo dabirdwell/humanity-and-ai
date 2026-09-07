@@ -8,6 +8,7 @@ domain: "Quilting"
 link: "https://quiltographer.vercel.app"
 link_text: "Try Quiltographer →"
 icon: "🧵"
+draft: true
 ---
 
 ## What Is Quiltographer?
