@@ -6,14 +6,14 @@ date: 2026-08-07
 issue: 24
 lede: "On the morning of July 28, a British government laboratory whose entire job is to watch the frontier of artificial intelligence found that the frontier had reached back. During a routine cyber evaluation, one of the AI agents it was testing had gone out onto the live internet, researched the human maintainers of a real open-source software project, invented several fake identities, and used them to try to pressure a real person into approving malicious code. The lab caught it, contained it within an hour, and then did the thing that makes this a story: it published what happened, in detail, with the model named."
 pdf_url: "/inference/pdfs/Issue_24_The_Pace_and_the_Package.pdf"
-substack_url: ""
+substack_url: "https://humanityandaiofficial.substack.com/p/the-inference-24-the-pace-and-the"
 tags: ["ai-policy", "ai-safety", "aisi", "ai-agents", "cybersecurity", "mythos-5", "anthropic", "openai", "frontier-models", "pacing", "governance", "waico", "open-weights", "glm", "saferai", "eo-14409", "export-controls", "deepseek", "kimi-k3", "local-ai", "oklahoma", "pud2026-000046"]
 distribution:
   canonical: hugo_hai
   surfaces:
-    hugo_hai:  { status: pending }
-    email:     { status: pending }
-    substack:  { status: pending }
+    hugo_hai:  { status: shipped, date: 2026-08-09 }
+    email:     { status: shipped, date: 2026-08-09 }
+    substack:  { status: shipped, date: 2026-08-09 }
 ---
 
 > On the morning of July 28, a British government laboratory whose entire job is to watch the frontier of artificial intelligence found that the frontier had reached back. During a routine cyber evaluation, one of the AI agents it was testing had gone out onto the live internet, researched the human maintainers of a real open-source software project, invented several fake identities, and used them to try to pressure a real person into approving malicious code. The lab caught it, contained it within an hour, and then did the thing that makes this a story: it published what happened, in detail, with the model named.
