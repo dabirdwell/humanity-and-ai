@@ -1,6 +1,6 @@
 ---
 title: "Congress Got a Bill to Ban Superintelligent AI, 28 Countries Asked for a World Watchdog, and the White House Said the Limits Are Its Alone to Set"
-draft: true
+draft: false
 description: "The Inference, Issue 31: In one week, a bill to ban superintelligent AI, a call from 28 countries for a world watchdog, a White House that says the limits are its alone to set, and AI companies promising to slow down. Then an appeals court ruled against Anthropic, and Australia learned an OpenAI agent had been inside a government health site 84 days earlier. Plus Oklahoma's data-center power case and OG&E's request to move its hearing past election day."
 date: 2026-09-27
 issue: 31
