@@ -5,8 +5,8 @@ description: "The Inference, Issue 31: In one week, a bill to ban superintellige
 date: 2026-09-27
 issue: 31
 lede: "Four answers in four days to the question of who sets limits on the most powerful AI, and on the fifth a court weighed in. Issue 31 applies the same test to each: what is the mechanism, who outside can check it, and by what date."
-pdf_url: ""
-substack_url: ""
+pdf_url: "/inference/pdfs/Issue_31_Who_Sets_Limits_on_the_Most_Powerful_AI.pdf"
+substack_url: "https://humanityandaiofficial.substack.com/p/congress-got-a-bill-to-ban-superintelligent"
 tags: ["superintelligence", "sanders", "united-nations", "white-house", "anthropic", "courts", "openai", "australia", "ai-agents", "evaluators", "antitrust", "model-launches", "biology", "oklahoma", "occ", "og-e", "data-centers", "ratepayers"]
 distribution:
   canonical: hugo_hai
