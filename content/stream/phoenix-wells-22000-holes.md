@@ -25,7 +25,7 @@ The wells are already there. The future is waiting underground.
 
 David
 
-*Correction, September 29, 2026.* This post first said Oklahoma has over 22,000 abandoned oil and gas wells. The Oklahoma Corporation Commission, the state agency that regulates oil and gas, counted 20,406 known abandoned wells that still need to be plugged or taken over, in 76 of the state's 77 counties, in a January 2025 report to the state Senate. It also says the real number is almost certainly higher, because many early wells were never recorded. The post now says more than 20,000, and so do our other pages that used the old figure.
+*Correction, September 29, 2026.* This post first said Oklahoma has over 22,000 abandoned oil and gas wells. The Oklahoma Corporation Commission, the state agency that regulates oil and gas, counted 20,406 known abandoned wells that still need to be plugged or taken over, in 76 of the state's 77 counties, in a January 2025 report to a state Senate subcommittee. It also says the real number is almost certainly noticeably higher, because many early wells were never recorded. The post now says more than 20,000, and so do our other pages that used the old figure.
 
 ## Related
 
