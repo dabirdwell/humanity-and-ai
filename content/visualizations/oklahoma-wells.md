@@ -1,5 +1,5 @@
 ---
-title: "22,000 Holes in the Ground"
+title: "More Than 20,000 Holes in the Ground"
 description: "Every dot is ten abandoned oil wells in Oklahoma. Toggle the Phoenix conversion and watch $3.7 billion in liability become community-owned infrastructure."
 date: 2026-03-24T22:30:00
 type: "visualizations"
@@ -8,7 +8,7 @@ preview_bg: "linear-gradient(135deg, rgba(216,90,48,0.2), rgba(29,158,117,0.15),
 preview_icon: "🛢"
 ---
 
-Oklahoma has over 22,000 documented abandoned oil wells. Each one is a liability: leaking methane, contaminating groundwater, costing the state money. The estimated cleanup cost is $3.7 billion. The current revenue they generate: zero.
+Oklahoma has more than 20,000 documented abandoned oil wells. Each one is a liability: leaking methane, contaminating groundwater, costing the state money. The estimated cleanup cost is $3.7 billion. The current revenue they generate: zero.
 
 <div class="viz-embed-wide">
 <div class="viz-frame">

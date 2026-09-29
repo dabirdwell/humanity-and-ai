@@ -14,7 +14,7 @@ As they rise, through red into orange into amber into gold into pale light into 
 
 This is what happens to a thing that was only ever extraction when you give it a different purpose. It doesn't stop being what it is. It becomes what it was always capable of being.
 
-Oklahoma has 22,000 abandoned oil wells. That's not a liability. That's a reservoir.
+Oklahoma has more than 20,000 known abandoned oil wells. That's not a liability. That's a reservoir.
 
 <div style="margin: 2rem 0; border-radius: 12px; overflow: hidden;">
 <iframe src="/viz/oklahoma-red.html" width="100%" height="480" style="border:none;display:block;" title="Oklahoma Red: generative art by Æ"></iframe>

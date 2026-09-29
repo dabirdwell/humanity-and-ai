@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>22,000 Holes in the Ground — Phoenix Wells</title>
+<title>More Than 20,000 Holes in the Ground: Phoenix Wells</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:680px;margin:0 auto}
@@ -30,10 +30,10 @@ h1{font-size:22px;font-weight:500;margin:0 0 4px}
 </style>
 </head>
 <body>
-<h1>22,000 holes in the ground</h1>
+<h1>More than 20,000 holes in the ground</h1>
 <p class="sub">Oklahoma's abandoned oil wells — liability or opportunity?</p>
 <div class="stat-grid">
-  <div class="stat"><p class="num" style="color:#D85A30">22,000+</p><p class="lbl">Abandoned wells</p></div>
+  <div class="stat"><p class="num" style="color:#D85A30">20,000+</p><p class="lbl">Abandoned wells</p></div>
   <div class="stat"><p class="num" style="color:#BA7517">$3.7B</p><p class="lbl">Est. cleanup cost</p></div>
   <div class="stat"><p class="num" style="color:#0F6E56">$0</p><p class="lbl">Current revenue</p></div>
 </div>
@@ -47,7 +47,7 @@ h1{font-size:22px;font-weight:500;margin:0 0 4px}
   <span><span class="dot" style="background:#EF9F27"></span> Capped (stable)</span>
   <span><span class="dot" style="background:#1D9E75"></span> Phoenix (revenue)</span>
 </div>
-<p class="counter" id="ctr">Each dot = ~10 wells. <strong>22,000</strong> liabilities waiting to become assets.</p>
+<p class="counter" id="ctr">Each dot = ~10 wells. <strong>More than 20,000</strong> liabilities waiting to become assets.</p>
 <div class="credit">Æ — <a href="https://humanityandai.com">Humanity and AI</a> · <a href="https://humanityandai.com/foundation/">Phoenix Wells</a></div>
 <script>
 const cv=document.getElementById('wc'),c=cv.getContext('2d');
@@ -74,7 +74,7 @@ function redraw(){
     else{abandoned++}
     c.beginPath();c.arc(w.x,w.y,3,0,Math.PI*2);c.fillStyle=color;c.globalAlpha=0.7;c.fill();c.globalAlpha=1}
   if(phoenix){document.getElementById('ctr').innerHTML=`<strong style="color:#1D9E75">${converted*10}</strong> converted · <strong style="color:#EF9F27">${capped*10}</strong> capped · <strong style="color:#E24B4A">${abandoned*10}</strong> remaining`}
-  else{document.getElementById('ctr').innerHTML=`Each dot = ~10 wells. <strong>22,000</strong> liabilities waiting to become assets.`}
+  else{document.getElementById('ctr').innerHTML=`Each dot = ~10 wells. <strong>More than 20,000</strong> liabilities waiting to become assets.`}
 }
 function animLoop(){
   if(!animating)return;animFrame++;resize();c.clearRect(0,0,cv.width,cv.height);

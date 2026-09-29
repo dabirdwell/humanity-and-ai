@@ -1,6 +1,6 @@
 ---
 title: "Why Oklahoma"
-description: "Dead last in education. Bottom 3 in healthcare. 22,000 abandoned wells. Continental geothermal leader. Where the problems are worst, the opportunity is greatest."
+description: "Dead last in education. Bottom 3 in healthcare. More than 20,000 abandoned wells. Continental geothermal leader. Where the problems are worst, the opportunity is greatest."
 date: 2026-03-25T01:30:00
 type: "visualizations"
 tags: ["oklahoma", "phoenix-wells", "foundation", "interactive", "leapfrog"]
@@ -8,7 +8,7 @@ preview_bg: "linear-gradient(135deg, rgba(216,90,48,0.2), rgba(83,74,183,0.15), 
 preview_icon: "🏜"
 ---
 
-Every ranking that puts Oklahoma near the bottom is also a ranking that puts Oklahoma at the top of marginal return. Dead last in education spending means the most room to improve. 22,000 abandoned wells means 22,000 pre-drilled geothermal sites.
+Every ranking that puts Oklahoma near the bottom is also a ranking that puts Oklahoma at the top of marginal return. Dead last in education spending means the most room to improve. More than 20,000 known abandoned wells means thousands of holes already drilled, waiting to be tested for geothermal heat.
 
 <div class="viz-embed-wide">
 <div class="viz-frame">

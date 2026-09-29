@@ -58,7 +58,7 @@ When we talk about the Foundation framework as interconnected, transportation is
 
 Transportation and energy are inseparable. Electric vehicle fleets need charging infrastructure powered by sustainable energy. This connects directly to [Sustainable Energy](/foundation/sustainable-energy/) and to Phoenix Wells, where geothermal energy could power the charging networks that power the vehicles that connect communities.
 
-Oklahoma generates 41 percent of its electricity from wind. It has 22,000 abandoned wells that can produce geothermal heat. It has the wind and the geology to power a statewide EV charging network without a single gallon of gasoline. The same state that has no intercity rail and 19 rural transit systems stretched across 77 counties has every physical resource it needs to build the most advanced transportation infrastructure in the country. What it lacks, as always, is the decision to do it for its own people rather than for someone else's balance sheet.
+Oklahoma generates 41 percent of its electricity from wind. It has more than 20,000 known abandoned wells that could produce geothermal heat. It has the wind and the geology to power a statewide EV charging network without a single gallon of gasoline. The same state that has a single intercity passenger train route and 19 rural transit systems stretched across 77 counties has every physical resource it needs to build the most advanced transportation infrastructure in the country. What it lacks, as always, is the decision to do it for its own people rather than for someone else's balance sheet.
 
 ## What We Need From You
 

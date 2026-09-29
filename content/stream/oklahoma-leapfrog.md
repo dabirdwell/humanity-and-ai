@@ -19,7 +19,7 @@ Oklahoma ranks 50th in education in the United States. We lead the nation in aba
 
 I don't buy it. Oklahoma is perfectly positioned to leapfrog.
 
-The states that invested heavily in 20th-century infrastructure are now burdened by it. Legacy systems, legacy costs, legacy thinking. We have less of that weight. And we have something nobody else has: 22,000 boreholes reaching deep into geothermally active earth, already drilled, already mapped, waiting to be repurposed.
+The states that invested heavily in 20th-century infrastructure are now burdened by it. Legacy systems, legacy costs, legacy thinking. We have less of that weight. And we have something nobody else has: more than 20,000 known abandoned boreholes, already drilled into geothermally active earth, and the deepest of them could be repurposed.
 
 Phoenix Wells converts those abandoned wells into distributed geothermal energy powering local AI systems. Not cloud computing rented from California. Intelligence that lives in Oklahoma communities, serving Oklahoma needs: education, healthcare, agriculture, civic engagement. Same workforce. Same land. Same ingenuity that built this state.
 
