@@ -8,10 +8,15 @@ status: "live"
 tags: ["show"]
 ---
 
-<!-- Draft episode page, staged 2026-09-07 for launch day. Three things to do before draft: false
+<!-- Draft episode page, staged 2026-09-07 for launch day. Five things to do, then publish:
      1. Replace VIDEO_ID in the line below with the YouTube video id (the part after watch?v=).
      2. Replace the two [DAVID WRITES THIS] lines in the front matter above.
      3. Replace the paragraph marked [DAVID WRITES THIS] below.
+     4. Change date: above to the release date. A page dated in the future stays hidden until
+        the next automatic rebuild after that moment (the site rebuilds itself at about 6:00
+        and 11:10 in the morning, Central time, every day).
+     5. Set draft: false.
+     The home page then shows this episode in its top section on its own; nothing else to edit there.
      The list page at /show/ still opens with "There is no show yet." That paragraph in
      content/show/_index.md is yours to replace the same day. -->
 
@@ -19,7 +24,7 @@ tags: ["show"]
 
 [DAVID WRITES THIS: one paragraph. What this episode is, who it is for, and the one thing to take from it.]
 
-<p><a href="https://humanityandaiofficial.substack.com">Subscribe free on Substack →</a> The Inference ships every Friday.</p>
+<p><a href="https://humanityandaiofficial.substack.com">Subscribe free on Substack →</a> A new issue of The Inference arrives every week.</p>
 
 <form action="https://formspree.io/f/xkovallr" method="POST" style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;margin:1.5rem 0;">
   <input type="email" name="email" placeholder="your@email.com" required style="padding:0.6rem 1rem;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;color:var(--text-primary);font-family:var(--font-body);font-size:0.9rem;min-width:240px;" aria-label="Email address">

@@ -1,6 +1,11 @@
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="site-logo">Humanity <span>&</span> AI</a>
+    <a href="/" class="site-logo" aria-label="Humanity and AI, home">
+      <img class="site-logo-mark on-dark" src="/images/brand/hai-mark.svg" alt="" width="34" height="34">
+      <img class="site-logo-mark on-light" src="/images/brand/hai-mark-light.svg" alt="" width="34" height="34">
+      <img class="site-logo-word on-dark" src="/images/brand/hai-wordmark.svg" alt="" width="174" height="19">
+      <img class="site-logo-word on-light" src="/images/brand/hai-wordmark-light.svg" alt="" width="174" height="19">
+    </a>
     <nav class="site-nav" aria-label="Main navigation">
       {{ range .Site.Params.nav.links }}
         <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}{{ with .class }} class="{{ . }}"{{ end }}>{{ .name }}</a>

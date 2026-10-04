@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The 1980 Divergence — Foundation</title>
+<title>The 1980 Divergence · Foundation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fafaf8;color:#2c2c2a;font-family:system-ui,-apple-system,sans-serif;padding:24px;max-width:680px;margin:0 auto}
@@ -14,6 +14,7 @@ h1{font-size:22px;font-weight:500;margin:0 0 4px}
 .legend span{display:flex;align-items:center;gap:4px}
 .legend .dot{width:10px;height:10px;border-radius:2px;display:inline-block}
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 0}
+@media(max-width:520px){.stat-grid{grid-template-columns:1fr}.legend{flex-direction:column;gap:6px}}
 .stat{background:rgba(0,0,0,0.03);border-radius:10px;padding:12px}
 @media(prefers-color-scheme:dark){.stat{background:rgba(255,255,255,0.04)}}
 .stat .num{font-size:20px;font-weight:500;margin:0}
@@ -21,50 +22,63 @@ h1{font-size:22px;font-weight:500;margin:0 0 4px}
 .note{font-size:12px;color:#999;margin:14px 0 0;line-height:1.6}
 .credit{font-size:11px;color:#666;margin:20px 0 0;text-align:center}
 .credit a{color:#534AB7;text-decoration:none}
+.note a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
-<h1>The 1980 divergence</h1>
+<h1>What work produces, and what it pays</h1>
 <p class="sub">Until 1979, workers produced more and earned more. Then the deal broke.</p>
 <div class="legend">
-  <span><span class="dot" style="background:#1D9E75"></span>Productivity (indexed to 1948)</span>
-  <span><span class="dot" style="background:#E24B4A"></span>Hourly compensation</span>
+  <span><span class="dot" style="background:#1D9E75"></span>What an hour of work produces</span>
+  <span><span class="dot" style="background:#E24B4A"></span>What a typical worker is paid for that hour</span>
 </div>
 <div style="position:relative;width:100%;height:340px"><canvas id="dc"></canvas></div>
 <div class="stat-grid">
-  <div class="stat"><p class="num" style="color:#1D9E75">+253%</p><p class="lbl">Productivity growth since 1948</p></div>
-  <div class="stat"><p class="num" style="color:#E24B4A">+116%</p><p class="lbl">Wage growth since 1948</p></div>
-  <div class="stat"><p class="num" style="color:#534AB7">137 pts</p><p class="lbl">The gap</p></div>
+  <div class="stat"><p class="num" style="color:#1D9E75">+93.7%</p><p class="lbl">Growth in what an hour of work produces, end of 1979 to mid&#8209;2026</p></div>
+  <div class="stat"><p class="num" style="color:#E24B4A">+32.7%</p><p class="lbl">Growth in a typical worker's hourly pay, same years</p></div>
+  <div class="stat"><p class="num" style="color:#534AB7">2.9&times;</p><p class="lbl">Since 1979, what work produces has grown 2.9 times as much as what it pays</p></div>
 </div>
-<p class="note">Source: Economic Policy Institute analysis of BLS data. Indexed: 1948=100. The vertical line marks 1979 — peak alignment. The shaded area is wealth that went somewhere other than workers' paychecks.</p>
-<div class="credit">Æ — <a href="https://humanityandai.com/foundation/">Foundation</a> · Humanity and AI</div>
+<p class="note">Source: Economic Policy Institute, <a href="https://www.epi.org/productivity-pay-gap/" target="_blank" rel="noopener">The Productivity&ndash;Pay Gap</a>, updated September 14, 2026, with data through the middle of 2026. The top line is net productivity: everything the economy produces, minus wear on equipment, per hour worked. The bottom line is the hourly pay, wages plus benefits, of production and nonsupervisory workers (people who do not supervise others) in the private sector. Both are adjusted for inflation the same way and start at 100 in 1948, so their growth can be compared directly. The dotted line marks the end of 1979, when the two began to split. The shaded area is wealth that went somewhere other than workers' paychecks.</p>
+<div class="credit">Æ · <a href="https://humanityandai.com/foundation/">Foundation</a> · Humanity and AI</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const years=[];for(let y=1948;y<=2024;y+=4)years.push(y);
-const prod=[100,113,126,142,162,181,197,210,222,237,255,273,297,320,342,355,371,389,400,410];
-const wages=[100,112,124,140,159,176,190,195,197,200,205,210,218,224,228,232,237,243,248,253];
+// Economic Policy Institute, The Productivity-Pay Gap (epi.org/productivity-pay-gap/, updated Sep 14 2026).
+// Index, 1948q1 = 100. First quarter of each year shown, plus 1979q4 (EPI's split point) and 2026q2 (latest).
+// [year, net productivity, hourly pay of production/nonsupervisory workers]
+const rows=[
+  [1948,100,100],[1952,114.3,114.4],[1956,132.4,134.2],[1960,148,144.3],[1964,167.4,158],
+  [1968,186.3,170.6],[1972,204.7,189.6],[1976,216.6,187.3],[1979.75,216.8,190.7],[1984,225.5,188],
+  [1988,237.6,186.3],[1992,249,186.7],[1996,258.3,187.6],[2000,273.2,196.9],[2004,307.3,210],
+  [2008,319.2,212.6],[2012,340.1,219.9],[2016,354.6,231.5],[2020,373.2,241],[2024,401.1,247.9],
+  [2026.25,419.9,253]
+];
+const SPLIT=8; // index of 1979q4 in rows
+const prod=rows.map(r=>({x:r[0],y:r[1]}));
+const wages=rows.map(r=>({x:r[0],y:r[2]}));
+const when=x=>x===1979.75?'End of 1979':x===2026.25?'Mid-2026':String(x);
 const dark=matchMedia('(prefers-color-scheme:dark)').matches;
 new Chart(document.getElementById('dc'),{
   type:'line',
-  data:{labels:years,datasets:[
-    {label:'Productivity',data:prod,borderColor:'#1D9E75',fill:false,borderWidth:2.5,pointRadius:0,tension:0.3},
-    {label:'Wages',data:wages,borderColor:'#E24B4A',fill:false,borderWidth:2.5,pointRadius:0,tension:0.3}
+  data:{datasets:[
+    {label:'What an hour of work produces',data:prod,borderColor:'#1D9E75',fill:false,borderWidth:2.5,pointRadius:0,pointHitRadius:8,cubicInterpolationMode:'monotone'},
+    {label:'What a typical worker is paid',data:wages,borderColor:'#E24B4A',fill:false,borderWidth:2.5,pointRadius:0,pointHitRadius:8,cubicInterpolationMode:'monotone'}
   ]},
-  options:{responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false}},
+  options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:16}},
+    interaction:{mode:'index',intersect:false},
+    plugins:{legend:{display:false},tooltip:{callbacks:{title:items=>items.length?when(items[0].parsed.x):''}}},
     scales:{
-      x:{grid:{display:false},ticks:{color:dark?'#888':'#999',font:{size:11},maxRotation:0}},
-      y:{grid:{color:dark?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.05)'},ticks:{color:dark?'#888':'#999',font:{size:11}},min:80,max:420}
+      x:{type:'linear',min:1948,max:2026.25,grid:{display:false},ticks:{color:dark?'#888':'#999',font:{size:11},maxRotation:0,stepSize:innerWidth<560?16:8,callback:v=>String(Math.round(v))}},
+      y:{grid:{color:dark?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.05)'},ticks:{color:dark?'#888':'#999',font:{size:11}},min:80,max:440}
     }
   },
   plugins:[{id:'gapFill',beforeDatasetsDraw(chart){
     const m0=chart.getDatasetMeta(0),m1=chart.getDatasetMeta(1),ctx=chart.ctx;
     ctx.save();ctx.globalAlpha=0.06;ctx.fillStyle=dark?'#E24B4A':'#534AB7';ctx.beginPath();
-    for(let i=8;i<m0.data.length;i++){const p=m0.data[i];i===8?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y)}
-    for(let i=m1.data.length-1;i>=8;i--){const p=m1.data[i];ctx.lineTo(p.x,p.y)}
+    for(let i=SPLIT;i<m0.data.length;i++){const p=m0.data[i];i===SPLIT?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y)}
+    for(let i=m1.data.length-1;i>=SPLIT;i--){const p=m1.data[i];ctx.lineTo(p.x,p.y)}
     ctx.closePath();ctx.fill();ctx.restore();
   }},{id:'vertLine',afterDatasetsDraw(chart){
-    const x=chart.getDatasetMeta(0).data[8]?.x;if(!x)return;const ctx=chart.ctx,area=chart.chartArea;
+    const x=chart.getDatasetMeta(0).data[SPLIT]?.x;if(!x)return;const ctx=chart.ctx,area=chart.chartArea;
     ctx.save();ctx.strokeStyle=dark?'rgba(255,255,255,0.2)':'rgba(0,0,0,0.15)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
     ctx.beginPath();ctx.moveTo(x,area.top);ctx.lineTo(x,area.bottom);ctx.stroke();
     ctx.fillStyle=dark?'#999':'#888';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText('1979',x,area.top-6);ctx.restore();

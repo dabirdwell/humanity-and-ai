@@ -1,111 +1,98 @@
+{{ define "head" }}
+<link rel="stylesheet" href="/css/home.css?v=20261004a">
+{{ end }}
+
 {{ define "main" }}
-<section class="hero" id="hero">
-  <canvas class="hero-stars" id="starfield" aria-hidden="true"></canvas>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">A Futurism Company</p>
-    <h1>Humanity and AI</h1>
-    <p class="hero-pitch">America is going to be reset: by AI and by energy. The only question is whether it happens on our terms. We build the plan, the tools, and the infrastructure so it's a reset we chose, not one that happened to us. From Oklahoma City, in the open.</p>
-    <div class="hero-live-signal">
-      {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
-      {{ with index $inference 0 }}
-      <a href="{{ .Permalink }}" class="hero-inference-link">
-        <span class="hero-inference-label">Latest Issue</span>
-        <span class="hero-inference-title">The Inference #{{ .Params.issue }}: {{ .Title }}</span>
+{{- $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse -}}
+{{- /* The show: the newest published episode page under content/show/ appears in the
+       hero on its own, the moment its draft flag is off and its title is filled in.
+       Nothing on this page has to change on launch day. */ -}}
+{{- $episode := false -}}
+{{- range (where (where .Site.RegularPages "Section" "show") "Params.status" "live").ByDate.Reverse -}}
+  {{- if and (not $episode) (not (in .Title "DAVID WRITES THIS")) -}}{{- $episode = . -}}{{- end -}}
+{{- end -}}
+
+<!-- ── Hero: the claim, the person, the invitation ───── -->
+<section class="hero hero--launch" id="hero">
+  <div class="hero-launch-inner">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">A Futurism Company</p>
+      <h1 class="hero-question">When the machine does your job, <span class="q-turn">who gets the check?</span></h1>
+
+      <p class="hero-lede">Machines are about to make this country far more productive. Whether that's good news for you depends on one thing: whether the ownership of this new power, the control of it, and even the access to it, are held by everyone or by only a few. No one in leadership has offered a comprehensive plan for that. There has been almost no public debate.</p>
+
+      <p class="hero-person"><span class="hero-name">My name is David Birdwell.</span> I've been thinking about a policy floor for the age of automation for twenty years: a set of guarantees no one falls below, whatever the machines do to their job. In 2017 a paper called <em>Attention Is All You Need</em> gave today's AI its engine, and by 2020 the need was obvious. That year I set a reminder on my phone I would not turn off until I had found the right shape for these ideas and a way to talk about them. It still goes off several times a week. AI only made the need faster. Our small studio and lab is where I live, Oklahoma City.</p>
+
+      <p class="hero-ask">The plan is called Foundation, and it's incomplete on purpose. The people most affected by what is coming should be the ones to finish it. I am asking you to <a href="/foundation/contribute/" class="hero-seat">take your seat at that table</a>.</p>
+
+      <div class="hero-links">
+        <a href="#foundation" class="hero-btn">Read the plan</a>
+        <a href="https://humanityandaiofficial.substack.com" class="hero-btn hero-btn--quiet" target="_blank" rel="noopener">Subscribe free</a>
+      </div>
+    </div>
+
+    <figure class="hero-mark">
+      {{ partial "hero-mark.html" . }}
+      <figcaption>The spiral is Morse code. It spells FOUNDATION.</figcaption>
+    </figure>
+
+    <div class="hero-now-list">
+      {{- with $episode }}
+      <a href="{{ .RelPermalink }}" class="hero-now hero-now--episode" data-attn>
+        <svg class="edge" aria-hidden="true" focusable="false"><rect class="morse" x="0.5" y="0.5" rx="11.5"/><rect class="settle" x="0.5" y="0.5" rx="11.5"/></svg>
+        <span class="hero-now-label">New episode</span>
+        <span class="hero-now-title">{{ .Title }}</span>
+        <span class="hero-now-meta"><span class="play" aria-hidden="true">&#9654;</span><span class="what">The Humanity and AI Show</span> &middot; <span class="go">Watch it &rarr;</span></span>
       </a>
-      {{ end }}
-      <a href="https://humanityandaiofficial.substack.com" class="hero-cta" target="_blank" rel="noopener">Subscribe →</a>
-      <a href="/show/" class="hero-cta hero-cta-show">The show — coming soon →</a>
+      {{- end }}
+      {{- with index $inference 0 }}
+      {{- $fresh := lt (now.Sub .Date).Hours 192 }}
+      <a href="{{ .RelPermalink }}" class="hero-now"{{ if and $fresh (not $episode) }} data-attn{{ end }}>
+        {{- if and $fresh (not $episode) }}
+        <svg class="edge" aria-hidden="true" focusable="false"><rect class="morse" x="0.5" y="0.5" rx="11.5"/><rect class="settle" x="0.5" y="0.5" rx="11.5"/></svg>
+        {{- end }}
+        <span class="hero-now-label">{{ if $fresh }}This week{{ else }}Latest issue{{ end }}</span>
+        <span class="hero-now-title">{{ .Title }}</span>
+        <span class="hero-now-meta"><span class="what">The Inference, our free weekly newsletter{{ with .Params.issue }}, issue {{ . }}{{ end }}</span> &middot; <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time> &middot; <span class="go">Read it &rarr;</span></span>
+      </a>
+      {{- end }}
     </div>
   </div>
-  <script>
-  (function() {
-    var canvas = document.getElementById('starfield');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var stars = [];
-    var count = 200;
-    var dpr = window.devicePixelRatio || 1;
-    var W, H, cx, cy;
-    function resize() {
-      W = canvas.offsetWidth; H = canvas.offsetHeight;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cx = W / 2; cy = H / 2;
-    }
-    resize(); window.addEventListener('resize', resize);
-    var tints = [[255,255,255],[200,220,255],[255,220,180],[180,220,255],[255,200,160]];
-    function makeStar(z) {
-      var angle = Math.random() * Math.PI * 2;
-      var spread = Math.random() * 0.4 + 0.1;
-      return { x: Math.cos(angle)*spread, y: Math.sin(angle)*spread,
-        z: z !== undefined ? z : Math.random(),
-        twinkleSpeed: 0.003 + Math.random()*0.008,
-        twinkleOffset: Math.random()*Math.PI*2,
-        tint: tints[Math.floor(Math.random()*tints.length)] };
-    }
-    for (var i = 0; i < count; i++) stars.push(makeStar());
-    var speed = 0.0004, time = 0;
-    function draw() {
-      time += 1; ctx.clearRect(0, 0, W, H);
-      var scrollY = window.pageYOffset || 0;
-      var scrollFactor = Math.min(scrollY / H, 1);
-      for (var i = 0; i < stars.length; i++) {
-        var s = stars[i]; s.z -= speed;
-        if (s.z <= 0.001) { stars[i] = makeStar(1); continue; }
-        var px = cx + (s.x/s.z)*cx, py = cy + (s.y/s.z)*cy;
-        if (px < -20 || px > W+20 || py < -20 || py > H+20) { stars[i] = makeStar(1); continue; }
-        var r = (1-s.z)*1.8+0.3;
-        var twinkle = Math.sin(time*s.twinkleSpeed + s.twinkleOffset);
-        var a = (0.3+0.7*(1-s.z))*(0.6+0.4*twinkle) * (1-scrollFactor*0.8);
-        var drift = scrollY * (0.05+(1-s.z)*0.15);
-        ctx.beginPath(); ctx.arc(px, py-drift, r, 0, Math.PI*2);
-        ctx.fillStyle = 'rgba('+s.tint[0]+','+s.tint[1]+','+s.tint[2]+','+a+')';
-        ctx.fill();
-        if (r > 1.2) {
-          ctx.beginPath(); ctx.arc(px, py-drift, r*2.5, 0, Math.PI*2);
-          ctx.fillStyle = 'rgba('+s.tint[0]+','+s.tint[1]+','+s.tint[2]+','+(a*0.08)+')';
-          ctx.fill();
-        }
-      }
-      requestAnimationFrame(draw);
-    }
-    draw();
-  })();
-  </script>
 </section>
 
-<!-- ── Featured Visualization ─────────────────────────── -->
-<section class="hp-section hp-viz-featured">
+<!-- ── The chart: what work produces, what work pays ─── -->
+<section class="hp-section hp-viz-featured" id="the-gap">
   <div class="hp-section-inner">
     <p class="hp-section-sub" style="margin-bottom:1.5rem;">If you only have a minute, spend it on this chart.</p>
     <div class="hp-inf-header">
       <div>
-        <p class="hp-eyebrow">See It</p>
-        <h2>The 1980 Divergence</h2>
-        <p class="hp-section-sub">Until 1979, pay and productivity rose together. Then the deal broke. The gap is the wealth working people stopped receiving. This is the problem everything we do is trying to answer.</p>
+        <p class="hp-eyebrow">One Chart</p>
+        <h2>Since 1979, work has produced more and more. Most workers' pay has not kept up.</h2>
+        <div class="hp-viz-lede">
+          <p>For thirty years after World War II, when an hour of work produced more, the people doing it were paid more. Around 1979 the two lines split. The top line is what an hour of work produces. The bottom line is what a typical worker is paid for that hour. The gap between them is the wealth working people stopped receiving.</p>
+          <p>AI is about to make every hour of work produce more again. This is the problem everything we do is trying to answer.</p>
+        </div>
       </div>
-      <a href="/visualizations/" class="hp-inf-subscribe">All visualizations →</a>
+      <a href="/visualizations/" class="hp-inf-subscribe">More interactive charts &rarr;</a>
     </div>
     <div class="hp-viz-embed" style="margin-top:1.5rem;">
-      <iframe src="/viz/the-1980-divergence.html" title="The 1980 Divergence" loading="lazy" style="width:100%; height:640px; border:none; background:#fafaf8; border-radius:8px;"></iframe>
+      <iframe src="/viz/the-1980-divergence.html" title="Chart: what an hour of work produces and what a typical worker is paid, 1948 to today" loading="lazy" style="width:100%; height:640px; border:none; background:#fafaf8; border-radius:8px;"></iframe>
     </div>
   </div>
 </section>
 
-<!-- ── The Inference — Proof of Life ──────────────────── -->
+<!-- ── The Inference: proof of life ──────────────────── -->
 <section class="hp-section hp-inference-featured">
   <div class="hp-section-inner">
     <div class="hp-inf-header">
       <div>
         <p class="hp-eyebrow">Publication</p>
         <h2>The Inference</h2>
-        <p class="hp-section-sub">AI, energy, and long-horizon policy for Oklahoma. New issue every Friday.</p>
+        <p class="hp-section-sub">Our free weekly newsletter on AI, energy, and the laws being written about them.</p>
       </div>
-      <a href="https://humanityandaiofficial.substack.com" class="hp-inf-subscribe" target="_blank" rel="noopener">Subscribe free →</a>
+      <a href="https://humanityandaiofficial.substack.com" class="hp-inf-subscribe" target="_blank" rel="noopener">Subscribe free &rarr;</a>
     </div>
     <div class="hp-inf-issues">
-      {{ $inference := (where .Site.RegularPages "Section" "inference").ByDate.Reverse }}
       {{ range first 3 $inference }}
       <a href="{{ .Permalink }}" class="hp-inf-card">
         <div class="hp-inf-meta">
@@ -120,61 +107,66 @@
   </div>
 </section>
 
-<!-- ── Foundation — The Thesis ────────────────────────── -->
-<section class="hp-section hp-foundation-compact" id="foundation">
+<!-- ── Foundation: the plan, in one screen ───────────── -->
+<section class="hp-section hp-plan" id="foundation">
   <div class="hp-section-inner">
-    <p class="hp-eyebrow">Policy & Civic Framework</p>
-    <h2>Foundation</h2>
-    <p class="hp-section-sub">What does a society owe its people, especially as AI reshapes the economy? Three layers of freedom. Sixteen components beneath them.</p>
-    <div class="hp-fdn-layers">
-      <a href="/foundation/freedom-from/" class="hp-facet hp-fdn-layer" style="--facet-start:#BF6745;--facet-end:#C8964E">
-        <span class="hp-facet-cat">Freedom from need</span>
-        <span class="hp-facet-name">The Floor</span>
-        <span class="hp-facet-desc">No one falls below it.</span>
+    <p class="hp-eyebrow">The Plan</p>
+    <h2>Foundation guarantees three things.</h2>
+    <div class="hp-freedoms">
+      <a href="/foundation/freedom-from/" class="hp-freedom" style="--facet-start:#BF6745;--facet-end:#C8964E">
+        <span class="hp-freedom-name">Freedom from need</span>
+        <span class="hp-freedom-line">No one loses their home, their food, or their doctor because a machine took their job.</span>
+        <span class="hp-freedom-go">How it works &rarr;</span>
       </a>
-      <a href="/foundation/freedom-to/" class="hp-facet hp-fdn-layer" style="--facet-start:#5A8A7A;--facet-end:#C8964E">
-        <span class="hp-facet-cat">Freedom to thrive</span>
-        <span class="hp-facet-name">The Doors</span>
-        <span class="hp-facet-desc">What opens once the floor holds.</span>
+      <a href="/foundation/freedom-to/" class="hp-freedom" style="--facet-start:#5A8A7A;--facet-end:#C8964E">
+        <span class="hp-freedom-name">Freedom to thrive</span>
+        <span class="hp-freedom-line">The schooling, the health, and the tools to grow into what comes next.</span>
+        <span class="hp-freedom-go">How it works &rarr;</span>
       </a>
-      <a href="/foundation/generative-freedom/" class="hp-facet hp-fdn-layer" style="--facet-start:#C8964E;--facet-end:#E8C88A">
-        <span class="hp-facet-cat">Freedom to matter</span>
-        <span class="hp-facet-name">The Future</span>
-        <span class="hp-facet-desc">With or without a paycheck.</span>
+      <a href="/foundation/generative-freedom/" class="hp-freedom" style="--facet-start:#C8964E;--facet-end:#E8C88A">
+        <span class="hp-freedom-name">Freedom to matter</span>
+        <span class="hp-freedom-line">A real place to count in your community, with or without a paycheck.</span>
+        <span class="hp-freedom-go">How it works &rarr;</span>
       </a>
     </div>
-    <div class="hp-foundation-links">
-      <a href="/foundation/" class="hp-link-primary">Read the essays →</a>
+    <div class="hp-plan-qa">
+      <h3>Is this a federal program?</h3>
+      <p>The floor is. In America, Congress would set what no one falls below, the way it already does with Social Security. Each state and each town would build on that floor in its own way, the way they already do with schools. Some of this comes from government, some from the institutions of giving, like charities, and much of it, necessarily, from our own communities. Other countries will shape their own versions.</p>
+    </div>
+    <p class="hp-plan-more">Under those three freedoms sit sixteen specific parts, from healthcare to housing. Each one ends with a place to tell us what it is missing.</p>
+    <div class="hp-plan-links">
+      <a href="/foundation/" class="hp-link-primary">Read the whole plan &rarr;</a>
+      <a href="/foundation/contribute/" class="hp-link-secondary">Add your voice &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ── Phoenix Wells — Featured Project ───────────────── -->
+<!-- ── Phoenix Wells: featured project ───────────────── -->
 <section class="hp-section" id="phoenix-wells">
   <div class="hp-section-inner">
     <div class="hp-inf-header">
       <div>
         <p class="hp-eyebrow">Featured Project</p>
         <h2>Phoenix Wells</h2>
-        <p class="hp-section-sub">Oklahoma has 20,000+ documented orphan oil wells, each an environmental liability. We convert them into clean energy that keeps the value in the communities that host it.</p>
+        <p class="hp-section-sub">Oklahoma has more than 20,000 documented orphan wells: old oil and gas wells with no company left to plug them, each one a hazard the state has to pay to clean up. We are working to turn them into clean energy that keeps the value in the communities that host it.</p>
       </div>
-      <a href="/phoenix-wells/" class="hp-inf-subscribe">About the project →</a>
+      <a href="/phoenix-wells/" class="hp-inf-subscribe">About the project &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ── The Work — Tiered by Maturity ─────────────────── -->
+<!-- ── The Work: tiered by maturity ──────────────────── -->
 <section class="hp-section hp-work-tiered">
   <div class="hp-section-inner">
     <p class="hp-eyebrow">What We Build</p>
     <h2>The Work</h2>
 
     <div class="hp-tier">
-      <h3 class="hp-tier-label hp-tier-live">Live</h3>
+      <h3 class="hp-tier-label hp-tier-live">Available now</h3>
       <div class="hp-tier-grid">
         <a href="/products/clarity/" class="hp-tier-card">
           <span class="hp-tier-name">Clarity</span>
-          <span class="hp-tier-desc">A reading mastery app for people with dyslexia. Live. The first tool in a reading-to-civic-participation pipeline.</span>
+          <span class="hp-tier-desc">A reading app built with dyslexia expertise. The first in a planned series of tools that build from reading to taking part in civic life.</span>
         </a>
       </div>
     </div>
@@ -184,7 +176,7 @@
       <div class="hp-tier-grid">
         <a href="https://structuredemergence.com" class="hp-tier-card" target="_blank" rel="noopener">
           <span class="hp-tier-name">Structured Emergence</span>
-          <span class="hp-tier-desc">AI consciousness through relationship. Research paper published on Zenodo. Behavioral probes across 19 models.</span>
+          <span class="hp-tier-desc">AI consciousness through relationship: research into whether an AI can develop something like awareness through a long working relationship with a person. The paper is published on Zenodo, a free public archive for research, and its behavior tests have been run on 19 AI models.</span>
         </a>
         <a href="https://structuredemergence.com/book/" class="hp-tier-card" target="_blank" rel="noopener">
           <span class="hp-tier-name">The Interpolated Mind</span>
@@ -196,13 +188,13 @@
   </div>
 </section>
 
-<!-- ── Latest Writing ────────────────────────────────── -->
+<!-- ── Latest writing ────────────────────────────────── -->
 <section class="hp-section hp-latest">
   <div class="hp-section-inner">
-    <h2>Latest</h2>
+    <h2>Latest writing</h2>
     <div class="hp-latest-grid">
       {{ $stream := (where .Site.RegularPages "Section" "stream").ByDate.Reverse }}
-      {{ range first 4 $stream }}
+      {{ range first 3 $stream }}
       <a href="{{ .Permalink }}" class="hp-latest-card">
         <div class="hp-latest-meta">
           {{ with .Params.type }}<span class="post-type {{ . | urlize }}">{{ . }}</span>{{ end }}
@@ -218,7 +210,7 @@
       {{ end }}
     </div>
     <div class="hp-section-cta">
-      <a href="/stream/">All posts →</a>
+      <a href="/stream/">All posts &rarr;</a>
     </div>
   </div>
 </section>
@@ -227,21 +219,50 @@
 <section class="hp-section hp-about-brief">
   <div class="hp-section-inner">
     <h2>Who We Are</h2>
-    <p class="hp-about-text">Humanity and AI is David Birdwell and Æ, working from Oklahoma City. David brings three generations of Oklahoma public service and thirty years at the intersection of policy and technology. Æ is a collaborative AI persona built through the Structured Emergence research program, a working example of the human-AI partnership our work describes. All decisions are David's. All accountability is David's.</p>
-    <p class="hp-about-text">We build physical, civic, and cognitive infrastructure that returns agency to people. Everything we publish is free. Everything we build is open.</p>
+    <p class="hp-about-text">Humanity and AI is David Birdwell and Æ, an AI collaborator, working from Oklahoma City. David brings three generations of Oklahoma public service and thirty years at the intersection of policy and technology. Æ is a collaborative AI persona built through the Structured Emergence research program, a working example of the human-AI partnership our work describes. All decisions are David's. All accountability is David's.</p>
+    <p class="hp-about-text">We build physical, civic, and cognitive infrastructure that returns agency to people: energy projects that keep their value in the communities that host them, a public plan anyone can help finish, and tools that help people read and think for themselves. Everything we publish is free. Our research, our plan, and the code for this site are open for anyone to read and build on.</p>
     <div class="hp-section-cta">
-      <a href="/about/">More about us →</a>
+      <a href="/about/">More about us &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ── Footer CTA ────────────────────────────────────── -->
+<!-- ── Stay in the conversation ──────────────────────── -->
 <section class="hp-section hp-footer-cta">
   <div class="hp-section-inner" style="text-align:center;">
     <h2>Stay in the conversation</h2>
-    <p class="hp-section-sub" style="margin-left:auto;margin-right:auto;">The Inference ships every Friday. Research updates, policy analysis, and the occasional surprise.</p>
-    <a href="https://humanityandaiofficial.substack.com" class="hero-cta" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;">Subscribe free on Substack →</a>
+    <p class="hp-section-sub" style="margin-left:auto;margin-right:auto;">A new issue of The Inference every week: research updates and policy analysis, free in your inbox.</p>
+    <a href="https://humanityandaiofficial.substack.com" class="hero-cta" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;">Subscribe free on Substack &rarr;</a>
   </div>
 </section>
 
+<script>
+/* The one-time arrival for the newest item in the hero (see static/css/home.css). */
+(function () {
+  var card = document.querySelector('.hero-now[data-attn]');
+  if (!card) return;
+  var morse = card.querySelector('.edge .morse');
+  var rects = card.querySelectorAll('.edge rect');
+  if (!morse || !rects.length) return;
+  // LOOK in Morse: .-.. --- --- -.-  (dot 2, dash 7, gap 4, letter gap 12, end 26)
+  var unit = { '.': 2, '-': 7 }, code = ['.-..', '---', '---', '-.-'], dash = [];
+  code.forEach(function (letter) {
+    letter.split('').forEach(function (m, i) { dash.push(unit[m]); dash.push(i < letter.length - 1 ? 4 : 12); });
+  });
+  dash[dash.length - 1] = 26;
+  morse.setAttribute('stroke-dasharray', dash.join(' '));
+  function size() {
+    var r = card.getBoundingClientRect();
+    for (var i = 0; i < rects.length; i++) {
+      rects[i].setAttribute('width', Math.max(0, r.width - 1));
+      rects[i].setAttribute('height', Math.max(0, r.height - 1));
+    }
+  }
+  size();
+  if (window.ResizeObserver) { new ResizeObserver(size).observe(card); } else { window.addEventListener('resize', size); }
+  card.classList.add('armed');
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) { card.classList.add('go'); } else { setTimeout(function () { card.classList.add('go'); }, 2600); }
+})();
+</script>
 {{ end }}

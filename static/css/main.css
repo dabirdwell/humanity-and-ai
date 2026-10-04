@@ -70,7 +70,8 @@ button:focus-visible,
   --border-hover: rgba(26, 20, 18, 0.20);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400&display=swap');
+/* Fonts: loaded by a <link> in layouts/_default/baseof.html. (An @import here sat below other rules,
+   so browsers ignored it and the site fell back to Georgia and system fonts.) */
 
 /* Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2435,136 +2436,6 @@ a:hover { color: var(--accent-primary); }
 .ubc-nav-label { display: block; font-size: 0.8rem; color: var(--text-muted); }
 .ubc-nav-title { font-size: 0.95rem; color: var(--accent-secondary); }
 
-
-/* ========================================
-   First-Visit Welcome Overlay
-   ======================================== */
-
-.welcome-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.welcome-overlay.visible {
-  display: flex;
-  opacity: 1;
-}
-
-.welcome-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-hover);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  max-width: 520px;
-  width: 90%;
-  text-align: center;
-  transform: translateY(10px);
-  transition: transform 0.4s ease;
-}
-
-.welcome-overlay.visible .welcome-card {
-  transform: translateY(0);
-}
-
-.welcome-card h2 {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: var(--text-primary);
-}
-
-.welcome-halves {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.2rem;
-  text-align: left;
-}
-
-@media (max-width: 480px) {
-  .welcome-halves { grid-template-columns: 1fr; gap: 1rem; }
-}
-
-.welcome-half p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin: 0;
-}
-
-.welcome-label {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--accent-secondary);
-  margin-bottom: 0.4rem;
-}
-
-.welcome-label--research {
-  color: var(--accent-primary);
-}
-
-.welcome-hint {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-
-.welcome-hint strong {
-  color: var(--accent-primary);
-}
-
-.welcome-arrow {
-  display: inline-block;
-  color: var(--accent-primary);
-  font-size: 1.1em;
-  font-weight: 700;
-  animation: arrowPointUp 1s ease-in-out infinite;
-}
-
-@keyframes arrowPointUp {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.welcome-dismiss {
-  display: inline-block;
-  padding: 0.6rem 2rem;
-  background: var(--accent-secondary);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: 6px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.welcome-dismiss:hover { opacity: 0.85; }
-
-/* Research nav link pulse */
-@keyframes navPulse {
-  0%, 100% { color: #C8964E; text-shadow: 0 0 6px rgba(200, 150, 78, 0.3); }
-  50% { color: #E8C88A; text-shadow: 0 0 16px rgba(200, 150, 78, 0.7), 0 0 32px rgba(200, 150, 78, 0.3); }
-}
-
-.site-nav a.nav-pulse {
-  animation: navPulse 1s ease-in-out infinite;
-}
 
 /* ========================================
    Start Here — Question Cards
@@ -5743,4 +5614,57 @@ html { scroll-behavior: smooth; }
   .hero h1 { font-size: 1.7rem; }
   .hp-section-inner { padding: 0 0.9rem; }
   .hp-inf-meta { flex-wrap: wrap; gap: 0.3rem; }
+}
+
+/* ========================================
+   Header lockup: the settled mark and wordmark (Oct 2026)
+   Mark: two-turn Morse spiral (gold and lavender), its own small-size
+   drawing below 36 px. Wordmark: HUMANITY in Roboto Serif Thin, gold AND,
+   AI in Roboto Thin, as vector outlines (no font download).
+   Files: static/images/brand/. Source: /Users/david/Documents/Fawkes/Media and Outreach/Branding/HAI_Mark_Final_2026-09-26/
+   ======================================== */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.site-logo img { display: block; }
+.site-logo-mark { width: 34px; height: 34px; }
+.site-logo-word { width: auto; height: 19px; }
+.site-logo .on-light { display: none; }
+[data-theme="light"] .site-logo .on-dark { display: none; }
+[data-theme="light"] .site-logo .on-light { display: block; }
+
+/* Phones and small tablets: the nav moves to its own row and scrolls
+   sideways inside the header, so the page itself never scrolls sideways. */
+@media (max-width: 760px) {
+  .site-header { padding: 0 1rem; }
+  .header-inner { flex-wrap: wrap; height: auto; padding: 0.55rem 0 0; column-gap: 0.75rem; }
+  .site-logo { order: 1; margin-right: auto; }
+  .search-toggle { order: 2; }
+  .theme-toggle { order: 3; }
+  .site-nav {
+    order: 4;
+    flex-basis: 100%;
+    gap: 1.1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0.55rem 0 0.6rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a { flex-shrink: 0; }
+}
+@media (max-width: 380px) {
+  .site-logo-mark { width: 30px; height: 30px; }
+  .site-logo-word { height: 16px; }
+}
+
+/* Wide tables in articles scroll inside themselves on phones instead of
+   pushing the whole page sideways. */
+@media (max-width: 640px) {
+  main table { display: block; max-width: 100%; overflow-x: auto; }
 }

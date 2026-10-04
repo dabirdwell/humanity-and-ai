@@ -1,0 +1,344 @@
+/* ========================================
+   HOME PAGE, launch layer (Oct 2026)
+   Loaded on the home page only, from layouts/index.html (block "head").
+   Palette: Field Black #0A0A0C, Midnight Ocean #001030 (depth),
+   Cream #F0EDE6, Gold #C8964E, Light Gold #E8C88A (the single attention
+   color), Steel Lavender #8B9DBF, Sage #5A8A7A.
+   Source: /Users/david/Documents/Fawkes/Media and Outreach/Branding/HAI_Mark_Brief_2026-09-26.md, section 12.
+   ======================================== */
+
+/* ---- Hero: the claim, the person, the invitation ---- */
+.hero.hero--launch {
+  display: block;
+  min-height: calc(100vh - 60px);
+  min-height: calc(100svh - 60px);
+  text-align: left;
+  padding: clamp(2rem, 5.5vh, 4.5rem) 2rem clamp(3rem, 8vh, 6rem);
+  background:
+    radial-gradient(ellipse 55% 65% at 80% 42%, rgba(0, 16, 48, 0.95) 0%, rgba(0, 16, 48, 0.45) 45%, rgba(0, 16, 48, 0) 75%),
+    radial-gradient(ellipse 70% 50% at 10% 100%, rgba(0, 16, 48, 0.55) 0%, rgba(0, 16, 48, 0) 70%),
+    #0A0A0C;
+  overflow: hidden;
+}
+.hero.hero--launch::before { display: none; }
+
+.hero-launch-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "copy mark" "copy now";
+  column-gap: clamp(2rem, 5vw, 5.5rem);
+  row-gap: 1.1rem;
+  align-items: start;
+}
+
+.hero-copy { grid-area: copy; max-width: 660px; }
+.hero-mark { grid-area: mark; }
+.hero-now-list { grid-area: now; display: flex; flex-direction: column; gap: 0.85rem; }
+
+.hero--launch .hero-eyebrow {
+  margin-bottom: 1.4rem;
+  color: #C8964E;
+}
+
+/* The question. Overrides the old gradient-filled display h1. */
+.hero--launch .hero-question,
+[data-theme="light"] .hero--launch .hero-question {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(2.1rem, 2.1vw + 1.15rem, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+  color: #F0EDE6;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  margin: 0 0 1.7rem;
+  text-wrap: balance;
+}
+.hero-question .q-turn { color: #E8C88A; }
+
+.hero-copy > p:not(.hero-eyebrow) {
+  font-family: var(--font-body);
+  font-size: 1.07rem;
+  line-height: 1.68;
+  color: rgba(240, 237, 230, 0.84);
+  margin: 0 0 1.05rem;
+  max-width: 62ch;
+}
+.hero-copy > p.hero-person { color: rgba(240, 237, 230, 0.78); }
+.hero-copy > p .hero-name { color: #F0EDE6; font-weight: 500; }
+.hero-copy > p.hero-ask { color: #F0EDE6; }
+.hero-copy .hero-seat {
+  color: #F0EDE6;
+  text-decoration: underline;
+  text-decoration-color: rgba(232, 200, 138, 0.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+.hero-copy .hero-seat:hover { color: #E8C88A; text-decoration-color: #E8C88A; }
+
+/* ---- What's new, and the two ways in ---- */
+
+.hero-now {
+  position: relative;
+  display: block;
+  padding: 1rem 1.25rem 1.05rem;
+  border-radius: 12px;
+  background: rgba(0, 16, 48, 0.78);
+  border: 1px solid rgba(232, 200, 138, 0.18);
+  color: #F0EDE6;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.hero-now:hover { background: rgba(0, 24, 66, 0.92); border-color: rgba(232, 200, 138, 0.5); color: #F0EDE6; }
+.hero-now:focus-visible { outline: 2px solid #E8C88A; outline-offset: 3px; }
+
+.hero-now-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #E8C88A;
+  margin-bottom: 0.4rem;
+}
+.hero-now-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: #F0EDE6;
+}
+.hero-now-meta {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #A8A49B;
+}
+.hero-now-meta .what { color: #C9C5BC; }
+.hero-now-meta .go { color: #E8C88A; white-space: nowrap; }
+.hero-now-meta .play {
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  line-height: 1.6em;
+  text-align: center;
+  border-radius: 50%;
+  background: #C8964E;
+  color: #0A0A0C;
+  font-size: 0.75em;
+  margin-right: 0.5em;
+  vertical-align: 0.1em;
+}
+
+.hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.6rem; }
+.hero-btn {
+  display: inline-block;
+  padding: 0.72rem 1.4rem;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  background: #C8964E;
+  color: #0A0A0C;
+  border: 1px solid #C8964E;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.hero-btn:hover { background: #E8C88A; border-color: #E8C88A; color: #0A0A0C; }
+.hero-btn:focus-visible { outline: 2px solid #E8C88A; outline-offset: 3px; }
+.hero-btn--quiet { background: transparent; color: #F0EDE6; border-color: rgba(240, 237, 230, 0.24); }
+.hero-btn--quiet:hover { background: rgba(200, 150, 78, 0.1); border-color: #C8964E; color: #E8C88A; }
+
+/* ---- Attention: the newest thing arrives once ----
+   Light Gold Morse (it spells LOOK) travels around the edge one time,
+   coasts almost to a stop, then settles into a steady hairline.
+   Never loops. Reduced motion: the settled border appears directly.
+   Pattern from /Users/david/Documents/Fawkes/Media and Outreach/Branding/HAI_Mark_Final_2026-09-26/Attention_System_Demo_v1.html (v7). */
+.hero-now .edge {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  pointer-events: none;
+  overflow: visible;
+}
+.hero-now .edge rect { fill: none; stroke: #E8C88A; stroke-linecap: round; opacity: 0; }
+.hero-now .edge .morse { stroke-width: 2; }
+.hero-now .edge .settle { stroke-width: 1; }
+.hero-now.armed { border-color: transparent; }
+.hero-now.go .morse { animation: hnTravel 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards, hnMorseFade 2.6s linear forwards; }
+.hero-now.go .settle { animation: hnSettle 1.9s cubic-bezier(0.3, 0.3, 0.2, 1) 1.55s forwards; }
+.hero-now.go { animation: hnBloom 2s cubic-bezier(0.3, 0.3, 0.2, 1) 1.55s forwards; }
+@keyframes hnTravel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -560; } }
+@keyframes hnMorseFade { 0% { opacity: 0; } 8% { opacity: 1; } 65% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes hnSettle {
+  0% { opacity: 0; stroke-width: 2.2; }
+  25% { opacity: 1; stroke-width: 2.5; }
+  55% { opacity: 1; stroke-width: 2.2; }
+  100% { opacity: 0.9; stroke-width: 1; }
+}
+@keyframes hnBloom {
+  0% { box-shadow: 0 0 0 0 rgba(232, 200, 138, 0); }
+  30% { box-shadow: 0 0 22px 2px rgba(232, 200, 138, 0.28); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 200, 138, 0); }
+}
+
+/* ---- The mark: assembles once, then holds ----
+   Lavender reads in from the tail, gold reads out from the center.
+   Delays are baked into layouts/partials/hero-mark.html by
+   scripts/brand/build_hero_mark.py. */
+.hero-mark {
+  margin: 0.4rem 0 0;
+  justify-self: center;
+  width: min(100%, 400px);
+}
+.hero-mark-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.hero-mark-svg .hm-l,
+.hero-mark-svg .hm-g {
+  opacity: 0;
+  animation: hmIn 0.55s ease-out forwards;
+  animation-delay: calc(var(--d, 0s) + 0.35s);
+}
+@keyframes hmIn { from { opacity: 0; } to { opacity: 1; } }
+.hero-mark figcaption {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: #8F8B83;
+  text-align: center;
+  opacity: 0;
+  animation: hmIn 1.2s ease-out 3.1s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mark-svg .hm-l,
+  .hero-mark-svg .hm-g,
+  .hero-mark figcaption { opacity: 1; animation: none; }
+  .hero-now.go .morse, .hero-now.go, .hero-now.go .settle { animation: none; }
+  .hero-now.go .settle { opacity: 0.9; stroke-width: 1; }
+}
+
+/* ---- The chart section: plain words around the picture ---- */
+.hp-viz-featured .hp-viz-lede { max-width: 680px; }
+.hp-viz-featured .hp-viz-lede p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0 0 0.85rem;
+}
+.hp-viz-featured .hp-viz-lede p:last-child { margin-bottom: 0; }
+.hp-viz-featured h2 { max-width: 760px; line-height: 1.25; text-wrap: balance; }
+
+/* ---- The plan, in one screen ---- */
+.hp-plan {
+  background: linear-gradient(180deg, rgba(0, 16, 48, 0.42) 0%, rgba(0, 16, 48, 0) 100%);
+  scroll-margin-top: 64px;
+}
+[data-theme="light"] .hp-plan { background: linear-gradient(180deg, rgba(90, 138, 122, 0.08) 0%, rgba(90, 138, 122, 0) 100%); }
+.hp-plan h2 { text-wrap: balance; }
+.hp-freedoms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 2.25rem;
+}
+.hp-freedom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.55rem 1.4rem 1.4rem;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.hp-freedom::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--facet-start), var(--facet-end));
+}
+.hp-freedom:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-2px); }
+.hp-freedom-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.55rem;
+}
+.hp-freedom-line {
+  display: block;
+  flex-grow: 1;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.hp-freedom-go { display: block; margin-top: 1rem; font-size: 0.86rem; color: var(--accent-primary); }
+
+.hp-plan-qa {
+  max-width: 760px;
+  padding: 1.35rem 1.5rem 1.45rem;
+  border-left: 2px solid var(--accent-sage);
+  background: rgba(90, 138, 122, 0.07);
+  border-radius: 0 10px 10px 0;
+}
+.hp-plan-qa h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.hp-plan-qa p { font-size: 1rem; line-height: 1.72; color: var(--text-secondary); }
+.hp-plan-more { margin-top: 1.75rem; font-size: 0.98rem; color: var(--text-secondary); max-width: 760px; }
+.hp-plan-links { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.hp-plan-links a { font-weight: 500; font-size: 0.95rem; white-space: nowrap; }
+
+/* ---- Tablet and phone ---- */
+@media (max-width: 900px) {
+  .hero-launch-inner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "mark" "copy" "now";
+    row-gap: 1.5rem;
+  }
+  .hero-copy { max-width: 680px; }
+  .hero-now-list { max-width: 680px; }
+  .hero-mark {
+    justify-self: stretch;
+    width: auto;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+  .hero-mark-svg { width: 150px; flex: 0 0 150px; margin-left: -0.5rem; }
+  .hero-mark figcaption { text-align: left; margin: 0 0 0.4rem; max-width: 15rem; }
+  .hp-freedoms { grid-template-columns: 1fr; gap: 0.85rem; }
+}
+@media (max-width: 640px) {
+  .hero.hero--launch { padding: 1.5rem 1.25rem 3rem; min-height: 0; }
+  .hero--launch .hero-eyebrow { margin-bottom: 1rem; }
+  .hero--launch .hero-question { margin-bottom: 1.25rem; }
+  .hero-copy > p:not(.hero-eyebrow) { font-size: 1.02rem; line-height: 1.68; }
+  .hero-links .hero-btn { flex: 1 1 auto; text-align: center; }
+  .hero-now { padding: 0.9rem 1rem 0.95rem; }
+}
+@media (max-width: 360px) {
+  .hero.hero--launch { padding-left: 1rem; padding-right: 1rem; }
+}
