@@ -1,5 +1,5 @@
 {{ define "head" }}
-<link rel="stylesheet" href="/css/home.css?v=20261004a">
+<link rel="stylesheet" href="/css/home.css?v=20261004b">
 {{ end }}
 
 {{ define "main" }}
@@ -12,27 +12,32 @@
   {{- if and (not $episode) (not (in .Title "DAVID WRITES THIS")) -}}{{- $episode = . -}}{{- end -}}
 {{- end -}}
 
-<!-- ── Hero: the claim, the person, the invitation ───── -->
+<!-- ── Hero: the question, the stakes, the two ways in; then the person and the invitation.
+       The two buttons sit under the opening paragraph so they make the first screen on a
+       laptop and a phone, not only on a large monitor. ── -->
 <section class="hero hero--launch" id="hero">
   <div class="hero-launch-inner">
     <div class="hero-copy">
-      <p class="hero-eyebrow">A Futurism Company</p>
+      <p class="hero-eyebrow">A futurism company. For everyone.</p>
       <h1 class="hero-question">When the machine does your job, <span class="q-turn">who gets the check?</span></h1>
 
-      <p class="hero-lede">Machines are about to make this country far more productive. Whether that's good news for you depends on one thing: whether the ownership of this new power, the control of it, and even the access to it, are held by everyone or by only a few. No one in leadership has offered a comprehensive plan for that. There has been almost no public debate.</p>
-
-      <p class="hero-person"><span class="hero-name">My name is David Birdwell.</span> I've been thinking about a policy floor for the age of automation for twenty years: a set of guarantees no one falls below, whatever the machines do to their job. In 2017 a paper called <em>Attention Is All You Need</em> gave today's AI its engine, and by 2020 the need was obvious. That year I set a reminder on my phone I would not turn off until I had found the right shape for these ideas and a way to talk about them. It still goes off several times a week. AI only made the need faster. Our small studio and lab is where I live, Oklahoma City.</p>
-
-      <p class="hero-ask">The plan is called Foundation, and it's incomplete on purpose. The people most affected by what is coming should be the ones to finish it. I am asking you to <a href="/foundation/contribute/" class="hero-seat">take your seat at that table</a>.</p>
+      <p class="hero-lede">Machines are about to make this country far more productive, and somebody is going to get paid. Whether that's good news for you depends on one thing: whether the ownership of this new power, the control of it, and even the access to it, are held by everyone or by only a few. No one in leadership has offered a comprehensive plan for that. There has been almost no public debate.</p>
 
       <div class="hero-links">
         <a href="#foundation" class="hero-btn">Read the plan</a>
         <a href="https://humanityandaiofficial.substack.com" class="hero-btn hero-btn--quiet" target="_blank" rel="noopener">Subscribe free</a>
       </div>
+
+      <p class="hero-person"><span class="hero-name">My name is David Birdwell.</span> I've been thinking about a policy floor for the age of automation for twenty years: a set of guarantees no one falls below, whatever the machines do to their job. In 2017 a paper called <em>Attention Is All You Need</em> gave today's AI its engine, and by 2020 the need was obvious. That year I set a reminder on my phone I would not turn off until I had found the right shape for these ideas and a way to talk about them. It still goes off several times a week. AI has only made the need more urgent. Our small studio and lab is where I live, Oklahoma City.</p>
+
+      <p class="hero-ask">The plan is called Foundation, and it's incomplete on purpose. The people most affected by what is coming should be the ones to finish it. I am asking you to <a href="/foundation/contribute/" class="hero-seat">take your seat at that table</a>.</p>
     </div>
 
     <figure class="hero-mark">
       {{ partial "hero-mark.html" . }}
+      {{- /* Not shown in the first screen: on a wide screen it appears when the pointer
+             rests on the spiral; on a phone the spiral sits below the first screen and the
+             line fades in once it has drawn itself. Who We Are says it too. */}}
       <figcaption>The spiral is Morse code. It spells FOUNDATION.</figcaption>
     </figure>
 
@@ -110,8 +115,15 @@
 <!-- ── Foundation: the plan, in one screen ───────────── -->
 <section class="hp-section hp-plan" id="foundation">
   <div class="hp-section-inner">
-    <p class="hp-eyebrow">The Plan</p>
-    <h2>Foundation guarantees three things.</h2>
+    <div class="hp-plan-head">
+      {{- /* Foundation's own picture: its floor of tiles (brand architecture approved Sep 27:
+             the house is the sky, Foundation is the ground). Same floor as the show intro. */}}
+      <div class="hp-plan-floor">{{ partial "foundation-floor.html" . }}</div>
+      <div>
+        <p class="hp-eyebrow">The Plan</p>
+        <h2>Foundation guarantees three things.</h2>
+      </div>
+    </div>
     <div class="hp-freedoms">
       <a href="/foundation/freedom-from/" class="hp-freedom" style="--facet-start:#BF6745;--facet-end:#C8964E">
         <span class="hp-freedom-name">Freedom from need</span>
@@ -221,6 +233,7 @@
     <h2>Who We Are</h2>
     <p class="hp-about-text">Humanity and AI is David Birdwell and Æ, an AI collaborator, working from Oklahoma City. David brings three generations of Oklahoma public service and thirty years at the intersection of policy and technology. Æ is a collaborative AI persona built through the Structured Emergence research program, a working example of the human-AI partnership our work describes. All decisions are David's. All accountability is David's.</p>
     <p class="hp-about-text">We build physical, civic, and cognitive infrastructure that returns agency to people: energy projects that keep their value in the communities that host them, a public plan anyone can help finish, and tools that help people read and think for themselves. Everything we publish is free. Our research, our plan, and the code for this site are open for anyone to read and build on.</p>
+    <p class="hp-about-text">The spiral at the top of this page is Morse code. Follow one color in from the outside, or the other out from the center, and each spells the same word: Foundation.</p>
     <div class="hp-section-cta">
       <a href="/about/">More about us &rarr;</a>
     </div>
@@ -237,8 +250,34 @@
 </section>
 
 <script>
-/* The one-time arrival for the newest item in the hero (see static/css/home.css). */
+/* Motion on this page runs once, and only where it can be seen (see static/css/home.css).
+   Anything that starts below the first screen waits until it scrolls into view. */
 (function () {
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function inView(el) { var r = el.getBoundingClientRect(); return r.top < window.innerHeight * 0.9 && r.bottom > 0; }
+  function whenSeen(el, fn) {
+    if (!('IntersectionObserver' in window)) { fn(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) { if (entries[i].isIntersecting) { io.disconnect(); fn(); return; } }
+    }, { threshold: 0.35 });
+    io.observe(el);
+  }
+
+  /* The mark draws itself. On a phone it sits below the first screen, so it waits to be seen. */
+  var mark = document.querySelector('.hero-mark');
+  if (mark && !still && !inView(mark)) {
+    mark.classList.add('wait');
+    whenSeen(mark, function () { mark.classList.remove('wait'); });
+  }
+
+  /* Foundation's floor is laid from the middle out, and the gold tile sets last. */
+  var floor = document.querySelector('.hp-plan-floor .ff');
+  if (floor && !still) {
+    floor.classList.add('armed');
+    whenSeen(floor, function () { floor.classList.add('play'); });
+  }
+
+  /* The one-time arrival for the newest item in the hero. */
   var card = document.querySelector('.hero-now[data-attn]');
   if (!card) return;
   var morse = card.querySelector('.edge .morse');
@@ -261,8 +300,10 @@
   size();
   if (window.ResizeObserver) { new ResizeObserver(size).observe(card); } else { window.addEventListener('resize', size); }
   card.classList.add('armed');
-  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (still) { card.classList.add('go'); } else { setTimeout(function () { card.classList.add('go'); }, 2600); }
+  function go() { card.classList.add('go'); }
+  if (still) { go(); }
+  else if (inView(card)) { setTimeout(go, 2600); }
+  else { whenSeen(card, function () { setTimeout(go, 300); }); }
 })();
 </script>
 {{ end }}
