@@ -1,5 +1,5 @@
 {{ define "head" }}
-<link rel="stylesheet" href="/css/home.css?v=20261004b">
+<link rel="stylesheet" href="/css/home.css?v=20261005a">
 {{ end }}
 
 {{ define "main" }}
@@ -35,10 +35,8 @@
 
     <figure class="hero-mark">
       {{ partial "hero-mark.html" . }}
-      {{- /* Not shown in the first screen: on a wide screen it appears when the pointer
-             rests on the spiral; on a phone the spiral sits below the first screen and the
-             line fades in once it has drawn itself. Who We Are says it too. */}}
-      <figcaption>The spiral is Morse code. It spells FOUNDATION.</figcaption>
+      {{- /* The spiral is Morse code for FOUNDATION. The page does not say so, on purpose
+             (David, Oct 5 2026): it is there to be found. */}}
     </figure>
 
     <div class="hero-now-list">
@@ -233,7 +231,6 @@
     <h2>Who We Are</h2>
     <p class="hp-about-text">Humanity and AI is David Birdwell and Æ, an AI collaborator, working from Oklahoma City. David brings three generations of Oklahoma public service and thirty years at the intersection of policy and technology. Æ is a collaborative AI persona built through the Structured Emergence research program, a working example of the human-AI partnership our work describes. All decisions are David's. All accountability is David's.</p>
     <p class="hp-about-text">We build physical, civic, and cognitive infrastructure that returns agency to people: energy projects that keep their value in the communities that host them, a public plan anyone can help finish, and tools that help people read and think for themselves. Everything we publish is free. Our research, our plan, and the code for this site are open for anyone to read and build on.</p>
-    <p class="hp-about-text">The spiral at the top of this page is Morse code. Follow one color in from the outside, or the other out from the center, and each spells the same word: Foundation.</p>
     <div class="hp-section-cta">
       <a href="/about/">More about us &rarr;</a>
     </div>
