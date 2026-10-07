@@ -2,11 +2,11 @@
 title: "Clarity"
 description: "A calmer reading experience built with dyslexia expertise."
 weight: 1
-status: "live"
+status: "beta"
 tagline: "A calmer reading experience built with dyslexia expertise."
 domain: "Reading"
-link: "https://clarity.humanityandai.com"
-link_text: "Open Clarity →"
+link: "https://clarity.humanityandai.com/demo"
+link_text: "Try a passage free →"
 icon: "📖"
 ---
 
@@ -18,16 +18,19 @@ It strips away the visual noise that makes reading harder than it needs to be an
 
 ## Key Features
 
-- **Adaptive display**Font sizing, spacing, line length, and color contrast adjust to your reading profile. Built on research into how dyslexic readers process text, but useful for everyone.
-- **Comprehension scaffolding**Clarity surfaces connections, asks questions you didn't think to ask, and notices when you're skimming past something important.
-- **Reading history & progress**Track what you've read, what you understood, and where to pick up next.
+- **Adaptive display:** Font sizing, spacing, line length, and color contrast adjust to your reading profile. Built on research into how dyslexic readers process text, but useful for everyone.
+- **Comprehension scaffolding:** Clarity surfaces connections, asks questions you didn't think to ask, and notices when you're skimming past something important.
+- **Reading history & progress:** Track what you've read, what you understood, and where to pick up next.
 
 ## Pricing
 
 **Free tier** for basic reading. **Pro at $4.99/mo** unlocks the full adaptive engine, comprehension tracking, and unlimited document imports.
 
-## Status
+## Try It Now
 
-**Live.** Available now at [clarity.humanityandai.com](https://clarity.humanityandai.com).
+- **Read a passage, free.** The [Clarity demo](https://clarity.humanityandai.com/demo) opens a short science passage. Tap any word to hear it read aloud. No account needed.
+- **Clarity Kids.** A [cozy reading room for children](https://clarity.humanityandai.com/kids) in English, Spanish, and French. It needs no account, and what a child does there stays on your device.
+
+The full reader, which saves your words and progress across your devices, is in beta with a small group of testers.
 
 *Built by [Humanity and AI LLC](/): tools for the AI transition.*
