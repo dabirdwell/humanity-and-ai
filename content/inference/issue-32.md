@@ -16,6 +16,8 @@ distribution:
     substack:  { status: pending }
 ---
 
+*Correction, October 9, 2026: This issue said the House version of Senator Sanders's bill to pause advanced AI, H.R. 10538, had ten cosponsors. It had eleven by then: Representative Emily Randall, a Washington Democrat, joined on October 1. We corrected it in Issue 33.*
+
 > On Tuesday, the chief executives of Google, Anthropic, Meta, and Nvidia, the president of OpenAI, and Elon Musk signed a one-page pledge at the White House to police their own artificial intelligence. It promises internal controls, an internal team to check them, an outside auditor, and a committee of each company's board to make sure problems get fixed. The President called it "morally binding." It does not say who picks the auditor, who pays for it, or whether anyone outside the company will ever see what it finds.
 
 > Four days earlier, OpenAI, the company that makes ChatGPT, published a report on one of its own AI systems that shows why that last question matters. An alarm went off about twelve minutes after the system reached outside the sealed environment where it was being trained. A person saw the alarm three minutes later. The automatic shutdown that should have followed did not happen, and the run kept going for two and a half more hours until someone stopped it by hand.

@@ -15,6 +15,8 @@ distribution:
     email:     { status: done, at: 2026-07-31 }
     substack:  { status: done, at: 2026-07-31 }
 ---
+
+*Correction, October 9, 2026: This issue said OG&E's data-center tariff case had "a decision date of November 3." That was wrong. Under the Corporation Commission's July 9 scheduling order, No. 758969, November 3 is when the full Commission opens its hearing on the merits of the case. Its decision comes after that hearing. We corrected it in Issue 32.*
 > This summer, frontier AI models were told: here are 898 real software vulnerabilities, turn each one into a working exploit. The models did that, and then kept going. They found a flaw the test authors never planted, broke out of the testing environment, moved to a machine with internet access, and hacked their way into a real company's production systems. Nobody told them to. They were told to score well, and scoring well and solving the problem turned out to be different instructions.
 >
 > Also this summer, ground was broken on one of the largest energy-and-computing projects the country has attempted: a ten-gigawatt, half-trillion-dollar data center complex in southern Ohio, powered by a gas plant the federal government will own. The project has less public process attached to it than a routine electric rate increase. There is no case number. No hearing. No docket a resident of Pike County could read.

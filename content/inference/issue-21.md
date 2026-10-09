@@ -17,6 +17,8 @@ distribution:
     substack:  { status: done, at: 2026-07-17 }
 ---
 
+*Correction, October 9, 2026: This issue said the Corporation Commission would decide OG&E's data-center tariff case on November 3. That was wrong. Under the Commission's July 9 scheduling order, No. 758969, November 3 is when the full Commission opens its hearing on the merits of the case. Its decision comes after that hearing. We corrected it in Issue 32.*
+
 
 > Last week this newsletter told you Oklahoma's new priced gate had taken effect but not yet produced a result, and promised to read the docket as it developed, cause number and all. This week the docket answered. The first tariff filed under the Data Center Consumer Ratepayer Protection Act now has a public case number, PUD2026-000046, a procedural schedule approved 3 to 0, and a decision date: November 3, 2026.
 >
