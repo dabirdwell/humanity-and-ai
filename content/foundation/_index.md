@@ -23,7 +23,7 @@ That was the machine against you before the smart machines had a thing to do wit
 
 This work comes from Oklahoma, from a family that has spent three generations in public service.
 
-In 2020, in the middle of Covid, I set a reminder on my phone. It says: Pursue Universal Basic Citizenship. It has gone off every single morning since. Never completed. Never dismissed.
+In 2020, in the middle of Covid, I set a reminder on my phone. It says: Pursue Universal Basic Citizenship. For a while, it went off several times a day. Now it's once a week. I've never checked it off. I told myself I wouldn't, until I'd found the right shape for this idea, and a way to talk about it with all of you.
 
 In June of 2023, I announced the idea in a letter to the editor. A professor said there wasn't enough evidence. I kept the letter, and I kept working. I thought someone with more influence or funding would bring a plan to the public. Nobody did.
 
