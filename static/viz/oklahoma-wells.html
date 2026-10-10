@@ -31,10 +31,10 @@ h1{font-size:22px;font-weight:500;margin:0 0 4px}
 </head>
 <body>
 <h1>More than 20,000 holes in the ground</h1>
-<p class="sub">Oklahoma's abandoned oil wells — liability or opportunity?</p>
+<p class="sub">Oklahoma's known abandoned oil and gas wells: a cost today, or an opportunity?</p>
 <div class="stat-grid">
-  <div class="stat"><p class="num" style="color:#D85A30">20,000+</p><p class="lbl">Abandoned wells</p></div>
-  <div class="stat"><p class="num" style="color:#BA7517">$3.7B</p><p class="lbl">Est. cleanup cost</p></div>
+  <div class="stat"><p class="num" style="color:#D85A30">20,000+</p><p class="lbl">Known abandoned wells</p></div>
+  <div class="stat"><p class="num" style="color:#BA7517">~$575M</p><p class="lbl">State's rough cost to plug them</p></div>
   <div class="stat"><p class="num" style="color:#0F6E56">$0</p><p class="lbl">Current revenue</p></div>
 </div>
 <div class="toggle-row">
@@ -48,43 +48,45 @@ h1{font-size:22px;font-weight:500;margin:0 0 4px}
   <span><span class="dot" style="background:#1D9E75"></span> Phoenix (revenue)</span>
 </div>
 <p class="counter" id="ctr">Each dot = ~10 wells. <strong>More than 20,000</strong> liabilities waiting to become assets.</p>
-<div class="credit">Æ — <a href="https://humanityandai.com">Humanity and AI</a> · <a href="https://humanityandai.com/foundation/">Phoenix Wells</a></div>
+<div class="credit">Æ · <a href="https://humanityandai.com">Humanity and AI</a> · <a href="https://humanityandai.com/phoenix-wells/">Phoenix Wells</a> · Wells and cost: Oklahoma Corporation Commission, Jan 27, 2025</div>
 <script>
 const cv=document.getElementById('wc'),c=cv.getContext('2d');
 const dark=matchMedia('(prefers-color-scheme:dark)').matches;
 let wells=[],animating=false,animFrame=0;
 function resize(){const r=cv.parentElement.getBoundingClientRect();cv.width=r.width*2;cv.height=r.height*2}
+// One fixed illustration, not a forecast: about 15% converted, 25% capped, the rest still waiting.
+function targetFor(i){const t=(i*37)%100;return t<15?'phoenix':(t<40?'capped':'abandoned')}
 function initWells(){
   wells=[];const cx=cv.width/2,cy=cv.height/2;
-  for(let i=0;i<2200;i++){
+  for(let i=0;i<2041;i++){
     let angle=Math.random()*Math.PI*2,r=Math.random()*Math.min(cv.width,cv.height)*0.42;
     r=Math.pow(r/Math.min(cv.width,cv.height)*2.4,0.7)*Math.min(cv.width,cv.height)*0.42;
     let cluster=Math.random();
     if(cluster<0.3){let ca=Math.random()*Math.PI*2,cr=Math.random()*60+20;
-      wells.push({x:cx+Math.cos(ca)*(r*0.5)+Math.cos(angle)*cr,y:cy+Math.sin(ca)*(r*0.5)+Math.sin(angle)*cr,state:'abandoned',convertFrame:Math.floor(Math.random()*180)+20});
-    }else{wells.push({x:cx+Math.cos(angle)*r,y:cy+Math.sin(angle)*r,state:'abandoned',convertFrame:Math.floor(Math.random()*180)+20})}
+      wells.push({x:cx+Math.cos(ca)*(r*0.5)+Math.cos(angle)*cr,y:cy+Math.sin(ca)*(r*0.5)+Math.sin(angle)*cr,state:'abandoned',target:targetFor(i),convertFrame:Math.floor(Math.random()*180)+20});
+    }else{wells.push({x:cx+Math.cos(angle)*r,y:cy+Math.sin(angle)*r,state:'abandoned',target:targetFor(i),convertFrame:Math.floor(Math.random()*180)+20})}
   }
 }
 function redraw(){
   resize();initWells();const phoenix=document.getElementById('showPhoenix').checked;
   c.clearRect(0,0,cv.width,cv.height);let abandoned=0,capped=0,converted=0;
   for(let w of wells){let color='#E24B4A';
-    if(phoenix){if(Math.random()<0.15){w.state='phoenix';color='#1D9E75';converted++}
-    else if(Math.random()<0.3){w.state='capped';color='#EF9F27';capped++}else{abandoned++}}
+    if(phoenix){if(w.target==='phoenix'){w.state='phoenix';color='#1D9E75';converted++}
+    else if(w.target==='capped'){w.state='capped';color='#EF9F27';capped++}else{abandoned++}}
     else{abandoned++}
     c.beginPath();c.arc(w.x,w.y,3,0,Math.PI*2);c.fillStyle=color;c.globalAlpha=0.7;c.fill();c.globalAlpha=1}
-  if(phoenix){document.getElementById('ctr').innerHTML=`<strong style="color:#1D9E75">${converted*10}</strong> converted · <strong style="color:#EF9F27">${capped*10}</strong> capped · <strong style="color:#E24B4A">${abandoned*10}</strong> remaining`}
+  if(phoenix){document.getElementById('ctr').innerHTML=`<strong style="color:#1D9E75">${converted*10}</strong> converted · <strong style="color:#EF9F27">${capped*10}</strong> capped · <strong style="color:#E24B4A">${abandoned*10}</strong> remaining <span style="opacity:.7">(one illustration, not a forecast)</span>`}
   else{document.getElementById('ctr').innerHTML=`Each dot = ~10 wells. <strong>More than 20,000</strong> liabilities waiting to become assets.`}
 }
 function animLoop(){
   if(!animating)return;animFrame++;resize();c.clearRect(0,0,cv.width,cv.height);
   let abandoned=0,capped=0,converted=0;
   for(let w of wells){let color='#E24B4A';
-    if(animFrame>w.convertFrame+60){w.state='phoenix';color='#1D9E75';converted++}
-    else if(animFrame>w.convertFrame){w.state='capped';color='#EF9F27';capped++}else{abandoned++}
+    if(w.target==='phoenix'&&animFrame>w.convertFrame+60){w.state='phoenix';color='#1D9E75';converted++}
+    else if(w.target!=='abandoned'&&animFrame>w.convertFrame){w.state='capped';color='#EF9F27';capped++}else{abandoned++}
     let pulse=w.state==='phoenix'?1+Math.sin(animFrame*0.05+w.x*0.01)*0.5:0;
     c.beginPath();c.arc(w.x,w.y,3+pulse,0,Math.PI*2);c.fillStyle=color;c.globalAlpha=w.state==='phoenix'?0.85:0.6;c.fill();c.globalAlpha=1}
-  document.getElementById('ctr').innerHTML=`<strong style="color:#1D9E75">${converted*10}</strong> converted · <strong style="color:#EF9F27">${capped*10}</strong> capped · <strong style="color:#E24B4A">${abandoned*10}</strong> remaining`;
+  document.getElementById('ctr').innerHTML=`<strong style="color:#1D9E75">${converted*10}</strong> converted · <strong style="color:#EF9F27">${capped*10}</strong> capped · <strong style="color:#E24B4A">${abandoned*10}</strong> remaining <span style="opacity:.7">(one illustration, not a forecast)</span>`;
   if(animFrame<300)requestAnimationFrame(animLoop);else{animating=false;document.getElementById('animate').checked=false}
 }
 function toggleAnim(){animating=document.getElementById('animate').checked;if(animating){animFrame=0;resize();initWells();animLoop()}}
