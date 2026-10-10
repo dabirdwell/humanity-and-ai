@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["foundation", "poverty", "policy", "interactive", "systems"]
 preview_bg: "linear-gradient(135deg, rgba(226,75,74,0.2), rgba(83,74,183,0.15), #0a0a0f)"
 preview_icon: "🀱"
+draft: true
 ---
 
 One crisis triggers the next. That's not a metaphor. It's how poverty actually works. Job loss leads to debt. Debt leads to housing loss. Housing loss leads to family stress. Family stress lands on the children. And the cycle restarts a generation later.

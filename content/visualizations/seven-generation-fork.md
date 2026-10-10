@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["foundation", "philosophy", "future", "interactive", "seven-generations"]
 preview_bg: "linear-gradient(135deg, rgba(29,158,117,0.2), rgba(226,75,74,0.15), #0a0a0f)"
 preview_icon: "🌳"
+draft: true
 ---
 
 The Haudenosaunee (Iroquois) Seventh Generation Principle says that decisions should be made with the welfare of the seventh generation in mind. That's roughly 175 years. Here are both paths.

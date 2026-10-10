@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["AI", "labor", "automation", "interactive", "economy"]
 preview_bg: "linear-gradient(135deg, rgba(226,75,74,0.2), rgba(29,158,117,0.15), #0a0a0f)"
 preview_icon: "📊"
+draft: true
 ---
 
 Andrej Karpathy (former OpenAI researcher, Tesla AI lead) rated the average American job at 5.3 out of 10 for AI automation exposure. Software developers scored 8-9. Plumbers scored under 2. Search for your job.

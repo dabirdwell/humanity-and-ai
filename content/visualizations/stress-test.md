@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["economy", "healthcare", "housing", "labor", "interactive", "personal"]
 preview_bg: "linear-gradient(135deg, rgba(243,156,18,0.15), rgba(231,76,60,0.1), #0a0a0f)"
 preview_icon: "🧭"
+draft: true
 ---
 
 Answer honestly. Five questions about your actual life, not a hypothetical one.

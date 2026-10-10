@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["economy", "policy", "healthcare", "housing", "education", "interactive"]
 preview_bg: "linear-gradient(135deg, rgba(231,76,60,0.18), rgba(78,205,196,0.08), #0a0a0f)"
 preview_icon: "⚖️"
+draft: true
 ---
 
 Six choices. Toggle between them. Each one is real: sourced, documented, and in effect right now.

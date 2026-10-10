@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["foundation", "economy", "healthcare", "interactive", "inequality"]
 preview_bg: "linear-gradient(135deg, rgba(226,75,74,0.2), rgba(29,158,117,0.15), #0a0a0f)"
 preview_icon: "🧾"
+draft: true
 ---
 
 The most common objection to Foundation is "how do we pay for it?" The real question is: how much are you already paying for the system you have?

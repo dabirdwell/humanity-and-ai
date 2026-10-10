@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["healthcare", "housing", "food", "labor", "interactive", "economy"]
 preview_bg: "linear-gradient(135deg, rgba(231,76,60,0.2), rgba(243,156,18,0.1), #0a0a0f)"
 preview_icon: "⏳"
+draft: true
 ---
 
 Six counters, running since you opened the page. Every number is an annual US figure, divided to the second. Pause anytime.

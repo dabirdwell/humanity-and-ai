@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["healthcare", "mental-health", "biology", "interactive", "inequality"]
 preview_bg: "linear-gradient(135deg, rgba(226,75,74,0.2), rgba(212,83,126,0.15), #0a0a0f)"
 preview_icon: "🧬"
+draft: true
 ---
 
 Your body doesn't know the difference between a tiger and a past-due notice. Cortisol doesn't care what the threat is. It floods the same systems either way. The difference is that the tiger leaves. The past-due notice doesn't.

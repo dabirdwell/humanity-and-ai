@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["economy", "housing", "healthcare", "food", "interactive", "inequality"]
 preview_bg: "linear-gradient(135deg, rgba(226,75,74,0.2), rgba(186,117,23,0.1), #0a0a0f)"
 preview_icon: "💸"
+draft: true
 ---
 
 At $28,000 a year, you pay about $3,400 extra: just for being poor. At $15,000, it's closer to $3,800: nearly a quarter of your income. At $80,000, it disappears entirely.

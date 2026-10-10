@@ -6,6 +6,7 @@ type: "visualizations"
 tags: ["oklahoma", "phoenix-wells", "foundation", "interactive", "leapfrog"]
 preview_bg: "linear-gradient(135deg, rgba(216,90,48,0.2), rgba(83,74,183,0.15), #0a0a0f)"
 preview_icon: "🏜"
+draft: true
 ---
 
 Every ranking that puts Oklahoma near the bottom is also a ranking that puts Oklahoma at the top of marginal return. Dead last in education spending means the most room to improve. More than 20,000 known abandoned wells means thousands of holes already drilled, waiting to be tested for geothermal heat.
