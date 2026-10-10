@@ -44,7 +44,7 @@ h1{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:500;letter-
 }
 .foundation-map-note strong { color: #dcfce7; }
 .foundation-map-note a { color: #4ade80; text-decoration: none; }
-padding:14px 18px;margin-bottom:16px;font-size:13px;color:#bbb;line-height:1.7;border-radius:0 8px 8px 0}
+.ok-callout{background:rgba(255,107,53,.06);border-left:3px solid #ff6b35;padding:14px 18px;margin-bottom:16px;font-size:13px;color:#bbb;line-height:1.7;border-radius:0 8px 8px 0}
 .ok-callout strong{color:#e0e0e0;font-weight:500}
 .ok-callout .ok-stat{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#ff6b35}
 .source-line{font-size:10px;color:#555;letter-spacing:.3px;text-align:center;margin-top:4px}
@@ -71,10 +71,8 @@ html:not(.in-iframe) body{min-height:100vh}
   <p class="subtitle">Select a layer to explore</p>
 
   <div class="toggle-bar">
-    <button class="toggle-btn active" data-layer="mental_health">Mental Health Shortage</button>
+    <button class="toggle-btn active" data-layer="uninsured">Uninsured Rate</button>
     <button class="toggle-btn" data-layer="food_access">Food Access</button>
-    <button class="toggle-btn" data-layer="uninsured">Uninsured Rate</button>
-    <button class="toggle-btn foundation-btn" data-layer="foundation_coverage">⚡ With Foundation</button>
   </div>
 
   <div class="map-wrap">
@@ -126,11 +124,11 @@ const layers = {
     }
   },
   food_access: {
-    label: "Food Desert",
+    label: "Low Food Access",
     unit: "% low-income, low-access",
     source: "USDA Food Access Research Atlas, 2019",
     sourceUrl: "https://www.ers.usda.gov/data-products/food-access-research-atlas",
-    okNote: "8.9% of Oklahomans are low-income and live far from a grocery store.",
+    okNote: "In plain words: about one in eleven Oklahomans is low-income and lives far from a grocery store.",
     natAvg: 6.1,
     data: {
       "AL":8.8,"AK":7.9,"AZ":8.7,"AR":10.0,"CA":3.2,"CO":5.0,"CT":4.3,
@@ -146,10 +144,10 @@ const layers = {
   uninsured: {
     label: "Uninsured Rate",
     unit: "% without insurance (0\u201364)",
-    source: "Census ACS / KFF, 2024",
-    sourceUrl: "https://www.census.gov/topics/health/health-insurance.html",
-    okNote: "Oklahoma is a non-expansion state. The coverage gap affects hundreds of thousands.",
-    natAvg: 9.5,
+    source: "KFF analysis of the Census Bureau's American Community Survey, 2024",
+    sourceUrl: "https://www.kff.org/state-health-policy-data/state-indicator/people-0-64-uninsured-rate-by-age/",
+    okNote: "Oklahoma expanded Medicaid on July 1, 2021.",
+    natAvg: 9.8,
     data: {
       "AL":10.0,"AK":12.9,"AZ":12.6,"AR":11.2,"CA":6.9,"CO":9.2,"CT":6.9,
       "DE":8.6,"DC":5.3,"FL":13.6,"GA":14.0,"HI":4.1,"ID":10.9,"IL":8.1,
@@ -204,7 +202,7 @@ const stateNames = {
   "VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
 };
 
-let activeLayer = "mental_health";
+let activeLayer = "uninsured";
 let geoData = null;
 
 function colorScale(t) {
@@ -398,9 +396,9 @@ async function init() {
   });
 
   updateMap();
+}
 
-  // Self-size iframe
-  // Auto-resize when embedded as iframe
+// Auto-resize when embedded as iframe
   function reportHeight() {
     window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
   }
