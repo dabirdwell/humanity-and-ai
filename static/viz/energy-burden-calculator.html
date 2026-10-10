@@ -388,7 +388,7 @@ html:not(.in-iframe) body{min-height:100vh}
     <div class="input-group">
       <label>Your State</label>
       <select id="state" onchange="calculate()">
-        <option value="">— Select state —</option>
+        <option value="">Select your state</option>
       </select>
     </div>
   </div>
@@ -397,7 +397,7 @@ html:not(.in-iframe) body{min-height:100vh}
     <input type="checkbox" id="use-actual">
     <div>
       <div class="toggle-label"><strong>Use my actual monthly energy bill</strong></div>
-      <div class="toggle-label">Check if you know your average monthly bill — more accurate than state estimates.</div>
+      <div class="toggle-label">Check this if you know your average monthly bill. It is more accurate than the state average.</div>
       <div class="bill-input-row" id="bill-row">
         <span class="currency">$</span>
         <input type="number" id="monthly-bill" placeholder="150" min="0" step="10" oninput="calculate()" onclick="event.stopPropagation()">
@@ -413,60 +413,60 @@ html:not(.in-iframe) body{min-height:100vh}
 </div>
 
 <script>
-// State data: [avg annual energy cost ($), state name]
-// Source: EIA RECS 2020 + EIA State Energy Data System estimates
+// State data: average annual home energy spending per household, all fuels, 2020 prices
+// Source: EIA Residential Energy Consumption Survey (RECS) 2020, state table released March 2023
 const stateData = {
-  AL: { name: "Alabama",        cost: 1832 },
-  AK: { name: "Alaska",         cost: 2214 },
-  AZ: { name: "Arizona",        cost: 1554 },
-  AR: { name: "Arkansas",       cost: 1698 },
-  CA: { name: "California",     cost: 1188 },
-  CO: { name: "Colorado",       cost: 1320 },
-  CT: { name: "Connecticut",    cost: 2076 },
-  DE: { name: "Delaware",       cost: 1644 },
-  DC: { name: "D.C.",           cost: 1320 },
-  FL: { name: "Florida",        cost: 1740 },
-  GA: { name: "Georgia",        cost: 1668 },
-  HI: { name: "Hawaii",         cost: 2616 },
-  ID: { name: "Idaho",          cost: 1284 },
-  IL: { name: "Illinois",       cost: 1476 },
-  IN: { name: "Indiana",        cost: 1620 },
-  IA: { name: "Iowa",           cost: 1512 },
-  KS: { name: "Kansas",         cost: 1512 },
-  KY: { name: "Kentucky",       cost: 1740 },
-  LA: { name: "Louisiana",      cost: 1812 },
-  ME: { name: "Maine",          cost: 2028 },
-  MD: { name: "Maryland",       cost: 1668 },
-  MA: { name: "Massachusetts",  cost: 2100 },
-  MI: { name: "Michigan",       cost: 1572 },
-  MN: { name: "Minnesota",      cost: 1524 },
-  MS: { name: "Mississippi",    cost: 1764 },
-  MO: { name: "Missouri",       cost: 1596 },
-  MT: { name: "Montana",        cost: 1296 },
-  NE: { name: "Nebraska",       cost: 1464 },
-  NV: { name: "Nevada",         cost: 1476 },
-  NH: { name: "New Hampshire",  cost: 2124 },
-  NJ: { name: "New Jersey",     cost: 1764 },
-  NM: { name: "New Mexico",     cost: 1284 },
-  NY: { name: "New York",       cost: 1728 },
-  NC: { name: "North Carolina", cost: 1596 },
-  ND: { name: "North Dakota",   cost: 1608 },
-  OH: { name: "Ohio",           cost: 1572 },
-  OK: { name: "Oklahoma",       cost: 1572 },
-  OR: { name: "Oregon",         cost: 1188 },
-  PA: { name: "Pennsylvania",   cost: 1716 },
-  RI: { name: "Rhode Island",   cost: 1956 },
-  SC: { name: "South Carolina", cost: 1728 },
-  SD: { name: "South Dakota",   cost: 1440 },
-  TN: { name: "Tennessee",      cost: 1728 },
-  TX: { name: "Texas",          cost: 1812 },
-  UT: { name: "Utah",           cost: 1200 },
-  VT: { name: "Vermont",        cost: 1908 },
-  VA: { name: "Virginia",       cost: 1620 },
-  WA: { name: "Washington",     cost: 1044 },
-  WV: { name: "West Virginia",  cost: 1656 },
-  WI: { name: "Wisconsin",      cost: 1488 },
-  WY: { name: "Wyoming",        cost: 1344 },
+  AL: { name: "Alabama",        cost: 2082 },
+  AK: { name: "Alaska",         cost: 3018 },
+  AZ: { name: "Arizona",        cost: 1994 },
+  AR: { name: "Arkansas",       cost: 1926 },
+  CA: { name: "California",     cost: 1656 },
+  CO: { name: "Colorado",       cost: 1342 },
+  CT: { name: "Connecticut",    cost: 2808 },
+  DE: { name: "Delaware",       cost: 1910 },
+  DC: { name: "D.C.",           cost: 1197 },
+  FL: { name: "Florida",        cost: 1654 },
+  GA: { name: "Georgia",        cost: 2180 },
+  HI: { name: "Hawaii",         cost: 2058 },
+  ID: { name: "Idaho",          cost: 1520 },
+  IL: { name: "Illinois",       cost: 1720 },
+  IN: { name: "Indiana",        cost: 2111 },
+  IA: { name: "Iowa",           cost: 1854 },
+  KS: { name: "Kansas",         cost: 1984 },
+  KY: { name: "Kentucky",       cost: 1848 },
+  LA: { name: "Louisiana",      cost: 1704 },
+  ME: { name: "Maine",          cost: 2304 },
+  MD: { name: "Maryland",       cost: 1924 },
+  MA: { name: "Massachusetts",  cost: 2453 },
+  MI: { name: "Michigan",       cost: 2192 },
+  MN: { name: "Minnesota",      cost: 1833 },
+  MS: { name: "Mississippi",    cost: 1887 },
+  MO: { name: "Missouri",       cost: 1909 },
+  MT: { name: "Montana",        cost: 1511 },
+  NE: { name: "Nebraska",       cost: 1586 },
+  NV: { name: "Nevada",         cost: 1690 },
+  NH: { name: "New Hampshire",  cost: 2530 },
+  NJ: { name: "New Jersey",     cost: 2034 },
+  NM: { name: "New Mexico",     cost: 1492 },
+  NY: { name: "New York",       cost: 2319 },
+  NC: { name: "North Carolina", cost: 1731 },
+  ND: { name: "North Dakota",   cost: 1648 },
+  OH: { name: "Ohio",           cost: 1847 },
+  OK: { name: "Oklahoma",       cost: 1803 },
+  OR: { name: "Oregon",         cost: 1642 },
+  PA: { name: "Pennsylvania",   cost: 2015 },
+  RI: { name: "Rhode Island",   cost: 2617 },
+  SC: { name: "South Carolina", cost: 1918 },
+  SD: { name: "South Dakota",   cost: 1709 },
+  TN: { name: "Tennessee",      cost: 1759 },
+  TX: { name: "Texas",          cost: 1800 },
+  UT: { name: "Utah",           cost: 1647 },
+  VT: { name: "Vermont",        cost: 2407 },
+  VA: { name: "Virginia",       cost: 2023 },
+  WA: { name: "Washington",     cost: 1461 },
+  WV: { name: "West Virginia",  cost: 1976 },
+  WI: { name: "Wisconsin",      cost: 1779 },
+  WY: { name: "Wyoming",        cost: 1802 },
 };
 
 // National benchmarks
@@ -474,7 +474,7 @@ const NATIONAL_MEDIAN_BURDEN = 3.1;
 const LOW_INCOME_AVG_BURDEN = 8.1;
 const HIGH_THRESHOLD = 6;
 const SEVERE_THRESHOLD = 10;
-const NATIONAL_AVG_COST = 1609;
+const NATIONAL_AVG_COST = 1884; // RECS 2020, all homes
 
 // Populate state dropdown
 const sel = document.getElementById('state');
@@ -491,7 +491,8 @@ Object.entries(stateData)
 function toggleBill(e) {
   if (e) e.stopPropagation();
   const cb = document.getElementById('use-actual');
-  cb.checked = !cb.checked;
+  // A click on the checkbox itself has already toggled it; only toggle for clicks on the text.
+  if (!(e && e.target === cb)) cb.checked = !cb.checked;
   document.getElementById('bill-row').classList.toggle('visible', cb.checked);
   calculate();
 }
@@ -519,9 +520,9 @@ function getContextLine(burden, stateCode, annualCost) {
   if (burden < HIGH_THRESHOLD) {
     return `You're below the 6% threshold that defines a high energy burden. Your estimated energy bill of ~$${monthly}/month represents a manageable share of your income.`;
   } else if (burden < SEVERE_THRESHOLD) {
-    return `Above the 6% threshold means your household is energy-burdened — likely making trade-offs between utilities and other necessities like food or healthcare.`;
+    return `Above the 6% threshold, your household is energy-burdened, and likely making trade-offs between utilities and other necessities like food or health care.`;
   } else {
-    return `At ${burden.toFixed(1)}%, you're in severe energy burden territory. 1 in 4 low-income households faces this. Weatherization programs, LIHEAP assistance, and community solar may help reduce this cost.`;
+    return `At ${burden.toFixed(1)}%, you're in severe energy burden territory. About 2 in 5 low-income households pay more than 10 percent. Weatherization programs, LIHEAP assistance, and community solar may help reduce this cost.`;
   }
 }
 
@@ -551,70 +552,47 @@ function calculate() {
   const color = getColor(burden);
   const barLeft = getBarLeft(burden);
 
-  // Phoenix Wells: community-owned energy removes utility profit extraction
-  // Conservative estimate: 45% cost reduction (no shareholder returns, no markups)
-  const PHOENIX_REDUCTION = 0.45;
-  const phoenixCost = annualCost * (1 - PHOENIX_REDUCTION);
-  const phoenixBurden = (phoenixCost / income) * 100;
-  const phoenixColor = getColor(phoenixBurden);
-  const phoenixLeft = getBarLeft(phoenixBurden);
-
   const dataNote = useActual && monthlyBill > 0
     ? 'Based on your actual bill'
-    : `Based on ${stateInfo.name} average (EIA RECS 2020)`;
+    : `Based on the ${stateInfo.name} average (EIA RECS 2020)`;
+
+  const numColor = color==='green'?'#22c55e':color==='yellow'?'#eab308':'#ef4444';
+  const costLine = useActual && monthlyBill > 0
+    ? `Your bill works out to about <strong>$${Math.round(annualCost).toLocaleString()}/year</strong>.`
+    : `The average ${stateInfo.name} household spent <strong>$${stateInfo.cost.toLocaleString()}/year</strong> on home energy in 2020.`;
 
   area.innerHTML = `
-    <div class="compare-split">
+    <div class="compare-split" style="grid-template-columns:1fr">
       <div class="compare-panel now-side">
-        <div class="cp-flag">Today</div>
-        <div class="cp-number">${burden.toFixed(1)}%</div>
+        <div class="cp-flag">Your estimate</div>
+        <div class="cp-number" style="color:${numColor}">${burden.toFixed(1)}%</div>
         <div class="cp-label">of income on energy</div>
         <div class="threshold-bar" style="max-width:100%;margin:12px auto 8px">
-          <div class="bar-marker" style="left:${barLeft}%;background:${color==='green'?'#22c55e':color==='yellow'?'#eab308':'#ef4444'}"></div>
+          <div class="bar-marker" style="left:${barLeft}%;background:${numColor}"></div>
         </div>
         <div class="cp-sub">${getStatusLabel(burden)}<br>~$${Math.round(annualCost/12)}/month</div>
-      </div>
-      <div class="compare-panel phoenix-side">
-        <div class="cp-flag">⚡ Phoenix Wells</div>
-        <div class="cp-number">${phoenixBurden.toFixed(1)}%</div>
-        <div class="cp-label">of income on energy</div>
-        <div class="threshold-bar" style="max-width:100%;margin:12px auto 8px">
-          <div class="bar-marker" style="left:${phoenixLeft}%;background:${phoenixColor==='green'?'#22c55e':phoenixColor==='yellow'?'#eab308':'#ef4444'}"></div>
-        </div>
-        <div class="cp-sub">${getStatusLabel(phoenixBurden)}<br>~$${Math.round(phoenixCost/12)}/month · 45% lower</div>
       </div>
     </div>
 
     <div class="state-detail">
-      <strong>${stateInfo.name}</strong> avg energy cost today: <strong>$${stateInfo.cost.toLocaleString()}/year</strong>.
-      With community-owned energy infrastructure: ~<strong>$${Math.round(phoenixCost).toLocaleString()}/year</strong>.
-      That difference — $${Math.round(annualCost - phoenixCost).toLocaleString()}/year — stays in your community instead of leaving as utility profit.
-      ${dataNote}.
-    </div>
-
-    <div class="phoenix-callout">
-      <strong>The 45% reduction isn't speculation — it's accounting.</strong> Investor-owned utilities in the US average 10–15% profit margins plus executive pay, marketing, and shareholder returns built into every bill. Community-owned cooperatives and municipal utilities consistently deliver lower rates because they exist to serve members, not extract from them. Phoenix Wells goes further: geothermal energy from repurposed oil wells means near-zero fuel cost.
-      <a href="/foundation/sustainable-energy/">→ Foundation Sustainable Energy proposal: Phoenix Wells and community infrastructure</a>
+      ${costLine} ${dataNote}.
     </div>
 
     <div class="compare-grid">
       <div class="compare-card">
         <div class="compare-value">${NATIONAL_MEDIAN_BURDEN}%</div>
-        <div class="compare-label">National median today</div>
+        <div class="compare-label">Typical U.S. household</div>
       </div>
       <div class="compare-card">
         <div class="compare-value">${LOW_INCOME_AVG_BURDEN}%</div>
-        <div class="compare-label">Low-income avg today</div>
-      </div>
-      <div class="compare-card">
-        <div class="compare-value" style="color:#22c55e">~${(NATIONAL_MEDIAN_BURDEN * 0.55).toFixed(1)}%</div>
-        <div class="compare-label">Est. median w/ community energy</div>
+        <div class="compare-label">Typical low-income household</div>
       </div>
     </div>
   `;
 }
 </script>
 
+<script>
 // Auto-resize when embedded as iframe
 function reportHeight() {
   window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
@@ -623,9 +601,12 @@ window.addEventListener('load', reportHeight);
 window.addEventListener('resize', function() { setTimeout(reportHeight, 50); });
 new MutationObserver(function() { setTimeout(reportHeight, 100); })
   .observe(document.body, { childList: true, subtree: true, attributes: false });
+</script>
 
+<div class="source">
+  State energy costs: EIA Residential Energy Consumption Survey (RECS) 2020, average spending per household, all fuels, 2020 prices.<br>
   Burden thresholds: DOE Low-Income Energy Affordability Data (LEAD) Tool; ACEEE energy burden research.<br>
-  National benchmarks: ACEEE, "How High Are Household Energy Burdens?" (2020, updated 2024).
+  National benchmarks: ACEEE, "How High Are Household Energy Burdens?" (2020).
 </div>
 
 </body>
