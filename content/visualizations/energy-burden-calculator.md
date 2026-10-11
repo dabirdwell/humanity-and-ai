@@ -35,7 +35,7 @@ Researchers and the U.S. Department of Energy use two lines:
 
 ## Why it's a policy problem
 
-Energy burden isn't mostly about using more energy. Low-income households often use less. But they tend to live in older, leakier homes they can't afford to fix, and few ever get weatherization help: the federal Weatherization Assistance Program fixes about 32,000 homes a year with Energy Department funds. Those homes save $372 or more a year on average.
+Low-income households often use less energy, not more. A big part of the problem is housing: older, leakier homes they can't afford to fix. Few ever get weatherization help. The federal Weatherization Assistance Program fixes about 32,000 homes a year with Energy Department funds, and those homes save $372 or more a year on average.
 
 Foundation's [Sustainable Energy](/foundation/freedom-to/sustainable-energy/) component proposes community-owned energy, with affordable bills as a design goal from the start.
 
