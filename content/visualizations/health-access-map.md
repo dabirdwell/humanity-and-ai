@@ -1,6 +1,6 @@
 ---
 title: "Health Access in America"
-description: "Two barriers to staying healthy, state by state: how many people have no health insurance, and how many low-income people live far from a supermarket."
+description: "Two barriers to staying healthy, state by state: how many people have no health insurance, and how many people are both low-income and live far from a supermarket."
 date: 2026-03-06T18:00:00
 type: "visualizations"
 tags: ["foundation", "healthcare", "food", "interactive", "USDA"]
@@ -27,7 +27,7 @@ Staying healthy starts before the doctor's office. It depends on whether you hav
 
 ## What the two maps show together
 
-States where more people have no insurance also tend to be states where more low-income people live far from a supermarket. The match is strong but not perfect, and a map cannot say why. Oklahoma expanded Medicaid on July 1, 2021, and its uninsured rate is still among the highest in the country.
+States where more people have no insurance also tend to be states where more low-income people live far from a supermarket. The match is fairly strong but not perfect, and a map cannot say why. Oklahoma expanded Medicaid on July 1, 2021, and its uninsured rate is still among the highest in the country.
 
 Foundation treats [health care](/foundation/freedom-from/healthcare/) and [food](/foundation/freedom-from/food/) as parts of one floor, because a person who lacks one often lacks the other.
 
