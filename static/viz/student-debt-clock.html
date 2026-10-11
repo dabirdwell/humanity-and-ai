@@ -118,35 +118,35 @@
     <div class="clock-panel us">
       <div class="country-flag">🇺🇸</div>
       <div class="country-name">United States</div>
-      <div class="clock-value" id="clock-total">$1,840,000,000,000</div>
-      <div class="clock-sub">total student loan debt · growing<br>$1,905 added every second</div>
+      <div class="clock-value" id="clock-total">$1,858,200,000,000</div>
+      <div class="clock-sub">total student loan debt · growing<br>about $1,760 added every second (past year)</div>
     </div>
     <div class="clock-panel de">
       <div class="country-flag">🇩🇪</div>
       <div class="country-name">Germany</div>
-      <div class="clock-value">$0</div>
-      <div class="clock-sub">no tuition · no student debt system<br>university is a public good</div>
+      <div class="clock-value">€0</div>
+      <div class="clock-sub">tuition at public universities<br>state student loans are interest-free, capped at €10,010</div>
     </div>
   </div>
 
   <div class="velocity-row">
     <div class="velocity-card">
-      <div class="velocity-value">$1,905</div>
+      <div class="velocity-value">$1,760</div>
       <div class="velocity-label">added every second</div>
     </div>
     <div class="velocity-card">
-      <div class="velocity-value">$114K</div>
+      <div class="velocity-value">$106K</div>
       <div class="velocity-label">added every minute</div>
     </div>
     <div class="velocity-card">
-      <div class="velocity-value">$60B</div>
+      <div class="velocity-value">$56B</div>
       <div class="velocity-label">added per year</div>
     </div>
   </div>
 
   <div class="stat-grid">
     <div class="stat-card">
-      <div class="stat-value red">44.6M</div>
+      <div class="stat-value red">42.6M</div>
       <div class="stat-label">Americans with federal student debt</div>
     </div>
     <div class="stat-card">
@@ -166,32 +166,32 @@
       <div class="stat-label">of borrowers 60+ days behind</div>
     </div>
     <div class="stat-card">
-      <div class="stat-value" style="color:#22c55e">~0%</div>
-      <div class="stat-label">German graduates with tuition debt</div>
+      <div class="stat-value" style="color:#22c55e">€10,010</div>
+      <div class="stat-label">the most a German student repays in state aid</div>
     </div>
   </div>
 
   <div class="why-panel">
-    <strong>Germany didn't abolish tuition because it's rich.</strong> It abolished tuition in 2014 because it concluded that charging for education was socially corrosive — that a degree becoming a debt sentence was bad for the country, not just bad for students. The US spends more per student than Germany and produces worse outcomes. The gap between these two clocks is a policy choice, not an economic inevitability.
+    <strong>Germany didn't drop tuition because it's rich.</strong> Seven German states tried tuition fees after a 2005 court ruling allowed them. Voters elected governments that ended them, and by 2014 the last were gone, on a broad public agreement that university is a public system the public should fund. The gap between these two clocks is a policy choice, not an economic inevitability.
     <a href="/foundation/education/">→ Foundation's Education proposal: learning without a bill attached</a>
   </div>
 
   <div class="timeline">
-    <div class="timeline-title">U.S. Student Debt Accumulation — 2006 to Now</div>
+    <div class="timeline-title">U.S. Student Debt, 2006 to Now</div>
     <div id="timeline-rows"></div>
   </div>
 
   <div class="source">
-    US total: Federal Reserve consumer credit data, Q4 2025 ($1.84T). Growth: Education Data Initiative ($60.086B/year).<br>
-    Delinquency: NY Fed Q4 2025 (9.6%); Urban Institute Nov 2025 (16% 60+ days). Germany: DAAD / federal tuition abolition 2014.
+    US total: Federal Reserve Consumer Credit (G.19), released Sep 8, 2026: $1.858T in Q2 2026, up $55.6B from a year earlier (the clock runs at that average).<br>
+    Borrowers: Education Data Initiative, Jul 2026. Delinquency: NY Fed Q4 2025 (9.6%); Urban Institute Nov 2025 (16% 60+ days). Germany: state tuition fees ended 2014; BAföG repayment cap (Studentenwerk).
   </div>
 
 </div>
 
 <script>
-const REFERENCE_VALUE = 1_840_000_000_000;
-const REFERENCE_DATE = new Date('2025-12-31T00:00:00Z');
-const PER_SECOND = 60_086_000_000 / 365.25 / 24 / 3600;
+const REFERENCE_VALUE = 1_858_200_000_000;   // Fed G.19, end of Q2 2026
+const REFERENCE_DATE = new Date('2026-06-30T00:00:00Z');
+const PER_SECOND = 55_600_000_000 / 365.25 / 24 / 3600;   // Q2 2025 to Q2 2026 change
 
 function formatDollars(n) {
   const t = Math.floor(n / 1_000_000_000_000);
@@ -214,13 +214,13 @@ const timelineData = [
   { year: 2006, t: 0.481 }, { year: 2008, t: 0.611 }, { year: 2010, t: 0.833 },
   { year: 2012, t: 1.032 }, { year: 2014, t: 1.232 }, { year: 2016, t: 1.401 },
   { year: 2018, t: 1.569 }, { year: 2020, t: 1.748 }, { year: 2022, t: 1.748 },
-  { year: 2023, t: 1.726 }, { year: 2025, t: 1.840 },
+  { year: 2023, t: 1.726 }, { year: 2025, t: 1.835 }, { year: 2026, t: 1.858 },
 ];
 const container = document.getElementById('timeline-rows');
 timelineData.forEach((d, i) => {
   const prev = i > 0 ? timelineData[i-1] : null;
   const change = prev ? ((d.t - prev.t) / prev.t * 100).toFixed(0) : null;
-  const pct = (d.t / 1.840 * 100).toFixed(1);
+  const pct = (d.t / 1.858 * 100).toFixed(1);
   const changeStr = change !== null ? (parseFloat(change) >= 0 ? `+${change}%` : `${change}%`) : '';
   const changeColor = change !== null && parseFloat(change) < 0 ? '#22c55e' : '#64748b';
   const row = document.createElement('div');

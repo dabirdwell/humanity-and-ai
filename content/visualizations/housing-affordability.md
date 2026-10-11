@@ -1,6 +1,6 @@
 ---
 title: "Housing Affordability by State"
-description: "Select any state and see the gap between minimum wage and what it actually costs to afford a modest apartment. In no state can a minimum wage worker afford a two-bedroom home."
+description: "Select any state and see the gap between minimum wage and what it actually costs to afford a modest apartment. In no state can a full-time minimum wage worker afford a modest two-bedroom rental."
 date: 2026-03-06T17:00:00
 type: "visualizations"
 tags: ["foundation", "housing", "wages", "interactive", "NLIHC"]
