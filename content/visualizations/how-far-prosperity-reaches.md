@@ -2,7 +2,7 @@
 title: "How far does prosperity reach?"
 description: "An explorer of how the world's gains since 1950 reached ordinary lives: how long people live, whether children do better than their parents, health and safety, despair and recovery, in the United States and around the world."
 date: 2026-10-16
-draft: true
+draft: false
 type: "visualizations"
 tags: ["economy", "inequality", "health", "mobility", "interactive", "foundation"]
 preview_bg: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(186,135,61,0.22), rgba(110,145,214,0.12), #0a0a0f)"
