@@ -103,7 +103,7 @@ A pause that nobody outside can check is worse than it looks. When a rule is ann
 
 ## Where we stand
 
-We are confident a full worldwide pause will not arrive soon. A series of essays published this summer, Graduated Obligation (https://humanityandai.com/thismachine/a-proposal-not-a-verdict/), made the same call. The fourth of its six public predictions, to be graded in public in August 2027, is "The coordinated pause will not materialize." The series named that one the prediction it was surest of. OpenAI's two slowdowns do not change that view. Each was one company going slower by its own choice, which is not a coordinated pause. And the industry's most prominent advocate of pacing, Amodei, agrees that a full pause is unlikely any time soon.
+We are confident a full worldwide pause will not arrive soon. Our own series of essays from this summer, Graduated Obligation (https://humanityandai.com/thismachine/a-proposal-not-a-verdict/), made the same call. The fourth of its six public predictions, to be graded in public in August 2027, is "The coordinated pause will not materialize." The series named that one the prediction it was surest of. OpenAI's two slowdowns do not change that view. Each was one company going slower by its own choice, which is not a coordinated pause. And the industry's most prominent advocate of pacing, Amodei, agrees that a full pause is unlikely any time soon.
 
 So we do not wait for it. Here is what we think would help, in plain terms.
 
