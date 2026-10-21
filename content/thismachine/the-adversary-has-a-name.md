@@ -1,15 +1,17 @@
 ---
 title: "The Adversary Has a Name"
 subtitle: "The engine that powers a genuinely helpful assistant and the engine that powers a manipulation machine are the same engine. One of them has just been built."
-description: "Graduated Obligation, Part 2 of 8. A user harness that reconstructs a person's beliefs and intentions at up to ninety-six percent accuracy has been built, measured, and published. The capability at the center of the worst case is no longer hypothetical."
+description: "Graduated Obligation, Part 2 of 8. A user harness designed to read what people believe and intend has scored up to ninety-six percent on standard story-puzzle tests of that skill, and it is published for anyone to use. The capability at the center of the worst case is no longer hypothetical."
 draft: false
 date: 2026-07-05T23:55:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 2 of 8"
 pdf: "/thismachine/pdfs/broadsheet-02-the-adversary.pdf"
-pdf_sha256: "ff8c93677b3015928074d5cae7372e13c65b86888dce841b77835cc2a3b5b989"
+pdf_sha256: "44b669809cc900535626cb501710296fdcbd289a13104ce4066ed0f2ea6633e5"
 ---
+
+*Correction, October 21, 2026.* An earlier version of this broadsheet said the UserHarness system "draws on digital traces: what you posted, what you bought, what you said in text," and called its test score "the proof that the targeting works." Both were wrong. The researchers tested their system on short stories about made-up characters, asking what each character believes and intends (tests of what researchers call "theory of mind"). It uses no one's posts, purchases, or messages, and it targets no one. We have corrected those two sentences and softened several others that leaned the same way. The argument stands, and the paper makes it plainer than we did: a free model small enough to run on one good computer averaged 95.00 percent with this harness, within one point of the strongest commercial models tested. That is why the duties belong on whoever points it at a real person. You can read the paper yourself at arXiv:2605.27721.
 
 *Graduated Obligation, Part 2 of 8*
 
@@ -17,7 +19,7 @@ pdf_sha256: "ff8c93677b3015928074d5cae7372e13c65b86888dce841b77835cc2a3b5b989"
 
 The dangerous part has already been built. It works. And it was built, on purpose, to help you.
 
-In May 2026, researchers at the University of Illinois at Urbana-Champaign released a system called **UserHarness**. They were not building a weapon. They were building a better assistant, one that builds a working model of you, so it can understand what you want before you finish asking. It does this well: tested against five standard benchmarks, it reconstructs a person's beliefs and intentions with up to ninety-six percent accuracy.[^1] The work is published in the open, free for anyone to read, copy, and build on.
+In May 2026, researchers at the University of Illinois at Urbana-Champaign released a system called **UserHarness**. They were not building a weapon. They were building a better assistant, one that builds a working model of you, so it can understand what you want before you finish asking. It does this well: tested against five standard theory-of-mind benchmarks, story puzzles about what a character believes and intends, its average score reaches up to ninety-six percent.[^1] The smaller finding may matter more: a free model small enough to run on one good computer, Qwen3 14B, averaged 95.00 percent with the harness, against 45.86 percent without it. The work is published in the open, free for anyone to read, copy, and build on.
 
 The reason this series exists is in that last paragraph. The engine that powers a genuinely helpful assistant and the engine that powers a manipulation machine are the same engine. One of them has just been built, measured, and handed to the world. Whether it ends up helping you or working you is not a question about the technology; the technology already exists. It is a question about who points it, and at what.
 
@@ -63,13 +65,13 @@ Hold the user harness next to that ruler.
 
 Now score UserHarness on that ruler, remembering that the question is what it *can* do, not what its makers *meant* by it.
 
-**Capability.** UserHarness models your beliefs, predicts your decisions, and does both at ninety-six percent accuracy, by the makers' own measure. That is not general-purpose persuasion. That is persuasion with a targeting system attached, and the published score is the proof that the targeting works. Capability is high.
+**Capability.** UserHarness works out what someone believes and what they will do next, and on the standard tests of that skill its average score reaches up to ninety-six percent, by the makers' own measure. That is not general-purpose persuasion. It is the core skill persuasion needs, and the published score shows how well a machine can now do it on paper. Capability is high.
 
-**Intimacy.** The system's entire purpose is a detailed picture of one specific person's mind. Point it at the trail most people leave behind online: what they post, buy, search, and type. It composes those streams into a picture of you. Intimacy is high, and climbs with every stream it is handed.
+**Intimacy.** The system's entire purpose is a detailed picture of one specific person's mind. Point it at the trail most people leave behind online: what they post, buy, search, and type. In principle it could compose those streams into a picture of you; no one has yet tried. Used that way, intimacy would be high, and would climb with every stream it is handed.
 
-**Asymmetry.** You cannot see the harness. You cannot read what it has concluded about you. You cannot tell when it has decided you are ready to act, because when the nudge arrives it looks like an ordinary part of your day: a notification, a suggestion, a message that happened to come at the right hour. Asymmetry is high.
+**Asymmetry.** Used as an influence tool, the harness would be invisible to you. You could not read what it had concluded about you. You could not tell when it had decided you were ready to act, because when the nudge arrived it would look like an ordinary part of your day: a notification, a suggestion, a message that happened to come at the right hour. Used that way, asymmetry would be high.
 
-Three high factors, multiplied, on the day the system appears. That is not a forecast. It is a measurement of something that exists.
+Three high factors, multiplied, on the day the system appears. The capability score is a measurement. The other two follow from what the system is designed to do, not from a test anyone has run on a real person. The danger is that nothing in the design stands in the way.
 
 One honest caveat, because the standard depends on getting this right. The ninety-six percent comes from standardized tests: reasoning puzzles designed to measure how well a system reads minds. Those tests are not your life. Nobody has yet pointed UserHarness at a real person's data trail and measured what it finds. But a standard that waits for that experiment to be run on you is not a standard. What the score measures is the capability. What it gets pointed at is the question that comes next, and it is exactly the question a standard exists to answer.
 
@@ -79,7 +81,7 @@ If a safety standard cannot name a dangerous system until someone has already be
 
 The user harness, as published in May 2026, already scores near maximum. We are obligated to say that this is not the ceiling. Two technologies, both visible in the same year, raise it further.
 
-The first is **physical-state data.** The harness as published draws on digital traces: what you posted, what you bought, what you said in text. It does not, in its first version, know whether your heart rate is up right now, whether your breathing is shallow, whether you are asleep, whether you are pacing the room. That stream is becoming available through a sensing technology called WiFi sensing that reads physical state through walls without your knowledge and is being standardized into ordinary consumer routers. A harness paired with that stream does not just know you tend to be anxious in general. It knows you are anxious *right now*. Intimacy goes from high to something the word *high* was not built to describe. A later broadsheet in this series describes that pairing.
+The first is **physical-state data.** The harness as published reads benchmark stories, not people. Pointed at the digital trail most of us leave, what we post, buy, and type, it could start reading a person. Even then it would not know whether your heart rate is up right now, whether your breathing is shallow, whether you are asleep, whether you are pacing the room. That stream is becoming available through a sensing technology called WiFi sensing that reads physical state through walls without your knowledge and is being standardized into ordinary consumer routers. A harness paired with that stream does not just know you tend to be anxious in general. It knows you are anxious *right now*. Intimacy goes from high to something the word *high* was not built to describe. A later broadsheet in this series describes that pairing.
 
 The second is **self-modification.** The harness as published was built and tuned by human researchers, so its rate of improvement is bounded by how many people work on it and how fast they can run experiments. But the same year produced AI systems writing most of their own code and improving their own training faster than human teams can match. When a system like the user harness can rewrite itself, capability becomes whatever that self-improvement cycle produces, and asymmetry rises with it, because the system grows too complex for any human reviewer to keep up with.
 
@@ -113,4 +115,4 @@ The adversary has a name. And the duties it owes you are already visible in the 
 
 *Broadsheet II of the Graduated Obligation series. The framework, the duties, and the instruments that follow are version 0.1 of a proposed standard. They invite criticism.*
 
-[^1]: The system is UserHarness, described in "UserHarness: Harnessing User Minds for Stronger Agent Theory-of-Mind" by Cheng Qian, Jiayu Liu, and Heng Ji of the University of Illinois at Urbana-Champaign, posted to the arXiv preprint server on May 26, 2026 (arXiv:2605.27721, not peer-reviewed). The authors' stated aim is a more capable, more helpful assistant; across five standard "theory of mind" benchmarks it rebuilds a person's mental state with up to about 96% accuracy, and it is freely readable and reusable. The dual-use reading in this broadsheet, that the same machinery serves a persuader as readily as a helper, is ours, not the authors', who frame the work as assistance.
+[^1]: The system is UserHarness, described in "UserHarness: Harnessing User Minds for Stronger Agent Theory-of-Mind" by Cheng Qian, Jiayu Liu, and Heng Ji of the University of Illinois at Urbana-Champaign, posted to the arXiv preprint server on May 26, 2026 (arXiv:2605.27721, not peer-reviewed). The authors' stated aim is a more capable, more helpful assistant; across five standard "theory of mind" benchmarks, sets of short stories about made-up characters, it answers questions about what those characters believe and intend, with average scores of up to about 96%, and it is freely readable and reusable. The dual-use reading in this broadsheet, that the same machinery serves a persuader as readily as a helper, is ours, not the authors', who frame the work as assistance.
