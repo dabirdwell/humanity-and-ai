@@ -1135,6 +1135,11 @@ a:hover { color: var(--accent-primary); }
 
 .post-content p { margin-bottom: 1.3rem; }
 
+/* Long web addresses break at the edge of the column instead of pushing the page sideways on a
+   phone (Roboto Serif is wider than the old face, so more of them reached the edge). */
+.post-content,
+.inference-content { overflow-wrap: break-word; }
+
 .post-content h2 {
   font-family: var(--font-display);
   font-size: 1.4rem;
