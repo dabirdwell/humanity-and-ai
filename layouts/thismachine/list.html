@@ -5,8 +5,8 @@
   .tmp-imprint-tagline { color: var(--text-secondary); font-style: italic; margin-top: -0.25rem; }
   .tmp-list { list-style: none; padding: 0; margin: 2.5rem 0 0; border-top: 1px solid var(--border-subtle); }
   .tmp-list li { padding: 1.5rem 0; border-bottom: 1px solid var(--border-subtle); }
-  .tmp-list .tmp-part { display: block; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem; }
-  .tmp-list a.tmp-title { font-family: var(--font-display); font-size: 1.4rem; color: var(--text-primary); text-decoration: none; }
+  .tmp-list .tmp-part { display: block; font-family: var(--font-ui); font-weight: var(--fw-label); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem; }
+  .tmp-list a.tmp-title { font-family: var(--font-display); font-weight: var(--fw-card); font-size: 1.4rem; color: var(--text-primary); text-decoration: none; }
   .tmp-list a.tmp-title:hover { color: var(--accent-primary); }
   .tmp-list .tmp-sub { color: var(--text-secondary); margin: 0.4rem 0 0; line-height: 1.6; }
   .tmp-list .tmp-byline { display: inline-block; margin-top: 0.6rem; font-size: 0.82rem; color: var(--text-muted); }
@@ -24,7 +24,7 @@
     {{ .Content }}
   </div>
 
-  <h2 style="font-family: var(--font-display); margin-top: 3rem;">The series, in order</h2>
+  <h2 style="font-family: var(--font-display); font-weight: var(--fw-head); margin-top: 3rem;">The series, in order</h2>
   <ul class="tmp-list">
     {{ range where .Pages "Type" "thismachine" }}
     <li>

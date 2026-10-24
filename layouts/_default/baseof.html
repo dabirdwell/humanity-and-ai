@@ -57,10 +57,12 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400&display=swap">
+  {{- /* Type A, the house type: Roboto Serif and Roboto (chosen by David on Oct 24 2026; on the live site
+         from the fonts-only change of Nov 10 2026). A layout can replace this block. */}}
+  {{ block "fonts" . }}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">{{ end }}
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/main.css?v=20261026a">
+  <link rel="stylesheet" href="/css/main.css?v=20261110a">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
 
   <!-- Organization structured data -->

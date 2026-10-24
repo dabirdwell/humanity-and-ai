@@ -100,8 +100,9 @@
 
 .hero-now-label {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.72rem;
+  font-weight: var(--fw-label);
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: #E8C88A;
@@ -118,6 +119,8 @@
   display: block;
   margin-top: 0.5rem;
   font-size: 0.86rem;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-ui);
   line-height: 1.5;
   color: #A8A49B;
 }
@@ -143,9 +146,9 @@
   display: inline-block;
   padding: 0.72rem 1.4rem;
   border-radius: 8px;
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-size: 0.93rem;
-  font-weight: 600;
+  font-weight: var(--fw-label);
   letter-spacing: 0.01em;
   text-decoration: none;
   background: #C8964E;
@@ -287,7 +290,7 @@
   display: block;
   font-family: var(--font-display);
   font-size: 1.12rem;
-  font-weight: 700;
+  font-weight: var(--fw-card);
   color: var(--text-primary);
   margin-bottom: 0.55rem;
 }
@@ -299,7 +302,7 @@
   line-height: 1.6;
   color: var(--text-secondary);
 }
-.hp-freedom-go { display: block; margin-top: 1rem; font-size: 0.86rem; color: var(--accent-primary); }
+.hp-freedom-go { display: block; margin-top: 1rem; font-size: 0.86rem; font-family: var(--font-ui); font-weight: var(--fw-ui); color: var(--accent-primary); }
 
 .hp-plan-qa {
   max-width: 760px;
@@ -311,14 +314,14 @@
 .hp-plan-qa h3 {
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: var(--fw-card);
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 .hp-plan-qa p { font-size: 1rem; line-height: 1.72; color: var(--text-secondary); }
 .hp-plan-more { margin-top: 1.75rem; font-size: 0.98rem; color: var(--text-secondary); max-width: 760px; }
 .hp-plan-links { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
-.hp-plan-links a { font-weight: 500; font-size: 0.95rem; white-space: nowrap; }
+.hp-plan-links a { font-weight: var(--fw-ui); font-size: 0.95rem; font-family: var(--font-ui); white-space: nowrap; }
 
 /* ---- Tablet and phone ---- */
 @media (max-width: 900px) {
