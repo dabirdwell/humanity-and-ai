@@ -7,7 +7,7 @@ date: 2026-08-09T17:00:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 5 of 8"
-weight: 5
+weight: 50
 ---
 
 For four papers we have been writing as if the people who build these systems were a fixed quantity. Engineers at desks. Researchers with employers. Reviewers with committee schedules. The whole apparatus we have proposed (the floor, the gradient, the audit, the duty) rests on the assumption that on the other side of every artificial system there is a human who can be told what to do, sued, slowed down, called to a hearing.

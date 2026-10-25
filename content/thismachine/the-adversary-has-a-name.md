@@ -1,17 +1,20 @@
 ---
 title: "The Adversary Has a Name"
-subtitle: "The engine that powers a genuinely helpful assistant and the engine that powers a manipulation machine are the same engine. One of them has just been built."
+subtitle: "The engine that powers a genuinely helpful assistant and the engine that powers a manipulation machine are the same engine. And that engine has just been built."
 description: "Graduated Obligation, Part 2 of 8. A user harness designed to read what people believe and intend has scored up to ninety-six percent on standard story-puzzle tests of that skill, and it is published for anyone to use. The capability at the center of the worst case is no longer hypothetical."
 draft: false
 date: 2026-07-05T23:55:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 2 of 8"
+weight: 20
 pdf: "/thismachine/pdfs/broadsheet-02-the-adversary.pdf"
-pdf_sha256: "44b669809cc900535626cb501710296fdcbd289a13104ce4066ed0f2ea6633e5"
+pdf_sha256: "996cfeb26c8ff90149eddfd037d0266a216ad3d2ac6e45263f88a5563c05923d"
 ---
 
 *Correction, October 21, 2026.* An earlier version of this broadsheet said the UserHarness system "draws on digital traces: what you posted, what you bought, what you said in text," and called its test score "the proof that the targeting works." Both were wrong. The researchers tested their system on short stories about made-up characters, asking what each character believes and intends (tests of what researchers call "theory of mind"). It uses no one's posts, purchases, or messages, and it targets no one. We have corrected those two sentences and softened several others that leaned the same way. The argument stands, and the paper makes it plainer than we did: a free model small enough to run on one good computer averaged 95.00 percent with this harness, within one point of the strongest commercial models tested. That is why the duties belong on whoever points it at a real person. You can read the paper yourself at arXiv:2605.27721.
+
+*Updated October 24, 2026.* One more sentence, in the subtitle and the body, was clarified the same way.
 
 *Graduated Obligation, Part 2 of 8*
 
@@ -21,7 +24,7 @@ The dangerous part has already been built. It works. And it was built, on purpos
 
 In May 2026, researchers at the University of Illinois at Urbana-Champaign released a system called **UserHarness**. They were not building a weapon. They were building a better assistant, one that builds a working model of you, so it can understand what you want before you finish asking. It does this well: tested against five standard theory-of-mind benchmarks, story puzzles about what a character believes and intends, its average score reaches up to ninety-six percent.[^1] The smaller finding may matter more: a free model small enough to run on one good computer, Qwen3 14B, averaged 95.00 percent with the harness, against 45.86 percent without it. The work is published in the open, free for anyone to read, copy, and build on.
 
-The reason this series exists is in that last paragraph. The engine that powers a genuinely helpful assistant and the engine that powers a manipulation machine are the same engine. One of them has just been built, measured, and handed to the world. Whether it ends up helping you or working you is not a question about the technology; the technology already exists. It is a question about who points it, and at what.
+The reason this series exists is in that last paragraph. The engine that powers a genuinely helpful assistant and the engine that powers a manipulation machine are the same engine. And that engine has just been built, measured, and handed to the world. Whether it ends up helping you or working you is not a question about the technology; the technology already exists. It is a question about who points it, and at what.
 
 ## What a harness is
 

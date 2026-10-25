@@ -7,7 +7,7 @@ date: 2026-09-18T15:30:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Companion to Part 7"
-weight: 7
+weight: 75
 ---
 
 *Graduated Obligation, a companion to [Part 7, The Last Private Space](/thismachine/the-last-private-space/)*

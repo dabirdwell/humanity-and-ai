@@ -7,7 +7,7 @@ date: 2026-09-03T10:50:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 7 of 8"
-weight: 7
+weight: 70
 ---
 
 *Graduated Obligation, Part 7 of 8*

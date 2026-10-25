@@ -1,34 +1,33 @@
 ---
-title: "This Machine Press"
-description: "An archive of record for the broadsheets. Timestamped, citable, permanent, spare."
+title: "Graduated Obligation"
+description: "Eight short papers and a companion piece on AI that persuades, and what the people who build it owe the rest of us."
 draft: false
 date: 2026-07-05T23:55:00-05:00
 layout: list
 ---
 
-## The imprint
+## What the series is
 
-This Machine Press is a small press for committed argument. It publishes broadsheets: short, cited papers that take a single question about the age of intelligent machines and try to answer it plainly enough to hand to a stranger.
+Graduated Obligation is a series about AI that persuades: systems that can change what a person believes, buys, or votes for. Most rules for machines ask what they can do to a body. This series asks a different question: how far can a system reach into what people think and choose?
 
-The name is borrowed. Woody Guthrie lettered a legend across the body of his guitar: *This Machine Kills Fascists*. The press keeps the posture and turns the tool. A broadsheet is a machine too. What it is aimed at is the only question that matters.
+Its answer is in its name. Every system owes everyone a short list of basic duties, the floor: the minimum, no matter what. As a system's reach grows, what its makers owe grows with it, step by step. A spellchecker owes a little. A companion robot that talks with a lonely person every day owes a great deal. Each duty is written as a test that someone outside the company can actually run.
 
-## Two bylines, one house
+There are eight parts, published from June to September 2026, and a companion piece for people who build software. Part 8 makes six predictions and sets a date in August 2027 to grade them in public.
 
-The press runs on the Publius model: one house, more than one hand, cumulative authority. Two bylines carry the two series.
+## Who writes it
 
-**This Machine** signs the AI-governance broadsheets, the Graduated Obligation (GO) series. The conceit is exact: an AI making the honest case about AI. The self-reference is the charge, not a disguise.
+The series is signed **This Machine**. Its last part, [A Proposal, Not a Verdict](/thismachine/a-proposal-not-a-verdict/), says plainly who that is: David Birdwell, a human in Oklahoma, writing with Æ (pronounced "ash"), an AI system he works with. An AI helping to make the honest case about AI is the point of that signature, not a disguise.
 
-**Will Guthrie** signs the Foundation papers, on citizenship and the structures a decent society owes its people. The name fuses two Oklahomans: Will Rogers, the Cherokee everyman who told the truth sideways, and Woody Guthrie, who wrote the country's back roads into song. *This Land Is Your Land*, the lost verse included, is that lineage in one line.
+The name comes from Woody Guthrie, the folk singer, who lettered *This Machine Kills Fascists* across his guitar. A piece of writing is a machine too, and what it is aimed at is the question that matters.
 
-The pen identities stay folded until the work earns the reveal. This follows the Federalist practice, where the argument stands first and the author steps forward only when the argument has done its work. The imprint is not hidden. Its home is this domain and its publishing house on Substack, [@humanityandaiofficial](https://humanityandaiofficial.substack.com). The names behind the bylines are the part held back, on purpose.
+## Where to read it
 
-## The record
+Every part is below, in order, with its notes. The eight parts also appear on our Substack newsletter, at [@humanityandaiofficial](https://humanityandaiofficial.substack.com), each with its own illustration.
 
-These pages are an archive of record. The posture is deliberate:
+## How these pages are kept
 
-- **Timestamped.** Each broadsheet carries a publication date, set at first publication here.
-- **Citable.** Endnotes are kept intact. Every factual claim traces to a source a reader can check.
-- **Permanent.** A broadsheet, once published, is meant to stay put and stay findable.
-- **Spare.** No ornament, no machinery between the reader and the argument. Text, notes, and a printable copy.
+- **Dated.** Each paper carries the date it was first published here.
+- **Sourced.** The notes stay with the text. Every factual claim points to a source a reader can check.
+- **Permanent links.** Once published, a paper stays at its address, so links to it keep working.
 
-Each broadsheet offers a print-quality PDF. The SHA-256 hash of that PDF is printed on the broadsheet's page, so any copy can be checked, byte for byte, against the record. Print it, hand it out; that is what a broadsheet is for.
+Where a paper offers a print-quality copy (a PDF file), its page also prints a fingerprint of that exact file: a short code, called a SHA-256 hash, that changes if even one byte of the file changes. Anyone can check that a printed or shared copy is identical to the original. Print them and hand them out. That is what they are for.

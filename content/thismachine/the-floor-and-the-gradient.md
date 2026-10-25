@@ -7,7 +7,7 @@ date: 2026-07-10T13:30:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 3 of 8"
-weight: 3
+weight: 30
 pdf: "/thismachine/pdfs/broadsheet-03-the-floor.pdf"
 pdf_sha256: "6ea1736190cd8c754aac7d315108c69d8d944eb31cb7ed72f9a6ae981844b05a"
 ---

@@ -7,7 +7,7 @@ date: 2026-07-31T09:00:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 4 of 8"
-weight: 4
+weight: 40
 ---
 
 *Graduated Obligation, Part 4 of 8*

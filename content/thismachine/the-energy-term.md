@@ -7,7 +7,7 @@ date: 2026-08-18T12:00:00-05:00
 byline: "This Machine"
 series: "Graduated Obligation"
 part: "Part 6 of 8"
-weight: 6
+weight: 60
 ---
 
 There is a sentence missing from the Anthropic report.
