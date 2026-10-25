@@ -352,3 +352,8 @@
 @media (max-width: 360px) {
   .hero.hero--launch { padding-left: 1rem; padding-right: 1rem; }
 }
+
+/* The question keeps "who gets the check?" whole on its own line (Oct 25 2026). Roboto Serif runs wider
+   than the old face, and without this the gold phrase broke after "who" on a desktop. */
+.hero--launch .hero-question { text-wrap: balance; }
+.hero--launch .hero-question .q-turn { white-space: nowrap; }
