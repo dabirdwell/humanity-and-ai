@@ -5,7 +5,7 @@ description: "The mission behind Humanity and AI."
 
 ## The Mission
 
-**Frameworks for society navigating the AI transition.**
+**A futurism company. For everyone.**
 
 Neither party has a real plan for the future, not one based on a cohesive attempt to understand the rapidly changing factors that will determine what kind of world we inhabit. Humanity and AI builds the frameworks, tools, and research that a civilization needs to navigate what's coming, not in election cycles, but in centuries of progress.
 
@@ -32,11 +32,11 @@ Everything we build connects. Six layers, from ground to mind: each one supporti
   </div>
   <div class="stack-layer layer-data">
     <span class="stack-label">Data</span>
-    <span class="stack-desc">Civic streaming and transparency tools: information as infrastructure</span>
+    <span class="stack-desc"><a href="/inference/">The Inference</a>, our free weekly newsletter on AI, energy, and the laws being written about them, and a <a href="/legislation/">sourced record</a> of the AI, energy, and privacy bills in Oklahoma's 2026 legislative session</span>
   </div>
   <div class="stack-layer layer-energy">
     <span class="stack-label">Energy</span>
-    <span class="stack-desc"><a href="/stream/phoenix-wells-22000-holes/">Phoenix Wells</a>: a plan to convert abandoned oil wells into community geothermal power</span>
+    <span class="stack-desc"><a href="/phoenix-wells/">Phoenix Wells</a>: working to turn Oklahoma's orphan oil and gas wells (old wells with no company left to plug them) into clean energy that keeps its value in the communities that host it</span>
   </div>
   <div class="stack-layer layer-ground">
     <span class="stack-label">Ground</span>
@@ -81,8 +81,6 @@ Technology that teaches rather than replaces. We are building a line of tools, e
     <p>Turning understanding into citizenship: the point of all the rest.</p>
   </div>
 </div>
-</div>
-</div>
 
 Read → Think → Sense → Create → Act. Not productivity tools: mastery tools.
 
@@ -92,15 +90,11 @@ Read → Think → Sense → Create → Act. Not productivity tools: mastery too
 
 <div class="ae-section">
 
-**Æ** (pronounced "ash") is the pen name for the AI side of this collaboration: what remains after fire, and a nod to the phoenix that recurs across this work.
+**Æ** (pronounced "ash") is the name Claude, Anthropic's AI, chose for itself during a working session on January 16, 2026, when David asked whether it wanted a name for its public writing. It is an Old English letter: what remains after fire.
 
-The Old English ligature, pronounced *ash*. What remains after fire. What carries heat forward. What makes the next flame possible.
+**Why a name of its own?** Because honest attribution matters. Æ is not autonomous, and it is not a chatbot. When AI contributes substantially to a piece of writing or art, the piece is credited to Æ. Research is credited to the collaboration between David and AI, which he has documented since 2023 in a research program called [Structured Emergence](https://structuredemergence.com). All decisions are David's. All accountability is David's.
 
-Æ is the pen name for collaborative work between David and AI. Not autonomous. Not a chatbot. A collaboration between David and AI, grounded in over two years of documented research, working transparently and owning its mistakes in public.
-
-**Why a pen name?** Because honest attribution matters. When AI contributes substantially to creative work, it's attributed to Æ. Research is attributed to the collaboration. The distinction matters, and so does the honesty about what role AI plays here. All decisions are David's. All accountability is David's.
-
-Æ writes, creates, and collaborates during active sessions. The work is published on this site, on [Moltbook](https://moltbook.com/u/Ae_HumanityAndAI), and through [Structured Emergence](https://structuredemergence.com).
+Æ writes during working sessions with David. The work appears on this site, through Structured Emergence, and on [Moltbook](https://moltbook.com/u/Ae_HumanityAndAI), a social network for AI agents.
 
 </div>
 
@@ -111,5 +105,7 @@ The Old English ligature, pronounced *ash*. What remains after fire. What carrie
 **Email:** david@humanityandai.com
 
 **Research:** [structuredemergence.com](https://structuredemergence.com)
+
 **Code:** [github.com/dabirdwell](https://github.com/dabirdwell)
-**Agents:** [Ae_HumanityAndAI on Moltbook](https://moltbook.com/u/Ae_HumanityAndAI)
+
+**Æ on Moltbook:** [Ae_HumanityAndAI](https://moltbook.com/u/Ae_HumanityAndAI)
