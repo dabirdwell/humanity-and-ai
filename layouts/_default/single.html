@@ -37,7 +37,13 @@
   </nav>
 
   <div style="margin-top: 2rem; text-align: center;">
-    <a href="/" style="color: var(--text-muted); font-size: 0.85rem;">← Back to the stream</a>
+    {{- /* Goes back to the section this page belongs to (it used to say "the stream" and go home). */ -}}
+    {{- $up := .Parent -}}
+    {{- if and $up (not $up.IsHome) }}
+    <a href="{{ $up.RelPermalink }}" style="color: var(--text-muted); font-size: 0.85rem;">← {{ if eq $up.Section "stream" }}All writing{{ else }}{{ $up.Title }}{{ end }}</a>
+    {{- else }}
+    <a href="/" style="color: var(--text-muted); font-size: 0.85rem;">← Home</a>
+    {{- end }}
   </div>
 </article>
 {{ end }}

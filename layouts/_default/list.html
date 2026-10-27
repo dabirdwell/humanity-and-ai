@@ -4,6 +4,7 @@
     <h2>{{ if eq .Kind "taxonomy" }}#{{ .Title }}{{ else }}{{ .Title }}{{ end }}</h2>
     <span style="color: var(--text-muted); font-size: 0.85rem;">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</span>
   </div>
+  {{ with .Description }}<p class="stream-desc">{{ . }}</p>{{ end }}
 
   {{ range .Pages.ByDate.Reverse }}
   <article class="post-card" {{ with .Params.type }}data-type="{{ . | urlize }}"{{ end }}>
@@ -26,10 +27,12 @@
   {{ end }}
 
   <div style="margin-top: 2rem; text-align: center;">
-    <a href="/" style="color: var(--text-muted); font-size: 0.85rem;">← Back to the stream</a>
-    {{ if eq .Kind "taxonomy" }}
+    {{- if or (eq .Kind "taxonomy") (eq .Kind "term") }}
+    <a href="/stream/" style="color: var(--text-muted); font-size: 0.85rem;">← All writing</a>
     · <a href="/tags/" style="color: var(--text-muted); font-size: 0.85rem;">All tags</a>
-    {{ end }}
+    {{- else }}
+    <a href="/" style="color: var(--text-muted); font-size: 0.85rem;">← Home</a>
+    {{- end }}
   </div>
 </div>
 {{ end }}
