@@ -24,7 +24,7 @@ Clarity is a calm reading room. Make the text bigger, space it out, change the c
 
 ## Pricing
 
-The whole reader is free, with no account. Pro ($4.99 a month or $29.99 a year) adds plainer-words rewrites, a hard-words preview, summaries and more word help.
+The whole reader is free, with no account. Pro is coming soon: for $4.99 a month or $29.99 a year, it will add plainer-words rewrites, a hard-words preview, summaries and more word help.
 
 ## Try It Now
 
