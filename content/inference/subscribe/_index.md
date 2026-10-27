@@ -1,5 +1,5 @@
 ---
 title: "Subscribe to The Inference"
-description: "AI policy intelligence for Oklahoma decision makers. Published weekly. Data-driven. No hype."
+description: "Our free weekly newsletter on AI, energy, and the laws being written about them. One email a week."
 layout: subscribe
 ---

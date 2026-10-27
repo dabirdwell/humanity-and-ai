@@ -1,5 +1,5 @@
 ---
-title: "Get Notified: The Inference"
-description: "Get a ping when the next issue of The Inference drops. AI policy intelligence for Oklahoma and national governance."
+title: "Subscribe to The Inference"
+description: "Our free weekly newsletter on AI, energy, and the laws being written about them. One email a week."
 layout: "subscribe"
 ---

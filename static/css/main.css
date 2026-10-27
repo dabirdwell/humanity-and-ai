@@ -559,10 +559,8 @@ a:hover { color: var(--accent-primary); }
   }
   .homepage-lower .projects-section { order: -1; }
 
-  /* Truncate stream to 5 posts on mobile */
-  .stream-container article.post-card:nth-of-type(n+6) {
-    display: none !important;
-  }
+  /* (Removed Oct 2026: a rule here hid every post after the fifth on phones, on /stream/
+     and on every tag page, left over from an older home page.) */
 
   /* Hide type filters on mobile — too cluttered */
   .type-filters { display: none; }
@@ -4478,6 +4476,14 @@ footer.site-footer ~ .newsletter-signup,
 .inference-subscribe-btn { width: 100%; margin-top: 0.5rem; padding: 0.75rem; font-size: 1rem; }
 
 .inference-subscribe-privacy { text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2rem; }
+/* The real signup is on Substack (Oct 2026; the old forms on these pages posted nowhere). */
+.stream-desc { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6; margin: -0.6rem 0 1.6rem; max-width: 640px; }
+.hai-substack { max-width: 480px; margin: 1.5rem auto 1rem; text-align: center; }
+.hai-substack-btn { display: inline-block; padding: 0.8rem 1.6rem; border-radius: 8px; background: #C8964E; color: #0A0A0C; font-family: var(--font-display); font-weight: 600; font-size: 0.98rem; text-decoration: none; transition: background 0.2s ease; }
+.hai-substack-btn:hover { background: #E8C88A; color: #0A0A0C; }
+.hai-substack-fallback { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
+.hai-substack-fallback a { color: var(--accent-secondary); }
+.subscribe-landing-browse { text-align: center; font-size: 0.9rem; margin-bottom: 2rem; }
 .inference-subscribe-back { text-align: center; }
 .inference-subscribe-back a { font-size: 0.85rem; color: var(--accent-secondary); text-decoration: none; }
 .inference-subscribe-back a:hover { text-decoration: underline; }
@@ -4604,6 +4610,20 @@ footer.site-footer ~ .newsletter-signup,
 .leg-meta a:hover { text-decoration: underline; }
 
 /* Filters */
+/* Staff toolkit (it had no styles, so its cards ran together as one paragraph). */
+.leg-toolkit { margin: 0 0 2.5rem; }
+.leg-toolkit h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0.3rem 0 0.5rem; color: var(--text-primary); }
+.leg-toolkit-intro { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6; max-width: 680px; margin-bottom: 1.2rem; }
+.leg-toolkit-group { margin: 1.2rem 0; }
+.leg-toolkit-group h3, .leg-toolkit-contact h3 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.6rem; color: var(--text-primary); }
+.leg-toolkit-card { display: block; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.6rem; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+.leg-toolkit-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+.leg-toolkit-kind { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.3rem; }
+.leg-toolkit-title { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.35; }
+.leg-toolkit-desc { display: block; margin-top: 0.35rem; font-size: 0.92rem; line-height: 1.55; color: var(--text-secondary); }
+.leg-toolkit-contact { margin-top: 1.4rem; }
+.leg-toolkit-contact p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
 .leg-filters {
   display: flex;
   gap: 0.5rem;
