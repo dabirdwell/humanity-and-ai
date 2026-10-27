@@ -24,7 +24,7 @@ The Legislature then adjourned sine die on May 14, two weeks ahead of the usual 
 
 ## What did pass
 
-Two AI measures became Oklahoma law in 2026: SB 1734, the Responsible Technology in Schools Act, signed May 13, and HB 3244, which adds artificial intelligence to the aggravated identity theft statute, law without signature on May 7. The House companion to this bill, HB 3544, also died at adjournment.
+Two AI measures became Oklahoma law in 2026: SB 1734, the Responsible Technology in Schools Act, signed May 12, and HB 3244, which adds artificial intelligence to the aggravated identity theft statute, law without signature on May 7. The House companion to this bill, HB 3544, also died at adjournment.
 
 ## What operators should take from it
 

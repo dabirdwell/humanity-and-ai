@@ -1,6 +1,6 @@
 {
   "session": "2026 Oklahoma Legislative Session (adjourned sine die mid-May 2026)",
-  "lastUpdated": "2026-07-05",
+  "lastUpdated": "2026-10-26",
   "bills": [
     {
       "id": "HB 2992",
@@ -68,6 +68,24 @@
       "inferenceIssue": "Issue #3"
     },
     {
+      "id": "HB 3244",
+      "title": "Crimes and punishments; modifying elements of certain unlawful acts; aggravated identity theft; effective date",
+      "shortTitle": "Identity Theft, Including by AI",
+      "chamber": "House",
+      "authors": [
+        "Rep. Bashore",
+        "Sen. Hall"
+      ],
+      "status": "signed",
+      "statusLabel": "Law. In Effect November 1, 2026",
+      "lastAction": "Became law without the Governor's signature on May 7, 2026. Takes effect November 1, 2026. Creates aggravated identity theft and makes it a crime to use a stolen or made-up (synthetic) identity, with intent to defraud, to get money or property. Anyone who uses artificial intelligence, among other digital tools, to commit identity theft faces additional penalties on top of the identity theft charge.",
+      "lastActionDate": "2026-05-07",
+      "category": "ai",
+      "votes": "",
+      "policyRelevance": "With SB 1734, one of the AI-related bills that became Oklahoma law in 2026. It does not regulate AI itself; it names AI as a tool of identity theft and raises the penalty for using it that way.",
+      "inferenceIssue": ""
+    },
+    {
       "id": "SB 1521",
       "title": "Minor Protection from AI (Conversational AI Services)",
       "shortTitle": "Chatbot Protections for Minors",
@@ -75,13 +93,13 @@
       "authors": [
         "Sen. Hamilton"
       ],
-      "status": "signed",
-      "statusLabel": "Enacted (2026 Session)",
-      "lastAction": "Passed the Senate 43-0 on March 23, 2026, and was enacted before sine die adjournment. The final law regulates operators of conversational AI services that interact with minors: operators must provide parental management tools for minor accounts and ensure the AI directs users expressing self-harm or suicidal thoughts to appropriate crisis services. (The bill evolved substantially from its introduced version, which centered on age/ID verification.)",
-      "lastActionDate": "2026-03-23",
+      "status": "dead",
+      "statusLabel": "Dead. Session Ended",
+      "lastAction": "Passed the Senate 43-0 on March 23, 2026. The House passed an amended version 90-0 on April 28 and sent it back to the Senate on April 29. The Legislature ended its session on May 14 before the Senate voted on the House changes, so the bill died. It does not carry over; it would have to be refiled in 2027. Correction, October 26, 2026: this entry said the bill was enacted. It was not.",
+      "lastActionDate": "2026-05-14",
       "category": "ai",
-      "votes": "43-0 (Senate)",
-      "policyRelevance": "Oklahoma's framework for minor-AI chatbot interaction: parental controls and mandatory crisis-service routing rather than the ID-verification approach originally proposed.",
+      "votes": "43-0 (Senate); 90-0 (House, amended)",
+      "policyRelevance": "No legislator voted against it in either chamber, and it still died: the calendar ran out, not the votes. The House's version would have required operators of AI chat services used by minors to provide parental controls and to send users who mention self-harm to crisis services.",
       "inferenceIssue": "Issue #2"
     },
     {
@@ -92,11 +110,11 @@
       "authors": [],
       "status": "dead",
       "statusLabel": "Dead. Session Ended",
-      "lastAction": "Passed the House but did not complete the process before sine die adjournment in mid-May. Its policy territory was carried by SB 1521, which was enacted. Bills not enacted by the end of the 2026 session (the second session of the 60th Legislature) are dead and do not carry over.",
+      "lastAction": "Passed the House but did not complete the process before sine die adjournment in mid-May. Its Senate counterpart, SB 1521, also died at adjournment. Bills not enacted by the end of the 2026 session (the second session of the 60th Legislature) are dead and do not carry over.",
       "lastActionDate": "2026-05-15",
       "category": "ai",
       "votes": "",
-      "policyRelevance": "House companion to SB 1521. The Senate vehicle became law; this one did not need to.",
+      "policyRelevance": "House companion to SB 1521. Neither became law in 2026.",
       "inferenceIssue": "Issue #2"
     },
     {

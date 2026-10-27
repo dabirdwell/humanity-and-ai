@@ -2,11 +2,11 @@
 {{ $data := site.Data.ok_bills_2026 }}
 <div class="leg-tracker">
   <header class="leg-header">
-    <p class="leg-eyebrow">Legislation Tracker</p>
+    <p class="leg-eyebrow">Legislation · Oklahoma</p>
     <h1>{{ .Title }}</h1>
     <p class="leg-subtitle">Tracking {{ len $data.bills }} bills across AI governance, energy policy, and data privacy in the Oklahoma Legislature.</p>
-    <p class="leg-meta">Updated weekly. Data compiled from <a href="https://oklegislature.gov" target="_blank" rel="noopener">Oklahoma Legislature</a>, Radio Oklahoma News, KOSU StateImpact. Last updated {{ $data.lastUpdated }}.</p>
-    <p class="leg-meta">For deeper analysis, see <a href="/inference/">The Inference</a>, our AI policy intelligence briefing.</p>
+    <p class="leg-meta">A record of the AI, energy, and privacy bills we followed through the 2026 session, which ended May 14, 2026. Compiled from the <a href="https://oklegislature.gov" target="_blank" rel="noopener">Oklahoma Legislature</a>'s own records, Radio Oklahoma News, and KOSU StateImpact. Last updated {{ $data.lastUpdated }}.</p>
+    <p class="leg-meta">For what these laws mean as they take effect, see <a href="/inference/">The Inference</a>, our free weekly newsletter.</p>
   </header>
 
   {{/* Staff toolkit: renders only published (non-draft) toolkit pages that carry a toolkit_kind. Inert until drafts are flipped. */}}
@@ -15,7 +15,7 @@
   <section class="leg-toolkit">
     <p class="leg-eyebrow">Staff Toolkit</p>
     <h2>What a staffer can act on today</h2>
-    <p class="leg-toolkit-intro">Plain-language briefs on the bills that became law, plus a model framework for the transparency gap none of them filled. Written to be handed up the chain unedited.</p>
+    <p class="leg-toolkit-intro">Plain-language briefs on the bills that became law, and on one that nearly did, plus a model framework for the transparency gap none of them filled. Written to be handed up the chain unedited.</p>
 
     {{ with where . "Params.toolkit_kind" "Model Framework" }}
     <div class="leg-toolkit-group">
@@ -23,7 +23,7 @@
       {{ range . }}
       <a class="leg-toolkit-card" href="{{ .RelPermalink }}">
         <span class="leg-toolkit-kind">{{ .Params.toolkit_kind }}</span>
-        <span class="leg-toolkit-title">{{ .Title }}</span>
+        <span class="leg-toolkit-title">{{ .Title | replaceRE "^Model Framework: " "" }}</span>
         {{ with .Params.description }}<span class="leg-toolkit-desc">{{ . }}</span>{{ end }}
       </a>
       {{ end }}
@@ -36,7 +36,7 @@
       {{ range sort . "Title" }}
       <a class="leg-toolkit-card" href="{{ .RelPermalink }}">
         <span class="leg-toolkit-kind">{{ .Params.toolkit_kind }}</span>
-        <span class="leg-toolkit-title">{{ .Title }}</span>
+        <span class="leg-toolkit-title">{{ .Title | replaceRE "^Bill Brief: " "" }}</span>
         {{ with .Params.description }}<span class="leg-toolkit-desc">{{ . }}</span>{{ end }}
       </a>
       {{ end }}
@@ -68,7 +68,7 @@
           {{ if eq .status "filed" }}Filed
           {{ else if eq .status "committee" }}In Committee
           {{ else if eq .status "passed_chamber" }}Passed Chamber
-          {{ else if eq .status "signed" }}Signed into Law
+          {{ else if eq .status "signed" }}Became Law
           {{ else if eq .status "dead" }}Dead
           {{ else }}{{ .statusLabel }}
           {{ end }}
@@ -107,7 +107,7 @@
       <span class="leg-status leg-status--filed">Filed</span>
       <span class="leg-status leg-status--committee">In Committee</span>
       <span class="leg-status leg-status--passed_chamber">Passed Chamber</span>
-      <span class="leg-status leg-status--signed">Signed into Law</span>
+      <span class="leg-status leg-status--signed">Became Law</span>
       <span class="leg-status leg-status--dead">Dead</span>
     </div>
   </div>
