@@ -47,7 +47,7 @@ This framework does not grant AI rights, restrict AI use, or create regulatory b
 
 Oklahoma has flexible LLC laws (Title 18), no conflicting AI legislation, and a political culture that values the handshake. Wyoming became nationally known for zero-member LLCs. Oklahoma can become the state that wrote the first honest framework for human-AI business.
 
-The 2026 session showed Oklahoma is willing to legislate in this space: four AI and data-center measures became law, covering ratepayer cost attribution, groundwater use, AI in schools, and chatbot protections for minors. None of them addressed transparency in AI-partnered businesses. HAICTA is the piece that gap leaves open.
+The 2026 session showed Oklahoma is willing to legislate in this space: four AI and data-center measures became law, covering ratepayer cost attribution, groundwater use, AI in schools, and identity theft carried out with AI. None of them addressed transparency in AI-partnered businesses. HAICTA is the piece that gap leaves open.
 
 ## The working example
 
