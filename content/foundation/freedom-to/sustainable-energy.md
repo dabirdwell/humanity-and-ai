@@ -28,7 +28,7 @@ She heats with a propane tank she refills when she can afford it. In winter she 
 
 And the disparity doesn't land evenly. Hispanic households pay 42 percent more than the national average for combined energy costs. Black households pay 10 percent more. The people who got the least benefit from the fossil fuel boom carry the highest cost of its infrastructure.
 
-This is what energy poverty looks like in a state that powers the country. And it's what makes the energy transition not just a moral obligation but an *opportunity*if we design it that way.
+This is what energy poverty looks like in a state that powers the country. And it's what makes the energy transition not just a moral obligation but an *opportunity*, if we design it that way.
 
 Foundation is built on the premise that there is a minimum set of conditions people need to thrive. Sustainable energy is one of [sixteen components](/foundation/), and in Oklahoma it means something specific: the same land, the same skills, the same ingenuity that built the fossil fuel industry can build what comes next. If we choose to.
 
@@ -105,11 +105,11 @@ Those who say the energy transition will kill jobs are defending the industries 
 
 We do not head north with the climate flight. We make our stand here. This is the right place. We will invent our way out of this. Here are the directions we're building toward:
 
-- **Phoenix Wells at scale**convert Oklahoma's 20,000+ abandoned wells into community-owned geothermal power plants. Same workforce, same land, new century. Each well conversion costs $500-700K in capital, generating ~$72-91K in gross annual revenue with a ~6.2-year payback at ~14% IRR. The federal investment tax credit covers 40% of the upfront cost. What engineering challenges do we need to solve first? What does the workforce transition actually look like on the ground?
+- **Phoenix Wells at scale.** Convert Oklahoma's 20,000+ abandoned wells into community-owned geothermal power plants. Same workforce, same land, new century. Each well conversion costs $500-700K in capital, generating ~$72-91K in gross annual revenue with a ~6.2-year payback at ~14% IRR. The federal investment tax credit covers 40% of the upfront cost. What engineering challenges do we need to solve first? What does the workforce transition actually look like on the ground?
 
-- **Tribal energy sovereignty**tribal nations as first adopters of full-stack community energy, leapfrogging the broken centralized model entirely. The geological knowledge and the sovereign authority already exist. Over 90 percent of persistent poverty counties are already served by cooperatives: the organizational model is proven. What would it take to extend this to tribal-owned renewable generation?
+- **Tribal energy sovereignty.** Tribal nations as first adopters of full-stack community energy, leapfrogging the broken centralized model entirely. The geological knowledge and the sovereign authority already exist. Over 90 percent of persistent poverty counties are already served by cooperatives: the organizational model is proven. What would it take to extend this to tribal-owned renewable generation?
 
-- **AI-assisted microgrids**distributed energy networks where AI helps balance generation and demand in real time across a community, with humans supervising the system and deciding priorities. When one house generates excess solar, the grid routes it where it's needed automatically. Communities decide the rules: the AI handles the math. This is the [transportation](/foundation/transportation/) and [housing](/foundation/housing/) connection: microgrids power the EV charging networks that connect communities and the homes that shelter them. What does this look like in a town of 5,000?
+- **AI-assisted microgrids.** Distributed energy networks where AI helps balance generation and demand in real time across a community, with humans supervising the system and deciding priorities. When one house generates excess solar, the grid routes it where it's needed automatically. Communities decide the rules: the AI handles the math. This is the [transportation](/foundation/transportation/) and [housing](/foundation/housing/) connection: microgrids power the EV charging networks that connect communities and the homes that shelter them. What does this look like in a town of 5,000?
 
 We need perspectives from people who work in energy, people who live near its infrastructure, and people who pay the bills. If you know what energy poverty feels like (the thermostat math, the bill dread, the choice between comfort and food) that experience is data no spreadsheet captures. Bring it.
 

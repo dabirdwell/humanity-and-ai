@@ -40,7 +40,7 @@ A few things become visible in the diagram that aren't obvious from a list:
 
 ## Why Systems Thinking Matters for Policy
 
-Foundation draws on **cybernetic governance**the insight that complex systems can be coordinated through distributed feedback, recursive organization, and adaptive sensing. Stafford Beer's Viable System Model, Ashby's Law of Requisite Variety, Buckminster Fuller's ephemeralization. These aren't academic abstractions. They're the reason Foundation is designed as a web of mutual reinforcement rather than a stack of independent programs.
+Foundation draws on **cybernetic governance**: the insight that complex systems can be coordinated through distributed feedback, recursive organization, and adaptive sensing. Stafford Beer's Viable System Model, Ashby's Law of Requisite Variety, Buckminster Fuller's ephemeralization. These aren't academic abstractions. They're the reason Foundation is designed as a web of mutual reinforcement rather than a stack of independent programs.
 
 Markets compress vast ecological and social complexity into a single scalar metric: price. That's useful for some things and catastrophic for others. Foundation maintains variety matching, enough internal diversity to respond to the actual complexity of human needs, through continuous feedback and participatory adjustment.
 

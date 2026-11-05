@@ -1,51 +1,58 @@
 {
-  "session": "2026 Oklahoma Legislative Session (adjourned sine die mid-May 2026)",
-  "lastUpdated": "2026-10-26",
+  "session": "2026 Oklahoma Legislative Session (adjourned sine die May 14, 2026)",
+  "lastUpdated": "2026-11-04",
   "bills": [
     {
       "id": "HB 2992",
-      "title": "Data Center Consumer Ratepayer Protection Act of 2026",
+      "title": "Data Center Customer Ratepayer Protection Act of 2026",
       "shortTitle": "Data Center Infrastructure Costs",
       "chamber": "House",
       "authors": [
-        "Rep. Boles"
+        "Rep. Boles",
+        "Sen. Green"
       ],
       "status": "signed",
       "statusLabel": "Signed. In Effect July 1, 2026",
-      "lastAction": "In effect as of July 1, 2026. Signed by Gov. Stitt in May 2026. Requires large-load customers (75+ MW) to pay for new grid infrastructure, mandates separate tariffs with credit requirements, and requires developers to notify the Corporation Commission, county commissioners, and neighboring property owners within 60 days of buying land for a project.",
-      "lastActionDate": "2026-07-01",
+      "lastAction": "Approved by Gov. Stitt on May 11, 2026. In effect as of July 1, 2026. Requires large-load customers (75+ MW) to pay for new grid infrastructure, mandates separate tariffs with credit requirements, and requires developers to notify the Corporation Commission, county commissioners, and neighboring property owners within 60 days of buying land for a project.",
+      "lastActionDate": "2026-05-11",
       "category": "energy",
-      "votes": "92-2 (House)",
+      "votes": "92-2 (House); 46-0 (Senate); final version, after House and Senate negotiators settled their differences: 84-0 (House), 48-0 (Senate)",
       "policyRelevance": "Ensures data center operators bear proportional costs for grid infrastructure upgrades rather than passing them to residential ratepayers. Defines large-load customers as 75+ MW facilities. Now the tariff framework the Oklahoma Corporation Commission must apply to the first live loads. Covered in depth in Issue #17 (The Meter Goes Live) and Issue #19 (The Gate).",
       "inferenceIssue": "Issue #17"
     },
     {
       "id": "SB 259",
-      "title": "Data Center Groundwater Protection Act",
+      "title": "Water and water rights; establishing procedures for permitting, monitoring, and reporting of groundwater use",
       "shortTitle": "Groundwater Metering & Closed-Loop Cooling",
       "chamber": "Senate",
-      "authors": [],
+      "authors": [
+        "Sen. Howard",
+        "Rep. Newton"
+      ],
       "status": "signed",
       "statusLabel": "Signed into Law (May 2026)",
-      "lastAction": "Signed by Gov. Stitt May 20, 2026. Final language defines penalties for failure to report groundwater usage, requires data centers to use closed-loop cooling systems to qualify for a groundwater usage permit, protects users who draw less than their permitted amount from allocation reductions, and creates a complaint process through the Oklahoma Water Resources Board.",
+      "lastAction": "Signed by Gov. Stitt May 20, 2026. Takes effect November 1, 2026. Filed in 2025 and passed in 2026. Final language defines penalties for failure to report groundwater usage, allows a groundwater permit for a data center's cooling only if the system is closed-loop or another low-consumption design that recirculates the water, and creates a complaint process through the Oklahoma Water Resources Board.",
       "lastActionDate": "2026-05-20",
       "category": "energy",
-      "votes": "",
+      "votes": "36-10 (Senate); 88-1 (House, amended); 38-10 (Senate, accepting the House changes)",
       "policyRelevance": "The water-side companion to HB 2992's cost-attribution floor: metering and closed-loop cooling for large-load data centers. Of direct relevance to Phoenix Wells and geothermal procurement, since enhanced geothermal does not consume the cooling-tower water cycle most hyperscale data centers rely on. Covered in Issue #15 (Water on the Meter).",
       "inferenceIssue": "Issue #15"
     },
     {
       "id": "SB 546",
-      "title": "Oklahoma Computer Data Privacy Act",
+      "title": "Data privacy; establishing consumer rights; appeal process; privacy notice; data protection assessments; penalties; liability",
       "shortTitle": "Consumer Data Privacy",
       "chamber": "Senate",
-      "authors": [],
+      "authors": [
+        "Sen. Howard",
+        "Rep. West (Josh)"
+      ],
       "status": "signed",
       "statusLabel": "Signed into Law",
-      "lastAction": "Signed into law in March 2026. House passed 84-4.",
+      "lastAction": "Approved by Gov. Stitt on March 20, 2026. Takes effect January 1, 2027. Filed in 2025: the Senate passed it 46-0 in March 2025, the House passed it 84-4 on February 19, 2026, and the Senate accepted the House version 38-7 on March 16, 2026.",
       "lastActionDate": "2026-03-20",
       "category": "privacy",
-      "votes": "84-4 (House)",
+      "votes": "46-0 (Senate, 2025); 84-4 (House); 38-7 (Senate, final)",
       "policyRelevance": "Oklahoma's first comprehensive consumer data privacy law, joining roughly twenty states with comprehensive frameworks: gives residents rights over personal data collection, sale, and deletion by companies.",
       "inferenceIssue": "Issue #4"
     },
@@ -63,7 +70,7 @@
       "lastAction": "Approved by Governor May 12, 2026, with emergency clause. Requires every district to adopt a written AI policy before the 2027-28 school year; mandates educator-directed, human-in-the-loop AI use; prohibits AI as the primary basis for grading, discipline, or placement; preserves parents' right to opt students out of student-facing AI tools without academic penalty.",
       "lastActionDate": "2026-05-12",
       "category": "ai",
-      "votes": "42-0 (Senate)",
+      "votes": "42-0 (Senate); 89-0 (House)",
       "policyRelevance": "Sets a statewide floor for AI governance in K-12: district policies, human oversight, a ban on high-stakes AI decisions, and family transparency. One of the first state frameworks of its kind.",
       "inferenceIssue": "Issue #3"
     },
@@ -81,17 +88,18 @@
       "lastAction": "Became law without the Governor's signature on May 7, 2026. Takes effect November 1, 2026. Creates aggravated identity theft and makes it a crime to use a stolen or made-up (synthetic) identity, with intent to defraud, to get money or property. Anyone who uses artificial intelligence, among other digital tools, to commit identity theft faces additional penalties on top of the identity theft charge.",
       "lastActionDate": "2026-05-07",
       "category": "ai",
-      "votes": "",
+      "votes": "92-0 (House); 46-0 (Senate)",
       "policyRelevance": "With SB 1734, one of the AI-related bills that became Oklahoma law in 2026. It does not regulate AI itself; it names AI as a tool of identity theft and raises the penalty for using it that way.",
       "inferenceIssue": ""
     },
     {
       "id": "SB 1521",
-      "title": "Minor Protection from AI (Conversational AI Services)",
+      "title": "Artificial intelligence; definitions; requiring operators make certain disclosure; preventative measures for minor account holders; prohibitions; enforcement authority to Attorney General; civil penalty",
       "shortTitle": "Chatbot Protections for Minors",
       "chamber": "Senate",
       "authors": [
-        "Sen. Hamilton"
+        "Sen. Hamilton",
+        "Rep. Maynard"
       ],
       "status": "dead",
       "statusLabel": "Dead. Session Ended",
@@ -104,34 +112,37 @@
     },
     {
       "id": "HB 3544",
-      "title": "Chatbot Safety for Minors Act",
-      "shortTitle": "Chatbot Safety (House Companion)",
+      "title": "Technology; artificial intelligence; companions; minors; safety; civil penalties",
+      "shortTitle": "AI Companions and Minors (House Companion)",
       "chamber": "House",
-      "authors": [],
+      "authors": [
+        "Rep. Maynard",
+        "Sen. Hamilton"
+      ],
       "status": "dead",
       "statusLabel": "Dead. Session Ended",
-      "lastAction": "Passed the House but did not complete the process before sine die adjournment in mid-May. Its Senate counterpart, SB 1521, also died at adjournment. Bills not enacted by the end of the 2026 session (the second session of the 60th Legislature) are dead and do not carry over.",
-      "lastActionDate": "2026-05-15",
+      "lastAction": "Passed the House 96-0 on March 25, 2026. The Senate Technology and Telecommunications Committee approved an amended version on April 16, and it was placed on the Senate floor calendar on April 21, but the full Senate never voted on it. It died when the session ended May 14. Bills not enacted by the end of the 2026 session (the second session of the 60th Legislature) are dead and do not carry over.",
+      "lastActionDate": "2026-05-14",
       "category": "ai",
-      "votes": "",
-      "policyRelevance": "House companion to SB 1521. Neither became law in 2026.",
+      "votes": "96-0 (House)",
+      "policyRelevance": "House companion to SB 1521 (the same two authors). It would have barred making social AI companions knowingly available to minors and required safety protocols for users. Neither bill became law in 2026.",
       "inferenceIssue": "Issue #2"
     },
     {
       "id": "SB 1300",
-      "title": "Affordable, Reliable, Clean Energy Security Act",
-      "shortTitle": "ARC Energy Framework",
+      "title": "Corporation Commission; requiring implementation of certain standards",
+      "shortTitle": "Affordable, Reliable, Clean Energy Standards",
       "chamber": "Senate",
       "authors": [
         "Sen. Bergstrom"
       ],
       "status": "dead",
       "statusLabel": "Dead. Session Ended",
-      "lastAction": "Did not advance out of committee before sine die adjournment in mid-May 2026. Dead for this legislature; the ARC framework would need to be refiled in 2027.",
-      "lastActionDate": "2026-05-15",
+      "lastAction": "Sent to the Senate Rules Committee on February 3, 2026, and never heard there. It died when the session ended May 14, 2026, and would need to be refiled in 2027.",
+      "lastActionDate": "2026-05-14",
       "category": "energy",
       "votes": "",
-      "policyRelevance": "Would have established affordable, reliable, clean energy security as state policy priorities with reliability standards and domestic-sourcing preferences. Watch for a 2027 refile.",
+      "policyRelevance": "Would have directed the Corporation Commission to set standards that prioritize affordable, reliable, and clean energy security, including preferences for fuel sources produced in the United States. Watch for a 2027 refile.",
       "inferenceIssue": ""
     },
     {
@@ -141,11 +152,11 @@
       "chamber": "House",
       "authors": [
         "Rep. Archer",
-        "Rep. Waldron"
+        "Sen. Jech"
       ],
       "status": "dead",
       "statusLabel": "Dead. Session Deadline",
-      "lastAction": "Passed House 85-6 but stuck on Senate general order calendar. Did not advance by the May 7 opposite-chamber deadline. Dead for the 2026 session and does not carry over.",
+      "lastAction": "Passed the House 85-6 on March 16, 2026. The Senate Energy Committee approved an amended version on April 23, and it was placed on the Senate floor calendar on April 28, where it stayed. It did not get a Senate vote by the May 7 deadline for bills from the other chamber. Dead for the 2026 session and does not carry over.",
       "lastActionDate": "2026-05-07",
       "category": "energy",
       "votes": "85-6 (House)",
@@ -154,64 +165,73 @@
     },
     {
       "id": "HB 3917",
-      "title": "Data Center Energy Surcharge Act",
+      "title": "Public utilities; defining terms; requiring certain public utilities to make certain filing with Corporation Commission",
       "shortTitle": "Data Center Energy Surcharge",
       "chamber": "House",
       "authors": [
-        "Rep. Dollens"
+        "Rep. Dollens",
+        "Sen. Mann"
       ],
       "status": "dead",
       "statusLabel": "Dead. Session Ended",
-      "lastAction": "Did not advance out of the House Energy & Natural Resources Committee before sine die adjournment in mid-May 2026.",
-      "lastActionDate": "2026-05-15",
+      "lastAction": "Sent to the House Appropriations and Budget Committee on February 4, 2026. Its Natural Resources Subcommittee recommended it 9-0 on February 16, but the full committee never acted, so it never reached the House floor. It died when the session ended May 14, 2026.",
+      "lastActionDate": "2026-05-14",
       "category": "energy",
-      "votes": "",
-      "policyRelevance": "Would have imposed an energy surcharge on large data centers consuming above a threshold. The cost-attribution ground it aimed at was partly covered by HB 2992, which did become law.",
+      "votes": "9-0 (House Appropriations and Budget Natural Resources Subcommittee)",
+      "policyRelevance": "Would have required utilities to add a surcharge for large-load data center customers and sent the money to a new Grid Modernization Revolving Fund. The cost-attribution ground it aimed at was partly covered by HB 2992, which did become law.",
       "inferenceIssue": ""
     },
     {
-      "id": "SB 1890",
-      "title": "AI-Generated Deepfake Disclosure Act",
-      "shortTitle": "AI Deepfake Disclosure",
-      "chamber": "Senate",
-      "authors": [],
-      "status": "dead",
-      "statusLabel": "Dead. Session Ended",
-      "lastAction": "Did not advance out of Senate Judiciary Committee before sine die adjournment in mid-May 2026.",
-      "lastActionDate": "2026-05-15",
-      "category": "ai",
-      "votes": "",
-      "policyRelevance": "Would have required disclosure labeling on AI-generated deepfake content in political advertising and public communications. Expect the topic to return in 2027 ahead of the election cycle.",
-      "inferenceIssue": ""
-    },
-    {
-      "id": "HB 4012",
-      "title": "Deepfake Election Integrity Act",
-      "shortTitle": "Deepfake Election Integrity",
+      "id": "HB 3299",
+      "title": "Crimes and punishments; creating and disseminating a digitization or synthetic media; making certain acts unlawful",
+      "shortTitle": "AI Deepfakes and Political Ad Disclosure",
       "chamber": "House",
-      "authors": [],
+      "authors": [
+        "Rep. Hays",
+        "Sen. Coleman"
+      ],
       "status": "dead",
       "statusLabel": "Dead. Session Ended",
-      "lastAction": "Did not advance out of the House Elections & Ethics Committee before sine die adjournment in mid-May 2026.",
-      "lastActionDate": "2026-05-15",
+      "lastAction": "Approved 6-0 by the House Criminal Judiciary Committee on February 17, 2026, and 13-0 by the House Judiciary and Public Safety Oversight Committee on February 26, both times in a rewritten version (a committee substitute). The full House never voted on it, and it died when the session ended May 14, 2026. Correction, November 2026: this card earlier listed this topic under SB 1890, which is an unrelated bill. HB 3299 is the 2026 bill on this subject.",
+      "lastActionDate": "2026-05-14",
       "category": "ai",
-      "votes": "",
-      "policyRelevance": "Would have criminalized distribution of AI-generated deepfakes intended to influence elections within 90 days of an election. Likely to be refiled as 2027 approaches the midterm cycle.",
+      "votes": "6-0 (House Criminal Judiciary); 13-0 (House Judiciary and Public Safety Oversight)",
+      "policyRelevance": "Would have made it a crime to create and share AI-made or digitally altered media using a real person's name, image, voice, or likeness without written consent, with intent to cause harm: a misdemeanor, or a felony above $25,000 in financial harm or when used for extortion. Political ads using such media to show a candidate would have had to say so before an election (the bill sets a 45-day period). Rep. Hays filed a similar bill, HB 3073, in 2024; it passed the House 81-15 and stalled in the Senate.",
       "inferenceIssue": ""
     },
     {
-      "id": "SB 1650",
-      "title": "Insurance Algorithm Transparency Act",
-      "shortTitle": "AI Insurance Algorithm Transparency",
+      "id": "SB 894",
+      "title": "Artificial intelligence; prohibiting distribution of certain media and requiring certain disclosures",
+      "shortTitle": "Election Deepfakes (90-Day Window)",
       "chamber": "Senate",
-      "authors": [],
+      "authors": [
+        "Sen. Coleman",
+        "Rep. Newton"
+      ],
       "status": "dead",
       "statusLabel": "Dead. Session Ended",
-      "lastAction": "Did not advance out of the Senate Insurance Committee before sine die adjournment in mid-May 2026.",
-      "lastActionDate": "2026-05-15",
+      "lastAction": "Filed in 2025. Approved 5-2, as amended, by the Senate Technology and Telecommunications Committee on February 27, 2025, and placed on the Senate floor calendar on March 4, 2025. The full Senate never voted on it in 2025 or 2026, and it died when the session ended May 14, 2026. Correction, November 2026: this card earlier listed this topic under HB 4012, which is the state budget bill. SB 894 is the bill on this subject.",
+      "lastActionDate": "2026-05-14",
+      "category": "ai",
+      "votes": "5-2 (Senate Technology and Telecommunications, 2025)",
+      "policyRelevance": "Would have barred knowingly spreading an AI deepfake of a candidate or party on the ballot within 90 days of an election unless it carried a clear label saying the image, audio, or video was manipulated or generated by AI. Candidates could go to court to stop it, with fines of up to $1,000, $5,000, or $10,000 depending on the case. The penalties were civil, not criminal.",
+      "inferenceIssue": ""
+    },
+    {
+      "id": "SB 2038",
+      "title": "Health Insurance; requiring certain decisions to be made by licensed professional; prohibiting issuance of outcomes determined with artificial-intelligence; requiring disclosure notice by insurer",
+      "shortTitle": "AI in Health Insurance Decisions",
+      "chamber": "Senate",
+      "authors": [
+        "Sen. Goodwin"
+      ],
+      "status": "dead",
+      "statusLabel": "Dead. Session Ended",
+      "lastAction": "Sent to the Senate Business and Insurance Committee on February 3, 2026, and never heard there. It died when the session ended May 14, 2026. Correction, November 2026: this card earlier listed this topic under SB 1650, which is an unrelated bill, and named a Senate Insurance Committee, which does not exist. SB 2038 is a 2026 bill on this subject.",
+      "lastActionDate": "2026-05-14",
       "category": "consumer",
       "votes": "",
-      "policyRelevance": "Would have required insurers to disclose AI algorithm use in rate-setting and claims decisions, with a consumer appeals process.",
+      "policyRelevance": "Would have required a licensed health care professional to issue any final denial or other adverse decision by a health insurer, barred adverse decisions that come from an AI system unless such a professional reviewed them, required a disclosure notice from the insurer, let the Insurance Commissioner examine insurers' AI systems, and set a $10,000 fine per violation. Two other 2026 bills on AI in health insurance decisions also died without a hearing: SB 1967 (Sen. Mann) and HB 3675 (Rep. Provenzano).",
       "inferenceIssue": ""
     }
   ]

@@ -21,7 +21,7 @@ Built for Ashley. Built for anyone who finds traditional financial tools anxiety
 - **Savings goals** with circular progress rings: watch your emergency fund, vacation fund, and long-term goals grow
 - **Bill calendar** with payday countdown: never miss a payment, always know what's coming
 - **Spending insights** with a Money Health Score (0-100) that tells you at a glance how you're doing
-- **Quick allocate**distribute income across categories with one tap instead of tedious manual entry
+- **Quick allocate**: distribute income across categories with one tap instead of tedious manual entry
 - **Bank connections** via Plaid (optional): see real transactions alongside your budgets
 
 ## The Philosophy

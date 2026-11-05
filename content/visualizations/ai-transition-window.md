@@ -34,7 +34,7 @@ Right now, AI systems still require significant human involvement. They have to 
 
 All of that changes as AI systems become more capable of directing themselves. Not overnight, but along a trajectory that several independent research teams are actively accelerating.
 
-The decisions made during the window: about who benefits, who governs, what AI is *for*will shape the decades that follow. Not because of any single policy choice, but because early infrastructure becomes deeply embedded. The social contracts we build now are the ones future generations will inherit.
+The decisions made during the window (about who benefits, who governs, what AI is *for*) will shape the decades that follow. Not because of any single policy choice, but because early infrastructure becomes deeply embedded. The social contracts we build now are the ones future generations will inherit.
 
 ## Why This Isn't Doom
 

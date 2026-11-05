@@ -68,11 +68,11 @@ Those who say education is a personal investment that individuals should finance
 
 We have a framework. We don't have all the answers, and that's deliberate. Here are directions we think matter. Push back on them, extend them, or bring your own:
 
-- **Free, publicly available AI-assisted tutoring**adaptive learning systems, guided by human educators, that meet each person where they are, available at any age, for any subject. Not premium features: public infrastructure, like libraries built for the century we're actually in. What subjects would you learn if cost weren't a barrier? What would your community look like if everyone had that access?
+- **Free, publicly available AI-assisted tutoring.** Adaptive learning systems, guided by human educators, that meet each person where they are, available at any age, for any subject. Not premium features: public infrastructure, like libraries built for the century we're actually in. What subjects would you learn if cost weren't a barrier? What would your community look like if everyone had that access?
 
-- **Debt jubilee with structural reform**forgiveness without fixing the system that created the debt just reloads the trap. Pair relief with a transition to free public higher education and trade programs. Oklahoma has some of the lowest-funded schools in the nation and some of the highest emergency-certification rates. What would it take to make this state a model instead of a warning?
+- **Debt jubilee with structural reform.** Forgiveness without fixing the system that created the debt just reloads the trap. Pair relief with a transition to free public higher education and trade programs. Oklahoma has some of the lowest-funded schools in the nation and some of the highest emergency-certification rates. What would it take to make this state a model instead of a warning?
 
-- **Employer-agnostic skills portfolios**a system where everything you learn is documented, portable, and verifiable. Your skills belong to you, not to the institution that credentialed them. What would it change if your capabilities were recognized regardless of where or how you learned them?
+- **Employer-agnostic skills portfolios.** A system where everything you learn is documented, portable, and verifiable. Your skills belong to you, not to the institution that credentialed them. What would it change if your capabilities were recognized regardless of where or how you learned them?
 
 What does education look like where you are? What's working? What's been tried and failed? If you've navigated the student debt system, the retraining pipeline, or tried to learn something new and hit a wall: that experience is exactly the data we need.
 

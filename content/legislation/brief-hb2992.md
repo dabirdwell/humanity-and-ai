@@ -1,5 +1,5 @@
 ---
-title: "Bill Brief: HB 2992, Data Center Consumer Ratepayer Protection Act"
+title: "Bill Brief: HB 2992, Data Center Customer Ratepayer Protection Act"
 draft: false
 description: "One-page staff brief on HB 2992: what the law does, who it applies to, its effective date, and what utilities and large-load customers must do now."
 date: 2026-07-05
@@ -7,7 +7,7 @@ toolkit_kind: "Bill Brief"
 tags: ["ai-policy", "oklahoma", "energy", "data-centers", "hb-2992", "legislation"]
 ---
 
-**Data Center Consumer Ratepayer Protection Act of 2026**
+**Data Center Customer Ratepayer Protection Act of 2026**
 Author: Rep. Boles (House) · Vote: 92-2 (House) · Signed by Gov. Stitt, May 2026 · Effective July 1, 2026
 
 ## What the law does

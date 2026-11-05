@@ -36,11 +36,11 @@ This episode makes the case that *now* is when it matters to pay attention, part
 
 The pilot follows the full five-segment structure:
 
-1. **Mission Control**Tour of the Humanity and AI ecosystem
-2. **Build in Public**A live build session, prompts on screen
-3. **The Conversation**Pilot guest interview
-4. **Foundation Deep-Dive**Component 01: Safety Net Floor
-5. **Open Channel**Live viewer Q&A
+1. **Mission Control**: Tour of the Humanity and AI ecosystem
+2. **Build in Public**: A live build session, prompts on screen
+3. **The Conversation**: Pilot guest interview
+4. **Foundation Deep-Dive**: Component 01: Safety Net Floor
+5. **Open Channel**: Live viewer Q&A
 
 ~70 minutes total. Platform and date to be announced.
 

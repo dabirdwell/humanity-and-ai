@@ -50,7 +50,7 @@ Dennis's 24 years of reading people, understanding context, and making judgment 
 
 Here's what connects Dennis staring at a brochure, the 83 million workers whose jobs are evaporating, and the guidance counselor still telling kids to learn to code.
 
-When you lose your work (not just your job, but your sense of being competent at something the world needs) it doesn't just affect your income. It reorganizes your identity. Work in America isn't just economic. It's how people answer the question *what do you do?*which is really the question *who are you?* When the answer disappears, the ground moves under everything.
+When you lose your work (not just your job, but your sense of being competent at something the world needs) it doesn't just affect your income. It reorganizes your identity. Work in America isn't just economic. It's how people answer the question *what do you do?* And that is really the question *who are you?* When the answer disappears, the ground moves under everything.
 
 Your nervous system registers it as threat. Stress hormones rise. Sleep fractures. Decision-making narrows to the immediate, not because you've lost your intelligence, but because your body has correctly identified that the thing that provided stability, purpose, and identity is gone. Long-term planning becomes impossible when you don't know what you're planning *for*. And the longer that state persists, the harder it becomes to climb out of, because the stress itself degrades the cognitive flexibility you'd need to adapt.
 

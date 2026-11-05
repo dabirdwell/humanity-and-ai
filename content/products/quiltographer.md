@@ -17,9 +17,9 @@ Quiltographer is an AI-powered quilting pattern reader. Feed it a pattern PDF an
 
 ## Key Features
 
-- **PDF pattern parsing**Upload any quilting pattern PDF. Quiltographer's AI reads the document structure, identifies instructions, measurements, and diagrams, and reorganizes them into a guided workflow.
-- **Step-by-step mode**Work through your pattern one step at a time with clear instructions, visual references, and progress tracking. No more flipping back and forth through a 20-page PDF.
-- **Smart cutting lists**Extracts and consolidates all cutting instructions, accounting for seam allowances and fabric width. Calculates yardage with waste minimization.
+- **PDF pattern parsing.** Upload any quilting pattern PDF. Quiltographer's AI reads the document structure, identifies instructions, measurements, and diagrams, and reorganizes them into a guided workflow.
+- **Step-by-step mode.** Work through your pattern one step at a time with clear instructions, visual references, and progress tracking. No more flipping back and forth through a 20-page PDF.
+- **Smart cutting lists.** Extracts and consolidates all cutting instructions, accounting for seam allowances and fabric width. Calculates yardage with waste minimization.
 
 ## Why It Exists
 

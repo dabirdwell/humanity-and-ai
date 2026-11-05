@@ -17,9 +17,9 @@ Beacon is a one-button civic live streaming tool designed for transparency. Poin
 
 ## Key Features
 
-- **One-button streaming**Open the app, tap once, and you're live. No configuration, no login walls, no pre-roll ads. The stream starts when you start it.
-- **Civic-first design**Built for city council meetings, school board hearings, community forums, and any public event where transparency matters more than production quality.
-- **Archival by default**Every stream is automatically archived and indexed. Public meetings shouldn't disappear when the livestream ends.
+- **One-button streaming.** Open the app, tap once, and you're live. No configuration, no login walls, no pre-roll ads. The stream starts when you start it.
+- **Civic-first design.** Built for city council meetings, school board hearings, community forums, and any public event where transparency matters more than production quality.
+- **Archival by default.** Every stream is automatically archived and indexed. Public meetings shouldn't disappear when the livestream ends.
 
 ## Why It Exists
 

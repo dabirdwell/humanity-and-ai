@@ -50,7 +50,7 @@ This is not a conspiracy. It is the default. When powerful technology meets weak
 
 We have spent three years building a civic framework called Foundation on the premise that the AI transition requires new governance infrastructure, not just new technology. Foundation's answer is not "stop building." It is "build differently."
 
-At the energy layer: distributed, community-owned power generation from repurposed infrastructure, not concentrated corporate data centers drawing grid power. Oklahoma's Data Center Consumer Ratepayer Protection Act (HB 2992), signed into law in May and operative July 1, 2026, already requires large loads to pay their own way rather than shifting costs to residential customers. It is a start, not a solution, but it exists because a state legislature took the question seriously before Washington did.
+At the energy layer: distributed, community-owned power generation from repurposed infrastructure, not concentrated corporate data centers drawing grid power. Oklahoma's Data Center Customer Ratepayer Protection Act (HB 2992), signed into law in May and operative July 1, 2026, already requires large loads to pay their own way rather than shifting costs to residential customers. It is a start, not a solution, but it exists because a state legislature took the question seriously before Washington did.
 
 At the connectivity layer: mesh networks that work without cell towers, without ISPs, without anyone's permission. Communication infrastructure that citizens own and operate, not camera networks that corporations own and municipalities license.
 

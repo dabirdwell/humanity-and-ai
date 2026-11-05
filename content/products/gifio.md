@@ -16,12 +16,12 @@ Gifio is a free GIF maker that runs entirely in your browser. Drop in images, st
 
 ## Key Features
 
-- **Style presets**Thirteen one-click looks: Film Noir, Sepia, Cyanotype, Golden Hour, Rainbow Glasses, Sunset Drift, and more. One tap to transform every frame. Fine controls hidden behind "Customize" for people who want them.
-- **Background elements**Sunrise, Moonrise, Rain, Snow, Fireflies, Aurora, Hearts, and more. Procedural animations that layer behind or over your frames.
-- **Smart timing**Gifio analyzes visual differences between your frames and varies the speed automatically. Moments with big changes get more time; similar frames move quickly. The rhythm matches your content.
-- **Title cards**Add a styled title card with optional face detection. Gifio finds the main subject in your photos and renders a stylized circular portrait on the card.
-- **Aspect ratio crop**Square, 4:3, 16:9, Portrait, 3:2. Center-crop keeps your content centered.
-- **Smooth loop**Cross-fades the end into the beginning for seamless cycling.
+- **Style presets.** Thirteen one-click looks: Film Noir, Sepia, Cyanotype, Golden Hour, Rainbow Glasses, Sunset Drift, and more. One tap to transform every frame. Fine controls hidden behind "Customize" for people who want them.
+- **Background elements.** Sunrise, Moonrise, Rain, Snow, Fireflies, Aurora, Hearts, and more. Procedural animations that layer behind or over your frames.
+- **Smart timing.** Gifio analyzes visual differences between your frames and varies the speed automatically. Moments with big changes get more time; similar frames move quickly. The rhythm matches your content.
+- **Title cards.** Add a styled title card with optional face detection. Gifio finds the main subject in your photos and renders a stylized circular portrait on the card.
+- **Aspect ratio crop.** Square, 4:3, 16:9, Portrait, 3:2. Center-crop keeps your content centered.
+- **Smooth loop.** Cross-fades the end into the beginning for seamless cycling.
 
 ## Why It Exists
 

@@ -17,9 +17,9 @@ Citizen is a civic engagement hub that connects the [Foundation](/foundation/) p
 
 ## Key Features
 
-- **Foundation Dashboard**See all 16 Foundation components and how they apply to where you live. Track policy progress, data trends, and implementation status. Understand what's working, what's stalled, and where the leverage points are.
-- **Community Contributions**Report local conditions, share data, and contribute to the Foundation's evidence base. When you see a gap between policy and reality (a healthcare desert, a transit failure, a housing shortage) Citizen gives you a way to document it and connect it to the framework.
-- **Guardian AI**An AI civic assistant that explains legislation in plain language, maps your representatives' votes against their public statements, and surfaces the moments where participation matters most. Public comment windows, committee hearings, local board meetings: the moments where five people showing up changes the outcome.
+- **Foundation Dashboard.** See all 16 Foundation components and how they apply to where you live. Track policy progress, data trends, and implementation status. Understand what's working, what's stalled, and where the leverage points are.
+- **Community Contributions.** Report local conditions, share data, and contribute to the Foundation's evidence base. When you see a gap between policy and reality (a healthcare desert, a transit failure, a housing shortage) Citizen gives you a way to document it and connect it to the framework.
+- **Guardian AI.** An AI civic assistant that explains legislation in plain language, maps your representatives' votes against their public statements, and surfaces the moments where participation matters most. Public comment windows, committee hearings, local board meetings: the moments where five people showing up changes the outcome.
 
 ## Why It Exists
 

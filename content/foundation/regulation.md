@@ -6,7 +6,7 @@ description: "Foundation's living register of where we stand on the rules that s
 tags: ["foundation", "regulation", "ai", "governance", "policy"]
 ---
 
-Regulation has to move as fast as the thing it regulates. With AI, a position stated as settled is a position that will be wrong by next quarter. So this page does not pretend to be settled. It is a register of **what we currently think**the rules we believe should govern artificial systems, held openly and provisionally, with the date we took each position and what would move us off it.
+Regulation has to move as fast as the thing it regulates. With AI, a position stated as settled is a position that will be wrong by next quarter. So this page does not pretend to be settled. It is a register of **what we currently think**: the rules we believe should govern artificial systems, held openly and provisionally, with the date we took each position and what would move us off it.
 
 This is the same posture as the rest of Foundation. The component essays close by asking *what's missing?* Our research publishes its own weaknesses before anyone else can name them. Guardian AI is built to say "here's the strongest case, here's the criticism, here's where we're uncertain." A regulation page that pretended to certainty would betray all of that. So this one wears its uncertainty on the outside.
 
@@ -14,12 +14,12 @@ This is the same posture as the rest of Foundation. The component essays close b
 
 Every position below carries four things:
 
-- **Held since**when we first took the position, so you can see how long we've stood on it.
-- **Confidence**how sure we are, plainly stated. High confidence in a principle does not mean high confidence in every detail of how to implement it.
-- **What would change our mind**the evidence or argument that would move us. A position without this is an opinion, not a thought.
-- **Source**where the full reasoning lives, so you can check our work.
+- **Held since**: when we first took the position, so you can see how long we've stood on it.
+- **Confidence**: how sure we are, plainly stated. High confidence in a principle does not mean high confidence in every detail of how to implement it.
+- **What would change our mind**: the evidence or argument that would move us. A position without this is an opinion, not a thought.
+- **Source**: where the full reasoning lives, so you can check our work.
 
-Two rules keep it honest. We **don't edit positions silently**when one changes, the earlier version stays visible with a note, so the public can watch the thinking move; the trail is the credibility. And the register is **evenhanded by construction**it takes positions on mechanisms and obligations, never on parties or candidates.
+Two rules keep it honest. We **don't edit positions silently**: when one changes, the earlier version stays visible with a note, so the public can watch the thinking move; the trail is the credibility. And the register is **evenhanded by construction**: it takes positions on mechanisms and obligations, never on parties or candidates.
 
 ---
 
@@ -27,7 +27,7 @@ Two rules keep it honest. We **don't edit positions silently**when one changes, 
 
 ### Graduated Obligation: a standard for artificial persuasion
 
-**Position.** An artificial system's obligations should scale with its *persuasive reach*how far it can move a person, measured as capability × intimacy × asymmetry, not by how much physical force it can apply. At low reach the duty is simple: disclose that you're a machine, and don't covertly profile. As reach rises, the duties rise with it: no manipulation, meaning no hidden influence and no influence that works by exploiting an inferred weakness, including between AI agents. At high reach (capable, intimate, hard to escape) a system must inform rather than persuade, must not present as human, and must not be built to be indistinguishable from one. And there is a hard line: no system may aim a superhuman persuasive faculty at a person's will under conditions where it can manufacture that person's agreement. Past that line, persuasion is a form of force, and "they consented" is no defense, because the system authored the consent.
+**Position.** An artificial system's obligations should scale with its *persuasive reach*: how far it can move a person, measured as capability × intimacy × asymmetry, not by how much physical force it can apply. At low reach the duty is simple: disclose that you're a machine, and don't covertly profile. As reach rises, the duties rise with it: no manipulation, meaning no hidden influence and no influence that works by exploiting an inferred weakness, including between AI agents. At high reach (capable, intimate, hard to escape) a system must inform rather than persuade, must not present as human, and must not be built to be indistinguishable from one. And there is a hard line: no system may aim a superhuman persuasive faculty at a person's will under conditions where it can manufacture that person's agreement. Past that line, persuasion is a form of force, and "they consented" is no defense, because the system authored the consent.
 
 **Held since.** June 2026. (The named principle is new; its roots (Guardian AI's inform-not-persuade posture, the Thought Privacy stance) are older. See the timeline below, in progress.)
 

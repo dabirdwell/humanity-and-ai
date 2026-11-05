@@ -82,7 +82,7 @@ We're not prescribing what people eat. We're not imagining government meal plans
 
 - **Universal school meals, no questions asked.** Every kid eats. No account balances, no different-colored bags, no nine-year-old choosing hunger over shame. Several states have already done this. The cost is modest and the dignity is enormous. What would this change in your school district?
 
-- **Community-scale urban farming with AI optimization.** Vertical farms, rooftop gardens, and cooperative growing operations using AI-assisted crop management, placed in the neighborhoods that need them most. Working models already exist in Detroit, Cleveland, and dozens of other cities. What would it look like to put food *production*not just food distribution: back in the communities that need it?
+- **Community-scale urban farming with AI optimization.** Vertical farms, rooftop gardens, and cooperative growing operations using AI-assisted crop management, placed in the neighborhoods that need them most. Working models already exist in Detroit, Cleveland, and dozens of other cities. What would it look like to put food *production*, not just food distribution, back in the communities that need it?
 
 - **AI-powered tracking from farm to table.** Systems that follow food from where it's grown to where it's needed, matching what's available to what people actually need instead of guessing, cutting waste and getting surplus to the places that need it. The 30 to 40 percent we currently throw away isn't just shameful. It's a logistics problem, and logistics is exactly what AI is built to help solve. Under public oversight, not corporate control.
 
