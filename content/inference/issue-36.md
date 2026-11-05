@@ -16,6 +16,33 @@ distribution:
     substack:  { status: pending }
 ---
 
+## UPDATE, NOVEMBER 4: WHAT WE COULD AND COULD NOT HEAR FROM OKLAHOMA'S UTILITY REGULATOR ON NOVEMBER 3
+
+*Wednesday, November 4, 2026, as of 10:30 p.m. Central*
+
+Further down this page, we told you that on November 3 we would report what the public told Oklahoma's Corporation Commission, the state's utility regulator, at 9 a.m. in the case over what data centers, the large warehouses of computers that run online and AI services, will pay OG&E, the state's largest electric utility, for power. We did not do that on time, and we still can't tell you what anyone said. No one from this newsletter attended or listened. We made that promise without first arranging how to hear the session, and we did not fix that in time. The failure is ours, not the Commission's.
+
+**What we can confirm.** The session happened. The Commission's daily list of case results shows a hearing in this case, file number PUD2026-000046, marked "Public Comment," at 9 a.m. Tuesday in its Courtroom C50, before Judge Linda Foreman. The list names a court reporter, who makes the word-for-word record. It gives the result as "Record Opened" and "Merits Recommended," the Commission's own labels, which we can't yet explain. It does not say how many people spoke or what they said. The case file shows nothing dated after November 2. We found no news report of the session.
+
+**Public comments in the case file.** The Commission's online case search shows three items labeled public comment. It lists 81 of the case's 114 numbered filings, the documents formally submitted in the case, so there may be others we can't see.
+
+- **September 4:** Nick Coffey, the Democratic candidate for attorney general in Tuesday's election, wrote that OG&E's proposed terms for data centers fall short of the White House's Ratepayer Protection Pledge, a promise that large technology and AI companies will pay the full cost of the energy and infrastructure for their data centers. Coffey says OG&E signed the pledge. He wrote that "the door is left open" for some added power plant and delivery costs to be pushed onto existing residential and commercial customers.
+- **September 9:** Jeff Cloud, a former commissioner who now directs a nonprofit called the Alliance for Secure Energy, replied that the pledge is "a voluntary commitment with no independent force under Oklahoma law," meaning Oklahoma law does not require it. He asked the Commission to approve OG&E's proposal as OG&E wrote it.
+- **November 2:** a single filing containing three documents. One is an article from OK Energy Today, an Oklahoma energy news site, about the financial trouble of Stardust Power, a company planning a lithium refinery in Muskogee, Oklahoma. The other two are company announcements about Stardust Power's power agreement with OG&E. We found no statement from whoever filed it. The same filing went into four other utility cases that day.
+
+**What comes next.** Two earlier proceedings in this case produced a court reporter's notice of a finished transcript within five days, so we will look for one. Our next issue, on Saturday, November 7, will report what we find, including if we still don't know.
+
+You can still comment in writing on the [Commission's public comment form](https://public.occ.ok.gov/Forms/PUDPublicComment); the Commission says those comments are "filed in the appropriate case." The next scheduled comment session in this case is at 9 a.m. on January 12, 2027, the morning the case's full hearing begins and the day after the term ends for Commissioner Todd Hiett, whose seat was on Tuesday's ballot.
+
+**The Commission's separate 1:30 p.m. meeting on Tuesday is not over.** The Commission's [meetings page](https://oklahoma.gov/occ/public-meetings/2026-commission-meetings.html) now says that meeting continues at 11 a.m. on Thursday, November 5, and it has a Watch Live link. We did not hear Tuesday's part, and no recording is posted. The [agenda packet](https://oklahoma.gov/content/dam/ok/en/occ/documents/ajls/jls-courts/court-clerk/meetings/2026/2026-11-03-special-meeting-agenda.pdf) listed a proposed interim order, a temporary one that applies while a case continues, in the case over what Public Service Company of Oklahoma, the Tulsa-based electric utility, can charge. It also listed a proposed final ruling that would approve a settlement on OG&E's contracts to serve Google's data centers.
+
+- **The Tulsa utility's rates:** the [Tulsa Flyer](https://tulsaflyer.org/2026/11/03/your-money/post/pso-request-raise-electricity-rates-could-arrive-thursday/), a Tulsa news outlet, reports that after hours of deliberation commissioners delayed a decision and will meet again Thursday.
+- **Google's contracts:** the case file showed no signed order as of this evening, and we found no report either way, so we are not reporting an outcome. The November 7 issue will say whether the Commission ruled and what it decided.
+
+*This newsletter, The Inference, is produced with substantial help from Claude, an AI system made by Anthropic. Our full disclosures are near the end of this page.*
+
+---
+
 > On Friday, October 30, Oklahoma's Attorney General, the state's top lawyer, told the Corporation Commission, the elected three-member board that regulates the state's utilities, that the state's new law to protect electric bills from data-center costs does apply to the case brought by OG&E, Oklahoma's largest electric utility, over what data centers will pay for power. Last week a footnote in an order the Commission issued in the case suggested the law might not apply. Reading the law to leave this case out, he wrote, "would produce an absurd result the Legislature could not have intended."
 
 > On Tuesday, November 3, you elect the commissioner who will help decide that case. At 9 a.m. the same day, the Commission takes public comment on it.
