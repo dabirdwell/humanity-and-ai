@@ -27,7 +27,7 @@ Oklahoma isn't waiting for Congress. The question is whether the state is moving
 ### Bills That Have Moved
 
 **SB 1734: Oklahoma Responsible Technology in Schools Act**
-Passed the full Senate 42-0 on March 23. Now in the House. Requires development of guidance for AI and emerging technology use in education. Sen. Selfried and Rep. Moore. The unanimous vote signals that school-focused AI governance is politically safe ground. Nobody opposes protecting students.
+Passed the full Senate 42-0 on March 23. Now in the House. Requires development of guidance for AI and emerging technology use in education. Sen. Seifried and Rep. Moore. The unanimous vote signals that school-focused AI governance is politically safe ground. Nobody opposes protecting students.
 
 **HB 3544 and SB 1521: Chatbot Safety Bills**
 Both approved by their chambers of origin this week. These companion measures address AI chatbot interactions with minors. Oklahoma joins Idaho, Georgia, and other states pursuing chatbot safety after a year of national attention on AI companion apps and youth mental health.
@@ -64,7 +64,7 @@ Phan also raised procurement concerns. State agencies sometimes make technology 
 
 His salary is $190,000. He reports to State CIO Dan Cronin.
 
-**What to watch:** Whether Phan's office produces binding AI guidance for state agencies before the legislative session ends May 6, and whether any of the pending bills create statutory authority for his role beyond the executive appointment.
+**What to watch:** Whether Phan's office produces binding AI guidance for state agencies before the legislative session must end on May 29, and whether any of the pending bills create statutory authority for his role beyond the executive appointment.
 
 ---
 

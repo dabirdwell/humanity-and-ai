@@ -36,7 +36,7 @@ Water contamination doesn't happen randomly. It follows fault lines of race, cla
 
 ## What This Looks Like in Oklahoma
 
-*Daniel is not one person. He is a pattern.* He lives outside Kingfisher, in central Oklahoma, where his family has run cattle for three layers. The well water turned bad two years ago: started smelling like sulfur, then worse. A ProPublica investigation found that toxic wastewater from oil and gas operations had been pouring out of the ground near his property for months, killing crops and trees, while Oklahoma regulators failed to stop it.
+*Daniel is not one person. He is a pattern.* He lives outside Kingfisher, in central Oklahoma, where his family has run cattle for three generations. The well water turned bad two years ago: started smelling like sulfur, then worse. A ProPublica investigation found that toxic wastewater from oil and gas operations had been pouring out of the ground near his property for months, killing crops and trees, while Oklahoma regulators failed to stop it.
 
 Daniel's family connected to a rural water system as a stopgap. The groundwater pollution isn't fixed. It may never be.
 
