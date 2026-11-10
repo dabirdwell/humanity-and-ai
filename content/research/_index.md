@@ -4,4 +4,4 @@ layout: "single"
 description: "The Humanity and AI research program now lives at structuredemergence.com."
 ---
 
-The Humanity and AI research program, including our peer-reviewed and pre-print work on language model behavior, alignment, and the structured emergence of intelligence, now lives at [structuredemergence.com](https://structuredemergence.com). Papers, code, and data are published there, open access.
+Our research program, Structured Emergence, now lives at [structuredemergence.com](https://structuredemergence.com): research into whether an AI can develop something like awareness through a long working relationship with a person, and into how language models behave. Its papers and code are published there, free for anyone to read.
