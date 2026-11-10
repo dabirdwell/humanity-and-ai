@@ -1,7 +1,7 @@
 ---
 title: "Clarity for teachers, therapists and parents"
 description: "A free, calm reading room built with dyslexia in mind. No account, nothing to install. Hand it to a reader today."
-draft: true
+draft: false
 type: "products"
 layout: "single"
 url: "/clarity/"
@@ -12,13 +12,6 @@ link: "https://clarity.humanityandai.com/reader"
 link_text: "Start reading →"
 icon: "📖"
 ---
-
-<!-- Draft for David's read, Nov 9 2026 (Opus 5.5 session). Landing page for the IDA conference (Nov 12 to 14) and the Meta ad test.
-Facts checked against the live app and its privacy page on Nov 9; fast consults (factual 4.8, voice 4.6, first-use 4.8) applied.
-Pass-2 consults (voice 4.6, factual 4.8), applied except the shorter structured-literacy gloss (the plain one stays for parents): /Users/david/Documents/Claude_Vault/01_Core/consultations/consult_Clarity_IDA_Page_PASS2_2026-11-09_{voice,factual}_20261109_1926.md
-Corpus pass Nov 9 evening: /Users/david/Documents/Fawkes/Foundation/Commonplace/Briefs/Corpus_Brief_Clarity_IDA_Page_2026-11-09.md
-Consults: /Users/david/Documents/Claude_Vault/01_Core/consultations/consult_Clarity_IDA_Page_DRAFT_2026-11-09_*_20261109_1722.md
-Stays draft: true until David says publish. -->
 
 ## Try it in one minute
 
