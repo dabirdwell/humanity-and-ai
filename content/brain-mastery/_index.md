@@ -12,11 +12,11 @@ Software that amplifies how humans actually think, not chatbots, not productivit
 
 ### Clarity: Reading
 
-**A calmer reading experience, built with dyslexia expertise.**
+**A calm reading room, built with dyslexia in mind.**
 
-Clarity strips away the noise and rebuilds how text reaches your brain. Adjustable fonts, pacing controls, comprehension scaffolding: all informed by decades of reading research and real dyslexia expertise. Not a summary tool. A reading tool.
+Make the text bigger, space it out, change the colors, have it read aloud, and tap any word for its meaning. No account needed. Not a summary tool. A reading tool.
 
-<span class="pipeline-status live">Live: Free + $4.99/mo Pro</span>
+<span class="pipeline-status live">Live: free. Pro is coming soon.</span>
 
 <a href="https://clarity.humanityandai.com" class="bm-app-link">Open Clarity →</a>
 

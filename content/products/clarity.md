@@ -1,9 +1,9 @@
 ---
 title: "Clarity"
-description: "A calmer reading experience built with dyslexia expertise."
+description: "A calm reading room built with dyslexia in mind."
 weight: 1
 status: "beta"
-tagline: "A calmer reading experience built with dyslexia expertise."
+tagline: "A calm reading room built with dyslexia in mind."
 domain: "Reading"
 link: "https://clarity.humanityandai.com/demo"
 link_text: "Try a passage free →"
@@ -12,7 +12,7 @@ icon: "📖"
 
 ## What Is Clarity?
 
-Clarity is a calmer reading experience built with dyslexia expertise. Not a summarizer: a reading environment designed around how people actually process text, especially those who've been told they're bad at it.
+Clarity is a calm reading room built with dyslexia in mind. Not a summarizer: a reading environment designed around how people actually process text, especially those who've been told they're bad at it.
 
 Clarity is a calm reading room. Make the text bigger, space it out, change the colors, have it read aloud, and tap any word for its meaning. No account needed.
 
@@ -29,6 +29,8 @@ The whole reader is free, with no account. Pro is coming soon: for $4.99 a month
 ## Try It Now
 
 - **Read a passage, free.** The [Clarity demo](https://clarity.humanityandai.com/demo) opens a short science passage. Tap any word to hear it read aloud. No account needed.
-- **Clarity Kids.** A [cozy reading room for children](https://clarity.humanityandai.com/kids) in English, Spanish, and French. It needs no account, and what a child does there stays on your device.
+- **Clarity Kids.** A [cozy reading room for children](https://clarity.humanityandai.com/kids) in English, Spanish, French and German. It needs no account, and what a child does there stays on your device.
+
+- **Teachers, therapists and parents.** [Clarity for your work](/clarity/): how to hand it to a reader, where it fits, and what it stores.
 
 *Built by [Humanity and AI LLC](/): tools for the AI transition.*
