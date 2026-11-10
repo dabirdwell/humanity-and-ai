@@ -1,0 +1,327 @@
+/* Foundation pages in the house type: Type A, chosen by David on Oct 24 2026.
+   Every Foundation layout loads this file (layouts/foundation/list.html, single.html, generation.html and
+   for-kids.html, through layouts/partials/foundation-type.html), so these rules touch the pages under
+   /foundation/ and nothing else.
+
+   The two faces come from the house design system (https://claude.ai/artifact/3uanfBKmXcciLApgVE6oaz,
+   tokens.json "type") and the brand brief (/Users/david/Documents/Fawkes/Media and Outreach/Branding/
+   HAI_Mark_Brief_2026-09-26.md, sections 11 and 12):
+   - Roboto Serif is the human voice: titles, names, long reading.
+   - Roboto is the machine's precision: labels, numbers, buttons, navigation.
+   They share one skeleton, the same pair the wordmark is cut from. No third face: the Foundation pages
+   do not load the site's older faces at all (the partial takes their place in the page head).
+
+   Type A: every heading in Roboto Serif Light (the system's "title" role); labels, numbers, buttons
+   and navigation in Roboto; body text in Roboto Serif (the system's "reading" role).
+   Thin type goes one weight heavier on the light theme and at small sizes (brief, section 12). */
+
+:root {
+  --brand-serif: 'Roboto Serif', Georgia, 'Times New Roman', serif;
+  --brand-sans: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: var(--brand-serif);
+  --font-display: var(--brand-serif);
+  --font-mono: var(--brand-sans);   /* the pages' small labels were monospace; labels are Roboto now */
+
+  --fw-title: 300;   /* page titles */
+  --fw-head: 300;    /* section heads */
+  --fw-card: 400;    /* card names and smaller heads */
+  --fw-label: 500;   /* small capitals labels, numbers, buttons */
+  --fw-ui: 400;      /* navigation links and form text */
+}
+[data-theme="light"] {
+  --fw-title: 400;
+  --fw-head: 400;
+  --fw-card: 500;
+  --fw-label: 600;
+  --fw-ui: 500;
+}
+
+body { font-optical-sizing: auto; }
+
+/* ---- Site chrome on these pages: navigation is interface type ---- */
+.site-nav a {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-ui);
+  font-size: 0.9375rem;               /* the system's "interface" size, 15px */
+  letter-spacing: 0.01em;
+}
+.site-footer { font-family: var(--brand-sans); }
+
+/* ==== The hub (/foundation/, layouts/foundation/list.html) ==== */
+
+/* ---- Hero ---- */
+.fdn-hero__eyebrow {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.8125rem;
+  letter-spacing: 0.185em;            /* the wordmark's own tracking */
+}
+.fdn-hero__title {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-title);
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  margin: 0.55rem 0 1.4rem;
+}
+.fdn-hero__lead {
+  font-family: var(--brand-serif);
+  font-size: 1.1875rem;               /* the system's "reading" size, 19px */
+  line-height: 1.6;
+}
+.fdn-hero__tier {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+}
+.fdn-hero__tier em { font-weight: 700; }
+
+/* ---- The three layers ---- */
+.fdn-generation__eyebrow {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.75rem;
+  letter-spacing: 0.185em;
+}
+.fdn-generation__title {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-head);
+  font-size: clamp(1.9rem, 3.4vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+.fdn-generation__description {
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+.fdn-card__number {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+/* The page class in front: main.css styles these through .ubc-card h3 and .ubc-card p, which outrank a
+   lone class. The same cards appear on the hub and on the three layer pages. */
+.fdn-foundation .fdn-card__title,
+.fdn-generation-page .fdn-card__title {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-card);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+.fdn-foundation .fdn-card__description,
+.fdn-generation-page .fdn-card__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.fdn-card__status {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+/* ---- Why three layers (the long reading) ---- */
+.fdn-thesis__title,
+.fdn-contribute__title {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-head);
+  font-size: clamp(1.75rem, 3vw, 2.1rem);
+  line-height: 1.2;
+}
+.fdn-thesis .prose {
+  font-size: 1.1875rem;               /* "reading": 19px */
+  line-height: 1.65;
+}
+.fdn-thesis .prose h2,
+.fdn-thesis .prose h3 {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-card);
+  line-height: 1.25;
+}
+.fdn-thesis .prose h2 { font-size: 1.5rem; }
+.fdn-thesis .prose h3 { font-size: 1.25rem; }
+
+/* ---- Build with us, subscribe (the subscribe box closes every Foundation page) ---- */
+.fdn-contribute__cta,
+.newsletter-btn {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  letter-spacing: 0.12em;
+}
+.newsletter-btn { letter-spacing: 0.02em; }
+.newsletter-heading {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-head);
+  font-size: 1.6rem;
+}
+
+/* ==== The three layer pages (/foundation/freedom-from/ and the others, layouts/foundation/generation.html) ==== */
+.fdn-generation-page__eyebrow {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.75rem;
+  letter-spacing: 0.185em;
+}
+.fdn-generation-page__title {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-title);
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0.4rem 0 1.2rem;
+}
+.fdn-generation-page__description {
+  font-size: 1.1875rem;
+  line-height: 1.6;
+}
+.fdn-generation-page__body {
+  font-size: 1.1875rem;
+  line-height: 1.65;
+}
+.fdn-generation-page__nav a {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+}
+
+/* ==== The sixteen part pages and the other single pages (layouts/foundation/single.html):
+        The Mirror, Regulation, The Poverty Premium, How to Contribute, Foundation Discussions ==== */
+
+/* ---- Header ---- */
+.ubc-back,
+.ubc-all a {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-ui);
+  letter-spacing: 0.01em;
+}
+.ubc-back { font-size: 0.875rem; }
+.ubc-component-number {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.ubc-single-header h1 {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-title);
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.9rem;
+}
+.ubc-single-desc {
+  font-family: var(--brand-serif);
+  font-size: 1.1875rem;               /* "reading": 19px, like the hub's lead */
+  line-height: 1.6;
+}
+
+/* ---- The number box under the title ---- */
+.ubc-hero-stat-number {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-head);
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.ubc-hero-stat-bridge { font-size: 1.125rem; }
+.ubc-hero-stat-source {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+/* ---- The page's own text ---- */
+.ubc-single-content {
+  font-size: 1.1875rem;               /* "reading": 19px; phones step down below */
+  line-height: 1.7;
+}
+.ubc-single-content h2 {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-head);
+  font-size: clamp(1.6rem, 3vw, 1.9rem);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+.ubc-single-content h3,
+.ubc-single-content h4 {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-card);
+  line-height: 1.3;
+}
+.ubc-single-content h3 { font-size: 1.3rem; }
+.ubc-single-content h4 { font-size: 1.125rem; }
+.ubc-single-content th {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+/* ---- "Also on this site" (layouts/partials/related.html, styled inline there) ---- */
+.related-content h3,
+.related-content a > span:first-child {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+}
+.related-content a > span:last-child { font-family: var(--brand-serif); }
+
+/* ---- Contribute to this part: the form and the GitHub button ---- */
+.ubc-contribute-section h2 {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-head);
+  font-size: clamp(1.6rem, 3vw, 1.9rem);
+  line-height: 1.2;
+}
+.ubc-contribute-form-wrap h3,
+.ubc-contribute-github-wrap h3 {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-card);
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+.ubc-form-group label,
+.ubc-form-group input,
+.ubc-form-group textarea,
+.ubc-github-note {
+  font-family: var(--brand-sans);
+}
+.ubc-form-group label { font-weight: var(--fw-label); font-size: 0.875rem; }
+.ubc-form-group input,
+.ubc-form-group textarea { font-weight: var(--fw-ui); font-size: 0.9375rem; }
+.ubc-submit,
+.ubc-github-btn {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Previous and next ---- */
+.ubc-nav-label {
+  font-family: var(--brand-sans);
+  font-weight: var(--fw-label);
+  letter-spacing: 0.04em;
+}
+.ubc-nav-title {
+  font-family: var(--brand-serif);
+  font-weight: var(--fw-card);
+  font-size: 1.05rem;
+}
+
+/* ---- Phones: the header nav keeps the site's smaller phone size; the leads and the page's own
+        text step down so a line still holds about forty characters ---- */
+@media (max-width: 760px) {
+  .site-nav a { font-size: 0.875rem; }
+  .fdn-hero__lead,
+  .fdn-generation-page__description,
+  .ubc-single-desc { font-size: 1.0625rem; }
+  .fdn-generation-page__body,
+  .ubc-single-content { font-size: 1.0625rem; }
+}

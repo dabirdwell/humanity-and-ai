@@ -1,0 +1,10 @@
+{{- /* The house type on every Foundation page (Type A, chosen by David on Oct 24 2026): Roboto Serif and
+       Roboto from Google Fonts, and the rules in static/css/foundation-type.css. Each layout in
+       layouts/foundation/ calls this twice:
+         "fonts" in the "fonts" block of layouts/_default/baseof.html, in place of the site's older faces;
+         "rules" in the "head" block, which comes after main.css, so these rules win. */ -}}
+{{- if eq . "fonts" -}}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+{{- else -}}
+<link rel="stylesheet" href="/css/foundation-type.css?v=20261110a">
+{{- end -}}

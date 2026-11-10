@@ -1,3 +1,6 @@
+{{ define "fonts" }}{{ partial "foundation-type.html" "fonts" }}{{ end }}
+{{ define "head" }}{{ partial "foundation-type.html" "rules" }}{{ end }}
+
 {{ define "main" }}
 <div class="fk-page">
 
@@ -48,14 +51,17 @@
   text-align: center;
 }
 .fk-hero-inner { max-width: 680px; margin: 0 auto; }
+/* Type A, the house type (Oct 24 2026; the faces come from static/css/foundation-type.css). This page's
+   band stays dark in both themes, so its weights are the dark-ground ones. */
 .fk-eyebrow {
-  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  font-family: var(--brand-sans);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.185em;
   text-transform: uppercase; color: var(--fk-teal); margin-bottom: 20px;
 }
 .fk-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.8rem, 6vw, 3rem);
-  font-weight: 700; line-height: 1.15; color: #fff; margin-bottom: 24px;
+  font-family: var(--brand-serif);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 300; line-height: 1.1; letter-spacing: -0.01em; color: #fff; margin-bottom: 24px;
 }
 .fk-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.15rem);
@@ -76,9 +82,9 @@
   color: #fff; font-weight: 600;
 }
 .fk-content-inner h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
-  font-weight: 700; color: #fff; margin: 2em 0 0.8em; line-height: 1.3;
+  font-family: var(--brand-serif);
+  font-size: clamp(1.5rem, 3.4vw, 1.9rem);
+  font-weight: 300; color: #fff; margin: 2em 0 0.8em; line-height: 1.2;
 }
 .fk-content-inner a {
   color: var(--fk-teal); text-decoration: none; border-bottom: 1px solid transparent;
@@ -91,6 +97,7 @@
 .fk-cta-btn {
   display: inline-block; padding: 13px 28px;
   border-radius: 8px; font-size: 14px; font-weight: 500;
+  font-family: var(--brand-sans); letter-spacing: 0.02em;
   text-decoration: none; transition: all .2s;
 }
 .fk-cta-btn.primary { background: var(--fk-teal); color: #0a0a0f; }
