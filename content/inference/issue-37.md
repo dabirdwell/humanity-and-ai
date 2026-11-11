@@ -16,6 +16,20 @@ distribution:
     substack:  { status: pending }
 ---
 
+## UPDATE, NOVEMBER 11: THE OFFICIAL RESULT IN THE RACE FOR OKLAHOMA'S UTILITY REGULATOR, ONE DAY LATE
+
+*Wednesday, November 11, 2026, as of 2 p.m. Central*
+
+Further down this page, we promised to report the certified result of the race for a seat on the Oklahoma Corporation Commission, the state's utility regulator, on Tuesday, November 10. Certified means made official by the State Election Board after every ballot is counted, including provisional ballots, the ones set aside on Election Day until a voter's eligibility is confirmed. We did not report it on Tuesday. This update is one day late, and that miss is ours.
+
+**The result.** Brad Boles, a Republican state representative from Marlow, won the seat. The State Election Board's results website now labels the November 3 count "Official Results." Boles received 647,395 votes, or 58.42 percent. Rhonda Eastman, a Democrat from Spiro, received 460,830, or 41.58 percent.
+
+**What changed since last week.** Very little. Last week we reported the unofficial count with 10 precincts still out: 643,166 for Boles and 456,716 for Eastman. The final count added about 4,200 votes for each of them and did not change the outcome. Eastman still led among people who voted by mail and in early voting. Boles won the Election Day vote by more than 200,000.
+
+As we reported below, Boles takes the seat on January 11.
+
+---
+
 > On Election Day afternoon, while Oklahomans were filling a seat on the Corporation Commission, the elected three-member board that regulates the state's utilities, the three commissioners already on it voted 3 to 0 to approve OG&E's contracts to power three Google data centers. Data centers are the warehouse-size buildings full of computers that run websites and AI. OG&E is Oklahoma's largest electric utility. No commissioner asked a question on the record. Two days later, voting 2 to 1, they approved higher rates for homes served by the Public Service Company of Oklahoma, the Tulsa-based utility, after an open split over who pays for new power lines before the data centers arrive.
 
 > Last week we promised to tell you what the public said to the Commission that morning. We can't. We start there.
