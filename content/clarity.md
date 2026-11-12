@@ -1,12 +1,12 @@
 ---
-title: "Clarity for teachers, therapists and parents"
-description: "A free, calm reading room built with dyslexia in mind. No account, nothing to install. Hand it to a reader today."
+title: "Clarity for adult readers and the people who help them"
+description: "A free, calm reading app built with dyslexia in mind, made for adult readers. No account, nothing to install."
 draft: false
 type: "products"
 layout: "single"
 url: "/clarity/"
 status: "beta"
-tagline: "A calm reading room built with dyslexia in mind, for anyone who finds reading hard. Free, with no account, on any phone, tablet or laptop."
+tagline: "A calm reading app built with dyslexia in mind, made for adults. Free, with no account, on any phone, tablet or laptop."
 domain: "Reading"
 link: "https://clarity.humanityandai.com/reader"
 link_text: "Start reading →"
@@ -21,6 +21,10 @@ icon: "📖"
 4. Press **Aa** on a phone, or **Settings** on a tablet or laptop, to make the text bigger, space it out, or change the background.
 
 That is the whole idea. The reader sets the page, and help with any word is one tap away.
+
+## Made for adults
+
+Clarity began because so much reading help built with dyslexia in mind is made for children. Clarity is made for adults: readings on science, history, nature, government and daily life. Readers can also paste in their own messages, letters and articles.
 
 ## What is inside
 
