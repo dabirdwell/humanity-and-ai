@@ -11,11 +11,14 @@ domain: "Reading"
 link: "https://clarity.humanityandai.com/"
 link_text: "Start reading →"
 icon: "📖"
+default_theme: "light"
 ---
 
 **Here for a child?** [Open Clarity Kids](https://clarity.humanityandai.com/kids), our short stories for children. It is free and asks for nothing.
 
 ## Try it in one minute
+
+{{< figure src="/images/clarity/clarity-reader-how-maps-lie.png" class="app-shot" width="380" height="608" alt="Clarity on a phone, open to a reading called How Maps Lie. The word mathematically is highlighted in yellow, and a card under it says what the word means in this reading." caption="Tap a word, and its meaning opens right under it." >}}
 
 1. Open [clarity.humanityandai.com](https://clarity.humanityandai.com/) on any phone, tablet or laptop. A short reading is already on the page.
 2. Tap any word. Clarity says it aloud and tells you what it means in that passage.

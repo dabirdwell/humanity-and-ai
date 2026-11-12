@@ -62,7 +62,7 @@
   {{ block "fonts" . }}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">{{ end }}
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/main.css?v=20261110a">
+  <link rel="stylesheet" href="/css/main.css?v=20261112a">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
 
   <!-- Organization structured data -->
@@ -86,10 +86,14 @@
        David chose Nov 5 to look for a free replacement; it goes here when picked. -->
 
   <!-- Theme: prevent flash of wrong theme -->
+  <!-- Nov 12 2026: a page can set default_theme: "light" in its front matter to open on paper
+       (the Clarity page does, to match the app and its ads). A visitor's own pick still wins:
+       the toggle now stores "dark" as well as "light". Pages without the setting behave as before. -->
   <script>
     (function() {
-      var theme = localStorage.getItem('theme');
-      if (theme === 'light') {
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme === 'light'{{ if eq .Params.default_theme "light" }} || theme !== 'dark'{{ end }}) {
         document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
@@ -112,10 +116,10 @@
       var next = current === 'light' ? '' : 'light';
       if (next) {
         html.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+        try { localStorage.setItem('theme', 'light'); } catch (e) {}
       } else {
         html.removeAttribute('data-theme');
-        localStorage.removeItem('theme');
+        try { localStorage.setItem('theme', 'dark'); } catch (e) {}
       }
     }
 

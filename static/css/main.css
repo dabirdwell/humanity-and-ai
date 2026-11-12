@@ -3088,8 +3088,11 @@ a:hover { color: var(--accent-primary); }
 .product-status.beta {
   background: rgba(192, 132, 252, 0.15);
   color: var(--accent-tertiary);
+  /* Nov 12 2026: the plain accent measured 4.1 to 1 on the dark page; a little white lifts it past 4.5 */
+  color: color-mix(in srgb, var(--accent-tertiary) 72%, #fff);
   border: 1px solid rgba(192, 132, 252, 0.3);
 }
+[data-theme="light"] .product-status.beta { color: var(--accent-tertiary); }
 
 .product-status.coming-soon {
   background: rgba(251, 191, 36, 0.12);
@@ -3174,7 +3177,7 @@ a:hover { color: var(--accent-primary); }
   font-family: var(--font-ui);
   font-size: 0.75rem;
   font-weight: var(--fw-label);
-  color: var(--text-muted);
+  color: var(--text-secondary); /* Nov 12 2026: the muted grey measured 3.5 to 1 on the dark page */
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -3194,10 +3197,12 @@ a:hover { color: var(--accent-primary); }
   margin-bottom: 1.5rem;
 }
 
+/* Nov 12 2026: white on the dark theme's gold measured 2.65 to 1 (the minimum for text is 4.5).
+   Dark text on that gold is 7.4 to 1; the light theme's deeper gold keeps white at 5.1 to 1. */
 .product-cta {
   display: inline-block;
   background: var(--accent-primary);
-  color: #fff;
+  color: #14110F;
   padding: 0.65rem 1.8rem;
   border-radius: 6px;
   font-weight: var(--fw-label);
@@ -3209,9 +3214,12 @@ a:hover { color: var(--accent-primary); }
 
 .product-cta:hover {
   background: #e85a28;
-  color: #fff;
+  color: #14110F;
   transform: translateY(-1px);
 }
+
+[data-theme="light"] .product-cta { color: #fff; }
+[data-theme="light"] .product-cta:hover { color: #14110F; }
 
 .product-content {
   line-height: 1.8;
@@ -3236,6 +3244,34 @@ a:hover { color: var(--accent-primary); }
 
 .product-content a {
   color: var(--accent-secondary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* the light theme's link blue measured 4.3 to 1 on paper; this one is 5.4 to 1 */
+[data-theme="light"] .product-content a { color: #48608A; }
+
+/* a phone screen of the app inside a product page */
+.product-content figure.app-shot {
+  max-width: 300px;
+  margin: 1.25rem auto 1.75rem;
+  text-align: center;
+}
+.product-content figure.app-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--border-hover);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+.product-content figure.app-shot figcaption,
+.product-content figure.app-shot figcaption p {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0.7rem 0 0;
 }
 
 .product-content a:hover {
