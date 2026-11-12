@@ -8,16 +8,16 @@ url: "/clarity/"
 status: "beta"
 tagline: "A calm reading app built with dyslexia in mind, made for adults. Free, with no account, on any phone, tablet or laptop."
 domain: "Reading"
-link: "https://clarity.humanityandai.com/reader"
+link: "https://clarity.humanityandai.com/"
 link_text: "Start reading →"
 icon: "📖"
 ---
 
 ## Try it in one minute
 
-1. Open [clarity.humanityandai.com/reader](https://clarity.humanityandai.com/reader) on any phone, tablet or laptop. A short reading is already on the page.
-2. Tap any word. Clarity says it aloud and tells you what it means in that sentence.
-3. Press **Listen** to hear the whole passage, at one of five speeds.
+1. Open [clarity.humanityandai.com](https://clarity.humanityandai.com/) on any phone, tablet or laptop. A short reading is already on the page.
+2. Tap any word. Clarity says it aloud and tells you what it means in that passage.
+3. Press **Keep reading, free** to read the rest. There, **Listen** reads the whole passage aloud at any of five speeds.
 4. Press **Aa** on a phone, or **Settings** on a tablet or laptop, to make the text bigger, space it out, or change the background.
 
 That is the whole idea. The reader sets the page, and help with any word is one tap away.
