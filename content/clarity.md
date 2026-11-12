@@ -13,6 +13,8 @@ link_text: "Start reading →"
 icon: "📖"
 ---
 
+**Here for a child?** [Open Clarity Kids](https://clarity.humanityandai.com/kids), our short stories for children. It is free and asks for nothing.
+
 ## Try it in one minute
 
 1. Open [clarity.humanityandai.com](https://clarity.humanityandai.com/) on any phone, tablet or laptop. A short reading is already on the page.
