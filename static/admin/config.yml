@@ -136,10 +136,10 @@ collections:
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
           - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Brain Mastery (landing)"
-        name: "brain_mastery_index"
-        file: "content/brain-mastery/_index.md"
-        preview_path: "preview/brain-mastery/"
+      - label: "Paying Attention (landing)"
+        name: "paying_attention_index"
+        file: "content/paying-attention/_index.md"
+        preview_path: "preview/paying-attention/"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }

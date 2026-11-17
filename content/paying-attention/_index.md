@@ -1,5 +1,6 @@
 ---
-title: "Brain Mastery"
+title: "Paying Attention"
+aliases: ["/brain-mastery/"]
 description: "AI tools built around how people actually think. Reading, creating, reasoning, cooking, civic life."
 draft: true
 ---
