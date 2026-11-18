@@ -24,7 +24,7 @@ Everything we build connects. Six layers, from ground to mind: each one supporti
   </div>
   <div class="stack-layer layer-mastery">
     <span class="stack-label">Attention</span>
-    <span class="stack-desc">Paying Attention: a planned line of tools to strengthen how we read, think, and create</span>
+    <span class="stack-desc"><a href="/products/">Paying Attention</a>: a line of tools to strengthen how we read, think, and create. <a href="/clarity/">Clarity</a>, the first, is free now</span>
   </div>
   <div class="stack-layer layer-civic">
     <span class="stack-label">Civic</span>
