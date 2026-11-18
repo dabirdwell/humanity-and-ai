@@ -23,8 +23,8 @@ Everything we build connects. Six layers, from ground to mind: each one supporti
     <span class="stack-desc"><a href="https://structuredemergence.com">Structured Emergence</a>: consciousness research, philosophy of AI experience, <em>The Interpolated Mind</em></span>
   </div>
   <div class="stack-layer layer-mastery">
-    <span class="stack-label">Attention</span>
-    <span class="stack-desc"><a href="/products/">Paying Attention</a>: a line of tools to strengthen how we read, think, and create. <a href="/clarity/">Clarity</a>, the first, is free now</span>
+    <span class="stack-label">Tools</span>
+    <span class="stack-desc"><a href="/products/">Everyday tools</a> to strengthen how we read, think, and create. <a href="/clarity/">Clarity</a>, the first, is free now</span>
   </div>
   <div class="stack-layer layer-civic">
     <span class="stack-label">Civic</span>
